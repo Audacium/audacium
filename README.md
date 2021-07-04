@@ -1,7 +1,7 @@
 # NOTE
 This repository currently only serves as a "placeholder", nothing has been done yet but should be in the next few days. #MakeAudacityGreatAgain
 
-[![Audacitium](https://forum.audacityteam.org/styles/prosilver/theme/images/Audacity-logo_75px_trans_forum.png)](https://www.audacityteam.org) 
+[![Audacitium](.github/audacitium_logo.png)](https://www.audacityteam.org) 
 =========================
 
 [**Audacitium**](https://www.audacityteam.org) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
