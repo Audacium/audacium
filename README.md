@@ -20,7 +20,7 @@ This repository currently only serves as a "placeholder", nothing has been done 
 ## Getting Started
 
 For end users, the latest Windows and macOS release version of Audacium is available from the [Audacium website](https://www.audacityteam.org/download/).
-Help with using Audacitium is available from the [Audacium Forum](https://forum.audacityteam.org/).
+Help with using Audacium is available from the [Audacium Forum](https://forum.audacityteam.org/).
 
 Build instructions are available [here](BUILDING.md).
 
