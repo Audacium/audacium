@@ -1,10 +1,10 @@
 # NOTE
 This repository currently only serves as a "placeholder", nothing has been done yet but should be in the next few days. #MakeAudacityGreatAgain
 
-[![Audacium](.github/audacium_logo.png)](https://www.audacityteam.org) 
+[![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live) 
 =========================
 
-[**Audacium**](https://www.audacityteam.org) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
+[**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
 - **Recording** from any real, or virtual audio device that is available to the host system.
 - **Export / Import** a wide range of audio formats, extendible with FFmpeg.
@@ -19,9 +19,9 @@ This repository currently only serves as a "placeholder", nothing has been done 
 
 ## Getting Started
 
-For end users, the latest Windows and macOS release version of Audacium is available from the [Audacium website](https://www.audacityteam.org/download/).
-Help with using Audacium is available from the [Audacium Forum](https://forum.audacityteam.org/).
+For end users, the latest Windows and macOS release version of Audacium is available from the [Audacium website](https://audacium.seb1g.live/download).
+Help with using Audacium is available from the [Audacium Forum](https://audacium.seb1g.live/forum).
 
 Build instructions are available [here](BUILDING.md).
 
-More information for developers is available from the [Audacium Wiki](https://wiki.audacityteam.org/wiki/For_Developers).
+More information for developers is available from the [Audacium Wiki](https://audacium.seb1g.live/wiki).
