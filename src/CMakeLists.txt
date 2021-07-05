@@ -120,8 +120,6 @@ list( APPEND SOURCES
       Clipboard.h
       CommonCommandFlags.cpp
       CommonCommandFlags.h
-      CrashReport.cpp
-      CrashReport.h
       DarkThemeAsCeeCode.h
       DBConnection.cpp
       DBConnection.h

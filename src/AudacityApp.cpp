@@ -145,12 +145,7 @@ It handles initialization and termination by subclassing wxApp.
 #endif
 #endif
 
-// DA: Logo for Splash Screen
-#ifdef EXPERIMENTAL_DA
-#include "../images/DarkAudacityLogoWithName.xpm"
-#else
 #include "../images/AudacityLogoWithName.xpm"
-#endif
 
 #include <thread>
 
@@ -1098,12 +1093,7 @@ bool AudacityApp::OnInit()
    // Don't use AUDACITY_NAME here.
    // We want Audacity with a capital 'A'
 
-// DA: App name
-#ifndef EXPERIMENTAL_DA
    wxString appName = wxT("Audacium");
-#else
-   wxString appName = wxT("DarkAudacium");
-#endif
 
    wxTheApp->SetAppName(appName);
    // Explicitly set since OSX will use it for the "Quit" menu item
@@ -1145,11 +1135,8 @@ bool AudacityApp::OnInit()
    }
 
 // DA: Path env variable.
-#ifndef EXPERIMENTAL_DA
    wxString pathVar = wxGetenv(wxT("AUDACITY_PATH"));
-#else
-   wxString pathVar = wxGetenv(wxT("DARKAUDACITY_PATH"));
-#endif
+
    if (!pathVar.empty())
       FileNames::AddMultiPathsToPathList(pathVar, audacityPathList);
    FileNames::AddUniquePathToPathList(::wxGetCwd(), audacityPathList);
@@ -1475,9 +1462,10 @@ bool AudacityApp::InitPart2()
       SplashDialog::DoHelpWelcome(*project);
    }
 
-#if defined(HAVE_UPDATES_CHECK)
+// Disable update checking in Audacium for now
+/*#if defined(HAVE_UPDATES_CHECK)
    UpdateManager::Start();
-#endif
+#endif*/
 
    #ifdef USE_FFMPEG
    FFmpegStartup();
