@@ -1,6 +1,14 @@
 [![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live) 
 =========================
 
+## Goals of this project
+The goals **Audacium** is trying to achieve are pretty simple :
+- Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically)
+- Adding new features people want, listening closely to the community
+- Make the code base easier to work with, less confusing for a newbie
+
+----------------
+
 [**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
 - **Recording** from any real, or virtual audio device that is available to the host system.
