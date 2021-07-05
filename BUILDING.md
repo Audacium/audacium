@@ -1,4 +1,4 @@
-# Building Audacity
+# Building Audacium
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@
 To install Conan on Windows:
 
 ```
-$ pip install conan
+pip install conan
 ```
 
 To install Conan on macOS and Linux:
@@ -35,13 +35,13 @@ On Linux, `cmake` is usually available from the system package manager.
 
 ### Windows
 
-We build Audacity using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacity **Desktop development with C++** workload is required.
+We build Audacity using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacium **Desktop development with C++** workload is required.
 
 As we require only C++14 - MSVC 2017 should work just fine too.
 
 ### MacOS
 
-We build Audacity using XCode 12. However, it is likely possible to build it with XCode 7.
+We build Audacium using XCode 12. However, it is likely possible to build it with XCode 7.
 
 ### Linux
 
@@ -58,17 +58,17 @@ $ sudo apt-get install libgtk2.0-dev libasound2-dev libavformat-dev libjack-jack
 
 ## Building on Windows
 
-1. Clone Audacity from the Audacity GitHub project. 
+1. Clone Audacium from the Audacity GitHub project. 
   
-   For example, in the **git-bash** run:
+   For example, in the **Git Bash** window, run:
 
     ```
-    $ git clone https://github.com/audacity/audacity/
+    $ git clone https://github.com/SartoxOnlyGNU/audacium/
     ```
 
 2. Open CMake GUI. 
    
-   Set the **Where is the source code** to the location where Audacity was cloned. 
+   Set the **Where is the source code** to the location where Audacium was cloned. 
    
    Set **Where to build the binaries** to the location you want to place your build in. It is preferred that this location is not within the directory with the source code.
 
@@ -80,7 +80,7 @@ $ sudo apt-get install libgtk2.0-dev libasound2-dev libavformat-dev libjack-jack
    
 6. Select "Build -> Build Solution".
    
-7. You can now run and debug Audacity!
+7. You can now run and debug Audacium!
       
 Generally, steps 1-5 are only needed the first-time you configure. Then, after you've generated the solution, you can open it in Visual Studio next time. If the project configuration has changed, the IDE will invoke CMake internally. 
 
@@ -88,27 +88,27 @@ Generally, steps 1-5 are only needed the first-time you configure. Then, after y
 
 ## macOS
 
-1. Clone Audacity from the Audacity GitHub project. 
+1. Clone Audacium from the Audacium GitHub project. 
   
     ```
-    $ git clone https://github.com/audacity/audacity/
+    $ git clone https://github.com/SartoxOnlyGNU/audacium/
     ```
 
-2. Configure Audacity using CMake:
+2. Configure Audacium using CMake:
    ```
    $ mkdir build && cd build
    $ cmake -GXcode -T buildsystem=1 ../audacity
    ```
 
-3. Open Audacity XCode project:
+3. Open Audacium XCode project:
    ```
    $ open Audacity.xcodeproj
    ```
-   and build Audacity using the IDE. 
+   and build Audacium using the IDE. 
 
 Steps 1 and 2 are only required for first-time builds. 
 
-Alternatively, you can use **CLion**. If you chose to do so, open the directory where you have cloned Audacity using CLion and you are good to go.
+Alternatively, you can use **CLion**. If you chose to do so, open the directory where you have cloned Audacium using CLion and you are good to go.
 
 At the moment we only support **x86_64** builds. It is possible to build using AppleSilicon hardware but **mad** and **id3tag** should be disabled:
 
@@ -118,33 +118,33 @@ cmake -GXCode -T buildsystem=1 -Daudacity_use_mad="off" -Daudacity_use_id3tag=of
 
 ## Linux & Other OS
 
-1. Clone Audacity from the Audacity GitHub project. 
+1. Clone Audacium from the Audacium GitHub project. 
   
     ```
-    $ git clone https://github.com/audacity/audacity/
+    $ git clone https://github.com/SartoxOnlyGNU/audacium/
     ```
 
-2. Configure Audacity using CMake:
+2. Configure Audacium using CMake:
    ```
    $ mkdir build && cd build
    $ cmake -G "Unix Makefiles" -Daudacity_use_ffmpeg=loaded ../audacity
    ```
    By default, Debug build will be configured. To change that, pass `-DCMAKE_BUILD_TYPE=Release` to CMake.
 
-3. Build Audacity:
+3. Build Audacium:
    ```
    $ make -j`nproc`
    ```
 
 4. Testing the build:
-   Adding a "Portable Settings" folder allows Audacity to ignore the settings of any existing Audacity installation.
+   Adding a "Portable Settings" folder allows Audacium to ignore the settings of any existing Audacium installation.
    ```
    $ cd bin/Debug
    $ mkdir "Portable Settings"
    $ ./audacity
    ```
 
-5. Installing Audacity
+5. Installing Audacium
    ```
    $ cd <build directory>
    $ sudo make install
@@ -158,7 +158,7 @@ You can use `cmake -LH` to get a list of the options available (or use CMake GUI
 
 ### Building using system libraries
 
-On Linux it is possible to build Audacity using (almost) only the libraries provided by the package manager. Please, see the list of required libraries [here](linux/required_libraries.md).
+On Linux it is possible to build Audacium using (almost) only the libraries provided by the package manager. Please, see the list of required libraries [here](linux/required_libraries.md).
 
 ```
 $ mkdir build && cd build
@@ -171,15 +171,15 @@ $ cmake -G "Unix Makefiles" \
 
 There are a few cases when the local library build is preferred:
 
-1. **wxWidgets**: While Audacity on **Linux** uses vanilla version of wxWidgets, we **require** that version **3.1.3** is used. This version is not available in most of the distributions.
-2. **portaudio-v19**: Audacity currently uses [some private APIs](https://github.com/audacity/audacity/issues/871), so using system portaudio is not yet possible.
+1. **wxWidgets**: While Audacium on **Linux** uses vanilla version of wxWidgets, we **require** that version **3.1.3** is used. This version is not available in most of the distributions.
+2. **portaudio-v19**: Audacium currently uses [some private APIs](https://github.com/audacity/audacity/issues/871), so using system portaudio is not yet possible.
 3. **vamp-host-sdk**: Development packages are not available in Ubuntu 20.04.
 4. **libnyquist** & **portmixer**: Libraries are not available in Ubuntu 20.04.
 5. **sqlite3** & **libsmbs**: Libraries are very outdated in Ubuntu 20.04.
 
 It is not advised to mix system and local libraries, except for the list above. `ZLib` is a very common dependency; it is possible to mix system and local libraries in one build. However, we advise against doing so.
 
-There is a [`Dockerfile`](linux/build-environment/Dockerfile) that can be used as an example of how to build Audacity using system libraries: 
+There is a [`Dockerfile`](linux/build-environment/Dockerfile) that can be used as an example of how to build Audacium using system libraries: 
 
 ```
 $ docker build -t audacity_linux_env .\linux\build-environment\
