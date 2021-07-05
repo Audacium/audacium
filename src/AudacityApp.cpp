@@ -77,7 +77,6 @@ It handles initialization and termination by subclassing wxApp.
 #include "AudioIO.h"
 #include "Benchmark.h"
 #include "Clipboard.h"
-#include "CrashReport.h" // for HAS_CRASH_REPORT
 #include "commands/CommandHandler.h"
 #include "commands/AppCommandEvent.h"
 #include "widgets/ASlider.h"
@@ -237,7 +236,7 @@ void PopulatePreferences()
 "Reset Preferences?\n\nThis is a one-time question, after an 'install' where you asked to have the Preferences reset.");
       int action = AudacityMessageBox(
          prompt,
-         XO("Reset Audacity Preferences"),
+         XO("Reset Audacium Preferences"),
          wxYES_NO, NULL);
       if (action == wxYES)   // reset
       {
@@ -252,7 +251,7 @@ void PopulatePreferences()
       gPrefs->Write(wxT("/Locale/Language"), langCode);
    }
 
-   // In AUdacity 2.1.0 support for the legacy 1.2.x preferences (depreciated since Audacity
+   // In Audacity 2.1.0 support for the legacy 1.2.x preferences (depreciated since Audacity
    // 1.3.1) is dropped. As a result we can drop the import flag
    // first time this version of Audacity is run we try to migrate
    // old preferences.
@@ -597,7 +596,7 @@ class GnomeShutdown
  public:
    GnomeShutdown()
    {
-      mArgv[0].reset(strdup("Audacity"));
+      mArgv[0].reset(strdup("Audacium"));
 
       mGnomeui = dlopen("libgnomeui-2.so.0", RTLD_NOW);
       if (!mGnomeui) {
@@ -957,10 +956,6 @@ wxLanguageInfo userLangs[] =
 
 void AudacityApp::OnFatalException()
 {
-#if defined(HAS_CRASH_REPORT)
-   CrashReport::Generate(wxDebugReport::Context_Exception);
-#endif
-
    exit(-1);
 }
 
@@ -1024,16 +1019,6 @@ bool AudacityApp::OnExceptionInMainLoop()
 
 AudacityApp::AudacityApp()
 {
-#if defined(USE_BREAKPAD)
-    InitBreakpad();
-// Do not capture crashes in debug builds
-#elif !defined(_DEBUG)
-#if defined(HAS_CRASH_REPORT)
-#if defined(wxUSE_ON_FATAL_EXCEPTION) && wxUSE_ON_FATAL_EXCEPTION
-   wxHandleFatalExceptions();
-#endif
-#endif
-#endif
 }
 
 AudacityApp::~AudacityApp()
@@ -1061,7 +1046,7 @@ bool AudacityApp::OnInit()
    if ( !ProjectFileIO::InitializeSQL() )
       this->CallAfter([]{
          ::AudacityMessageBox(
-            XO("SQLite library failed to initialize.  Audacity cannot continue.") );
+            XO("SQLite library failed to initialize.  Audacium cannot continue.") );
          QuitAudacity( true );
       });
 
@@ -1115,9 +1100,9 @@ bool AudacityApp::OnInit()
 
 // DA: App name
 #ifndef EXPERIMENTAL_DA
-   wxString appName = wxT("Audacity");
+   wxString appName = wxT("Audacium");
 #else
-   wxString appName = wxT("DarkAudacity");
+   wxString appName = wxT("DarkAudacium");
 #endif
 
    wxTheApp->SetAppName(appName);
@@ -1372,7 +1357,7 @@ bool AudacityApp::InitPart2()
 
    if (parser->Found(wxT("v")))
    {
-      wxPrintf("Audacity v%s\n", AUDACITY_VERSION_STRING);
+      wxPrintf("Audacium v%s\n", AUDACITY_VERSION_STRING);
       exit(0);
    }
 
@@ -1425,7 +1410,7 @@ bool AudacityApp::InitPart2()
       temporarywindow.SetPosition( wndRect.GetTopLeft() );
       // Centered on whichever screen it is on.
       temporarywindow.Center();
-      temporarywindow.SetTitle(_("Audacity is starting up..."));
+      temporarywindow.SetTitle(_("Audacium is starting up..."));
       SetTopWindow(&temporarywindow);
       temporarywindow.Raise();
 
@@ -1451,7 +1436,7 @@ bool AudacityApp::InitPart2()
       fileMenu->Append(wxID_NEW, wxString(_("&New")) + wxT("\tCtrl+N"));
       fileMenu->Append(wxID_OPEN, wxString(_("&Open...")) + wxT("\tCtrl+O"));
       fileMenu->AppendSubMenu(urecentMenu.release(), _("Open &Recent..."));
-      fileMenu->Append(wxID_ABOUT, _("&About Audacity..."));
+      fileMenu->Append(wxID_ABOUT, _("&About Audacium..."));
       fileMenu->Append(wxID_PREFERENCES, wxString(_("&Preferences...")) + wxT("\tCtrl+,"));
 
       {
@@ -1578,20 +1563,18 @@ bool AudacityApp::InitPart2()
       system("tccutil reset Microphone org.audacityteam.audacity");
       gPrefs->Write(wxT("/MicrophonePermissionsReset"), true);
    }
-#endif
 
-#if defined(__WXMAC__)
    // Bug 2709: Workaround CoreSVG locale issue
-   Bind(wxEVT_MENU_OPEN, [=](wxMenuEvent &event)
+   Bind(wxEVT_MENU_OPEN, [=](wxMenuEvent& event)
    {
-      wxSetlocale(LC_NUMERIC, wxString(wxT("C")));
-      event.Skip();
+       wxSetlocale(LC_NUMERIC, wxString(wxT("C")));
+       event.Skip();
    });
 
-   Bind(wxEVT_MENU_CLOSE, [=](wxMenuEvent &event)
+   Bind(wxEVT_MENU_CLOSE, [=](wxMenuEvent& event)
    {
-      wxSetlocale(LC_NUMERIC, Languages::GetLocaleName());
-      event.Skip();
+       wxSetlocale(LC_NUMERIC, Languages::GetLocaleName());
+       event.Skip();
    });
 #endif
 
@@ -1696,10 +1679,10 @@ bool AudacityApp::InitTempDir()
       // Failed
       if( !TempDirectory::IsTempDirectoryNameOK( tempFromPrefs ) ) {
          AudacityMessageBox(XO(
-"Audacity could not find a safe place to store temporary files.\nAudacity needs a place where automatic cleanup programs won't delete the temporary files.\nPlease enter an appropriate directory in the preferences dialog."));
+"Audacium could not find a safe place to store temporary files.\nAudacity needs a place where automatic cleanup programs won't delete the temporary files.\nPlease enter an appropriate directory in the preferences dialog."));
       } else {
          AudacityMessageBox(XO(
-"Audacity could not find a place to store temporary files.\nPlease enter an appropriate directory in the preferences dialog."));
+"Audacium could not find a place to store temporary files.\nPlease enter an appropriate directory in the preferences dialog."));
       }
 
       // Only want one page of the preferences
@@ -1709,7 +1692,7 @@ bool AudacityApp::InitTempDir()
       dialog.ShowModal();
 
       AudacityMessageBox(XO(
-"Audacity is now going to exit. Please launch Audacity again to use the new temporary directory."));
+"Audacium is now going to exit. Please launch Audacium again to use the new temporary directory."));
       return false;
    }
 
@@ -1736,7 +1719,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
    mChecker.reset();
    auto checker = std::make_unique<wxSingleInstanceChecker>();
 
-   auto runningTwoCopiesStr = XO("Running two copies of Audacity simultaneously may cause\ndata loss or cause your system to crash.\n\n");
+   auto runningTwoCopiesStr = XO("Running two copies of Audacium simultaneously may cause\ndata loss or cause your system to crash.\n\n");
 
    if (!checker->Create(name, dir))
    {
@@ -1744,9 +1727,9 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       // whether there is another instance running or not.
 
       auto prompt = XO(
-"Audacity was not able to lock the temporary files directory.\nThis folder may be in use by another copy of Audacity.\n")
+"Audacium was not able to lock the temporary files directory.\nThis folder may be in use by another copy of Audacium.\n")
          + runningTwoCopiesStr
-         + XO("Do you still want to start Audacity?");
+         + XO("Do you still want to start Audacium?");
       int action = AudacityMessageBox(
          prompt,
          XO("Error Locking Temporary Folder"),
@@ -1766,7 +1749,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
 
       if (parser->Found(wxT("v")))
       {
-         wxPrintf("Audacity v%s\n", AUDACITY_VERSION_STRING);
+         wxPrintf("Audacium v%s\n", AUDACITY_VERSION_STRING);
          return false;
       }
 
@@ -1818,12 +1801,12 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       // There is another copy of Audacity running.  Force quit.
 
       auto prompt =  XO(
-"The system has detected that another copy of Audacity is running.\n")
+"The system has detected that another copy of Audacium is running.\n")
          + runningTwoCopiesStr
          + XO(
-"Use the New or Open commands in the currently running Audacity\nprocess to open multiple projects simultaneously.\n");
+"Use the New or Open commands in the currently running Audacium\nprocess to open multiple projects simultaneously.\n");
       AudacityMessageBox(
-         prompt, XO("Audacity is already running"),
+         prompt, XO("Audacium is already running"),
          wxOK | wxICON_ERROR);
 
       return false;
@@ -1897,7 +1880,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
             XO("Unable to acquire semaphores.\n\n"
                "This is likely due to a resource shortage\n"
                "and a reboot may be required."),
-            XO("Audacity Startup Failure"),
+            XO("Audacium Startup Failure"),
             wxOK | wxICON_ERROR);
 
          return false;
@@ -1913,7 +1896,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
          XO("Unable to create semaphores.\n\n"
             "This is likely due to a resource shortage\n"
             "and a reboot may be required."),
-         XO("Audacity Startup Failure"),
+         XO("Audacium Startup Failure"),
          wxOK | wxICON_ERROR);
 
       return false;
@@ -1936,7 +1919,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
             XO("Unable to acquire lock semaphore.\n\n"
                "This is likely due to a resource shortage\n"
                "and a reboot may be required."),
-            XO("Audacity Startup Failure"),
+            XO("Audacium Startup Failure"),
             wxOK | wxICON_ERROR);
 
          return false;
@@ -1958,7 +1941,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
             XO("Unable to acquire server semaphore.\n\n"
                "This is likely due to a resource shortage\n"
                "and a reboot may be required."),
-            XO("Audacity Startup Failure"),
+            XO("Audacium Startup Failure"),
             wxOK | wxICON_ERROR);
 
          return false;
@@ -1998,10 +1981,10 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       if (mIPCServ == nullptr)
       {
          AudacityMessageBox(
-            XO("The Audacity IPC server failed to initialize.\n\n"
+            XO("The Audacium IPC server failed to initialize.\n\n"
                "This is likely due to a resource shortage\n"
                "and a reboot may be required."),
-            XO("Audacity Startup Failure"),
+            XO("Audacium Startup Failure"),
             wxOK | wxICON_ERROR);
 
          return false;
@@ -2040,7 +2023,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       // Audacity is already running.
       AudacityMessageBox(
          XO("An unrecoverable error has occurred during startup"),
-         XO("Audacity Startup Failure"),
+         XO("Audacium Startup Failure"),
          wxOK | wxICON_ERROR);
 
       return false;
@@ -2058,7 +2041,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
    // Display Audacity's version if requested
    if (parser->Found(wxT("v")))
    {
-      wxPrintf("Audacity v%s\n", AUDACITY_VERSION_STRING);
+      wxPrintf("Audacium v%s\n", AUDACITY_VERSION_STRING);
 
       return false;
    }
@@ -2156,7 +2139,7 @@ std::unique_ptr<wxCmdLineParser> AudacityApp::ParseCommandLine()
    parser->AddSwitch(wxT("t"), wxT("test"), _("run self diagnostics"));
 
    /*i18n-hint: This displays the Audacity version */
-   parser->AddSwitch(wxT("v"), wxT("version"), _("display Audacity version"));
+   parser->AddSwitch(wxT("v"), wxT("version"), _("display Audacium version"));
 
    /*i18n-hint: This is a list of one or more files that Audacity
     *           should open upon startup */
@@ -2417,8 +2400,8 @@ void AudacityApp::AssociateFileTypes()
    int wantAssoc =
       AudacityMessageBox(
          XO(
-"Audacity project (.aup3) files are not currently \nassociated with Audacity. \n\nAssociate them, so they open on double-click?"),
-         XO("Audacity Project Files"),
+"Audacium project (.aup3) files are not currently \nassociated with Audacium. \n\nAssociate them, so they open on double-click?"),
+         XO("Audacium Project Files"),
          wxYES_NO | wxICON_QUESTION);
 
    if (wantAssoc == wxNO)
