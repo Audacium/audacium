@@ -24,9 +24,9 @@ The goals **Audacium** is trying to achieve are pretty simple :
 
 ## Getting Started
 
-For end users, the latest Windows and macOS release version of Audacium is available from the [Audacium website](https://audacium.seb1g.live/download).
-Help with using Audacium is available from the [Audacium Forum](https://audacium.seb1g.live/forum).
+For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
+Help with using Audacium is available from the [Discord server](https://discord.gg/jQrv5rmzsK) or via the [Matrix room](https://matrix.to/#/#audacityfork:semisol.dev) (the two are bridged together).
 
 Build instructions are available [here](BUILDING.md).
 
-More information for developers is available from the [Audacium Wiki](https://audacium.seb1g.live/wiki).
+More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
