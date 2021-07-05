@@ -1093,9 +1093,8 @@ static const struct WaveTrackTCPLines
       { TCPLine::kItemPan, kTrackInfoSliderHeight, kTrackInfoSliderExtra,
         PanSliderDrawFunction },
 
-#ifdef EXPERIMENTAL_DA
-      // DA: Does not have status information for a track.
-#else
+// DA: Does not have status information for a track.
+#ifndef EXPERIMENTAL_DA
       { TCPLine::kItemStatusInfo1, 12, 0,
         Status1DrawFunction },
       { TCPLine::kItemStatusInfo2, 12, 0,

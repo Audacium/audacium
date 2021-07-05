@@ -88,15 +88,12 @@ void RecordingPrefs::PopulateOrExchange(ShuttleGui & S)
       // Start wording of options with a verb, if possible.
       S.TieCheckBox(XXO("Play &other tracks while recording (overdub)"),
                      {wxT("/AudioIO/Duplex"),
-#ifdef EXPERIMENTAL_DA
-                      false
-#else
-                      true
-#endif
+                        false // DA
                      });
 
 //#if defined(__WXMAC__)
 // Bug 388.  Feature not supported on any Mac Hardware.
+// TODO : Check if on Mac hardware and if not, enable hardware to play tracks.
 #if 0
       S.TieCheckBox(XO("Use &hardware to play other tracks"),
                     {wxT("/AudioIO/Playthrough"),

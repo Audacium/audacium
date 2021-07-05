@@ -694,11 +694,12 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
       << XO("Features")
       << wxT("</h3>\n<table>");  // start table of features
 
-#ifdef EXPERIMENTAL_DA
+// DA
+//#ifdef EXPERIMENTAL_DA
    AddBuildinfoRow(&informationStr, wxT("Theme"), XO("Dark Theme Extras"), enabled);
-#else
-   AddBuildinfoRow(&informationStr, wxT("Theme"), XO("Dark Theme Extras"), disabled);
-#endif
+//#else
+//   AddBuildinfoRow(&informationStr, wxT("Theme"), XO("Dark Theme Extras"), disabled);
+//#endif
 
    # if USE_NYQUIST
    AddBuildinfoRow(&informationStr, wxT("Nyquist"), XO("Plug-in support"),
