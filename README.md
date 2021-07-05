@@ -1,6 +1,3 @@
-# NOTE
-This repository currently only serves as a "placeholder", nothing has been done yet but should be in the next few days. #MakeAudacityGreatAgain
-
 [![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live) 
 =========================
 
