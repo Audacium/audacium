@@ -447,21 +447,19 @@ visit our %s.")
       << wxT("<p><br>")
       /* i18n-hint: The program's name substitutes for %s */
       << XO("%s website: ").Format( ProgramName )
-      << wxT("[[https://www.audacityteam.org/|https://www.audacityteam.org/]]")
+      << wxT("[[https://audacium.seb1g.live/|https://audacium.seb1g.live/]]")
 
       << wxT("<p><br>&nbsp; &nbsp; ")
       /* i18n-hint Audacity's name substitutes for first and third %s,
        and a "copyright" symbol for the second */
-      << XO("%s software is copyright %s 1999-2021 %s Team.")
+      << XO("%s software is copyleft.")
          .Format(
-            Verbatim("<b>%s<sup>&reg;</sup></b>").Format( ProgramName ),
-            wxT("&copy;"),
-            ProgramName )
+            Verbatim("<b>%s<sup>&reg;</sup></b>").Format( ProgramName ) )
       << wxT("<br>")
 
       << wxT("&nbsp; &nbsp; ")
       /* i18n-hint Audacity's name substitutes for %s */
-      << XO("The name %s is a registered trademark.")
+      << XO("The name %s is not a registered trademark.")
          .Format( Verbatim("<b>%s</b>").Format( ProgramName ) )
       << wxT("<br><br>")
 
