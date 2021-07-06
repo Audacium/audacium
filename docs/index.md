@@ -4,6 +4,12 @@ The goals **Audacium** is trying to achieve are pretty simple :
 - Adding new features people want, listening closely to the community
 - Make the code base easier to work with, less confusing for a newbie
 
+## Donations
+You can donate to me via **PayPal** using the **Sponsor** button on GitHub and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
+
+Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0
+Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
+
 ----------------
 
 **Audacium** is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
@@ -22,7 +28,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 ## Getting Started
 
 For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
-Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacityfork-dc:semisol.dev) (preferred) or via the [Discord server](https://discord.gg/jQrv5rmzsK) (the two are bridged together).
+Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacityfork-dc:semisol.dev) (preferred) or via the [Discord server](https://discord.gg/jQrv5rmzsK).
 
 Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/blob/master/BUILDING.md).
 
