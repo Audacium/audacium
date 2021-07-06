@@ -7,6 +7,12 @@ The goals **Audacium** is trying to achieve are pretty simple :
 - Adding new features people want, listening closely to the community
 - Make the code base easier to work with, less confusing for a newbie
 
+## Donations
+You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
+
+Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0
+Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
+
 ----------------
 
 [**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
