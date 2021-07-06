@@ -1,17 +1,14 @@
 [![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live) 
 =========================
 
+## Searching for contributors!
+I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
+
 ## Goals of this project
 The goals **Audacium** is trying to achieve are pretty simple :
 - Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically)
 - Adding new features people want, listening closely to the community
 - Make the code base easier to work with, less confusing for a newbie
-
-## Donations
-You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
-
-Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0 <br/>
-Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
 
 ----------------
 
@@ -36,3 +33,9 @@ Help with using Audacium is available from the [Matrix room](https://matrix.to/#
 Build instructions are available [here](BUILDING.md).
 
 More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
+
+## Donations
+You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
+
+Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0 <br/>
+Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
