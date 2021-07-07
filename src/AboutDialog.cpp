@@ -401,7 +401,7 @@ visit our %s.")
 
       << wxT("<p><b>")
       /* i18n-hint: The program's name substitutes for %s */
-      << XO("%s Team Members").Format( ProgramName )
+      /*<< XO("%s Team Members").Format( ProgramName )
       << wxT("</b><br>")
       << GetCreditsByRole(roleTeamMember)
 
@@ -410,7 +410,7 @@ visit our %s.")
       << XO("Emeritus:")
       << wxT("</b><br>")
       /* i18n-hint: The program's name substitutes for %s */
-      
+      /*
       << XO("Distinguished %s Team members, not currently active")
          .Format( ProgramName )
       << wxT("<br><br>")
@@ -425,16 +425,16 @@ visit our %s.")
       << XO("Website and Graphics")
       << wxT("</b><br>")
       << GetCreditsByRole(roleGraphics)
-      
+      */
    ;
 
-   if(!translatorCredits.empty()) informationStr
+   /*if(!translatorCredits.empty()) informationStr
       << wxT("<p><b>")
       << XO("Translators")
       << wxT("</b><br>")
       << translatorCredits
       
-   ;
+   ;*/
 
    informationStr
       << wxT("<p><b>")
@@ -445,10 +445,10 @@ visit our %s.")
       << wxT("<br><br>")
       << GetCreditsByRole(roleLibrary)
 
-      << wxT("<p><b>")
+      /*<< wxT("<p><b>")
       << XO("Special thanks:")
       << wxT("</b><br>")
-      << GetCreditsByRole(roleThanks)
+      << GetCreditsByRole(roleThanks) */
 
       << wxT("<p><br>")
       /* i18n-hint: The program's name substitutes for %s */
