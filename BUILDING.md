@@ -35,7 +35,7 @@ On Linux, `cmake` is usually available from the system package manager.
 
 ### Windows
 
-We build Audacity using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacium **Desktop development with C++** workload is required.
+We build Audacium using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacium **Desktop development with C++** workload is required.
 
 As we require only C++14 - MSVC 2017 should work just fine too.
 
@@ -58,7 +58,7 @@ $ sudo apt-get install libgtk2.0-dev libasound2-dev libavformat-dev libjack-jack
 
 ## Building on Windows
 
-1. Clone Audacium from the Audacity GitHub project. 
+1. Clone Audacium from the Audacium GitHub project. 
   
    For example, in the **Git Bash** window, run:
 
