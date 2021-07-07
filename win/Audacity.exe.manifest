@@ -3,10 +3,10 @@
   <assemblyIdentity
       version="2.3.0.0"
       processorArchitecture="x86"
-      name="Audacium.Audacium.Audacium"
+      name="Audacity.Audacity.Audacity"
       type="win32"
   />
-  <description>Audacium® Cross-Platform Sound Editor</description>
+  <description>Audacium Cross-Platform Sound Editor</description>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
     <security>
       <requestedPrivileges>
