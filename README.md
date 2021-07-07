@@ -30,7 +30,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 ## Getting Started
 
 For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
-Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/jQrv5rmzsK) (the two are bridged together).
+Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/ZH5234Abhb) (the two are bridged together).
 
 Build instructions are available [here](BUILDING.md).
 
