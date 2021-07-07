@@ -123,6 +123,7 @@ void AboutDialog::CreateCreditsList()
       XO("%s, graphics");
 
    // The Audacity Team: developers and support
+   /*
    AddCredit(wxT("Anton Gerasimov"), developerFormat, roleTeamMember);
    AddCredit(wxT("Paul Licameli"), developerFormat, roleTeamMember);
    AddCredit(wxT("Vitaly Sverchinsky"), developerFormat, roleTeamMember);
@@ -265,7 +266,7 @@ void AboutDialog::CreateCreditsList()
    AddCredit(wxT("Rudy Trubitt"), roleThanks);
    AddCredit(wxT("StreetIQ.com"), roleThanks);
    AddCredit(wxT("UmixIt Technologies, LLC"), roleThanks);
-   AddCredit(wxT("Verilogix, Inc."), roleThanks);
+   AddCredit(wxT("Verilogix, Inc."), roleThanks);*/
 }
 
 // ----------------------------------------------------------------------------
