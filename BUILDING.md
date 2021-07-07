@@ -97,12 +97,12 @@ Generally, steps 1-5 are only needed the first-time you configure. Then, after y
 2. Configure Audacium using CMake:
    ```
    $ mkdir build && cd build
-   $ cmake -GXcode -T buildsystem=1 ../audacity
+   $ cmake -GXcode -T buildsystem=1 ../audacium
    ```
 
 3. Open Audacium XCode project:
    ```
-   $ open Audacity.xcodeproj
+   $ open Audacium.xcodeproj
    ```
    and build Audacium using the IDE. 
 
@@ -141,7 +141,7 @@ cmake -GXCode -T buildsystem=1 -Daudacity_use_mad="off" -Daudacity_use_id3tag=of
    ```
    $ cd bin/Debug
    $ mkdir "Portable Settings"
-   $ ./audacity
+   $ ./audacium
    ```
 
 5. Installing Audacium
