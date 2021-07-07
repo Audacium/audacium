@@ -1,4 +1,6 @@
-[![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live) 
+[![Audacium](https://user-images.githubusercontent.com/49339966/124761631-468df780-df32-11eb-84a6-5d17a9717fc2.png)](https://audacium.seb1g.live)
+<br/>
+<p>Made by mish1</p>
 =========================
 
 ## Searching for contributors!
@@ -28,7 +30,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 ## Getting Started
 
 For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
-Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacityfork-dc:semisol.dev) (preferred) or via the [Discord server](https://discord.gg/jQrv5rmzsK).
+Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/jQrv5rmzsK) (the two are bridged together).
 
 Build instructions are available [here](BUILDING.md).
 
