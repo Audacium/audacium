@@ -1,10 +1,10 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectFileManager.h
 
-Paul Licameli split from AudacityProject.h
+Paul Licameli split from AudaciumProject.h
 
 **********************************************************************/
 
@@ -20,7 +20,7 @@ Paul Licameli split from AudacityProject.h
 
 class wxString;
 class wxFileName;
-class AudacityProject;
+class AudaciumProject;
 class Track;
 class TrackList;
 class WaveTrack;
@@ -33,13 +33,13 @@ class AUDACITY_DLL_API ProjectFileManager final
    : public ClientData::Base
 {
 public:
-   static ProjectFileManager &Get( AudacityProject &project );
-   static const ProjectFileManager &Get( const AudacityProject &project );
+   static ProjectFileManager &Get( AudaciumProject &project );
+   static const ProjectFileManager &Get( const AudaciumProject &project );
 
    // Open and close a file, invisibly, removing its Autosave blob
    static void DiscardAutosave(const FilePath &filename);
 
-   explicit ProjectFileManager( AudacityProject &project );
+   explicit ProjectFileManager( AudaciumProject &project );
    ProjectFileManager( const ProjectFileManager & ) PROHIBITED;
    ProjectFileManager &operator=( const ProjectFileManager & ) PROHIBITED;
    ~ProjectFileManager();
@@ -63,9 +63,9 @@ public:
     * The file type filter will automatically contain:
     * - "All files" with any extension or none,
     * - "All supported files" based on the file formats supported in this
-    *   build of Audacity,
+    *   build of Audacium,
     * - All of the individual formats specified by the importer plug-ins which
-    *   are built into this build of Audacity, each with the relevant file
+    *   are built into this build of Audacium, each with the relevant file
     *   extensions for that format.
     * The dialogue will start in the DefaultOpenPath directory read from the
     * preferences, failing that the working directory. The file format filter
@@ -83,7 +83,7 @@ public:
    static bool IsAlreadyOpen(const FilePath &projPathName);
 
    //! A function that returns a project to use for opening a file; argument is true if opening a project file
-   using ProjectChooserFn = std::function<AudacityProject&(bool)>;
+   using ProjectChooserFn = std::function<AudaciumProject&(bool)>;
 
    /*!
     Opens files of many kinds.  In case of import (sound, MIDI, or .aup), the undo history is pushed.
@@ -92,7 +92,7 @@ public:
     @param addtohistory whether to add .aup3 files to the MRU list (but always done for imports)
     @return if something was successfully opened, the project containing it; else null
     */
-   static AudacityProject *OpenFile( const ProjectChooserFn &chooser,
+   static AudaciumProject *OpenFile( const ProjectChooserFn &chooser,
       const FilePath &fileName, bool addtohistory = true);
 
    bool Import(const FilePath &fileName,
@@ -112,7 +112,7 @@ private:
     @param addtohistory whether to add the file to the MRU list
     @return if something was successfully opened, the project containing it; else null
     */
-   AudacityProject *OpenProjectFile(
+   AudaciumProject *OpenProjectFile(
       const FilePath &fileName, bool addtohistory);
 
    struct ReadProjectResults
@@ -127,7 +127,7 @@ private:
 
    bool DoSave(const FilePath & fileName, bool fromSaveAs);
 
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    std::shared_ptr<TrackList> mLastSavedTracks;
    

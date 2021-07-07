@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2010 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2010 Audacium Team.
    License: GPL v2.  See License.txt.
 
    MultiDialog.h
@@ -36,7 +36,7 @@ for each problem encountered, since there can be many orphans.
 #include <wx/bmpbuttn.h>
 
 
-#include "../AudacityLogger.h"
+#include "../AudaciumLogger.h"
 #include "wxPanelWrapper.h"
 #include "../Theme.h"
 #include "../AllThemeResources.h"
@@ -169,7 +169,7 @@ void MultiDialog::OnOK(wxCommandEvent & WXUNUSED(event))
 
 void MultiDialog::OnShowLog(wxCommandEvent & WXUNUSED(event))
 {
-   auto logger = AudacityLogger::Get();
+   auto logger = AudaciumLogger::Get();
    if (logger) {
       logger->Show();
    }

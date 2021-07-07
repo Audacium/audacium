@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file AnonymizedMessage.h
  @brief Declare a class to store anonymized messages.
@@ -13,7 +13,7 @@
 
 #pragma once
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -67,4 +67,4 @@ private:
 };
 
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

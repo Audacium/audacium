@@ -35,7 +35,7 @@ On Linux, `cmake` is usually available from the system package manager.
 
 ### Windows
 
-We build Audacity using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacium **Desktop development with C++** workload is required.
+We build Audacium using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Audacium **Desktop development with C++** workload is required.
 
 As we require only C++14 - MSVC 2017 should work just fine too.
 
@@ -58,7 +58,7 @@ $ sudo apt-get install libgtk2.0-dev libasound2-dev libavformat-dev libjack-jack
 
 ## Building on Windows
 
-1. Clone Audacium from the Audacity GitHub project. 
+1. Clone Audacium from the Audacium GitHub project. 
   
    For example, in the **Git Bash** window, run:
 
@@ -97,12 +97,12 @@ Generally, steps 1-5 are only needed the first-time you configure. Then, after y
 2. Configure Audacium using CMake:
    ```
    $ mkdir build && cd build
-   $ cmake -GXcode -T buildsystem=1 ../audacity
+   $ cmake -GXcode -T buildsystem=1 ../audacium
    ```
 
 3. Open Audacium XCode project:
    ```
-   $ open Audacity.xcodeproj
+   $ open Audacium.xcodeproj
    ```
    and build Audacium using the IDE. 
 
@@ -113,7 +113,7 @@ Alternatively, you can use **CLion**. If you chose to do so, open the directory 
 At the moment we only support **x86_64** builds. It is possible to build using AppleSilicon hardware but **mad** and **id3tag** should be disabled:
 
 ```
-cmake -GXCode -T buildsystem=1 -Daudacity_use_mad="off" -Daudacity_use_id3tag=off ../audacium
+cmake -GXCode -T buildsystem=1 -Daudacium_use_mad="off" -Daudacium_use_id3tag=off ../audacium
 ```
 
 ## Linux & Other OS
@@ -127,7 +127,7 @@ cmake -GXCode -T buildsystem=1 -Daudacity_use_mad="off" -Daudacity_use_id3tag=of
 2. Configure Audacium using CMake:
    ```
    $ mkdir build && cd build
-   $ cmake -G "Unix Makefiles" -Daudacity_use_ffmpeg=loaded ../audacium
+   $ cmake -G "Unix Makefiles" -Daudacium_use_ffmpeg=loaded ../audacium
    ```
    By default, Debug build will be configured. To change that, pass `-DCMAKE_BUILD_TYPE=Release` to CMake.
 
@@ -141,7 +141,7 @@ cmake -GXCode -T buildsystem=1 -Daudacity_use_mad="off" -Daudacity_use_id3tag=of
    ```
    $ cd bin/Debug
    $ mkdir "Portable Settings"
-   $ ./audacity
+   $ ./audacium
    ```
 
 5. Installing Audacium
@@ -163,16 +163,16 @@ On Linux it is possible to build Audacium using (almost) only the libraries prov
 ```
 $ mkdir build && cd build
 $ cmake -G "Unix Makefiles" \
-        -Daudacity_use_ffmpeg=loaded \
-        -Daudacity_lib_preference=system \
-        -Daudacity_obey_system_dependencies=On \
+        -Daudacium_use_ffmpeg=loaded \
+        -Daudacium_lib_preference=system \
+        -Daudacium_obey_system_dependencies=On \
          ../audacium
 ```
 
 There are a few cases when the local library build is preferred:
 
 1. **wxWidgets**: While Audacium on **Linux** uses vanilla version of wxWidgets, we **require** that version **3.1.3** is used. This version is not available in most of the distributions.
-2. **portaudio-v19**: Audacium currently uses [some private APIs](https://github.com/audacity/audacity/issues/871), so using system portaudio is not yet possible.
+2. **portaudio-v19**: Audacium currently uses [some private APIs](https://github.com/audacium/audacium/issues/871), so using system portaudio is not yet possible.
 3. **vamp-host-sdk**: Development packages are not available in Ubuntu 20.04.
 4. **libnyquist** & **portmixer**: Libraries are not available in Ubuntu 20.04.
 5. **sqlite3** & **libsmbs**: Libraries are very outdated in Ubuntu 20.04.
@@ -182,8 +182,8 @@ It is not advised to mix system and local libraries, except for the list above. 
 There is a [`Dockerfile`](linux/build-environment/Dockerfile) that can be used as an example of how to build Audacium using system libraries: 
 
 ```
-$ docker build -t audacity_linux_env .\linux\build-environment\
-$ docker run --rm -v ${pwd}:/audacity/audacity/ -v ${pwd}/../build/linux-system:/audacity/build -it audacity_linux_env
+$ docker build -t audacium_linux_env .\linux\build-environment\
+$ docker run --rm -v ${pwd}:/audacium/audacium/ -v ${pwd}/../build/linux-system:/audacium/build -it audacium_linux_env
 ```
 
 To find system packages, we rely on `pkg-config`. There are several packages that have broken `*.pc` or do not use `pkg-config` at all. For the docker image - we handle this issue by installing the correct [`pc` files](linux/build-environment/pkgconfig/).

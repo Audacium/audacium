@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   VSTEffect.cpp
 
@@ -78,7 +78,7 @@
 #include <dlfcn.h>
 #endif
 
-// TODO:  Unfortunately we have some dependencies on Audacity provided 
+// TODO:  Unfortunately we have some dependencies on Audacium provided 
 //        dialogs, widgets and other stuff.  This will need to be cleaned up.
 
 #include "../../FileNames.h"
@@ -86,7 +86,7 @@
 #include "../../ShuttleGui.h"
 #include "../../effects/Effect.h"
 #include "../../widgets/valnum.h"
-#include "../../widgets/AudacityMessageBox.h"
+#include "../../widgets/AudaciumMessageBox.h"
 #include "../../widgets/NumericTextCtrl.h"
 #include "../../xml/XMLFileReader.h"
 
@@ -94,7 +94,7 @@
 #include "../../widgets/WindowAccessible.h"
 #endif
 
-#include "audacity/ConfigInterface.h"
+#include "audacium/ConfigInterface.h"
 
 #include <cstring>
 
@@ -132,14 +132,14 @@ static uint32_t reinterpretAsUint32(float f)
 //
 // Module registration entry point
 //
-// This is the symbol that Audacity looks for when the module is built as a
+// This is the symbol that Audacium looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Audacity, we use the same function, but it is
+// When the module is builtin to Audacium, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 //
 // ============================================================================
-DECLARE_MODULE_ENTRY(AudacityModule)
+DECLARE_MODULE_ENTRY(AudaciumModule)
 {
    // Create our effects module and register
    // Trust the module manager not to leak this
@@ -151,7 +151,7 @@ DECLARE_MODULE_ENTRY(AudacityModule)
 // Register this as a builtin module
 // 
 // We also take advantage of the fact that wxModules are initialized before
-// the wxApp::OnInit() method is called.  We check to see if Audacity was
+// the wxApp::OnInit() method is called.  We check to see if Audacium was
 // executed to scan a VST effect in a different process.
 //
 // ============================================================================
@@ -173,8 +173,8 @@ public:
       {
          // NOTE:  This can really hide failures, which is what we want for those pesky
          //        VSTs that are bad or that our support isn't correct.  But, it can also
-         //        hide Audacity failures in the subprocess, so if you're having an unruley
-         //        VST or odd Audacity failures, comment it out and you might get more info.
+         //        hide Audacium failures in the subprocess, so if you're having an unruley
+         //        VST or odd Audacium failures, comment it out and you might get more info.
          //wxHandleFatalExceptions();
          VSTEffectsModule::Check(wxTheApp->argv[2]);
 
@@ -330,7 +330,7 @@ ComponentInterfaceSymbol VSTEffectsModule::GetSymbol()
 
 VendorSymbol VSTEffectsModule::GetVendor()
 {
-   return XO("The Audacity Team");
+   return XO("The Audacium Team");
 }
 
 wxString VSTEffectsModule::GetVersion()
@@ -341,7 +341,7 @@ wxString VSTEffectsModule::GetVersion()
 
 TranslatableString VSTEffectsModule::GetDescription()
 {
-   return XO("Adds the ability to use VST effects in Audacity.");
+   return XO("Adds the ability to use VST effects in Audacium.");
 }
 
 // ============================================================================
@@ -702,7 +702,7 @@ VSTEffectsModule::CreateInstance(const PluginPath & path)
 
 // static
 //
-// Called from reinvokation of Audacity or DLL to check in a separate process
+// Called from reinvokation of Audacium or DLL to check in a separate process
 void VSTEffectsModule::Check(const wxChar *path)
 {
    VSTEffect effect(path);
@@ -826,7 +826,7 @@ void VSTEffectOptionsDialog::PopulateOrExchange(ShuttleGui & S)
          {
             S.AddVariableText( XO(
 "As part of their processing, some VST effects must delay returning "
-"audio to Audacity. When not compensating for this delay, you will "
+"audio to Audacium. When not compensating for this delay, you will "
 "notice that small silences have been inserted into the audio. "
 "Enabling this option will provide that compensation, but it may "
 "not work for all VST effects."),
@@ -956,11 +956,11 @@ intptr_t VSTEffect::AudioMaster(AEffect * effect,
          return mCurrentEffectID;
 
       case audioMasterGetVendorString:
-         strcpy((char *) ptr, "Audacity Team");    // Do not translate, max 64 + 1 for null terminator
+         strcpy((char *) ptr, "Audacium Team");    // Do not translate, max 64 + 1 for null terminator
          return 1;
 
       case audioMasterGetProductString:
-         strcpy((char *) ptr, "Audacity");         // Do not translate, max 64 + 1 for null terminator
+         strcpy((char *) ptr, "Audacium");         // Do not translate, max 64 + 1 for null terminator
          return 1;
 
       case audioMasterGetVendorVersion:
@@ -1585,7 +1585,7 @@ bool VSTEffect::RealtimeProcessEnd()
 /// from the beginning.  I've left the default 8k, just in case, but now the user
 /// can set the buffering based on their specific setup and needs.
 ///
-/// And at the same time I added buffer delay compensation, which allows Audacity
+/// And at the same time I added buffer delay compensation, which allows Audacium
 /// to account for latency introduced by some effects.  This is based on information
 /// provided by the effect, so it will not work with all effects since they don't
 /// all provide the information (kn0ck0ut is one).
@@ -1860,7 +1860,7 @@ void VSTEffect::ExportPresets()
       {
         { XO("Standard VST bank file"), { wxT("fxb") }, true },
         { XO("Standard VST program file"), { wxT("fxp") }, true },
-        { XO("Audacity VST preset file"), { wxT("xml") }, true },
+        { XO("Audacium VST preset file"), { wxT("xml") }, true },
       },
       wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
       NULL);
@@ -1889,7 +1889,7 @@ void VSTEffect::ExportPresets()
    else
    {
       // This shouldn't happen, but complain anyway
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Unrecognized file extension."),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -1946,7 +1946,7 @@ void VSTEffect::ImportPresets()
    else
    {
       // This shouldn't happen, but complain anyway
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Unrecognized file extension."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -1957,7 +1957,7 @@ void VSTEffect::ImportPresets()
 
    if (!success)
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Unable to load presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -2116,8 +2116,8 @@ bool VSTEffect::Load()
    // Attempt to load it
    //
    // Spent a few days trying to figure out why some VSTs where running okay and
-   // others were hit or miss.  The cause was that we export all of Audacity's
-   // symbols and some of the loaded libraries were picking up Audacity's and 
+   // others were hit or miss.  The cause was that we export all of Audacium's
+   // symbols and some of the loaded libraries were picking up Audacium's and 
    // not their own.
    //
    // So far, I've only seen this issue on Linux, but we might just be getting
@@ -2125,7 +2125,7 @@ bool VSTEffect::Load()
    // the better.
    //
    // To get around the problem, I just added the RTLD_DEEPBIND flag to the load
-   // and that "basically" puts Audacity last when the loader needs to resolve
+   // and that "basically" puts Audacium last when the loader needs to resolve
    // symbols.
    //
    // Once we define a proper external API, the flags can be removed.
@@ -2247,7 +2247,7 @@ bool VSTEffect::Load()
 
          // Make sure we start out with a valid program selection
          // I've found one plugin (SoundHack +morphfilter) that will
-         // crash Audacity when saving the initial default parameters
+         // crash Audacium when saving the initial default parameters
          // with this.
          callSetProgram(0);
 
@@ -3061,7 +3061,7 @@ bool VSTEffect::LoadFXB(const wxFileName & fn)
    ArrayOf<unsigned char> data{ size_t(f.Length()) };
    if (!data)
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Unable to allocate memory when loading presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3076,7 +3076,7 @@ bool VSTEffect::LoadFXB(const wxFileName & fn)
       ssize_t len = f.Read((void *) bptr, f.Length());
       if (f.Error())
       {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO("Unable to read presets file."),
             XO("Error Loading VST Presets"),
             wxOK | wxCENTRE,
@@ -3234,7 +3234,7 @@ bool VSTEffect::LoadFXP(const wxFileName & fn)
    ArrayOf<unsigned char> data{ size_t(f.Length()) };
    if (!data)
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Unable to allocate memory when loading presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3249,7 +3249,7 @@ bool VSTEffect::LoadFXP(const wxFileName & fn)
       ssize_t len = f.Read((void *) bptr, f.Length());
       if (f.Error())
       {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO("Unable to read presets file."),
             XO("Error Loading VST Presets"),
             wxOK | wxCENTRE,
@@ -3446,7 +3446,7 @@ bool VSTEffect::LoadXML(const wxFileName & fn)
    if (!ok)
    {
       // Inform user of load failure
-      AudacityMessageBox(
+      AudaciumMessageBox(
          reader.GetErrorStr(),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3464,7 +3464,7 @@ void VSTEffect::SaveFXB(const wxFileName & fn)
    wxFFile f(fullPath, wxT("wb"));
    if (!f.IsOpened())
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Could not open file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3532,7 +3532,7 @@ void VSTEffect::SaveFXB(const wxFileName & fn)
 
    if (f.Error())
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Error writing to file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3551,7 +3551,7 @@ void VSTEffect::SaveFXP(const wxFileName & fn)
    wxFFile f(fullPath, wxT("wb"));
    if (!f.IsOpened())
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Could not open file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3567,7 +3567,7 @@ void VSTEffect::SaveFXP(const wxFileName & fn)
    f.Write(buf.GetData(), buf.GetDataLen());
    if (f.Error())
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Error writing to file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3764,7 +3764,7 @@ bool VSTEffect::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
             {
                auto msg = XO("This parameter file was saved from %s. Continue?")
                   .Format( value );
-               int result = AudacityMessageBox(
+               int result = AudaciumMessageBox(
                   msg,
                   XO("Confirm"),
                   wxYES_NO,

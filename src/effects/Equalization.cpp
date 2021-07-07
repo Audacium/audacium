@@ -1,6 +1,6 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
+   Audacium: A Digital Audio Editor
 
    EffectEqualization.cpp
 
@@ -30,7 +30,7 @@
 
    The filter is applied using overlap/add of Hann windows.
 
-   Clone of the FFT Filter effect, no longer part of Audacity.
+   Clone of the FFT Filter effect, no longer part of Audacium.
 
 *//****************************************************************//**
 
@@ -1614,8 +1614,8 @@ void EffectEqualization::LoadCurves(const wxString &fileName, bool append)
    //
    // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
    //       between wxStandardPaths and wxConfig under Linux.  The latter
-   //       creates a normal file as "$HOME/.audacity", while the former
-   //       expects the ".audacity" portion to be a directory.
+   //       creates a normal file as "$HOME/.audacium", while the former
+   //       expects the ".audacium" portion to be a directory.
    // MJS:  I don't know what the above means, or if I have broken it.
    wxFileName fn;
 
@@ -1696,7 +1696,7 @@ void EffectEqualization::LoadCurves(const wxString &fileName, bool append)
 }
 
 //
-// Update presets to match Audacity version.
+// Update presets to match Audacium version.
 //
 void EffectEqualization::UpdateDefaultCurves(bool updateAll /* false */)
 {
@@ -1831,7 +1831,7 @@ bool EffectEqualization::GetDefaultFileName(wxFileName &fileName)
       //auto errorMessage = XO("EQCurves.xml and EQDefaultCurves.xml were not found on your system.\nPlease press 'help' to visit the download page.\n\nSave the curves at %s")
       //   .Format( FileNames::DataDir() );
       //ShowErrorDialog(mUIParent, XO("EQCurves.xml and EQDefaultCurves.xml missing"),
-      //   errorMessage, wxT("http://wiki.audacityteam.org/wiki/EQCurvesDownload"), false);
+      //   errorMessage, wxT("http://wiki.audaciumteam.org/wiki/EQCurvesDownload"), false);
 
       // Have another go at finding EQCurves.xml in the data dir, in case 'help' helped
       fileName = wxFileName( FileNames::DataDir(), wxT("EQDefaultCurves.xml") );
@@ -1852,8 +1852,8 @@ void EffectEqualization::SaveCurves(const wxString &fileName)
       //
       // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
       //       between wxStandardPaths and wxConfig under Linux.  The latter
-      //       creates a normal file as "$HOME/.audacity", while the former
-      //       expects the ".audacity" portion to be a directory.
+      //       creates a normal file as "$HOME/.audacium", while the former
+      //       expects the ".audacium" portion to be a directory.
       fn = wxFileName( FileNames::DataDir(), wxT("EQCurves.xml") );
 
       // If the directory doesn't exist...
@@ -3566,7 +3566,7 @@ void EditCurvesDialog::OnRename(wxCommandEvent & WXUNUSED(event))
       {   // Show the dialog and bail if the user cancels
          bad = false;
          // build the dialog
-         AudacityTextEntryDialog dlg( this,
+         AudaciumTextEntryDialog dlg( this,
             XO("Rename '%s' to...").Format( mEditCurves[ item ].Name ),
             XO("Rename...") );
          dlg.SetTextValidator( wxFILTER_EXCLUDE_CHAR_LIST );
@@ -3833,7 +3833,7 @@ void EditCurvesDialog::OnExport( wxCommandEvent & WXUNUSED(event))
 void EditCurvesDialog::OnLibrary( wxCommandEvent & WXUNUSED(event))
 {
    // full path to wiki.
-   wxLaunchDefaultBrowser(wxT("https://wiki.audacityteam.org/wiki/EQCurvesDownload"));
+   wxLaunchDefaultBrowser(wxT("https://wiki.audaciumteam.org/wiki/EQCurvesDownload"));
 }
 
 void EditCurvesDialog::OnDefaults( wxCommandEvent & WXUNUSED(event))

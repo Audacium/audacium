@@ -1,10 +1,10 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectWindow.cpp
 
-Paul Licameli split from AudacityProject.cpp
+Paul Licameli split from AudaciumProject.cpp
 
 **********************************************************************/
 
@@ -364,7 +364,7 @@ MouseWheelHandler()
 mutable double mVertScrollRemainder = 0.0;
 
 unsigned operator()
-   ( const TrackPanelMouseEvent &evt, AudacityProject *pProject ) const
+   ( const TrackPanelMouseEvent &evt, AudaciumProject *pProject ) const
 {
    using namespace RefreshCode;
 
@@ -396,11 +396,11 @@ unsigned operator()
    {
 #if 0
          // JKC: Alternative scroll wheel zooming code
-         // using AudacityProject zooming, which is smarter,
+         // using AudaciumProject zooming, which is smarter,
          // it keeps selections on screen and centred if it can,
          // also this ensures mousewheel and zoom buttons give same result.
          double ZoomFactor = pow(2.0, steps);
-         AudacityProject *p = GetProject();
+         AudaciumProject *p = GetProject();
          if( steps > 0 )
             // PRL:  Track panel refresh may be needed if you reenable this
             // code, but we don't want this file dependent on TrackPanel.cpp
@@ -496,8 +496,8 @@ unsigned operator()
 
 } sMouseWheelHandler;
 
-AudacityProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
-   []( AudacityProject &parent ) -> wxWeakRef< wxWindow > {
+AudaciumProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
+   []( AudaciumProject &parent ) -> wxWeakRef< wxWindow > {
       wxRect wndRect;
       bool bMaximized = false;
       bool bIconized = false;
@@ -529,26 +529,26 @@ AudacityProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
 
 }
 
-ProjectWindow &ProjectWindow::Get( AudacityProject &project )
+ProjectWindow &ProjectWindow::Get( AudaciumProject &project )
 {
    return project.AttachedWindows::Get< ProjectWindow >( sProjectWindowKey );
 }
 
-const ProjectWindow &ProjectWindow::Get( const AudacityProject &project )
+const ProjectWindow &ProjectWindow::Get( const AudaciumProject &project )
 {
-   return Get( const_cast< AudacityProject & >( project ) );
+   return Get( const_cast< AudaciumProject & >( project ) );
 }
 
-ProjectWindow *ProjectWindow::Find( AudacityProject *pProject )
+ProjectWindow *ProjectWindow::Find( AudaciumProject *pProject )
 {
    return pProject
       ? pProject->AttachedWindows::Find< ProjectWindow >( sProjectWindowKey )
       : nullptr;
 }
 
-const ProjectWindow *ProjectWindow::Find( const AudacityProject *pProject )
+const ProjectWindow *ProjectWindow::Find( const AudaciumProject *pProject )
 {
-   return Find( const_cast< AudacityProject * >( pProject ) );
+   return Find( const_cast< AudaciumProject * >( pProject ) );
 }
 
 int ProjectWindow::NextWindowID()
@@ -568,7 +568,7 @@ enum {
 };
 
 //If you want any of these files, ask JKC.  They are not
-//yet checked in to Audacity SVN as of 12-Feb-2010
+//yet checked in to Audacium SVN as of 12-Feb-2010
 #ifdef EXPERIMENTAL_NOTEBOOK
    #include "GuiFactory.h"
    #include "APanel.h"
@@ -576,7 +576,7 @@ enum {
 
 ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
                                  const wxPoint & pos,
-                                 const wxSize & size, AudacityProject &project)
+                                 const wxSize & size, AudaciumProject &project)
    : ProjectWindowBase{ parent, id, pos, size, project }
 {
    mNextWindowID = NextID;
@@ -612,7 +612,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
       this, wxPoint( left, top ), wxSize( width, height ) );
    pNotebook  = Factory.AddNotebook( mMainPanel );
    /* i18n-hint: This is an experimental feature where the main panel in
-      Audacity is put on a notebook tab, and this is the name on that tab.
+      Audacium is put on a notebook tab, and this is the name on that tab.
       Other tabs in that notebook may have instruments, patch panels etc.*/
    pPage = Factory.AddPage( pNotebook, _("Main Mix"));
 #else
@@ -627,7 +627,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    mMainPanel->SetLabel("Main Panel");// Not localised.
    pPage = mMainPanel;
    // Set the colour here to the track panel background to avoid
-   // flicker when Audacity starts up.
+   // flicker when Audacium starts up.
    // However, that leads to areas next to the horizontal scroller
    // being painted in background colour and not scroller background
    // colour, so suppress this for now.
@@ -646,7 +646,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    // PRL: Old comments below.  No longer observing the ordering that it
    //      recommends.  ProjectWindow::OnActivate puts the focus directly into
    //      the TrackPanel, which avoids the problems.
-   // LLL: When Audacity starts or becomes active after returning from
+   // LLL: When Audacium starts or becomes active after returning from
    //      another application, the first window that can accept focus
    //      will be given the focus even if we try to SetFocus().  By
    //      creating the scrollbars after the TrackPanel, we resolve
@@ -1075,7 +1075,7 @@ void ProjectWindow::FixScrollbars()
    // Setting mVSbar earlier, int HandlXMLTag, didn't succeed in restoring
    // the vertical scrollbar to its saved position.  So defer that till now.
    // mbInitializingScrollbar should be true only at the start of the life
-   // of an AudacityProject reopened from disk.
+   // of an AudaciumProject reopened from disk.
    if (!mbInitializingScrollbar) {
       viewInfo.vpos = mVsbar->GetThumbPosition() * viewInfo.scrollStep;
    }
@@ -1353,14 +1353,14 @@ void ProjectWindow::OnShow(wxShowEvent & event)
    // Remember that the window has been shown at least once
    mShownOnce = true;
 
-   // (From Debian...see also TrackPanel::OnTimer and AudacityTimer::Notify)
+   // (From Debian...see also TrackPanel::OnTimer and AudaciumTimer::Notify)
    //
    // Description: Workaround for wxWidgets bug: Reentry in clipboard
    //  The wxWidgets bug http://trac.wxwidgets.org/ticket/16636 prevents
    //  us from doing clipboard operations in wxShowEvent and wxTimerEvent
    //  processing because those event could possibly be processed during
    //  the (not sufficiently protected) Yield() of a first clipboard
-   //  operation, causing reentry. Audacity had a workaround in place
+   //  operation, causing reentry. Audacium had a workaround in place
    //  for this problem (the class "CaptureEvents"), which however isn't
    //  applicable with wxWidgets 3.0 because it's based on changing the
    //  gdk event handler, a change that would be overridden by wxWidgets's
@@ -1514,10 +1514,10 @@ void ProjectWindow::OnActivate(wxActivateEvent & event)
    mActive = event.GetActive();
 
    // Under Windows, focus can be "lost" when returning to
-   // Audacity from a different application.
+   // Audacium from a different application.
    //
    // This was observed by minimizing all windows using WINDOWS+M and
-   // then ALT+TAB to return to Audacity.  Focus will be given to the
+   // then ALT+TAB to return to Audacium.  Focus will be given to the
    // project window frame which is not at all useful.
    //
    // So, we use ToolManager's observation of focus changes in a wxEventFilter.
@@ -1658,7 +1658,7 @@ void ProjectWindow::TP_HandleResize()
    HandleResize();
 }
 
-ProjectWindow::PlaybackScroller::PlaybackScroller(AudacityProject *project)
+ProjectWindow::PlaybackScroller::PlaybackScroller(AudaciumProject *project)
 : mProject(project)
 {
    mProject->Bind(EVT_TRACK_PANEL_TIMER,

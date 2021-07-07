@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ProgressDialog.cpp
 
@@ -22,7 +22,7 @@
 *//*******************************************************************//**
 
 \class ProgressDialog
-\brief Custom progress dialog with Audacity specific semantics.
+\brief Custom progress dialog with Audacium specific semantics.
 
 *//**********************************************************************/
 
@@ -1309,7 +1309,7 @@ bool ProgressDialog::Create(const TranslatableString & title,
    // of allowing other tasks to run before this one is complete.
    //
    // Reviewed this code per Proposed Features #1, at
-   // http://wiki.audacityteam.org/wiki/Proposal_Timer_Record_Improvements.
+   // http://wiki.audaciumteam.org/wiki/Proposal_Timer_Record_Improvements.
    // Note that this causes a problem for Timer Record wait dialog
    // (see TimerRecordDialog::RunWaitDialog()), because it makes it
    // impossible to do any editing, even in other open projects,
@@ -1641,7 +1641,7 @@ bool ProgressDialog::ConfirmAction(const TranslatableString & sPrompt,
       return true;
    }
 
-   AudacityMessageDialog dlgMessage(
+   AudaciumMessageDialog dlgMessage(
       this,
       sPrompt,
       sTitle,

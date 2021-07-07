@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 SqliteSampleBlock.cpp
 
@@ -133,7 +133,7 @@ class SqliteSampleBlockFactory final
    , public std::enable_shared_from_this<SqliteSampleBlockFactory>
 {
 public:
-   explicit SqliteSampleBlockFactory( AudacityProject &project );
+   explicit SqliteSampleBlockFactory( AudaciumProject &project );
 
    ~SqliteSampleBlockFactory() override;
 
@@ -170,7 +170,7 @@ private:
    BlockDeletionCallback mCallback;
 };
 
-SqliteSampleBlockFactory::SqliteSampleBlockFactory( AudacityProject &project )
+SqliteSampleBlockFactory::SqliteSampleBlockFactory( AudaciumProject &project )
    : mppConnection{ ConnectionPtr::Get(project).shared_from_this() }
 {
    
@@ -447,7 +447,7 @@ bool SqliteSampleBlock::GetSummary(float *dest,
                      numframes * fields * SAMPLE_SIZE(floatSample));
          return true;
       }
-      catch ( const AudacityException & ) {
+      catch ( const AudaciumException & ) {
       }
    }
    memset(dest, 0, 3 * numframes * sizeof( float ));
@@ -1022,7 +1022,7 @@ static struct Injector
    {
       // Do this some time before the first project is created
       (void) SampleBlockFactory::RegisterFactoryFactory(
-         []( AudacityProject &project )
+         []( AudaciumProject &project )
          {
             return std::make_shared<SqliteSampleBlockFactory>( project );
          }

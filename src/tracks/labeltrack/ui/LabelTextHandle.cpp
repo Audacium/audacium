@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 LabelTextHandle.cpp
 
@@ -32,7 +32,7 @@ LabelTextHandle::LabelTextHandle
 {
 }
 
-void LabelTextHandle::Enter(bool, AudacityProject *)
+void LabelTextHandle::Enter(bool, AudaciumProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -70,7 +70,7 @@ LabelTextHandle::~LabelTextHandle()
 {
 }
 
-void LabelTextHandle::HandleTextClick(AudacityProject &
+void LabelTextHandle::HandleTextClick(AudaciumProject &
 #if defined(__WXGTK__) && (HAVE_GTK)
                                                        project
 #endif
@@ -150,7 +150,7 @@ void LabelTextHandle::HandleTextClick(AudacityProject &
 }
 
 UIHandle::Result LabelTextHandle::Click
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    auto pLT = mpLT.lock();
    if (!pLT)
@@ -198,7 +198,7 @@ UIHandle::Result LabelTextHandle::Click
 }
 
 void LabelTextHandle::HandleTextDragRelease(
-   AudacityProject &project, const wxMouseEvent & evt)
+   AudaciumProject &project, const wxMouseEvent & evt)
 {
    auto pTrack = mpLT.lock();
    if (!pTrack)
@@ -251,7 +251,7 @@ void LabelTextHandle::HandleTextDragRelease(
 }
 
 UIHandle::Result LabelTextHandle::Drag
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    auto &project = *pProject;
    using namespace RefreshCode;
@@ -287,13 +287,13 @@ UIHandle::Result LabelTextHandle::Drag
 }
 
 HitTestPreview LabelTextHandle::Preview
-(const TrackPanelMouseState &, AudacityProject *)
+(const TrackPanelMouseState &, AudaciumProject *)
 {
    return HitPreview();
 }
 
 UIHandle::Result LabelTextHandle::Release
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject,
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject,
  wxWindow *pParent)
 {
    auto result = LabelDefaultClickHandle::Release( evt, pProject, pParent );
@@ -318,7 +318,7 @@ UIHandle::Result LabelTextHandle::Release
    return result | RefreshCode::RefreshNone;
 }
 
-UIHandle::Result LabelTextHandle::Cancel( AudacityProject *pProject )
+UIHandle::Result LabelTextHandle::Cancel( AudaciumProject *pProject )
 {
    // Restore the selection states of tracks
    // Note that we are also relying on LabelDefaultClickHandle::Cancel

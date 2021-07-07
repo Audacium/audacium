@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   CrossPlatform.dox2
 
@@ -40,7 +40,7 @@ Instead use the traditional:
 
 \section UnicodeStrings Unicode strings
 
-Audacity code is translated, and it may be built in Unicode versions.  
+Audacium code is translated, and it may be built in Unicode versions.  
 For this reason all strings should be wrapped like this:
 
 \code

@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file HeadersList.cpp
  @brief Define HTTP headers list class.
@@ -27,7 +27,7 @@
 #include <algorithm>
 #include <cctype>
 
-namespace audacity
+namespace audacium
 {
 namespace network_manager
 {

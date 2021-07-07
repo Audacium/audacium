@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   BatchPrefs.cpp
 
@@ -82,7 +82,7 @@ void BatchPrefs::PopulateOrExchange( ShuttleGui & S )
    return;
 }
 
-/// Send changed values back to Prefs, and update Audacity.
+/// Send changed values back to Prefs, and update Audacium.
 bool BatchPrefs::Commit()
 {
    ShuttleGui S( this, eIsSavingToPrefs );
@@ -98,7 +98,7 @@ BatchPrefs::~BatchPrefs()
 #if 0
 namespace{
 PrefsPanel::Registration sAttachment{ "Batch",
-   [](wxWindow *parent, wxWindowID winid, AudacityProject *)
+   [](wxWindow *parent, wxWindowID winid, AudaciumProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew BatchPrefs(parent, winid);

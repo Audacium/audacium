@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   TrackPanelAx.cpp
 
@@ -36,7 +36,7 @@
 
 wxDEFINE_EVENT(EVT_TRACK_FOCUS_CHANGE, wxCommandEvent);
 
-TrackPanelAx::TrackPanelAx( AudacityProject &project )
+TrackPanelAx::TrackPanelAx( AudaciumProject &project )
    :
 #if wxUSE_ACCESSIBILITY
      WindowAccessible( nullptr ) // window pointer must be set after construction
@@ -328,7 +328,7 @@ wxAccStatus TrackPanelAx::GetLocation( wxRect& rect, int elementId )
       }
 
       rect = mFinder ? mFinder( *t ) : wxRect{};
-      // Inflate the screen reader's rectangle so it overpaints Audacity's own
+      // Inflate the screen reader's rectangle so it overpaints Audacium's own
       // yellow focus rectangle.
 #ifdef __WXMAC__
       const int dx = 2;
@@ -727,23 +727,23 @@ wxAccStatus TrackPanelAx::Select(int childId, wxAccSelectionFlags selectFlags)
 
 #endif // wxUSE_ACCESSIBILITY
 
-static const AudacityProject::AttachedObjects::RegisteredFactory key{
-   []( AudacityProject &parent ){
+static const AudaciumProject::AttachedObjects::RegisteredFactory key{
+   []( AudaciumProject &parent ){
       return std::make_shared< TrackFocus >( parent );
    }
 };
 
-TrackFocus &TrackFocus::Get( AudacityProject &project )
+TrackFocus &TrackFocus::Get( AudaciumProject &project )
 {
    return project.AttachedObjects::Get< TrackFocus >( key );
 }
 
-const TrackFocus &TrackFocus::Get( const AudacityProject &project )
+const TrackFocus &TrackFocus::Get( const AudaciumProject &project )
 {
-   return Get( const_cast< AudacityProject & >( project ) );
+   return Get( const_cast< AudaciumProject & >( project ) );
 }
 
-TrackFocus::TrackFocus( AudacityProject &project )
+TrackFocus::TrackFocus( AudaciumProject &project )
    : mProject{ project }
 {
 }

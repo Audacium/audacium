@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   HelpSystem.h
 
@@ -27,13 +27,13 @@
 #include "wxPanelWrapper.h" // to inherit
 #include "../HelpText.h"
 
-class AudacityProject;
+class AudaciumProject;
 
 /** @brief Class which contains static methods and data needed for implementing
  * help buttons
  *
  * This class should be the only place in the codebase where the location of
- * the online copy of the Audacity manual is stored, so that it can be 
+ * the online copy of the Audacium manual is stored, so that it can be 
  * changed if required
  */
 class AUDACITY_DLL_API HelpSystem
@@ -79,7 +79,7 @@ public:
                      bool bModal = false,
                      bool alwaysDefaultBrowser = false);
 
-   /// Displays a page from the Audacity manual  in your browser, if
+   /// Displays a page from the Audacium manual  in your browser, if
    /// it's available locally, OR else links to the internet.
    /// @param parent Parent window for the dialog
    /// @param PageName The name of the manual page to display as it is in

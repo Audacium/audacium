@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 TrackVRulerControls.h
 
@@ -35,7 +35,7 @@ public:
    // Define a default hit test method, just for message and cursor
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const AudacityProject *pProject) override;
+       const AudaciumProject *pProject) override;
 
    // Helpers for handle classes' TrackPanelDrawable implementations
    static void DrawZooming

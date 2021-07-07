@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    File License: wxWidgets
 
    Dan Horgan
@@ -39,7 +39,7 @@ void BatchEvalCommandType::BuildSignature(CommandSignature &signature)
    signature.AddParameter(wxT("MacroName"), wxT(""), std::move(macroValidator));
 }
 
-OldStyleCommandPointer BatchEvalCommandType::Create( AudacityProject *project,
+OldStyleCommandPointer BatchEvalCommandType::Create( AudaciumProject *project,
    std::unique_ptr<CommandOutputTargets> && WXUNUSED(target))
 {
    return std::make_shared<BatchEvalCommand>(*project, *this);

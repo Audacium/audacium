@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 LabelDefaultClickHandle.cpp
 
@@ -31,7 +31,7 @@ struct LabelDefaultClickHandle::LabelState {
    > mPairs;
 };
 
-void LabelDefaultClickHandle::SaveState( AudacityProject *pProject )
+void LabelDefaultClickHandle::SaveState( AudaciumProject *pProject )
 {
    mLabelState = std::make_shared<LabelState>();
    auto &pairs = mLabelState->mPairs;
@@ -44,7 +44,7 @@ void LabelDefaultClickHandle::SaveState( AudacityProject *pProject )
    }
 }
 
-void LabelDefaultClickHandle::RestoreState( AudacityProject *pProject )
+void LabelDefaultClickHandle::RestoreState( AudaciumProject *pProject )
 {
    if ( mLabelState ) {
       for ( const auto &pair : mLabelState->mPairs )
@@ -57,7 +57,7 @@ void LabelDefaultClickHandle::RestoreState( AudacityProject *pProject )
 }
 
 UIHandle::Result LabelDefaultClickHandle::Click
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    using namespace RefreshCode;
    // Redraw to show the change of text box selection status
@@ -81,20 +81,20 @@ UIHandle::Result LabelDefaultClickHandle::Click
 }
 
 UIHandle::Result LabelDefaultClickHandle::Drag
-(const TrackPanelMouseEvent &WXUNUSED(evt), AudacityProject *WXUNUSED(pProject))
+(const TrackPanelMouseEvent &WXUNUSED(evt), AudaciumProject *WXUNUSED(pProject))
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result LabelDefaultClickHandle::Release
-(const TrackPanelMouseEvent &WXUNUSED(evt), AudacityProject *WXUNUSED(pProject),
+(const TrackPanelMouseEvent &WXUNUSED(evt), AudaciumProject *WXUNUSED(pProject),
  wxWindow *WXUNUSED(pParent))
 {
    mLabelState.reset();
    return RefreshCode::RefreshNone;
 }
 
-UIHandle::Result LabelDefaultClickHandle::Cancel(AudacityProject *pProject)
+UIHandle::Result LabelDefaultClickHandle::Cancel(AudaciumProject *pProject)
 {
    UIHandle::Result result = RefreshCode::RefreshNone;
    RestoreState( pProject );

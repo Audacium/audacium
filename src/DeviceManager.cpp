@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2010 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2010 Audacium Team
    Michael Chinen
 
 ******************************************************************/

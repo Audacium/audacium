@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ErrorDialog.h
 
@@ -19,7 +19,7 @@
 #include <wx/msgdlg.h> // to inherit
 #include "wxPanelWrapper.h" // to inherit
 
-class AudacityProject;
+class AudaciumProject;
 class wxCollapsiblePaneEvent;
 
 class ErrorDialog /* not final */ : public wxDialogWrapper
@@ -73,14 +73,14 @@ void ShowModelessErrorDialog(wxWindow *parent,
 #include <wx/textdlg.h> // to inherit
 
 /**************************************************************************//**
-\class AudacityTextEntryDialog
+\class AudaciumTextEntryDialog
 \brief Wrap wxTextEntryDialog so that caption IS translatable.
 ********************************************************************************/
-class AUDACITY_DLL_API AudacityTextEntryDialog
+class AUDACITY_DLL_API AudaciumTextEntryDialog
    : public wxTabTraversalWrapper< wxTextEntryDialog >
 {
 public:
-    AudacityTextEntryDialog(
+    AudaciumTextEntryDialog(
          wxWindow *parent,
          const TranslatableString& message,
          const TranslatableString& caption, // don't use = wxGetTextFromUserPromptStr,

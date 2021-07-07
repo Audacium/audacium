@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 SampleBlock.cpp
 
@@ -28,7 +28,7 @@ SampleBlockFactoryFactory SampleBlockFactory::RegisterFactoryFactory(
    return result;
 }
 
-SampleBlockFactoryPtr SampleBlockFactory::New( AudacityProject &project )
+SampleBlockFactoryPtr SampleBlockFactory::New( AudaciumProject &project )
 {
    auto &factory = installedFactory();
    if ( ! factory )

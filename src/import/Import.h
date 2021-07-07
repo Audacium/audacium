@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Import.h
 
@@ -23,7 +23,7 @@
 
 class wxArrayString;
 class wxListBox;
-class AudacityProject;
+class AudaciumProject;
 class Tags;
 class WaveTrackFactory;
 class Track;
@@ -168,7 +168,7 @@ public:
     std::unique_ptr<ExtImportItem> CreateDefaultImportItem();
 
    // if false, the import failed and errorMessage will be set.
-   bool Import( AudacityProject &project,
+   bool Import( AudaciumProject &project,
               const FilePath &fName,
               WaveTrackFactory *trackFactory,
               TrackHolders &tracks,

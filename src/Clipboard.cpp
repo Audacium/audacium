@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Clipboard.cpp
 
@@ -50,7 +50,7 @@ void Clipboard::Clear()
 }
 
 void Clipboard::Assign( TrackList && newContents,
-   double t0, double t1, const std::weak_ptr<AudacityProject> &pProject )
+   double t0, double t1, const std::weak_ptr<AudaciumProject> &pProject )
 {
    newContents.Swap( *mTracks );
    newContents.Clear();

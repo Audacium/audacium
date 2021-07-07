@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AudioIO.h
 
@@ -51,7 +51,7 @@ class Resample;
 class AudioThread;
 class SelectedRegion;
 
-class AudacityProject;
+class AudaciumProject;
 
 class WaveTrack;
 using WaveTrackArray = std::vector < std::shared_ptr < WaveTrack > >;
@@ -117,10 +117,10 @@ struct TransportTracks {
  * structure, which tells us how long we have been playing / recording
  * @param statusFlags PortAudio stream status flags
  * @param userData pointer to user-defined data structure. Provided for
- * flexibility by PortAudio, but not used by Audacity - the data is stored in
+ * flexibility by PortAudio, but not used by Audacium - the data is stored in
  * the AudioIO class instead.
  */
-int audacityAudioCallback(
+int audaciumAudioCallback(
    const void *inputBuffer, void *outputBuffer,
    unsigned long framesPerBuffer,
    const PaStreamCallbackTimeInfo *timeInfo,
@@ -548,7 +548,7 @@ public:
    // Used only for testing purposes in alpha builds
    bool mSimulateRecordingErrors{ false };
 
-   // Whether to check the error code passed to audacityAudioCallback to
+   // Whether to check the error code passed to audaciumAudioCallback to
    // detect more dropouts
    bool mDetectUpstreamDropouts{ true };
 
@@ -642,7 +642,7 @@ public:
    wxString LastPaErrorString();
 
    wxLongLong GetLastPlaybackTime() const { return mLastPlaybackTimeMillis; }
-   AudacityProject *GetOwningProject() const { return mOwningProject; }
+   AudaciumProject *GetOwningProject() const { return mOwningProject; }
 
    /** \brief Pause and un-pause playback and recording */
    void SetPaused(bool state);
@@ -703,13 +703,13 @@ public:
       double AILAGetLastDecisionTime();
    #endif
 
-   bool IsAvailable(AudacityProject *projecT) const;
+   bool IsAvailable(AudaciumProject *projecT) const;
 
    /** \brief Return a valid sample rate that is supported by the current I/O
    * device(s).
    *
    * The return from this function is used to determine the sample rate that
-   * audacity actually runs the audio I/O stream at. if there is no suitable
+   * audacium actually runs the audio I/O stream at. if there is no suitable
    * rate available from the hardware, it returns 0.
    * The sampleRate argument gives the desired sample rate (the rate of the
    * audio to be handled, i.e. the currently Project Rate).

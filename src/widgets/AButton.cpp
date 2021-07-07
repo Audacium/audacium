@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AButton.cpp
 
@@ -11,7 +11,7 @@
 \class AButton
 \brief A wxButton with mouse-over behaviour.
 
-  AButton is a custom button class for Audacity.  The main feature it
+  AButton is a custom button class for Audacium.  The main feature it
   supports that a wxButton does not is mouseovers.
 
   It uses an image for all of its states: up, over, down, and

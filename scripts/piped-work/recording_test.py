@@ -18,7 +18,7 @@ User supplied variables
 With a little modification, can be suitable for rinse and repeat with different
 input files.
 
-Make sure Audacity is running and that mod-script-pipe is enabled
+Make sure Audacium is running and that mod-script-pipe is enabled
 before running this script.
 """
 
@@ -62,21 +62,21 @@ if sys.platform == 'win32':
     EOL = '\r\n\0'
 else:
     print("recording-test.py, running on linux or mac")
-    PIPE_TO_AUDACITY = '/tmp/audacity_script_pipe.to.' + str(os.getuid())
-    PIPE_FROM_AUDACITY = '/tmp/audacity_script_pipe.from.' + str(os.getuid())
+    PIPE_TO_AUDACITY = '/tmp/audacium_script_pipe.to.' + str(os.getuid())
+    PIPE_FROM_AUDACITY = '/tmp/audacium_script_pipe.from.' + str(os.getuid())
     EOL = '\n'
 
 
 print("Write to  \"" + PIPE_TO_AUDACITY +"\"")
 if not os.path.exists(PIPE_TO_AUDACITY):
     print(""" ..does not exist.
-    Ensure Audacity is running with mod-script-pipe.""")
+    Ensure Audacium is running with mod-script-pipe.""")
     sys.exit()
 
 print("Read from \"" + PIPE_FROM_AUDACITY +"\"")
 if not os.path.exists(PIPE_FROM_AUDACITY):
     print(""" ..does not exist.
-    Ensure Audacity is running with mod-script-pipe.""")
+    Ensure Audacium is running with mod-script-pipe.""")
     sys.exit()
 
 print("-- Both pipes exist.  Good.")
@@ -88,14 +88,14 @@ print("-- File to read from has now been opened too\r\n")
 
 
 def send_command(command):
-    """Send a command to Audacity."""
+    """Send a command to Audacium."""
     print("Send: >>> "+command)
     TOPIPE.write(command + EOL)
     TOPIPE.flush()
 
 
 def get_response():
-    """Get response from Audacity."""
+    """Get response from Audacium."""
     line = FROMPIPE.readline()
     result = ""
     while True:

@@ -1,6 +1,6 @@
 //
 //  BackedPanel.cpp
-//  Audacity
+//  Audacium
 //
 //  Created by Paul Licameli on 5/7/16.
 //

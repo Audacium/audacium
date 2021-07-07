@@ -1,6 +1,6 @@
 //
 //  CommandFlag.h
-//  Audacity
+//  Audacium
 //
 //  Created by Paul Licameli on 11/22/16.
 //
@@ -16,9 +16,9 @@
 #include <utility>
 #include <wx/string.h>
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 
-class AudacityProject;
+class AudaciumProject;
 
 // Increase the template parameter as needed to allow more flags
 constexpr size_t NCommandFlags = 64;
@@ -88,7 +88,7 @@ struct CommandFlagOptions{
 class AUDACITY_DLL_API ReservedCommandFlag : public CommandFlag
 {
 public:
-   using Predicate = std::function< bool( const AudacityProject& ) >;
+   using Predicate = std::function< bool( const AudaciumProject& ) >;
    ReservedCommandFlag( const Predicate &predicate,
       const CommandFlagOptions &options = {} );
 };
@@ -106,8 +106,8 @@ public:
 // while they may not have been initialized yet, during static initialization.
 struct MenuItemEnabler {
    using Flags = std::function< CommandFlag() >;
-   using Test = std::function< bool( const AudacityProject& ) >;
-   using Action = std::function< void( AudacityProject&, CommandFlag ) >;
+   using Test = std::function< bool( const AudaciumProject& ) >;
+   using Action = std::function< void( AudaciumProject&, CommandFlag ) >;
 
    const Flags actualFlags;
    const Flags possibleFlags;

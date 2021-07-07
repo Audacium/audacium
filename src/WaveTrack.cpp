@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   WaveTrack.cpp
 
@@ -66,7 +66,7 @@ using std::max;
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "wavetrack" ),
-   []( AudacityProject &project ){
+   []( AudaciumProject &project ){
       auto &trackFactory = WaveTrackFactory::Get( project );
       auto &tracks = TrackList::Get( project );
       auto result = tracks.Add(trackFactory.NewWaveTrack());
@@ -333,7 +333,7 @@ static Container MakeIntervals(const std::vector<WaveClipHolder> &clips)
    return result;
 }
 
-Track::Holder WaveTrack::PasteInto( AudacityProject &project ) const
+Track::Holder WaveTrack::PasteInto( AudaciumProject &project ) const
 {
    auto &trackFactory = WaveTrackFactory::Get( project );
    auto &pSampleBlockFactory = trackFactory.GetSampleBlockFactory();
@@ -745,7 +745,7 @@ void WaveTrack::SetWaveformSettings(std::unique_ptr<WaveformSettings> &&pSetting
 // be pasted with visible split lines.  Normally, effects do not
 // want these extra lines, so they may be merged out.
 //
-/*! @excsafety{Weak} -- This WaveTrack remains destructible in case of AudacityException.
+/*! @excsafety{Weak} -- This WaveTrack remains destructible in case of AudaciumException.
 But some of its cutline clips may have been destroyed. */
 void WaveTrack::ClearAndPaste(double t0, // Start of time to clear
                               double t1, // End of time to clear
@@ -2073,7 +2073,7 @@ void WaveTrack::GetEnvelopeValues(double *buffer, size_t bufferLen,
             if (nClipLen <= 0) // Testing for bug 641, this problem is consistently '== 0', but doesn't hurt to check <.
                return;
 
-            // This check prevents problem cited in http://bugzilla.audacityteam.org/show_bug.cgi?id=528#c11,
+            // This check prevents problem cited in http://bugzilla.audaciumteam.org/show_bug.cgi?id=528#c11,
             // Gale's cross_fade_out project, which was already corrupted by bug 528.
             // This conditional prevents the previous write past the buffer end, in clip->GetEnvelope() call.
             // Never increase rlen here.
@@ -2790,34 +2790,34 @@ void InspectBlocks(const TrackList &tracks, BlockInspector inspector,
 
 #include "Project.h"
 #include "SampleBlock.h"
-static auto TrackFactoryFactory = []( AudacityProject &project ) {
+static auto TrackFactoryFactory = []( AudaciumProject &project ) {
    return std::make_shared< WaveTrackFactory >(
       ProjectSettings::Get( project ),
       SampleBlockFactory::New( project ) );
 };
 
-static const AudacityProject::AttachedObjects::RegisteredFactory key2{
+static const AudaciumProject::AttachedObjects::RegisteredFactory key2{
    TrackFactoryFactory
 };
 
-WaveTrackFactory &WaveTrackFactory::Get( AudacityProject &project )
+WaveTrackFactory &WaveTrackFactory::Get( AudaciumProject &project )
 {
    return project.AttachedObjects::Get< WaveTrackFactory >( key2 );
 }
 
-const WaveTrackFactory &WaveTrackFactory::Get( const AudacityProject &project )
+const WaveTrackFactory &WaveTrackFactory::Get( const AudaciumProject &project )
 {
-   return Get( const_cast< AudacityProject & >( project ) );
+   return Get( const_cast< AudaciumProject & >( project ) );
 }
 
-WaveTrackFactory &WaveTrackFactory::Reset( AudacityProject &project )
+WaveTrackFactory &WaveTrackFactory::Reset( AudaciumProject &project )
 {
    auto result = TrackFactoryFactory( project );
    project.AttachedObjects::Assign( key2, result );
    return *result;
 }
 
-void WaveTrackFactory::Destroy( AudacityProject &project )
+void WaveTrackFactory::Destroy( AudaciumProject &project )
 {
    project.AttachedObjects::Assign( key2, nullptr );
 }

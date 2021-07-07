@@ -27,7 +27,7 @@
 
 #include <wx/setup.h> // for wxUSE_* macros
 
-#include "AudacityMessageBox.h"
+#include "AudaciumMessageBox.h"
 #include "Internat.h"
 
 #ifdef __BORLANDC__
@@ -101,7 +101,7 @@ bool NumValidatorBase::Validate(wxWindow *parent)
 
    if ( !res )
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          errmsg,
          XO("Validation error"),
          wxOK | wxICON_ERROR,

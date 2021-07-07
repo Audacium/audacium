@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   CommandContext.h
 
@@ -14,7 +14,7 @@
 #include <memory>
 #include "Identifier.h"
 
-class AudacityProject;
+class AudaciumProject;
 class wxEvent;
 class CommandOutputTargets;
 using CommandParameter = CommandID;
@@ -22,14 +22,14 @@ using CommandParameter = CommandID;
 class AUDACITY_DLL_API CommandContext {
 public:
    CommandContext(
-      AudacityProject &p
+      AudaciumProject &p
       , const wxEvent *e = nullptr
       , int ii = 0
       , const CommandParameter &param = CommandParameter{}
    );
 
    CommandContext(
-      AudacityProject &p,
+      AudaciumProject &p,
       std::unique_ptr<CommandOutputTargets> target);
 
    ~CommandContext();
@@ -49,7 +49,7 @@ public:
    void AddBool(const bool value      , const wxString &name = {} ) const;
    void AddItem(const double value    , const wxString &name = {} ) const;
 
-   AudacityProject &project;
+   AudaciumProject &project;
    std::unique_ptr<CommandOutputTargets> pOutput;
    const wxEvent *pEvt;
    int index;

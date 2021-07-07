@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AudioIO.cpp
 
@@ -58,14 +58,14 @@ to the meters.
   from disk, but audio buffers are filled far in advance of playback
   time, and there is a lower latency thread (PortAudio's callback) that
   actually sends samples to the output device. The relatively low
-  latency to the output device allows Audacity to stop audio output
+  latency to the output device allows Audacium to stop audio output
   quickly. We want the same behavior for MIDI, but there is not
   periodic callback from PortMidi (because MIDI is asynchronous), so
   this function is performed by the MidiThread class.
 
   \par
   When Audio is running, MIDI is synchronized to Audio. Globals are set
-  in the Audio callback (audacityAudioCallback) for use by a time
+  in the Audio callback (audaciumAudioCallback) for use by a time
   function that reports milliseconds to PortMidi. (Details below.)
 
   \par MIDI Without Audio
@@ -81,7 +81,7 @@ to the meters.
   \par Audio Time
   Normally, the current time during playback is given by the variable
   mTime. mTime normally advances by frames / samplerate each time an
-  audio buffer is output by the audio callback. However, Audacity has
+  audio buffer is output by the audio callback. However, Audacium has
   a speed control that can perform continuously variable time stretching
   on audio. This is achieved in two places: the playback "mixer" that
   generates the samples for output processes the audio according to
@@ -177,7 +177,7 @@ Time (in seconds, = total_sample_count / sample_rate)
   Therefore, we define the following interface for MIDI timing:
   \li \c AudioTime() is the time based on all samples written so far, including zeros output during pauses. AudioTime() is based on the start location mT0, not zero.
   \li \c PauseTime() is the amount of time spent paused, based on a count of zero-padding samples output.
-  \li \c MidiTime() is an estimate in milliseconds of the current audio output time + 1s. In other words, what audacity track time corresponds to the audio (plus pause insertions) at the DAC output?
+  \li \c MidiTime() is an estimate in milliseconds of the current audio output time + 1s. In other words, what audacium track time corresponds to the audio (plus pause insertions) at the DAC output?
 
   \par AudioTime() and PauseTime() computation
   AudioTime() is simply mT0 + mNumFrames / mRate.
@@ -313,7 +313,7 @@ Time (in seconds, = total_sample_count / sample_rate)
   ALSA is complicated because we get varying values of
   framesPerBuffer from callback to callback. It seems there is a lot
   of variation in callback times and buffer space. One solution would
-  be to go to fixed size double buffer, but Audacity seems to work
+  be to go to fixed size double buffer, but Audacium seems to work
   better as is, so Plan C is to rely on one invariant which is that
   the output buffer cannot overflow, so there's a limit to how far
   ahead of the DAC time we can be writing samples into the
@@ -469,7 +469,7 @@ time warp info and AudioIOListener and whether the playback is looped.
 #include "prefs/QualitySettings.h"
 #include "prefs/RecordingPrefs.h"
 #include "widgets/MeterPanelBase.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/ErrorDialog.h"
 
 #ifdef EXPERIMENTAL_MIDI_OUT
@@ -832,7 +832,7 @@ static double SystemTime(bool usingAlsa)
 }
 #endif
 
-int audacityAudioCallback(const void *inputBuffer, void *outputBuffer,
+int audaciumAudioCallback(const void *inputBuffer, void *outputBuffer,
                           unsigned long framesPerBuffer,
                           const PaStreamCallbackTimeInfo *timeInfo,
                           PaStreamCallbackFlags statusFlags, void *userData );
@@ -1012,9 +1012,9 @@ AudioIO::AudioIO()
       wxString paErrStr = LAT1CTOWX(Pa_GetErrorText(err));
       if (!paErrStr.empty())
          errStr += XO("Error: %s").Format( paErrStr );
-      // XXX: we are in libaudacity, popping up dialogs not allowed!  A
+      // XXX: we are in libaudacium, popping up dialogs not allowed!  A
       // long-term solution will probably involve exceptions
-      AudacityMessageBox(
+      AudaciumMessageBox(
          errStr,
          XO("Error Initializing Audio"),
          wxICON_ERROR|wxOK);
@@ -1035,9 +1035,9 @@ AudioIO::AudioIO()
       wxString pmErrStr = LAT1CTOWX(Pm_GetErrorText(pmErr));
       if (!pmErrStr.empty())
          errStr += XO("Error: %s").Format( pmErrStr );
-      // XXX: we are in libaudacity, popping up dialogs not allowed!  A
+      // XXX: we are in libaudacium, popping up dialogs not allowed!  A
       // long-term solution will probably involve exceptions
-      AudacityMessageBox(
+      AudaciumMessageBox(
          errStr,
          XO("Error Initializing Midi"),
          wxICON_ERROR|wxOK);
@@ -1205,7 +1205,7 @@ wxArrayString AudioIO::GetInputSourceNames()
 #endif
 }
 
-static PaSampleFormat AudacityToPortAudioSampleFormat(sampleFormat format)
+static PaSampleFormat AudaciumToPortAudioSampleFormat(sampleFormat format)
 {
    switch(format) {
    case int16Sample:
@@ -1263,7 +1263,7 @@ bool AudioIO::StartPortAudioStream(const AudioIOStartStreamOptions &options,
    // since we need float values anyway to apply the gain.
    // ANSWER-ME: So we *never* actually handle 24-bit?! This causes mCapture to 
    // be set to floatSample below.
-   // JKC: YES that's right.  Internally Audacity uses float, and float has space for
+   // JKC: YES that's right.  Internally Audacium uses float, and float has space for
    // 24 bits as well as exponent.  Actual 24 bit would require packing and
    // unpacking unaligned bytes and would be inefficient.
    // ANSWER ME: is floatSample 64 bit on 64 bit machines?
@@ -1334,7 +1334,7 @@ bool AudioIO::StartPortAudioStream(const AudioIOStartStreamOptions &options,
          return false;
 
       captureParameters.sampleFormat =
-         AudacityToPortAudioSampleFormat(mCaptureFormat);
+         AudaciumToPortAudioSampleFormat(mCaptureFormat);
 
       captureParameters.hostApiSpecificStreamInfo = NULL;
       captureParameters.channelCount = mNumCaptureChannels;
@@ -1379,7 +1379,7 @@ bool AudioIO::StartPortAudioStream(const AudioIOStartStreamOptions &options,
                                     usePlayback ? &playbackParameters : NULL,
                                     mRate, paFramesPerBufferUnspecified,
                                     paNoFlag,
-                                    audacityAudioCallback, lpUserData );
+                                    audaciumAudioCallback, lpUserData );
       if (mLastPaError == paNoError) {
          break;
       }
@@ -1427,7 +1427,7 @@ bool AudioIO::StartPortAudioStream(const AudioIOStartStreamOptions &options,
 #if (defined(__WXMAC__) || defined(__WXMSW__)) && wxCHECK_VERSION(3,1,0)
    // Don't want the system to sleep while audio I/O is active
    if (mPortStreamV19 != NULL && mLastPaError == paNoError) {
-      wxPowerResource::Acquire(wxPOWER_RESOURCE_SCREEN, _("Audacity Audio"));
+      wxPowerResource::Acquire(wxPOWER_RESOURCE_SCREEN, _("Audacium Audio"));
    }
 #endif
 
@@ -1673,7 +1673,7 @@ int AudioIO::StartStream(const TransportTracks &tracks,
       em.RealtimeInitialize(mRate);
 
       // The following adds a NEW effect processor for each logical track and the
-      // group determination should mimic what is done in audacityAudioCallback()
+      // group determination should mimic what is done in audaciumAudioCallback()
       // when calling RealtimeProcess().
       int group = 0;
       for (size_t i = 0, cnt = mPlaybackTracks.size(); i < cnt;)
@@ -1749,11 +1749,11 @@ int AudioIO::StartStream(const TransportTracks &tracks,
 
 #ifdef REALTIME_ALSA_THREAD
       // PRL: Do this in hope of less thread scheduling jitter in calls to
-      // audacityAudioCallback.
+      // audaciumAudioCallback.
       // Not needed to make audio playback work smoothly.
       // But needed in case we also play MIDI, so that the variable "offset"
       // in AudioIO::MidiTime() is a better approximation of the duration
-      // between the call of audacityAudioCallback and the actual output of
+      // between the call of audaciumAudioCallback and the actual output of
       // the first audio sample.
       // (Which we should be able to determine from fields of
       // PaStreamCallbackTimeInfo, but that seems not to work as documented with
@@ -1791,7 +1791,7 @@ int AudioIO::StartStream(const TransportTracks &tracks,
             pListener->OnAudioIOStopRecording();
          StartStreamCleanup();
          // PRL: PortAudio error messages are sadly not internationalized
-         AudacityMessageBox(
+         AudaciumMessageBox(
             Verbatim( LAT1CTOWX(Pa_GetErrorText(err)) ) );
          return 0;
       }
@@ -1967,7 +1967,7 @@ bool AudioIO::AllocateBuffers(
             // 100 samples, just give up.
             if(captureBufferSize < 100)
             {
-               AudacityMessageBox( XO("Out of memory!") );
+               AudaciumMessageBox( XO("Out of memory!") );
                return false;
             }
 
@@ -2002,7 +2002,7 @@ bool AudioIO::AllocateBuffers(
             (size_t)lrint(mRate * mPlaybackRingBufferSecs);
          if(playbackBufferSize < 100 || mPlaybackSamplesToCopy < 100)
          {
-            AudacityMessageBox( XO("Out of memory!") );
+            AudaciumMessageBox( XO("Out of memory!") );
             return false;
          }
       }
@@ -2141,7 +2141,7 @@ bool AudioIoCallback::StartPortMidiStream()
 }
 #endif
 
-bool AudioIO::IsAvailable(AudacityProject *project) const
+bool AudioIO::IsAvailable(AudaciumProject *project) const
 {
    return mOwningProject == NULL || mOwningProject == project;
 }
@@ -2230,7 +2230,7 @@ void AudioIO::StopStream()
 
    mAudioThreadFillBuffersLoopRunning = false;
 
-   // Audacity can deadlock if it tries to update meters while
+   // Audacium can deadlock if it tries to update meters while
    // we're stopping PortAudio (because the meter updating code
    // tries to grab a UI mutex while PortAudio tries to join a
    // pthread).  So we tell the callback to stop updating meters,
@@ -2357,7 +2357,7 @@ void AudioIO::StopStream()
             // The calls to Flush
             // may cause exceptions because of exhaustion of disk space.
             // Stop those exceptions here, or else they propagate through too
-            // many parts of Audacity that are not effects or editing
+            // many parts of Audacium that are not effects or editing
             // operations.  GuardedCall ensures that the user sees a warning.
 
             // Also be sure to Flush each track, at the top of the guarded call,
@@ -2694,7 +2694,7 @@ void AudioIO::FillBuffers()
 {
    unsigned int i;
 
-   auto delayedHandler = [this] ( AudacityException * pException ) {
+   auto delayedHandler = [this] ( AudaciumException * pException ) {
       // In the main thread, stop recording
       // This is one place where the application handles disk
       // exhaustion exceptions from wave track operations, without rolling
@@ -2707,7 +2707,7 @@ void AudioIO::FillBuffers()
 
       // Note that the Flush in StopStream() may throw another exception,
       // but StopStream() contains that exception, and the logic in
-      // AudacityException::DelayedHandlerAction prevents redundant message
+      // AudaciumException::DelayedHandlerAction prevents redundant message
       // boxes.
       StopStream();
       DefaultDelayedHandlerAction{}( pException );
@@ -3068,7 +3068,7 @@ void AudioIO::FillBuffers()
          // end of record buffering
       },
       // handler
-      [this] ( AudacityException *pException ) {
+      [this] ( AudaciumException *pException ) {
          if ( pException ) {
             // So that we don't attempt to fill the recording buffer again
             // before the main thread stops recording
@@ -3354,7 +3354,7 @@ double AudioIoCallback::PauseTime()
 
 
 // MidiTime() is an estimate in milliseconds of the current audio
-// output (DAC) time + 1s. In other words, what audacity track time
+// output (DAC) time + 1s. In other words, what audacium track time
 // corresponds to the audio (including pause insertions) at the output?
 //
 PmTimestamp AudioIoCallback::MidiTime()
@@ -3478,7 +3478,7 @@ double AudioIO::AILAGetLastDecisionTime() {
 }
 
 void AudioIO::AILAProcess(double maxPeak) {
-   AudacityProject *const proj = mOwningProject;
+   AudaciumProject *const proj = mOwningProject;
    if (proj && mAILAActive) {
       if (mInputMeter && mInputMeter->IsClipping()) {
          mAILAClipped = true;
@@ -3633,7 +3633,7 @@ static void DoSoftwarePlaythrough(const void *inputBuffer,
          outputBuffer[2*i + 1] = outputBuffer[2*i];
 }
 
-int audacityAudioCallback(const void *inputBuffer, void *outputBuffer,
+int audaciumAudioCallback(const void *inputBuffer, void *outputBuffer,
                           unsigned long framesPerBuffer,
                           const PaStreamCallbackTimeInfo *timeInfo,
                           const PaStreamCallbackFlags statusFlags, void *userData )
@@ -4116,7 +4116,7 @@ void AudioIoCallback::FillInputBuffers(
                   inputFloats[numCaptureChannels*i+t];
          } break;
          case int24Sample:
-            // We should never get here. Audacity's int24Sample format
+            // We should never get here. Audacium's int24Sample format
             // is different from PortAudio's sample format and so we
             // make PortAudio return float samples when recording in
             // 24-bit samples.

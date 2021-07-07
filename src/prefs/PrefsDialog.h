@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   PrefsDialog.h
 
@@ -17,7 +17,7 @@
 #include "../widgets/wxPanelWrapper.h" // to inherit
 #include "PrefsPanel.h"
 
-class AudacityProject;
+class AudaciumProject;
 class wxTreebook;
 class wxTreeEvent;
 class ShuttleGui;
@@ -28,13 +28,13 @@ class ShuttleGui;
 #define CONST const
 #endif
 
-class AudacityProject;
+class AudaciumProject;
 
 class AUDACITY_DLL_API PrefsDialog /* not final */ : public wxDialogWrapper
 {
  public:
    PrefsDialog(wxWindow * parent,
-      AudacityProject *pProject, // may be null
+      AudaciumProject *pProject, // may be null
       const TranslatableString &titlePrefix = XO("Preferences:"),
       PrefsPanel::Factories &factories =
          PrefsPanel::DefaultFactories());
@@ -81,7 +81,7 @@ class AUDACITY_DLL_API GlobalPrefsDialog final : public PrefsDialog
 {
 public:
    GlobalPrefsDialog(
-      wxWindow * parent, AudacityProject *pProject,
+      wxWindow * parent, AudaciumProject *pProject,
       PrefsPanel::Factories &factories =
          PrefsPanel::DefaultFactories());
    virtual ~GlobalPrefsDialog();
@@ -89,7 +89,7 @@ public:
    void SavePreferredPage() override;
 };
 
-class AudacityProject;
-void AUDACITY_DLL_API DoReloadPreferences( AudacityProject &project );
+class AudaciumProject;
+void AUDACITY_DLL_API DoReloadPreferences( AudaciumProject &project );
 
 #endif

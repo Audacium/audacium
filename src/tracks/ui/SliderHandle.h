@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 SliderHandle.h
 
@@ -24,7 +24,7 @@ class AUDACITY_DLL_API SliderHandle /* not final */ : public UIHandle
    SliderHandle(const SliderHandle&) = delete;
 
 public:
-   using SliderFn = LWSlider *(*)( AudacityProject*, const wxRect&, Track* );
+   using SliderFn = LWSlider *(*)( AudaciumProject*, const wxRect&, Track* );
 
    explicit SliderHandle
       ( SliderFn sliderFn, const wxRect &rect,
@@ -43,39 +43,39 @@ protected:
    // change.
    // Subclass can decide to refresh other things and the results will be ORed.
    virtual float GetValue() = 0;
-   virtual Result SetValue(AudacityProject *pProject, float newValue) = 0;
+   virtual Result SetValue(AudaciumProject *pProject, float newValue) = 0;
    virtual Result CommitChanges
-      (const wxMouseEvent &event, AudacityProject *pProject) = 0;
+      (const wxMouseEvent &event, AudaciumProject *pProject) = 0;
 
    // Define a message for the status bar and tooltip.
    virtual TranslatableString Tip(
-      const wxMouseState &state, AudacityProject &project) const = 0;
+      const wxMouseState &state, AudaciumProject &project) const = 0;
  
-   void Enter(bool forward, AudacityProject *) override;
+   void Enter(bool forward, AudaciumProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject)
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject)
       final override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject)
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject)
       final override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, AudacityProject *pProject)
+      (const TrackPanelMouseState &state, AudaciumProject *pProject)
       final override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject,
        wxWindow *pParent) final override;
 
-   Result Cancel(AudacityProject *pProject) final override;
+   Result Cancel(AudaciumProject *pProject) final override;
 
    // Derived class is expected to set these two before Click():
    std::weak_ptr<Track> mpTrack;
    wxRect mRect{};
    SliderFn mSliderFn;
-   LWSlider *GetSlider( AudacityProject *pProject );
+   LWSlider *GetSlider( AudaciumProject *pProject );
 
    float mStartingValue {};
 

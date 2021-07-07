@@ -13,7 +13,7 @@ $copyright (_ "Licensing confirmed under terms of the GNU General Public License
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 ;; Algorithm by Benjamin Schwartz
 ;; Clip Fix is a simple, stupid (but not blind) digital-clipping-corrector
@@ -105,5 +105,5 @@ $control gain (_ "Reduce amplitude to allow for restored peaks (dB)") float "" -
            (* (- j t0) (- j t1) (+ (* m j) b)))))))
 
 
-;; (get '*selection* 'peak) introduced in Audacity 2.1.3
+;; (get '*selection* 'peak) introduced in Audacium 2.1.3
 (multichan-expand #'declip *track* threshold (get '*selection* 'peak))

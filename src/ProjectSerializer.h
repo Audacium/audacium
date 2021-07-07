@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2010 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2010 Audacium Team.
    License: GPL v2.  See License.txt.
 
    ProjectSerializer.h
@@ -29,7 +29,7 @@ using SampleBlockID = long long;
 using NameMap = std::unordered_map<wxString, unsigned short>;
 using IdMap = std::unordered_map<unsigned short, wxString>;
 
-// This class's overrides do NOT throw AudacityException.
+// This class's overrides do NOT throw AudaciumException.
 class AUDACITY_DLL_API ProjectSerializer final : public XMLWriter
 {
 public:

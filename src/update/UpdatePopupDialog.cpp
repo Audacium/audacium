@@ -1,5 +1,5 @@
 /*!********************************************************************
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file UpdatePopupDialog.cpp
  @brief Define a dialog for notifying users about new version available.
@@ -28,7 +28,7 @@ END_EVENT_TABLE()
 IMPLEMENT_CLASS (UpdatePopupDialog, wxDialogWrapper)
 
 UpdatePopupDialog::UpdatePopupDialog (wxWindow* parent, const VersionPatch& versionPatch)
-    : wxDialogWrapper (parent, -1, XC("Update Audacity", "update dialog"),
+    : wxDialogWrapper (parent, -1, XC("Update Audacium", "update dialog"),
         wxDefaultPosition, wxDefaultSize,
         wxCAPTION),
       mVersionPatch(versionPatch)
@@ -91,7 +91,7 @@ HtmlWindow* UpdatePopupDialog::AddHtmlContent (wxWindow* parent)
     informationStr
         << wxT("<html><body><h3>")
         // i18n-hint Substitution of version number for %s.
-        << XC("Audacity %s is available!", "update dialog").Format(mVersionPatch.version.GetString()).Translation()
+        << XC("Audacium %s is available!", "update dialog").Format(mVersionPatch.version.GetString()).Translation()
         << wxT("</h3><h5>")
         << XC("Changelog", "update dialog")
         << wxT("</h5><p>");
@@ -107,7 +107,7 @@ HtmlWindow* UpdatePopupDialog::AddHtmlContent (wxWindow* parent)
     informationStr << wxT("</ul></p>");
 
     informationStr << wxT("<p>");
-    informationStr << wxT("<a href = \"https://github.com/audacity/audacity/releases\">");
+    informationStr << wxT("<a href = \"https://github.com/audacium/audacium/releases\">");
     informationStr << XC("Read more on GitHub", "update dialog");
     informationStr << wxT("</a>");
     informationStr << wxT("</p>");

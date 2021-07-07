@@ -10,7 +10,7 @@
 
 class LabelTrackShifter final : public TrackShifter {
 public:
-   LabelTrackShifter( LabelTrack &track, AudacityProject &project )
+   LabelTrackShifter( LabelTrack &track, AudaciumProject &project )
       : mpTrack{ track.SharedPointer<LabelTrack>() }
       , mProject{ project }
    {
@@ -244,12 +244,12 @@ private:
    }
 
    std::shared_ptr<LabelTrack> mpTrack;
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 };
 
 using MakeLabelTrackShifter = MakeTrackShifter::Override<LabelTrack>;
 template<> template<> auto MakeLabelTrackShifter::Implementation() -> Function {
-   return [](LabelTrack &track, AudacityProject &project) {
+   return [](LabelTrack &track, AudaciumProject &project) {
       return std::make_unique<LabelTrackShifter>(track, project);
    };
 }

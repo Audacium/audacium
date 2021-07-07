@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2012 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2012 Audacium Team.
    License: GPL v2.  See License.txt.
 
    Resample.cpp
@@ -16,7 +16,7 @@
 
       libsoxr, written by Rob Sykes. LGPL.
 
-   Since Audacity always does resampling on mono streams that are
+   Since Audacium always does resampling on mono streams that are
    contiguous in memory, this class doesn't support multiple channels
    or some of the other optional features of some of these resamplers.
 
@@ -25,7 +25,7 @@
 #include "Resample.h"
 #include "Prefs.h"
 #include "Internat.h"
-#include "../include/audacity/ComponentInterface.h"
+#include "../include/audacium/ComponentInterface.h"
 
 #include <soxr.h>
 

@@ -2,8 +2,8 @@
 
 use strict 'vars';
 
-open(my $fh, "<", "audacity.pot")
-    or die "Can't open < audacity.pot: $!";
+open(my $fh, "<", "audacium.pot")
+    or die "Can't open < audacium.pot: $!";
 
 my @sourcelines = ();
 

@@ -31,7 +31,7 @@
 // private helper classes and functions
 namespace {
 
-void DoMacMinimize(AudacityProject *project)
+void DoMacMinimize(AudaciumProject *project)
 {
    if (project) {
       auto window = &GetProjectFrame( *project );
@@ -54,7 +54,7 @@ void DoMacMinimize(AudacityProject *project)
 }
 
 std::vector< wxWindowID > sReservedIds;
-std::vector< std::weak_ptr< AudacityProject > > sProjects;
+std::vector< std::weak_ptr< AudaciumProject > > sProjects;
 
 void RebuildMenu(wxCommandEvent &evt)
 {
@@ -69,7 +69,7 @@ void RebuildMenu(wxCommandEvent &evt)
 }
 
 wxWindowID ReservedID(
-   size_t index, const std::shared_ptr< AudacityProject > &pProject )
+   size_t index, const std::shared_ptr< AudaciumProject > &pProject )
 {
    if ( sReservedIds.empty() ) {
       // Do this once only per session, and don't worry about unbinding
@@ -165,9 +165,9 @@ void OnMacMinimizeAll(const CommandContext &)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(AudacityProject &) {
+static CommandHandlerObject &findCommandHandler(AudaciumProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // AudacityProject.
+   // AudaciumProject.
    static WindowActions::Handler instance;
    return instance;
 };
@@ -206,7 +206,7 @@ BaseItemSharedPtr WindowMenu()
 
       Section( "",
          Special( wxT("PopulateWindowsStep"),
-         [](AudacityProject &, wxMenu &theMenu)
+         [](AudaciumProject &, wxMenu &theMenu)
          {
             // Undo previous bindings
             for ( auto id : sReservedIds )

@@ -1,8 +1,8 @@
 # docimages_labels.py
 # Sends commands to get images for the manual.
-# Images for https://alphamanual.audacityteam.org/man/Removing_Labels_-_Examples
+# Images for https://alphamanual.audaciumteam.org/man/Removing_Labels_-_Examples
 
-# Make sure Audacity is running first and that mod-script-pipe is enabled
+# Make sure Audacium is running first and that mod-script-pipe is enabled
 # before running this script.
 
 #load and run the common core.

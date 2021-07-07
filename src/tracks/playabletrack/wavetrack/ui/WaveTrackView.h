@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 WaveTrackView.h
 
@@ -14,7 +14,7 @@ Paul Licameli split from class WaveTrack
 #include "../../../ui/CommonTrackView.h"
 #include "../../../../ClientData.h"
 namespace WaveTrackViewConstants{ enum Display : int; }
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 struct WaveTrackSubViewType;
 
 class CutlineHandle;
@@ -39,7 +39,7 @@ public:
       std::vector<UIHandlePtr>
    > DoDetailedHitTest(
       const TrackPanelMouseState &state,
-      const AudacityProject *pProject, int currentTool, bool bMultiTool,
+      const AudaciumProject *pProject, int currentTool, bool bMultiTool,
       const std::shared_ptr<WaveTrack> &wt );
    
 protected:
@@ -96,7 +96,7 @@ public:
       std::vector<UIHandlePtr>
    > DoDetailedHitTest(
       const TrackPanelMouseState &state,
-      const AudacityProject *pProject, int currentTool, bool bMultiTool,
+      const AudaciumProject *pProject, int currentTool, bool bMultiTool,
       const std::shared_ptr<WaveTrack> &wt,
       CommonTrackView &view);
 
@@ -133,7 +133,7 @@ private:
 
    std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &state,
-       const AudacityProject *pProject, int currentTool, bool bMultiTool)
+       const AudaciumProject *pProject, int currentTool, bool bMultiTool)
       override;
 
    // TrackView implementation

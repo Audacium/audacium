@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 NoteTrackVRulerControls.h
 
@@ -28,11 +28,11 @@ public:
 
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const AudacityProject *pProject) override;
+       const AudaciumProject *pProject) override;
 
    unsigned HandleWheelRotation
       (const TrackPanelMouseEvent &event,
-       AudacityProject *pProject) override;
+       AudaciumProject *pProject) override;
 
 private:
    // TrackPanelDrawable implementation

@@ -1,10 +1,10 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectFileIO.h
 
-Paul Licameli split from AudacityProject.h
+Paul Licameli split from AudaciumProject.h
 
 **********************************************************************/
 
@@ -23,7 +23,7 @@ struct sqlite3_context;
 struct sqlite3_stmt;
 struct sqlite3_value;
 
-class AudacityProject;
+class AudaciumProject;
 class DBConnection;
 struct DBConnectionErrors;
 class ProjectSerializer;
@@ -51,7 +51,7 @@ wxDECLARE_EXPORTED_EVENT( AUDACITY_DLL_API,
                           EVT_RECONNECTION_FAILURE, wxCommandEvent );
 
 ///\brief Object associated with a project that manages reading and writing
-/// of Audacity project file formats, and autosave
+/// of Audacium project file formats, and autosave
 class AUDACITY_DLL_API ProjectFileIO final
    : public ClientData::Base
    , public XMLTagHandler
@@ -63,10 +63,10 @@ public:
    // class.  Reinvocations have no effect.  Return value is true for success.
    static bool InitializeSQL();
 
-   static ProjectFileIO &Get( AudacityProject &project );
-   static const ProjectFileIO &Get( const AudacityProject &project );
+   static ProjectFileIO &Get( AudaciumProject &project );
+   static const ProjectFileIO &Get( const AudaciumProject &project );
 
-   explicit ProjectFileIO( AudacityProject &project );
+   explicit ProjectFileIO( AudaciumProject &project );
 
    ProjectFileIO( const ProjectFileIO & ) PROHIBITED;
    ProjectFileIO &operator=( const ProjectFileIO & ) PROHIBITED;
@@ -282,7 +282,7 @@ private:
    Connection &CurrConn();
 
    // non-static data members
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    std::shared_ptr<DBConnectionErrors> mpErrors;
 
@@ -314,7 +314,7 @@ class wxTopLevelWindow;
 // TitleRestorer restores project window titles to what they were, in its destructor.
 class TitleRestorer{
 public:
-   TitleRestorer( wxTopLevelWindow &window, AudacityProject &project );
+   TitleRestorer( wxTopLevelWindow &window, AudaciumProject &project );
    ~TitleRestorer();
    wxString sProjNumber;
    wxString sProjName;
@@ -332,12 +332,12 @@ class AUDACITY_DLL_API InvisibleTemporaryProject
 public:
    InvisibleTemporaryProject();
    ~InvisibleTemporaryProject();
-   AudacityProject &Project()
+   AudaciumProject &Project()
    {
       return *mpProject;
    }
 private:
-   std::shared_ptr<AudacityProject> mpProject;
+   std::shared_ptr<AudaciumProject> mpProject;
 };
 
 #endif

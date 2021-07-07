@@ -15,7 +15,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 $control pitch (_ "Pluck MIDI pitch") int "" 60 1 120
 $control fade (_ "Fade-out type") choice ((_ "Abrupt") (_ "Gradual")) 0
@@ -41,6 +41,6 @@ $control dur (_ "Duration (60s max)") time "" 1 0.0 60
       (if (> max-peak 0)
           (scale (/ 0.8 max-peak) pluck-sound)
           pluck-sound)))
-  ;; If previewing   give Audacity a bit of silence, else return null string.
+  ;; If previewing   give Audacium a bit of silence, else return null string.
   ((get '*track* 'view) "")
   (t (s-rest 0.1)))

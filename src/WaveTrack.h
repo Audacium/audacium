@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   WaveTrack.h
 
@@ -563,7 +563,7 @@ private:
       std::shared_ptr<WaveClip> pClip;
    };
 
-   Track::Holder PasteInto( AudacityProject & ) const override;
+   Track::Holder PasteInto( AudaciumProject & ) const override;
 
    ConstIntervals GetIntervals() const override;
    Intervals GetIntervals() override;
@@ -698,10 +698,10 @@ class AUDACITY_DLL_API WaveTrackFactory final
    : public ClientData::Base
 {
  public:
-   static WaveTrackFactory &Get( AudacityProject &project );
-   static const WaveTrackFactory &Get( const AudacityProject &project );
-   static WaveTrackFactory &Reset( AudacityProject &project );
-   static void Destroy( AudacityProject &project );
+   static WaveTrackFactory &Get( AudaciumProject &project );
+   static const WaveTrackFactory &Get( const AudaciumProject &project );
+   static WaveTrackFactory &Reset( AudaciumProject &project );
+   static void Destroy( AudaciumProject &project );
 
    WaveTrackFactory( const ProjectSettings &settings,
       const SampleBlockFactoryPtr &pFactory)

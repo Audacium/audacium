@@ -1,12 +1,12 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   EffectUI.h
 
   Leland Lucius
 
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 **********************************************************************/
@@ -28,7 +28,7 @@ class wxFlexGridSizer;
 class wxPanel;
 class wxStaticText;
 
-class AudacityProject;
+class AudaciumProject;
 
 class Effect;
 using EffectArray = std::vector<Effect*>;
@@ -36,12 +36,12 @@ using EffectArray = std::vector<Effect*>;
 class EffectRack final : public wxFrame
 {
 public:
-   EffectRack( AudacityProject &project );
+   EffectRack( AudaciumProject &project );
    virtual ~EffectRack();
 
    void Add(Effect *effect, bool active = false, bool favorite = false);
 
-   static EffectRack &Get( AudacityProject &project );
+   static EffectRack &Get( AudaciumProject &project );
 
 private:
 
@@ -63,7 +63,7 @@ private:
    void OnRemove(wxCommandEvent & evt);
 
 private:
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    wxStaticText *mLatency;
    int mLastLatency;
@@ -102,13 +102,13 @@ private:
 
 #endif
 
-#include "audacity/EffectInterface.h"
+#include "audacium/EffectInterface.h"
 #include "../widgets/wxPanelWrapper.h" // to inherit
 
 #include "../SelectedRegion.h"
 
-class AudacityCommand;
-class AudacityProject;
+class AudaciumCommand;
+class AudaciumProject;
 class Effect;
 
 class wxCheckBox;
@@ -120,12 +120,12 @@ class EffectUIHost final : public wxDialogWrapper,
 public:
    // constructors and destructors
    EffectUIHost(wxWindow *parent,
-                AudacityProject &project,
+                AudaciumProject &project,
                 Effect *effect,
                 EffectUIClientInterface *client);
    EffectUIHost(wxWindow *parent,
-                AudacityProject &project,
-                AudacityCommand *command,
+                AudaciumProject &project,
+                AudaciumCommand *command,
                 EffectUIClientInterface *client);
    virtual ~EffectUIHost();
 
@@ -173,10 +173,10 @@ private:
    void Resume();
 
 private:
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
    wxWindow *mParent;
    Effect *mEffect;
-   AudacityCommand * mCommand;
+   AudaciumCommand * mCommand;
    EffectUIClientInterface *mClient;
 
    RegistryPaths mUserPresets;
@@ -227,7 +227,7 @@ namespace  EffectUI {
    /** Run an effect given the plugin ID */
    // Returns true on success.  Will only operate on tracks that
    // have the "selected" flag set to true, which is consistent with
-   // Audacity's standard UI.
+   // Audacium's standard UI.
    AUDACITY_DLL_API bool DoEffect(
       const PluginID & ID, const CommandContext &context, unsigned flags );
 

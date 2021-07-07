@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 CommonTrackPanelCell.cpp
 
@@ -38,14 +38,14 @@ CommonTrackPanelCell::~CommonTrackPanelCell()
 }
 
 HitTestPreview CommonTrackPanelCell::DefaultPreview
-(const TrackPanelMouseState &, const AudacityProject *)
+(const TrackPanelMouseState &, const AudaciumProject *)
 {
    static wxCursor defaultCursor{ wxCURSOR_ARROW };
    return { {}, &defaultCursor, {} };
 }
 
 unsigned CommonTrackPanelCell::HandleWheelRotation
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    auto hook = GetHook();
    return hook ? hook( evt, pProject ) : RefreshCode::Cancelled;

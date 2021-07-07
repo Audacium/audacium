@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ModuleManager.cpp
 
@@ -11,16 +11,16 @@
 *******************************************************************//*!
 
 \file ModuleManager.cpp
-\brief Based on LoadLadspa, this code loads pluggable Audacity 
+\brief Based on LoadLadspa, this code loads pluggable Audacium 
 extension modules.  It also has the code to
 invoke a function returning a replacement window,
-i.e. an alternative to the usual interface, for Audacity.
+i.e. an alternative to the usual interface, for Audacium.
 
 *//*******************************************************************/
 
 
 #include "ModuleManager.h"
-#include "audacity/ModuleInterface.h"
+#include "audacium/ModuleInterface.h"
 
 
 
@@ -32,7 +32,7 @@ i.e. an alternative to the usual interface, for Audacity.
 #include "FileNames.h"
 #include "MemoryX.h"
 
-#include "audacity/PluginInterface.h"
+#include "audacium/PluginInterface.h"
 
 #ifdef EXPERIMENTAL_MODULE_PREFS
 #include "Prefs.h"
@@ -41,7 +41,7 @@ i.e. an alternative to the usual interface, for Audacity.
 
 #include "widgets/MultiDialog.h"
 
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 
 #define initFnName      "ExtensionModuleInit"
 #define versionFnName   "GetVersionString"
@@ -63,7 +63,7 @@ Module::~Module()
 void Module::ShowLoadFailureError(const wxString &Error)
 {
    auto ShortName = wxFileName(mName).GetName();
-   AudacityMessageBox(XO("Unable to load the \"%s\" module.\n\nError: %s").Format(ShortName, Error),
+   AudaciumMessageBox(XO("Unable to load the \"%s\" module.\n\nError: %s").Format(ShortName, Error),
                       XO("Module Unsuitable"));
    wxLogMessage(wxT("Unable to load the module \"%s\". Error: %s"), mName, Error);
 }
@@ -94,7 +94,7 @@ bool Module::Load(wxString &deferredErrorMessage)
    // Check version string matches.  (For now, they must match exactly)
    tVersionFn versionFn = (tVersionFn)(mLib->GetSymbol(wxT(versionFnName)));
    if (versionFn == NULL){
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("The module \"%s\" does not provide a version string.\n\nIt will not be loaded.")
             .Format( ShortName),
          XO("Module Unsuitable"));
@@ -105,11 +105,11 @@ bool Module::Load(wxString &deferredErrorMessage)
 
    wxString moduleVersion = versionFn();
    if( moduleVersion != AUDACITY_VERSION_STRING) {
-      AudacityMessageBox(
-         XO("The module \"%s\" is matched with Audacity version \"%s\".\n\nIt will not be loaded.")
+      AudaciumMessageBox(
+         XO("The module \"%s\" is matched with Audacium version \"%s\".\n\nIt will not be loaded.")
             .Format(ShortName, moduleVersion),
          XO("Module Unsuitable"));
-      wxLogMessage(wxT("The module \"%s\" is matched with Audacity version \"%s\". It will not be loaded."), mName, moduleVersion);
+      wxLogMessage(wxT("The module \"%s\" is matched with Audacium version \"%s\". It will not be loaded."), mName, moduleVersion);
       mLib->Unload();
       return false;
    }
@@ -129,7 +129,7 @@ bool Module::Load(wxString &deferredErrorMessage)
 
    mDispatch = NULL;
 
-   AudacityMessageBox(
+   AudaciumMessageBox(
       XO("The module \"%s\" failed to initialize.\n\nIt will not be loaded.").Format(ShortName),
       XO("Module Unsuitable"));
    wxLogMessage(wxT("The module \"%s\" failed to initialize.\nIt will not be loaded."), mName);
@@ -216,7 +216,7 @@ ModuleManager::~ModuleManager()
 // static
 void ModuleManager::FindModules(FilePaths &files)
 {
-   const auto &audacityPathList = FileNames::AudacityPathList();
+   const auto &audaciumPathList = FileNames::AudaciumPathList();
    FilePaths pathList;
    wxString pathVar;
 
@@ -225,7 +225,7 @@ void ModuleManager::FindModules(FilePaths &files)
    if (!pathVar.empty())
       FileNames::AddMultiPathsToPathList(pathVar, pathList);
 
-   for (const auto &path : audacityPathList) {
+   for (const auto &path : audaciumPathList) {
       wxString prefix = path + wxFILE_SEP_PATH;
       FileNames::AddUniquePathToPathList(prefix + wxT("modules"),
                                          pathList);
@@ -291,7 +291,7 @@ void ModuleManager::TryLoadModules(
             XO("Yes"), XO("No"),
          };  // could add a button here for 'yes and remember that', and put it into the cfg file.  Needs more thought.
          int action;
-         action = ShowMultiDialog(msg, XO("Audacity Module Loader"),
+         action = ShowMultiDialog(msg, XO("Audacium Module Loader"),
             buttons,
             "",
             XO("Try and load this module?"),
@@ -324,7 +324,7 @@ void ModuleManager::TryLoadModules(
          if (!module->HasDispatch())
          {
             auto ShortName = wxFileName(file).GetName();
-            AudacityMessageBox(
+            AudaciumMessageBox(
                XO("The module \"%s\" does not provide any of the required functions.\n\nIt will not be loaded.").Format(ShortName),
                XO("Module Unsuitable"));
             wxLogMessage(wxT("The module \"%s\" does not provide any of the required functions. It will not be loaded."), file);

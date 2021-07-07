@@ -1,5 +1,5 @@
 /*!********************************************************************
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file UpdateManager.cpp
  @brief Declare a class that handles managing of updates.
@@ -66,16 +66,16 @@ VersionPatch UpdateManager::GetVersionPatch() const
 
 void UpdateManager::GetUpdates()
 {
-    const audacity::network_manager::Request request("https://updates.audacityteam.org/feed/latest.xml");
-    auto response = audacity::network_manager::NetworkManager::GetInstance().doGet(request);
+    const audacium::network_manager::Request request("https://updates.audaciumteam.org/feed/latest.xml");
+    auto response = audacium::network_manager::NetworkManager::GetInstance().doGet(request);
 
-    response->setRequestFinishedCallback([response, this](audacity::network_manager::IResponse*) {
+    response->setRequestFinishedCallback([response, this](audacium::network_manager::IResponse*) {
 
-        if (response->getError() != audacity::network_manager::NetworkError::NoError)
+        if (response->getError() != audacium::network_manager::NetworkError::NoError)
         {
             wxTheApp->CallAfter([] {ShowExceptionDialog(nullptr,
                 XC("Error checking for update", "update dialog"),
-                XC("Unable to connect to Audacity update server.", "update dialog"),
+                XC("Unable to connect to Audacium update server.", "update dialog"),
                 wxString());
                 });
 
@@ -105,7 +105,7 @@ void UpdateManager::GetUpdates()
                     {
                         ShowExceptionDialog(nullptr,
                             XC("Error downloading update.", "update dialog"),
-                            XC("Can't open the Audacity download link.", "update dialog"),
+                            XC("Can't open the Audacium download link.", "update dialog"),
                             wxString());
                     }
                 }

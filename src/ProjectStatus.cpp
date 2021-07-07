@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectStatus.h
 
@@ -14,23 +14,23 @@ Paul Licameli
 
 wxDEFINE_EVENT(EVT_PROJECT_STATUS_UPDATE, wxCommandEvent);
 
-static const AudacityProject::AttachedObjects::RegisteredFactory key{
-  []( AudacityProject &parent ){
+static const AudaciumProject::AttachedObjects::RegisteredFactory key{
+  []( AudaciumProject &parent ){
      return std::make_shared< ProjectStatus >( parent );
    }
 };
 
-ProjectStatus &ProjectStatus::Get( AudacityProject &project )
+ProjectStatus &ProjectStatus::Get( AudaciumProject &project )
 {
    return project.AttachedObjects::Get< ProjectStatus >( key );
 }
 
-const ProjectStatus &ProjectStatus::Get( const AudacityProject &project )
+const ProjectStatus &ProjectStatus::Get( const AudaciumProject &project )
 {
-   return Get( const_cast< AudacityProject & >( project ) );
+   return Get( const_cast< AudaciumProject & >( project ) );
 }
 
-ProjectStatus::ProjectStatus( AudacityProject &project )
+ProjectStatus::ProjectStatus( AudaciumProject &project )
    : mProject{ project }
 {
 }

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 WaveTrackVZoomHandle.h
 
@@ -29,7 +29,7 @@ namespace WaveTrackVZoomHandle
    AUDACITY_DLL_API
    bool IsDragZooming(int zoomStart, int zoomEnd);
 
-   using DoZoomFunction = void (*)( AudacityProject *pProject,
+   using DoZoomFunction = void (*)( AudaciumProject *pProject,
        WaveTrack *pTrack,
        WaveTrackViewConstants::ZoomActions ZoomKind,
        const wxRect &rect, int zoomStart, int zoomEnd,
@@ -37,12 +37,12 @@ namespace WaveTrackVZoomHandle
 
    AUDACITY_DLL_API
    Result DoDrag(
-      const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      const TrackPanelMouseEvent &event, AudaciumProject *pProject,
       int zoomStart, int &zoomEnd );
 
    AUDACITY_DLL_API
    Result DoRelease(
-      const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      const TrackPanelMouseEvent &event, AudaciumProject *pProject,
       wxWindow *pParent, WaveTrack *pTrack, const wxRect &mRect,
       DoZoomFunction doZoom, PopupMenuTable &table,
       int zoomStart, int zoomEnd );
@@ -67,7 +67,7 @@ public:
    struct InitMenuData
    {
    public:
-      AudacityProject &project;
+      AudaciumProject &project;
       WaveTrack *pTrack;
       wxRect rect;
       unsigned result;

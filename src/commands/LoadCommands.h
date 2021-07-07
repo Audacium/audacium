@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LoadCommands.h
 
@@ -12,14 +12,14 @@
 #ifndef __AUDACITY_LOAD_COMMANDS__
 #define __AUDACITY_LOAD_COMMANDS__
 
-#include "audacity/ModuleInterface.h"
+#include "audacium/ModuleInterface.h"
 
 #include <functional>
 #include <memory>
 #include <unordered_map>
 #include <memory>
 
-class AudacityCommand;
+class AudaciumCommand;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -33,7 +33,7 @@ public:
    BuiltinCommandsModule();
    virtual ~BuiltinCommandsModule();
 
-   using Factory = std::function< std::unique_ptr<AudacityCommand> () >;
+   using Factory = std::function< std::unique_ptr<AudaciumCommand> () >;
 
    // Typically you make a static object of this type in the .cpp file that
    // also implements the Command subclass.
@@ -75,7 +75,7 @@ public:
 private:
    // BuiltinEffectModule implementation
 
-   std::unique_ptr<AudacityCommand> Instantiate(const PluginPath & path);
+   std::unique_ptr<AudaciumCommand> Instantiate(const PluginPath & path);
 
 private:
    struct Entry;

@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    File License: wxWidgets
 
    Dan Horgan
@@ -19,7 +19,7 @@
 #include <memory>
 #include <wx/string.h>
 
-class AudacityProject;
+class AudaciumProject;
 class ResponseTarget;
 using ResponseTargetPointer = std::shared_ptr<ResponseTarget>;
 class OldStyleCommand;
@@ -39,12 +39,12 @@ class CommandBuilder
 
       void Failure(const wxString &msg = {});
       void Success(const OldStyleCommandPointer &cmd);
-      void BuildCommand( AudacityProject *project,
+      void BuildCommand( AudaciumProject *project,
          const wxString &cmdName, const wxString &cmdParams);
-      void BuildCommand( AudacityProject *project, const wxString &cmdString);
+      void BuildCommand( AudaciumProject *project, const wxString &cmdString);
    public:
-      CommandBuilder(AudacityProject *project, const wxString &cmdString);
-      CommandBuilder(AudacityProject *project, const wxString &cmdName,
+      CommandBuilder(AudaciumProject *project, const wxString &cmdString);
+      CommandBuilder(AudaciumProject *project, const wxString &cmdName,
                      const wxString &cmdParams);
       ~CommandBuilder();
       bool WasValid();

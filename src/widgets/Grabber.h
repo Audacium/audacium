@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Grabber.cpp
 
@@ -146,7 +146,7 @@ class AUDACITY_DLL_API Grabber final : public wxWindow
 };
 
 // Piggy back in same source file as Grabber.
-// Audacity Flicker-free StaticBitmap.
+// Audacium Flicker-free StaticBitmap.
 class AUDACITY_DLL_API AStaticBitmap : public wxStaticBitmap {
   public:
     AStaticBitmap(wxWindow *parent,

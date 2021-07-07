@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   KeyboardCapture.h
 
@@ -24,7 +24,7 @@
 /// installed as the handler with KeyboardCapture::Capture; if it does not skip
 /// the event, it will receive further events of type wxEVT_KEY_DOWN,
 /// and then wxEVT_CHAR (if key-down was not skipped; those further events
-/// don't actually come from wxWidgets, but are simulated by Audacity, as
+/// don't actually come from wxWidgets, but are simulated by Audacium, as
 /// translations of the EVT_CHAR_HOOK event); or, wxEVT_KEY_UP (really from
 /// wxWidgets).
 DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_CAPTURE_KEY, -1);

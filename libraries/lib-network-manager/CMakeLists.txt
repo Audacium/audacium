@@ -40,4 +40,4 @@ set ( LIBRARIES PRIVATE
 set ( DEFINES INTERFACE "HAS_NETWORKING" )
 
 
-audacity_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )
+audacium_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )

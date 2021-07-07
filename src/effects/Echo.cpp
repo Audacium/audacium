@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Echo.cpp
 
@@ -29,7 +29,7 @@
 
 #include "../ShuttleGui.h"
 #include "../Shuttle.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/valnum.h"
 
 // Define keys, defaults, minimums, and maximums for the effect parameters

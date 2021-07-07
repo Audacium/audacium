@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 Scrubbing.cpp
 
@@ -190,22 +190,22 @@ void Scrubber::ScrubPoller::Notify()
    mScrubber.ContinueScrubbingUI();
 }
 
-static const AudacityProject::AttachedObjects::RegisteredFactory key{
-  []( AudacityProject &parent ){
+static const AudaciumProject::AttachedObjects::RegisteredFactory key{
+  []( AudaciumProject &parent ){
      return std::make_shared< Scrubber >( &parent ); }
 };
 
-Scrubber &Scrubber::Get( AudacityProject &project )
+Scrubber &Scrubber::Get( AudaciumProject &project )
 {
    return project.AttachedObjects::Get< Scrubber >( key );
 }
 
-const Scrubber &Scrubber::Get( const AudacityProject &project )
+const Scrubber &Scrubber::Get( const AudaciumProject &project )
 {
-   return Get( const_cast< AudacityProject & >( project ) );
+   return Get( const_cast< AudaciumProject & >( project ) );
 }
 
-Scrubber::Scrubber(AudacityProject *project)
+Scrubber::Scrubber(AudaciumProject *project)
    : mScrubToken(-1)
    , mPaused(true)
    , mScrubSpeedDisplayCountdown(0)
@@ -237,7 +237,7 @@ Scrubber::~Scrubber()
 }
 
 static const auto HasWaveDataPred =
-   [](const AudacityProject &project){
+   [](const AudaciumProject &project){
       auto range = TrackList::Get( project ).Any<const WaveTrack>()
          + [](const WaveTrack *pTrack){
             return pTrack->GetEndTime() > pTrack->GetStartTime();
@@ -1103,7 +1103,7 @@ wxString Scrubber::StatusMessageForWave() const
 
 static ProjectStatus::RegisteredStatusWidthFunction
 registeredStatusWidthFunction{
-   []( const AudacityProject &, StatusBarField field )
+   []( const AudaciumProject &, StatusBarField field )
       -> ProjectStatus::StatusWidthResult
    {
       if ( field == stateStatusBarField ) {
@@ -1206,7 +1206,7 @@ void Scrubber::OnKeyboardScrubForwards(const CommandContext &context)
 namespace {
 
 static const auto finder =
-   [](AudacityProject &project) -> CommandHandlerObject&
+   [](AudaciumProject &project) -> CommandHandlerObject&
      { return Scrubber::Get( project ); };
 
 using namespace MenuTable;
@@ -1226,7 +1226,7 @@ BaseItemSharedPtr ToolbarMenu()
                item.flags,
                item.StatusTest
                   ? // a checkmark item
-                     Options{}.CheckTest( [&item](AudacityProject &project){
+                     Options{}.CheckTest( [&item](AudaciumProject &project){
                      return ( Scrubber::Get(project).*(item.StatusTest) )(); } )
                   : // not a checkmark item
                      Options{}

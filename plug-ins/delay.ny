@@ -16,7 +16,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; based on 'Delay' by David R. Sky
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 $control delay-type (_ "Delay type") choice ((_ "Regular")
@@ -33,7 +33,7 @@ $control constrain (_ "Allow duration to change") choice ((_ "Yes")(_ "No")) 0
 
 ;; The default pitch shift effect is a simple resampling, 
 ;; so both pitch and tempo of the delayed audio will change 
-;; [as in Audacity's Change Speed effect].
+;; [as in Audacium's Change Speed effect].
 ;; LQ Pitch Shift (Low Quality) changes the pitch without 
 ;; changing the tempo, but the sound quality is not very good 
 ;; and tends to cause a short echo effect which can be quite 

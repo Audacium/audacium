@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ViewInfo.h
 
@@ -171,8 +171,8 @@ class AUDACITY_DLL_API ViewInfo final
    : public wxEvtHandler, public ZoomInfo
 {
 public:
-   static ViewInfo &Get( AudacityProject &project );
-   static const ViewInfo &Get( const AudacityProject &project );
+   static ViewInfo &Get( AudaciumProject &project );
+   static const ViewInfo &Get( const AudaciumProject &project );
 
    ViewInfo(double start, double screenDuration, double pixelsPerSecond);
    ViewInfo( const ViewInfo & ) PROHIBITED;

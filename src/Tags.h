@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Tags.h
 
@@ -22,7 +22,7 @@
   useful for streaming.
 
   Use of this functionality requires that libid3tag be compiled in
-  with Audacity.
+  with Audacium.
 
 **********************************************************************/
 
@@ -49,7 +49,7 @@ class wxGridCellStringRenderer;
 class wxGridEvent;
 class wxTextCtrl;
 
-class AudacityProject;
+class AudaciumProject;
 class Grid;
 class ShuttleGui;
 class TagsEditorDialog;
@@ -75,11 +75,11 @@ class AUDACITY_DLL_API Tags final
 
  public:
 
-   static Tags &Get( AudacityProject &project );
-   static const Tags &Get( const AudacityProject &project );
+   static Tags &Get( AudaciumProject &project );
+   static const Tags &Get( const AudaciumProject &project );
    // Returns reference to *tags
    static Tags &Set(
-      AudacityProject &project, const std::shared_ptr<Tags> &tags );
+      AudaciumProject &project, const std::shared_ptr<Tags> &tags );
 
    Tags();  // constructor
    Tags( const Tags& ) = default;

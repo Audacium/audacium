@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Demo.cpp
 
@@ -9,7 +9,7 @@
 *******************************************************************//**
 
 \class DemoCommand
-\brief An AudacityCommand that does nothing but provide 
+\brief An AudaciumCommand that does nothing but provide 
 parameters.  It is for development purposes.
 
 *//****************************************************************//**
@@ -29,7 +29,7 @@ parameters.  It is for development purposes.
 
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/valnum.h"
 #include "../commands/CommandContext.h"
 

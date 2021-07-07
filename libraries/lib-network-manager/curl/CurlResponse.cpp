@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file CurlResponse.cpp
  @brief Define an implementation of IResponse using libcurl.
@@ -14,7 +14,7 @@
 #include <map>
 #include <algorithm>
 
-namespace audacity
+namespace audacium
 {
 namespace network_manager
 {

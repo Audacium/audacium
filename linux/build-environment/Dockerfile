@@ -1,14 +1,14 @@
 FROM ubuntu:focal
 
-LABEL maintainer="d.vedenko@audacityteam.org"
+LABEL maintainer="d.vedenko@audaciumteam.org"
 LABEL description="A build environment to check the builds for the package maintainers"
 LABEL version="3.0"
 
 RUN apt-get update && apt-get install -y dos2unix
 
-WORKDIR /audacity
+WORKDIR /audacium
 
-COPY ["dependencies.sh", "/audacity/"]
+COPY ["dependencies.sh", "/audacium/"]
 # pkg-config is so broken
 COPY ["pkgconfig/*", "/usr/local/lib/pkgconfig/"]
 
@@ -17,7 +17,7 @@ RUN dos2unix dependencies.sh && \
 
 RUN ["bash", "-ex", "dependencies.sh"]
 
-COPY ["entrypoint.sh", "/audacity/"]
+COPY ["entrypoint.sh", "/audacium/"]
 RUN dos2unix entrypoint.sh
 
 CMD ["bash", "-ex", "./entrypoint.sh"]

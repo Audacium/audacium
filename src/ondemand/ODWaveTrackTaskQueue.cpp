@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODWaveTrackTaskQueue.h
 
   Created by Michael Chinen (mchinen) on 6/11/08
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -16,7 +16,7 @@ tasks associated with a WaveTrack.
 
 *//*******************************************************************/
 
-#include "../Audacity.h"
+#include "../Audacium.h"
 #include "ODWaveTrackTaskQueue.h"
 
 #include "ODTask.h"

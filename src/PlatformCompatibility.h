@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   PlatformCompatibility.h
 
@@ -34,8 +34,8 @@ public:
    static FilePath GetLongFileName(const FilePath& shortFileName);
 
    //
-   // Get filename and path of executable (e.g. "/usr/bin/audacity" on
-   // Linux or "C:\Program Files\Audacity\Audacity.exe" on Windows)
+   // Get filename and path of executable (e.g. "/usr/bin/audacium" on
+   // Linux or "C:\Program Files\Audacium\Audacium.exe" on Windows)
    // This string is unchanging
    //
    static const FilePath &GetExecutablePath();

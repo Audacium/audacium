@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 SpectrumVRulerControls.cpp
 
@@ -25,7 +25,7 @@ SpectrumVRulerControls::~SpectrumVRulerControls() = default;
 
 std::vector<UIHandlePtr> SpectrumVRulerControls::HitTest(
    const TrackPanelMouseState &st,
-   const AudacityProject *pProject)
+   const AudaciumProject *pProject)
 {
    std::vector<UIHandlePtr> results;
 
@@ -46,7 +46,7 @@ std::vector<UIHandlePtr> SpectrumVRulerControls::HitTest(
 }
 
 unsigned SpectrumVRulerControls::HandleWheelRotation(
-   const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+   const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    using namespace RefreshCode;
    const auto pTrack = FindTrack();
@@ -57,7 +57,7 @@ unsigned SpectrumVRulerControls::HandleWheelRotation(
 }
 
 unsigned SpectrumVRulerControls::DoHandleWheelRotation(
-   const TrackPanelMouseEvent &evt, AudacityProject *pProject, WaveTrack *wt)
+   const TrackPanelMouseEvent &evt, AudaciumProject *pProject, WaveTrack *wt)
 {
    using namespace RefreshCode;
    const wxMouseEvent &event = evt.event;

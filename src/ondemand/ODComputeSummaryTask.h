@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODComputeSummaryTask.h
 
   Created by Michael Chinen (mchinen) on 6/8/08.
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**

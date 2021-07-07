@@ -39,7 +39,7 @@ $control messages (_ "Show messages") choice ((_ "Yes")
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 ;; To enable L/R prefix before alternate L/R channels
@@ -267,8 +267,8 @@ $control messages (_ "Show messages") choice ((_ "Yes")
 <head>
 <meta name=\"generator\" content=
 \"Sample Data Export by Steve Daulton, (http://www.easyspacepro.com). Released under GPL v2.\">
-<meta name=\"description\" content=\"Sample Printer, Free Audacity plug-in\" />
-<meta name=\"keywords\" content=\"sample printer,Audacity,plug-ins,plugins,effects,audio,audio processing,music,analyze\" />
+<meta name=\"description\" content=\"Sample Printer, Free Audacium plug-in\" />
+<meta name=\"keywords\" content=\"sample printer,Audacium,plug-ins,plugins,effects,audio,audio processing,music,analyze\" />
 <meta name=\"author\" content=\"Steve Daulton\" />
 <meta charset=\"UTF-8\">
 
@@ -410,11 +410,11 @@ ul {
   (format nil (strcat
 "</table>
 <p id=\"footer\">" (_ "Produced with <span>Sample Data Export</span> for
-<a href=\"~a\">Audacity</a> by Steve
+<a href=\"~a\">Audacium</a> by Steve
 Daulton") " (<a href=
 \"http://www.easyspacepro.com\">www.easyspacepro.com</a>)</p>
 </body>
-</html>") "https://www.audacityteam.org/"))
+</html>") "https://www.audaciumteam.org/"))
 
 
 ;;; html generator

@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    File License: wxWidgets
 
    Dan Horgan
@@ -18,9 +18,9 @@
 #define __COMMAND__
 
 #include "CommandSignature.h"
-#include "../commands/AudacityCommand.h"
+#include "../commands/AudaciumCommand.h"
 
-class AudacityApp;
+class AudaciumApp;
 class CommandContext;
 class CommandOutputTargets;
 
@@ -28,9 +28,9 @@ class CommandOutputTargets;
 class OldStyleCommand /* not final */
 {
 public:
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
-   OldStyleCommand(AudacityProject &project) : mProject{ project } {};
+   OldStyleCommand(AudaciumProject &project) : mProject{ project } {};
    virtual ~OldStyleCommand() { }
    virtual ComponentInterfaceSymbol GetSymbol() = 0;
    virtual CommandSignature &GetSignature() = 0;
@@ -99,7 +99,7 @@ protected:
 public:
    /// Constructor should not be called directly; only by a factory which
    /// ensures name and params are set appropriately for the command.
-   CommandImplementation(AudacityProject &project, OldStyleCommandType &type);
+   CommandImplementation(AudaciumProject &project, OldStyleCommandType &type);
 
    virtual ~CommandImplementation();
 

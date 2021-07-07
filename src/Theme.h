@@ -1,12 +1,12 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Theme.h
 
   James Crook
 
-  Audacity is free software.
+  Audacium is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/

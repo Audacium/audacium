@@ -1,10 +1,10 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   CrossFade.h
 
- (c) 2005 The Audacity Team
+ (c) 2005 The Audacium Team
   Licensed under the GPL version 2.0
 
 **********************************************************************/

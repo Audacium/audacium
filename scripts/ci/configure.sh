@@ -10,9 +10,9 @@ cmake_args=(
     -S .
     -B build
     -G "${AUDACITY_CMAKE_GENERATOR}"
-    -D audacity_use_pch=no
-    -D audacity_has_networking=yes
-    -D audacity_has_updates_check=yes
+    -D audacium_use_pch=no
+    -D audacium_has_networking=yes
+    -D audacium_has_updates_check=yes
     -D CMAKE_BUILD_TYPE="${AUDACITY_BUILD_TYPE}"
     -D CMAKE_INSTALL_PREFIX="${AUDACITY_INSTALL_PREFIX}"
 )
@@ -38,30 +38,30 @@ fi
 if [[ -n "${APPLE_CODESIGN_IDENTITY}" && "${OSTYPE}" == darwin* ]]; then
     cmake_args+=(
         -D APPLE_CODESIGN_IDENTITY="${APPLE_CODESIGN_IDENTITY}"
-        -D audacity_perform_codesign=yes
+        -D audacium_perform_codesign=yes
     )
 
     if [[ ${GIT_BRANCH} == release* ]]; then
         cmake_args+=(
             -D APPLE_NOTARIZATION_USER_NAME="${APPLE_NOTARIZATION_USER_NAME}"
             -D APPLE_NOTARIZATION_PASSWORD="${APPLE_NOTARIZATION_PASSWORD}"
-            -D audacity_perform_notarization=yes
+            -D audacium_perform_notarization=yes
         )
     fi
 elif [[ -n "${WINDOWS_CERTIFICATE}" && "${OSTYPE}" == msys* ]]; then
     # Windows certificate will be used from the environment
     cmake_args+=(
-        -D audacity_perform_codesign=yes
+        -D audacium_perform_codesign=yes
     )
 fi
 
 if [[ ${GIT_BRANCH} == release* ]]; then
     cmake_args+=(
-        -D audacity_package_manual=yes
+        -D audacium_package_manual=yes
     )
 fi
 
-# Configure Audacity
+# Configure Audacium
 cmake "${cmake_args[@]}"
 
 # Remove build directories and sources to reduce the cache size.

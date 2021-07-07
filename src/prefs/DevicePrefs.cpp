@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   DevicePrefs.cpp
 
@@ -417,7 +417,7 @@ bool DevicePrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Device",
-   [](wxWindow *parent, wxWindowID winid, AudacityProject *)
+   [](wxWindow *parent, wxWindowID winid, AudaciumProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew DevicePrefs(parent, winid);

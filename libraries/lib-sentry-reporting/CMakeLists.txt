@@ -42,7 +42,7 @@ if(${_OPT}has_sentry_reporting)
             SENTRY_PROJECT="${SENTRY_PROJECT}"
     )
 
-    audacity_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )
+    audacium_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )
 else()
-    audacity_header_only_library( ${TARGET} "SentryHelper.h" "" "" "" )
+    audacium_header_only_library( ${TARGET} "SentryHelper.h" "" "" "" )
 endif()

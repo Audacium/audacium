@@ -1,10 +1,10 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LoadLV2.h
 
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 *********************************************************************/
@@ -31,9 +31,9 @@
 #include "lv2/uri-map/uri-map.h"
 #include "lv2/units/units.h"
 
-#include "audacity/ModuleInterface.h"
-#include "audacity/EffectInterface.h"
-#include "audacity/PluginInterface.h"
+#include "audacium/ModuleInterface.h"
+#include "audacium/EffectInterface.h"
+#include "audacium/PluginInterface.h"
 
 #include "lv2_external_ui.h"
 

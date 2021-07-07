@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   @file ModuleSettings.h
 
@@ -16,9 +16,9 @@
 enum {
    kModuleDisabled = 0,
    kModuleEnabled = 1,
-   kModuleAsk = 2,     // Will ask, each time, when audacity starts.
-   kModuleFailed = 3,  // Audacity thinks this is a bad module.
-   kModuleNew = 4      // Audacity will ask once, and remember the answer.
+   kModuleAsk = 2,     // Will ask, each time, when audacium starts.
+   kModuleFailed = 3,  // Audacium thinks this is a bad module.
+   kModuleNew = 4      // Audacium will ask once, and remember the answer.
 };
 
 namespace ModuleSettings {

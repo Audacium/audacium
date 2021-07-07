@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 CommonTrackPanelCell.h
 
@@ -27,7 +27,7 @@ class AUDACITY_DLL_API CommonTrackPanelCell /* not final */
 public:
    // Type of function to dispatch mouse wheel events
    using Hook = std::function<
-      unsigned(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+      unsigned(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
    >;
    // Install a dispatcher function, returning the previous function
    static Hook InstallMouseWheelHook( const Hook &hook );
@@ -39,7 +39,7 @@ public:
 
    // Default to the arrow cursor
    HitTestPreview DefaultPreview
-      (const TrackPanelMouseState &, const AudacityProject *) override;
+      (const TrackPanelMouseState &, const AudaciumProject *) override;
 
    std::shared_ptr<Track> FindTrack() { return DoFindTrack(); }
    std::shared_ptr<const Track> FindTrack() const
@@ -50,7 +50,7 @@ protected:
 
    unsigned HandleWheelRotation
       (const TrackPanelMouseEvent &event,
-      AudacityProject *pProject) override;
+      AudaciumProject *pProject) override;
 
 };
 

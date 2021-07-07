@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Export.h
 
@@ -27,7 +27,7 @@ class wxFileCtrlEvent;
 class wxMemoryDC;
 class wxSimplebook;
 class wxStaticText;
-class AudacityProject;
+class AudaciumProject;
 class WaveTrack;
 class Tags;
 class TrackList;
@@ -122,7 +122,7 @@ public:
     * responsible for alerting the user.  Otherwise ProgressResult::Success or
     * ProgressResult::Stopped
     */
-   virtual ProgressResult Export(AudacityProject *project,
+   virtual ProgressResult Export(AudaciumProject *project,
                        std::unique_ptr<ProgressDialog> &pDialog,
                        unsigned channels,
                        const wxFileNameWrapper &fName,
@@ -180,11 +180,11 @@ public:
          const Registry::Placement &placement = { wxEmptyString, {} } );
    };
 
-   static bool DoEditMetadata(AudacityProject &project,
+   static bool DoEditMetadata(AudaciumProject &project,
       const TranslatableString &title,
       const TranslatableString &shortUndoDescription, bool force);
 
-   Exporter( AudacityProject &project );
+   Exporter( AudaciumProject &project );
    virtual ~Exporter();
 
    void SetFileDialogTitle( const TranslatableString & DialogTitle );
@@ -232,7 +232,7 @@ private:
    FileExtension mFormatName;
    FileDialogWrapper *mDialog;
    TranslatableString mFileDialogTitle;
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
    std::unique_ptr<MixerSpec> mMixerSpec;
 
    ExportPluginArray mPlugins;
@@ -323,15 +323,15 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-AUDACITY_DLL_API TranslatableString AudacityExportCaptionStr();
-AUDACITY_DLL_API TranslatableString AudacityExportMessageStr();
+AUDACITY_DLL_API TranslatableString AudaciumExportCaptionStr();
+AUDACITY_DLL_API TranslatableString AudaciumExportMessageStr();
 
 /// We have many Export errors that are essentially anonymous
 /// and are distinguished only by an error code number.
 /// Rather than repeat the code, we have it just once.
 AUDACITY_DLL_API void ShowExportErrorDialog(wxString ErrorCode,
-   TranslatableString message = AudacityExportMessageStr(),
-   const TranslatableString& caption = AudacityExportCaptionStr());
+   TranslatableString message = AudaciumExportMessageStr(),
+   const TranslatableString& caption = AudaciumExportCaptionStr());
 
 AUDACITY_DLL_API
 void ShowDiskFullExportErrorDialog(const wxFileNameWrapper &fileName);

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   SentryHelper.h
 
@@ -16,7 +16,7 @@
 #ifdef HAS_SENTRY_REPORTING
 #	include "SentryReport.h"
 
-#   define ADD_EXCEPTION_CONTEXT(name, value) audacity::sentry::AddExceptionContext(name, value)
+#   define ADD_EXCEPTION_CONTEXT(name, value) audacium::sentry::AddExceptionContext(name, value)
 #else
 #   define ADD_EXCEPTION_CONTEXT(name, value)
 #endif // HAS_SENTRY_REPORTING

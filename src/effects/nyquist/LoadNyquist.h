@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LoadNyquist.h
 
@@ -8,9 +8,9 @@
 
 **********************************************************************/
 
-#include "audacity/ModuleInterface.h"
-#include "audacity/EffectInterface.h"
-#include "audacity/PluginInterface.h"
+#include "audacium/ModuleInterface.h"
+#include "audacium/EffectInterface.h"
+#include "audacium/PluginInterface.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //

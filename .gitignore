@@ -55,7 +55,7 @@ lib-src/soundtouch/include/soundtouch_config.h
 lib-src/twolame/doc/html/Doxyfile
 lib-src/twolame/libtwolame/config.h
 locale/POTFILES
-src/audacity.desktop
+src/audacium.desktop
 src/RevisionIdent.h
 src/configunix.h
 src/configwin.h
@@ -77,8 +77,8 @@ lib-src/lv2/srcdir.mk
 .lock-waf_linux2_build
 
 # Mac build outputs
-mac/Audacity.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-mac/Audacity.xcodeproj/project.xcworkspace/xcshareddata/Audacity.xccheckout
+mac/Audacium.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+mac/Audacium.xcodeproj/project.xcworkspace/xcshareddata/Audacium.xccheckout
 mac/Makefile
 mac/confdefs.h
 mac/config.status
@@ -141,8 +141,8 @@ dox/
 *.app
 
 # Executable without extension
-/audacity
-src/audacity
+/audacium
+src/audacium
 lib-src/expat/examples/elements
 lib-src/expat/examples/outline
 lib-src/expat/xmlwf/xmlwf
@@ -198,7 +198,7 @@ win/resetPrefs.txt
 
 # Emacs backup files
 *~
-win/xaudacity.ico
+win/xaudacium.ico
 *.sublime-project
 *.sublime-workspace
 /tests/results/*.png

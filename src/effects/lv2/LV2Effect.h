@@ -1,10 +1,10 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LV2Effect.h
 
-  Audacity(R) is copyright (c) 1999-2013 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2013 Audacium Team.
   License: GPL v2.  See License.txt.
 
 *********************************************************************/

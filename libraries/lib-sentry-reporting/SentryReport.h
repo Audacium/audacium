@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file SentryReport.h
  @brief Declare a class to report errors to Sentry.
@@ -18,7 +18,7 @@
 
 #include "AnonymizedMessage.h"
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -92,4 +92,4 @@ private:
 };
 
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

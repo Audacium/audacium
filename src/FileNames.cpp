@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   FileNames.cpp
 
@@ -16,7 +16,7 @@ for us to keep track of the different kinds of files we read and write
 from.
 
 JKC: In time I plan to add all file names and file extensions
-used throughout Audacity into this one place.
+used throughout Audacium into this one place.
 
 *//********************************************************************/
 
@@ -36,7 +36,7 @@ used throughout Audacity into this one place.
 #include "Internat.h"
 #include "PlatformCompatibility.h"
 #include "wxFileNameWrapper.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/FileDialog/FileDialog.h"
 
 #if defined(__WXMAC__) || defined(__WXGTK__)
@@ -51,9 +51,9 @@ static wxString gDataDir;
 
 const FileNames::FileType
      FileNames::AllFiles{ XO("All files"), { wxT("") } }
-     /* i18n-hint an Audacity project is the state of the program, stored as
+     /* i18n-hint an Audacium project is the state of the program, stored as
      files that can be reopened to resume the session later */
-   , FileNames::AudacityProjects{ XO("AUP3 project files"), { wxT("aup3") }, true }
+   , FileNames::AudaciumProjects{ XO("AUP3 project files"), { wxT("aup3") }, true }
    , FileNames::DynamicLibraries{
 #if defined(__WXMSW__)
       XO("Dynamically Linked Libraries"), { wxT("dll") }, true
@@ -156,7 +156,7 @@ bool FileNames::DoCopyFile(
 #else
    // PRL:  Compensate for buggy wxCopyFile that returns false success,
    // which was a cause of case 4 in comment 10 of
-   // http://bugzilla.audacityteam.org/show_bug.cgi?id=1759
+   // http://bugzilla.audaciumteam.org/show_bug.cgi?id=1759
    // Destination file was created, but was empty
    // Bug was introduced after wxWidgets 2.8.12 at commit
    // 0597e7f977c87d107e24bf3e95ebfa3d60efc249 of wxWidgets repo
@@ -211,17 +211,17 @@ void FileNames::MakeNameUnique(FilePaths &otherNames,
    otherNames.push_back(newName.GetFullName());
 }
 
-// The APP name has upercase first letter (so that Quit Audacity is correctly
+// The APP name has upercase first letter (so that Quit Audacium is correctly
 // capitalised on Mac, but we want lower case APP name in paths.
 // This function does that substitution, IF the last component of
-// the path is 'Audacity'.
+// the path is 'Audacium'.
 wxString FileNames::LowerCaseAppNameInPath( const wxString & dirIn){
    wxString dir = dirIn;
-   // BUG 1577 Capitalisation of Audacity in path...
-   if( dir.EndsWith( "Audacity" ) )
+   // BUG 1577 Capitalisation of Audacium in path...
+   if( dir.EndsWith( "Audacium" ) )
    {
-      int nChars = dir.length() - wxString( "Audacity" ).length();
-      dir = dir.Left( nChars ) + "audacity";
+      int nChars = dir.length() - wxString( "Audacium" ).length();
+      dir = dir.Left( nChars ) + "audacium";
    }
    return dir;
 }
@@ -230,8 +230,8 @@ FilePath FileNames::DataDir()
 {
    // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
    //       between wxStandardPaths and wxConfig under Linux.  The latter
-   //       creates a normal file as "$HOME/.audacity", while the former
-   //       expects the ".audacity" portion to be a directory.
+   //       creates a normal file as "$HOME/.audacium", while the former
+   //       expects the ".audacium" portion to be a directory.
    if (gDataDir.empty())
    {
       // If there is a directory "Portable Settings" relative to the
@@ -239,7 +239,7 @@ FilePath FileNames::DataDir()
       // the prefs are stored in the user data dir provided by the OS.
       wxFileName exePath(PlatformCompatibility::GetExecutablePath());
 #if defined(__WXMAC__)
-      // Path ends for example in "Audacity.app/Contents/MacOSX"
+      // Path ends for example in "Audacium.app/Contents/MacOSX"
       //exePath.RemoveLastDir();
       //exePath.RemoveLastDir();
       // just remove the MacOSX part.
@@ -273,16 +273,16 @@ FilePath FileNames::HtmlHelpDir()
 {
 #if defined(__WXMAC__)
    wxFileName exePath(PlatformCompatibility::GetExecutablePath());
-      // Path ends for example in "Audacity.app/Contents/MacOSX"
+      // Path ends for example in "Audacium.app/Contents/MacOSX"
       //exePath.RemoveLastDir();
       //exePath.RemoveLastDir();
       // just remove the MacOSX part.
       exePath.RemoveLastDir();
 
-   //for mac this puts us within the .app: Audacity.app/Contents/SharedSupport/
+   //for mac this puts us within the .app: Audacium.app/Contents/SharedSupport/
    return wxFileName( exePath.GetPath()+wxT("/help/manual"), wxEmptyString ).GetFullPath();
 #else
-   //linux goes into /*prefix*/share/audacity/
+   //linux goes into /*prefix*/share/audacium/
    //windows (probably) goes into the dir containing the .exe
    wxString dataDir = FileNames::LowerCaseAppNameInPath( wxStandardPaths::Get().GetDataDir());
    return wxFileName( dataDir+wxT("/help/manual"), wxEmptyString ).GetFullPath();
@@ -332,7 +332,7 @@ FilePath FileNames::BaseDir()
 #if defined(__WXMAC__)
    baseDir = PlatformCompatibility::GetExecutablePath();
 
-   // Path ends for example in "Audacity.app/Contents/MacOSX"
+   // Path ends for example in "Audacium.app/Contents/MacOSX"
    //baseDir.RemoveLastDir();
    //baseDir.RemoveLastDir();
    // just remove the MacOSX part.
@@ -342,7 +342,7 @@ FilePath FileNames::BaseDir()
    // the "Debug" directory in debug builds.
    baseDir = PlatformCompatibility::GetExecutablePath();
 #else
-   // Linux goes into /*prefix*/share/audacity/
+   // Linux goes into /*prefix*/share/audacium/
    baseDir = FileNames::LowerCaseAppNameInPath(wxStandardPaths::Get().GetPluginsDir());
 #endif
 
@@ -489,7 +489,7 @@ wxFileNameWrapper FileNames::DefaultToDocumentsFolder(const wxString &preference
    {
       // The default path might not exist since it is a sub-directory of 'Documents'
       // There is no error if the path could not be created.  That's OK.
-      // The dialog that Audacity offers will allow the user to select a valid directory.
+      // The dialog that Audacium offers will allow the user to select a valid directory.
       result.Mkdir(0755, wxPATH_MKDIR_FULL);
    }
 #else
@@ -607,16 +607,16 @@ bool FileNames::IsMidi(const FilePath &fName)
       extension.IsSameAs(wxT("mid"), false);
 }
 
-static FilePaths sAudacityPathList;
+static FilePaths sAudaciumPathList;
 
-const FilePaths &FileNames::AudacityPathList()
+const FilePaths &FileNames::AudaciumPathList()
 {
-   return sAudacityPathList;
+   return sAudaciumPathList;
 }
 
-void FileNames::SetAudacityPathList( FilePaths list )
+void FileNames::SetAudaciumPathList( FilePaths list )
 {
-   sAudacityPathList = std::move( list );
+   sAudaciumPathList = std::move( list );
 }
 
 // static
@@ -691,7 +691,7 @@ char *FileNames::VerifyFilename(const wxString &s, bool input)
       wxFileName ff(name);
       FileExtension ext;
       while ((char *) (const char *)name.mb_str() == NULL) {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO(
 "The specified filename could not be converted due to Unicode character use."));
 
@@ -722,7 +722,7 @@ bool FileNames::WritableLocationCheck(const FilePath& path)
 
     if (!status)
     {
-        AudacityMessageBox(
+        AudaciumMessageBox(
             XO("Directory %s does not have write permissions")
             .Format(path),
             XO("Error"),

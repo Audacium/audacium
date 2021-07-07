@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ErrorReportDialog.h
 
@@ -18,7 +18,7 @@
 
 #include "wxPanelWrapper.h" // to inherit
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -29,7 +29,7 @@ class Report;
 class wxTextCtrl;
 
 //! A dialog, that has "Send", "Don't send" and help buttons.
-/*! This dialog is used in place of error dialogs for Audacity errors
+/*! This dialog is used in place of error dialogs for Audacium errors
     when Sentry reporting is enabled.
 */
 class ErrorReportDialog final : public wxDialogWrapper
@@ -48,7 +48,7 @@ private:
 
    void OnHelp(wxCommandEvent& event);
 
-   std::unique_ptr<audacity::sentry::Report> mReport;
+   std::unique_ptr<audacium::sentry::Report> mReport;
 
    wxString mHelpUrl;
 

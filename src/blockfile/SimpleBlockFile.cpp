@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   SimpleBlockFile.cpp
 
@@ -35,7 +35,7 @@ to get its definition, rather than rolling our own.
 
 *//*******************************************************************/
 
-#include "../Audacity.h"
+#include "../Audacium.h"
 #include "SimpleBlockFile.h"
 
 #include <wx/wx.h>

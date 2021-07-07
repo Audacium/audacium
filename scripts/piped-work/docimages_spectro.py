@@ -1,8 +1,8 @@
 # docimages_spectro.py
 # Sends commands to get images for the manual.
-# Images for https://alphamanual.audacityteam.org/man/Spectrogram_View
+# Images for https://alphamanual.audaciumteam.org/man/Spectrogram_View
 
-# Make sure Audacity is running first and that mod-script-pipe is enabled
+# Make sure Audacium is running first and that mod-script-pipe is enabled
 # before running this script.
 
 #load and run the common core.
@@ -59,8 +59,8 @@ def spectro_imagesB():
     capture( 'Spectral004.png', 'AllTracks' )
 
 def spectro_imagesC():
-    # A chirp and the word 'Audacity'
-    loadExample( 'AudacitySpectral.wav' )
+    # A chirp and the word 'Audacium'
+    loadExample( 'AudaciumSpectral.wav' )
     do( 'Select: Start=0 End=0' );
     capture( 'Spectral005.png', 'AllTracks' )
     do( 'SetTrack: Scale=dB')

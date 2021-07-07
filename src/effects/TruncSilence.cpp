@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   TruncSilence.cpp
 
@@ -35,7 +35,7 @@
 #include "../ShuttleGui.h"
 #include "../WaveTrack.h"
 #include "../widgets/valnum.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 class Enums {
 public:
@@ -141,7 +141,7 @@ EffectTruncSilence::EffectTruncSilence()
 
    SetLinearEffectFlag(false);
 
-   // This used to be changeable via the audacity.cfg/registry.  Doubtful that was
+   // This used to be changeable via the audacium.cfg/registry.  Doubtful that was
    // ever done.
    //
    // Original comment:

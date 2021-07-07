@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AdornedRulerPanel.h
 
@@ -16,22 +16,22 @@
 #include "Prefs.h"
 #include "ViewInfo.h" // for PlayRegion
 
-class AudacityProject;
+class AudaciumProject;
 struct SelectedRegionEvent;
 class SnapManager;
 class TrackList;
 
-// This is an Audacity Specific ruler panel.
+// This is an Audacium Specific ruler panel.
 class AUDACITY_DLL_API AdornedRulerPanel final
 : public CellularPanel
 , private PrefsListener
 {
 public:
-   static AdornedRulerPanel &Get( AudacityProject &project );
-   static const AdornedRulerPanel &Get( const AudacityProject &project );
-   static void Destroy( AudacityProject &project );
+   static AdornedRulerPanel &Get( AudaciumProject &project );
+   static const AdornedRulerPanel &Get( const AudaciumProject &project );
+   static void Destroy( AudaciumProject &project );
 
-   AdornedRulerPanel(AudacityProject *project,
+   AdornedRulerPanel(AudaciumProject *project,
                      wxWindow* parent,
                      wxWindowID id,
                      const wxPoint& pos = wxDefaultPosition,
@@ -127,7 +127,7 @@ private:
 private:
 
    Ruler mRuler;
-   AudacityProject *const mProject;
+   AudaciumProject *const mProject;
    TrackList *mTracks;
 
    wxRect mOuter;
@@ -193,7 +193,7 @@ private:
    // area into cells
    std::shared_ptr<TrackPanelNode> Root() override;
 public:
-   AudacityProject * GetProject() const override;
+   AudaciumProject * GetProject() const override;
 private:
    TrackPanelCell *GetFocusedCell() override;
    void SetFocusedCell() override;

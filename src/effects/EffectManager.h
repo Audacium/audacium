@@ -1,10 +1,10 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   EffectManager.h
 
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 **********************************************************************/
@@ -16,11 +16,11 @@
 #include <vector>
 
 #include <unordered_map>
-#include "audacity/EffectInterface.h"
+#include "audacium/EffectInterface.h"
 #include "Identifier.h"
 
-class AudacityCommand;
-class AudacityProject;
+class AudaciumCommand;
+class AudaciumProject;
 class CommandContext;
 class CommandMessageTarget;
 class ComponentInterfaceSymbol;
@@ -31,13 +31,13 @@ class wxString;
 typedef wxString PluginID;
 
 using EffectMap = std::unordered_map<wxString, Effect *>;
-using AudacityCommandMap = std::unordered_map<wxString, AudacityCommand *>;
+using AudaciumCommandMap = std::unordered_map<wxString, AudaciumCommand *>;
 using EffectOwnerMap = std::unordered_map< wxString, std::shared_ptr<Effect> >;
 
 #if defined(EXPERIMENTAL_EFFECTS_RACK)
 class EffectRack;
 #endif
-class AudacityCommand;
+class AudaciumCommand;
 
 
 class NotifyingSelectedRegion;
@@ -86,7 +86,7 @@ public:
 
    /** Run a command given the plugin ID */
    // Returns true on success. 
-   bool DoAudacityCommand(const PluginID & ID,
+   bool DoAudaciumCommand(const PluginID & ID,
                          const CommandContext &,
                          wxWindow *parent,
                          bool shouldPrompt  = true );
@@ -139,10 +139,10 @@ public:
    Effect *GetEffect(const PluginID & ID);
 
 private:
-   AudacityCommand *GetAudacityCommand(const PluginID & ID);
+   AudaciumCommand *GetAudaciumCommand(const PluginID & ID);
 
    EffectMap mEffects;
-   AudacityCommandMap mCommands;
+   AudaciumCommandMap mCommands;
    EffectOwnerMap mHostEffects;
 
    int mNumEffects;

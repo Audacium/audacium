@@ -1,10 +1,10 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   EffectManager.cpp
 
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -26,11 +26,11 @@ effects.
 #include <algorithm>
 #include <wx/tokenzr.h>
 
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 #include "../ShuttleGetDefinition.h"
 #include "../commands/CommandContext.h"
-#include "../commands/AudacityCommand.h"
+#include "../commands/AudaciumCommand.h"
 #include "../PluginManager.h"
 
 
@@ -74,21 +74,21 @@ void EffectManager::UnregisterEffect(const PluginID & ID)
    mEffects.erase(id);
 }
 
-bool EffectManager::DoAudacityCommand(const PluginID & ID,
+bool EffectManager::DoAudaciumCommand(const PluginID & ID,
                              const CommandContext &context,
                              wxWindow *parent,
                              bool shouldPrompt /* = true */)
 
 {
    this->SetSkipStateFlag(false);
-   AudacityCommand *command = GetAudacityCommand(ID);
+   AudaciumCommand *command = GetAudaciumCommand(ID);
    
    if (!command)
    {
       return false;
    }
 
-   bool res = command->DoAudacityCommand(parent, context, shouldPrompt);
+   bool res = command->DoAudaciumCommand(parent, context, shouldPrompt);
 
    return res;
 }
@@ -129,7 +129,7 @@ TranslatableString EffectManager::GetCommandDescription(const PluginID & ID)
 {
    if (GetEffect(ID))
       return XO("Applied effect: %s").Format( GetCommandName(ID) );
-   if (GetAudacityCommand(ID))
+   if (GetAudaciumCommand(ID))
       return XO("Applied command: %s").Format( GetCommandName(ID) );
 
    return {};
@@ -140,7 +140,7 @@ ManualPageID EffectManager::GetCommandUrl(const PluginID & ID)
    Effect* pEff = GetEffect(ID);
    if( pEff )
       return pEff->ManualPage();
-   AudacityCommand * pCom = GetAudacityCommand(ID);
+   AudaciumCommand * pCom = GetAudaciumCommand(ID);
    if( pCom )
       return pCom->ManualPage();
 
@@ -152,7 +152,7 @@ TranslatableString EffectManager::GetCommandTip(const PluginID & ID)
    Effect* pEff = GetEffect(ID);
    if( pEff )
       return pEff->GetDescription();
-   AudacityCommand * pCom = GetAudacityCommand(ID);
+   AudaciumCommand * pCom = GetAudaciumCommand(ID);
    if( pCom )
       return pCom->GetDescription();
 
@@ -165,7 +165,7 @@ void EffectManager::GetCommandDefinition(const PluginID & ID, const CommandConte
    ComponentInterface *command;
    command = GetEffect(ID);
    if( !command )
-      command = GetAudacityCommand( ID );
+      command = GetAudaciumCommand( ID );
    if( !command )
       return;
 
@@ -252,7 +252,7 @@ wxString EffectManager::GetEffectParameters(const PluginID & ID)
       return parms;
    }
 
-   AudacityCommand *command = GetAudacityCommand(ID);
+   AudaciumCommand *command = GetAudaciumCommand(ID);
    
    if (command)
    {
@@ -287,7 +287,7 @@ bool EffectManager::SetEffectParameters(const PluginID & ID, const wxString & pa
 
       return effect->SetAutomationParameters(params);
    }
-   AudacityCommand *command = GetAudacityCommand(ID);
+   AudaciumCommand *command = GetAudaciumCommand(ID);
    
    if (command)
    {
@@ -319,7 +319,7 @@ bool EffectManager::PromptUser(
       return result;
    }
 
-   AudacityCommand *command = GetAudacityCommand(ID);
+   AudaciumCommand *command = GetAudaciumCommand(ID);
 
    if (command)
    {
@@ -695,7 +695,7 @@ void EffectManager::SetBatchProcessing(const PluginID & ID, bool start)
       return;
    }
 
-   AudacityCommand *command = GetAudacityCommand(ID);
+   AudaciumCommand *command = GetAudaciumCommand(ID);
    if (command)
    {
       command->SetBatchProcessing(start);
@@ -744,9 +744,9 @@ Effect *EffectManager::GetEffect(const PluginID & ID)
          }
       }
 
-      auto command = dynamic_cast<AudacityCommand *>(PluginManager::Get().GetInstance(ID));
+      auto command = dynamic_cast<AudaciumCommand *>(PluginManager::Get().GetInstance(ID));
       if( !command )
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO(
 "Attempting to initialize the following effect failed:\n\n%s\n\nMore information may be available in 'Help > Diagnostics > Show Log'")
                .Format( GetCommandName(ID) ),
@@ -758,7 +758,7 @@ Effect *EffectManager::GetEffect(const PluginID & ID)
    return mEffects[ID];
 }
 
-AudacityCommand *EffectManager::GetAudacityCommand(const PluginID & ID)
+AudaciumCommand *EffectManager::GetAudaciumCommand(const PluginID & ID)
 {
    // Must have a "valid" ID
    if (ID.empty())
@@ -771,7 +771,7 @@ AudacityCommand *EffectManager::GetAudacityCommand(const PluginID & ID)
    {
 
       // This will instantiate the effect client if it hasn't already been done
-      auto command = dynamic_cast<AudacityCommand *>(PluginManager::Get().GetInstance(ID));
+      auto command = dynamic_cast<AudaciumCommand *>(PluginManager::Get().GetInstance(ID));
       if (command )//&& command->Startup(NULL))
       {
          command->Init();
@@ -782,7 +782,7 @@ AudacityCommand *EffectManager::GetAudacityCommand(const PluginID & ID)
          /*
       if (ident && ident->IsLegacy())
       {
-         auto command = dynamic_cast<AudacityCommand *>(ident);
+         auto command = dynamic_cast<AudaciumCommand *>(ident);
          if (commandt && command->Startup(NULL))
          {
             mCommands[ID] = command;
@@ -791,10 +791,10 @@ AudacityCommand *EffectManager::GetAudacityCommand(const PluginID & ID)
       }
 
 
-      auto command = std::make_shared<AudacityCommand>(); // TODO: use make_unique and store in std::unordered_map
+      auto command = std::make_shared<AudaciumCommand>(); // TODO: use make_unique and store in std::unordered_map
       if (command)
       {
-         AudacityCommand *client = dynamic_cast<AudacityCommand *>(ident);
+         AudaciumCommand *client = dynamic_cast<AudaciumCommand *>(ident);
          if (client && command->Startup(client))
          {
             auto pCommand = command.get();
@@ -804,7 +804,7 @@ AudacityCommand *EffectManager::GetAudacityCommand(const PluginID & ID)
          }
       }
 */
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO(
 "Attempting to initialize the following command failed:\n\n%s\n\nMore information may be available in 'Help > Diagnostics > Show Log'")
             .Format( GetCommandName(ID) ),
@@ -828,7 +828,7 @@ const PluginID & EffectManager::GetEffectByIdentifier(const CommandID & strTarge
    PluginManager & pm = PluginManager::Get();
    // Effects OR Generic commands...
    for (auto &plug
-        : pm.PluginsOfType(PluginTypeEffect | PluginTypeAudacityCommand)) {
+        : pm.PluginsOfType(PluginTypeEffect | PluginTypeAudaciumCommand)) {
       auto &ID = plug.GetID();
       if (GetCommandIdentifier(ID) == strTarget)
          return ID;

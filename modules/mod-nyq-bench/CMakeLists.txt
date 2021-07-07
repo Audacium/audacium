@@ -12,7 +12,7 @@ set( DEFINES
       # versions of wxWidgets...even if the build is for Release.
       wxDEBUG_LEVEL=0
 )
-audacity_module( ${TARGET} "${SOURCES}" "Audacity"
+audacium_module( ${TARGET} "${SOURCES}" "Audacium"
    "${DEFINES}" "" )
 
 set_target_properties( ${TARGET} PROPERTIES EXCLUDE_FROM_ALL YES )

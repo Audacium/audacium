@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ToolBar.cpp
 
@@ -327,7 +327,7 @@ END_EVENT_TABLE()
 //
 // Constructor
 //
-ToolBar::ToolBar( AudacityProject &project,
+ToolBar::ToolBar( AudaciumProject &project,
                   int type,
                   const TranslatableString &label,
                   const wxString &section,
@@ -365,7 +365,7 @@ ToolBar::~ToolBar()
 TranslatableString ToolBar::GetTitle()
 {
    /* i18n-hint: %s will be replaced by the name of the kind of toolbar.*/
-   return XO("Audacity %s Toolbar").Format( GetLabel() );
+   return XO("Audacium %s Toolbar").Format( GetLabel() );
 }
 
 //
@@ -895,7 +895,7 @@ void ToolBar::MakeAlternateImages(AButton &button, int idx,
 }
 
 void ToolBar::SetButtonToolTip
-(AudacityProject &theProject,
+(AudaciumProject &theProject,
  AButton &button, const ComponentInterfaceSymbol commands[], size_t nCommands)
 {
    TranslatableString result;

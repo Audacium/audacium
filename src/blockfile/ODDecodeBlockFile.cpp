@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODDecodeBlockFile.cpp
 
   Created by Michael Chinen (mchinen)
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -16,7 +16,7 @@ The summary is eventually computed and written to a file in a background thread.
 
 *//*******************************************************************/
 
-#include "../Audacity.h"
+#include "../Audacium.h"
 #include "ODDecodeBlockFile.h"
 
 #include <float.h>
@@ -33,7 +33,7 @@ The summary is eventually computed and written to a file in a background thread.
 #include "NotYetAvailableException.h"
 
 const int bheaderTagLen = 20;
-char bheaderTag[bheaderTagLen + 1] = "AudacityBlockFile112";
+char bheaderTag[bheaderTagLen + 1] = "AudaciumBlockFile112";
 
 
 

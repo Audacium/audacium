@@ -13,13 +13,13 @@
 				<string>aup</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityProject.icns</string>
+			<string>AudaciumProject.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
-				<string>application/x-audacity-project</string>
+				<string>application/x-audacium-project</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Audacity Project</string>
+			<string>Audacium Project</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>auDp</string>
@@ -36,7 +36,7 @@
 				<string>wave</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityWAV.icns</string>
+			<string>AudaciumWAV.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/wav</string>
@@ -62,7 +62,7 @@
 				<string>aifc</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityAIFF.icns</string>
+			<string>AudaciumAIFF.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/aiff</string>
@@ -84,7 +84,7 @@
 				<string>au</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityAU.icns</string>
+			<string>AudaciumAU.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/au</string>
@@ -106,7 +106,7 @@
 				<string>mp3</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityMP3.icns</string>
+			<string>AudaciumMP3.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/mpeg</string>
@@ -138,7 +138,7 @@
 				<string>ogg</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityOGG.icns</string>
+			<string>AudaciumOGG.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/ogg</string>
@@ -168,7 +168,7 @@
 				<string>flac</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>AudacityFLAC.icns</string>
+			<string>AudaciumFLAC.icns</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>audio/flac</string>
@@ -206,17 +206,17 @@
 	<key>CFBundleExecutable</key>
 	<string>Wrapper</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Audacity version ${AUDACITY_INFO_VERSION}</string>
+	<string>Audacium version ${AUDACITY_INFO_VERSION}</string>
 	<key>CFBundleIconFile</key>
-	<string>Audacity.icns</string>
+	<string>Audacium.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.audacityteam.audacity</string>
+	<string>org.audaciumteam.audacium</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
 	<string>Version ${AUDACITY_INFO_VERSION}</string>
 	<key>CFBundleName</key>
-	<string>Audacity</string>
+	<string>Audacium</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -232,9 +232,9 @@
    <key>NSRequiresAquaSystemAppearance</key>
    <true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Audacity version ${AUDACITY_INFO_VERSION}</string>
+	<string>Audacium version ${AUDACITY_INFO_VERSION}</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Audacity requires access to the microphone only if you intend to record from it.</string>
+	<string>Audacium requires access to the microphone only if you intend to record from it.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Generator.h
 
@@ -24,7 +24,7 @@
 
 #include "TimeWarper.h"
 
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 bool Generator::Process()
 {

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Dither.cpp
 
@@ -127,7 +127,7 @@ const float Dither::SHAPED_BS[] = { 2.033f, -2.165f, 1.959f, -1.590f, 0.6149f };
         else {
             if ( false )
                 ;
-            else wxOnAssert(L"c:\\users\\yam\\documents\\audacity\\mixer\\n\\audacity\\src\\dither.cpp", 348,  __FUNCTION__  , L"false", 0);
+            else wxOnAssert(L"c:\\users\\yam\\documents\\audacium\\mixer\\n\\audacium\\src\\dither.cpp", 348,  __FUNCTION__  , L"false", 0);
         }
     } while (0);
 #endif

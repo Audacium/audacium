@@ -13,7 +13,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 ;i18n-hint: "Browse..." is text on a button that launches a file browser.
@@ -26,21 +26,21 @@ $control files (_ "Select file(s) to install") file (_ "Browse...") "~/Desktop/"
 $control overwrite (_ "Allow overwriting") choice ((_ "Disallow") (_ "Allow")) 0
 
 
-(defun audacity-version-ok (min-version)
-  ;; No longer required as this plug-in is shipped with Audacity.
+(defun audacium-version-ok (min-version)
+  ;; No longer required as this plug-in is shipped with Audacium.
   ;; Left in for illustration purposes.
-  ;; min-version is a list of three numbers (the minimum Audacity version number).
-  ;; Example, if the minimum version required is Audacity 2.4.0, then
-  ;; call (audacity-version-ok '(2 4 0))
+  ;; min-version is a list of three numbers (the minimum Audacium version number).
+  ;; Example, if the minimum version required is Audacium 2.4.0, then
+  ;; call (audacium-version-ok '(2 4 0))
   ;; Treturns t if plug-in is running on 2.4.0 or later, otherwise nil.
   (cond
-    ((get '*audacity* 'version)
+    ((get '*audacium* 'version)
       (mapc (lambda (x y)
               (cond
                 ((boundp 'isok))
                 ((> x y) (setf isok t))
                 ((< x y) (setf isok nil))))
-            (get '*audacity* 'version)
+            (get '*audacium* 'version)
             min-version)
       (or (not (boundp 'isok)) isok))
     (t nil)))
@@ -148,7 +148,7 @@ $control overwrite (_ "Allow overwriting") choice ((_ "Disallow") (_ "Allow")) 0
         nil))))
 
 (defun get-file-list (file-string)
-  ;; See https://wiki.audacityteam.org/wiki/Nyquist_File-Button_Tutorial#Open_Multiple_Files
+  ;; See https://wiki.audaciumteam.org/wiki/Nyquist_File-Button_Tutorial#Open_Multiple_Files
   (let ((path-string (format nil "(list ~s )" (string-trim "\"" file-string))))
     (eval-string path-string)))
 

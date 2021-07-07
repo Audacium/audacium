@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   HistoryWindow.h
 
@@ -19,7 +19,7 @@ class wxListCtrl;
 class wxListEvent;
 class wxSpinCtrl;
 class wxTextCtrl;
-class AudacityProject;
+class AudaciumProject;
 class ShuttleGui;
 class UndoManager;
 
@@ -28,7 +28,7 @@ class HistoryDialog final : public wxDialogWrapper,
 {
 
  public:
-   HistoryDialog(AudacityProject * parent, UndoManager *manager);
+   HistoryDialog(AudaciumProject * parent, UndoManager *manager);
 
    void UpdateDisplay(wxEvent &e);
    
@@ -54,7 +54,7 @@ class HistoryDialog final : public wxDialogWrapper,
    // PrefsListener implementation
    void UpdatePrefs() override;
 
-   AudacityProject   *mProject;
+   AudaciumProject   *mProject;
    UndoManager       *mManager;
    wxListCtrl        *mList;
    wxTextCtrl        *mTotal;

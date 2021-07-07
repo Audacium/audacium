@@ -1,8 +1,8 @@
 # docimages_tracks.py
 # Sends commands to get images for the manual.
-# Images for https://alphamanual.audacityteam.org/man/Audio_Tracks
+# Images for https://alphamanual.audaciumteam.org/man/Audio_Tracks
 
-# Make sure Audacity is running first and that mod-script-pipe is enabled
+# Make sure Audacium is running first and that mod-script-pipe is enabled
 # before running this script.
 
 

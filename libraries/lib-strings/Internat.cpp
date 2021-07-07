@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Internat.cpp
 
@@ -43,7 +43,7 @@ STRINGS_API const wxString& GetCustomSubstitution(const wxString& str1)
     return str1;
 }
 
-// In any translated string, we can replace the name 'Audacity' by 'DarkAudacity'
+// In any translated string, we can replace the name 'Audacium' by 'DarkAudacium'
 // without requiring translators to see extra strings for the two versions.
 STRINGS_API const wxString& GetCustomTranslation(const wxString& str1)
 {

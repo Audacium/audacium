@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file CodeConversions.cpp
  @brief Define functions to preform UTF-8 to std::wstring conversions.
@@ -13,7 +13,7 @@
 #include <locale>
 #include <codecvt>
 
-namespace audacity
+namespace audacium
 {
 
 std::string ToUTF8 (const std::wstring& wstr)

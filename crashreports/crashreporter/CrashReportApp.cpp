@@ -249,7 +249,7 @@ namespace
         auto frame = new wxFrame(
             nullptr, 
             wxID_ANY, 
-            _("Problem Report for Audacity"),
+            _("Problem Report for Audacium"),
             wxDefaultPosition, 
             wxDefaultSize, 
             wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX)//disable frame resize
@@ -310,7 +310,7 @@ namespace
         if (onSend != nullptr)
         {
             mainLayout->AddSpacer(5);
-            mainLayout->Add(new wxStaticText(frame, wxID_ANY, _("Click \"Send\" to submit the report to Audacity. This information is collected anonymously.")), wxSizerFlags().Border(wxALL));
+            mainLayout->Add(new wxStaticText(frame, wxID_ANY, _("Click \"Send\" to submit the report to Audacium. This information is collected anonymously.")), wxSizerFlags().Border(wxALL));
         }
         mainLayout->AddSpacer(10);
         mainLayout->Add(new wxStaticText(frame, wxID_ANY, _("Problem details")), wxSizerFlags().Border(wxALL));
@@ -356,7 +356,7 @@ bool CrashReportApp::OnInit()
         sLocale->AddCatalogLookupPathPrefix(wxT("./locale"));
         sLocale->AddCatalogLookupPathPrefix(wxString::Format(wxT("%s/share/locale"), wxT(INSTALL_PREFIX)));
 #endif
-        sLocale->AddCatalog("audacity");
+        sLocale->AddCatalog("audacium");
         sLocale->AddCatalog("wxstd");
         
         google_breakpad::Minidump minidump(mMinidumpPath.ToStdString(), false);

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ToolBar.h
 
@@ -90,7 +90,7 @@ enum ToolBarID
 // How may pixels padding each side of a floating toolbar
 enum { ToolBarFloatMargin = 1 };
 
-class AudacityProject;
+class AudaciumProject;
 
 class AUDACITY_DLL_API ToolBar /* not final */
 : public wxPanelWrapper
@@ -101,7 +101,7 @@ class AUDACITY_DLL_API ToolBar /* not final */
 
    using Holder = wxWindowPtr<ToolBar>;
 
-   ToolBar( AudacityProject &project,
+   ToolBar( AudaciumProject &project,
       int type, const TranslatableString & label, const wxString & section,
       bool resizable = false);
    virtual ~ToolBar();
@@ -176,7 +176,7 @@ public:
 
    static
    void SetButtonToolTip
-      (AudacityProject &project, AButton &button,
+      (AudaciumProject &project, AButton &button,
        // If a shortcut key is defined for the command, then it is appended,
        // parenthesized, after the translated name.
        const ComponentInterfaceSymbol commands[], size_t nCommands);
@@ -232,7 +232,7 @@ public:
    void OnMouseEvents(wxMouseEvent &event);
 
  protected:
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
    TranslatableString mLabel;
    wxString mSection;
    int mType;
@@ -259,7 +259,7 @@ public:
 };
 
 struct AUDACITY_DLL_API RegisteredToolbarFactory {
-   using Function = std::function< ToolBar::Holder( AudacityProject & ) >;
+   using Function = std::function< ToolBar::Holder( AudaciumProject & ) >;
    using Functions = std::vector< Function >;
 
    RegisteredToolbarFactory( int id, const Function &function );

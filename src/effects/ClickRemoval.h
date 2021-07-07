@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ClickRemoval.h
 
@@ -8,8 +8,8 @@
 
   (Structure largely stolen from NoiseRemoval.h by Dominic Mazzoni)
 
-  This file is intended to become part of Audacity.  You may modify and/or
-  distribute it under the same terms as Audacity itself.
+  This file is intended to become part of Audacium.  You may modify and/or
+  distribute it under the same terms as Audacium itself.
 
 **********************************************************************/
 

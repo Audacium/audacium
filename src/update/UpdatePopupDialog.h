@@ -1,5 +1,5 @@
 /*!********************************************************************
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file UpdatePopupDialog.h
  @brief Define a dialog for notifying users about new version available.

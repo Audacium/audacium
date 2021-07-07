@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 WaveformPrefs.h
 
@@ -26,7 +26,7 @@ class WaveformPrefs final : public PrefsPanel
 {
 public:
    WaveformPrefs(wxWindow * parent, wxWindowID winid,
-      AudacityProject *pProject, WaveTrack *wt);
+      AudaciumProject *pProject, WaveTrack *wt);
    virtual ~WaveformPrefs();
    ComponentInterfaceSymbol GetSymbol() override;
    TranslatableString GetDescription() override;
@@ -47,7 +47,7 @@ private:
 
    void EnableDisableRange();
 
-   AudacityProject *mProject{};
+   AudaciumProject *mProject{};
 
    WaveTrack *const mWt;
    bool mDefaulted;

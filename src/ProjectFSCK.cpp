@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ProjectFSCK.cpp
 
@@ -17,7 +17,7 @@
 
 #include "BlockFile.h"
 #include "DirManager.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "Internat.h"
 #include "MemoryX.h"
 #include "widgets/MultiDialog.h"
@@ -51,7 +51,7 @@ int ProjectFSCK(
    if (bForceError && !bAutoRecoverMode)
    {
       // TODO: Replace with more user friendly error message?
-      /* i18n-hint: The audacity project file is XML and has 'tags' in it,
+      /* i18n-hint: The audacium project file is XML and has 'tags' in it,
          rather like html tags <something>some stuff</something>.
          This error message is about the tags that hold the sequence information.
          The error message is confusing to users in English, and could just say
@@ -101,7 +101,7 @@ int ProjectFSCK(
          auto msg =
 XO("Project check of \"%s\" folder \
 \ndetected %lld missing external audio file(s) \
-\n('aliased files'). There is no way for Audacity \
+\n('aliased files'). There is no way for Audacium \
 \nto recover these files automatically. \
 \n\nIf you choose the first or second option below, \
 \nyou can try to find and restore the missing files \
@@ -156,7 +156,7 @@ XO("Project check of \"%s\" folder \
                   // error message for the user.
                   GuardedCall(
                      [&] { ab->Recover(); },
-                     [&] (AudacityException*) { action = 1; }
+                     [&] (AudaciumException*) { action = 1; }
                   );
 
                   nResult = FSCKstatus_CHANGED | FSCKstatus_SAVE_AUP;
@@ -191,7 +191,7 @@ XO("Project check of \"%s\" folder \
          auto msg =
 XO("Project check of \"%s\" folder \
 \ndetected %lld missing alias (.auf) blockfile(s). \
-\nAudacity can fully regenerate these files \
+\nAudacium can fully regenerate these files \
 \nfrom the current audio in the project.")
             .Format(
                dm.GetProjectName(), (long long) missingAUFHash.size() );
@@ -229,7 +229,7 @@ XO("Project check of \"%s\" folder \
                         b->Recover();
                         nResult |= FSCKstatus_CHANGED;
                      },
-                     [&] (AudacityException*) { action = 1; }
+                     [&] (AudaciumException*) { action = 1; }
                   );
                }
 
@@ -262,7 +262,7 @@ XO("Project check of \"%s\" folder \
 XO("Project check of \"%s\" folder \
 \ndetected %lld missing audio data (.au) blockfile(s), \
 \nprobably due to a bug, system crash, or accidental \
-\ndeletion. There is no way for Audacity to recover \
+\ndeletion. There is no way for Audacium to recover \
 \nthese missing files automatically. \
 \n\nIf you choose the first or second option below, \
 \nyou can try to find and restore the missing files \
@@ -307,7 +307,7 @@ XO("Project check of \"%s\" folder \
                         b->Recover();
                         nResult |= FSCKstatus_CHANGED;
                      },
-                     [&] (AudacityException*) { action = 1; }
+                     [&] (AudaciumException*) { action = 1; }
                   );
                }
 
@@ -397,7 +397,7 @@ other projects. \
 
       // In auto-recover mode, we didn't do any ShowMultiDialog calls above, so put up an alert.
       if (bAutoRecoverMode)
-         ::AudacityMessageBox(
+         ::AudaciumMessageBox(
             XO(
 "Project check found file inconsistencies during automatic recovery.\n\nSelect 'Help > Diagnostics > Show Log...' to see details."),
             XO("Warning: Problems in Automatic Recovery"),

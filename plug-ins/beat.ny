@@ -4,7 +4,7 @@ $type analyze
 $name (_ "Beat Finder")
 $manpage "Beat_Finder"
 $action (_ "Finding beats...")
-$author (_ "Audacity")
+$author (_ "Audacium")
 $release 2.3.2
 $copyright (_ "Released under terms of the GNU General Public License version 2")
 
@@ -12,7 +12,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 $control thresval (_ "Threshold Percentage") int "" 65 5 100

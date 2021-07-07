@@ -2,8 +2,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: audacity 3.0.3\n"
-"Report-Msgid-Bugs-To: audacity-translation@lists.sourceforge.net\n"
+"Project-Id-Version: audacium 3.0.3\n"
+"Report-Msgid-Bugs-To: audacium-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-06-07 08:17-0400\n"
 "PO-Revision-Date: 2021-06-12 20:50+0100\n"
 "Last-Translator: Bruno Ramalhete <bram.512@gmail.com>\n"
@@ -52,15 +52,15 @@ msgid "System"
 msgstr "Sistema"
 
 #: libraries/lib-strings/UnusedStrings.h
-msgid "Problem Report for Audacity"
-msgstr "Relatório de Problemas para o Audacity"
+msgid "Problem Report for Audacium"
+msgstr "Relatório de Problemas para o Audacium"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgid ""
-"Click \"Send\" to submit the report to Audacity. This information is "
+"Click \"Send\" to submit the report to Audacium. This information is "
 "collected anonymously."
 msgstr ""
-"Clique em \"Enviar\" para submeter o relatório ao Audacity. Esta informação "
+"Clique em \"Enviar\" para submeter o relatório ao Audacium. Esta informação "
 "é recolhida anonimamente."
 
 #: libraries/lib-strings/UnusedStrings.h
@@ -137,8 +137,8 @@ msgstr "Escala de cinza inversa"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Update Audacity"
-msgstr "Atualizar Audacity"
+msgid "Update Audacium"
+msgstr "Atualizar Audacium"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
@@ -167,8 +167,8 @@ msgstr "Erro ao verificar por atualização"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Unable to connect to Audacity update server."
-msgstr "Não é possível ligar ao servidor de atualização do Audacity."
+msgid "Unable to connect to Audacium update server."
+msgstr "Não é possível ligar ao servidor de atualização do Audacium."
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
@@ -182,16 +182,16 @@ msgstr "Erro ao descarregar atualização."
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Can't open the Audacity download link."
-msgstr "Não pode abrir o link de atualização do Audacity."
+msgid "Can't open the Audacium download link."
+msgstr "Não pode abrir o link de atualização do Audacium."
 
-# Diz assim 'barra de dispositivo do audacity' 'barra de transcrição do audacity'
+# Diz assim 'barra de dispositivo do audacium' 'barra de transcrição do audacium'
 #. i18n-hint Substitution of version number for %s.
 #: libraries/lib-strings/UnusedStrings.h
 #, c-format
 msgctxt "update dialog"
-msgid "Audacity %s is available!"
-msgstr "Audacity %s está disponível!"
+msgid "Audacium %s is available!"
+msgstr "Audacium %s está disponível!"
 
 #: modules/mod-null/ModNullCallback.cpp
 msgid "1st Experimental Command..."
@@ -327,7 +327,7 @@ msgstr "Nyquist scripts (*.ny)|*.ny|Lisp scripts (*.lsp)|*.lsp|All files|*"
 msgid "Script was not saved."
 msgstr "Script não foi salvo."
 
-#: modules/mod-nyq-bench/NyqBench.cpp src/AudacityLogger.cpp
+#: modules/mod-nyq-bench/NyqBench.cpp src/AudaciumLogger.cpp
 #: src/DBConnection.cpp src/Project.cpp src/ProjectFileIO.cpp
 #: src/ProjectHistory.cpp src/SqliteSampleBlock.cpp src/WaveClip.cpp
 #: src/WaveTrack.cpp src/export/Export.cpp src/export/ExportCL.cpp
@@ -362,9 +362,9 @@ msgstr "(C) 2009 by Leland Lucius"
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Audacity module which provides a simple IDE for writing effects."
+"External Audacium module which provides a simple IDE for writing effects."
 msgstr ""
-"Audacity módulo externo que disponibliza um IDE simples para fazer efeitos."
+"Audacium módulo externo que disponibliza um IDE simples para fazer efeitos."
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid "Nyquist Effect Workbench"
@@ -551,91 +551,91 @@ msgstr "Parar script"
 msgid "No revision identifier was provided"
 msgstr "Nenhum identificador de revisão foi fornecido"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, system administration"
 msgstr "%s, administração de sistema"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, co-founder and developer"
 msgstr "%s, cofundador e programador"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, developer"
 msgstr "%s, programador"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, developer and support"
 msgstr "%s, programador e suporte"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support"
 msgstr "%s, documentação e suporte"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, QA tester, documentation and support"
 msgstr "%s, QA tester, documentação e suporte"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support, French"
 msgstr "%s, documentação e suporte, Francês"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, quality assurance"
 msgstr "%s, garantia de qualidade"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, accessibility advisor"
 msgstr "%s, consultor de acessibilidade"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphic artist"
 msgstr "%s, artista gráfico"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, composer"
 msgstr "%s, compositor"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, tester"
 msgstr "%s, tester"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "%s, Plug-ins do Nyquist"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, web developer"
 msgstr "%s, web developer"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphics"
@@ -674,7 +674,7 @@ msgstr ""
 msgid "volunteers"
 msgstr "voluntários"
 
-#. i18n-hint: substitutes into "Audacity is %s"
+#. i18n-hint: substitutes into "Audacium is %s"
 #: src/AboutDialog.cpp
 msgid "available"
 msgstr "disponível"
@@ -708,7 +708,7 @@ msgid "forum"
 msgstr "forum"
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Audacity window.  Use this to add
+#. *  in the credits in the About Audacium window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -739,8 +739,8 @@ msgid "Credits"
 msgstr "Créditos"
 
 #: src/AboutDialog.cpp
-msgid "DarkAudacity Customisation"
-msgstr "DarkAudacity Personalização"
+msgid "DarkAudacium Customisation"
+msgstr "DarkAudacium Personalização"
 
 #. i18n-hint: The program's name substitutes for %s
 #: src/AboutDialog.cpp
@@ -790,14 +790,14 @@ msgstr "Agradecimentos especiais:"
 msgid "%s website: "
 msgstr "%s website: "
 
-#. i18n-hint Audacity's name substitutes for first and third %s,
+#. i18n-hint Audacium's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr "%s software is copyright %s 1999-2021 %s Team."
 
-#. i18n-hint Audacity's name substitutes for %s
+#. i18n-hint Audacium's name substitutes for %s
 #: src/AboutDialog.cpp
 #, c-format
 msgid "The name %s is a registered trademark."
@@ -816,7 +816,7 @@ msgstr "Ligado"
 msgid "Disabled"
 msgstr "Desligado"
 
-#. i18n-hint: Information about when audacity was compiled follows
+#. i18n-hint: Information about when audacium was compiled follows
 #: src/AboutDialog.cpp
 msgid "The Build"
 msgstr "A Compilação"
@@ -852,7 +852,7 @@ msgstr "Tipo de compilação:"
 msgid "Compiler:"
 msgstr "Compilador:"
 
-#. i18n-hint: The directory audacity is installed into (on *nix systems)
+#. i18n-hint: The directory audacium is installed into (on *nix systems)
 #: src/AboutDialog.cpp
 msgid "Installation Prefix:"
 msgstr "Prefixo de Instalação:"
@@ -861,7 +861,7 @@ msgstr "Prefixo de Instalação:"
 msgid "Settings folder:"
 msgstr "Pasta de configurações:"
 
-#. i18n-hint: Libraries that are essential to audacity
+#. i18n-hint: Libraries that are essential to audacium
 #: src/AboutDialog.cpp
 msgid "Core Libraries"
 msgstr "Bibliotecas Principais"
@@ -1069,16 +1069,16 @@ msgstr ""
 msgid "Error"
 msgstr "Erro"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, c-format
 msgid "Failed to remove %s"
 msgstr "Falha ao remover %s"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Failed!"
 msgstr "Falhou!"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Reset Preferences?\n"
 "\n"
@@ -1090,11 +1090,11 @@ msgstr ""
 "Esta é pergunta é feita apenas uma vez, após uma instalação onde pede para "
 "reverter as Preferências."
 
-#: src/AudacityApp.cpp
-msgid "Reset Audacity Preferences"
-msgstr "Redefinir Preferências do Audacity"
+#: src/AudaciumApp.cpp
+msgid "Reset Audacium Preferences"
+msgstr "Redefinir Preferências do Audacium"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, c-format
 msgid ""
 "%s could not be found.\n"
@@ -1105,118 +1105,118 @@ msgstr ""
 "\n"
 "Foi apagado da lista de ficheiros recentes."
 
-#: src/AudacityApp.cpp
-msgid "SQLite library failed to initialize.  Audacity cannot continue."
+#: src/AudaciumApp.cpp
+msgid "SQLite library failed to initialize.  Audacium cannot continue."
 msgstr ""
-"A biblioteca SQLite falhou ao iniciar.  O Audacity não consegue continuar."
+"A biblioteca SQLite falhou ao iniciar.  O Audacium não consegue continuar."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Block size must be within 256 to 100000000\n"
 msgstr "Tamanho do bloco deve ser entre 256 a 100000000\n"
 
-#: src/AudacityApp.cpp
-msgid "Audacity is starting up..."
-msgstr "O Audacity está a iniciar…"
+#: src/AudaciumApp.cpp
+msgid "Audacium is starting up..."
+msgstr "O Audacium está a iniciar…"
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
-#: src/AudacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
 msgid "&New"
 msgstr "&Novo"
 
 #. i18n-hint: (verb)
-#: src/AudacityApp.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/menus/FileMenus.cpp
 msgid "&Open..."
 msgstr "&Abrir..."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Open &Recent..."
 msgstr "Abrir &Recente..."
 
-#: src/AudacityApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Audacity..."
-msgstr "&Sobre o Audacity…"
+#: src/AudaciumApp.cpp src/menus/HelpMenus.cpp
+msgid "&About Audacium..."
+msgstr "&Sobre o Audacium…"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "&Preferences..."
 msgstr "&Preferências..."
 
-#: src/AudacityApp.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/menus/FileMenus.cpp
 msgid "&File"
 msgstr "&Ficheiro"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity could not find a safe place to store temporary files.\n"
-"Audacity needs a place where automatic cleanup programs won't delete the "
+"Audacium could not find a safe place to store temporary files.\n"
+"Audacium needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"O Audacity não conseguiu encontrar um lugar seguro para guardar os ficheiros "
+"O Audacium não conseguiu encontrar um lugar seguro para guardar os ficheiros "
 "temporários. \n"
-"O Audacity precisa de um sítio onde programas de limpeza não eliminem os "
+"O Audacium precisa de um sítio onde programas de limpeza não eliminem os "
 "ficheiros temporários.\n"
 "Por favor, indique um diretório apropriado na caixa de diálogos Preferências."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity could not find a place to store temporary files.\n"
+"Audacium could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"O Audacity não conseguiu encontrar um sítio para guardar os ficheiros "
+"O Audacium não conseguiu encontrar um sítio para guardar os ficheiros "
 "temporários. \n"
 "Por favor, indique um diretório apropriado na caixa de diálogos Preferências."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity is now going to exit. Please launch Audacity again to use the new "
+"Audacium is now going to exit. Please launch Audacium again to use the new "
 "temporary directory."
 msgstr ""
-"O Audacity irá encerrar agora. Abra o programa novamente para utilizar a "
+"O Audacium irá encerrar agora. Abra o programa novamente para utilizar a "
 "nova pasta temporária."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Running two copies of Audacity simultaneously may cause\n"
+"Running two copies of Audacium simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"Executar duas cópias do Audacity simultaneamente \n"
+"Executar duas cópias do Audacium simultaneamente \n"
 "pode causar perda de dados e tornar o sistema instável.\n"
 "\n"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Audacity.\n"
+"Audacium was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Audacium.\n"
 msgstr ""
-"O Audacity não conseguiu acesso exclusivo à dir de ficheiros temporários.\n"
-"A dir pode estar a ser usada por outra cópia do Audacity.\n"
+"O Audacium não conseguiu acesso exclusivo à dir de ficheiros temporários.\n"
+"A dir pode estar a ser usada por outra cópia do Audacium.\n"
 
-#: src/AudacityApp.cpp
-msgid "Do you still want to start Audacity?"
-msgstr "Tem certeza de que deseja iniciar o Audacity?"
+#: src/AudaciumApp.cpp
+msgid "Do you still want to start Audacium?"
+msgstr "Tem certeza de que deseja iniciar o Audacium?"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "Erro ao Bloquear a Pasta Temporária"
 
-#: src/AudacityApp.cpp
-msgid "The system has detected that another copy of Audacity is running.\n"
-msgstr "O sistema detectou que outra cópia do Audacity está em execução.\n"
+#: src/AudaciumApp.cpp
+msgid "The system has detected that another copy of Audacium is running.\n"
+msgstr "O sistema detectou que outra cópia do Audacium está em execução.\n"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Audacity\n"
+"Use the New or Open commands in the currently running Audacium\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
-"Use os comandos Novo ou Abrir na janela aberta do Audacity\n"
+"Use os comandos Novo ou Abrir na janela aberta do Audacium\n"
 "para abrir vários projetos em simultâneo.\n"
 
-#: src/AudacityApp.cpp
-msgid "Audacity is already running"
-msgstr "O Audacity já está em execução"
+#: src/AudaciumApp.cpp
+msgid "Audacium is already running"
+msgstr "O Audacium já está em execução"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire semaphores.\n"
 "\n"
@@ -1228,11 +1228,11 @@ msgstr ""
 "Isto pode ser devido a escassez de recursos\n"
 "e um reinicio pode ser requerido."
 
-#: src/AudacityApp.cpp
-msgid "Audacity Startup Failure"
-msgstr "Arranque do Audacity Falhou"
+#: src/AudaciumApp.cpp
+msgid "Audacium Startup Failure"
+msgstr "Arranque do Audacium Falhou"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to create semaphores.\n"
 "\n"
@@ -1244,7 +1244,7 @@ msgstr ""
 "Isto pode ser devido a escassez de recursos\n"
 "e um reinicio pode ser requerido."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire lock semaphore.\n"
 "\n"
@@ -1256,7 +1256,7 @@ msgstr ""
 "Isto pode ser devido a escassez de recursos\n"
 "e um reinicio pode ser requerido."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire server semaphore.\n"
 "\n"
@@ -1268,75 +1268,75 @@ msgstr ""
 "Isto pode ser devido a escassez de recursos\n"
 "e um reinicio pode ser requerido."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"The Audacity IPC server failed to initialize.\n"
+"The Audacium IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
 msgstr ""
-"O servidor Audacity IPC falhou ao iniciar.\n"
+"O servidor Audacium IPC falhou ao iniciar.\n"
 "\n"
 "Isto pode ser devido a escassez de recursos\n"
 "e um reinicio pode ser requerido."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "An unrecoverable error has occurred during startup"
 msgstr "Um erro irrecuperável ocorreu durante o arranque"
 
-#. i18n-hint: This controls the number of bytes that Audacity will
+#. i18n-hint: This controls the number of bytes that Audacium will
 #. *           use when writing files to the disk
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "set max disk block size in bytes"
 msgstr "definir o tamanho do bloco máximo em bytes"
 
 #. i18n-hint: This displays a list of available options
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "this help message"
 msgstr "esta mensagem de ajuda"
 
-#. i18n-hint: This runs a set of automatic tests on Audacity itself
-#: src/AudacityApp.cpp
+#. i18n-hint: This runs a set of automatic tests on Audacium itself
+#: src/AudaciumApp.cpp
 msgid "run self diagnostics"
 msgstr "correr testes de diagnóstico"
 
-#. i18n-hint: This displays the Audacity version
-#: src/AudacityApp.cpp
-msgid "display Audacity version"
-msgstr "mostrar a versão do Audacity"
+#. i18n-hint: This displays the Audacium version
+#: src/AudaciumApp.cpp
+msgid "display Audacium version"
+msgstr "mostrar a versão do Audacium"
 
-#. i18n-hint: This is a list of one or more files that Audacity
+#. i18n-hint: This is a list of one or more files that Audacium
 #. *           should open upon startup
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "audio or project file name"
 msgstr "áudio ou nome do ficheiro projeto"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity project (.aup3) files are not currently \n"
-"associated with Audacity. \n"
+"Audacium project (.aup3) files are not currently \n"
+"associated with Audacium. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"Os ficheiros de projeto (.aup3) Audacity não estão atualmente\n"
-"associados ao Audacity. \n"
+"Os ficheiros de projeto (.aup3) Audacium não estão atualmente\n"
+"associados ao Audacium. \n"
 "\n"
 "Associe-os, para que eles possam abrir com duplo clique?"
 
-#: src/AudacityApp.cpp
-msgid "Audacity Project Files"
-msgstr "Ficheiros de Projeto do Audacity"
+#: src/AudaciumApp.cpp
+msgid "Audacium Project Files"
+msgstr "Ficheiros de Projeto do Audacium"
 
-#: src/AudacityException.h src/commands/MessageCommand.cpp
-#: src/widgets/AudacityMessageBox.cpp
+#: src/AudaciumException.h src/commands/MessageCommand.cpp
+#: src/widgets/AudaciumMessageBox.cpp
 msgid "Message"
 msgstr "Mensagem"
 
-#: src/AudacityFileConfig.cpp
-msgid "Audacity Configuration Error"
-msgstr "Erro de Configuração do Audacity"
+#: src/AudaciumFileConfig.cpp
+msgid "Audacium Configuration Error"
+msgstr "Erro de Configuração do Audacium"
 
-#: src/AudacityFileConfig.cpp
+#: src/AudaciumFileConfig.cpp
 #, c-format
 msgid ""
 "The following configuration file could not be accessed:\n"
@@ -1349,7 +1349,7 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Audacity\", your project may be left in an unsaved "
+"If you choose to \"Quit Audacium\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 "O ficheiro de configuração seguinte não pode ser acedido:\n"
@@ -1363,50 +1363,50 @@ msgstr ""
 "Pode tentar corrigir o problema e depois clicar em \"Repetir\" para "
 "continuar.\n"
 "\n"
-"Se escolher em \"Sair do Audacity\", o seu projeto pode ser deixado num "
+"Se escolher em \"Sair do Audacium\", o seu projeto pode ser deixado num "
 "estado não guardado que poerá ser recuperado da próxima vez que o abrir."
 
-#: src/AudacityFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
+#: src/AudaciumFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
 #: src/effects/Equalization.cpp src/export/Export.cpp src/menus/HelpMenus.cpp
 #: src/widgets/MultiDialog.cpp
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/AudacityFileConfig.cpp src/AutoRecoveryDialog.cpp
-msgid "&Quit Audacity"
-msgstr "&Sair do Audacity"
+#: src/AudaciumFileConfig.cpp src/AutoRecoveryDialog.cpp
+msgid "&Quit Audacium"
+msgstr "&Sair do Audacium"
 
-#: src/AudacityFileConfig.cpp
+#: src/AudaciumFileConfig.cpp
 msgid "&Retry"
 msgstr "&Repetir"
 
-#: src/AudacityLogger.cpp
-msgid "Audacity Log"
-msgstr "Relatório do Audacity"
+#: src/AudaciumLogger.cpp
+msgid "Audacium Log"
+msgstr "Relatório do Audacium"
 
-#: src/AudacityLogger.cpp src/Tags.cpp
+#: src/AudaciumLogger.cpp src/Tags.cpp
 msgid "&Save..."
 msgstr "&Guardar..."
 
 #. i18n-hint: (verb)
-#: src/AudacityLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
+#: src/AudaciumLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
 msgid "Cl&ear"
 msgstr "&Limpar"
 
-#: src/AudacityLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
+#: src/AudaciumLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
 #: src/menus/FileMenus.cpp
 msgid "&Close"
 msgstr "&Fechar"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 msgid "log.txt"
 msgstr "relatorio.txt"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 msgid "Save log to:"
 msgstr "Guardar relatório em:"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 #, c-format
 msgid "Couldn't save log to file: %s"
 msgstr "Não pode guardar relatório para o ficheiro: %s"
@@ -1449,8 +1449,8 @@ msgid "Error Initializing Midi"
 msgstr "Erro ao Inicializar Midi"
 
 #: src/AudioIO.cpp
-msgid "Audacity Audio"
-msgstr "Áudio do Audacity"
+msgid "Audacium Audio"
+msgstr "Áudio do Audacium"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, c-format
@@ -1701,13 +1701,13 @@ msgstr "Recuperação Automática de Falhas"
 
 #: src/AutoRecoveryDialog.cpp
 msgid ""
-"The following projects were not saved properly the last time Audacity was "
+"The following projects were not saved properly the last time Audacium was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
 msgstr ""
 "Os projetos seguintes não foram guardados corretamente da última vez que "
-"correu o Audacity e podem ser automaticamente recuperados.\n"
+"correu o Audacium e podem ser automaticamente recuperados.\n"
 "\n"
 "Após a recuperação, guarde os projetos para garantir que as alterações sejam "
 "gravadas no disco."
@@ -2312,8 +2312,8 @@ msgstr ""
 "(Selecionar outros tipos de faixa não irá funcionar.)"
 
 #: src/CrashReport.cpp
-msgid "Audacity Support Data"
-msgstr "Dados de Suporte do Audacity"
+msgid "Audacium Support Data"
+msgstr "Dados de Suporte do Audacium"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2460,20 +2460,20 @@ msgstr "Copiar Todos os Ficheiros (Seguro)"
 msgid "Whenever a project depends on other files:"
 msgstr "Quando um projeto depender de outros ficheiros:"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "Pergunte me"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "Sempre copiar todos os ficheiros (mais seguro)"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "Nunca copiar quaisquer ficheiros"
@@ -2509,14 +2509,14 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Audacity projects may not be self-contained, and care \n"
+"Some older Audacium projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
 "O seu projeto é independente; Ele não depende de quaisquer ficheiros de "
 "áudio externos. \n"
 "\n"
-"Alguns projetos mais antigos do Audacity podem não ser independentes, e o "
+"Alguns projetos mais antigos do Audacium podem não ser independentes, e o "
 "cuidado \n"
 "é necessário para manter suas dependências externas no lugar certo.\n"
 "Novos projetos serão independentes e são menos arriscados."
@@ -2602,13 +2602,13 @@ msgstr "Suporte a FFmpeg não compilado"
 #: src/FFmpeg.cpp
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Audacity failed to load it at startup. \n"
+"but this time Audacium failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
 "O FFmpeg foi configurado nas Preferências e carregado com sucesso "
 "anteriormente, \n"
-"mas o Audacity desta vez não conseguiu carregá-lo no arranque. \n"
+"mas o Audacium desta vez não conseguiu carregá-lo no arranque. \n"
 "\n"
 "Poderá querer voltar a Preferências > Bibliotecas e reconfigurá-lo."
 
@@ -2626,9 +2626,9 @@ msgstr "Localizar o FFmpeg"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Audacity needs the file '%s' to import and export audio via FFmpeg."
+msgid "Audacium needs the file '%s' to import and export audio via FFmpeg."
 msgstr ""
-"O Audacity precisa do ficheiro %s para importar e exportar áudio via FFmpeg."
+"O Audacium precisa do ficheiro %s para importar e exportar áudio via FFmpeg."
 
 #: src/FFmpeg.cpp
 #, c-format
@@ -2668,13 +2668,13 @@ msgstr "FFmpeg não encontrado"
 
 #: src/FFmpeg.cpp
 msgid ""
-"Audacity attempted to use FFmpeg to import an audio file,\n"
+"Audacium attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"Audacity tentou utilizar FFmpeg para importar um ficheiro de áudio,\n"
+"Audacium tentou utilizar FFmpeg para importar um ficheiro de áudio,\n"
 "mas as bibliotecas não foram encontradas.\n"
 "\n"
 "Para utilizar Importar FFmpeg, vá a Editar > Preferências > Bibliotecas\n"
@@ -2699,33 +2699,33 @@ msgstr "Apenas libavformat.so"
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity failed to open a file in %s."
+msgid "Audacium failed to open a file in %s."
 msgstr ""
-"O Audacity não conseguiu abrir o ficheiro:\n"
+"O Audacium não conseguiu abrir o ficheiro:\n"
 "  %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity failed to read from a file in %s."
+msgid "Audacium failed to read from a file in %s."
 msgstr ""
-"O Audacity não conseguiu ler o ficheiro:\n"
+"O Audacium não conseguiu ler o ficheiro:\n"
 "  %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity successfully wrote a file in %s but failed to rename it as %s."
+msgid "Audacium successfully wrote a file in %s but failed to rename it as %s."
 msgstr ""
-"Audacity escreveu com sucesso um ficheiro em %s mas falhou ao renomear como "
+"Audacium escreveu com sucesso um ficheiro em %s mas falhou ao renomear como "
 "%s."
 
 #: src/FileException.cpp
 #, c-format
 msgid ""
-"Audacity failed to write to a file.\n"
+"Audacium failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Audacity falhou ao escrever num ficheiro.\n"
+"Audacium falhou ao escrever num ficheiro.\n"
 "Talvez %s não é de escrita ou o disco está cheio.\n"
 "Para sugestões em libertar espaço, clique no botão ajuda."
 
@@ -2765,7 +2765,7 @@ msgstr "Per&guntar"
 msgid "All files"
 msgstr "Todos os ficheiros"
 
-#. i18n-hint an Audacity project is the state of the program, stored as
+#. i18n-hint an Audacium project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 msgid "AUP3 project files"
@@ -3033,8 +3033,8 @@ msgstr "A Exportar um Ficheiro de Áudio"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Audacity Project"
-msgstr "A Guardar um Projeto Audacity"
+msgid "Saving an Audacium Project"
+msgstr "A Guardar um Projeto Audacium"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -3052,22 +3052,22 @@ msgstr "Sem Ajuda Local"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is an <b>Alpha test version</"
+"<br><br>The version of Audacium you are using is an <b>Alpha test version</"
 "b>."
 msgstr ""
-"<br><br>A versão do Audacity que está a utilizar é uma <b>Versão Alfa Teste</"
+"<br><br>A versão do Audacium que está a utilizar é uma <b>Versão Alfa Teste</"
 "b>."
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is a <b>Beta test version</b>."
+"<br><br>The version of Audacium you are using is a <b>Beta test version</b>."
 msgstr ""
-"<br><br>A versão do Audacity que está a utilizar é uma <b>Versão de teste "
+"<br><br>A versão do Audacium que está a utilizar é uma <b>Versão de teste "
 "Beta</b>."
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Audacity"
-msgstr "Obtenha a Versão de Lançamento Oficial do Audacity"
+msgid "Get the Official Released Version of Audacium"
+msgstr "Obtenha a Versão de Lançamento Oficial do Audacium"
 
 #: src/HelpText.cpp
 msgid ""
@@ -3079,11 +3079,11 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Audacity ready for release by joining our [[https://www."
-"audacityteam.org/community/|community]].<hr><br><br>"
+"You can help us get Audacium ready for release by joining our [[https://www."
+"audaciumteam.org/community/|community]].<hr><br><br>"
 msgstr ""
-"Você pode ajudar-nos a ter o Audacity pronto para lançamento juntando-se  a  "
-"[[https://www.audacityteam.org/community/|community]].<hr><br><br>"
+"Você pode ajudar-nos a ter o Audacium pronto para lançamento juntando-se  a  "
+"[[https://www.audaciumteam.org/community/|community]].<hr><br><br>"
 
 #: src/HelpText.cpp
 msgid "How to get help"
@@ -3097,60 +3097,60 @@ msgstr "Estas são as nossas opções de suporte:"
 #: src/HelpText.cpp
 msgid ""
 "[[help:Quick_Help|Quick Help]] - if not installed locally, [[https://manual."
-"audacityteam.org/quick_help.html|view online]]"
+"audaciumteam.org/quick_help.html|view online]]"
 msgstr ""
 "[[help:Quick_Help|Quick Help]] - se não estiver instalado localmente, "
-"[[https://manual.audacityteam.org/quick_help.html|view online]]"
+"[[https://manual.audaciumteam.org/quick_help.html|view online]]"
 
 #. i18n-hint: Preserve '[[help:Main_Page|' as it's the name of a link.
 #: src/HelpText.cpp
 msgid ""
 " [[help:Main_Page|Manual]] - if not installed locally, [[https://manual."
-"audacityteam.org/|view online]]"
+"audaciumteam.org/|view online]]"
 msgstr ""
 " [[help:Main_Page|Manual]] - se não estiver instalado localmente, [[https://"
-"manual.audacityteam.org/|view online]]"
+"manual.audaciumteam.org/|view online]]"
 
 #: src/HelpText.cpp
 msgid ""
-" [[https://forum.audacityteam.org/|Forum]] - ask your question directly, "
+" [[https://forum.audaciumteam.org/|Forum]] - ask your question directly, "
 "online."
 msgstr ""
-" [[https://forum.audacityteam.org/|Forum]] - faça a sua pergunta "
+" [[https://forum.audaciumteam.org/|Forum]] - faça a sua pergunta "
 "diretamente, online."
 
 #: src/HelpText.cpp
 msgid ""
-"More:</b> Visit our [[https://wiki.audacityteam.org/index.php|Wiki]] for "
+"More:</b> Visit our [[https://wiki.audaciumteam.org/index.php|Wiki]] for "
 "tips, tricks, extra tutorials and effects plug-ins."
 msgstr ""
-"Mais:</b> Visite o nosso wiki [[https://wiki.audacityteam.org/index.php|"
+"Mais:</b> Visite o nosso wiki [[https://wiki.audaciumteam.org/index.php|"
 "Wiki]] para dicas, truques, tutoriais extra e plug-ins de efeitos."
 
 #: src/HelpText.cpp
 msgid ""
-"Audacity can import unprotected files in many other formats (such as M4A and "
+"Audacium can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
-"audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
+"audaciumteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] to your computer."
 msgstr ""
-"O Audacity pode importar ficheiros desprotegidos em muitos outros formatos "
+"O Audacium pode importar ficheiros desprotegidos em muitos outros formatos "
 "(como M4A e WMA, ficheiros WAV comprimidos de gravadores portáteis e áudio "
 "de ficheiros de vídeo) se você descarregar e instalar [[https://manual."
-"audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
+"audaciumteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] opcional para o seu computador."
 
 #: src/HelpText.cpp
 msgid ""
-"You can also read our help on importing [[https://manual.audacityteam.org/"
+"You can also read our help on importing [[https://manual.audaciumteam.org/"
 "man/playing_and_recording.html#midi|MIDI files]] and tracks from [[https://"
-"manual.audacityteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
+"manual.audaciumteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
 "CDs]]."
 msgstr ""
-"Pode também ler a nossa ajuda ao importar [[https://manual.audacityteam.org/"
+"Pode também ler a nossa ajuda ao importar [[https://manual.audaciumteam.org/"
 "man/playing_and_recording.html#midi|MIDI files]] e faixas de [[https://"
-"manual.audacityteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
+"manual.audaciumteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
 "CDs]]."
 
 #: src/HelpText.cpp
@@ -3166,12 +3166,12 @@ msgstr ""
 #: src/HelpText.cpp
 msgid ""
 "The Manual does not appear to be installed. Please [[*URL*|view the Manual "
-"online]] or [[https://manual.audacityteam.org/man/unzipping_the_manual.html| "
+"online]] or [[https://manual.audaciumteam.org/man/unzipping_the_manual.html| "
 "download the Manual]].<br><br>To always view the Manual online, change "
 "\"Location of Manual\" in Interface Preferences to \"From Internet\"."
 msgstr ""
 "O Manual não parece estar instalado. Por favor [[*URL*|view the Manual "
-"online]] ou [[https://manual.audacityteam.org/man/unzipping_the_manual.html| "
+"online]] ou [[https://manual.audaciumteam.org/man/unzipping_the_manual.html| "
 "descarregue o Manual]].<br><br>Para poder sempre ver o Manual online, mude "
 "\"Localização do Manual\" em Interface Preferências para \"Da Internet\"."
 
@@ -3239,19 +3239,19 @@ msgstr "&Histórico..."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audaciumteam.org/."
 msgstr ""
 "Erro interno em %s ao %s linha %d.\n"
-"Por favor informe a equipa Audacity em  https://forum.audacityteam.org/."
+"Por favor informe a equipa Audacium em  https://forum.audaciumteam.org/."
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audaciumteam.org/."
 msgstr ""
 "Erro interno em %s linha %d.\n"
-"Por favor informe a equipa Audacity em https://forum.audacityteam.org/."
+"Por favor informe a equipa Audacium em https://forum.audaciumteam.org/."
 
 #: src/InconsistencyException.h
 msgid "Internal Error"
@@ -3341,14 +3341,14 @@ msgid "One or more saved labels could not be read."
 msgstr "Um ou mais rótulos guardados não puderam ser lidos."
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Audacity has been run.
+#. * time Audacium has been run.
 #: src/LangChoice.cpp
-msgid "Audacity First Run"
-msgstr "Primeira Execução do Audacity"
+msgid "Audacium First Run"
+msgstr "Primeira Execução do Audacium"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Audacity to use:"
-msgstr "Escolha o idioma que o Audacity deverá usar:"
+msgid "Choose Language for Audacium to use:"
+msgstr "Escolha o idioma que o Audacium deverá usar:"
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3379,13 +3379,13 @@ msgstr ""
 "O ficheiro antigo foi guardado como  '%s'"
 
 #: src/Legacy.cpp
-msgid "Opening Audacity Project"
-msgstr "A Abrir um Projeto do Audacity"
+msgid "Opening Audacium Project"
+msgstr "A Abrir um Projeto do Audacium"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Audacity Karaoke%s"
-msgstr "Audacity Karaoke%s"
+msgid "Audacium Karaoke%s"
+msgstr "Audacium Karaoke%s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3437,7 +3437,7 @@ msgstr "A misturar e a renderizar faixas"
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Audacity Mixer Board%s"
+msgid "Audacium Mixer Board%s"
 msgstr "Interface da Mesa de Mistura%s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
@@ -3536,11 +3536,11 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, c-format
 msgid ""
-"The module \"%s\" is matched with Audacity version \"%s\".\n"
+"The module \"%s\" is matched with Audacium version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
-"O módulo \"%s\" é compatível com a versão \"%s\", do Audacity. \n"
+"O módulo \"%s\" é compatível com a versão \"%s\", do Audacium. \n"
 "\n"
 "Ele não será carregado."
 
@@ -3581,8 +3581,8 @@ msgid "No"
 msgstr "Não"
 
 #: src/ModuleManager.cpp
-msgid "Audacity Module Loader"
-msgstr "Carregador de Módulos Audacity"
+msgid "Audacium Module Loader"
+msgstr "Carregador de Módulos Audacium"
 
 #: src/ModuleManager.cpp
 msgid "Try and load this module?"
@@ -3907,11 +3907,11 @@ msgstr "Taxas de Sampling Incompatíveis"
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Audacity requires two channels at the same sample rate for\n"
+"(Audacium requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 "Poucas faixas são selecionadas para gravar a esta taxa de sample.\n"
-"(O Audacity requer dois canais na mesma taxa de sample para\n"
+"(O Audacium requer dois canais na mesma taxa de sample para\n"
 "cada faixa estéreo)"
 
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
@@ -3939,13 +3939,13 @@ msgstr "Dropouts"
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Audacity for processor time\n"
+"Other applications are competing with Audacium for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
 "Áudio guardado foi perdido nas localizações com etiqueta. Causas possíveis:\n"
 "\n"
-"Outras aplicações estão a competir com o Audacity pelo tempo de processador\n"
+"Outras aplicações estão a competir com o Audacium pelo tempo de processador\n"
 "\n"
 "Você está a guardar diretamente num dispositivo externo lento\n"
 
@@ -3953,7 +3953,7 @@ msgstr ""
 msgid "Turn off dropout detection"
 msgstr "Desligar deteção de dropout"
 
-#. i18n-hint: The audacity project file is XML and has 'tags' in it,
+#. i18n-hint: The audacium project file is XML and has 'tags' in it,
 #. rather like html tags <something>some stuff</something>.
 #. This error message is about the tags that hold the sequence information.
 #. The error message is confusing to users in English, and could just say
@@ -3991,7 +3991,7 @@ msgstr "A inspecionar os dados do ficheiro do projeto"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Audacity \n"
+"('aliased files'). There is no way for Audacium \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4037,14 +4037,14 @@ msgstr "Aviso - Ficheiro(s) externo(s) não encontrado(s)"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Audacity can fully regenerate these files \n"
+"Audacium can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "A Verificação do Projeto na pasta \n"
 "\"%s\" \n"
 "detetou %lld blocos de áudio \n"
 "externos (.auf) em falta.\n"
-"O Audacity pode recuperá-los na totalidade \n"
+"O Audacium pode recuperá-los na totalidade \n"
 "a partir do áudio atualmente no projeto."
 
 #: src/ProjectFSCK.cpp
@@ -4069,7 +4069,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Audacity to recover \n"
+"deletion. There is no way for Audacium to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4230,16 +4230,16 @@ msgstr ""
 "(Impossível criar os ficheiros temporários necessários)"
 
 #: src/ProjectFileIO.cpp
-msgid "This is not an Audacity project file"
-msgstr "Isto não é um ficheiro de projeto Audacity"
+msgid "This is not an Audacium project file"
+msgstr "Isto não é um ficheiro de projeto Audacium"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Audacity.\n"
+"This project was created with a newer version of Audacium.\n"
 "\n"
 "You will need to upgrade to open it."
 msgstr ""
-"Este projeto foi criado com uma nova versão do Audacity.\n"
+"Este projeto foi criado com uma nova versão do Audacium.\n"
 "\n"
 "Precisa de atualizar para o abrir."
 
@@ -4369,11 +4369,11 @@ msgstr "Erro ao Escrever para o Ficheiro"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"Audacity failed to write file %s.\n"
+"Audacium failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"O Audacity falhou em escrever %s de ficheiros.\n"
+"O Audacium falhou em escrever %s de ficheiros.\n"
 "Talvez o disco esteja cheio ou não.\n"
 "Para obter dicas sobre como liberar espaço, clique no botão ajuda."
 
@@ -4384,8 +4384,8 @@ msgstr "A Compactar Projeto"
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Audacity \"%s\""
-msgstr "[Projeto %02i] Audacity \"%s\""
+msgid "[Project %02i] Audacium \"%s\""
+msgstr "[Projeto %02i] Audacium \"%s\""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
 #: src/ProjectFileIO.cpp
@@ -4396,12 +4396,12 @@ msgstr "(Recuperado)"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Audacity %s.\n"
-"You are using Audacity %s. You may need to upgrade to a newer version to "
+"This file was saved using Audacium %s.\n"
+"You are using Audacium %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"Este ficheiro foi guardado no Audacity %s.\n"
-"Está a utilizar a versão %s. Poderá ter que atualizar o Audacity para "
+"Este ficheiro foi guardado no Audacium %s.\n"
+"Está a utilizar a versão %s. Poderá ter que atualizar o Audacium para "
 "conseguir abrir este ficheiro."
 
 #: src/ProjectFileIO.cpp
@@ -4478,24 +4478,24 @@ msgstr "A fazer backup do projeto"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
 "Este projeto não foi guardado corretamente da última vez que correu o "
-"Audacity.\n"
+"Audacium.\n"
 "\n"
 "Foi recuperado pelo último snapshot."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
 msgstr ""
 "Este projeto não foi corretamente guardado da última vez que abriu o "
-"Audacity.\n"
+"Audacium.\n"
 "\n"
 "Foi recuperado devido ao último snapshot, mas precisa de o guardar\n"
 "para manter os conteúdos."
@@ -4577,10 +4577,10 @@ msgstr "%sGuardar Projeto \"%s\" Como…"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Audacity project, not an audio file.\n"
+"'Save Project' is for an Audacium project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
-"'Guardar Projeto' aplica-se a projetos do Audacity, não a ficheiros de "
+"'Guardar Projeto' aplica-se a projetos do Audacium, não a ficheiros de "
 "áudio. \n"
 "Para um ficheiro de áudio a ser aberto noutras aplicações, utilize "
 "'Exportar'. \n"
@@ -4670,12 +4670,12 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Audacity project file instead."
+"Please open the actual Audacium project file instead."
 msgstr ""
 "Está a tentar abrir um ficheiro de backup automaticamente criado. \n"
 "Proceder pode resultar em perda de dados.\n"
 "\n"
-"Por favor, abra o atual Ficheiro de Projeto do Audacity em vez disso."
+"Por favor, abra o atual Ficheiro de Projeto do Audacium em vez disso."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4776,8 +4776,8 @@ msgstr "Backup da base de dados automático falhou."
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Audacity version %s"
-msgstr "Bem-vindo ao Audacity versão %s"
+msgid "Welcome to Audacium version %s"
+msgstr "Bem-vindo ao Audacium versão %s"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4837,14 +4837,14 @@ msgstr "%s e %s."
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Audacity 2.3.0 or before.\n"
-"You need to run that version of Audacity to recover the project."
+"This recovery file was saved by Audacium 2.3.0 or before.\n"
+"You need to run that version of Audacium to recover the project."
 msgstr ""
-"Este ficheiro de recuperação foi salvo pelo Audacity 2.3.0 ou anterior.\n"
+"Este ficheiro de recuperação foi salvo pelo Audacium 2.3.0 ou anterior.\n"
 "Você precisa de executar essa versão do Autacity para recuperar o projeto."
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Audacity is put on a notebook tab, and this is the name on that tab.
+#. Audacium is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -5181,8 +5181,8 @@ msgid "Activation level (dB):"
 msgstr "Nível de ativação (dB):"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Audacity!"
-msgstr "Bem-vindo ao Audacity!"
+msgid "Welcome to Audacium!"
+msgstr "Bem-vindo ao Audacium!"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5328,15 +5328,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write file:\n"
+"Audacium could not write file:\n"
 "  %s."
 msgstr ""
-"O Audacity não conseguiu escrever o ficheiro:\n"
+"O Audacium não conseguiu escrever o ficheiro:\n"
 "  %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5350,21 +5350,21 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not open file:\n"
+"Audacium could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"O Audacity não conseguiu abrir o ficheiro:\n"
+"O Audacium não conseguiu abrir o ficheiro:\n"
 "  %s\n"
 "para escrita."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write images to file:\n"
+"Audacium could not write images to file:\n"
 "  %s."
 msgstr ""
-"O Audacity não conseguiu escrever imagens para o ficheiro:\n"
+"O Audacium não conseguiu escrever imagens para o ficheiro:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5380,11 +5380,11 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not find file:\n"
+"Audacium could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
-"O Audacity não encontrou o ficheiro:\n"
+"O Audacium não encontrou o ficheiro:\n"
 "  %s.\n"
 "Tema não carregado."
 
@@ -5392,20 +5392,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not load file:\n"
+"Audacium could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
-"O Audacity não conseguiu carregar o ficheiro:\n"
+"O Audacium não conseguiu carregar o ficheiro:\n"
 "  %s.\n"
 "Provável problema no formato PNG?"
 
 #: src/Theme.cpp
 msgid ""
-"Audacity could not read its default theme.\n"
+"Audacium could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
-"O Audacity não consegue ler o tema predefinido.\n"
+"O Audacium não consegue ler o tema predefinido.\n"
 "Por favor, informe-nos deste problema."
 
 #: src/Theme.cpp
@@ -5442,14 +5442,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not save file:\n"
+"Audacium could not save file:\n"
 "  %s"
 msgstr ""
-"O Audacity não conseguiu guardar o ficheiro:\n"
+"O Audacium não conseguiu guardar o ficheiro:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Audacity
+#. appearance of older versions of Audacium
 #: src/Theme.cpp
 msgid "Classic"
 msgstr "Clássico"
@@ -5496,7 +5496,7 @@ msgid "Time Track"
 msgstr "Faixa de Tempo"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record"
+msgid "Audacium Timer Record"
 msgstr "Gravação Programada"
 
 #: src/TimerRecordDialog.cpp
@@ -5594,8 +5594,8 @@ msgid "Action after Timer Recording:"
 msgstr "Ação depois de Temporizador de Gravação:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record Progress"
-msgstr "Progresso da Gravação Programada do Audacity"
+msgid "Audacium Timer Record Progress"
+msgstr "Progresso da Gravação Programada do Audacium"
 
 # Gravação programada
 #: src/TimerRecordDialog.cpp
@@ -5750,8 +5750,8 @@ msgid "Do nothing"
 msgstr "Não fazer nada"
 
 #: src/TimerRecordDialog.cpp
-msgid "Exit Audacity"
-msgstr "Sair do Audacity"
+msgid "Exit Audacium"
+msgstr "Sair do Audacium"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5774,8 +5774,8 @@ msgid "Scheduled to stop at:"
 msgstr "Agendado para parar em:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record - Waiting for Start"
-msgstr "Gravação Programada do Audacity - À Espera para Começar"
+msgid "Audacium Timer Record - Waiting for Start"
+msgstr "Gravação Programada do Audacium - À Espera para Começar"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5783,7 +5783,7 @@ msgstr "Gravação Programada do Audacity - À Espera para Começar"
 msgid "Recording will commence in:"
 msgstr "Gravação irá começar em:"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Audacity", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Audacium", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5800,8 +5800,8 @@ msgid "Recording Exported:"
 msgstr "Gravação Exportada:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record - Waiting"
-msgstr "Audacity Temporizador de Gravação - Espera"
+msgid "Audacium Timer Record - Waiting"
+msgstr "Audacium Temporizador de Gravação - Espera"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5985,12 +5985,12 @@ msgstr "Não há espaço suficiente para expandir a linha de corte"
 msgid "This operation cannot be done until importation of %s completes."
 msgstr "Esta operação não pode ser feita até que a importação de %s acabe."
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
-msgid "Audacity"
-msgstr "Audacity"
+msgid "Audacium"
+msgstr "Audacium"
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid ""
 "%s: Could not load settings below. Default settings will be used.\n"
@@ -6002,13 +6002,13 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid "Applying %s..."
 msgstr "A aplicar %s..."
 
 #. i18n-hint: An item name followed by a value, with appropriate separating punctuation
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #: src/effects/vamp/VampEffect.cpp src/menus/PluginMenus.cpp
 #: src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.cpp
 #: src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.cpp
@@ -6017,7 +6017,7 @@ msgstr "A aplicar %s..."
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/commands/AudacityCommand.h
+#: src/commands/AudaciumCommand.h
 msgid "FAIL"
 msgstr "FALHA"
 
@@ -6276,12 +6276,12 @@ msgstr "Comandos Incorporados"
 #: src/effects/VST/VSTEffect.cpp src/effects/audiounits/AudioUnitEffect.cpp
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
-msgid "The Audacity Team"
-msgstr "A Equipa do Audacity"
+msgid "The Audacium Team"
+msgstr "A Equipa do Audacium"
 
 #: src/commands/LoadCommands.cpp
-msgid "Provides builtin commands to Audacity"
-msgstr "Fornece comandos incorporados para o Audacity"
+msgid "Provides builtin commands to Audacium"
+msgstr "Fornece comandos incorporados para o Audacium"
 
 #: src/commands/LoadCommands.cpp
 msgid "Unknown built-in command name"
@@ -7996,7 +7996,7 @@ msgid "Previewing"
 msgstr "A Antever"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8743,8 +8743,8 @@ msgid "Builtin Effects"
 msgstr "Efeitos Preparados"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Audacity"
-msgstr "Oferece efeitos preparados para o Audacity"
+msgid "Provides builtin effects to Audacium"
+msgstr "Oferece efeitos preparados para o Audacium"
 
 #: src/effects/LoadEffects.cpp
 msgid "Unknown built-in effect name"
@@ -8981,10 +8981,10 @@ msgstr "Passo 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Audacity knows what to filter out,\n"
+"Select a few seconds of just noise so Audacium knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"Selecione alguns segundos apenas de ruído para que o Audacity saiba o que "
+"Selecione alguns segundos apenas de ruído para que o Audacium saiba o que "
 "filtrar,\n"
 "depois prima Obter Perfil de Ruído:"
 
@@ -9855,8 +9855,8 @@ msgid "VST Effects"
 msgstr "Efeitos VST"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Audacity."
-msgstr "Adciona a habilidade de usar efeitos VST no Audacity."
+msgid "Adds the ability to use VST effects in Audacium."
+msgstr "Adciona a habilidade de usar efeitos VST no Audacium."
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Scanning Shell VST"
@@ -9905,12 +9905,12 @@ msgstr "Latência de Compensação"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
 "Como parte do seu processamento, alguns efeitos VST devem atrasar o retorno "
-"do áudio ao Audacity. Ao não compensar esse atraso, você notará que pequenos "
+"do áudio ao Audacium. Ao não compensar esse atraso, você notará que pequenos "
 "silêncios foram inseridos no áudio. Habilitar esta opção proporcionará essa "
 "compensação, mas pode não funcionar para todos os efeitos VST."
 
@@ -9955,8 +9955,8 @@ msgid "Standard VST program file"
 msgstr "Ficheiro de programa VST padrão"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Audacity VST preset file"
-msgstr "Ficheiro predefinição VST Audacity"
+msgid "Audacium VST preset file"
+msgstr "Ficheiro predefinição VST Audacium"
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Unrecognized file extension."
@@ -10045,8 +10045,8 @@ msgid "Audio Unit Effects"
 msgstr "Efeitos Audio Unit"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Audacity"
-msgstr "Oferece suporte de Efeitos de Audio Unit para o Audacity"
+msgid "Provides Audio Unit Effects support to Audacium"
+msgstr "Oferece suporte de Efeitos de Audio Unit para o Audacium"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid "Could not find component"
@@ -10064,13 +10064,13 @@ msgstr "Opções de Efeitos Audio Unit"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Audacity. When not compensating for this delay, you will notice "
+"audio to Audacium. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
 msgstr ""
 "Como parte do seu processamento, alguns efeitos de Audio Unit devem atrasar "
-"o retorno do áudio ao Audacity. Ao não compensar esse atraso, você notará "
+"o retorno do áudio ao Audacium. Ao não compensar esse atraso, você notará "
 "que pequenos silêncios foram inseridos no áudio. Habilitar essa opção "
 "fornecerá essa compensação, mas pode não funcionar para todos os efeitos de "
 "Audio Unit."
@@ -10235,8 +10235,8 @@ msgid "Provides LADSPA Effects"
 msgstr "Oferece Efeitos LADSPA"
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Audacity no longer uses vst-bridge"
-msgstr "O Audacity já não usa vst-bridge"
+msgid "Audacium no longer uses vst-bridge"
+msgstr "O Audacium já não usa vst-bridge"
 
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid "LADSPA Effect Options"
@@ -10245,12 +10245,12 @@ msgstr "Opções de Efeitos LADSPA"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Audacity. When not compensating for this delay, you will notice that "
+"to Audacium. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
 "Como parte do seu processamento, alguns efeitos LADSPA devem atrasar o "
-"retorno do áudio ao Audacity. Ao não compensar esse atraso, você notará que "
+"retorno do áudio ao Audacium. Ao não compensar esse atraso, você notará que "
 "pequenos silêncios foram inseridos no áudio. Habilitar essa opção "
 "proporcionará essa compensação, mas pode não funcionar para todos os efeitos "
 "LADSPA."
@@ -10287,12 +10287,12 @@ msgstr "Tamanho do &Buffer (8 a %d) samples:"
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
 "Como parte do seu processamento, alguns efeitos LV2 devem atrasar o retorno "
-"do áudio ao Audacity. Ao não compensar esse atraso, você notará que pequenos "
+"do áudio ao Audacium. Ao não compensar esse atraso, você notará que pequenos "
 "silêncios foram inseridos no áudio. Habilitar esta configuração "
 "proporcionará essa compensação, mas pode não funcionar para todos os efeitos "
 "de LV2."
@@ -10336,16 +10336,16 @@ msgid "LV2 Effects"
 msgstr "Efeitos LV2"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Audacity"
-msgstr "Oferece suporte de Efeitos LV2 para o Audacity"
+msgid "Provides LV2 Effects support to Audacium"
+msgstr "Oferece suporte de Efeitos LV2 para o Audacium"
 
 #: src/effects/nyquist/LoadNyquist.cpp
 msgid "Nyquist Effects"
 msgstr "Efeitos Nyquist"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Audacity"
-msgstr "Obtém suporte de Efeitos Nyquist ao Audacity"
+msgid "Provides Nyquist Effects support to Audacium"
+msgstr "Obtém suporte de Efeitos Nyquist ao Audacium"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Applying Nyquist Effect..."
@@ -10478,8 +10478,8 @@ msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Audacity does not support Nyquist plug-in version %ld"
-msgstr "Esta versão do Audacity já não suporta versão de plug-in Nyquist %ld"
+msgid "This version of Audacium does not support Nyquist plug-in version %ld"
+msgstr "Esta versão do Audacium já não suporta versão de plug-in Nyquist %ld"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Could not open file"
@@ -10590,8 +10590,8 @@ msgid "Vamp Effects"
 msgstr "Efeitos Vamp"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Audacity"
-msgstr "Oferece suporte de Vamp Effects para o Audacity"
+msgid "Provides Vamp Effects support to Audacium"
+msgstr "Oferece suporte de Vamp Effects para o Audacium"
 
 #: src/effects/vamp/VampEffect.cpp
 msgid ""
@@ -11799,8 +11799,8 @@ msgstr "Localizar LAME"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Audacity needs the file %s to create MP3s."
-msgstr "O Audacity precisa do ficheiro %s para criar MP3s."
+msgid "Audacium needs the file %s to create MP3s."
+msgstr "O Audacium precisa do ficheiro %s para criar MP3s."
 
 #: src/export/ExportMP3.cpp
 #, c-format
@@ -11830,12 +11830,12 @@ msgstr "Onde está %s ?"
 #, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Audacity %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Audacity'."
+"Audacium %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Audacium'."
 msgstr ""
 "Você está a vincular a lame_enc.dll v%d.%d. Esta versão não é compatível com "
-"o Audacity %d.%d.%d.\n"
-"Por favor descarregue a versão mais recente do 'LAME for Audacity'."
+"o Audacium %d.%d.%d.\n"
+"Por favor descarregue a versão mais recente do 'LAME for Audacium'."
 
 #: src/export/ExportMP3.cpp
 msgid "Only lame_enc.dll"
@@ -12163,10 +12163,10 @@ msgstr "Outros ficheiros sem compressão"
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Audacity cannot do this, the Export was abandoned."
+"Audacium cannot do this, the Export was abandoned."
 msgstr ""
 "Tentou exportar um ficheiro WAV ou AIFF que pode ser maior do que 4GB.\n"
-"O Audacity não pode fazer isso, a Exportação foi abandonada."
+"O Audacium não pode fazer isso, a Exportação foi abandonada."
 
 #: src/export/ExportPCM.cpp
 msgid "Error Exporting"
@@ -12174,10 +12174,10 @@ msgstr "Erro ao Exportar"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Audacity cannot export WAV\n"
+"Your exported WAV file has been truncated as Audacium cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
-"O seu ficheiro WAV exportado foi truncado como o Audacity não pode exportar "
+"O seu ficheiro WAV exportado foi truncado como o Audacium não pode exportar "
 "ficheiros WAV\n"
 "maiores que 4GB."
 
@@ -12219,12 +12219,12 @@ msgstr "Todos os ficheiros suportados"
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Audacity cannot open this type of file for playing, but you can\n"
+"Audacium cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 "\"%s\"  \n"
 "é um ficheiro MIDI e não um ficheiro de áudio. \n"
-"O Audacity não reproduz este tipo de ficheiro, \n"
+"O Audacium não reproduz este tipo de ficheiro, \n"
 "mas pode editá-lo se for a Ficheiro > Importar > MIDI."
 
 #: src/import/Import.cpp
@@ -12232,11 +12232,11 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Audacity cannot open this type of file."
+"Audacium cannot open this type of file."
 msgstr ""
 "\"%s\" \n"
 "não é um ficheiro de áudio. \n"
-"O Audacity não pode abrir este tipo de ficheiro."
+"O Audacium não pode abrir este tipo de ficheiro."
 
 #: src/import/Import.cpp
 msgid "Select stream(s) to import"
@@ -12244,35 +12244,35 @@ msgstr "Selecione o(s) stream(s) a importar"
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Audacity was not compiled with %s support."
-msgstr "Esta versão do Audacity não foi compilada com suporte para %s."
+msgid "This version of Audacium was not compiled with %s support."
+msgstr "Esta versão do Audacium não foi compilada com suporte para %s."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Audacity cannot open audio CDs directly. \n"
+"Audacium cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Audacity can import, such as WAV or AIFF."
+"Audacium can import, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é uma faixa de um CD de áudio. \n"
-"O Audacity não abre CDs de áudio diretamente. \n"
+"O Audacium não abre CDs de áudio diretamente. \n"
 "Extraia o áudio das faixas do CD para um formato \n"
-"que o Audacity possa importar, como WAV ou AIFF."
+"que o Audacium possa importar, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Audacity cannot open this file because it only contains links to other "
+"Audacium cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
 msgstr ""
 "\"%s\" é uma lista de reprodução. \n"
-"O Audacity não a abre porque apenas contém ligações para outros ficheiros. \n"
+"O Audacium não a abre porque apenas contém ligações para outros ficheiros. \n"
 "Pode abrir este ficheiro num editor de texto e transferir os ficheiros de "
 "áudio atuais."
 
@@ -12281,11 +12281,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Audacity cannot open this type of file due to patent restrictions. \n"
+"Audacium cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Windows Media Audio. \n"
-"O Audacity não abre este tipo de ficheiros por restrições de patentes. \n"
+"O Audacium não abre este tipo de ficheiros por restrições de patentes. \n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12293,13 +12293,13 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Audacity cannot open this type of "
+"Without the optional FFmpeg library, Audacium cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Codificar de Áudo Avançado.\n"
-"Sem a biblioteca FFmpeg opcional, O Audacity não pode abrir este tipo de "
+"Sem a biblioteca FFmpeg opcional, O Audacium não pode abrir este tipo de "
 "ficheiro.\n"
 "Caso contrário, você precisará convertê-lo num formato de áudio suportado, "
 "como WAV ou AIFF."
@@ -12310,14 +12310,14 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Audacity cannot open this type of file due to the encryption. \n"
-"Try recording the file into Audacity, or burn it to audio CD then \n"
+"Audacium cannot open this type of file due to the encryption. \n"
+"Try recording the file into Audacium, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro de áudio encriptado. \n"
 "Isto deve ter a sua origem numa loja de músicas online. \n"
-"O Audacity não abre estes ficheiros devido à sua encriptação. \n"
-"Experimente gravar o ficheiro no Audacity ou grava-lo num CD áudio e \n"
+"O Audacium não abre estes ficheiros devido à sua encriptação. \n"
+"Experimente gravar o ficheiro no Audacium ou grava-lo num CD áudio e \n"
 "depois extrair a faixa para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12325,11 +12325,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Audacity cannot open this proprietary format. \n"
+"Audacium cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Real Player. \n"
-"O Audacity não abre este formato proprietário. \n"
+"O Audacium não abre este formato proprietário. \n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12337,28 +12337,28 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Audacity."
+"then import it, or record it into Audacium."
 msgstr ""
 "\"%s\" é um ficheiro de notas e não de áudio. \n"
-"O Audacity não abre este tipo de ficheiro. \n"
+"O Audacium não abre este tipo de ficheiro. \n"
 "Tente converte-lo num ficheiro de áudio como WAV ou AIFF e \n"
-"depois importe-o, ou grave-o no Audacity."
+"depois importe-o, ou grave-o no Audacium."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
 "format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Musepack. \n"
-"O Audacity não abre este tipo de ficheiros. \n"
+"O Audacium não abre este tipo de ficheiros. \n"
 "Se pensa tratar-se de um ficheiro MP3, mude a extensão para \".mp3\" \n"
 "e tente importa-lo de novo. \n"
 " Noutro caso converta-o para um formato suportado, como WAV ou AIFF."
@@ -12368,11 +12368,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Wavpack. \n"
-"O Audacity não abre este tipo de ficheiros. \n"
+"O Audacium não abre este tipo de ficheiros. \n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12380,11 +12380,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Dolby Digital. \n"
-"O Audacity ainda não abre este tipo de ficheiros. \n"
+"O Audacium ainda não abre este tipo de ficheiros. \n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12392,11 +12392,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro Ogg Speex. \n"
-"O Audacity ainda não abre este tipo de ficheiros. \n"
+"O Audacium ainda não abre este tipo de ficheiros. \n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12404,11 +12404,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" é um ficheiro de vídeo. \n"
-"O Audacity ainda não abre este tipo de ficheiro.\n"
+"O Audacium ainda não abre este tipo de ficheiro.\n"
 "Converta o ficheiro para um formato suportado, como WAV ou AIFF."
 
 #: src/import/Import.cpp
@@ -12420,11 +12420,11 @@ msgstr "Ficheiro \"%s\" não encontrado."
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Audacity did not recognize the type of the file '%s'.\n"
+"Audacium did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
-"O Audacity não reconhece o tipo de ficheiro '%s'.\n"
+"O Audacium não reconhece o tipo de ficheiro '%s'.\n"
 "\n"
 "%sPara ficheiros descomprimidos, também tente Ficheiro > Importar > Dados "
 "Raw."
@@ -12446,12 +12446,12 @@ msgstr "%s, %s"
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Audacity recognized the type of the file '%s'.\n"
+"Audacium recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
 msgstr ""
-"O Audacity reconhece o tipo de ficheiro '%s'. \n"
+"O Audacium reconhece o tipo de ficheiro '%s'. \n"
 "Os importadores que suportam tais ficheiros são: \n"
 "%s,\n"
 "mas nenhum deles reconheceu o formato."
@@ -12477,19 +12477,19 @@ msgstr "Importar Projeto"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Audacity version 1.0 or earlier. The format has\n"
-"changed and this version of Audacity is unable to import the project.\n"
+"This project was saved by Audacium version 1.0 or earlier. The format has\n"
+"changed and this version of Audacium is unable to import the project.\n"
 "\n"
-"Use a version of Audacity prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Audacity."
+"Use a version of Audacium prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Audacium."
 msgstr ""
-"Este projeto foi guardado pela versão 1.0 do Audacity ou posterior. O "
+"Este projeto foi guardado pela versão 1.0 do Audacium ou posterior. O "
 "formato\n"
-"mudou e esta versão do Audacity não consegue importar o projeto.\n"
+"mudou e esta versão do Audacium não consegue importar o projeto.\n"
 "\n"
-"Utilize uma versão do Audacity anterior ao v3.0.0 para atualizar o projeto e "
+"Utilize uma versão do Audacium anterior ao v3.0.0 para atualizar o projeto e "
 "depois\n"
-"poderá importá-lo com esta versão do Audacity."
+"poderá importá-lo com esta versão do Audacium."
 
 #: src/import/ImportAUP.cpp
 msgid "Internal error in importer...tag not recognized"
@@ -12535,11 +12535,11 @@ msgstr "Não foi possível encontrar a pasta de dados do projeto: \"%s\""
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Audacity does not "
+"MIDI tracks found in project file, but this build of Audacium does not "
 "include MIDI support, bypassing track."
 msgstr ""
 "Faixas MIDI encontradas no ficheiro do projeto, mas esta compilação do "
-"Audacity não inclui suporte MIDI, a ignorar faixa."
+"Audacium não inclui suporte MIDI, a ignorar faixa."
 
 #: src/import/ImportAUP.cpp
 msgid "Project Import"
@@ -13713,8 +13713,8 @@ msgid "&Getting Started"
 msgstr "&Como Iniciar"
 
 #: src/menus/HelpMenus.cpp
-msgid "Audacity &Manual"
-msgstr "Audacity &Manual"
+msgid "Audacium &Manual"
+msgstr "Audacium &Manual"
 
 #: src/menus/HelpMenus.cpp
 msgid "&Quick Help..."
@@ -13761,7 +13761,7 @@ msgstr "Rótulo adicionado"
 msgid "Paste Text to New Label"
 msgstr "Colar Texto Como Novo Rótulo"
 
-#. i18n-hint: (verb) past tense.  Audacity has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Audacium has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13772,7 +13772,7 @@ msgstr "Cortar áreas de áudio rotulado para a área de transferência"
 msgid "Cut Labeled Audio"
 msgstr "Cortar Áudio Rotulado"
 
-#. i18n-hint: (verb) Audacity has just deleted the labeled audio regions
+#. i18n-hint: (verb) Audacium has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "Apagadas áreas de áudio rotulado"
@@ -13782,7 +13782,7 @@ msgstr "Apagadas áreas de áudio rotulado"
 msgid "Delete Labeled Audio"
 msgstr "Apagar Áudio Rotulado"
 
-#. i18n-hint: (verb) Audacity has just split cut the labeled audio
+#. i18n-hint: (verb) Audacium has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13794,7 +13794,7 @@ msgstr ""
 msgid "Split Cut Labeled Audio"
 msgstr "Separar e Cortar Áudio Rotulado"
 
-#. i18n-hint: (verb) Audacity has just done a special kind of DELETE on
+#. i18n-hint: (verb) Audacium has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13825,7 +13825,7 @@ msgstr "Copiadas as áreas de áudio rotulado para a área de transferência"
 msgid "Copy Labeled Audio"
 msgstr "Copiar Áudio Rotulado"
 
-#. i18n-hint: (verb) past tense.  Audacity has just split the labeled
+#. i18n-hint: (verb) past tense.  Audacium has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13836,7 +13836,7 @@ msgstr "Separar áudio rotulado (pontos ou áreas)"
 msgid "Split Labeled Audio"
 msgstr "Separar Áudio Rotulado"
 
-#. i18n-hint: (verb) Audacity has just joined the labeled audio (points or
+#. i18n-hint: (verb) Audacium has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13847,9 +13847,9 @@ msgstr "Unir áudio rotulado (pontos ou áreas)"
 msgid "Join Labeled Audio"
 msgstr "Unir Áudio Rotulado"
 
-#. i18n-hint: (verb) Audacity has just detached the labeled audio regions.
+#. i18n-hint: (verb) Audacium has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Audacity has done.
+#. Audacium has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "Regiões de áudio rotuladas separadas"
@@ -14653,9 +14653,9 @@ msgstr "Criada nova faixa de rótulos"
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Audacity only allows one time track for each project window."
+"This version of Audacium only allows one time track for each project window."
 msgstr ""
-"Esta versão do Audacity permite apenas uma faixa de tempo por cada janela de "
+"Esta versão do Audacium permite apenas uma faixa de tempo por cada janela de "
 "projeto."
 
 #: src/menus/TrackMenus.cpp
@@ -14923,13 +14923,13 @@ msgstr "Mover a Faixa Focada para o &Topo"
 msgid "Move Focused Track to &Bottom"
 msgstr "Mover a Faixa Focada para &Último"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 msgid "Playing"
 msgstr "Reproduzindo"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15500,10 +15500,10 @@ msgstr "A pasta %s não tem permissão de escrita"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Audacity is "
+"Changes to temporary directory will not take effect until Audacium is "
 "restarted"
 msgstr ""
-"Alterações na pasta temporária só terão efeito quando reiniciar o Audacity"
+"Alterações na pasta temporária só terão efeito quando reiniciar o Audacium"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid "Temp Directory Update"
@@ -15547,7 +15547,7 @@ msgid "LV&2"
 msgstr "LV&2"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15587,12 +15587,12 @@ msgid "Plugin Options"
 msgstr "Configurações do Plugin"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Audacity starts"
-msgstr "Verificar por plugins atualizados quando o Audacity iniciar"
+msgid "Check for updated plugins when Audacium starts"
+msgstr "Verificar por plugins atualizados quando o Audacium iniciar"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Rescan plugins next time Audacity is started"
-msgstr "Reencontrar plguins da próxima vez que o Audacity iniciar"
+msgid "Rescan plugins next time Audacium is started"
+msgstr "Reencontrar plguins da próxima vez que o Audacium iniciar"
 
 #: src/prefs/EffectsPrefs.cpp
 msgid "Instruction Set"
@@ -15664,12 +15664,12 @@ msgstr "Filtros não utilizados:"
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Audacity "
+"what you are doing, it is recommended to trim spaces. Do you want Audacium "
 "to trim spaces for you?"
 msgstr ""
 "Há caracteres de espaçamento (espaços, quebras de linha ou tabulações) num "
 "dos itens. Estes podem quebrar a pesquisa de padrões. A não ser que seja "
-"intencional, é recomendado aparar estes caracteres. Pretende que o Audacity "
+"intencional, é recomendado aparar estes caracteres. Pretende que o Audacium "
 "os apare?"
 
 #: src/prefs/ExtImportPrefs.cpp
@@ -15688,7 +15688,7 @@ msgstr "Confirmação de eliminação da regra"
 msgid "Ext Import"
 msgstr "Ext Importar"
 
-#. i18n-hint: refers to Audacity's user interface settings
+#. i18n-hint: refers to Audacium's user interface settings
 #: src/prefs/GUIPrefs.cpp
 msgctxt "GUI"
 msgid "Interface"
@@ -15779,8 +15779,8 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr "Manter &rótulos se seleção chegar ao limite de outro"
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Audacity theme"
-msgstr "&Misturar sistema e tema Audacity"
+msgid "B&lend system and Audacium theme"
+msgstr "&Misturar sistema e tema Audacium"
 
 #. i18n-hint: RTL stands for 'Right to Left'
 #: src/prefs/GUIPrefs.cpp
@@ -15957,9 +15957,9 @@ msgstr ""
 "   *   \"%s\"  (porque o atalho '%s' é utilizado por \"%s\")\n"
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Audacity keyboard shortcuts..."
+msgid "Select an XML file containing Audacium keyboard shortcuts..."
 msgstr ""
-"Selecionar um ficheiro XML que contenha atalhos do teclado para o Audacity…"
+"Selecionar um ficheiro XML que contenha atalhos do teclado para o Audacium…"
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -16095,10 +16095,10 @@ msgstr "&Transferir"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Audacity has automatically detected valid FFmpeg libraries.\n"
+"Audacium has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"O Audacity detectou automaticamente bibliotecas FFmpeg válidas.\n"
+"O Audacium detectou automaticamente bibliotecas FFmpeg válidas.\n"
 "Mesmo assim deseja localizá-las manualmente?"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -16144,7 +16144,7 @@ msgstr "A latência do sintetizador MIDI deve ser um número inteiro"
 msgid "Midi IO"
 msgstr "Midi IO"
 
-#. i18n-hint: Modules are optional extensions to Audacity that add NEW features.
+#. i18n-hint: Modules are optional extensions to Audacium that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "Modulos"
@@ -16155,7 +16155,7 @@ msgstr "Preferências para Modulo"
 
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"These are experimental modules. Enable them only if you've read the Audacity "
+"These are experimental modules. Enable them only if you've read the Audacium "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
@@ -16165,17 +16165,17 @@ msgstr ""
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"  'Ask' means Audacity will ask if you want to load the module each time it "
+"  'Ask' means Audacium will ask if you want to load the module each time it "
 "starts."
 msgstr ""
-"  'Perguntar' significa que o Audacity perguntará sempre se quer carregar o "
+"  'Perguntar' significa que o Audacium perguntará sempre se quer carregar o "
 "módulo sempre que o iniciar."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
-msgid "  'Failed' means Audacity thinks the module is broken and won't run it."
+msgid "  'Failed' means Audacium thinks the module is broken and won't run it."
 msgstr ""
-"  'Falhou' significa que o Audacity pensa que o módulo está corrompido e não "
+"  'Falhou' significa que o Audacium pensa que o módulo está corrompido e não "
 "o vai correr."
 
 #. i18n-hint preserve the leading spaces
@@ -16184,9 +16184,9 @@ msgid "  'New' means no choice has been made yet."
 msgstr "  'Novo' significa sem escolha ainda feita."
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Audacity starts up."
+msgid "Changes to these settings only take effect when Audacium starts up."
 msgstr ""
-"Alterações na pasta temporária só terão efeito quando reiniciar o Audacity."
+"Alterações na pasta temporária só terão efeito quando reiniciar o Audacium."
 
 #: src/prefs/ModulePrefs.cpp
 msgid "Ask"
@@ -16463,8 +16463,8 @@ msgid "Always scrub un&pinned"
 msgstr "Sempre percorrer &soltos"
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Audacity Preferences"
-msgstr "Preferências do Audacity"
+msgid "Audacium Preferences"
+msgstr "Preferências do Audacium"
 
 #: src/prefs/PrefsDialog.cpp
 msgid "Category"
@@ -16861,7 +16861,7 @@ msgstr "O número máximo de notas deve estar no intervalo de 1 a 128"
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -16884,7 +16884,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Audacity.\n"
+"Audacium.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -16897,7 +16897,7 @@ msgstr ""
 "imagens e cores em ImageCacheVxx.png com um editor de imagens como o Gimp. \n"
 "\n"
 "Prima em \"Carregar Caixa de Temas\" para carregar as imagens e cores "
-"alteradas para o Audacity. \n"
+"alteradas para o Audacium. \n"
 "\n"
 "(De momento, apenas a barra dos controlos e as cores das faixas de formas da "
 "onda serão alteradas, \n"
@@ -17189,7 +17189,7 @@ msgstr "Preferências para Waveforms"
 msgid "Waveform dB &range:"
 msgstr "&Alcance dB da forma de onda:"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 msgid "Stopped"
@@ -17227,7 +17227,7 @@ msgstr "Selecionar para o Fim"
 msgid "Select to Start"
 msgstr "Selecionar para o Início"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, c-format
@@ -17589,12 +17589,12 @@ msgstr "Tempo"
 msgid "&Time Toolbar"
 msgstr "Barra de &Tempo"
 
-# Diz assim 'barra de dispositivo do audacity' 'barra de transcrição do audacity'
+# Diz assim 'barra de dispositivo do audacium' 'barra de transcrição do audacium'
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, c-format
-msgid "Audacity %s Toolbar"
-msgstr "Barra de Dispositivo %s do Audacity"
+msgid "Audacium %s Toolbar"
+msgstr "Barra de Dispositivo %s do Audacium"
 
 #: src/toolbars/ToolBar.cpp
 msgid "Click and drag to resize toolbar"
@@ -18262,7 +18262,7 @@ msgstr "Clique e arraste para distorcer o tempo de reprodução"
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "Clique e arraste para editar o envelope de amplitude"
 
-#. i18n-hint: (verb) Audacity has just adjusted the envelope .
+#. i18n-hint: (verb) Audacium has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr "Envelope ajustado."
@@ -20578,11 +20578,11 @@ msgstr "Direito (dB)"
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Audacity</a> by Steve\n"
+"<a href=\"~a\">Audacium</a> by Steve\n"
 "Daulton"
 msgstr ""
 "Produzido com <span>Exportação de Dados Sample</span> para\n"
-"<a href=\"~a\">Audacity</a> por Steve\n"
+"<a href=\"~a\">Audacium</a> por Steve\n"
 "Daulton"
 
 #: plug-ins/sample-data-export.ny
@@ -21060,11 +21060,11 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Export recording"
 #~ msgstr "Exportar gravação"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Audacity"
-#~ msgstr "Suporte a Ogg Vorbis não incluído nesta versão do Audacity"
+#~ msgid "Ogg Vorbis support is not included in this build of Audacium"
+#~ msgstr "Suporte a Ogg Vorbis não incluído nesta versão do Audacium"
 
-#~ msgid "FLAC support is not included in this build of Audacity"
-#~ msgstr "Suporte a FLAC não incluído nesta versão do Audacity"
+#~ msgid "FLAC support is not included in this build of Audacium"
+#~ msgstr "Suporte a FLAC não incluído nesta versão do Audacium"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "Comando %s ainda não implementado"
@@ -21119,37 +21119,37 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "A guardar o áudio gravado em disco"
 
-#~ msgid "Audacity projects"
-#~ msgstr "Projetos do Audacity"
+#~ msgid "Audacium projects"
+#~ msgstr "Projetos do Audacium"
 
 #~ msgid "Reclaimable Space"
 #~ msgstr "Espaço Reclamável"
 
 #~ msgid ""
-#~ "Audacity cannot start because the settings file at %s is not writable."
+#~ "Audacium cannot start because the settings file at %s is not writable."
 #~ msgstr ""
-#~ "O Audacity não pode iniciar porque o ficheiro de configurações em %s não "
+#~ "O Audacium não pode iniciar porque o ficheiro de configurações em %s não "
 #~ "é gravável."
 
 #~ msgid ""
-#~ "This file was saved by Audacity version %s. The format has changed. \n"
+#~ "This file was saved by Audacium version %s. The format has changed. \n"
 #~ "\n"
-#~ "Audacity can try to open and save this file, but saving it in this \n"
+#~ "Audacium can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Audacity might corrupt the file in opening it, so you should back it up "
+#~ "Audacium might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "Este ficheiro foi guardado pela versão %s, do Audacity. \n"
+#~ "Este ficheiro foi guardado pela versão %s, do Audacium. \n"
 #~ "O formato entretanto mudou. \n"
 #~ "\n"
-#~ "O Audacity pode tentar abrir e guardar este ficheiro, mas ao guardá-lo \n"
+#~ "O Audacium pode tentar abrir e guardar este ficheiro, mas ao guardá-lo \n"
 #~ "nesta versão impossibilitará que seja aberto nas versões 1.2 ou "
 #~ "anteriores. \n"
 #~ "\n"
-#~ "O Audacity poderá corromper o ficheiro ao abri-lo, deverá fazer uma "
+#~ "O Audacium poderá corromper o ficheiro ao abri-lo, deverá fazer uma "
 #~ "cópia \n"
 #~ "de segurança primeiro. \n"
 #~ "\n"
@@ -21187,14 +21187,14 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "Tente criar a pasta \"%s\" antes de guardar o projeto com este nome."
 
 #~ msgid ""
-#~ "'Save Lossless Copy of Project' is for an Audacity project, not an audio "
+#~ "'Save Lossless Copy of Project' is for an Audacium project, not an audio "
 #~ "file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
 #~ "Lossless copies of project are a good way to backup your project, \n"
 #~ "with no loss of quality, but the projects are large.\n"
 #~ msgstr ""
-#~ "'Guardar Cópia Sem Perdas do Projeto' é para um projeto do Audacity, não "
+#~ "'Guardar Cópia Sem Perdas do Projeto' é para um projeto do Audacium, não "
 #~ "um ficheiro de áudio.\n"
 #~ "Para um ficheiro de áudio que irá abrir noutas aplicações, utilize "
 #~ "'Exportar'.\n"
@@ -21208,7 +21208,7 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgstr "%sGuardar Cópia Comprimida do Projeto \"%s\" Como..."
 
 #~ msgid ""
-#~ "'Save Compressed Copy of Project' is for an Audacity project, not an "
+#~ "'Save Compressed Copy of Project' is for an Audacium project, not an "
 #~ "audio file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
@@ -21216,7 +21216,7 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "online, \n"
 #~ "but they have some loss of fidelity.\n"
 #~ msgstr ""
-#~ "'Guardar Cópia Comprimida do Projeto' +e oara um projeto do Audacity, não "
+#~ "'Guardar Cópia Comprimida do Projeto' +e oara um projeto do Audacium, não "
 #~ "um ficheiro de áudio.\n"
 #~ "Para um ficheiro de áudio que irá abrir noutas aplicações, utilize "
 #~ "'Exportar'.\n"
@@ -21227,10 +21227,10 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "\n"
 
 #~ msgid ""
-#~ "Audacity was unable to convert an Audacity 1.0 project to the new project "
+#~ "Audacium was unable to convert an Audacium 1.0 project to the new project "
 #~ "format."
 #~ msgstr ""
-#~ "O Audacity não conseguiu converter um projeto do Audacity 1.0 para o novo "
+#~ "O Audacium não conseguiu converter um projeto do Audacium 1.0 para o novo "
 #~ "formato de projeto."
 
 #~ msgid "Could not remove old auto save file"
@@ -21282,11 +21282,11 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgstr "FFmpeg : ERRO - Falhou ao escrever frame de áudio para o ficheiro."
 
 #~ msgid ""
-#~ "\"%s\" is an Audacity Project file. \n"
-#~ "Use the 'File > Open' command to open Audacity Projects."
+#~ "\"%s\" is an Audacium Project file. \n"
+#~ "Use the 'File > Open' command to open Audacium Projects."
 #~ msgstr ""
-#~ "\"%s\" é um Ficheiro de Projeto Audacity. \n"
-#~ "Utilizar o comando 'Ficheiro > Abrir' para abrir Projetos Audacity."
+#~ "\"%s\" é um Ficheiro de Projeto Audacium. \n"
+#~ "Utilizar o comando 'Ficheiro > Abrir' para abrir Projetos Audacium."
 
 #~ msgid ""
 #~ "MP3 Decoding Failed:\n"
@@ -21479,31 +21479,31 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "File dialog failed with error code %0lx."
 #~ msgstr "Ficheiro diálogo falhou com código de erro %0lx."
 
-#~ msgid "About Audacity"
-#~ msgstr "Sobre o Audacity"
+#~ msgid "About Audacium"
+#~ msgstr "Sobre o Audacium"
 
-#~ msgid "<h3>Audacity "
-#~ msgstr "<h3>Audacity "
+#~ msgid "<h3>Audacium "
+#~ msgstr "<h3>Audacium "
 
-#~ msgid "Audacity Team Members"
-#~ msgstr "Equipa de Desenvolvimento do Audacity"
+#~ msgid "Audacium Team Members"
+#~ msgstr "Equipa de Desenvolvimento do Audacium"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software é copyright "
-#~ "&copy; 1999-2018 Equipa Audacity.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software é copyright "
+#~ "&copy; 1999-2018 Equipa Audacium.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir no DirManager::MakeBlockFilePath falhou."
 
 #~ msgid ""
-#~ "Audacity found an orphan block file: %s. \n"
+#~ "Audacium found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
-#~ "O Audacity encontrou um ficheiro do bloco orfão %s! \n"
+#~ "O Audacium encontrou um ficheiro do bloco orfão %s! \n"
 #~ "Por favor, considere guardar, fechar e abrir novamente o projeto para uma "
 #~ "verificação completa."
 
@@ -21544,10 +21544,10 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "O módulo \"%s\" não fornece uma chave da versão. Ele não será carregado."
 
 #~ msgid ""
-#~ "The module \"%s\" is matched with Audacity version \"%s\". It will not be "
+#~ "The module \"%s\" is matched with Audacium version \"%s\". It will not be "
 #~ "loaded."
 #~ msgstr ""
-#~ "O módulo \"%s\" é compatível com a versão \"%s\" do Audacity. Ele não "
+#~ "O módulo \"%s\" é compatível com a versão \"%s\" do Audacium. Ele não "
 #~ "será carregado."
 
 #~ msgid ""
@@ -21779,8 +21779,8 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "Como parte do seu processamento, alguns efeitos VST têm de atrasar o "
 #~ "retorno "
 
-#~ msgid "audio to Audacity. When not compensating for this delay, you will "
-#~ msgstr "do áudio para o Audacity. Quando não compensar este atraso, "
+#~ msgid "audio to Audacium. When not compensating for this delay, you will "
+#~ msgstr "do áudio para o Audacium. Quando não compensar este atraso, "
 
 #~ msgid "notice that small silences have been inserted into the audio. "
 #~ msgstr "notará que pequenos silêncios têm sido adicionados ao áudio. "
@@ -21914,11 +21914,11 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgstr "%s - %s"
 
 #~ msgid ""
-#~ "This is a debug version of Audacity, with an extra button, 'Output "
+#~ "This is a debug version of Audacium, with an extra button, 'Output "
 #~ "Sourcery'. This will save a\n"
 #~ "C version of the image cache that can be compiled in as a default."
 #~ msgstr ""
-#~ "Isto é uma versão de depuração do Audacity, com um botão extra, 'Output "
+#~ "Isto é uma versão de depuração do Audacium, com um botão extra, 'Output "
 #~ "Sourcery'. Este guarda uma\n"
 #~ "versão em C da imagem em cache que pode ser compilada como predefinição."
 
@@ -21940,8 +21940,8 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Error.~%~s is not a valid Nyquist plug-in.~%"
 #~ msgstr "Erro.~%~s não é um plug-in Nyquist válido.~%"
 
-#~ msgid "This plug-in requires Audacity 2.3.1 or later."
-#~ msgstr "Este plug-in requer o Audacity 2.3.1 ou superior."
+#~ msgid "This plug-in requires Audacium 2.3.1 or later."
+#~ msgstr "Este plug-in requer o Audacium 2.3.1 ou superior."
 
 #~ msgid "Remove Center Classic: Mono"
 #~ msgstr "Remover Centro Clássico: Mono"
@@ -22134,13 +22134,13 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid ""
 #~ "Latency Correction setting has caused the recorded audio to be hidden "
 #~ "before zero.\n"
-#~ "Audacity has brought it back to start at zero.\n"
+#~ "Audacium has brought it back to start at zero.\n"
 #~ "You may have to use the Time Shift Tool (<---> or F5) to drag the track "
 #~ "to the right place."
 #~ msgstr ""
 #~ "A correção da latência fez com que o áudio gravado esteja oculto antes do "
 #~ "ponto zero. \n"
-#~ "O Audacity ajustou o áudio de modo a começar no ponto zero. \n"
+#~ "O Audacium ajustou o áudio de modo a começar no ponto zero. \n"
 #~ "Pode ser necessário usar a Ferramenta Mover (<---> ou F5) para arrastar a "
 #~ "faixa para o local certo."
 
@@ -22170,29 +22170,29 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "C&hain (Double-Click or press SPACE to edit)"
 #~ msgstr "Ca&deias (Duplo-Clique ou carregue ESPAÇO para editar)"
 
-#~ msgid "<br><br>DarkAudacity is based on Audacity:"
-#~ msgstr "<br><br>DarkAudacity é baseado no Audacity:"
+#~ msgid "<br><br>DarkAudacium is based on Audacium:"
+#~ msgstr "<br><br>DarkAudacium é baseado no Audacium:"
 
 #~ msgid ""
-#~ " [[http://www.darkaudacity.com|www.darkaudacity.com]] - for differences "
+#~ " [[http://www.darkaudacium.com|www.darkaudacium.com]] - for differences "
 #~ "between them."
 #~ msgstr ""
-#~ " [[http://www.darkaudacity.com|www.darkaudacity.com]] - para diferenças "
+#~ " [[http://www.darkaudacium.com|www.darkaudacium.com]] - para diferenças "
 #~ "entre eles."
 
 #~ msgid ""
-#~ " email to [[mailto:james@audacityteam.org|james@audacityteam.org]] - for "
-#~ "help using DarkAudacity."
+#~ " email to [[mailto:james@audaciumteam.org|james@audaciumteam.org]] - for "
+#~ "help using DarkAudacium."
 #~ msgstr ""
-#~ " email para [[mailto:james@audacityteam.org|james@audacityteam.org]] - "
-#~ "para ajuda utilizando o DarkAudacity."
+#~ " email para [[mailto:james@audaciumteam.org|james@audaciumteam.org]] - "
+#~ "para ajuda utilizando o DarkAudacium."
 
 #~ msgid ""
-#~ " [[http://www.darkaudacity.com/video.html|Tutorials]] - for getting "
-#~ "started with DarkAudacity."
+#~ " [[http://www.darkaudacium.com/video.html|Tutorials]] - for getting "
+#~ "started with DarkAudacium."
 #~ msgstr ""
-#~ " [[http://www.darkaudacity.com/video.html|Tutorials]] - para início "
-#~ "rápido com o DarkAudacity."
+#~ " [[http://www.darkaudacium.com/video.html|Tutorials]] - para início "
+#~ "rápido com o DarkAudacium."
 
 #~ msgid "Insert &After"
 #~ msgstr "&Inserir Após"
@@ -22332,9 +22332,9 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "MISSING "
 #~ msgstr "EM FALTA "
 
-#~ msgid "Audacity failed to write to a file in %s."
+#~ msgid "Audacium failed to write to a file in %s."
 #~ msgstr ""
-#~ "O Audacity não conseguiu escrever o ficheiro:\n"
+#~ "O Audacium não conseguiu escrever o ficheiro:\n"
 #~ "  %s."
 
 #~ msgid "Couldn't write to file: "
@@ -22720,29 +22720,29 @@ msgstr "Erro.~%Requer faixa estéreo."
 
 #~ msgid ""
 #~ "If you find a bug or have a suggestion for us, please write, in English, "
-#~ "to our [[mailto:feedback@audacityteam.org|feedback address]]. For help, "
-#~ "view the tips and tricks on our [[http://wiki.audacityteam.org/|wiki]] or "
-#~ "visit our [[http://forum.audacityteam.org/|forum]]."
+#~ "to our [[mailto:feedback@audaciumteam.org|feedback address]]. For help, "
+#~ "view the tips and tricks on our [[http://wiki.audaciumteam.org/|wiki]] or "
+#~ "visit our [[http://forum.audaciumteam.org/|forum]]."
 #~ msgstr ""
 #~ "Se encontrar um erro ou tiver uma sugestão, por favor envie-nos a sua <a "
-#~ "href=\"mailto:feedback@audacityteam.org\">mensagem</a> (em Inglês). Para "
+#~ "href=\"mailto:feedback@audaciumteam.org\">mensagem</a> (em Inglês). Para "
 #~ "ajuda, consulte os truques e as dicas na nossa <a href=\"http://wiki."
-#~ "audacityteam.org/\">wiki</a> ou visite o nosso <a href=\"http://forum."
-#~ "audacityteam.org/\">fórum</a>."
+#~ "audaciumteam.org/\">wiki</a> ou visite o nosso <a href=\"http://forum."
+#~ "audaciumteam.org/\">fórum</a>."
 
 #~ msgid ""
 #~ "Internal error in %s at %s line %d.\n"
-#~ "Please inform the Audacity team at feedback@audacityteam.org."
+#~ "Please inform the Audacium team at feedback@audaciumteam.org."
 #~ msgstr ""
 #~ "Erro interno em %s em %s linha %d.\n"
-#~ "Por favor informe a equipa Audacity em feedback@audacityteam.org."
+#~ "Por favor informe a equipa Audacium em feedback@audaciumteam.org."
 
 #~ msgid ""
 #~ "Internal error at %s line %d.\n"
-#~ "Please inform the Audacity team at feedback@audacityteam.org."
+#~ "Please inform the Audacium team at feedback@audaciumteam.org."
 #~ msgstr ""
 #~ "Erro interno em %s linha %d.\n"
-#~ "Por favor informe a equipa Audacity em  feedback@audacityteam.org."
+#~ "Por favor informe a equipa Audacium em  feedback@audaciumteam.org."
 
 #~ msgid "("
 #~ msgstr "("
@@ -23226,8 +23226,8 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "co-founder"
 #~ msgstr "co-fundador"
 
-#~ msgid "Audacity Support Team"
-#~ msgstr "Equipa de Suporte do Audacity"
+#~ msgid "Audacium Support Team"
+#~ msgstr "Equipa de Suporte do Audacium"
 
 #~ msgid "Emeritus Developers"
 #~ msgstr "Programadores Eméritos"
@@ -23235,9 +23235,9 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "<center><h3>How to Get Help</h3></center>"
 #~ msgstr "<center><h3>Como obter Ajuda</h3></center>"
 
-# mind the space after audacity
-#~ msgid "Welcome to Audacity "
-#~ msgstr "Bem-vindo ao Audacity "
+# mind the space after audacium
+#~ msgid "Welcome to Audacium "
+#~ msgstr "Bem-vindo ao Audacium "
 
 #~ msgid ""
 #~ " For even quicker answers, all the online resources above are "
@@ -23571,10 +23571,10 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgstr "Opções disponíveis na linha de comando:"
 
 #~ msgid ""
-#~ "In addition, specify the name of an audio file or Audacity project to "
+#~ "In addition, specify the name of an audio file or Audacium project to "
 #~ "open it."
 #~ msgstr ""
-#~ "Indique o nome de um ficheiro de áudio ou projecto do Audacity para o "
+#~ "Indique o nome de um ficheiro de áudio ou projecto do Audacium para o "
 #~ "abrir."
 
 #~ msgid "Stereo to Mono Effect not found"
@@ -23926,7 +23926,7 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "Efeito aplicado: Gerada %s onda %s, frequência = %.2f Hz, amplitude = "
 #~ "%.2f, %.6lf segundos"
 
-# chirp=trilo. no audacity ficou 'tons programaveis'
+# chirp=trilo. no audacium ficou 'tons programaveis'
 # porquê? alterei para trilo
 #~ msgid "Chirp Generator"
 #~ msgstr "Gerador de Trilos"
@@ -23958,16 +23958,16 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Rescan Effects"
 #~ msgstr "Procurar de Novo por Efeitos"
 
-#~ msgid "To improve Audacity startup, a search for VST effects is performed "
+#~ msgid "To improve Audacium startup, a search for VST effects is performed "
 #~ msgstr ""
-#~ "Para melhorar o início do Audacity, é feita uma análise aos efeitos VST "
+#~ "Para melhorar o início do Audacium, é feita uma análise aos efeitos VST "
 
 #~ msgid "once and relevant information is recorded. When you add VST effects "
 #~ msgstr "e é guardada informação relevante. Quando adicionar efeitos VST "
 
-#~ msgid "to your system, you need to tell Audacity to rescan so the new "
+#~ msgid "to your system, you need to tell Audacium to rescan so the new "
 #~ msgstr ""
-#~ "ao seu sistema, precisa de indicar ao Audacity para voltar a analisar "
+#~ "ao seu sistema, precisa de indicar ao Audacium para voltar a analisar "
 #~ "para que "
 
 #~ msgid "&Rescan effects on next launch"
@@ -24045,8 +24045,8 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Your file will be exported as a 16-bit WAV (Microsoft) file.\n"
 #~ msgstr "O seu ficheiro será exportado para WAV a 16-bit (Microsoft). \n"
 
-#~ msgid "Restart Audacity to apply changes."
-#~ msgstr "Reinicie o Audacity para aplicar as alterações."
+#~ msgid "Restart Audacium to apply changes."
+#~ msgstr "Reinicie o Audacium para aplicar as alterações."
 
 #, fuzzy
 #~ msgid "Display effects in graphical mode when supported"
@@ -24111,9 +24111,9 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgid "Display Audio Unit effects in Graphical Mode"
 #~ msgstr "Mostrar Efeitos Áudio Unit no Modo Gráfico"
 
-#~ msgid "&Rescan VST effects next time Audacity is started"
+#~ msgid "&Rescan VST effects next time Audacium is started"
 #~ msgstr ""
-#~ "Procu&rar novamente por efeitos VST da próxima vez que iniciar o Audacity"
+#~ "Procu&rar novamente por efeitos VST da próxima vez que iniciar o Audacium"
 
 #~ msgid "'New' is like 'Ask', but asks just once."
 #~ msgstr "'Novo' é parecido com 'Perguntar', mas só perguntará uma vez."
@@ -24189,14 +24189,14 @@ msgstr "Erro.~%Requer faixa estéreo."
 
 #~ msgid ""
 #~ "GStreamer was configured in preferences and successfully loaded before,\n"
-#~ "                      but this time Audacity failed to load it at "
+#~ "                      but this time Audacium failed to load it at "
 #~ "startup.\n"
 #~ "                      You may want to go back to Preferences > Libraries "
 #~ "and re-configure it."
 #~ msgstr ""
 #~ "O GStreamer foi configurado nas preferências e carregado, com sucesso, "
 #~ "anteriormente,\n"
-#~ "                      mas desta vez o Audacity não conseguiu carregá-lo "
+#~ "                      mas desta vez o Audacium não conseguiu carregá-lo "
 #~ "ao iniciar.\n"
 #~ "                      Talvez queira voltar a Preferências > Bibliotecas e "
 #~ "reconfigurá-lo. "
@@ -24211,19 +24211,19 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ msgstr "A&pagar Áudio ou Rótulos"
 
 #~ msgid ""
-#~ "Audacity compressed project files (.aup) save your work in a smaller, "
+#~ "Audacium compressed project files (.aup) save your work in a smaller, "
 #~ "compressed (.ogg) format. \n"
 #~ "Compressed project files are a good way to transmit your project online, "
 #~ "because they are much smaller. \n"
 #~ "To open a compressed project takes longer than usual, as it imports each "
 #~ "compressed track. \n"
 #~ "\n"
-#~ "Most other programs can't open Audacity project files.\n"
+#~ "Most other programs can't open Audacium project files.\n"
 #~ "When you want to save a file that can be opened by other programs, select "
 #~ "one of the\n"
 #~ "Export commands."
 #~ msgstr ""
-#~ "Os ficheiros de projecto do Audacity (.AUP) comprimidos guardam todo o "
+#~ "Os ficheiros de projecto do Audacium (.AUP) comprimidos guardam todo o "
 #~ "projecto no formato .ogg. \n"
 #~ "É uma boa forma de partilhar o seu projecto na rede, pelo ao seu tamanho "
 #~ "reduzido. \n"
@@ -24231,21 +24231,21 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "necessário descomprimir \n"
 #~ "todas as faixas primeiro.\n"
 #~ "A maioria dos outros programas não consegue abrir ficheiros de projecto "
-#~ "do Audacity.\n"
+#~ "do Audacium.\n"
 #~ "Se quer guardar um ficheiro que seja reconhecido por outros programas \n"
 #~ "seleccione um dos comandos de Exportar."
 
 #~ msgid ""
-#~ "You are saving an Audacity project file (.aup).\n"
+#~ "You are saving an Audacium project file (.aup).\n"
 #~ "\n"
-#~ "Saving a project creates a file that only Audacity can open.\n"
+#~ "Saving a project creates a file that only Audacium can open.\n"
 #~ "\n"
 #~ "To save an audio file for other programs, use one of the \"File > Export"
 #~ "\" commands.\n"
 #~ msgstr ""
-#~ "Está a guardar um Ficheiro de Projecto do Audacity (.aup) \n"
+#~ "Está a guardar um Ficheiro de Projecto do Audacium (.aup) \n"
 #~ "\n"
-#~ "Guardar um projecto cria um ficheiro que apenas o Audacity consegue "
+#~ "Guardar um projecto cria um ficheiro que apenas o Audacium consegue "
 #~ "abrir. \n"
 #~ "\n"
 #~ "Para guardar um ficheiro de áudio para ser usado por outros programas, \n"
@@ -24279,9 +24279,9 @@ msgstr "Erro.~%Requer faixa estéreo."
 #~ "   A duração deve ser de no mínimo 1 milissegundo\n"
 #~ "   Taxa de compressão deve ser pelo menos 1:1"
 
-#~ msgid "Enable these Modules (if present), next time Audacity is started"
+#~ msgid "Enable these Modules (if present), next time Audacium is started"
 #~ msgstr ""
-#~ "Activar estes Módulos (se presentes), da próxima vez que o Audacity "
+#~ "Activar estes Módulos (se presentes), da próxima vez que o Audacium "
 #~ "iniciar"
 
 #~ msgid "mod-&script-pipe"

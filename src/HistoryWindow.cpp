@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   HistoryWindow.cpp
 
@@ -43,7 +43,7 @@ undo memory so as to free up space.
 #include "ProjectFileIO.h"
 #include "ProjectHistory.h"
 #include "ShuttleGui.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/HelpSystem.h"
 
 enum {
@@ -69,7 +69,7 @@ END_EVENT_TABLE()
 
 #define HistoryTitle XO("History")
 
-HistoryDialog::HistoryDialog(AudacityProject *parent, UndoManager *manager):
+HistoryDialog::HistoryDialog(AudaciumProject *parent, UndoManager *manager):
    wxDialogWrapper(FindProjectFrame( parent ), wxID_ANY, HistoryTitle,
       wxDefaultPosition, wxDefaultSize,
       wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER )
@@ -305,7 +305,7 @@ void HistoryDialog::OnCompact(wxCommandEvent & WXUNUSED(event))
 
    auto after = baseFile.GetSize() + walFile.GetSize();
 
-   AudacityMessageBox(
+   AudaciumMessageBox(
       XO("Compacting actually freed %s of disk space.")
       .Format(Internat::FormatSize((before - after).GetValue())),
       XO("History"));
@@ -412,8 +412,8 @@ void HistoryDialog::UpdatePrefs()
 namespace {
 
 // History window attached to each project is built on demand by:
-AudacityProject::AttachedWindows::RegisteredFactory sHistoryWindowKey{
-   []( AudacityProject &parent ) -> wxWeakRef< wxWindow > {
+AudaciumProject::AttachedWindows::RegisteredFactory sHistoryWindowKey{
+   []( AudaciumProject &parent ) -> wxWeakRef< wxWindow > {
       auto &undoManager = UndoManager::Get( parent );
       return safenew HistoryDialog( &parent, &undoManager );
    }
@@ -431,9 +431,9 @@ struct Handler : CommandHandlerObject {
    }
 };
 
-CommandHandlerObject &findCommandHandler(AudacityProject &) {
+CommandHandlerObject &findCommandHandler(AudaciumProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // AudacityProject.
+   // AudaciumProject.
    static Handler instance;
    return instance;
 }
@@ -456,11 +456,11 @@ AttachedItem sAttachment{ wxT("View/Windows"),
    // would fail.
    // The only way to fix this in the current architecture
    // is to hack in special cases for RedoAvailableFlag
-   // in AudacityProject::UpdateMenus() (ugly)
+   // in AudaciumProject::UpdateMenus() (ugly)
    // and CommandManager::HandleCommandEntry() (*really* ugly --
    // shouldn't know about particular command names and flags).
    // Here's the hack that would be necessary in
-   // AudacityProject::UpdateMenus(), if somebody decides to do it:
+   // AudaciumProject::UpdateMenus(), if somebody decides to do it:
    //    // Because EnableUsingFlags requires all the flag bits match the
    //    // corresponding mask bits,
    //    // "UndoHistory" specifies only

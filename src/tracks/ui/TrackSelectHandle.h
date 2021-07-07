@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 TrackSelectHandle.h
 
@@ -32,20 +32,20 @@ public:
    virtual ~TrackSelectHandle();
 
    Result Click
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, AudacityProject *pProject)
+      (const TrackPanelMouseState &state, AudaciumProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(AudacityProject *) override;
+   Result Cancel(AudaciumProject *) override;
 
    bool StopsOnKeystroke() override { return true; }
 
@@ -60,7 +60,7 @@ private:
    int mRearrangeCount {};
 
    void CalculateRearrangingThresholds(
-      const wxMouseEvent & event, AudacityProject *project);
+      const wxMouseEvent & event, AudaciumProject *project);
 };
 
 #endif

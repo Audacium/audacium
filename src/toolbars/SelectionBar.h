@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   SelectionBar.h
 
@@ -38,18 +38,18 @@ class wxDC;
 class wxSizeEvent;
 class wxStaticText;
 
-class AudacityProject;
+class AudaciumProject;
 class SelectionBarListener;
 class NumericTextCtrl;
 
 class AUDACITY_DLL_API SelectionBar final : public ToolBar {
 
  public:
-   SelectionBar( AudacityProject &project );
+   SelectionBar( AudaciumProject &project );
    virtual ~SelectionBar();
 
-   static SelectionBar &Get( AudacityProject &project );
-   static const SelectionBar &Get( const AudacityProject &project );
+   static SelectionBar &Get( AudaciumProject &project );
+   static const SelectionBar &Get( const AudaciumProject &project );
 
    void Create(wxWindow *parent) override;
 

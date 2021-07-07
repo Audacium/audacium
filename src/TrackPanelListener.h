@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   TrackPanelListener.h
 
@@ -17,7 +17,7 @@ enum class UndoPush : unsigned char;
 
 /*
 \brief A now badly named abstract class which was a failed attempt to let
-TrackPanel code pretend it doesn't completely know what an AudacityProject is
+TrackPanel code pretend it doesn't completely know what an AudaciumProject is
 and use only a limited number of its services.
 */
 class AUDACITY_DLL_API TrackPanelListener /* not final */ {

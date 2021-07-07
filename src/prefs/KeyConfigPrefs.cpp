@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   KeyConfigPrefs.cpp
 
@@ -44,7 +44,7 @@ KeyConfigPrefs and MousePrefs use.
 #include "../FileNames.h"
 
 #include "../widgets/KeyView.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 #if wxUSE_ACCESSIBILITY
 #include "../widgets/WindowAccessible.h"
@@ -85,7 +85,7 @@ BEGIN_EVENT_TABLE(KeyConfigPrefs, PrefsPanel)
 END_EVENT_TABLE()
 
 KeyConfigPrefs::KeyConfigPrefs(
-   wxWindow * parent, wxWindowID winid, AudacityProject *pProject,
+   wxWindow * parent, wxWindowID winid, AudaciumProject *pProject,
    const CommandID &name)
 /* i18n-hint: as in computer keyboard (not musical!) */
 :  PrefsPanel(parent, winid, XO("Keyboard")),
@@ -483,10 +483,10 @@ void KeyConfigPrefs::OnShow(wxShowEvent & event)
 
 void KeyConfigPrefs::OnImport(wxCommandEvent & WXUNUSED(event))
 {
-   wxString file = wxT("Audacity-keys.xml");
+   wxString file = wxT("Audacium-keys.xml");
 
    file = FileNames::SelectFile(FileNames::Operation::Open,
-      XO("Select an XML file containing Audacity keyboard shortcuts..."),
+      XO("Select an XML file containing Audacium keyboard shortcuts..."),
       wxEmptyString,
       file,
       wxT(""),
@@ -511,7 +511,7 @@ void KeyConfigPrefs::OnImport(wxCommandEvent & WXUNUSED(event))
    // getting new settings
    XMLFileReader reader;
    if (!reader.Parse(mManager, file)) {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          reader.GetErrorStr(),
          XO("Error Importing Keyboard Shortcuts"),
          wxOK | wxCENTRE,
@@ -533,7 +533,7 @@ void KeyConfigPrefs::OnImport(wxCommandEvent & WXUNUSED(event))
       mKeys = oldKeys;
 
       // output an error message
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO(
 "The file with the shortcuts contains illegal shortcut duplicates for \"%s\" and \"%s\".\nNothing is imported.")
             .Format( fMatching, sMatching ),
@@ -557,12 +557,12 @@ void KeyConfigPrefs::OnImport(wxCommandEvent & WXUNUSED(event))
          "but have their shortcuts removed because of the conflict with other new shortcuts:\n") +
          disabledShortcuts;
 
-   AudacityMessageBox(message, XO("Loading Keyboard Shortcuts"), wxOK | wxCENTRE);
+   AudaciumMessageBox(message, XO("Loading Keyboard Shortcuts"), wxOK | wxCENTRE);
 }
 
 void KeyConfigPrefs::OnExport(wxCommandEvent & WXUNUSED(event))
 {
-   wxString file = wxT("Audacity-keys.xml");
+   wxString file = wxT("Audacium-keys.xml");
 
    file = FileNames::SelectFile(FileNames::Operation::Export,
       XO("Export Keyboard Shortcuts As:"),
@@ -741,7 +741,7 @@ void KeyConfigPrefs::SetKeyForSelected(const NormalizedKeyString & key)
 
    if (!mView->CanSetKey(mCommandSelected))
    {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("You may not assign a key to this entry"),
          XO("Error"),
          wxICON_ERROR | wxCENTRE,
@@ -758,7 +758,7 @@ void KeyConfigPrefs::SetKeyForSelected(const NormalizedKeyString & key)
 void KeyConfigPrefs::OnSet(wxCommandEvent & WXUNUSED(event))
 {
    if (mCommandSelected == wxNOT_FOUND) {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("You must select a binding before assigning a shortcut"),
          XO("Error"),
          wxICON_WARNING | wxCENTRE,
@@ -806,7 +806,7 @@ void KeyConfigPrefs::OnSet(wxCommandEvent & WXUNUSED(event))
             mManager->GetCategoryFromName(oldCommands[i]),
             mManager->GetPrefixedLabelFromName(oldCommands[i]));
       
-      if (wxCANCEL == AudacityMessageBox(
+      if (wxCANCEL == AudaciumMessageBox(
             XO(
 "The keyboard shortcut '%s' is already assigned to:\n\n\t%s\n\n\nClick OK to assign the shortcut to\n\n\t%s\n\ninstead. Otherwise, click Cancel.")
                .Format(
@@ -934,7 +934,7 @@ void KeyConfigPrefs::Cancel()
 PrefsPanel::Factory
 KeyConfigPrefsFactory( const CommandID &name )
 {
-   return [=](wxWindow *parent, wxWindowID winid, AudacityProject *pProject)
+   return [=](wxWindow *parent, wxWindowID winid, AudaciumProject *pProject)
    {
       wxASSERT(parent); // to justify safenew
       auto result = safenew KeyConfigPrefs{ parent, winid, pProject, name };

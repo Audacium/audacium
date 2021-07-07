@@ -4,7 +4,7 @@
 
 set -euxo pipefail
 
-readonly appdir="$1" # input path (Audacity install directory)
+readonly appdir="$1" # input path (Audacium install directory)
 readonly appimage="$2" # output path to use for created AppImage
 
 #============================================================================
@@ -79,9 +79,9 @@ linuxdeploy --list-plugins
 #============================================================================
 
 ln -sf --no-dereference . "${appdir}/usr"
-ln -sf share/applications/audacity.desktop "${appdir}/audacity.desktop"
-ln -sf share/icons/hicolor/scalable/apps/audacity.svg "${appdir}/audacity.svg"
-ln -sf share/icons/hicolor/scalable/apps/audacity.svg "${appdir}/.DirIcon"
+ln -sf share/applications/audacium.desktop "${appdir}/audacium.desktop"
+ln -sf share/icons/hicolor/scalable/apps/audacium.svg "${appdir}/audacium.svg"
+ln -sf share/icons/hicolor/scalable/apps/audacium.svg "${appdir}/.DirIcon"
 
 #============================================================================
 # Bundle dependencies
@@ -89,7 +89,7 @@ ln -sf share/icons/hicolor/scalable/apps/audacity.svg "${appdir}/.DirIcon"
 
 # HACK: Some wxWidget libraries depend on themselves. Add
 # them to LD_LIBRARY_PATH so that linuxdeploy can find them.
-export LD_LIBRARY_PATH="${appdir}/usr/lib/audacity:${LD_LIBRARY_PATH-}"
+export LD_LIBRARY_PATH="${appdir}/usr/lib/audacium:${LD_LIBRARY_PATH-}"
 
 linuxdeploy --appdir "${appdir}" # add all shared library dependencies
 

@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODTaskThread.h
 
   Created by Michael Chinen (mchinen) on 6/8/08
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -22,7 +22,7 @@
 #ifndef __AUDACITY_ODTASKTHREAD__
 #define __AUDACITY_ODTASKTHREAD__
 
-#include "../Audacity.h"	// contains the set-up of AUDACITY_DLL_API
+#include "../Audacium.h"	// contains the set-up of AUDACITY_DLL_API
 
 #include <wx/thread.h> // to inherit
 

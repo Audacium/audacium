@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LyricsWindow.cpp
 
@@ -24,16 +24,16 @@
 #include <wx/settings.h>
 
 #ifdef __WXMSW__
-   #include "../images/AudacityLogo.xpm"
+   #include "../images/AudaciumLogo.xpm"
 #else
-   #include "../images/AudacityLogo48x48.xpm"
+   #include "../images/AudaciumLogo48x48.xpm"
 #endif
 
 #ifdef __WXMAC__
    #include <Carbon/Carbon.h>
 #endif
 
-#define AudacityKaraokeTitle XO("Audacity Karaoke%s")
+#define AudaciumKaraokeTitle XO("Audacium Karaoke%s")
 
 enum {
    kID_RadioButton_BouncingBall = 10101,
@@ -48,7 +48,7 @@ END_EVENT_TABLE()
 
 const wxSize gSize = wxSize(LYRICS_DEFAULT_WIDTH, LYRICS_DEFAULT_HEIGHT);
 
-LyricsWindow::LyricsWindow(AudacityProject *parent)
+LyricsWindow::LyricsWindow(AudaciumProject *parent)
    : wxFrame( &GetProjectFrame( *parent ), -1, wxString{},
             wxPoint(100, 300), gSize,
             //v Bug in wxFRAME_FLOAT_ON_PARENT:
@@ -77,9 +77,9 @@ LyricsWindow::LyricsWindow(AudacityProject *parent)
 #if !defined(__WXMAC__) && !defined(__WXX11__)
    {
 #ifdef __WXMSW__
-      wxIcon ic{ wxICON(AudacityLogo) };
+      wxIcon ic{ wxICON(AudaciumLogo) };
 #else
-      wxIcon ic{wxICON(AudacityLogo48x48)};
+      wxIcon ic{wxICON(AudaciumLogo48x48)};
 #endif
       SetIcon(ic);
    }
@@ -182,7 +182,7 @@ void LyricsWindow::SetWindowTitle()
       name.Prepend(wxT(" - "));
    }
 
-   SetTitle(AudacityKaraokeTitle.Format(name).Translation());
+   SetTitle(AudaciumKaraokeTitle.Format(name).Translation());
 }
 
 void LyricsWindow::UpdatePrefs()
@@ -197,8 +197,8 @@ void LyricsWindow::UpdatePrefs()
 namespace {
 
 // Lyrics window attached to each project is built on demand by:
-AudacityProject::AttachedWindows::RegisteredFactory sLyricsWindowKey{
-   []( AudacityProject &parent ) -> wxWeakRef< wxWindow > {
+AudaciumProject::AttachedWindows::RegisteredFactory sLyricsWindowKey{
+   []( AudaciumProject &parent ) -> wxWeakRef< wxWindow > {
       return safenew LyricsWindow( &parent );
    }
 };
@@ -215,9 +215,9 @@ struct Handler : CommandHandlerObject {
    }
 };
 
-CommandHandlerObject &findCommandHandler(AudacityProject &) {
+CommandHandlerObject &findCommandHandler(AudaciumProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // AudacityProject.
+   // AudaciumProject.
    static Handler instance;
    return instance;
 }

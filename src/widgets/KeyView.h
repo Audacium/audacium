@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   KeyView.h
 
@@ -10,7 +10,7 @@
 #define __AUDACITY_WIDGETS_KEYVIEW__
 
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 
 #include <vector>
 #include <wx/setup.h> // for wxUSE_* macros

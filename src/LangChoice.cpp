@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LangChoice.cpp
 
@@ -10,7 +10,7 @@
 
 \class LangChoiceDialog
 \brief A dialog used (at start up) to present the user with a choice
-of languages for Audacity.
+of languages for Audacium.
 
 *//*******************************************************************/
 
@@ -27,7 +27,7 @@ of languages for Audacity.
 
 #include "Languages.h"
 #include "ShuttleGui.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/wxPanelWrapper.h"
 
 class LangChoiceDialog final : public wxDialogWrapper {
@@ -56,8 +56,8 @@ wxString ChooseLanguage(wxWindow *parent)
    wxString returnVal;
 
    /* i18n-hint: Title on a dialog indicating that this is the first
-    * time Audacity has been run. */
-   LangChoiceDialog dlog(parent, -1, XO("Audacity First Run"));
+    * time Audacium has been run. */
+   LangChoiceDialog dlog(parent, -1, XO("Audacium First Run"));
    dlog.CentreOnParent();
    dlog.ShowModal();
    returnVal = dlog.GetLang();
@@ -75,7 +75,7 @@ LangChoiceDialog::LangChoiceDialog(wxWindow * parent,
    wxDialogWrapper(parent, id, title)
 {
    SetName();
-   const auto &paths = FileNames::AudacityPathList();
+   const auto &paths = FileNames::AudaciumPathList();
    Languages::GetLanguages(paths, mLangCodes, mLangNames);
    int lang = make_iterator_range( mLangCodes )
       .index( Languages::GetSystemLanguageCode(paths) );
@@ -87,7 +87,7 @@ LangChoiceDialog::LangChoiceDialog(wxWindow * parent,
       S.StartHorizontalLay();
       {
          S.SetBorder(15);
-         mChoice = S.AddChoice(XXO("Choose Language for Audacity to use:"),
+         mChoice = S.AddChoice(XXO("Choose Language for Audacium to use:"),
             mLangNames,
             lang);
       }
@@ -107,7 +107,7 @@ void LangChoiceDialog::OnOk(wxCommandEvent & WXUNUSED(event))
    mLang = mLangCodes[ndx];
 
    auto slang =
-      Languages::GetSystemLanguageCode(FileNames::AudacityPathList());
+      Languages::GetSystemLanguageCode(FileNames::AudaciumPathList());
    int sndx = make_iterator_range( mLangCodes ).index( slang );
    wxString sname;
 
@@ -129,7 +129,7 @@ void LangChoiceDialog::OnOk(wxCommandEvent & WXUNUSED(event))
                  mLang,
                  sname,
                  slang);
-      if ( wxNO == AudacityMessageBox( msg, XO("Confirm"), wxYES_NO ) ) {
+      if ( wxNO == AudaciumMessageBox( msg, XO("Confirm"), wxYES_NO ) ) {
          return;
       }
    }

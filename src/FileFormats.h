@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   FileFormats.h
 
@@ -13,7 +13,7 @@
 
 
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 #include "Identifier.h"
 
 //#include <mutex>

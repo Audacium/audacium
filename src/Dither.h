@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Steve Harris
   Markus Meyer
@@ -10,7 +10,7 @@
 #ifndef __AUDACITY_DITHER_H__
 #define __AUDACITY_DITHER_H__
 
-#include "audacity/Types.h" // for samplePtr
+#include "audacium/Types.h" // for samplePtr
 
 template< typename Enum > class EnumSetting;
 

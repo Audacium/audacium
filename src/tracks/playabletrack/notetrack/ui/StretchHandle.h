@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 StretchHandle.h
 
@@ -63,26 +63,26 @@ public:
 
    static UIHandlePtr HitTest
       (std::weak_ptr<StretchHandle> &holder,
-       const TrackPanelMouseState &state, const AudacityProject *pProject,
+       const TrackPanelMouseState &state, const AudaciumProject *pProject,
        const std::shared_ptr<NoteTrack> &pTrack );
 
    virtual ~StretchHandle();
 
    Result Click
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, AudacityProject *pProject)
+      (const TrackPanelMouseState &state, AudaciumProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject,
       wxWindow *pParent) override;
 
-   Result Cancel(AudacityProject *pProject) override;
+   Result Cancel(AudaciumProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 
@@ -91,7 +91,7 @@ private:
    static double GetT1(const Track &track, const ViewInfo &viewInfo);
 
    void Stretch
-      (AudacityProject *pProject, int mouseXCoordinate, int trackLeftEdge, Track *pTrack);
+      (AudaciumProject *pProject, int mouseXCoordinate, int trackLeftEdge, Track *pTrack);
 
    std::shared_ptr<NoteTrack> mpTrack{};
    int mLeftEdge{ -1 };

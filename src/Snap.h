@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Snap.h
 
@@ -19,7 +19,7 @@
 #include <wx/defs.h>
 #include "widgets/NumericTextCtrl.h" // member variable
 
-class AudacityProject;
+class AudaciumProject;
 class Track;
 class TrackList;
 class ZoomInfo;
@@ -55,13 +55,13 @@ struct SnapResults {
 class AUDACITY_DLL_API SnapManager
 {
 public:
-   SnapManager(const AudacityProject &project,
+   SnapManager(const AudaciumProject &project,
                SnapPointArray candidates,
                const ZoomInfo &zoomInfo,
                bool noTimeSnap = false,
                int pixelTolerance = kPixelTolerance);
 
-   SnapManager(const AudacityProject &project,
+   SnapManager(const AudaciumProject &project,
                const TrackList &tracks,
                const ZoomInfo &zoomInfo,
                bool noTimeSnap = false,
@@ -94,7 +94,7 @@ private:
 
 private:
 
-   const AudacityProject *mProject;
+   const AudaciumProject *mProject;
    const ZoomInfo *mZoomInfo;
    int mPixelTolerance;
    bool mNoTimeSnap;

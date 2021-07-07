@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file DateTimeConversions.h
  @brief Declare functions to work with date and time string representations.
@@ -13,7 +13,7 @@
 #include <chrono>
 #include <string>
 
-namespace audacity
+namespace audacium
 {
 
 using SystemTime = std::chrono::system_clock::time_point;

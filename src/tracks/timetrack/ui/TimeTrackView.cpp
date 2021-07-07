@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 TimeTrackView.cpp
 
@@ -41,7 +41,7 @@ TimeTrackView::~TimeTrackView()
 
 std::vector<UIHandlePtr> TimeTrackView::DetailedHitTest
 (const TrackPanelMouseState &st,
- const AudacityProject *pProject, int, bool)
+ const AudaciumProject *pProject, int, bool)
 {
    std::vector<UIHandlePtr> results;
    auto result = EnvelopeHandle::TimeTrackHitTest

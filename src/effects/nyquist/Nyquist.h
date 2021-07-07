@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Nyquist.h
 
@@ -230,7 +230,7 @@ private:
    TranslatableString mInfo;
    TranslatableString mAuthor;
    // Version number of the specific plug-in (not to be confused with mVersion)
-   // For shipped plug-ins this will be the same as the Audacity release version
+   // For shipped plug-ins this will be the same as the Audacium release version
    // when the plug-in was last modified.
    TranslatableString mReleaseVersion;
    TranslatableString mCopyright;

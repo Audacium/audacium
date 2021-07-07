@@ -97,7 +97,7 @@
 
 // Do NOT remove this method.  For an explanation, refer to:
 //
-//    http://bugzilla.audacityteam.org/show_bug.cgi?id=2371
+//    http://bugzilla.audaciumteam.org/show_bug.cgi?id=2371
 //
 - (BOOL)panel:(id)sender validateURL:(NSURL *)url error:(NSError * _Nullable *)outError;
 {
@@ -370,7 +370,7 @@ void FileDialog::SetupExtraControls(WXWindow nativeWindow)
         // FINALLY FOUND IT! Creating the panel with "this" as the parent causes
         // an exception and stack trace to be printed to stderr:
         //
-        //   2021-02-17 13:52:14.550 Audacity[69217:891282] warning: <NSRemoteView: 0x7f92f4e67410 com.apple.appkit.xpc.openAndSavePanelService ((null)) NSSavePanelService> ignoring attempt to mutate its subviews (
+        //   2021-02-17 13:52:14.550 Audacium[69217:891282] warning: <NSRemoteView: 0x7f92f4e67410 com.apple.appkit.xpc.openAndSavePanelService ((null)) NSSavePanelService> ignoring attempt to mutate its subviews (
         //      0   ViewBridge                          0x00007fff6596685d -[NSRemoteView _announceSubviewMutationDisallowed] + 29
         //      1   libwx_osx_cocoau_debug_core-3.1.3.0 0x0000000111c3abf1 _ZN17wxWidgetCocoaImpl5EmbedEP12wxWidgetImpl + 177
         //

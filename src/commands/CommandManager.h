@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   CommandManager.h
 
@@ -50,7 +50,7 @@ using CommandKeyHash = std::unordered_map<NormalizedKeyString, CommandListEntry*
 using CommandNameHash = std::unordered_map<CommandID, CommandListEntry*>;
 using CommandNumericIDHash = std::unordered_map<int, CommandListEntry*>;
 
-class AudacityProject;
+class AudaciumProject;
 class CommandContext;
 
 class AUDACITY_DLL_API CommandManager final
@@ -58,8 +58,8 @@ class AUDACITY_DLL_API CommandManager final
    , public ClientData::Base
 {
  public:
-   static CommandManager &Get( AudacityProject &project );
-   static const CommandManager &Get( const AudacityProject &project );
+   static CommandManager &Get( AudaciumProject &project );
+   static const CommandManager &Get( const AudaciumProject &project );
 
    // Type of a function that can intercept menu item handling.
    // If it returns true, bypass the usual dipatch of commands.
@@ -91,7 +91,7 @@ class AUDACITY_DLL_API CommandManager final
    void EndMenu();
 
    // type of a function that determines checkmark state
-   using CheckFn = std::function< bool(AudacityProject&) >;
+   using CheckFn = std::function< bool(AudaciumProject&) >;
 
    // For specifying unusual arguments in AddItem
    struct AUDACITY_DLL_API Options
@@ -172,7 +172,7 @@ class AUDACITY_DLL_API CommandManager final
                     CommandFlag flags,
                     bool bIsEffect = false);
 
-   void AddItem(AudacityProject &project,
+   void AddItem(AudaciumProject &project,
                 const CommandID & name,
                 const TranslatableString &label_in,
                 CommandHandlerFinder finder,
@@ -212,8 +212,8 @@ class AUDACITY_DLL_API CommandManager final
 
    // "permit" allows filtering even if the active window isn't a child of the project.
    // Lyrics and MixerTrackCluster classes use it.
-   bool FilterKeyEvent(AudacityProject *project, const wxKeyEvent & evt, bool permit = false);
-   bool HandleMenuID(AudacityProject &project, int id, CommandFlag flags, bool alwaysEnabled);
+   bool FilterKeyEvent(AudaciumProject *project, const wxKeyEvent & evt, bool permit = false);
+   bool HandleMenuID(AudaciumProject &project, int id, CommandFlag flags, bool alwaysEnabled);
    void RegisterLastAnalyzer(const CommandContext& context);
    void RegisterLastTool(const CommandContext& context);
    void DoRepeatProcess(const CommandContext& context, int);
@@ -232,7 +232,7 @@ class AUDACITY_DLL_API CommandManager final
    // Accessing
    //
 
-   TranslatableStrings GetCategories( AudacityProject& );
+   TranslatableStrings GetCategories( AudaciumProject& );
    void GetAllCommandNames(CommandIDs &names, bool includeMultis) const;
    void GetAllCommandLabels(
       TranslatableStrings &labels, std::vector<bool> &vExcludeFromMacros,
@@ -310,7 +310,7 @@ private:
    // Executing commands
    //
 
-   bool HandleCommandEntry(AudacityProject &project,
+   bool HandleCommandEntry(AudaciumProject &project,
       const CommandListEntry * entry, CommandFlag flags,
       bool alwaysEnabled, const wxEvent * evt = NULL);
 
@@ -334,7 +334,7 @@ private:
 public:
    wxMenu * CurrentMenu() const;
 
-   void UpdateCheckmarks( AudacityProject &project );
+   void UpdateCheckmarks( AudaciumProject &project );
 private:
    wxString FormatLabelForMenu(const CommandListEntry *entry) const;
    wxString FormatLabelWithDisabledAccel(const CommandListEntry *entry) const;
@@ -394,9 +394,9 @@ private:
 
 struct ToolbarMenuVisitor : MenuVisitor
 {
-   explicit ToolbarMenuVisitor( AudacityProject &p ) : project{ p } {}
-   operator AudacityProject & () const { return project; }
-   AudacityProject &project;
+   explicit ToolbarMenuVisitor( AudaciumProject &p ) : project{ p } {}
+   operator AudaciumProject & () const { return project; }
+   AudaciumProject &project;
 };
 
 // Define items that populate tables that specifically describe menu trees
@@ -551,7 +551,7 @@ namespace MenuTable {
    // adding any number of items, not using the CommandManager
    struct SpecialItem final : SingleItem
    {
-      using Appender = std::function< void( AudacityProject&, wxMenu& ) >;
+      using Appender = std::function< void( AudaciumProject&, wxMenu& ) >;
 
       explicit SpecialItem( const Identifier &internalName, const Appender &fn_ )
       : SingleItem{ internalName }
@@ -582,7 +582,7 @@ namespace MenuTable {
    // Items are spliced into the enclosing menu.
    // The name is untranslated and may be empty, to make the group transparent
    // in identification of items by path.  Otherwise try to keep the name
-   // stable across Audacity versions.
+   // stable across Audacium versions.
    template< typename... Args >
    inline std::unique_ptr< MenuItems > Items(
       const Identifier &internalName, Args&&... args )
@@ -602,7 +602,7 @@ namespace MenuTable {
    
    // Menu items can be constructed two ways, as for group items
    // Items will appear in a main toolbar menu or in a sub-menu.
-   // The name is untranslated.  Try to keep the name stable across Audacity
+   // The name is untranslated.  Try to keep the name stable across Audacium
    // versions.
    // If the name of a menu is empty, then subordinate items cannot be located
    // by path.
@@ -619,7 +619,7 @@ namespace MenuTable {
    // Conditional group items can be constructed two ways, as for group items
    // These items register in the CommandManager but are not shown in menus
    // if the condition evaluates false.
-   // The name is untranslated.  Try to keep the name stable across Audacity
+   // The name is untranslated.  Try to keep the name stable across Audacium
    // versions.
    // Name for conditional group must be non-empty.
    template< typename... Args >
@@ -638,7 +638,7 @@ namespace MenuTable {
    // of the title.
    // The name is untranslated and may be empty, to make the group transparent
    // in identification of items by path.  Otherwise try to keep the name
-   // stable across Audacity versions.
+   // stable across Audacium versions.
    // If the name of a menu is empty, then subordinate items cannot be located
    // by path.
    template< typename... Args >

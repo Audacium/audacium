@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file SentryRequestBuilder.h
  @brief Define a class to generate the requests to Sentry.
@@ -12,12 +12,12 @@
 
 #include <chrono>
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
 
-const SentryRequestBuilder& audacity::sentry::SentryRequestBuilder::Get()
+const SentryRequestBuilder& audacium::sentry::SentryRequestBuilder::Get()
 {
    static SentryRequestBuilder builder;
 
@@ -33,7 +33,7 @@ network_manager::Request SentryRequestBuilder::CreateRequest() const
        std::to_string(
           duration_cast<seconds>(system_clock::now().time_since_epoch())
              .count()) +
-       ",sentry_client=sentry-audacity/1.0,sentry_key=" + SENTRY_DSN_KEY;
+       ",sentry_client=sentry-audacium/1.0,sentry_key=" + SENTRY_DSN_KEY;
 
    network_manager::Request request(mUrl);
 
@@ -50,4 +50,4 @@ SentryRequestBuilder::SentryRequestBuilder()
 }
 
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

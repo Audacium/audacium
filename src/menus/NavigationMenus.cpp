@@ -19,7 +19,7 @@
 // private helper classes and functions
 namespace {
 
-void NextOrPrevFrame(AudacityProject &project, bool forward)
+void NextOrPrevFrame(AudaciumProject &project, bool forward)
 {
    // Focus won't take in a dock unless at least one descendant window
    // accepts focus.  Tell controls to take focus for the duration of this
@@ -84,7 +84,7 @@ void NextOrPrevFrame(AudacityProject &project, bool forward)
 
 /// \todo Merge related methods, OnPrevTrack and OnNextTrack.
 void DoPrevTrack(
-   AudacityProject &project, bool shift, bool circularTrackNavigation )
+   AudaciumProject &project, bool shift, bool circularTrackNavigation )
 {
    auto &projectHistory = ProjectHistory::Get( project );
    auto &trackFocus = TrackFocus::Get( project );
@@ -194,7 +194,7 @@ void DoPrevTrack(
 /// selecting and unselecting depending if you are on the start of a
 /// block or not.
 void DoNextTrack(
-   AudacityProject &project, bool shift, bool circularTrackNavigation )
+   AudaciumProject &project, bool shift, bool circularTrackNavigation )
 {
    auto &projectHistory = ProjectHistory::Get( project );
    auto &trackFocus = TrackFocus::Get( project );
@@ -542,12 +542,12 @@ Handler &operator=( const Handler & ) PROHIBITED;
 } // namespace
 
 // Handler is stateful.  Needs a factory registered with
-// AudacityProject.
-static const AudacityProject::AttachedObjects::RegisteredFactory key{
-   [](AudacityProject&) {
+// AudaciumProject.
+static const AudaciumProject::AttachedObjects::RegisteredFactory key{
+   [](AudaciumProject&) {
       return std::make_unique< NavigationActions::Handler >(); } };
 
-static CommandHandlerObject &findCommandHandler(AudacityProject &project) {
+static CommandHandlerObject &findCommandHandler(AudaciumProject &project) {
    return project.AttachedObjects::Get< NavigationActions::Handler >( key );
 };
 

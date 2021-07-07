@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    License: GPL v2 - see LICENSE.txt
 
    Dan Horgan
@@ -202,7 +202,7 @@ public:
    void Update(const wxString &) override {}
 };
 
-/// Displays messages from a command in an AudacityMessageBox
+/// Displays messages from a command in an AudaciumMessageBox
 class AUDACITY_DLL_API MessageBoxTarget final : public CommandMessageTarget
 {
 public:

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AttachableScrollBar.h
 
@@ -9,7 +9,7 @@
   A scroll bar that can be attached to multiple items and so control
   their scrolling.
 
-  Audacity is free software.
+  Audacium is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/

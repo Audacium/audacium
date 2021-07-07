@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2018 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2018 Audacium Team
    License: wxwidgets
 
    Dan Horgan
@@ -20,7 +20,7 @@
 #include "Command.h"
 #include "CommandType.h"
 
-class SetProjectCommand : public AudacityCommand
+class SetProjectCommand : public AudaciumCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -32,7 +32,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#set_project";}
 
    bool Apply(const CommandContext & context) override;

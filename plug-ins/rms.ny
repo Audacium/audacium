@@ -12,7 +12,7 @@
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 ;; This plug-in demonstrates how authors of Nyquist plug-ins may add translations
 ;; for output messages. It is not currently possible to provide translations for strings

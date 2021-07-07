@@ -1,5 +1,5 @@
 /*!********************************************************************
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file UpdateManager.h
  @brief Declare a class that handles managing of updates.
@@ -26,7 +26,7 @@ namespace UpdatesCheckingSettings {
 /**
     Opt-in request and show update dialog by the scheduled time.
     Have a built-in check that allows avoiding multiplying update notifications
-    when multiple Audacity windows are shown.
+    when multiple Audacium windows are shown.
 */
 class UpdateManager final : public wxEvtHandler
 {

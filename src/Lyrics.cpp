@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Lyrics.cpp
 
@@ -64,7 +64,7 @@ void HighlightTextCtrl::OnMouseEvent(wxMouseEvent& event)
 
          //v Should probably select to end as in
          // SelectUtilities::Handler::OnSelectCursorEnd,
-         // but better to generalize that in AudacityProject methods.
+         // but better to generalize that in AudaciumProject methods.
          selectedRegion.setT1( pCurSyl->t );
       }
    }
@@ -87,7 +87,7 @@ END_EVENT_TABLE()
 IMPLEMENT_CLASS(LyricsPanel, wxPanel)
 
 LyricsPanel::LyricsPanel(wxWindow* parent, wxWindowID id,
-               AudacityProject *project,
+               AudaciumProject *project,
                const wxPoint& pos /*= wxDefaultPosition*/,
                const wxSize& size /*= wxDefaultSize*/) :
    wxPanelWrapper(parent, id, pos, size, wxWANTS_CHARS),

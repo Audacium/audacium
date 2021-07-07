@@ -1,6 +1,6 @@
 /**********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  TrackPanelResizerCell.h
 
@@ -33,7 +33,7 @@ public:
    TrackPanelResizerCell( const std::shared_ptr<Track> &pTrack );
 
    std::vector<UIHandlePtr> HitTest
-      (const TrackPanelMouseState &, const AudacityProject *) override;
+      (const TrackPanelMouseState &, const AudaciumProject *) override;
 
 protected:
    std::shared_ptr<Track> DoFindTrack() override;

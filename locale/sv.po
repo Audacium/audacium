@@ -5,8 +5,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: audacity 3.0.3\n"
-"Report-Msgid-Bugs-To: audacity-translation@lists.sourceforge.net\n"
+"Project-Id-Version: audacium 3.0.3\n"
+"Report-Msgid-Bugs-To: audacium-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-06-07 08:17-0400\n"
 "PO-Revision-Date: 2018-12-18 20:31+0100\n"
 "Last-Translator: A. Regnander <anton_r_3@hotmail.com>\n"
@@ -58,12 +58,12 @@ msgstr "System&datum"
 
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy
-msgid "Problem Report for Audacity"
-msgstr "Lägger till stöd för Vamp-effekter i Audacity"
+msgid "Problem Report for Audacium"
+msgstr "Lägger till stöd för Vamp-effekter i Audacium"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgid ""
-"Click \"Send\" to submit the report to Audacity. This information is "
+"Click \"Send\" to submit the report to Audacium. This information is "
 "collected anonymously."
 msgstr ""
 
@@ -150,8 +150,8 @@ msgstr "&Linjär skala"
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy
 msgctxt "update dialog"
-msgid "Update Audacity"
-msgstr "Avsluta Audacity"
+msgid "Update Audacium"
+msgstr "Avsluta Audacium"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
@@ -182,7 +182,7 @@ msgstr "Fel uppstod när filen avkodades"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Unable to connect to Audacity update server."
+msgid "Unable to connect to Audacium update server."
 msgstr ""
 
 #: libraries/lib-strings/UnusedStrings.h
@@ -198,15 +198,15 @@ msgstr "Fel uppstod när metadata lästes in"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Can't open the Audacity download link."
+msgid "Can't open the Audacium download link."
 msgstr ""
 
 #. i18n-hint Substitution of version number for %s.
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy, c-format
 msgctxt "update dialog"
-msgid "Audacity %s is available!"
-msgstr "Audacitys verktygsfält för %s"
+msgid "Audacium %s is available!"
+msgstr "Audaciums verktygsfält för %s"
 
 #: modules/mod-null/ModNullCallback.cpp
 #, fuzzy
@@ -344,7 +344,7 @@ msgstr "Nyquist-skript (*.ny)|*.ny|Lisp-skript (*.lsp)|*.lsp|Alla filer|*"
 msgid "Script was not saved."
 msgstr "Skriptet sparades inte."
 
-#: modules/mod-nyq-bench/NyqBench.cpp src/AudacityLogger.cpp
+#: modules/mod-nyq-bench/NyqBench.cpp src/AudaciumLogger.cpp
 #: src/DBConnection.cpp src/Project.cpp src/ProjectFileIO.cpp
 #: src/ProjectHistory.cpp src/SqliteSampleBlock.cpp src/WaveClip.cpp
 #: src/WaveTrack.cpp src/export/Export.cpp src/export/ExportCL.cpp
@@ -379,9 +379,9 @@ msgstr "(C) 2009 av Leland Lucius"
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Audacity module which provides a simple IDE for writing effects."
+"External Audacium module which provides a simple IDE for writing effects."
 msgstr ""
-"Extern Audacity-modul som tillhandahåller en enkel utvecklingsmiljö för att "
+"Extern Audacium-modul som tillhandahåller en enkel utvecklingsmiljö för att "
 "skriva effekter."
 
 #: modules/mod-nyq-bench/NyqBench.cpp
@@ -569,91 +569,91 @@ msgstr "Stoppa skript"
 msgid "No revision identifier was provided"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, system administration"
 msgstr "systemadministration"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, co-founder and developer"
 msgstr "medgrundare och utvecklare"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer"
 msgstr "utvecklare"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer and support"
 msgstr "dokumentation och support"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, documentation and support"
 msgstr "dokumentation och support"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, QA tester, documentation and support"
 msgstr "dokumentation och support"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, documentation and support, French"
 msgstr "dokumentation och support på franska"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, quality assurance"
 msgstr "kvalitetsförsäkring"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, accessibility advisor"
 msgstr "åtkomlighetsrådgivare"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, graphic artist"
 msgstr "grafiker"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, composer"
 msgstr "kompositör"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, tester"
 msgstr "testare"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "Nyquist-insticksmoduler"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, web developer"
 msgstr "webbutvecklare"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, graphics"
@@ -684,9 +684,9 @@ msgid ""
 "%s is a free program written by a worldwide team of %s. %s is %s for "
 "Windows, Mac, and GNU/Linux (and other Unix-like systems)."
 msgstr ""
-"Audacity är ett fritt program skrivet av en världsomfattande grupp [[http://"
-"www.audacityteam.org/about/credits|volontärer]]. Audacity finns [[http://www."
-"audacityteam.org/download|tillgänglig]] för Windows, Mac och GNU/Linux (och "
+"Audacium är ett fritt program skrivet av en världsomfattande grupp [[http://"
+"www.audaciumteam.org/about/credits|volontärer]]. Audacium finns [[http://www."
+"audaciumteam.org/download|tillgänglig]] för Windows, Mac och GNU/Linux (och "
 "andra Unix-liknande system)."
 
 #. i18n-hint: substitutes into "a worldwide team of %s"
@@ -694,7 +694,7 @@ msgstr ""
 msgid "volunteers"
 msgstr ""
 
-#. i18n-hint: substitutes into "Audacity is %s"
+#. i18n-hint: substitutes into "Audacium is %s"
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "available"
@@ -708,9 +708,9 @@ msgid ""
 "our %s. For help, view the tips and tricks on our %s or visit our %s."
 msgstr ""
 "Om du hittar en bugg eller har ett förslag åt oss, var vänlig skriv på "
-"engelska på vårt [[http://forum.audacityteam.org/|forum]]. För hjälp, läs om "
-"tips och tricks på vår [[http://wiki.audacityteam.org/|wiki]] eller besök "
-"vårt [[http://forum.audacityteam.org/|forum]]."
+"engelska på vårt [[http://forum.audaciumteam.org/|forum]]. För hjälp, läs om "
+"tips och tricks på vår [[http://wiki.audaciumteam.org/|wiki]] eller besök "
+"vårt [[http://forum.audaciumteam.org/|forum]]."
 
 #. i18n-hint substitutes into "write to our %s"
 #: src/AboutDialog.cpp
@@ -730,7 +730,7 @@ msgid "forum"
 msgstr ""
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Audacity window.  Use this to add
+#. *  in the credits in the About Audacium window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -751,7 +751,7 @@ msgid ""
 "%s the free, open source, cross-platform software for recording and editing "
 "sounds."
 msgstr ""
-"Audacity är den fria, plattformsoberoende mjukvaran med öppen källkod för "
+"Audacium är den fria, plattformsoberoende mjukvaran med öppen källkod för "
 "att spela in och redigera ljud."
 
 #: src/AboutDialog.cpp
@@ -759,8 +759,8 @@ msgid "Credits"
 msgstr "Tack till"
 
 #: src/AboutDialog.cpp
-msgid "DarkAudacity Customisation"
-msgstr "Anpassning av DarkAudacity"
+msgid "DarkAudacium Customisation"
+msgstr "Anpassning av DarkAudacium"
 
 #. i18n-hint: The program's name substitutes for %s
 #: src/AboutDialog.cpp
@@ -776,7 +776,7 @@ msgstr "Emeritus:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "Distinguished %s Team members, not currently active"
-msgstr "Enastående Audacity-teammedlemmar, som inte är aktiva för tillfället"
+msgstr "Enastående Audacium-teammedlemmar, som inte är aktiva för tillfället"
 
 #: src/AboutDialog.cpp
 msgid "Contributors"
@@ -798,7 +798,7 @@ msgstr "Bibliotek"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s includes code from the following projects:"
-msgstr "Audacity innehåller kod från följande projekt:"
+msgstr "Audacium innehåller kod från följande projekt:"
 
 #: src/AboutDialog.cpp
 msgid "Special thanks:"
@@ -808,21 +808,21 @@ msgstr "Speciellt tack till:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s website: "
-msgstr "Audacitys webbplats: "
+msgstr "Audaciums webbplats: "
 
-#. i18n-hint Audacity's name substitutes for first and third %s,
+#. i18n-hint Audacium's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr ""
 
-#. i18n-hint Audacity's name substitutes for %s
+#. i18n-hint Audacium's name substitutes for %s
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "The name %s is a registered trademark."
 msgstr ""
-"&nbsp; &nbsp; Namnet <b>Audacity</b> är ett registrerat varumärke av Dominic "
+"&nbsp; &nbsp; Namnet <b>Audacium</b> är ett registrerat varumärke av Dominic "
 "Mazzoni.<br><br>"
 
 #: src/AboutDialog.cpp
@@ -838,7 +838,7 @@ msgstr "Aktiverad"
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#. i18n-hint: Information about when audacity was compiled follows
+#. i18n-hint: Information about when audacium was compiled follows
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "The Build"
@@ -876,7 +876,7 @@ msgstr "Versionstyp:"
 msgid "Compiler:"
 msgstr "Kompilator:"
 
-#. i18n-hint: The directory audacity is installed into (on *nix systems)
+#. i18n-hint: The directory audacium is installed into (on *nix systems)
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "Installation Prefix:"
@@ -887,7 +887,7 @@ msgstr "Installationsprefix: "
 msgid "Settings folder:"
 msgstr "Inställningsmapp: "
 
-#. i18n-hint: Libraries that are essential to audacity
+#. i18n-hint: Libraries that are essential to audacium
 #: src/AboutDialog.cpp
 msgid "Core Libraries"
 msgstr "Kärnbibliotek"
@@ -1098,16 +1098,16 @@ msgstr ""
 msgid "Error"
 msgstr "Fel"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, c-format
 msgid "Failed to remove %s"
 msgstr "Misslyckades att ta bort %s"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Failed!"
 msgstr "Misslyckades!"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Reset Preferences?\n"
 "\n"
@@ -1119,11 +1119,11 @@ msgstr ""
 "Denna fråga ställs en gång, efter en \"installering\" där du tillfrågas om "
 "återställning av inställningarna."
 
-#: src/AudacityApp.cpp
-msgid "Reset Audacity Preferences"
-msgstr "Återställ Audacitys inställningar"
+#: src/AudaciumApp.cpp
+msgid "Reset Audacium Preferences"
+msgstr "Återställ Audaciums inställningar"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, c-format
 msgid ""
 "%s could not be found.\n"
@@ -1134,115 +1134,115 @@ msgstr ""
 "\n"
 "Den har raderats från listan över senaste filer."
 
-#: src/AudacityApp.cpp
-msgid "SQLite library failed to initialize.  Audacity cannot continue."
+#: src/AudaciumApp.cpp
+msgid "SQLite library failed to initialize.  Audacium cannot continue."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Block size must be within 256 to 100000000\n"
 msgstr "Blockstorleken måste vara mellan 256 till 100000000\n"
 
-#: src/AudacityApp.cpp
-msgid "Audacity is starting up..."
-msgstr "Audacity startas..."
+#: src/AudaciumApp.cpp
+msgid "Audacium is starting up..."
+msgstr "Audacium startas..."
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
-#: src/AudacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
 msgid "&New"
 msgstr "&Nytt"
 
 #. i18n-hint: (verb)
-#: src/AudacityApp.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/menus/FileMenus.cpp
 msgid "&Open..."
 msgstr "&Öppna..."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Open &Recent..."
 msgstr "Öppna senaste..."
 
-#: src/AudacityApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Audacity..."
-msgstr "&Om Audacity..."
+#: src/AudaciumApp.cpp src/menus/HelpMenus.cpp
+msgid "&About Audacium..."
+msgstr "&Om Audacium..."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "&Preferences..."
 msgstr "&Inställningar..."
 
-#: src/AudacityApp.cpp src/menus/FileMenus.cpp
+#: src/AudaciumApp.cpp src/menus/FileMenus.cpp
 msgid "&File"
 msgstr "&Arkiv"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity could not find a safe place to store temporary files.\n"
-"Audacity needs a place where automatic cleanup programs won't delete the "
+"Audacium could not find a safe place to store temporary files.\n"
+"Audacium needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Audacity kunde inte hitta säker plats att spara temporära filer. \n"
-"Audacity behöver en plats där automatiserade upprensningsprogram inte "
+"Audacium kunde inte hitta säker plats att spara temporära filer. \n"
+"Audacium behöver en plats där automatiserade upprensningsprogram inte "
 "raderar temporära filer.\n"
 "Var vänlig och skriv in lämplig katalog i inställningarna."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity could not find a place to store temporary files.\n"
+"Audacium could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Audacity kunde inte hitta plats att spara temporära filer. \n"
+"Audacium kunde inte hitta plats att spara temporära filer. \n"
 "Var vänlig och skriv in lämplig plats i inställningarna."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity is now going to exit. Please launch Audacity again to use the new "
+"Audacium is now going to exit. Please launch Audacium again to use the new "
 "temporary directory."
 msgstr ""
-"Audacity kommer nu att avslutas. Var vänlig och starta om Audacity för att "
+"Audacium kommer nu att avslutas. Var vänlig och starta om Audacium för att "
 "använda den nya temporära katalogen."
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Running two copies of Audacity simultaneously may cause\n"
+"Running two copies of Audacium simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"Om du kör två instanser av Audacity samtidigt kan det\n"
+"Om du kör två instanser av Audacium samtidigt kan det\n"
 "leda till att data går förlorat eller att ditt system kraschar.\n"
 "\n"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Audacity was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Audacity.\n"
+"Audacium was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Audacium.\n"
 msgstr ""
-"Audacity kunde inte låsa katalogen för temporära filer.\n"
-"Denna mapp används eventuellt av en annan instans av Audacity.\n"
+"Audacium kunde inte låsa katalogen för temporära filer.\n"
+"Denna mapp används eventuellt av en annan instans av Audacium.\n"
 
-#: src/AudacityApp.cpp
-msgid "Do you still want to start Audacity?"
-msgstr "Vill du ändå starta Audacity?"
+#: src/AudaciumApp.cpp
+msgid "Do you still want to start Audacium?"
+msgstr "Vill du ändå starta Audacium?"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "Fel uppstod när temporär mapp låstes"
 
-#: src/AudacityApp.cpp
-msgid "The system has detected that another copy of Audacity is running.\n"
-msgstr "Systemet har upptäckt att en annan instans av Audacity körs.\n"
+#: src/AudaciumApp.cpp
+msgid "The system has detected that another copy of Audacium is running.\n"
+msgstr "Systemet har upptäckt att en annan instans av Audacium körs.\n"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Audacity\n"
+"Use the New or Open commands in the currently running Audacium\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
 "Använd kommandon Ny eller Öppna i pågående instans av\n"
-"Audacity för att öppna flera projekt samtidigt.\n"
+"Audacium för att öppna flera projekt samtidigt.\n"
 
-#: src/AudacityApp.cpp
-msgid "Audacity is already running"
-msgstr "Audacity körs redan"
+#: src/AudaciumApp.cpp
+msgid "Audacium is already running"
+msgstr "Audacium körs redan"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire semaphores.\n"
 "\n"
@@ -1250,12 +1250,12 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, fuzzy
-msgid "Audacity Startup Failure"
-msgstr "Audacity-projektfiler"
+msgid "Audacium Startup Failure"
+msgstr "Audacium-projektfiler"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to create semaphores.\n"
 "\n"
@@ -1263,7 +1263,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire lock semaphore.\n"
 "\n"
@@ -1271,7 +1271,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
 "Unable to acquire server semaphore.\n"
 "\n"
@@ -1279,73 +1279,73 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid ""
-"The Audacity IPC server failed to initialize.\n"
+"The Audacium IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
 msgstr ""
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "An unrecoverable error has occurred during startup"
 msgstr ""
 
-#. i18n-hint: This controls the number of bytes that Audacity will
+#. i18n-hint: This controls the number of bytes that Audacium will
 #. *           use when writing files to the disk
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "set max disk block size in bytes"
 msgstr "ändra maximal storlek för diskblock i byte"
 
 #. i18n-hint: This displays a list of available options
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "this help message"
 msgstr "detta hjälpmeddelande"
 
-#. i18n-hint: This runs a set of automatic tests on Audacity itself
-#: src/AudacityApp.cpp
+#. i18n-hint: This runs a set of automatic tests on Audacium itself
+#: src/AudaciumApp.cpp
 msgid "run self diagnostics"
 msgstr "kör självdiagnostik"
 
-#. i18n-hint: This displays the Audacity version
-#: src/AudacityApp.cpp
-msgid "display Audacity version"
-msgstr "visa Audacity-version"
+#. i18n-hint: This displays the Audacium version
+#: src/AudaciumApp.cpp
+msgid "display Audacium version"
+msgstr "visa Audacium-version"
 
-#. i18n-hint: This is a list of one or more files that Audacity
+#. i18n-hint: This is a list of one or more files that Audacium
 #. *           should open upon startup
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 msgid "audio or project file name"
 msgstr "ljud- eller projektfilnamn"
 
-#: src/AudacityApp.cpp
+#: src/AudaciumApp.cpp
 #, fuzzy
 msgid ""
-"Audacity project (.aup3) files are not currently \n"
-"associated with Audacity. \n"
+"Audacium project (.aup3) files are not currently \n"
+"associated with Audacium. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"Audacity-projektfiler (.aup) associeras för \n"
-"tillfället inte med Audacity. \n"
+"Audacium-projektfiler (.aup) associeras för \n"
+"tillfället inte med Audacium. \n"
 "\n"
 "Associera dem så att de öppnas vid dubbelklick?"
 
-#: src/AudacityApp.cpp
-msgid "Audacity Project Files"
-msgstr "Audacity-projektfiler"
+#: src/AudaciumApp.cpp
+msgid "Audacium Project Files"
+msgstr "Audacium-projektfiler"
 
-#: src/AudacityException.h src/commands/MessageCommand.cpp
-#: src/widgets/AudacityMessageBox.cpp
+#: src/AudaciumException.h src/commands/MessageCommand.cpp
+#: src/widgets/AudaciumMessageBox.cpp
 msgid "Message"
 msgstr "Meddelande"
 
-#: src/AudacityFileConfig.cpp
+#: src/AudaciumFileConfig.cpp
 #, fuzzy
-msgid "Audacity Configuration Error"
-msgstr "Anpassning av DarkAudacity"
+msgid "Audacium Configuration Error"
+msgstr "Anpassning av DarkAudacium"
 
-#: src/AudacityFileConfig.cpp
+#: src/AudaciumFileConfig.cpp
 #, c-format
 msgid ""
 "The following configuration file could not be accessed:\n"
@@ -1358,52 +1358,52 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Audacity\", your project may be left in an unsaved "
+"If you choose to \"Quit Audacium\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 
-#: src/AudacityFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
+#: src/AudaciumFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
 #: src/effects/Equalization.cpp src/export/Export.cpp src/menus/HelpMenus.cpp
 #: src/widgets/MultiDialog.cpp
 msgid "Help"
 msgstr "Hjälp"
 
-#: src/AudacityFileConfig.cpp src/AutoRecoveryDialog.cpp
+#: src/AudaciumFileConfig.cpp src/AutoRecoveryDialog.cpp
 #, fuzzy
-msgid "&Quit Audacity"
-msgstr "Avsluta Audacity"
+msgid "&Quit Audacium"
+msgstr "Avsluta Audacium"
 
-#: src/AudacityFileConfig.cpp
+#: src/AudaciumFileConfig.cpp
 msgid "&Retry"
 msgstr ""
 
-#: src/AudacityLogger.cpp
-msgid "Audacity Log"
-msgstr "Audacity-logg"
+#: src/AudaciumLogger.cpp
+msgid "Audacium Log"
+msgstr "Audacium-logg"
 
-#: src/AudacityLogger.cpp src/Tags.cpp
+#: src/AudaciumLogger.cpp src/Tags.cpp
 msgid "&Save..."
 msgstr "&Spara..."
 
 #. i18n-hint: (verb)
-#: src/AudacityLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
+#: src/AudaciumLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
 msgid "Cl&ear"
 msgstr "Re&nsa"
 
-#: src/AudacityLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
+#: src/AudaciumLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
 #: src/menus/FileMenus.cpp
 msgid "&Close"
 msgstr "S&täng"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 msgid "log.txt"
 msgstr "log.txt"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 msgid "Save log to:"
 msgstr "Spara logg till:"
 
-#: src/AudacityLogger.cpp
+#: src/AudaciumLogger.cpp
 #, c-format
 msgid "Couldn't save log to file: %s"
 msgstr "Kunde inte spara loggen till fil: %s"
@@ -1447,8 +1447,8 @@ msgstr "Fel uppstod när MIDI initialiserades"
 
 #: src/AudioIO.cpp
 #, fuzzy
-msgid "Audacity Audio"
-msgstr "Audacity-logg"
+msgid "Audacium Audio"
+msgstr "Audacium-logg"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, c-format
@@ -1706,12 +1706,12 @@ msgstr "Automatiskt återskapande vid krasch"
 #: src/AutoRecoveryDialog.cpp
 #, fuzzy
 msgid ""
-"The following projects were not saved properly the last time Audacity was "
+"The following projects were not saved properly the last time Audacium was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
 msgstr ""
-"Några projekt sparades inte ordentligt förra gången Audacity kördes.\n"
+"Några projekt sparades inte ordentligt förra gången Audacium kördes.\n"
 "Lyckligtvis kan följande projekt återskapas automatiskt:"
 
 #: src/AutoRecoveryDialog.cpp
@@ -2315,8 +2315,8 @@ msgstr ""
 "funktion. (Det går inte att markera andra sorters spår.)"
 
 #: src/CrashReport.cpp
-msgid "Audacity Support Data"
-msgstr "Audacitys supportteam"
+msgid "Audacium Support Data"
+msgstr "Audaciums supportteam"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2459,20 +2459,20 @@ msgstr "Kopiera alla filer (säkrare)"
 msgid "Whenever a project depends on other files:"
 msgstr "När ett projekt beror på andra filer:"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "Fråga mig"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "Kopiera alltid alla filer (säkrast)"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "Kopiera aldrig några filer"
@@ -2509,7 +2509,7 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Audacity projects may not be self-contained, and care \n"
+"Some older Audacium projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
@@ -2601,13 +2601,13 @@ msgstr "Stöd för FFmpeg kompilerades inte i"
 #, fuzzy
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Audacity failed to load it at startup. \n"
+"but this time Audacium failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
 "FFmpeg konfigurerades i inställningarna och kunde startas "
 "tidigare,                      \n"
-"men denna gång misslyckades Audacity att börja vid "
+"men denna gång misslyckades Audacium att börja vid "
 "uppstart.                       \n"
 "\n"
 "Gå kanske vill gå tillbaka till Inställningar > Bibliotek och konfigurera "
@@ -2627,9 +2627,9 @@ msgstr "Hitta FFmpeg"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Audacity needs the file '%s' to import and export audio via FFmpeg."
+msgid "Audacium needs the file '%s' to import and export audio via FFmpeg."
 msgstr ""
-"Audacity behöver filen \"%s\" för att importera och exportera ljud via "
+"Audacium behöver filen \"%s\" för att importera och exportera ljud via "
 "FFmpeg."
 
 #: src/FFmpeg.cpp
@@ -2671,13 +2671,13 @@ msgstr "FFmpeg hittades inte"
 #: src/FFmpeg.cpp
 #, fuzzy
 msgid ""
-"Audacity attempted to use FFmpeg to import an audio file,\n"
+"Audacium attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"Audacity försökte använda FFmpeg för att importera en ljudfil,\n"
+"Audacium försökte använda FFmpeg för att importera en ljudfil,\n"
 "men biblioteken kunde inte hittas.\n"
 "\n"
 "För att kunna importera med FFmpeg, gå till Inställningar > Bibliotek\n"
@@ -2702,27 +2702,27 @@ msgstr ""
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity failed to open a file in %s."
-msgstr "Audacity misslyckades att öppna en fil i %s."
+msgid "Audacium failed to open a file in %s."
+msgstr "Audacium misslyckades att öppna en fil i %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity failed to read from a file in %s."
-msgstr "Audacity misslyckades att läsa in en fil i %s."
+msgid "Audacium failed to read from a file in %s."
+msgstr "Audacium misslyckades att läsa in en fil i %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity successfully wrote a file in %s but failed to rename it as %s."
-msgstr "Audacity skrev en till i %s men misslyckades att döpa om den till %s."
+msgid "Audacium successfully wrote a file in %s but failed to rename it as %s."
+msgstr "Audacium skrev en till i %s men misslyckades att döpa om den till %s."
 
 #: src/FileException.cpp
 #, fuzzy, c-format
 msgid ""
-"Audacity failed to write to a file.\n"
+"Audacium failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Audacity misslyckades att skriva till en fil.\n"
+"Audacium misslyckades att skriva till en fil.\n"
 "Kanske %s är skrivskyddad eller hårddisken är full."
 
 #: src/FileException.h
@@ -2762,7 +2762,7 @@ msgstr "Frå&ga"
 msgid "All files"
 msgstr "Alla filer|*"
 
-#. i18n-hint an Audacity project is the state of the program, stored as
+#. i18n-hint an Audacium project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 #, fuzzy
@@ -3034,8 +3034,8 @@ msgstr "Exporterar en ljudfil"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Audacity Project"
-msgstr "Spara ett Audacity projekt"
+msgid "Saving an Audacium Project"
+msgstr "Spara ett Audacium projekt"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -3053,20 +3053,20 @@ msgstr "Ingen lokal hjälp"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is an <b>Alpha test version</"
+"<br><br>The version of Audacium you are using is an <b>Alpha test version</"
 "b>."
 msgstr ""
-"<br><br>Versionen av Audacity du använder är en <b>alfatestsversion</b>."
+"<br><br>Versionen av Audacium du använder är en <b>alfatestsversion</b>."
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is a <b>Beta test version</b>."
+"<br><br>The version of Audacium you are using is a <b>Beta test version</b>."
 msgstr ""
-"<br><br>Versionen av Audacity du använder är en <b>betatestversion</b>."
+"<br><br>Versionen av Audacium du använder är en <b>betatestversion</b>."
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Audacity"
-msgstr "Hämta den officiellt utgivna versionen av Audacity"
+msgid "Get the Official Released Version of Audacium"
+msgstr "Hämta den officiellt utgivna versionen av Audacium"
 
 #: src/HelpText.cpp
 msgid ""
@@ -3078,11 +3078,11 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Audacity ready for release by joining our [[https://www."
-"audacityteam.org/community/|community]].<hr><br><br>"
+"You can help us get Audacium ready for release by joining our [[https://www."
+"audaciumteam.org/community/|community]].<hr><br><br>"
 msgstr ""
-"Du kan hjälpa oss att göra Audacity redo för utgivning genom att gå med i "
-"vår [[http://www.audacityteam.org/community/|gemenskap]].<hr><br><br>"
+"Du kan hjälpa oss att göra Audacium redo för utgivning genom att gå med i "
+"vår [[http://www.audaciumteam.org/community/|gemenskap]].<hr><br><br>"
 
 #: src/HelpText.cpp
 msgid "How to get help"
@@ -3097,61 +3097,61 @@ msgstr "Dessa är våra sätt att ge support:"
 #, fuzzy
 msgid ""
 "[[help:Quick_Help|Quick Help]] - if not installed locally, [[https://manual."
-"audacityteam.org/quick_help.html|view online]]"
+"audaciumteam.org/quick_help.html|view online]]"
 msgstr ""
 " [[file:quick_help.html|Snabbhjälp]] - om den inte är installerad lokalt, "
-"[[http://manual.audacityteam.org/quick_help.html|se den på Internet]]"
+"[[http://manual.audaciumteam.org/quick_help.html|se den på Internet]]"
 
 #. i18n-hint: Preserve '[[help:Main_Page|' as it's the name of a link.
 #: src/HelpText.cpp
 #, fuzzy
 msgid ""
 " [[help:Main_Page|Manual]] - if not installed locally, [[https://manual."
-"audacityteam.org/|view online]]"
+"audaciumteam.org/|view online]]"
 msgstr ""
 " [[file:index.html|Manual]] - om den inte är installerad lokalt, [[http://"
-"manual.audacityteam.org/|se den på Internet]]"
+"manual.audaciumteam.org/|se den på Internet]]"
 
 #: src/HelpText.cpp
 msgid ""
-" [[https://forum.audacityteam.org/|Forum]] - ask your question directly, "
+" [[https://forum.audaciumteam.org/|Forum]] - ask your question directly, "
 "online."
 msgstr ""
-" [[http://forum.audacityteam.org/|Forum]] - ställ din fråga direkt på "
+" [[http://forum.audaciumteam.org/|Forum]] - ställ din fråga direkt på "
 "Internet."
 
 #: src/HelpText.cpp
 msgid ""
-"More:</b> Visit our [[https://wiki.audacityteam.org/index.php|Wiki]] for "
+"More:</b> Visit our [[https://wiki.audaciumteam.org/index.php|Wiki]] for "
 "tips, tricks, extra tutorials and effects plug-ins."
 msgstr ""
-"Mer:</b> Besök vår [[http://wiki.audacityteam.org/index.php|wiki]] för tips, "
+"Mer:</b> Besök vår [[http://wiki.audaciumteam.org/index.php|wiki]] för tips, "
 "tricks, extra guider och effektinsticksmoduler."
 
 #: src/HelpText.cpp
 msgid ""
-"Audacity can import unprotected files in many other formats (such as M4A and "
+"Audacium can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
-"audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
+"audaciumteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] to your computer."
 msgstr ""
-"Audacity kan importera oskyddade filer i många andra format (som M4A och "
+"Audacium kan importera oskyddade filer i många andra format (som M4A och "
 "WMA, komprimerade WAV-filer från portabla inspelningsenheter och ljud från "
 "videofiler) om du laddar ned och installerar det valfria [[http://manual."
-"audacityteam.org/man/faq_opening_and_saving_files.html#foreign|FFmpeg-"
+"audaciumteam.org/man/faq_opening_and_saving_files.html#foreign|FFmpeg-"
 "biblioteket]] på din dator."
 
 #: src/HelpText.cpp
 msgid ""
-"You can also read our help on importing [[https://manual.audacityteam.org/"
+"You can also read our help on importing [[https://manual.audaciumteam.org/"
 "man/playing_and_recording.html#midi|MIDI files]] and tracks from [[https://"
-"manual.audacityteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
+"manual.audaciumteam.org/man/faq_opening_and_saving_files.html#fromcd| audio "
 "CDs]]."
 msgstr ""
 "Du kan också läsa vår hjälp om hur man importerar [[http://manual."
-"audacityteam.org/man/faq_opening_and_saving_files.html#midi|MIDI-filer]] och "
-"spår från [[http://manual.audacityteam.org/man/faq_opening_and_saving_files."
+"audaciumteam.org/man/faq_opening_and_saving_files.html#midi|MIDI-filer]] och "
+"spår från [[http://manual.audaciumteam.org/man/faq_opening_and_saving_files."
 "html#fromcd|ljud-CD]]."
 
 #: src/HelpText.cpp
@@ -3165,18 +3165,18 @@ msgstr ""
 "plats\" i gränssnittsinställningarna till \"Från Internet\".\n"
 "\n"
 ". <a href=\"*URL*\">läs materialet på Internet</a> eller <a href=\"http://"
-"manual.audacityteam.org/o/man/unzipping_the_manual.html\"> ladda ned hela "
+"manual.audaciumteam.org/o/man/unzipping_the_manual.html\"> ladda ned hela "
 "manualen</a>."
 
 #: src/HelpText.cpp
 msgid ""
 "The Manual does not appear to be installed. Please [[*URL*|view the Manual "
-"online]] or [[https://manual.audacityteam.org/man/unzipping_the_manual.html| "
+"online]] or [[https://manual.audaciumteam.org/man/unzipping_the_manual.html| "
 "download the Manual]].<br><br>To always view the Manual online, change "
 "\"Location of Manual\" in Interface Preferences to \"From Internet\"."
 msgstr ""
 "Manualen verkar inte vara installerad. Var god [[*URL*|se manualen på "
-"Internet]] eller [[http://manual.audacityteam.org/man/unzipping_the_manual."
+"Internet]] eller [[http://manual.audaciumteam.org/man/unzipping_the_manual."
 "html| ladda ned manualen]].<br><br>För att alltid se manualen på Internet, "
 "ändra \"Manualens plats\" i gränssnittsinställningarna till \"Från Internet"
 "\"."
@@ -3251,19 +3251,19 @@ msgstr "&Historik..."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audaciumteam.org/."
 msgstr ""
 "Internt fel i %s på %s rad %d.\n"
-"Var god meddela Audacity-teamet på https://forum.audacityteam.org/."
+"Var god meddela Audacium-teamet på https://forum.audaciumteam.org/."
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audaciumteam.org/."
 msgstr ""
 "Internt fel på %s rad %d.\n"
-"Var god meddela Audacity-teamet på https://forum.audacityteam.org/."
+"Var god meddela Audacium-teamet på https://forum.audaciumteam.org/."
 
 #: src/InconsistencyException.h
 msgid "Internal Error"
@@ -3351,14 +3351,14 @@ msgid "One or more saved labels could not be read."
 msgstr "En eller fler sparade etiketter kunde inte läsas."
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Audacity has been run.
+#. * time Audacium has been run.
 #: src/LangChoice.cpp
-msgid "Audacity First Run"
-msgstr "Första gången Audacity körs"
+msgid "Audacium First Run"
+msgstr "Första gången Audacium körs"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Audacity to use:"
-msgstr "Ändra språket för Audacity att använda:"
+msgid "Choose Language for Audacium to use:"
+msgstr "Ändra språket för Audacium att använda:"
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3389,13 +3389,13 @@ msgstr ""
 "Den gamla filen sparades som \"%s\""
 
 #: src/Legacy.cpp
-msgid "Opening Audacity Project"
-msgstr "Öppnar Audacity-projekt"
+msgid "Opening Audacium Project"
+msgstr "Öppnar Audacium-projekt"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Audacity Karaoke%s"
-msgstr "Audacity Karaoke%s"
+msgid "Audacium Karaoke%s"
+msgstr "Audacium Karaoke%s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3446,8 +3446,8 @@ msgstr "Mixar och renderar spår"
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Audacity Mixer Board%s"
-msgstr "Audacitys mixerbord%s"
+msgid "Audacium Mixer Board%s"
+msgstr "Audaciums mixerbord%s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
 #. i18n-hint: Title of the Gain slider, used to adjust the volume
@@ -3538,11 +3538,11 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, fuzzy, c-format
 msgid ""
-"The module \"%s\" is matched with Audacity version \"%s\".\n"
+"The module \"%s\" is matched with Audacium version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
-"Modulen %s matchar Audacity-versionen %s.\n"
+"Modulen %s matchar Audacium-versionen %s.\n"
 "\n"
 "Den kommer inte att läsas in."
 
@@ -3582,8 +3582,8 @@ msgid "No"
 msgstr "Nej"
 
 #: src/ModuleManager.cpp
-msgid "Audacity Module Loader"
-msgstr "Audacitys modulinläsare"
+msgid "Audacium Module Loader"
+msgstr "Audaciums modulinläsare"
 
 #: src/ModuleManager.cpp
 msgid "Try and load this module?"
@@ -3909,7 +3909,7 @@ msgstr ""
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Audacity requires two channels at the same sample rate for\n"
+"(Audacium requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 
@@ -3938,13 +3938,13 @@ msgstr "Signalförluster"
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Audacity for processor time\n"
+"Other applications are competing with Audacium for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
 "Inspelat ljud förlorades i platserna med etikett. Möjliga orsaker:\n"
 "\n"
-"Andra applikationer brottas med Audacity om processortid\n"
+"Andra applikationer brottas med Audacium om processortid\n"
 "\n"
 "Du sparar direkt till en långsam lagringsenhet\n"
 
@@ -3952,7 +3952,7 @@ msgstr ""
 msgid "Turn off dropout detection"
 msgstr "Sluta upptäcka signalförluster"
 
-#. i18n-hint: The audacity project file is XML and has 'tags' in it,
+#. i18n-hint: The audacium project file is XML and has 'tags' in it,
 #. rather like html tags <something>some stuff</something>.
 #. This error message is about the tags that hold the sequence information.
 #. The error message is confusing to users in English, and could just say
@@ -3988,7 +3988,7 @@ msgstr "Undersöker data i projektfil"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Audacity \n"
+"('aliased files'). There is no way for Audacium \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4004,7 +4004,7 @@ msgid ""
 msgstr ""
 "Projektkontrollen av mappen \"%s\" \n"
 "hittade %lld externa ljudfil(er) som saknas \n"
-"(\"aliasfiler\"). Det finns inget sätt för Audacity \n"
+"(\"aliasfiler\"). Det finns inget sätt för Audacium \n"
 "att återskapa dessa filer automatiskt. \n"
 "\n"
 "Om du väljer det första eller andra alternativet nedan \n"
@@ -4035,12 +4035,12 @@ msgstr "Varning - Saknar aliasfil(er)"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Audacity can fully regenerate these files \n"
+"Audacium can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "Projektkontrollen av mappen \"%s\" \n"
 "hittade %lld alias blockfil(er) (.auf) som saknas. \n"
-"Audacity kan återskapa dessa filer helt \n"
+"Audacium kan återskapa dessa filer helt \n"
 "från det nuvarande ljudet i projektet."
 
 #: src/ProjectFSCK.cpp
@@ -4065,7 +4065,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Audacity to recover \n"
+"deletion. There is no way for Audacium to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4078,7 +4078,7 @@ msgstr ""
 "Projektkontrollen av mappen \"%s\" \n"
 "hittade %lld ljuddatablockfil(er) (.au) som saknas, \n"
 "förmodligen orsakade av en bugg, systemkrasch \n"
-"eller felaktig radering. Det finns inget sätt för Audacity att \n"
+"eller felaktig radering. Det finns inget sätt för Audacium att \n"
 "återskapa dessa saknade filer automatiskt. \n"
 "\n"
 "Om du väljer det första eller andra alternativet nedan \n"
@@ -4215,12 +4215,12 @@ msgstr ""
 
 #: src/ProjectFileIO.cpp
 #, fuzzy
-msgid "This is not an Audacity project file"
-msgstr "Spara ett Audacity projekt"
+msgid "This is not an Audacium project file"
+msgstr "Spara ett Audacium projekt"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Audacity.\n"
+"This project was created with a newer version of Audacium.\n"
 "\n"
 "You will need to upgrade to open it."
 msgstr ""
@@ -4338,11 +4338,11 @@ msgstr "Fel vid skrivning till fil"
 #: src/ProjectFileIO.cpp
 #, fuzzy, c-format
 msgid ""
-"Audacity failed to write file %s.\n"
+"Audacium failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Audacity misslyckades att skriva till en fil.\n"
+"Audacium misslyckades att skriva till en fil.\n"
 "Kanske %s är skrivskyddad eller hårddisken är full."
 
 #: src/ProjectFileIO.cpp
@@ -4353,7 +4353,7 @@ msgstr "Projekt &sparas"
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Audacity \"%s\""
+msgid "[Project %02i] Audacium \"%s\""
 msgstr ""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
@@ -4365,12 +4365,12 @@ msgstr "(återskapad)"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Audacity %s.\n"
-"You are using Audacity %s. You may need to upgrade to a newer version to "
+"This file was saved using Audacium %s.\n"
+"You are using Audacium %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"Denna fil är sparad i Audacity %s.\n"
-"Du använder Audacity %s. Du behöver kanske uppgradera till\n"
+"Denna fil är sparad i Audacium %s.\n"
+"Du använder Audacium %s. Du behöver kanske uppgradera till\n"
 "en nyare version för att kunna öppna denna fil."
 
 #: src/ProjectFileIO.cpp
@@ -4441,16 +4441,16 @@ msgstr "&Tomma projekt sparas"
 #: src/ProjectFileManager.cpp
 #, fuzzy
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
-"Några projekt sparades inte ordentligt förra gången Audacity kördes.\n"
+"Några projekt sparades inte ordentligt förra gången Audacium kördes.\n"
 "Lyckligtvis kan följande projekt återskapas automatiskt:"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
@@ -4529,10 +4529,10 @@ msgstr "%sSpara projektet \"%s\" som..."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Audacity project, not an audio file.\n"
+"'Save Project' is for an Audacium project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
-"\"Spara projekt\" är för ett Audacity-projekt, inte en ljudfil.\n"
+"\"Spara projekt\" är för ett Audacium-projekt, inte en ljudfil.\n"
 "För en ljudfil som kommer att öppnas i andra appar, välj \"Exportera\".\n"
 
 #. i18n-hint: In each case, %s is the name
@@ -4621,12 +4621,12 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Audacity project file instead."
+"Please open the actual Audacium project file instead."
 msgstr ""
 "Du försöker öppna en automatisk skapad backup-fil.\n"
 "Detta kan orsaka att data går förlorad.\n"
 "\n"
-"Vänligen öppna den aktuella Audacity projektfilen istället."
+"Vänligen öppna den aktuella Audacium projektfilen istället."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4722,8 +4722,8 @@ msgstr "Automatisk sparning har aktiverats:"
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Audacity version %s"
-msgstr "Välkommen till Audacity version %s"
+msgid "Welcome to Audacium version %s"
+msgstr "Välkommen till Audacium version %s"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4783,12 +4783,12 @@ msgstr "%s och %s."
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Audacity 2.3.0 or before.\n"
-"You need to run that version of Audacity to recover the project."
+"This recovery file was saved by Audacium 2.3.0 or before.\n"
+"You need to run that version of Audacium to recover the project."
 msgstr ""
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Audacity is put on a notebook tab, and this is the name on that tab.
+#. Audacium is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -5125,8 +5125,8 @@ msgid "Activation level (dB):"
 msgstr "Aktiveringsnivå (dB):"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Audacity!"
-msgstr "Välkommen to Audacity!"
+msgid "Welcome to Audacium!"
+msgstr "Välkommen to Audacium!"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5269,15 +5269,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write file:\n"
+"Audacium could not write file:\n"
 "  %s."
 msgstr ""
-"Audacity kunde inte skriva till fil:\n"
+"Audacium kunde inte skriva till fil:\n"
 "  %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5291,21 +5291,21 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not open file:\n"
+"Audacium could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"Audacity kunde inte öppna önskad fil:\n"
+"Audacium kunde inte öppna önskad fil:\n"
 "  %s\n"
 " för att skriva till."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write images to file:\n"
+"Audacium could not write images to file:\n"
 "  %s."
 msgstr ""
-"Audacity kunde inte skriva bilder till fil:\n"
+"Audacium kunde inte skriva bilder till fil:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5321,11 +5321,11 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not find file:\n"
+"Audacium could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
-"Audacity kunde inte hitta fil:\n"
+"Audacium kunde inte hitta fil:\n"
 "  %s.\n"
 "Temat läste inte in."
 
@@ -5333,20 +5333,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not load file:\n"
+"Audacium could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
-"Audacity kunde inte läsa in fil:\n"
+"Audacium kunde inte läsa in fil:\n"
 "  %s.\n"
 "Kanske ett dåligt png-format?"
 
 #: src/Theme.cpp
 msgid ""
-"Audacity could not read its default theme.\n"
+"Audacium could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
-"Audacity kunde inte läsa dess standardtema.\n"
+"Audacium kunde inte läsa dess standardtema.\n"
 "Var vänlig och rapportera problemet."
 
 #: src/Theme.cpp
@@ -5383,14 +5383,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not save file:\n"
+"Audacium could not save file:\n"
 "  %s"
 msgstr ""
-"Audacity kunde inte spara fil:\n"
+"Audacium kunde inte spara fil:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Audacity
+#. appearance of older versions of Audacium
 #: src/Theme.cpp
 msgid "Classic"
 msgstr "Klassiskt"
@@ -5437,8 +5437,8 @@ msgid "Time Track"
 msgstr "Tidspår"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record"
-msgstr "Audacitys timerinspelning"
+msgid "Audacium Timer Record"
+msgstr "Audaciums timerinspelning"
 
 #: src/TimerRecordDialog.cpp
 msgid "Save Timer Recording As"
@@ -5535,8 +5535,8 @@ msgid "Action after Timer Recording:"
 msgstr "Handling efter timerinspelning:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record Progress"
-msgstr "Audacity tidsinställd inspelning"
+msgid "Audacium Timer Record Progress"
+msgstr "Audacium tidsinställd inspelning"
 
 #: src/TimerRecordDialog.cpp
 msgid "Timer Recording stopped."
@@ -5690,8 +5690,8 @@ msgid "Do nothing"
 msgstr "Gör ingenting"
 
 #: src/TimerRecordDialog.cpp
-msgid "Exit Audacity"
-msgstr "Avsluta Audacity"
+msgid "Exit Audacium"
+msgstr "Avsluta Audacium"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5714,8 +5714,8 @@ msgid "Scheduled to stop at:"
 msgstr "Schemalagt att stoppas vid:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record - Waiting for Start"
-msgstr "Audacitys timerinspelning - Väntar på att starta"
+msgid "Audacium Timer Record - Waiting for Start"
+msgstr "Audaciums timerinspelning - Väntar på att starta"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5723,7 +5723,7 @@ msgstr "Audacitys timerinspelning - Väntar på att starta"
 msgid "Recording will commence in:"
 msgstr "Inspelningen kommer att börja om:"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Audacity", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Audacium", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5740,8 +5740,8 @@ msgid "Recording Exported:"
 msgstr "Inspelning exporterades:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record - Waiting"
-msgstr "Audacitys timerinspelning - Väntar"
+msgid "Audacium Timer Record - Waiting"
+msgstr "Audaciums timerinspelning - Väntar"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5923,12 +5923,12 @@ msgstr "Det finns inte tillräcklig plats för att expandera klipplinjen"
 msgid "This operation cannot be done until importation of %s completes."
 msgstr "Denna handling kan inte utföras tills %s har importerats."
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
-msgid "Audacity"
-msgstr "Audacity"
+msgid "Audacium"
+msgstr "Audacium"
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid ""
 "%s: Could not load settings below. Default settings will be used.\n"
@@ -5940,13 +5940,13 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid "Applying %s..."
 msgstr "Verkställer %s..."
 
 #. i18n-hint: An item name followed by a value, with appropriate separating punctuation
-#: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
+#: src/commands/AudaciumCommand.cpp src/effects/Effect.cpp
 #: src/effects/vamp/VampEffect.cpp src/menus/PluginMenus.cpp
 #: src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.cpp
 #: src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.cpp
@@ -5955,7 +5955,7 @@ msgstr "Verkställer %s..."
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/commands/AudacityCommand.h
+#: src/commands/AudaciumCommand.h
 msgid "FAIL"
 msgstr ""
 
@@ -6210,12 +6210,12 @@ msgstr "Inbyggda kommandon"
 #: src/effects/VST/VSTEffect.cpp src/effects/audiounits/AudioUnitEffect.cpp
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
-msgid "The Audacity Team"
-msgstr "Audacity-teamet"
+msgid "The Audacium Team"
+msgstr "Audacium-teamet"
 
 #: src/commands/LoadCommands.cpp
-msgid "Provides builtin commands to Audacity"
-msgstr "Tillhandahåller inbyggda kommandon i Audacity"
+msgid "Provides builtin commands to Audacium"
+msgstr "Tillhandahåller inbyggda kommandon i Audacium"
 
 #: src/commands/LoadCommands.cpp
 msgid "Unknown built-in command name"
@@ -7985,7 +7985,7 @@ msgid "Previewing"
 msgstr "Förhandsvisning"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8740,8 +8740,8 @@ msgid "Builtin Effects"
 msgstr "Inbyggda effekter"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Audacity"
-msgstr "Tillhandahåller inbyggda effekter i Audacity"
+msgid "Provides builtin effects to Audacium"
+msgstr "Tillhandahåller inbyggda effekter i Audacium"
 
 #: src/effects/LoadEffects.cpp
 msgid "Unknown built-in effect name"
@@ -8987,10 +8987,10 @@ msgstr "Steg 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Audacity knows what to filter out,\n"
+"Select a few seconds of just noise so Audacium knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"Välj några sekunder brus så Audacity vet vad som skall filtreras bort,\n"
+"Välj några sekunder brus så Audacium vet vad som skall filtreras bort,\n"
 "klicka sedan på Hämta brusprofil:"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
@@ -9880,8 +9880,8 @@ msgid "VST Effects"
 msgstr "VST-effekter"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Audacity."
-msgstr "Lägger till funktionalitet att använda VST-effekter i Audacity."
+msgid "Adds the ability to use VST effects in Audacium."
+msgstr "Lägger till funktionalitet att använda VST-effekter i Audacium."
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Scanning Shell VST"
@@ -9925,7 +9925,7 @@ msgstr "Latenskompensering"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
@@ -9973,8 +9973,8 @@ msgstr "Ladda VST-program:"
 
 #: src/effects/VST/VSTEffect.cpp
 #, fuzzy
-msgid "Audacity VST preset file"
-msgstr "Audacity-projektfiler"
+msgid "Audacium VST preset file"
+msgstr "Audacium-projektfiler"
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Unrecognized file extension."
@@ -10064,8 +10064,8 @@ msgid "Audio Unit Effects"
 msgstr "Ljudenhetseffekter"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Audacity"
-msgstr "Tillhandahåller stöd för ljudenhetseffekter till Audacity"
+msgid "Provides Audio Unit Effects support to Audacium"
+msgstr "Tillhandahåller stöd för ljudenhetseffekter till Audacium"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid "Could not find component"
@@ -10082,7 +10082,7 @@ msgstr "Alternativ för ljudenhetseffekter"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Audacity. When not compensating for this delay, you will notice "
+"audio to Audacium. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
@@ -10250,8 +10250,8 @@ msgid "Provides LADSPA Effects"
 msgstr "Tillhandahåller LADSPA-effekter"
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Audacity no longer uses vst-bridge"
-msgstr "Audacity använder inte längre vst-bridge"
+msgid "Audacium no longer uses vst-bridge"
+msgstr "Audacium använder inte längre vst-bridge"
 
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid "LADSPA Effect Options"
@@ -10260,7 +10260,7 @@ msgstr "LADSPA-effektalternativ"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Audacity. When not compensating for this delay, you will notice that "
+"to Audacium. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
@@ -10297,7 +10297,7 @@ msgstr "&Buffertstorlek (8 till 1048576 samplingar):"
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
@@ -10340,16 +10340,16 @@ msgid "LV2 Effects"
 msgstr "LV2-effekter"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Audacity"
-msgstr "Tillhandahåller LV2-effekter till Audacity"
+msgid "Provides LV2 Effects support to Audacium"
+msgstr "Tillhandahåller LV2-effekter till Audacium"
 
 #: src/effects/nyquist/LoadNyquist.cpp
 msgid "Nyquist Effects"
 msgstr "Nyquist-effekter"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Audacity"
-msgstr "Lägger till stöd för Nyquist-effekter i Audacity"
+msgid "Provides Nyquist Effects support to Audacium"
+msgstr "Lägger till stöd för Nyquist-effekter i Audacium"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Applying Nyquist Effect..."
@@ -10479,9 +10479,9 @@ msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Audacity does not support Nyquist plug-in version %ld"
+msgid "This version of Audacium does not support Nyquist plug-in version %ld"
 msgstr ""
-"Denna version av Audacity har inte stöd för Nyquist-insticksmoduler av "
+"Denna version av Audacium har inte stöd för Nyquist-insticksmoduler av "
 "version %ld"
 
 #: src/effects/nyquist/Nyquist.cpp
@@ -10595,8 +10595,8 @@ msgid "Vamp Effects"
 msgstr "Vamp-effekter"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Audacity"
-msgstr "Lägger till stöd för Vamp-effekter i Audacity"
+msgid "Provides Vamp Effects support to Audacium"
+msgstr "Lägger till stöd för Vamp-effekter i Audacium"
 
 #: src/effects/vamp/VampEffect.cpp
 msgid ""
@@ -11823,8 +11823,8 @@ msgstr "Hitta Lame"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Audacity needs the file %s to create MP3s."
-msgstr "Audacity behöver filen %s för att skapa MP3-filer."
+msgid "Audacium needs the file %s to create MP3s."
+msgstr "Audacium behöver filen %s för att skapa MP3-filer."
 
 #: src/export/ExportMP3.cpp
 #, c-format
@@ -11854,11 +11854,11 @@ msgstr "Var hittar man %s?"
 #, fuzzy, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Audacity %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Audacity'."
+"Audacium %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Audacium'."
 msgstr ""
 "Du länkar till lame_enc.dll v%d.%d. Denna version är inte kompatibel med "
-"Audacity %d.%d.%d.\n"
+"Audacium %d.%d.%d.\n"
 "Var vänlig och ladda ned den senaste versionen av LAME MP3-bibliotek."
 
 #: src/export/ExportMP3.cpp
@@ -12190,7 +12190,7 @@ msgstr "Andra okomprimerade filer"
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Audacity cannot do this, the Export was abandoned."
+"Audacium cannot do this, the Export was abandoned."
 msgstr ""
 
 #: src/export/ExportPCM.cpp
@@ -12200,7 +12200,7 @@ msgstr "Fel uppstod under import"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Audacity cannot export WAV\n"
+"Your exported WAV file has been truncated as Audacium cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
 
@@ -12243,11 +12243,11 @@ msgstr "Alla filer|*|Alla filer som stöds|"
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Audacity cannot open this type of file for playing, but you can\n"
+"Audacium cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 "\"%s\" /när en MIDI-fil, inte en ljudfil. \n"
-"Audacity kan inte öppna denna filtyp för uppspelning och redigering, men\n"
+"Audacium kan inte öppna denna filtyp för uppspelning och redigering, men\n"
 "du kan redigera den genom att välja Arkiv > Importera > MIDI."
 
 #: src/import/Import.cpp
@@ -12255,10 +12255,10 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Audacity cannot open this type of file."
+"Audacium cannot open this type of file."
 msgstr ""
 "\"%s\" /när en MIDI-fil, inte en ljudfil. \n"
-"Audacity kan inte öppna denna filtyp för uppspelning och redigering, men\n"
+"Audacium kan inte öppna denna filtyp för uppspelning och redigering, men\n"
 "du kan redigera den genom att välja Arkiv > Importera > MIDI."
 
 #: src/import/Import.cpp
@@ -12267,35 +12267,35 @@ msgstr "Välj ström(mar) att importera"
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Audacity was not compiled with %s support."
-msgstr "Denna version av Audacity kompilerades inte med stöd för %s."
+msgid "This version of Audacium was not compiled with %s support."
+msgstr "Denna version av Audacium kompilerades inte med stöd för %s."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Audacity cannot open audio CDs directly. \n"
+"Audacium cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Audacity can import, such as WAV or AIFF."
+"Audacium can import, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Audio CD-fil. \n"
-"Audacity kan inte öppna denna typ av fil. \n"
+"Audacium kan inte öppna denna typ av fil. \n"
 "Försök att spela av filen till ett ljudformat \n"
-"som Audacity kan importera som WAV eller AIFF."
+"som Audacium kan importera som WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Audacity cannot open this file because it only contains links to other "
+"Audacium cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
 msgstr ""
 "\"%s\" är en spellista.\n"
-"Audacity kan inte öppna denna fil eftersom den bara innehåller länkar till "
+"Audacium kan inte öppna denna fil eftersom den bara innehåller länkar till "
 "andra filer.\n"
 "Du kanske kan öppna filen i en textredigerare och ladda ned de riktiga "
 "ljudfilerna."
@@ -12305,11 +12305,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Audacity cannot open this type of file due to patent restrictions. \n"
+"Audacium cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Windows Media Audio-fil (.wma). \n"
-"Audacity kan inte öppna denna filtyp p.g.a patentrestriktioner.\n"
+"Audacium kan inte öppna denna filtyp p.g.a patentrestriktioner.\n"
 "Du måste konvertera filen till en ljudformat som stöds, t.ex. WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12317,13 +12317,13 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Audacity cannot open this type of "
+"Without the optional FFmpeg library, Audacium cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
 msgstr ""
 "\"%s\" är en avancerad ljudkodningsfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste konvertera den till ett ljudformat som stöds, t.ex. WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12332,14 +12332,14 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Audacity cannot open this type of file due to the encryption. \n"
-"Try recording the file into Audacity, or burn it to audio CD then \n"
+"Audacium cannot open this type of file due to the encryption. \n"
+"Try recording the file into Audacium, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en krypterad ljudfil. \n"
 "Dessa kommer från en musikaffär på nätet. \n"
-"Audacity kan inte öppna denna filtyp p.g.a. krypteringen.\n"
-"Försök att spela in filen i Audacity eller bränn den på en ljud-CD för\n"
+"Audacium kan inte öppna denna filtyp p.g.a. krypteringen.\n"
+"Försök att spela in filen i Audacium eller bränn den på en ljud-CD för\n"
 "att sedan extrahera CD-spåret till ett ljudformat som stöds, t.ex. WAV eller "
 "AIFF."
 
@@ -12348,7 +12348,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Audacity cannot open this proprietary format. \n"
+"Audacium cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en RealPlayer-mediafil. \n"
@@ -12360,28 +12360,28 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Audacity."
+"then import it, or record it into Audacium."
 msgstr ""
 "\"%s\" är en textbaserad fil, inte en ljudfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste konvertera den till ett ljudformat som WAV eller AIFF och \n"
-"sedan importera den, eller spela in den i Audacity."
+"sedan importera den, eller spela in den i Audacium."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
 "format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Musepack-ljudfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Om du tror att det kan vara en MP3-fil, döp om den så att det slutar på \"."
 "mp3\"\n"
 "och försök att importera den igen. Annars måste du konvertera filen till "
@@ -12393,11 +12393,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Wavpack-ljudfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste konvertera den till ett ljudformat som stöds, t.ex. WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12405,11 +12405,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Dolby Digital-ljudfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste konvertera den till ett ljudformat som stöds, t.ex. WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12417,11 +12417,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en Ogg Speex-ljudfil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste konvertera den till ett ljudformat som stöds, t.ex. WAV eller AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12429,11 +12429,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" är en videofil. \n"
-"Audacity kan inte öppna denna filtyp. \n"
+"Audacium kan inte öppna denna filtyp. \n"
 "Du måste extrahera ljudet till ett ljudformat som stöds, t.ex. WAV eller "
 "AIFF."
 
@@ -12446,11 +12446,11 @@ msgstr "Modulen \"%s\" hittades."
 #: src/import/Import.cpp
 #, fuzzy, c-format
 msgid ""
-"Audacity did not recognize the type of the file '%s'.\n"
+"Audacium did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
-"Audacity känner inte igen filtypen \"%s\".\n"
+"Audacium känner inte igen filtypen \"%s\".\n"
 "Försök att installera FFmpeg. För okomprimerade filer, försök även Arkiv > "
 "Importera rådata."
 
@@ -12469,12 +12469,12 @@ msgstr "%s, %s"
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Audacity recognized the type of the file '%s'.\n"
+"Audacium recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
 msgstr ""
-"Audacity känner igen filtypen \"%s\".\n"
+"Audacium känner igen filtypen \"%s\".\n"
 "Importverktyg som förmodligen har stöd för dessa filer är:\n"
 "%s,\n"
 "men ingen av dem förstod detta filformat."
@@ -12500,11 +12500,11 @@ msgstr "Importera förinställningar"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Audacity version 1.0 or earlier. The format has\n"
-"changed and this version of Audacity is unable to import the project.\n"
+"This project was saved by Audacium version 1.0 or earlier. The format has\n"
+"changed and this version of Audacium is unable to import the project.\n"
 "\n"
-"Use a version of Audacity prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Audacity."
+"Use a version of Audacium prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Audacium."
 msgstr ""
 
 #: src/import/ImportAUP.cpp
@@ -12552,7 +12552,7 @@ msgstr "Kunde inte hitta projektets datamapp: \"%s\""
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Audacity does not "
+"MIDI tracks found in project file, but this build of Audacium does not "
 "include MIDI support, bypassing track."
 msgstr ""
 
@@ -13732,8 +13732,8 @@ msgid "&Getting Started"
 msgstr "&Kom igång"
 
 #: src/menus/HelpMenus.cpp
-msgid "Audacity &Manual"
-msgstr "Audacitys &manual"
+msgid "Audacium &Manual"
+msgstr "Audaciums &manual"
 
 #: src/menus/HelpMenus.cpp
 msgid "&Quick Help..."
@@ -13781,7 +13781,7 @@ msgstr "Skapade etikett"
 msgid "Paste Text to New Label"
 msgstr "Klistra in text till ny etikett"
 
-#. i18n-hint: (verb) past tense.  Audacity has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Audacium has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13792,7 +13792,7 @@ msgstr "Klipp ut ljudområden med etikett till urklipp"
 msgid "Cut Labeled Audio"
 msgstr "Klipp ut ljud med etikett"
 
-#. i18n-hint: (verb) Audacity has just deleted the labeled audio regions
+#. i18n-hint: (verb) Audacium has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "Raderade ljudområden med etikett"
@@ -13802,7 +13802,7 @@ msgstr "Raderade ljudområden med etikett"
 msgid "Delete Labeled Audio"
 msgstr "Radera ljud med med etikett"
 
-#. i18n-hint: (verb) Audacity has just split cut the labeled audio
+#. i18n-hint: (verb) Audacium has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13813,7 +13813,7 @@ msgstr "Dela och klipp ljudområden med etikett till urklipp"
 msgid "Split Cut Labeled Audio"
 msgstr "Dela och klipp ljud med etikett"
 
-#. i18n-hint: (verb) Audacity has just done a special kind of DELETE on
+#. i18n-hint: (verb) Audacium has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13844,7 +13844,7 @@ msgstr "Kopierade ljudområden med etikett till urklipp"
 msgid "Copy Labeled Audio"
 msgstr "Kopiera ljud med etikett"
 
-#. i18n-hint: (verb) past tense.  Audacity has just split the labeled
+#. i18n-hint: (verb) past tense.  Audacium has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13855,7 +13855,7 @@ msgstr "Dela ljud med etikett (punkter och område)"
 msgid "Split Labeled Audio"
 msgstr "Dela ljud med etikett"
 
-#. i18n-hint: (verb) Audacity has just joined the labeled audio (points or
+#. i18n-hint: (verb) Audacium has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13866,9 +13866,9 @@ msgstr "Sammanfogade ljud med etikett (punkter och område)"
 msgid "Join Labeled Audio"
 msgstr "Sammanfoga ljud med etikett"
 
-#. i18n-hint: (verb) Audacity has just detached the labeled audio regions.
+#. i18n-hint: (verb) Audacium has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Audacity has done.
+#. Audacium has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "Avdelade ljudområden med etikett"
@@ -14677,9 +14677,9 @@ msgstr "Skapade nytt etikettspår"
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Audacity only allows one time track for each project window."
+"This version of Audacium only allows one time track for each project window."
 msgstr ""
-"Denna versionen av Audacity tillåter bara ett tidsspår för varje "
+"Denna versionen av Audacium tillåter bara ett tidsspår för varje "
 "projektfönster."
 
 #: src/menus/TrackMenus.cpp
@@ -14948,13 +14948,13 @@ msgstr "Flytta aktuellt spår l&ängst upp"
 msgid "Move Focused Track to &Bottom"
 msgstr "Flytta aktuellt spår län&gst ned"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 msgid "Playing"
 msgstr "Spelar upp"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15537,11 +15537,11 @@ msgstr "Katalog %s är inte skrivbar"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Audacity is "
+"Changes to temporary directory will not take effect until Audacium is "
 "restarted"
 msgstr ""
 "Ändringar i den temporära katalogen kommer inte att få effekt förrän "
-"Audacity startas om"
+"Audacium startas om"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid "Temp Directory Update"
@@ -15587,7 +15587,7 @@ msgid "LV&2"
 msgstr ""
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15629,12 +15629,12 @@ msgid "Plugin Options"
 msgstr "Alternativ för insticksmoduler"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Audacity starts"
-msgstr "Kolla efter uppdaterade insticksmoduler när Audacity startas"
+msgid "Check for updated plugins when Audacium starts"
+msgstr "Kolla efter uppdaterade insticksmoduler när Audacium startas"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Rescan plugins next time Audacity is started"
-msgstr "Sök efter insticksmoduler igen nästa gång Audacity startas"
+msgid "Rescan plugins next time Audacium is started"
+msgstr "Sök efter insticksmoduler igen nästa gång Audacium startas"
 
 #: src/prefs/EffectsPrefs.cpp
 msgid "Instruction Set"
@@ -15707,13 +15707,13 @@ msgstr "Oanvända filter:"
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Audacity "
+"what you are doing, it is recommended to trim spaces. Do you want Audacium "
 "to trim spaces for you?"
 msgstr ""
 "Det finns tomrum (blanksteg, radbrytningar, tabbmellanrum eller radflöden) i "
 "en av objekten. De kommer förmodligen bryta mönstermatchningen. Om du inte "
 "vet vad du håller på med rekommenderas du att ta bort tomrummen. Vill du att "
-"Audacity tar bort mellanrummen åt dig?"
+"Audacium tar bort mellanrummen åt dig?"
 
 #: src/prefs/ExtImportPrefs.cpp
 msgid "Spaces detected"
@@ -15732,7 +15732,7 @@ msgstr "Bekräfta att regel ska raderas"
 msgid "Ext Import"
 msgstr "Utökad importering"
 
-#. i18n-hint: refers to Audacity's user interface settings
+#. i18n-hint: refers to Audacium's user interface settings
 #: src/prefs/GUIPrefs.cpp
 #, fuzzy
 msgctxt "GUI"
@@ -15825,8 +15825,8 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr "Be&håll etiketter om markeringen fästs till en etikett"
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Audacity theme"
-msgstr "B&landa systemets och Audacitys tema"
+msgid "B&lend system and Audacium theme"
+msgstr "B&landa systemets och Audaciums tema"
 
 #. i18n-hint: RTL stands for 'Right to Left'
 #: src/prefs/GUIPrefs.cpp
@@ -16010,8 +16010,8 @@ msgid ""
 msgstr ""
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Audacity keyboard shortcuts..."
-msgstr "Välj en XML-fil som innehåller Audacity kortkommandon..."
+msgid "Select an XML file containing Audacium keyboard shortcuts..."
+msgstr "Välj en XML-fil som innehåller Audacium kortkommandon..."
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -16140,10 +16140,10 @@ msgstr "Lad&da ned"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Audacity has automatically detected valid FFmpeg libraries.\n"
+"Audacium has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"Audacity har automatiskt hittat giltiga FFmpeg-bibliotek.\n"
+"Audacium har automatiskt hittat giltiga FFmpeg-bibliotek.\n"
 "Vill du fortfarande leta dem manuellt?"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -16192,7 +16192,7 @@ msgstr "Latensen för MIDI-synthesizer måste var ett heltal"
 msgid "Midi IO"
 msgstr ""
 
-#. i18n-hint: Modules are optional extensions to Audacity that add NEW features.
+#. i18n-hint: Modules are optional extensions to Audacium that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "Moduler"
@@ -16204,11 +16204,11 @@ msgstr "Inställningar: "
 
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"These are experimental modules. Enable them only if you've read the Audacity "
+"These are experimental modules. Enable them only if you've read the Audacium "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
-"Dessa moduler är experimentella. Använd bara dem om du har läst Audacitys "
+"Dessa moduler är experimentella. Använd bara dem om du har läst Audaciums "
 "manual\n"
 "och vet vad du gör."
 
@@ -16216,18 +16216,18 @@ msgstr ""
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
 msgid ""
-"  'Ask' means Audacity will ask if you want to load the module each time it "
+"  'Ask' means Audacium will ask if you want to load the module each time it "
 "starts."
 msgstr ""
-"\"Fråga\" betyder att Audacity kommer att fråga dig om du vill läsa in "
+"\"Fråga\" betyder att Audacium kommer att fråga dig om du vill läsa in "
 "modulen varje gång den startas."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
-msgid "  'Failed' means Audacity thinks the module is broken and won't run it."
+msgid "  'Failed' means Audacium thinks the module is broken and won't run it."
 msgstr ""
-"\"Misslyckades\" betyder att Audacity tror att modulen är trasig och kommer "
+"\"Misslyckades\" betyder att Audacium tror att modulen är trasig och kommer "
 "inte köra den."
 
 #. i18n-hint preserve the leading spaces
@@ -16237,9 +16237,9 @@ msgid "  'New' means no choice has been made yet."
 msgstr "\"Ny\" betyder att inget val har gjort ännu."
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Audacity starts up."
+msgid "Changes to these settings only take effect when Audacium starts up."
 msgstr ""
-"Ändringar i dessa inställningar kommer inte få effekt innan Audacity har "
+"Ändringar i dessa inställningar kommer inte få effekt innan Audacium har "
 "startas om."
 
 #: src/prefs/ModulePrefs.cpp
@@ -16519,8 +16519,8 @@ msgid "Always scrub un&pinned"
 msgstr "Utför alltid scrubbing på o&fästade"
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Audacity Preferences"
-msgstr "Inställningar för Audacity"
+msgid "Audacium Preferences"
+msgstr "Inställningar för Audacium"
 
 #: src/prefs/PrefsDialog.cpp
 msgid "Category"
@@ -16922,7 +16922,7 @@ msgstr "Maximala antalet noter måste vara mellan 1..128"
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -16946,7 +16946,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Audacity.\n"
+"Audacium.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -16959,7 +16959,7 @@ msgstr ""
 "ImageCacheVxx.png med en bildredigerare som Gimp.\n"
 "\n"
 "Klicka på \"Läs in temacache\" för att läsa in de ändrade bilderna och "
-"färgerna tillbaka till Audacity.\n"
+"färgerna tillbaka till Audacium.\n"
 "\n"
 "(Endast verktygsfältet för transport och färgerna på ljudspåren påverkas för "
 "tillfället, även\n"
@@ -17260,7 +17260,7 @@ msgstr "Inställningar: "
 msgid "Waveform dB &range:"
 msgstr "Inte&rvall för vågform (dB)"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 msgid "Stopped"
@@ -17298,7 +17298,7 @@ msgstr "Markera till slutet"
 msgid "Select to Start"
 msgstr "Markera till början"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, fuzzy, c-format
@@ -17665,8 +17665,8 @@ msgstr "Verktygsfält för &enhet"
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, c-format
-msgid "Audacity %s Toolbar"
-msgstr "Audacitys verktygsfält för %s"
+msgid "Audacium %s Toolbar"
+msgstr "Audaciums verktygsfält för %s"
 
 #: src/toolbars/ToolBar.cpp
 msgid "Click and drag to resize toolbar"
@@ -18346,7 +18346,7 @@ msgstr "Klicka och dra för att förvrida uppspelningstiden"
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "Klicka och dra för att redigera amplitudens envelopp"
 
-#. i18n-hint: (verb) Audacity has just adjusted the envelope .
+#. i18n-hint: (verb) Audacium has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr "Justerade envelopp."
@@ -20699,11 +20699,11 @@ msgstr "Höger (dB)"
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Audacity</a> by Steve\n"
+"<a href=\"~a\">Audacium</a> by Steve\n"
 "Daulton"
 msgstr ""
 "Producerad med <span>Sample Data Export</span> för\n"
-"<a href=\"~a\">Audacity</a> av Steve\n"
+"<a href=\"~a\">Audacium</a> av Steve\n"
 "Daulton"
 
 #: plug-ins/sample-data-export.ny
@@ -21189,11 +21189,11 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "Export recording"
 #~ msgstr "Exportera inspelning"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Audacity"
-#~ msgstr "Stöd för Ogg Vorbis finns inte i denna version av Audacity"
+#~ msgid "Ogg Vorbis support is not included in this build of Audacium"
+#~ msgstr "Stöd för Ogg Vorbis finns inte i denna version av Audacium"
 
-#~ msgid "FLAC support is not included in this build of Audacity"
-#~ msgstr "Stöd för FLAC finns inte i denna version av Audacity"
+#~ msgid "FLAC support is not included in this build of Audacium"
+#~ msgstr "Stöd för FLAC finns inte i denna version av Audacium"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "Kommandot %s är inte implementerat än"
@@ -21246,26 +21246,26 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "Sparar ljudinspelning till hårddisk"
 
-#~ msgid "Audacity projects"
-#~ msgstr "Audacity-projekt"
+#~ msgid "Audacium projects"
+#~ msgstr "Audacium-projekt"
 
 #~ msgid "Reclaimable Space"
 #~ msgstr "Återvunnet utrymme"
 
 #~ msgid ""
-#~ "This file was saved by Audacity version %s. The format has changed. \n"
+#~ "This file was saved by Audacium version %s. The format has changed. \n"
 #~ "\n"
-#~ "Audacity can try to open and save this file, but saving it in this \n"
+#~ "Audacium can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Audacity might corrupt the file in opening it, so you should back it up "
+#~ "Audacium might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "Denna fil blev sparad av Audacity %s. Formatet har ändrats.\n"
+#~ "Denna fil blev sparad av Audacium %s. Formatet har ändrats.\n"
 #~ "\n"
-#~ "Audacity kan öppna och spara denna fil, men om du sparar den med denna "
+#~ "Audacium kan öppna och spara denna fil, men om du sparar den med denna "
 #~ "version\n"
 #~ " kan du inte längre öppna den i versioner som 1.2 eller tidigare.\n"
 #~ " \n"
@@ -21302,14 +21302,14 @@ msgstr "Fel.~%Stereospår krävs."
 #~ "filkatalogen \"%s\" innan du sparar projektet med detta namn."
 
 #~ msgid ""
-#~ "'Save Lossless Copy of Project' is for an Audacity project, not an audio "
+#~ "'Save Lossless Copy of Project' is for an Audacium project, not an audio "
 #~ "file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
 #~ "Lossless copies of project are a good way to backup your project, \n"
 #~ "with no loss of quality, but the projects are large.\n"
 #~ msgstr ""
-#~ "\"Spara förlustfri kopia av projektet\" är för ett Audacity-projekt, inte "
+#~ "\"Spara förlustfri kopia av projektet\" är för ett Audacium-projekt, inte "
 #~ "en ljudfil.\n"
 #~ "För en ljudfil som kommer öppnas i andra program, välj \"Exportera\".\n"
 #~ "\n"
@@ -21321,7 +21321,7 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgstr "%sSpara komprimerad kopia av projektet \"%s\" som..."
 
 #~ msgid ""
-#~ "'Save Compressed Copy of Project' is for an Audacity project, not an "
+#~ "'Save Compressed Copy of Project' is for an Audacium project, not an "
 #~ "audio file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
@@ -21329,7 +21329,7 @@ msgstr "Fel.~%Stereospår krävs."
 #~ "online, \n"
 #~ "but they have some loss of fidelity.\n"
 #~ msgstr ""
-#~ "\"Spara komprimerad kopia av projektet\" är för ett Audacity-projekt, "
+#~ "\"Spara komprimerad kopia av projektet\" är för ett Audacium-projekt, "
 #~ "inte en ljudfil.\n"
 #~ "För en ljudfil som kommer öppnas i andra program, välj \"Exportera\".\n"
 #~ "\n"
@@ -21338,10 +21338,10 @@ msgstr "Fel.~%Stereospår krävs."
 #~ "men de har lite brist på naturtrogenhet.\n"
 
 #~ msgid ""
-#~ "Audacity was unable to convert an Audacity 1.0 project to the new project "
+#~ "Audacium was unable to convert an Audacium 1.0 project to the new project "
 #~ "format."
 #~ msgstr ""
-#~ "Audacity misslyckades med att konvertera ett Audacity 1.0-projekt till "
+#~ "Audacium misslyckades med att konvertera ett Audacium 1.0-projekt till "
 #~ "det nya formatet."
 
 #~ msgid "Could not remove old auto save file"
@@ -21394,11 +21394,11 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgstr "FFmpeg : FEL - Misslyckades att skriva ljudbildruta till fil."
 
 #~ msgid ""
-#~ "\"%s\" is an Audacity Project file. \n"
-#~ "Use the 'File > Open' command to open Audacity Projects."
+#~ "\"%s\" is an Audacium Project file. \n"
+#~ "Use the 'File > Open' command to open Audacium Projects."
 #~ msgstr ""
-#~ "\"%s\" är en Audacity-projektfil. \n"
-#~ "Använd \"Arkiv > Öppna\" för att öppna Audacity-projekt."
+#~ "\"%s\" är en Audacium-projektfil. \n"
+#~ "Använd \"Arkiv > Öppna\" för att öppna Audacium-projekt."
 
 #, fuzzy
 #~ msgid ""
@@ -21585,31 +21585,31 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "File dialog failed with error code %0lx."
 #~ msgstr "Fildialogen misslyckades med felkod %0lx."
 
-#~ msgid "About Audacity"
-#~ msgstr "Om Audacity"
+#~ msgid "About Audacium"
+#~ msgstr "Om Audacium"
 
-#~ msgid "<h3>Audacity "
-#~ msgstr "<h3>Audacity "
+#~ msgid "<h3>Audacium "
+#~ msgstr "<h3>Audacium "
 
-#~ msgid "Audacity Team Members"
-#~ msgstr "Audacitys teammedlemmar"
+#~ msgid "Audacium Team Members"
+#~ msgstr "Audaciums teammedlemmar"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; Programvaran <b>Audacity<sup>&reg;</sup></b> är "
-#~ "upphovsrättsskyddad &copy; 1999-2018 Audacity-teamet.<br>"
+#~ "<p><br>&nbsp; &nbsp; Programvaran <b>Audacium<sup>&reg;</sup></b> är "
+#~ "upphovsrättsskyddad &copy; 1999-2018 Audacium-teamet.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir i DirManager::MakeBlockFilePath misslyckades."
 
 #~ msgid ""
-#~ "Audacity found an orphan block file: %s. \n"
+#~ "Audacium found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
-#~ "Audacity hittade en ursprunglig blockfil: %s \n"
+#~ "Audacium hittade en ursprunglig blockfil: %s \n"
 #~ "Var god överväg att spara och starta om projektet för att utföra en "
 #~ "fullständig projektkontroll."
 
@@ -21649,10 +21649,10 @@ msgstr "Fel.~%Stereospår krävs."
 
 #, fuzzy
 #~ msgid ""
-#~ "The module \"%s\" is matched with Audacity version \"%s\". It will not be "
+#~ "The module \"%s\" is matched with Audacium version \"%s\". It will not be "
 #~ "loaded."
 #~ msgstr ""
-#~ "Modulen %s matchar Audacity-versionen %s. Den kommer inte att läsas in."
+#~ "Modulen %s matchar Audacium-versionen %s. Den kommer inte att läsas in."
 
 #, fuzzy
 #~ msgid ""
@@ -21868,9 +21868,9 @@ msgstr "Fel.~%Stereospår krävs."
 #~ "Som en del av dess bearbetning måste vissa VST-effekter fördröja "
 #~ "returnerad "
 
-#~ msgid "audio to Audacity. When not compensating for this delay, you will "
+#~ msgid "audio to Audacium. When not compensating for this delay, you will "
 #~ msgstr ""
-#~ "ljud till Audacity. När du inte kompenserar för denna fördröjning kommer "
+#~ "ljud till Audacium. När du inte kompenserar för denna fördröjning kommer "
 
 #~ msgid "notice that small silences have been inserted into the audio. "
 #~ msgstr "du upptäcka att korta tystnadsperioder har infogats i ljudet. "
@@ -22005,11 +22005,11 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgstr "%s - %s"
 
 #~ msgid ""
-#~ "This is a debug version of Audacity, with an extra button, 'Output "
+#~ "This is a debug version of Audacium, with an extra button, 'Output "
 #~ "Sourcery'. This will save a\n"
 #~ "C version of the image cache that can be compiled in as a default."
 #~ msgstr ""
-#~ "Detta är en felsökningsversion av Audacity, med en extra knapp som kallas "
+#~ "Detta är en felsökningsversion av Audacium, med en extra knapp som kallas "
 #~ "\"Output Sourcery\". Den sparar en\n"
 #~ "C-version av bildcachen som kan kompileras som en standard."
 
@@ -22218,13 +22218,13 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid ""
 #~ "Latency Correction setting has caused the recorded audio to be hidden "
 #~ "before zero.\n"
-#~ "Audacity has brought it back to start at zero.\n"
+#~ "Audacium has brought it back to start at zero.\n"
 #~ "You may have to use the Time Shift Tool (<---> or F5) to drag the track "
 #~ "to the right place."
 #~ msgstr ""
 #~ "Inställningarna för latenskorrigering har orsakat att det inspelade "
 #~ "ljudet är gömt\n"
-#~ "innan noll. Audacity har flyttat början på ljudet till noll.\n"
+#~ "innan noll. Audacium har flyttat början på ljudet till noll.\n"
 #~ "Du kanske måste använda tidsförskjutningsverktyget (<---> eller F5) för "
 #~ "att dra spåret till rätt plats."
 
@@ -22252,29 +22252,29 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "C&hain (Double-Click or press SPACE to edit)"
 #~ msgstr "K&edja (dubbelklicka eller tryck på mellanslag för att redigera)"
 
-#~ msgid "<br><br>DarkAudacity is based on Audacity:"
-#~ msgstr "<br><br>DarkAudacity baseras på Audacity:"
+#~ msgid "<br><br>DarkAudacium is based on Audacium:"
+#~ msgstr "<br><br>DarkAudacium baseras på Audacium:"
 
 #~ msgid ""
-#~ " [[http://www.darkaudacity.com|www.darkaudacity.com]] - for differences "
+#~ " [[http://www.darkaudacium.com|www.darkaudacium.com]] - for differences "
 #~ "between them."
 #~ msgstr ""
-#~ " [[http://www.darkaudacity.com|www.darkaudacity.com]] - för skillnaderna "
+#~ " [[http://www.darkaudacium.com|www.darkaudacium.com]] - för skillnaderna "
 #~ "mellan dem."
 
 #~ msgid ""
-#~ " email to [[mailto:james@audacityteam.org|james@audacityteam.org]] - for "
-#~ "help using DarkAudacity."
+#~ " email to [[mailto:james@audaciumteam.org|james@audaciumteam.org]] - for "
+#~ "help using DarkAudacium."
 #~ msgstr ""
-#~ " skicka e-post till [[mailto:james@audacityteam.org|james@audacityteam."
-#~ "org]] - för hjälp om hur man använder DarkAudacity."
+#~ " skicka e-post till [[mailto:james@audaciumteam.org|james@audaciumteam."
+#~ "org]] - för hjälp om hur man använder DarkAudacium."
 
 #~ msgid ""
-#~ " [[http://www.darkaudacity.com/video.html|Tutorials]] - for getting "
-#~ "started with DarkAudacity."
+#~ " [[http://www.darkaudacium.com/video.html|Tutorials]] - for getting "
+#~ "started with DarkAudacium."
 #~ msgstr ""
-#~ " [[http://www.darkaudacity.com/video.html|Guider]] - för hur man kommer "
-#~ "igång med DarkAudacity."
+#~ " [[http://www.darkaudacium.com/video.html|Guider]] - för hur man kommer "
+#~ "igång med DarkAudacium."
 
 #~ msgid "Insert &After"
 #~ msgstr "Infoga &efter"
@@ -22387,8 +22387,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "In Memoriam"
 #~ msgstr "Till minne av"
 
-#~ msgid "Audacity failed to write to a file in %s."
-#~ msgstr "Audacity misslyckades att skriva till fil i %s."
+#~ msgid "Audacium failed to write to a file in %s."
+#~ msgstr "Audacium misslyckades att skriva till fil i %s."
 
 #~ msgid "Could not open file: "
 #~ msgstr "Kunde inte öppna fil: "
@@ -23001,8 +23001,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "co-founder"
 #~ msgstr "medgrundare"
 
-#~ msgid "Audacity Support Team"
-#~ msgstr "Audacity Support team"
+#~ msgid "Audacium Support Team"
+#~ msgstr "Audacium Support team"
 
 #~ msgid "Emeritus Developers"
 #~ msgstr "Emeritus utvecklare"
@@ -23010,8 +23010,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "<center><h3>How to Get Help</h3></center>"
 #~ msgstr "<center><h3>Här får du support</h3></center>"
 
-#~ msgid "Welcome to Audacity "
-#~ msgstr "Välkommen till Audacity"
+#~ msgid "Welcome to Audacium "
+#~ msgstr "Välkommen till Audacium"
 
 #~ msgid ""
 #~ " For even quicker answers, all the online resources above are "
@@ -23321,10 +23321,10 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgstr "Command-line val stöds:"
 
 #~ msgid ""
-#~ "In addition, specify the name of an audio file or Audacity project to "
+#~ "In addition, specify the name of an audio file or Audacium project to "
 #~ "open it."
 #~ msgstr ""
-#~ "Dessutom, namnge ljudfilen eller Audacity-projektet för att öppna adet."
+#~ "Dessutom, namnge ljudfilen eller Audacium-projektet för att öppna adet."
 
 #~ msgid "Stereo to Mono Effect not found"
 #~ msgstr "Hittade inte stereo till mono-effekt"
@@ -23732,8 +23732,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "Your file will be exported as a 16-bit WAV (Microsoft) file.\n"
 #~ msgstr "Din fil kommer att exporteras som en 16-bit WAV (Microsoft)-fil.\n"
 
-#~ msgid "Restart Audacity to apply changes."
-#~ msgstr "Strarta om Audacity för att uppdatera ändringar."
+#~ msgid "Restart Audacium to apply changes."
+#~ msgstr "Strarta om Audacium för att uppdatera ändringar."
 
 #, fuzzy
 #~ msgid "Display effects in graphical mode when supported"
@@ -23793,8 +23793,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgid "Display Audio Unit effects in Graphical Mode"
 #~ msgstr "Display Audio Unit effects in graphical mode"
 
-#~ msgid "&Rescan VST effects next time Audacity is started"
-#~ msgstr "&Skanna igen efter VST effekter nästa gång audacity startat"
+#~ msgid "&Rescan VST effects next time Audacium is started"
+#~ msgstr "&Skanna igen efter VST effekter nästa gång audacium startat"
 
 #~ msgid "Input Meter"
 #~ msgstr "Input mätare"
@@ -23902,13 +23902,13 @@ msgstr "Fel.~%Stereospår krävs."
 
 #~ msgid ""
 #~ "GStreamer was configured in preferences and successfully loaded before,\n"
-#~ "                      but this time Audacity failed to load it at "
+#~ "                      but this time Audacium failed to load it at "
 #~ "startup.\n"
 #~ "                      You may want to go back to Preferences > Libraries "
 #~ "and re-configure it."
 #~ msgstr ""
 #~ "FFmpeg var konfigurerat i Inställningar och kunde startas tidigare, \n"
-#~ "                      men denna gång misslyckades Audacity att starta vid "
+#~ "                      men denna gång misslyckades Audacium att starta vid "
 #~ "uppstart.\n"
 #~ "                     Gå till Inställningar > Bibliotek och konfigurera "
 #~ "rätt."
@@ -23920,41 +23920,41 @@ msgstr "Fel.~%Stereospår krävs."
 #~ msgstr "Ta& bort ljud eller etiketter"
 
 #~ msgid ""
-#~ "Audacity compressed project files (.aup) save your work in a smaller, "
+#~ "Audacium compressed project files (.aup) save your work in a smaller, "
 #~ "compressed (.ogg) format. \n"
 #~ "Compressed project files are a good way to transmit your project online, "
 #~ "because they are much smaller. \n"
 #~ "To open a compressed project takes longer than usual, as it imports each "
 #~ "compressed track. \n"
 #~ "\n"
-#~ "Most other programs can't open Audacity project files.\n"
+#~ "Most other programs can't open Audacium project files.\n"
 #~ "When you want to save a file that can be opened by other programs, select "
 #~ "one of the\n"
 #~ "Export commands."
 #~ msgstr ""
-#~ "Audacity komprimerade projektfiler (.aup) sparar ditt arbete i mindre,"
+#~ "Audacium komprimerade projektfiler (.aup) sparar ditt arbete i mindre,"
 #~ "komprimerat (.ogg) format.\n"
 #~ "Komprimerade projektfiler är ett bra sätt att skicka ditt projekt online,"
 #~ "eftersom de ändra mindre i storlek.\n"
 #~ "Att öppna ett komprimerat projekt tar längre tid än vanligt, då det "
 #~ "importerarvarje komprimerat spår.\n"
 #~ "\n"
-#~ "De flesta andra program kan inte öppna projektfiler från Audacity.\n"
+#~ "De flesta andra program kan inte öppna projektfiler från Audacium.\n"
 #~ "När du vill spara en fil som ska kunna öppnas av andra program, väljen "
 #~ "av\n"
 #~ "Exportvalen."
 
 #~ msgid ""
-#~ "You are saving an Audacity project file (.aup).\n"
+#~ "You are saving an Audacium project file (.aup).\n"
 #~ "\n"
-#~ "Saving a project creates a file that only Audacity can open.\n"
+#~ "Saving a project creates a file that only Audacium can open.\n"
 #~ "\n"
 #~ "To save an audio file for other programs, use one of the \"File > Export"
 #~ "\" commands.\n"
 #~ msgstr ""
-#~ "Du sparar en Audacity projektfil (.aup).\n"
+#~ "Du sparar en Audacium projektfil (.aup).\n"
 #~ "\n"
-#~ "Spara ett projekt skapar en fil som bara Audacity kan öppna.\n"
+#~ "Spara ett projekt skapar en fil som bara Audacium kan öppna.\n"
 #~ "\n"
 #~ "För att spara en ljudfil för andra program, välj en från \"Arkiv > Export"
 #~ "\"-menyn.\n"
@@ -23987,8 +23987,8 @@ msgstr "Fel.~%Stereospår krävs."
 #~ "  Varaktighet måste vara minst 1 millisekund\n"
 #~ "  Compress ratio måste vara minst 1:1"
 
-#~ msgid "Enable these Modules (if present), next time Audacity is started"
-#~ msgstr "Gör dessa moduler tillgängliga nästa gång audacity har startat"
+#~ msgid "Enable these Modules (if present), next time Audacium is started"
+#~ msgstr "Gör dessa moduler tillgängliga nästa gång audacium har startat"
 
 #~ msgid "mod-&script-pipe"
 #~ msgstr "mod-&script-pipe"

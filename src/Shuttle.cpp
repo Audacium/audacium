@@ -3,7 +3,7 @@
   Shuttle.cpp
 
   James Crook
-  (C) Audacity Developers, 2007
+  (C) Audacium Developers, 2007
 
   wxWidgets license. See Licensing.txt
 
@@ -65,7 +65,7 @@ preferences.
 #include <wx/radiobut.h>
 #include <wx/button.h>
 
-#include "../include/audacity/EffectAutomationParameters.h" // for command automation
+#include "../include/audacium/EffectAutomationParameters.h" // for command automation
 
 #include "WrappedType.h"
 //#include "effects/Effect.h"

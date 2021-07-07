@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ModuleManager.h
 
@@ -17,7 +17,7 @@
 #include <map>
 #include <vector>
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 #include "Identifier.h"
 
 class wxArrayString;
@@ -79,7 +79,7 @@ public:
    static ModuleManager & Get();
    
    // This string persists in configuration files
-   // So config compatibility will break if it is changed across Audacity versions
+   // So config compatibility will break if it is changed across Audacium versions
    static wxString GetPluginTypeString();
 
    static PluginID GetID(ModuleInterface *module);

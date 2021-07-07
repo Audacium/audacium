@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ShuttleSystem.dox2
 
@@ -14,14 +14,14 @@
 
 The classes ShuttleGui, ShuttleCli, ShuttleGuiBase and Shuttle were 
 designed to simplify repetitive code that moves data around.  Common
-repetitive tasks in Audacity are creating dialogs, moving data in and 
+repetitive tasks in Audacium are creating dialogs, moving data in and 
 out of dialogs and converting from binary to text formats.
 
 \section ShuttleSplit ShuttleGui Vs ShuttleGuiBase
 
 ShuttleGuiBase is slated for \ref WidgetMigration . It contains functions
 that work with widgets that are in wxWidgets.  The derived class, 
-ShuttleGui, contains extensions that are specific to Audacity widgets.  
+ShuttleGui, contains extensions that are specific to Audacium widgets.  
 It isn't slated for widget migration.
 
 \section ShuttleGuiInit Initialising ShuttleGui

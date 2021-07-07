@@ -1,6 +1,6 @@
 //
 //  OverlayPanel.h
-//  Audacity
+//  Audacium
 //
 //  Created by Paul Licameli on 5/1/16.
 //

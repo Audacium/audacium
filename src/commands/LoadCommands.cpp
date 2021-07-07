@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LoadCommands.cpp
 
@@ -15,7 +15,7 @@ modelled on BuiltinEffectsModule
 
 
 #include "LoadCommands.h"
-#include "AudacityCommand.h"
+#include "AudaciumCommand.h"
 #include "ModuleManager.h"
 
 #include "../Prefs.h"
@@ -46,13 +46,13 @@ void BuiltinCommandsModule::DoRegistration(
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Audacity looks for when the module is built as a
+// This is the symbol that Audacium looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Audacity, we use the same function, but it is
+// When the module is builtin to Audacium, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(AudacityModule)
+DECLARE_MODULE_ENTRY(AudaciumModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -94,7 +94,7 @@ ComponentInterfaceSymbol BuiltinCommandsModule::GetSymbol()
 
 VendorSymbol BuiltinCommandsModule::GetVendor()
 {
-   return XO("The Audacity Team");
+   return XO("The Audacium Team");
 }
 
 wxString BuiltinCommandsModule::GetVersion()
@@ -105,7 +105,7 @@ wxString BuiltinCommandsModule::GetVersion()
 
 TranslatableString BuiltinCommandsModule::GetDescription()
 {
-   return XO("Provides builtin commands to Audacity");
+   return XO("Provides builtin commands to Audacium");
 }
 
 // ============================================================================
@@ -153,7 +153,7 @@ bool BuiltinCommandsModule::AutoRegisterPlugins(PluginManagerInterface & pm)
          // Uses Generic Registration, not Default.
          // Registers as TypeGeneric, not TypeEffect.
          DiscoverPluginsAtPath(path, ignoredErrMsg,
-            PluginManagerInterface::AudacityCommandRegistrationCallback);
+            PluginManagerInterface::AudaciumCommandRegistrationCallback);
       }
    }
 
@@ -205,7 +205,7 @@ BuiltinCommandsModule::CreateInstance(const PluginPath & path)
 // BuiltinCommandsModule implementation
 // ============================================================================
 
-std::unique_ptr<AudacityCommand> BuiltinCommandsModule::Instantiate(const PluginPath & path)
+std::unique_ptr<AudaciumCommand> BuiltinCommandsModule::Instantiate(const PluginPath & path)
 {
    wxASSERT(path.StartsWith(BUILTIN_GENERIC_COMMAND_PREFIX));
    auto iter = mCommands.find( path );

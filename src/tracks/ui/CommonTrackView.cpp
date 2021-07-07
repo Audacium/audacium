@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 CommonTrackView.cpp
 
@@ -28,7 +28,7 @@ Paul Licameli split from class TrackView
 
 std::vector<UIHandlePtr> CommonTrackView::HitTest
 (const TrackPanelMouseState &st,
- const AudacityProject *pProject)
+ const AudaciumProject *pProject)
 {
    UIHandlePtr result;
    using namespace ToolCodes;

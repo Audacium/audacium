@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2013 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2013 Audacium Team.
    License: GPL v2.  See License.txt.
 
    Reverb.cpp

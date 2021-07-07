@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2018 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2018 Audacium Team.
    File License: wxwidgets
 
    PreferenceCommands.h
@@ -26,7 +26,7 @@
 
 // GetPreference
 
-class GetPreferenceCommand final : public AudacityCommand
+class GetPreferenceCommand final : public AudaciumCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -38,7 +38,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#get_preference";}
 
    wxString mName;
@@ -46,7 +46,7 @@ public:
 
 // SetPreference
 
-class SetPreferenceCommand final : public AudacityCommand
+class SetPreferenceCommand final : public AudaciumCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -58,7 +58,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#set_preference";}
 
    wxString mName;

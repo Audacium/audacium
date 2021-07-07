@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Screenshot.h
 
@@ -23,9 +23,9 @@
 
 #include <wx/defs.h>
 
-class AudacityProject;
+class AudaciumProject;
 
-AUDACITY_DLL_API void OpenScreenshotTools( AudacityProject &project );
+AUDACITY_DLL_API void OpenScreenshotTools( AudaciumProject &project );
 void CloseScreenshotTools();
 
 #endif // __AUDACITY_SCREENSHOT__

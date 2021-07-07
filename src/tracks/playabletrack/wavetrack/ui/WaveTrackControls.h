@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 WavelTrackControls.h
 
@@ -36,7 +36,7 @@ public:
 
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const AudacityProject *pProject) override;
+       const AudaciumProject *pProject) override;
 
    PopupMenuTable *GetMenuExtension(Track *pTrack) override;
 

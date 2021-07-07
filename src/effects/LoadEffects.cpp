@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LoadEffects.cpp
 
@@ -44,13 +44,13 @@ void BuiltinEffectsModule::DoRegistration(
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Audacity looks for when the module is built as a
+// This is the symbol that Audacium looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Audacity, we use the same function, but it is
+// When the module is builtin to Audacium, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(AudacityModule)
+DECLARE_MODULE_ENTRY(AudaciumModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -92,7 +92,7 @@ ComponentInterfaceSymbol BuiltinEffectsModule::GetSymbol()
 
 VendorSymbol BuiltinEffectsModule::GetVendor()
 {
-   return XO("The Audacity Team");
+   return XO("The Audacium Team");
 }
 
 wxString BuiltinEffectsModule::GetVersion()
@@ -103,7 +103,7 @@ wxString BuiltinEffectsModule::GetVersion()
 
 TranslatableString BuiltinEffectsModule::GetDescription()
 {
-   return XO("Provides builtin effects to Audacity");
+   return XO("Provides builtin effects to Audacium");
 }
 
 // ============================================================================

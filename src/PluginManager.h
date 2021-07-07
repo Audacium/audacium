@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   PluginManager.h
 
@@ -17,9 +17,9 @@
 #include <map>
 #include <memory>
 
-#include "audacity/EffectInterface.h"
-#include "audacity/ImporterInterface.h"
-#include "audacity/PluginInterface.h"
+#include "audacium/EffectInterface.h"
+#include "audacium/ImporterInterface.h"
+#include "audacium/PluginInterface.h"
 
 class wxArrayString;
 class FileConfig;
@@ -34,7 +34,7 @@ typedef enum : unsigned {
    PluginTypeNone = 0,          // 2.1.0 placeholder entries...not used by 2.1.1 or greater
    PluginTypeStub =1,               // Used for plugins that have not yet been registered
    PluginTypeEffect =1<<1,
-   PluginTypeAudacityCommand=1<<2,
+   PluginTypeAudaciumCommand=1<<2,
    PluginTypeExporter=1<<3,
    PluginTypeImporter=1<<4,
    PluginTypeModule=1<<5,
@@ -76,7 +76,7 @@ public:
    // Internal string only, no translated counterpart!
    // (Use Effect::GetFamilyName instead)
    // This string persists in configuration files
-   // So config compatibility will break if it is changed across Audacity versions
+   // So config compatibility will break if it is changed across Audacium versions
    wxString GetEffectFamily() const;
 
    EffectType GetEffectType() const;
@@ -243,7 +243,7 @@ public:
    static PluginID GetID(ImporterInterface *importer);
 
    // This string persists in configuration files
-   // So config compatibility will break if it is changed across Audacity versions
+   // So config compatibility will break if it is changed across Audacium versions
    static wxString GetPluginTypeString(PluginType type);
 
    int GetPluginCount(PluginType type);

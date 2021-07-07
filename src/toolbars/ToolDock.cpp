@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ToolDock.cpp
 
@@ -345,8 +345,8 @@ void ToolBarConfiguration::Write
       gPrefs->Write(wxT("Path"), strPath);
 
       // Remove any legacy configuration info.
-      // Note:  this causes Audacity 2.1.2 and earlier to create toolbars
-      // always in default position when reading a .cfg saved by Audacity
+      // Note:  this causes Audacium 2.1.2 and earlier to create toolbars
+      // always in default position when reading a .cfg saved by Audacium
       // 2.1.3 or later
       gPrefs->DeleteEntry(wxT("Order"));
    }

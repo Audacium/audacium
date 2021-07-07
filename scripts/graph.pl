@@ -46,7 +46,7 @@ my %names; # string to string
    }
 }
 
-#my $linkroot = "https://github.com/audacity/audacity/tree/master/src";
+#my $linkroot = "https://github.com/audacium/audacium/tree/master/src";
 my $linkroot = "file://" . File::Spec->rel2abs( $dir );
 
 

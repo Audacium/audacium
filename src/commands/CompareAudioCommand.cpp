@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2018 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2018 Audacium Team
    License: wxwidgets
 
    Dan Horgan
@@ -31,7 +31,7 @@ threshold of difference in two selected tracks
 
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/valnum.h"
 #include "CommandContext.h"
 
@@ -64,7 +64,7 @@ void CompareAudioCommand::PopulateOrExchange(ShuttleGui & S)
 }
 
 // Update member variables with project selection data (and validate)
-bool CompareAudioCommand::GetSelection(const CommandContext &context, AudacityProject &proj)
+bool CompareAudioCommand::GetSelection(const CommandContext &context, AudaciumProject &proj)
 {
    // Get the selected time interval
    auto &selectedRegion = ViewInfo::Get( proj ).selectedRegion;

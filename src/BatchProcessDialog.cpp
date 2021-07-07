@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ApplyMacroDialog.cpp
 
@@ -59,7 +59,7 @@
 #include "FileNames.h"
 #include "import/Import.h"
 #include "widgets/ErrorDialog.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/HelpSystem.h"
 
 #if wxUSE_ACCESSIBILITY
@@ -88,7 +88,7 @@ BEGIN_EVENT_TABLE(ApplyMacroDialog, wxDialogWrapper)
 END_EVENT_TABLE()
 
 ApplyMacroDialog::ApplyMacroDialog(
-   wxWindow * parent, AudacityProject &project, bool bInherited):
+   wxWindow * parent, AudaciumProject &project, bool bInherited):
    wxDialogWrapper(parent, wxID_ANY, MacrosPaletteTitle,
             wxDefaultPosition, wxDefaultSize,
             wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
@@ -233,7 +233,7 @@ void ApplyMacroDialog::OnApplyToProject(wxCommandEvent & WXUNUSED(event))
                                     wxLIST_STATE_SELECTED);
 
    if (item == -1) {
-      AudacityMessageBox(XO("No macro selected"));
+      AudaciumMessageBox(XO("No macro selected"));
       return;
    }
    ApplyMacroToProject( item );
@@ -331,7 +331,7 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
                                     wxLIST_NEXT_ALL,
                                     wxLIST_STATE_SELECTED);
    if (item == -1) {
-      AudacityMessageBox( XO("No macro selected") );
+      AudaciumMessageBox( XO("No macro selected") );
       return;
    }
 
@@ -339,9 +339,9 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
    gPrefs->Write(wxT("/Batch/ActiveMacro"), name);
    gPrefs->Flush();
 
-   AudacityProject *project = &mProject;
+   AudaciumProject *project = &mProject;
    if (!TrackList::Get( *project ).empty()) {
-      AudacityMessageBox(
+      AudaciumMessageBox(
          XO("Please save and close the current project first.") );
       return;
    }
@@ -559,7 +559,7 @@ enum {
 
 /// Constructor
 MacrosWindow::MacrosWindow(
-   wxWindow * parent, AudacityProject &project, bool bExpanded):
+   wxWindow * parent, AudaciumProject &project, bool bExpanded):
    ApplyMacroDialog(parent, project, true)
    , mProject{ project }
 {
@@ -830,7 +830,7 @@ bool MacrosWindow::ChangeOK()
       auto title = XO("%s changed").Format( mActiveMacro );
       auto msg = XO("Do you want to save the changes?");
 
-      id = AudacityMessageBox(
+      id = AudaciumMessageBox(
          msg,
          title,
          wxYES_NO | wxCANCEL);
@@ -989,7 +989,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
    }
 
    while (true) {
-      AudacityTextEntryDialog d(this,
+      AudaciumTextEntryDialog d(this,
          XO("Enter name of new macro"),
          XO("Name of new macro"));
       d.SetName(d.GetTitle());
@@ -1004,7 +1004,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
       name = d.GetValue().Strip(wxString::both);
 
       if (name.length() == 0) {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO("Name must not be blank"),
             WindowTitle(),
             wxOK | wxICON_ERROR,
@@ -1014,7 +1014,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
 
       if (name.Contains(wxFILE_SEP_PATH) ||
           name.Contains(wxFILE_SEP_PATH_UNIX)) {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             /*i18n-hint: The %c will be replaced with 'forbidden characters', like '/' and '\'.*/
             XO("Names may not contain '%c' and '%c'")
                .Format(wxFILE_SEP_PATH, wxFILE_SEP_PATH_UNIX),
@@ -1046,7 +1046,7 @@ void MacrosWindow::OnRemove(wxCommandEvent & WXUNUSED(event))
    }
 
    wxString name = mMacros->GetItemText(item);
-   AudacityMessageDialog m(
+   AudaciumMessageDialog m(
       this,
       /*i18n-hint: %s will be replaced by the name of a file.*/
       XO("Are you sure you want to delete %s?").Format( name ),
@@ -1331,7 +1331,7 @@ bool MacrosWindow::SaveChanges(){
    return true;
 }
 
-/// Send changed values back to Prefs, and update Audacity.
+/// Send changed values back to Prefs, and update Audacium.
 void MacrosWindow::OnOK(wxCommandEvent & WXUNUSED(event))
 {
    if( !SaveChanges() )

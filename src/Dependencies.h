@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2008 Audacium Team.
    License: GPL v2.  See License.txt.
 
    Dependencies.h
@@ -18,7 +18,7 @@
 #include "MemoryX.h"
 #include "wxFileNameWrapper.h" // member variable
 
-class AudacityProject;
+class AudaciumProject;
 
 class AliasedFile
 {
@@ -56,11 +56,11 @@ using AliasedFileArray = std::list<AliasedFile>;
 // user requests it, and returns True if the user continues.
 // Returns false if the user clicks Cancel, meaning that they do
 // not want to go ahead with the Save/Save As operation.
-bool ShowDependencyDialogIfNeeded(AudacityProject *project,
+bool ShowDependencyDialogIfNeeded(AudaciumProject *project,
                                   bool isSaving);
 
 // Returns a list of aliased files associated with a project.
-void FindDependencies(AudacityProject *project,
+void FindDependencies(AudaciumProject *project,
                       AliasedFileArray &outAliasedFiles);
 
 #endif

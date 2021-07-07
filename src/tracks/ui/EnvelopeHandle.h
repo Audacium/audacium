@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 EnvelopeHandle.h
 
@@ -32,7 +32,7 @@ class AUDACITY_DLL_API EnvelopeHandle final : public UIHandle
    static UIHandlePtr HitEnvelope
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const AudacityProject *pProject,
+       const AudaciumProject *pProject,
        Envelope *envelope, float zoomMin, float zoomMax,
        bool dB, float dBRange, bool timeTrack);
 
@@ -47,31 +47,31 @@ public:
    static UIHandlePtr TimeTrackHitTest
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const AudacityProject *pProject, const std::shared_ptr<TimeTrack> &tt);
+       const AudaciumProject *pProject, const std::shared_ptr<TimeTrack> &tt);
    static UIHandlePtr WaveTrackHitTest
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const AudacityProject *pProject, const std::shared_ptr<WaveTrack> &wt);
+       const AudaciumProject *pProject, const std::shared_ptr<WaveTrack> &wt);
 
    Envelope *GetEnvelope() const { return mEnvelope; }
 
-   void Enter(bool forward, AudacityProject *) override;
+   void Enter(bool forward, AudaciumProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject) override;
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, AudacityProject *pProject)
+      (const TrackPanelMouseState &state, AudaciumProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, AudacityProject *pProject,
+      (const TrackPanelMouseEvent &event, AudaciumProject *pProject,
       wxWindow *pParent) override;
 
-   Result Cancel(AudacityProject *pProject) override;
+   Result Cancel(AudaciumProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 

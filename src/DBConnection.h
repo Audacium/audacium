@@ -1,6 +1,6 @@
 /*!********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 @file DBConnection.h
 @brief Declare DBConnection, which maintains database connection and associated status and background thread
@@ -26,7 +26,7 @@ Paul Licameli -- split from ProjectFileIO.h
 struct sqlite3;
 struct sqlite3_stmt;
 class wxString;
-class AudacityProject;
+class AudaciumProject;
 
 struct DBConnectionErrors
 {
@@ -44,7 +44,7 @@ public:
    using CheckpointFailureCallback = std::function<void()>;
 
    DBConnection(
-      const std::weak_ptr<AudacityProject> &pProject,
+      const std::weak_ptr<AudaciumProject> &pProject,
       const std::shared_ptr<DBConnectionErrors> &pErrors,
       CheckpointFailureCallback callback);
    ~DBConnection();
@@ -104,7 +104,7 @@ private:
    static int CheckpointHook(void *data, sqlite3 *db, const char *schema, int pages);
 
 private:
-   std::weak_ptr<AudacityProject> mpProject;
+   std::weak_ptr<AudaciumProject> mpProject;
    sqlite3 *mDB;
    sqlite3 *mCheckpointDB;
 
@@ -161,8 +161,8 @@ class ConnectionPtr final
    , public std::enable_shared_from_this< ConnectionPtr >
 {
 public:
-   static ConnectionPtr &Get( AudacityProject &project );
-   static const ConnectionPtr &Get( const AudacityProject &project );
+   static ConnectionPtr &Get( AudaciumProject &project );
+   static const ConnectionPtr &Get( const AudaciumProject &project );
 
    ~ConnectionPtr() override;
 

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LabelTrack.cpp
 
@@ -48,7 +48,7 @@ for drawing different aspects of the label and its text box.
 #include "prefs/ImportExportPrefs.h"
 
 #include "effects/TimeWarper.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 
 wxDEFINE_EVENT(EVT_LABELTRACK_ADDITION, LabelTrackEvent);
 wxDEFINE_EVENT(EVT_LABELTRACK_DELETION, LabelTrackEvent);
@@ -57,7 +57,7 @@ wxDEFINE_EVENT(EVT_LABELTRACK_SELECTION, LabelTrackEvent);
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "labeltrack" ),
-   []( AudacityProject &project ){
+   []( AudaciumProject &project ){
       auto &tracks = TrackList::Get( project );
       auto result = tracks.Add(std::make_shared<LabelTrack>());
       TrackView::Get( *result );
@@ -85,7 +85,7 @@ LabelTrack::LabelTrack(const LabelTrack &orig) :
    }
 }
 
-Track::Holder LabelTrack::PasteInto( AudacityProject & ) const
+Track::Holder LabelTrack::PasteInto( AudaciumProject & ) const
 {
    auto pNewTrack = std::make_shared<LabelTrack>();
    pNewTrack->Paste(0.0, this);
@@ -405,7 +405,7 @@ LabelStruct LabelStruct::Import(wxTextFile &file, int &index)
 
    // Newer selection fields are written on additional lines beginning with
    // '\' which is an impossible numerical character that older versions of
-   // audacity will ignore.  Test for the presence of such a line and then
+   // audacium will ignore.  Test for the presence of such a line and then
    // parse it if we can.
 
    // There may also be additional continuation lines from future formats that
@@ -457,7 +457,7 @@ void LabelStruct::Export(wxTextFile &file) const
       return;
 
    // Write a \ character at the start of a second line,
-   // so that earlier versions of Audacity ignore it.
+   // so that earlier versions of Audacium ignore it.
    file.AddLine(wxString::Format(wxT("\\\t%s\t%s"),
       Internat::ToString(f0, FLT_DIG),
       Internat::ToString(f1, FLT_DIG)
@@ -561,7 +561,7 @@ void LabelTrack::Import(wxTextFile & in)
       catch(const LabelStruct::BadFormatException&) { error = true; }
    }
    if (error)
-      ::AudacityMessageBox( XO("One or more saved labels could not be read.") );
+      ::AudaciumMessageBox( XO("One or more saved labels could not be read.") );
    SortLabels();
 }
 
@@ -595,7 +595,7 @@ bool LabelTrack::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
 
       } // while
 
-      // Handle files created by Audacity 1.1.   Labels in Audacity 1.1
+      // Handle files created by Audacium 1.1.   Labels in Audacium 1.1
       // did not have separate start- and end-times.
       // PRL: this superfluous now, given class SelectedRegion's internal
       // consistency guarantees

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 TimeTrackVZoomHandle.cpp
 
@@ -29,7 +29,7 @@ TimeTrackVZoomHandle::TimeTrackVZoomHandle(
 
 TimeTrackVZoomHandle::~TimeTrackVZoomHandle() = default;
 
-void TimeTrackVZoomHandle::Enter( bool, AudacityProject* )
+void TimeTrackVZoomHandle::Enter( bool, AudaciumProject* )
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -37,13 +37,13 @@ void TimeTrackVZoomHandle::Enter( bool, AudacityProject* )
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Click
-(const TrackPanelMouseEvent &, AudacityProject *)
+(const TrackPanelMouseEvent &, AudaciumProject *)
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Drag
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject)
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject)
 {
    using namespace RefreshCode;
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -53,7 +53,7 @@ UIHandle::Result TimeTrackVZoomHandle::Drag
 }
 
 HitTestPreview TimeTrackVZoomHandle::Preview
-(const TrackPanelMouseState &st, AudacityProject *)
+(const TrackPanelMouseState &st, AudaciumProject *)
 {
    static  wxCursor arrowCursor{ wxCURSOR_ARROW };
 
@@ -65,7 +65,7 @@ HitTestPreview TimeTrackVZoomHandle::Preview
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Release
-(const TrackPanelMouseEvent &evt, AudacityProject *pProject,
+(const TrackPanelMouseEvent &evt, AudaciumProject *pProject,
  wxWindow *pParent)
 {
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -93,7 +93,7 @@ UIHandle::Result TimeTrackVZoomHandle::Release
    return UpdateVRuler | RefreshAll;
 }
 
-UIHandle::Result TimeTrackVZoomHandle::Cancel(AudacityProject*)
+UIHandle::Result TimeTrackVZoomHandle::Cancel(AudaciumProject*)
 {
    // Cancel is implemented!  And there is no initial state to restore,
    // so just return a code.

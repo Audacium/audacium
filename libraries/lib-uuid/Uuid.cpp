@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file Uuid.cpp
  @brief Define a class to generate and parse UUIDs
@@ -31,7 +31,7 @@
 
 #include "HexHelpers.h"
 
-namespace audacity
+namespace audacium
 {
 
 constexpr int BRACED_UUID_LENGTH = 38;
@@ -265,4 +265,4 @@ std::size_t Uuid::GetHash() const noexcept
    return seed;
 }
 
-} // namespace audacity
+} // namespace audacium

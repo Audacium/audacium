@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Lyrics.h
 
@@ -19,7 +19,7 @@
 #include "commands/CommandManagerWindowClasses.h"
 #include "widgets/wxPanelWrapper.h" // to inherit
 
-class AudacityProject;
+class AudaciumProject;
 class LabelTrack;
 
 
@@ -86,7 +86,7 @@ class LyricsPanel final
 
  public:
    LyricsPanel(wxWindow* parent, wxWindowID id,
-          AudacityProject *project,
+          AudaciumProject *project,
           const wxPoint& pos = wxDefaultPosition,
           const wxSize& size = wxDefaultSize);
    virtual ~LyricsPanel();
@@ -156,7 +156,7 @@ private:
    int            mTextHeight; // only for drawn text
    bool           mMeasurementsDone; // only for drawn text
 
-   wxWeakRef<AudacityProject> mProject;
+   wxWeakRef<AudaciumProject> mProject;
    bool           mDelayedUpdate{ false };
 
    DECLARE_EVENT_TABLE()

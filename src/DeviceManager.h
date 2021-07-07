@@ -1,17 +1,17 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   DeviceManager.h
 
   Created by Michael Chinen (mchinen) on 2/12/11
-  Audacity(R) is copyright (c) 1999-2011 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2011 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
 
 \class DeviceManager
-\brief A singleton that manages the audio devices known to Audacity
+\brief A singleton that manages the audio devices known to Audacium
 
 *//*******************************************************************/
 

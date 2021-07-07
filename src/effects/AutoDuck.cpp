@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AutoDuck.cpp
 
@@ -36,7 +36,7 @@
 #include "../widgets/valnum.h"
 
 #include "../WaveTrack.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 // Define keys, defaults, minimums, and maximums for the effect parameters
 //

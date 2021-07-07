@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 WaveTrackViewConstants.h
 
@@ -11,7 +11,7 @@ Paul Licameli split from class WaveTrack
 #ifndef __AUDACITY_WAVE_TRACK_VIEW_CONSTANTS__
 #define __AUDACITY_WAVE_TRACK_VIEW_CONSTANTS__
 
-#include "audacity/ComponentInterface.h" // for EnumValueSymbol
+#include "audacium/ComponentInterface.h" // for EnumValueSymbol
 
 namespace WaveTrackViewConstants
 {

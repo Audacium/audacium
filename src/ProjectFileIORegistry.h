@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ProjectFileIORegistry.h
 
@@ -13,7 +13,7 @@
 
 #include <functional>
 
-class AudacityProject;
+class AudaciumProject;
 class XMLTagHandler;
 class wxString;
 
@@ -21,7 +21,7 @@ namespace ProjectFileIORegistry {
 
 // Type of functions returning objects that interpret a part of the saved XML
 using TagHandlerFactory =
-   std::function< XMLTagHandler *( AudacityProject & ) >;
+   std::function< XMLTagHandler *( AudaciumProject & ) >;
 
 // Typically statically constructed
 struct AUDACITY_DLL_API Entry{

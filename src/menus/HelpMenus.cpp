@@ -6,7 +6,7 @@
 
 #include "../AboutDialog.h"
 #include "../AllThemeResources.h"
-#include "../AudacityLogger.h"
+#include "../AudaciumLogger.h"
 #include "../AudioIOBase.h"
 #include "../CommonCommandFlags.h"
 #include "../FileNames.h"
@@ -21,14 +21,14 @@
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
 #include "../prefs/PrefsDialog.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 // private helper classes and functions
 namespace {
 
 void ShowDiagnostics(
-   AudacityProject &project, const wxString &info,
+   AudaciumProject &project, const wxString &info,
    const TranslatableString &description, const wxString &defaultPath,
    bool fixedWidth = false)
 {
@@ -74,7 +74,7 @@ void ShowDiagnostics(
       {
          if (!text->SaveFile(fName))
          {
-            AudacityMessageBox(
+            AudaciumMessageBox(
                XO("Unable to save %s").Format( description ),
                fileDialogTitle);
          }
@@ -94,7 +94,7 @@ class QuickFixDialog : public wxDialogWrapper
 public:
    using PrefSetter = std::function< void() > ;
 
-   QuickFixDialog(wxWindow * pParent, AudacityProject &project);
+   QuickFixDialog(wxWindow * pParent, AudaciumProject &project);
    void Populate();
    void PopulateOrExchange(ShuttleGui & S);
    void AddStuck( ShuttleGui & S, bool & bBool,
@@ -106,7 +106,7 @@ public:
    void OnHelp(const ManualPageID &Str);
    void OnFix(const PrefSetter &setter, wxWindowID id);
 
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    int mItem;
    bool mbSyncLocked;
@@ -124,7 +124,7 @@ BEGIN_EVENT_TABLE(QuickFixDialog, wxDialogWrapper)
    EVT_BUTTON(wxID_CANCEL,                                        QuickFixDialog::OnCancel)
 END_EVENT_TABLE();
 
-QuickFixDialog::QuickFixDialog(wxWindow * pParent, AudacityProject &project) :
+QuickFixDialog::QuickFixDialog(wxWindow * pParent, AudaciumProject &project) :
       wxDialogWrapper(pParent, wxID_ANY, XO("Do you have these problems?"),
             wxDefaultPosition, wxDefaultSize,
             wxDEFAULT_DIALOG_STYLE )
@@ -202,7 +202,7 @@ void QuickFixDialog::PopulateOrExchange(ShuttleGui & S)
          mItem = -1;
 
          auto defaultAction =
-         [](AudacityProject *pProject, const wxString &path){ return
+         [](AudaciumProject *pProject, const wxString &path){ return
             [pProject, path]{
                gPrefs->Write(path, 0);
                gPrefs->Flush();
@@ -341,7 +341,7 @@ void OnMidiDeviceInfo(const CommandContext &context)
 
 void OnShowLog( const CommandContext &context )
 {
-   auto logger = AudacityLogger::Get();
+   auto logger = AudaciumLogger::Get();
    if (logger) {
       logger->Show();
    }
@@ -457,7 +457,7 @@ void OnAbout(const CommandContext &context)
 
 // Only does the update checks if it's an ALPHA build and not disabled by
 // preferences.
-void MayCheckForUpdates(AudacityProject &project)
+void MayCheckForUpdates(AudaciumProject &project)
 {
 #ifdef IS_ALPHA
    OnCheckForUpdates(project);
@@ -475,9 +475,9 @@ void OnHelpWelcome(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(AudacityProject &) {
+static CommandHandlerObject &findCommandHandler(AudaciumProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // AudacityProject.
+   // AudaciumProject.
    static HelpActions::Handler instance;
    return instance;
 };
@@ -494,7 +494,7 @@ BaseItemSharedPtr HelpMenu()
    ( FinderScope{ findCommandHandler },
    Menu( wxT("Help"), XXO("&Help"),
       Section( "Basic",
-         // QuickFix menu item not in Audacity 2.3.1 whilst we discuss further.
+         // QuickFix menu item not in Audacium 2.3.1 whilst we discuss further.
          Command(wxT("QuickHelp"), XXO("&Quick Help..."), FN(OnQuickHelp),
             AlwaysEnabledFlag),
          Command(wxT("Manual"), XXO("&Manual..."), FN(OnManual),

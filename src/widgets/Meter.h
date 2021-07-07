@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Meter.h
 
@@ -26,7 +26,7 @@
 #include "MeterPanelBase.h" // to inherit
 #include "Ruler.h" // member variable
 
-class AudacityProject;
+class AudaciumProject;
 
 // Increase this when we add support for multichannel meters
 // (most of the code is already there)
@@ -110,7 +110,7 @@ class AUDACITY_DLL_API MeterPanel final
    };
 
 
-   MeterPanel(AudacityProject *,
+   MeterPanel(AudaciumProject *,
          wxWindow* parent, wxWindowID id,
          bool isInput,
          const wxPoint& pos = wxDefaultPosition,
@@ -226,7 +226,7 @@ class AUDACITY_DLL_API MeterPanel final
 
    wxString Key(const wxString & key) const;
 
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
    MeterUpdateQueue mQueue;
    wxTimer          mTimer;
 

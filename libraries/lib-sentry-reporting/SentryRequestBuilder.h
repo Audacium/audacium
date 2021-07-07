@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file SentryRequestBuilder.cpp
  @brief Declare a class to generate the requests to Sentry.
@@ -14,7 +14,7 @@
 
 #include "Request.h"
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -33,4 +33,4 @@ private:
    std::string mUrl;
 };
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

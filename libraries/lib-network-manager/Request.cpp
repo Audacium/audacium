@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file Request.cpp
  @brief Define a class for constructing HTTP requests.
@@ -20,7 +20,7 @@
 #include <cctype>
 #include <algorithm>
 
-namespace audacity
+namespace audacium
 {
 namespace network_manager
 {

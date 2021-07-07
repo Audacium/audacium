@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2018 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2018 Audacium Team
    License: wxwidgets
 
    Dan Horgan
@@ -22,7 +22,7 @@
 
 class Track;
 
-class SetTrackBase : public AudacityCommand
+class SetTrackBase : public AudaciumCommand
 {
 public:
    SetTrackBase();
@@ -53,7 +53,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#set_track_status";}
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -80,7 +80,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#set_track_audio";}
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -109,7 +109,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_I#set_track_visuals";}
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -149,7 +149,7 @@ public:
    // ComponentInterface overrides
    ComponentInterfaceSymbol GetSymbol() override {return Symbol;};
    TranslatableString GetDescription() override {return XO("Sets various values for a track.");};
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_II#set_track";}
 
 public:

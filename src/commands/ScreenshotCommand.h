@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2018 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2018 Audacium Team
    License: GPL v2 - see LICENSE.txt
 
    Dominic Mazzoni
@@ -25,10 +25,10 @@ class ToolManager;
 class CommandOutputTargets;
 class TrackPanel;
 class AdornedRulerPanel;
-class AudacityProject;
+class AudaciumProject;
 class CommandContext;
 
-class AUDACITY_DLL_API ScreenshotCommand : public AudacityCommand
+class AUDACITY_DLL_API ScreenshotCommand : public AudaciumCommand
 {
 public:
    enum kBackgrounds
@@ -86,7 +86,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_II#screenshot_short_format";}
 
 private:
@@ -122,9 +122,9 @@ private:
    bool CaptureToolbar(const CommandContext & Context, ToolManager *man, int type, const wxString &name);
    bool CaptureDock(const CommandContext & Context, wxWindow *win, const wxString &fileName);
    void CaptureCommands(const CommandContext & Context, const wxArrayStringEx &Commands  );
-   void CaptureEffects(const CommandContext & Context, AudacityProject * pProject, const wxString &fileName );
-   void CaptureScriptables(const CommandContext & Context, AudacityProject * pProject, const wxString &fileName );
-   void CapturePreferences(const CommandContext & Context, AudacityProject * pProject, const wxString &fileName );
+   void CaptureEffects(const CommandContext & Context, AudaciumProject * pProject, const wxString &fileName );
+   void CaptureScriptables(const CommandContext & Context, AudaciumProject * pProject, const wxString &fileName );
+   void CapturePreferences(const CommandContext & Context, AudaciumProject * pProject, const wxString &fileName );
    bool Capture(
       const CommandContext & Context,
       const wxString &basename,
@@ -136,17 +136,17 @@ private:
    wxRect GetPanelRect(TrackPanel * panel);
    wxRect GetRulerRect(AdornedRulerPanel *ruler);
    wxRect GetTracksRect(TrackPanel * panel);
-   wxRect GetTrackRect( AudacityProject * pProj, TrackPanel * panel,int n);
-   wxString WindowFileName(AudacityProject * proj, wxTopLevelWindow *w);
+   wxRect GetTrackRect( AudaciumProject * pProj, TrackPanel * panel,int n);
+   wxString WindowFileName(AudaciumProject * proj, wxTopLevelWindow *w);
 
 public:
    static ScreenshotCommand * mpShooter;
    static void (*mIdleHandler)(wxIdleEvent& event);
-   static void SetIdleHandler( AudacityProject &project );
+   static void SetIdleHandler( AudaciumProject &project );
    static bool MayCapture( wxDialog * pDlg );
 
    void CaptureWindowOnIdle( const CommandContext & context, wxWindow * pWin );
-   wxTopLevelWindow *GetFrontWindow(AudacityProject *project);
+   wxTopLevelWindow *GetFrontWindow(AudaciumProject *project);
 };
 
 #endif /* End of include guard: __SCREENSHOT_COMMAND__ */

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   AboutDialog.cpp
 
@@ -20,7 +20,7 @@ close it.
 
 \class AboutDialogCreditItem
 \brief AboutDialogCreditItem is a structure used by the AboutDialog to
-hold information about one contributor to Audacity.
+hold information about one contributor to Audacium.
 
 *//********************************************************************/
 
@@ -47,7 +47,7 @@ hold information about one contributor to Audacity.
 #include "AllThemeResources.h"
 #include "Theme.h"
 
-#include "../images/AudacityLogoWithName.xpm"
+#include "../images/AudaciumLogoWithName.xpm"
 
 // Notice this is a "system include".  This is on purpose and only until
 // we convert over to CMake.  Once converted, the "RevisionIndent.h" file
@@ -77,52 +77,52 @@ static const auto ProgramName =
 void AboutDialog::CreateCreditsList()
 {
    const auto sysAdminFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, system administration");
    const auto coFounderFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, co-founder and developer");
    const auto developerFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, developer");
    const auto developerAndSupprtFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, developer and support");
    const auto documentationAndSupportFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, documentation and support");
    const auto qaDocumentationAndSupportFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, QA tester, documentation and support");
    const auto documentationAndSupportFrenchFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, documentation and support, French");
    const auto qualityAssuranceFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, quality assurance");
    const auto accessibilityAdvisorFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, accessibility advisor");
    const auto graphicArtistFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, graphic artist");
    const auto composerFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, composer");
    const auto testerFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, tester");
    const auto NyquistPluginsFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, Nyquist plug-ins");
    const auto webDeveloperFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, web developer");
    const auto graphicsFormat =
-   /* i18n-hint: For "About Audacity..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Audacium..." credits, substituting a person's proper name */
       XO("%s, graphics");
 
-   // The Audacity Team: developers and support
+   // The Audacium Team: developers and support
    AddCredit(wxT("Anton Gerasimov"), developerFormat, roleTeamMember);
    AddCredit(wxT("Paul Licameli"), developerFormat, roleTeamMember);
    AddCredit(wxT("Vitaly Sverchinsky"), developerFormat, roleTeamMember);
@@ -132,7 +132,7 @@ void AboutDialog::CreateCreditsList()
    // otherwise distinguished contribution, but who are no
    // longer active.
    AddCredit(
-      wxT("[[https://wiki.audacityteam.org/wiki/User:Galeandrews|Gale Andrews]]"),
+      wxT("[[https://wiki.audaciumteam.org/wiki/User:Galeandrews|Gale Andrews]]"),
       qualityAssuranceFormat, roleEmeritusTeam);
    AddCredit(wxT("Richard Ash"), developerFormat, roleEmeritusTeam);
    AddCredit(wxT("Christian Brochec"),
@@ -301,7 +301,7 @@ AboutDialog::AboutDialog(wxWindow * parent)
    ShuttleGui S( this, eIsCreating );
    S.StartNotebook();
    {
-      PopulateAudacityPage( S );
+      PopulateAudaciumPage( S );
       PopulateInformationPage( S );
       PopulateLicensePage( S );
    }
@@ -317,7 +317,7 @@ AboutDialog::AboutDialog(wxWindow * parent)
 
 #define ABOUT_DIALOG_WIDTH 506
 
-void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
+void AboutDialog::PopulateAudaciumPage( ShuttleGui & S )
 {
    CreateCreditsList();
 
@@ -331,12 +331,12 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
 %s is %s for Windows, Mac, and GNU/Linux (and other Unix-like systems).")
 .Format(
     ProgramName,
-    Verbatim("[[https://www.audacityteam.org/about/credits|%s]]")
+    Verbatim("[[https://www.audaciumteam.org/about/credits|%s]]")
     /* i18n-hint: substitutes into "a worldwide team of %s" */
     .Format(XO("volunteers")),
     ProgramName,
-    Verbatim("[[https://www.audacityteam.org/download|%s]]")
-    /* i18n-hint: substitutes into "Audacity is %s" */
+    Verbatim("[[https://www.audaciumteam.org/download|%s]]")
+    /* i18n-hint: substitutes into "Audacium is %s" */
     .Format(XO("available")))
    ;
 
@@ -348,13 +348,13 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
 For help, view the tips and tricks on our %s or \
 visit our %s.")
       .Format(
-         Verbatim("[[https://forum.audacityteam.org/|%s]]")
+         Verbatim("[[https://forum.audaciumteam.org/|%s]]")
             /* i18n-hint substitutes into "write to our %s" */
             .Format( XC("forum", "dative") ),
-         Verbatim("[[https://wiki.audacityteam.org/|%s]]")
+         Verbatim("[[https://wiki.audaciumteam.org/|%s]]")
             /* i18n-hint substitutes into "view the tips and tricks on our %s" */
             .Format( XO("wiki") ),
-         Verbatim("[[https://forum.audacityteam.org/|%s]]")
+         Verbatim("[[https://forum.audaciumteam.org/|%s]]")
             /* i18n-hint substitutes into "visit our %s" */
             .Format( XC("forum", "accusative") ) );
    auto par2StrTranslated = par2Str.Translation();
@@ -363,7 +363,7 @@ visit our %s.")
       par2StrTranslated.Replace( wxT(", in English,"), wxT("") );
 
    /* i18n-hint: The translation of "translator_credits" will appear
-    *  in the credits in the About Audacity window.  Use this to add
+    *  in the credits in the About Audacium window.  Use this to add
     *  your own name(s) to the credits.
     *
     *  For example:  "English translation by Dominic Mazzoni." */
@@ -450,7 +450,7 @@ visit our %s.")
       << wxT("[[https://audacium.seb1g.live/|https://audacium.seb1g.live/]]")
 
       << wxT("<p><br>&nbsp; &nbsp; ")
-      /* i18n-hint Audacity's name substitutes for first and third %s,
+      /* i18n-hint Audacium's name substitutes for first and third %s,
        and a "copyright" symbol for the second */
       << XO("%s software is copyleft.")
          .Format(
@@ -458,7 +458,7 @@ visit our %s.")
       << wxT("<br>")
 
       << wxT("&nbsp; &nbsp; ")
-      /* i18n-hint Audacity's name substitutes for %s */
+      /* i18n-hint Audacium's name substitutes for %s */
       << XO("The name %s is not a registered trademark.")
          .Format( Verbatim("<b>%s</b>").Format( ProgramName ) )
       << wxT("<br><br>")
@@ -469,8 +469,8 @@ visit our %s.")
    auto pPage = S.StartNotebookPage( ProgramName );
    S.StartVerticalLay(1);
    {
-      //v For now, change to AudacityLogoWithName via old-fashioned way, not Theme.
-      wxBitmap logo(AudacityLogoWithName_xpm); //v
+      //v For now, change to AudaciumLogoWithName via old-fashioned way, not Theme.
+      wxBitmap logo(AudaciumLogoWithName_xpm); //v
 
       // JKC: Resize to 50% of size.  Later we may use a smaller xpm as
       // our source, but this allows us to tweak the size - if we want to.
@@ -490,8 +490,8 @@ visit our %s.")
       icon =
          safenew wxStaticBitmap(S.GetParent(), -1,
          //*logo, //v
-         //v theTheme.Bitmap(bmpAudacityLogo), wxPoint(93, 10), wxSize(215, 190));
-         //v theTheme.Bitmap(bmpAudacityLogoWithName),
+         //v theTheme.Bitmap(bmpAudaciumLogo), wxPoint(93, 10), wxSize(215, 190));
+         //v theTheme.Bitmap(bmpAudaciumLogoWithName),
          RescaledBitmap,
          wxDefaultPosition,
          wxSize((int)(LOGOWITHNAME_WIDTH*fScale), (int)(LOGOWITHNAME_HEIGHT*fScale)));
@@ -541,7 +541,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
  
    informationStr
       << wxT("<h3>")
-   /* i18n-hint: Information about when audacity was compiled follows */
+   /* i18n-hint: Information about when audacium was compiled follows */
       << XO("The Build")
       << wxT("</h3>\n<table>"); // start build info table
 
@@ -585,7 +585,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
 
    // Install prefix
 #ifdef __WXGTK__
-   /* i18n-hint: The directory audacity is installed into (on *nix systems) */
+   /* i18n-hint: The directory audacium is installed into (on *nix systems) */
    AddBuildinfoRow(&informationStr, XO("Installation Prefix:"), \
          wxT(INSTALL_PREFIX));
 #endif
@@ -599,7 +599,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
 
    informationStr
       << wxT("<h3>")
-      /* i18n-hint: Libraries that are essential to audacity */
+      /* i18n-hint: Libraries that are essential to audacium */
       << XO("Core Libraries")
       << wxT("</h3>\n<table>");  // start table of core libraries
 

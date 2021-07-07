@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2018 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2018 Audacium Team
    License: wxwidgets
 
    James Crook
@@ -73,7 +73,7 @@ bool SetLabelCommand::Apply(const CommandContext & context)
    // this code could be put in subroutines/reduced.
 
    //wxString mode = GetString(wxT("Type"));
-   AudacityProject * p = &context.project;
+   AudaciumProject * p = &context.project;
    auto &tracks = TrackList::Get( *p );
    auto &selectedRegion = ViewInfo::Get( *p ).selectedRegion;
    const LabelStruct * pLabel = nullptr;

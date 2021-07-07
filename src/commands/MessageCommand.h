@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    File License: wxWidgets
 
    Dan Horgan
@@ -24,7 +24,7 @@
 #include "CommandType.h"
 #include "Command.h"
 
-class MessageCommand : public AudacityCommand
+class MessageCommand : public AudaciumCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -36,7 +36,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // AudacityCommand overrides
+   // AudaciumCommand overrides
    ManualPageID ManualPage() override {return L"Extra_Menu:_Scriptables_II#message";}
 public:
    wxString mMessage;

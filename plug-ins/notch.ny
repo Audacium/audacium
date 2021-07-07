@@ -16,7 +16,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 $control frequency (_ "Frequency (Hz)") float-text "" 60 0 nil

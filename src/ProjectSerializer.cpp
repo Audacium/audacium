@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
-   Audacity(R) is copyright (c) 1999-2010 Audacity Team.
+   Audacium: A Digital Audio Editor
+   Audacium(R) is copyright (c) 1999-2010 Audacium Team.
    License: GPL v2.  See License.txt.
 
    ProjectSerializer.cpp
@@ -83,8 +83,8 @@ wxMemoryBuffer ProjectSerializer::mDict;
 TranslatableString ProjectSerializer::FailureMessage( const FilePath &/*filePath*/ )
 {
    return 
-XO("This recovery file was saved by Audacity 2.3.0 or before.\n"
-   "You need to run that version of Audacity to recover the project." );
+XO("This recovery file was saved by Audacium 2.3.0 or before.\n"
+   "You need to run that version of Audacium to recover the project." );
 }
 
 namespace {

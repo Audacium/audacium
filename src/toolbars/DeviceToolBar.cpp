@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   DeviceToolBar.cpp
 
@@ -46,7 +46,7 @@
 #include "../ShuttleGui.h"
 #include "../widgets/Grabber.h"
 #include "../DeviceManager.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/Grabber.h"
 
 #if wxUSE_ACCESSIBILITY
@@ -71,7 +71,7 @@ static int DeviceToolbarPrefsID()
 }
 
 //Standard constructor
-DeviceToolBar::DeviceToolBar( AudacityProject &project )
+DeviceToolBar::DeviceToolBar( AudaciumProject &project )
 : ToolBar( project, DeviceBarID, XO("Device"), wxT("Device"), true )
 {
    wxTheApp->Bind( EVT_RESCANNED_DEVICES,
@@ -82,15 +82,15 @@ DeviceToolBar::~DeviceToolBar()
 {
 }
 
-DeviceToolBar &DeviceToolBar::Get( AudacityProject &project )
+DeviceToolBar &DeviceToolBar::Get( AudaciumProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<DeviceToolBar*>( toolManager.GetToolBar(DeviceBarID) );
 }
 
-const DeviceToolBar &DeviceToolBar::Get( const AudacityProject &project )
+const DeviceToolBar &DeviceToolBar::Get( const AudaciumProject &project )
 {
-   return Get( const_cast<AudacityProject&>( project )) ;
+   return Get( const_cast<AudaciumProject&>( project )) ;
 }
 
 void DeviceToolBar::Create(wxWindow *parent)
@@ -660,7 +660,7 @@ void DeviceToolBar::OnChoice(wxCommandEvent &event)
    if (gAudioIO) {
       // We cannot have gotten here if gAudioIO->IsAudioTokenActive(),
       // per the setting of AudioIONotBusyFlag and AudioIOBusyFlag in
-      // AudacityProject::GetUpdateFlags().
+      // AudaciumProject::GetUpdateFlags().
       // However, we can have an invalid audio token (so IsAudioTokenActive()
       // is false), but be monitoring.
       // If monitoring, have to stop the stream, so HandleDeviceChange() can work.
@@ -704,7 +704,7 @@ void DeviceToolBar::ShowChannelsDialog()
 void DeviceToolBar::ShowComboDialog(wxChoice *combo, const TranslatableString &title)
 {
    if (!combo || combo->GetCount() == 0) {
-      AudacityMessageBox( XO("Device information is not available.") );
+      AudaciumMessageBox( XO("Device information is not available.") );
       return;
    }
 
@@ -745,7 +745,7 @@ void DeviceToolBar::ShowComboDialog(wxChoice *combo, const TranslatableString &t
 }
 
 static RegisteredToolbarFactory factory{ DeviceBarID,
-   []( AudacityProject &project ){
+   []( AudaciumProject &project ){
       return ToolBar::Holder{ safenew DeviceToolBar{ project } }; }
 };
 

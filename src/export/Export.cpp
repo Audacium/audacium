@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Export.cpp
 
@@ -63,7 +63,7 @@
 #include "../Tags.h"
 #include "../Theme.h"
 #include "../WaveTrack.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/Warning.h"
 #include "../widgets/HelpSystem.h"
 #include "../AColor.h"
@@ -316,7 +316,7 @@ Exporter::RegisteredExportPlugin::RegisteredExportPlugin(
          std::make_unique< ExporterItem >( id, factory ) );
 }
 
-Exporter::Exporter( AudacityProject &project )
+Exporter::Exporter( AudaciumProject &project )
 : mProject{ &project }
 {
    using namespace Registry;
@@ -395,7 +395,7 @@ const ExportPluginArray &Exporter::GetPlugins()
    return mPlugins;
 }
 
-bool Exporter::DoEditMetadata(AudacityProject &project,
+bool Exporter::DoEditMetadata(AudaciumProject &project,
    const TranslatableString &title,
    const TranslatableString &shortUndoDescription, bool force)
 {
@@ -714,7 +714,7 @@ bool Exporter::GetFilename()
                XO("Are you sure you want to export the file as \"%s\"?\n")
                   .Format( mFilename.GetFullName() );
 
-            int action = AudacityMessageBox(
+            int action = AudaciumMessageBox(
                prompt,
                XO("Warning"),
                wxYES_NO | wxICON_EXCLAMATION);
@@ -736,7 +736,7 @@ bool Exporter::GetFilename()
                        mFilename.GetFullName(),
                        defext);
 
-         int action = AudacityMessageBox(
+         int action = AudaciumMessageBox(
             prompt,
             XO("Warning"),
             wxYES_NO | wxICON_EXCLAMATION);
@@ -746,7 +746,7 @@ bool Exporter::GetFilename()
       }
 
       if (mFilename.GetFullPath().length() >= 256) {
-         AudacityMessageBox(
+         AudaciumMessageBox(
             XO( "Sorry, pathnames longer than 256 characters not supported.") );
          continue;
       }
@@ -757,7 +757,7 @@ bool Exporter::GetFilename()
          auto prompt = XO("A file named \"%s\" already exists. Replace?")
             .Format( mFilename.GetFullPath() );
 
-         int action = AudacityMessageBox(
+         int action = AudaciumMessageBox(
             prompt,
             XO("Warning"),
             wxYES_NO | wxICON_EXCLAMATION);
@@ -1498,11 +1498,11 @@ void ExportMixerDialog::OnMixerPanelHelp(wxCommandEvent & WXUNUSED(event))
 }
 
 
-TranslatableString AudacityExportCaptionStr()
+TranslatableString AudaciumExportCaptionStr()
 {
    return XO("Warning");
 }
-TranslatableString AudacityExportMessageStr()
+TranslatableString AudaciumExportMessageStr()
 {
    return XO("Unable to export.\nError %s");
 }

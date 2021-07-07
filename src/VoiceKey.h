@@ -1,6 +1,6 @@
 /***************************************************************************
 
-   Audacity: A Digtial Audio Editor
+   Audacium: A Digtial Audio Editor
 
    VoiceKey.h: a class implementing a voice key
 
@@ -16,7 +16,7 @@
 #define	M_PI		3.14159265358979323846  /* pi */
 #endif
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 
 class WaveTrack;
 

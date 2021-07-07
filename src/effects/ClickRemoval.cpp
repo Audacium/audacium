@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ClickRemoval.cpp
 
@@ -19,8 +19,8 @@
   The structure was largely stolen from Domonic Mazzoni's NoiseRemoval
   module, and reworked for the NEW effect.
 
-  This file is intended to become part of Audacity.  You may modify
-  and/or distribute it under the same terms as Audacity itself.
+  This file is intended to become part of Audacium.  You may modify
+  and/or distribute it under the same terms as Audacium itself.
 
 *//*******************************************************************/
 
@@ -37,7 +37,7 @@
 #include "../Prefs.h"
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 #include "../widgets/valnum.h"
 
 #include "../WaveTrack.h"

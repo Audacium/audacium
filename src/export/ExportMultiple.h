@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ExportMultiple.h
 
@@ -23,7 +23,7 @@ class wxSimplebook;
 class wxStaticText;
 class wxTextCtrl;
 
-class AudacityProject;
+class AudaciumProject;
 class LabelTrack;
 class SelectionState;
 class ShuttleGui;
@@ -33,7 +33,7 @@ class AUDACITY_DLL_API ExportMultipleDialog final : public wxDialogWrapper
 {
 public:
 
-   ExportMultipleDialog(AudacityProject *parent);
+   ExportMultipleDialog(AudaciumProject *parent);
    virtual ~ExportMultipleDialog();
 
    int ShowModal();
@@ -106,7 +106,7 @@ private:
    Exporter mExporter;
    std::vector<ExportPlugin*> mPlugins;   /**< Array of references to available exporter
                                    plug-ins */
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
    TrackList *mTracks;           /**< The list of tracks in the project that is
                                    being exported */
    const LabelTrack *mLabels;

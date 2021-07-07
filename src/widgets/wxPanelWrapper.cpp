@@ -1,6 +1,6 @@
 //
 //  wxPanelWrapper.cpp
-//  Audacity
+//  Audacium
 //
 //  Created by Paul Licameli on 6/25/16.
 //

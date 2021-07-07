@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODTask.h
 
   Created by Michael Chinen (mchinen)
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -27,7 +27,7 @@ in a background thread.
 
 #include <vector>
 #include <wx/event.h> // to declare custom event type
-class AudacityProject;
+class AudaciumProject;
 class Track;
 class WaveTrack;
 
@@ -120,7 +120,7 @@ class ODTask /* not final */
    virtual TranslatableString GetTip()=0;
 
     ///returns true if the task is associated with the project.
-   virtual bool IsTaskAssociatedWithProject(AudacityProject* proj);
+   virtual bool IsTaskAssociatedWithProject(AudaciumProject* proj);
 
    bool IsRunning();
 

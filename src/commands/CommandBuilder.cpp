@@ -1,7 +1,7 @@
 /**********************************************************************
 
-   Audacity - A Digital Audio Editor
-   Copyright 1999-2009 Audacity Team
+   Audacium - A Digital Audio Editor
+   Copyright 1999-2009 Audacium Team
    File License: wxWidgets
 
    Dan Horgan
@@ -31,13 +31,13 @@ system by constructing BatchCommandEval objects.
 #include "../Shuttle.h"
 
 CommandBuilder::CommandBuilder(
-   AudacityProject *project, const wxString &cmdString)
+   AudaciumProject *project, const wxString &cmdString)
    : mValid(false)
 {
    BuildCommand(project, cmdString);
 }
 
-CommandBuilder::CommandBuilder(AudacityProject *project,
+CommandBuilder::CommandBuilder(AudaciumProject *project,
    const wxString &cmdName, const wxString &params)
    : mValid(false)
 {
@@ -82,7 +82,7 @@ void CommandBuilder::Success(const OldStyleCommandPointer &cmd)
    mValid = true;
 }
 
-void CommandBuilder::BuildCommand(AudacityProject *project,
+void CommandBuilder::BuildCommand(AudaciumProject *project,
                                   const wxString &cmdName,
                                   const wxString &cmdParamsArg)
 {
@@ -188,7 +188,7 @@ void CommandBuilder::BuildCommand(AudacityProject *project,
 }
 
 void CommandBuilder::BuildCommand(
-   AudacityProject *project, const wxString &cmdStringArg)
+   AudaciumProject *project, const wxString &cmdStringArg)
 {
    wxString cmdString(cmdStringArg);
 

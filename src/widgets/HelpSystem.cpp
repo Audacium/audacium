@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   HelpSystem.cpp
 
@@ -48,11 +48,11 @@
 #include "../prefs/GUIPrefs.h"
 
 #ifdef USE_ALPHA_MANUAL
-const wxString HelpSystem::HelpHostname = wxT("alphamanual.audacityteam.org");
+const wxString HelpSystem::HelpHostname = wxT("alphamanual.audaciumteam.org");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/man/");
 const wxString HelpSystem::HelpServerManDir = wxT("/man/");
 #else
-const wxString HelpSystem::HelpHostname = wxT("manual.audacityteam.org");
+const wxString HelpSystem::HelpHostname = wxT("manual.audaciumteam.org");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/");
 const wxString HelpSystem::HelpServerManDir = wxT("/man/");
 #endif
@@ -76,7 +76,7 @@ public:
 #if !wxCHECK_VERSION(3, 0, 0)
       MakeModal( false );
 #endif
-      // On Windows, for some odd reason, the Audacity window will be sent to
+      // On Windows, for some odd reason, the Audacium window will be sent to
       // the back.  So, make sure that doesn't happen.
       GetParent()->Raise();
    }
@@ -203,10 +203,10 @@ void HelpSystem::ShowHtmlText(wxWindow *pParent,
    // If this section (providing an icon) causes compilation errors on linux, comment it out for now.
    // it will just mean that the icon is missing.  Works OK on Windows.
    #ifdef __WXMSW__
-   wxIcon ic{ wxICON(AudacityLogo) };
+   wxIcon ic{ wxICON(AudaciumLogo) };
    #else
    wxIcon ic{};
-      ic.CopyFromBitmap(theTheme.Bitmap(bmpAudacityLogo48x48));
+      ic.CopyFromBitmap(theTheme.Bitmap(bmpAudaciumLogo48x48));
    #endif
    pFrame->SetIcon( ic );
    // -- END of ICON stuff -----
@@ -325,7 +325,7 @@ void HelpSystem::ShowHelp(wxWindow *parent,
       anchor = wxT("");
    }
    // The wiki pages are transformed to static HTML by
-   // scripts/mw2html_audacity/mw2html.py
+   // scripts/mw2html_audacium/mw2html.py
    // The name is first transformed to lower case, then all
    // 'special characters' are replaced by underscores. Spaces are
    // transformed to "+".

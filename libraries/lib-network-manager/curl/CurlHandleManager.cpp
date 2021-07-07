@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file CurlHandleManager.cpp
  @brief Define a class responsible for reuse of CURL hanldes.
@@ -15,7 +15,7 @@
 
 #include <wx/platinfo.h>
 
-namespace audacity
+namespace audacium
 {
 namespace network_manager
 {
@@ -225,7 +225,7 @@ CurlHandleManager::CurlHandleManager ()
 {
     std::ostringstream ss;
 
-    ss << "Audacity/" << 
+    ss << "Audacium/" << 
         AUDACITY_VERSION << "." << 
         AUDACITY_RELEASE << "." << 
         AUDACITY_REVISION << 

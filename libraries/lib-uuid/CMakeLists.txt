@@ -23,4 +23,4 @@ endif()
 
 list( APPEND LIBRARIES PRIVATE lib-string-utils)
 
-audacity_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )
+audacium_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )

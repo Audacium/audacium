@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Effect.h
 
@@ -25,8 +25,8 @@ class wxChoice;
 class wxListBox;
 class wxWindow;
 
-#include "audacity/ConfigInterface.h"
-#include "audacity/EffectInterface.h"
+#include "audacium/ConfigInterface.h"
+#include "audacium/EffectInterface.h"
 
 #include "../SelectedRegion.h"
 
@@ -36,11 +36,11 @@ class wxWindow;
 
 class wxArrayString;
 class ShuttleGui;
-class AudacityCommand;
+class AudaciumCommand;
 
 #define BUILTIN_EFFECT_PREFIX wxT("Built-in Effect: ")
 
-class AudacityProject;
+class AudaciumProject;
 class LabelTrack;
 class NotifyingSelectedRegion;
 class ProgressDialog;
@@ -52,7 +52,7 @@ class WaveTrackFactory;
 class WaveTrack;
 
 /* i18n-hint: "Nyquist" is an embedded interpreted programming language in
- Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+ Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
  In the translations of this and other strings, you may transliterate the
  name into another alphabet.  */
 #define NYQUISTEFFECTS_FAMILY ( EffectFamilySymbol{ XO("Nyquist") } )
@@ -236,7 +236,7 @@ class AUDACITY_DLL_API Effect /* not final */ : public wxEvtHandler,
    virtual bool HasCurrentSettings();
    virtual bool HasFactoryDefaults();
 
-   // Name of page in the Audacity alpha manual
+   // Name of page in the Audacium alpha manual
    virtual ManualPageID ManualPage();
    // Fully qualified local help file name
    virtual FilePath HelpPage();
@@ -253,7 +253,7 @@ class AUDACITY_DLL_API Effect /* not final */ : public wxEvtHandler,
 
    // Returns true on success.  Will only operate on tracks that
    // have the "selected" flag set to true, which is consistent with
-   // Audacity's standard UI.
+   // Audacium's standard UI.
    // Create a user interface only if the supplied function is not null.
    /* not virtual */ bool DoEffect( double projectRate, TrackList *list,
       WaveTrackFactory *factory, NotifyingSelectedRegion &selectedRegion,
@@ -459,7 +459,7 @@ protected:
    wxWeakRef<NotifyingSelectedRegion> mpSelectedRegion{};
    WaveTrackFactory   *mFactory;
    const TrackList *inputTracks() const { return mTracks; }
-   const AudacityProject *FindProject() const;
+   const AudaciumProject *FindProject() const;
    std::shared_ptr<TrackList> mOutputTracks; // used only if CopyInputTracks() is called.
    double         mT0;
    double         mT1;

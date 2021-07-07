@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   SplashDialog.h
 
@@ -15,14 +15,14 @@
 
 class wxBitmap;
 class ShuttleGui;
-class AudacityProject;
+class AudaciumProject;
 class HtmlWindow;
 
 class SplashDialog final : public wxDialogWrapper {
    DECLARE_DYNAMIC_CLASS(SplashDialog)
 public:
 
-   static void DoHelpWelcome( AudacityProject &project );
+   static void DoHelpWelcome( AudaciumProject &project );
 
    SplashDialog(wxWindow * parent);
    virtual ~ SplashDialog();

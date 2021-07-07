@@ -1,5 +1,5 @@
 /*!********************************************************************
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file VersionId.h
  @brief Declare a class with version number manipulation.
@@ -42,7 +42,7 @@ private:
     int mRevision{ 0 };
 };
 
-/// Return version (VersionId) object with current Audacity build version.
+/// Return version (VersionId) object with current Audacium build version.
 static inline VersionId CurrentBuildVersion()
 {
     return VersionId{ AUDACITY_VERSION, AUDACITY_RELEASE, AUDACITY_REVISION };

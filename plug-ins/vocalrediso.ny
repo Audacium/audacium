@@ -16,11 +16,11 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;;
 ;; Plug-in version 1.7, May  2017
 ;; added legacy Vocal Remover since V. 1.56, 06-2015
-;; Requires Audacity 2.1.1  or later, developed under Audacity 2.2.0 Alpha
-;; requires Audacity 2.2.0 for embedded help (button)
+;; Requires Audacium 2.1.1  or later, developed under Audacium 2.2.0 Alpha
+;; requires Audacium 2.2.0 for embedded help (button)
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 $control action (_ "Action") choice (
     ("RemoveToMono" (_ "Remove Vocals: to mono"))

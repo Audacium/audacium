@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 AudioIOBase.h
 
@@ -30,7 +30,7 @@ typedef void PxMixer;
 
 class AudioIOBase;
 
-class AudacityProject;
+class AudaciumProject;
 class AudioIOListener;
 class BoundedEnvelope;
 // Windows build needs complete type for parameter of wxWeakRef
@@ -76,7 +76,7 @@ struct ScrubbingOptions {
 struct AudioIOStartStreamOptions
 {
    explicit
-   AudioIOStartStreamOptions(AudacityProject *pProject_, double rate_)
+   AudioIOStartStreamOptions(AudaciumProject *pProject_, double rate_)
       : pProject{ pProject_ }
       , envelope(nullptr)
       , rate(rate_)
@@ -87,7 +87,7 @@ struct AudioIOStartStreamOptions
       , preRoll(0.0)
    {}
 
-   AudacityProject *pProject{};
+   AudaciumProject *pProject{};
    MeterPanelBase *captureMeter{}, *playbackMeter{};
    const BoundedEnvelope *envelope; // for time warping
    std::shared_ptr< AudioIOListener > listener;
@@ -124,8 +124,8 @@ public:
 
    virtual ~AudioIOBase();
 
-   void SetCaptureMeter(AudacityProject *project, MeterPanelBase *meter);
-   void SetPlaybackMeter(AudacityProject *project, MeterPanelBase *meter);
+   void SetCaptureMeter(AudaciumProject *project, MeterPanelBase *meter);
+   void SetPlaybackMeter(AudaciumProject *project, MeterPanelBase *meter);
 
    /** \brief update state after changing what audio devices are selected
     *
@@ -198,7 +198,7 @@ public:
    /** \brief Array of common audio sample rates
     *
     * These are the rates we will always support, regardless of hardware support
-    * for them (by resampling in audacity if needed) */
+    * for them (by resampling in audacium if needed) */
    static const int StandardRates[];
    /** \brief How many standard sample rates there are */
    static const int NumStandardRates;
@@ -257,7 +257,7 @@ protected:
    static wxString DeviceName(const PaDeviceInfo* info);
    static wxString HostName(const PaDeviceInfo* info);
 
-   AudacityProject    *mOwningProject;
+   AudaciumProject    *mOwningProject;
 
    /// True if audio playback is paused
    bool                mPaused;

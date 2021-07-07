@@ -4,5 +4,5 @@
 
 set -euxo pipefail
 
-# Install Audacity
+# Install Audacium
 cmake --install build --config "${AUDACITY_BUILD_TYPE}" --verbose

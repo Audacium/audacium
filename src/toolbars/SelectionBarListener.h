@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   SelectionBarListener.h
 
@@ -11,7 +11,7 @@
 #ifndef __AUDACITY_SELECTION_BAR_LISTENER__
 #define __AUDACITY_SELECTION_BAR_LISTENER__
 
-#include "audacity/Types.h"
+#include "audacium/Types.h"
 
 class SelectedRegion;
 

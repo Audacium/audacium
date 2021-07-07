@@ -1,11 +1,11 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ODPCMAliasBlockFile.cpp
 
   Created by Michael Chinen (mchinen)
-  Audacity(R) is copyright (c) 1999-2008 Audacity Team.
+  Audacium(R) is copyright (c) 1999-2008 Audacium Team.
   License: GPL v2.  See License.txt.
 
 ******************************************************************//**
@@ -16,7 +16,7 @@ The summary is eventually computed and written to a file in a background thread.
 
 *//*******************************************************************/
 
-#include "../Audacity.h"
+#include "../Audacium.h"
 #include "ODPCMAliasBlockFile.h"
 
 #include <float.h>
@@ -38,7 +38,7 @@ The summary is eventually computed and written to a file in a background thread.
 //#include <errno.h>
 
 const int aheaderTagLen = 20;
-char aheaderTag[aheaderTagLen + 1] = "AudacityBlockFile112";
+char aheaderTag[aheaderTagLen + 1] = "AudaciumBlockFile112";
 
 
 ODPCMAliasBlockFile::ODPCMAliasBlockFile(
@@ -389,7 +389,7 @@ void ODPCMAliasBlockFile::WriteSummary()
 
       //wxFFile is not thread-safe - if any error occurs in opening the file,
       // it posts a wxlog message which WILL crash
-      // Audacity because it goes into the wx GUI.
+      // Audacium because it goes into the wx GUI.
       // For this reason I left the wxFFile method commented out. (mchinen)
       //    wxFFile summaryFile(mFileName.GetFullPath(), wxT("wb"));
 

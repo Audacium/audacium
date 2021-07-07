@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LyricsWindow.h
 
@@ -16,7 +16,7 @@
 
 #include "Prefs.h"
 
-class AudacityProject;
+class AudaciumProject;
 class LyricsPanel;
 
 class LyricsWindow final : public wxFrame,
@@ -24,7 +24,7 @@ class LyricsWindow final : public wxFrame,
 {
 
  public:
-   LyricsWindow(AudacityProject* parent);
+   LyricsWindow(AudaciumProject* parent);
 
    LyricsPanel *GetLyricsPanel() { return mLyricsPanel; };
 
@@ -40,7 +40,7 @@ class LyricsWindow final : public wxFrame,
    // PrefsListener implementation
    void UpdatePrefs() override;
 
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
    LyricsPanel *mLyricsPanel;
 
  public:

@@ -18,7 +18,7 @@ $control bad-data (_ "Invalid data handling") choice (("ThrowError" (_ "Throw Er
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 ;; Check file can be opened

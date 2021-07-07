@@ -1,10 +1,10 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectManager.h
 
-Paul Licameli split from AudacityProject.h
+Paul Licameli split from AudaciumProject.h
 
 **********************************************************************/
 
@@ -20,7 +20,7 @@ Paul Licameli split from AudacityProject.h
 class wxTimer;
 class wxTimerEvent;
 
-class AudacityProject;
+class AudaciumProject;
 struct AudioIOStartStreamOptions;
 
 ///\brief Object associated with a project for high-level management of the
@@ -31,23 +31,23 @@ class AUDACITY_DLL_API ProjectManager final
    , public ClientData::Base
 {
 public:
-   static ProjectManager &Get( AudacityProject &project );
-   static const ProjectManager &Get( const AudacityProject &project );
+   static ProjectManager &Get( AudaciumProject &project );
+   static const ProjectManager &Get( const AudaciumProject &project );
 
-   explicit ProjectManager( AudacityProject &project );
+   explicit ProjectManager( AudaciumProject &project );
    ProjectManager( const ProjectManager & ) PROHIBITED;
    ProjectManager &operator=( const ProjectManager & ) PROHIBITED;
    ~ProjectManager() override;
 
    // This is the factory for projects:
-   static AudacityProject *New();
+   static AudaciumProject *New();
 
    // The function that imports files can act as a factory too, and for that
    // reason remains in this class, not in ProjectFileManager
-   static void OpenFiles(AudacityProject *proj);
+   static void OpenFiles(AudaciumProject *proj);
 
    //! False when it is unsafe to overwrite proj with contents of an .aup3 file
-   static bool SafeToOpenProjectInto(AudacityProject &proj);
+   static bool SafeToOpenProjectInto(AudaciumProject &proj);
 
    //! Callable object that supplies the `chooser` argument of ProjectFileManager::OpenFile
    /*!
@@ -65,7 +65,7 @@ public:
        @param reuseNonemptyProject if true, may reuse the given project when nonempty,
        but only if importing (not for a project file)
        */
-      ProjectChooser( AudacityProject *pProject, bool reuseNonemptyProject )
+      ProjectChooser( AudaciumProject *pProject, bool reuseNonemptyProject )
          : mpGivenProject{ pProject }
          , mReuseNonemptyProject{ reuseNonemptyProject }
       {}
@@ -74,27 +74,27 @@ public:
       //! Destroy any fresh project, or rollback the existing project, unless committed
       ~ProjectChooser();
       //! May create a fresh project
-      AudacityProject &operator() ( bool openingProjectFile );
+      AudaciumProject &operator() ( bool openingProjectFile );
       //! Commit the creation of any fresh project or changes to the existing project
       void Commit();
 
    private:
-      AudacityProject *mpGivenProject;
-      AudacityProject *mpUsedProject = nullptr;
+      AudaciumProject *mpGivenProject;
+      AudaciumProject *mpUsedProject = nullptr;
       bool mReuseNonemptyProject;
    };
 
-   //! Open a file into an AudacityProject, returning the project, or nullptr for failure
+   //! Open a file into an AudaciumProject, returning the project, or nullptr for failure
    /*!
     If an exception escapes this function, no projects are created.
     @param pGivenProject if not null, a project that may be reused
-    @param fileNameArg path to the file to open; not always an Audacity project file, may be an import
+    @param fileNameArg path to the file to open; not always an Audacium project file, may be an import
     @param addtohistory whether to add .aup3 files to the MRU list (but always done for imports)
     @param reuseNonemptyProject if true, may reuse the given project when nonempty,
        but only if importing (not for a project file)
     */
-   static AudacityProject *OpenProject(
-      AudacityProject *pGivenProject,
+   static AudaciumProject *OpenProject(
+      AudaciumProject *pGivenProject,
       const FilePath &fileNameArg, bool addtohistory, bool reuseNonemptyProject);
 
    void ResetProjectToEmpty();
@@ -119,7 +119,7 @@ private:
    void RestartTimer();
 
    // non-static data members
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    std::unique_ptr<wxTimer> mTimer;
 

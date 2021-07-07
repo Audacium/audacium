@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file AnonymizedMessage.cpp
  @brief Define a class to store anonymized messages.
@@ -14,7 +14,7 @@
 
 #include "CodeConversions.h"
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -62,7 +62,7 @@ const std::string& AnonymizedMessage::GetString() const noexcept
 
 wxString AnonymizedMessage::ToWXString() const noexcept
 {
-   return audacity::ToWXString(mMessage);
+   return audacium::ToWXString(mMessage);
 }
 
 const char* AnonymizedMessage::c_str() const noexcept
@@ -88,4 +88,4 @@ void AnonymizedMessage::CleanupPaths()
 }
 
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

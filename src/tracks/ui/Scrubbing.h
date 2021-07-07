@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 Scrubbing.h
 
@@ -24,7 +24,7 @@ Paul Licameli split from TrackPanel.cpp
 #include "../../commands/CommandManager.h" // for MenuTable
 #include "Identifier.h"
 
-class AudacityProject;
+class AudaciumProject;
 class TranslatableString;
 
 // Conditionally compile either a separate thead, or else use a timer in the main
@@ -44,11 +44,11 @@ class AUDACITY_DLL_API Scrubber final
    , public std::enable_shared_from_this< Scrubber >
 {
 public:   
-   static Scrubber &Get( AudacityProject &project );
-   static const Scrubber &Get( const AudacityProject &project );
+   static Scrubber &Get( AudaciumProject &project );
+   static const Scrubber &Get( const AudaciumProject &project );
 
    explicit
-   Scrubber(AudacityProject *project);
+   Scrubber(AudaciumProject *project);
    Scrubber( const Scrubber & ) PROHIBITED;
    Scrubber &operator=( const Scrubber & ) PROHIBITED;
    ~Scrubber();
@@ -176,7 +176,7 @@ private:
    int mLogMaxScrubSpeed;
 #endif
 
-   AudacityProject *mProject;
+   AudaciumProject *mProject;
 
    DECLARE_EVENT_TABLE()
 

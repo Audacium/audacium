@@ -18,7 +18,7 @@ else # Linux & others
 
 fi
 
-# Build Audacity
+# Build Audacium
 cmake --build build -j "${cpus}" --config "${AUDACITY_BUILD_TYPE}"
 
 BIN_OUTPUT_DIR=build/bin/${AUDACITY_BUILD_TYPE}

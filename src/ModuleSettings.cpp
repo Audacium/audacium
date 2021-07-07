@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   @file ModuleSettings.cpp
 
@@ -18,7 +18,7 @@
 static const std::unordered_set<wxString> &autoEnabledModules()
 {
    // Add names to this list, of modules that are expected to ship
-   // with Audacity and enable automatically.
+   // with Audacium and enable automatically.
    static std::unordered_set<wxString> modules{
    };
    return modules;

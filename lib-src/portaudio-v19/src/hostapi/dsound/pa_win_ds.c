@@ -2055,7 +2055,7 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
         /* PaSampleFormat nativeFormats = paUInt8 | paInt16 | paInt24 | paInt32 | paFloat32; */
 
         /* July 2016 (Carsten and Uwe)
-         * http://bugzilla.audacityteam.org/show_bug.cgi?id=193
+         * http://bugzilla.audaciumteam.org/show_bug.cgi?id=193
          * Now we may over ride the paInt16.  
          */
         if (userData && *((int*)userData) == 24)

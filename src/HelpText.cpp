@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   HelpText.cpp
 
@@ -58,7 +58,7 @@ static wxString InnerLink( const wxString &Key, const wxString& Text )
 static wxString WikiLink( const wxString &Key, const wxString& Text )
 {
    return wxString(wxT("")) +
-      wxT("<a href='https://www.audacityteam.org/wiki/index.php?title=") +
+      wxT("<a href='https://www.audaciumteam.org/wiki/index.php?title=") +
       Key +
       wxT("'>") +
       Text +
@@ -233,7 +233,7 @@ static wxString HelpTextBuiltIn( const wxString & Key )
          << XO(
 "We strongly recommend that you use our latest stable released version, which has full documentation and support.<br><br>")
          << XO(
-"You can help us get Audacium ready for release by joining our [[https://www.audacityteam.org/community/|community]].<hr><br><br>")
+"You can help us get Audacium ready for release by joining our [[https://www.audaciumteam.org/community/|community]].<hr><br><br>")
 #endif
 
           << wxT("<center><h3>Audacium ")
@@ -244,24 +244,24 @@ static wxString HelpTextBuiltIn( const wxString & Key )
           << XO("These are our support methods:")
           << wxT("<p><ul><li>")
           /* i18n-hint: Preserve '[[help:Quick_Help|' as it's the name of a link.*/
-          << XO("[[help:Quick_Help|Quick Help]] - if not installed locally, [[https://manual.audacityteam.org/quick_help.html|view online]]")
+          << XO("[[help:Quick_Help|Quick Help]] - if not installed locally, [[https://manual.audaciumteam.org/quick_help.html|view online]]")
           << wxT("</li><li>")
           << XO(
               /* i18n-hint: Preserve '[[help:Main_Page|' as it's the name of a link.*/
-              " [[help:Main_Page|Manual]] - if not installed locally, [[https://manual.audacityteam.org/|view online]]")
+              " [[help:Main_Page|Manual]] - if not installed locally, [[https://manual.audaciumteam.org/|view online]]")
           << wxT("</li><li>")
           << XO(
-              " [[https://forum.audacityteam.org/|Forum]] - ask your question directly, online.")
+              " [[https://forum.audaciumteam.org/|Forum]] - ask your question directly, online.")
           << wxT("</li></ul></p><p>")
           << wxT("<b>")
-          << XO("More:</b> Visit our [[https://wiki.audacityteam.org/index.php|Wiki]] for tips, tricks, extra tutorials and effects plug-ins.")
+          << XO("More:</b> Visit our [[https://wiki.audaciumteam.org/index.php|Wiki]] for tips, tricks, extra tutorials and effects plug-ins.")
           << wxT("</p>")
    ;
 
       auto result = o.GetString();
 #ifdef USE_ALPHA_MANUAL
-      result.Replace( "//manual.audacityteam.org/quick_help.html","//alphamanual.audacityteam.org/man/Quick_Help" );
-      result.Replace( "//manual.audacityteam.org/","//alphamanual.audacityteam.org/man/" );
+      result.Replace( "//manual.audaciumteam.org/quick_help.html","//alphamanual.audaciumteam.org/man/Quick_Help" );
+      result.Replace( "//manual.audaciumteam.org/","//alphamanual.audaciumteam.org/man/" );
 #endif
 
       return WrapText( result );
@@ -275,13 +275,13 @@ static wxString HelpTextBuiltIn( const wxString & Key )
          << XO(
 "Audacium can import unprotected files in many other formats (such as M4A and WMA, \
 compressed WAV files from portable recorders and audio from video files) if you download and install \
-the optional [[https://manual.audacityteam.org/man/faq_opening_and_saving_files.html#foreign| \
+the optional [[https://manual.audaciumteam.org/man/faq_opening_and_saving_files.html#foreign| \
 FFmpeg library]] to your computer.")
          << wxT("</p><p>")
          <<  XO(
 "You can also read our help on importing \
-[[https://manual.audacityteam.org/man/playing_and_recording.html#midi|MIDI files]] \
-and tracks from [[https://manual.audacityteam.org/man/faq_opening_and_saving_files.html#fromcd| \
+[[https://manual.audaciumteam.org/man/playing_and_recording.html#midi|MIDI files]] \
+and tracks from [[https://manual.audaciumteam.org/man/faq_opening_and_saving_files.html#fromcd| \
 audio CDs]].")
          << wxT("</p>")
       ;
@@ -300,7 +300,7 @@ audio CDs]].")
              << XO(
     "The Manual does not appear to be installed. \
 Please [[*URL*|view the Manual online]] or \
-[[https://manual.audacityteam.org/man/unzipping_the_manual.html| \
+[[https://manual.audaciumteam.org/man/unzipping_the_manual.html| \
 download the Manual]].<br><br>\
 To always view the Manual online, change \"Location of Manual\" in \
 Interface Preferences to \"From Internet\".")
@@ -370,12 +370,12 @@ const wxString VerCheckHtml()
 // Url with Version check args attached.
 const URLString VerCheckUrl()
 {
-   //The version we intend to use for live Audacity.
-//#define VER_CHECK_URL "https://www.audacityteam.org/download/?"
+   //The version we intend to use for live Audacium.
+//#define VER_CHECK_URL "https://www.audaciumteam.org/download/?"
 // Disable update checking in Audacium for now
 #define VER_CHECK_URL "http://localhost/?"
 //For testing of our scriptlet.
-//#define VER_CHECK_URL "http://www.audacityteam.org/slug/?"
+//#define VER_CHECK_URL "http://www.audaciumteam.org/slug/?"
 //For testing locally
 //#define VER_CHECK_URL "http://localhost:63342/WorkingDocs/demos/download.html?"
 

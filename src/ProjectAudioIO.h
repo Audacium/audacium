@@ -1,10 +1,10 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectAudioIO.h
 
-Paul Licameli split from AudacityProject.h
+Paul Licameli split from AudaciumProject.h
 
 **********************************************************************/
 
@@ -14,7 +14,7 @@ Paul Licameli split from AudacityProject.h
 #include "ClientData.h" // to inherit
 #include <wx/weakref.h>
 
-class AudacityProject;
+class AudaciumProject;
 
 // Windows build needs complete type for parameter of wxWeakRef
 // class MeterPanelBase;
@@ -26,10 +26,10 @@ class AUDACITY_DLL_API ProjectAudioIO final
    : public ClientData::Base
 {
 public:
-   static ProjectAudioIO &Get( AudacityProject &project );
-   static const ProjectAudioIO &Get( const AudacityProject &project );
+   static ProjectAudioIO &Get( AudaciumProject &project );
+   static const ProjectAudioIO &Get( const AudaciumProject &project );
 
-   explicit ProjectAudioIO( AudacityProject &project );
+   explicit ProjectAudioIO( AudaciumProject &project );
    ProjectAudioIO( const ProjectAudioIO & ) PROHIBITED;
    ProjectAudioIO &operator=( const ProjectAudioIO & ) PROHIBITED;
    ~ProjectAudioIO();
@@ -44,7 +44,7 @@ public:
    void SetCaptureMeter(MeterPanelBase *capture);
 
 private:
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
 
    // Project owned meters
    wxWeakRef<MeterPanelBase> mPlaybackMeter{};

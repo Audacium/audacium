@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 ProjectStatus.h
 
@@ -18,7 +18,7 @@ Paul Licameli
 #include "ClientData.h" // to inherit
 #include "Prefs.h"
 
-class AudacityProject;
+class AudaciumProject;
 class wxWindow;
 
 enum StatusBarField : int {
@@ -39,10 +39,10 @@ class AUDACITY_DLL_API ProjectStatus final
    , public PrefsListener
 {
 public:
-   static ProjectStatus &Get( AudacityProject &project );
-   static const ProjectStatus &Get( const AudacityProject &project );
+   static ProjectStatus &Get( AudaciumProject &project );
+   static const ProjectStatus &Get( const AudaciumProject &project );
 
-   explicit ProjectStatus( AudacityProject &project );
+   explicit ProjectStatus( AudaciumProject &project );
    ProjectStatus( const ProjectStatus & ) = delete;
    ProjectStatus &operator= ( const ProjectStatus & ) = delete;
    ~ProjectStatus() override;
@@ -52,7 +52,7 @@ public:
    // be wide enough to contain any of those strings plus the margin.
    using StatusWidthResult = std::pair< std::vector<TranslatableString>, unsigned >;
    using StatusWidthFunction = std::function<
-      StatusWidthResult( const AudacityProject &, StatusBarField )
+      StatusWidthResult( const AudaciumProject &, StatusBarField )
    >;
    using StatusWidthFunctions = std::vector< StatusWidthFunction >;
 
@@ -73,6 +73,6 @@ public:
    void UpdatePrefs() override;
 
 private:
-   AudacityProject &mProject;
+   AudaciumProject &mProject;
    TranslatableString mLastStatusMessages[ nStatusBarFields ];
 };

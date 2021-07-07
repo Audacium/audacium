@@ -17,7 +17,7 @@ $copyright (_ "Released under terms of the GNU General Public License version 2"
 ;; http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ;;
 ;; For information about writing and modifying Nyquist plug-ins:
-;; https://wiki.audacityteam.org/wiki/Nyquist_Plug-ins_Reference
+;; https://wiki.audaciumteam.org/wiki/Nyquist_Plug-ins_Reference
 
 
 $control freq (_ "Frequency (Hz)") real "" 100 50 2000
@@ -31,7 +31,7 @@ $control gain (_ "Amplitude (0 - 1)") real "" 0.8 0 1
 (defun sanitise (val minx maxx)
   (min (max val minx) maxx))
 
-;; Not required with validation in Audacity 2.1.1 but left
+;; Not required with validation in Audacium 2.1.1 but left
 ;; for compatibility.
 (setq freq (sanitise freq 1 (/ *sound-srate* 2)))
 (setq decay (sanitise decay 0.1 600))

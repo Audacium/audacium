@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file SentryReport.cpp
  @brief Define a class to report errors to Sentry.
@@ -33,7 +33,7 @@
 
 #include "SentryRequestBuilder.h"
 
-namespace audacity
+namespace audacium
 {
 namespace sentry
 {
@@ -145,7 +145,7 @@ rapidjson::Document CreateSentryDocument()
    document["platform"].SetString(
       platform, sizeof(platform) - 1, document.GetAllocator());
 
-   const std::string release = std::string("audacity@") +
+   const std::string release = std::string("audacium@") +
                                std::to_string(AUDACITY_VERSION) + "." +
                                std::to_string(AUDACITY_RELEASE) + "." +
                                std::to_string(AUDACITY_REVISION);
@@ -425,4 +425,4 @@ void Report::Send(CompletionHandler completionHandler) const
 
 
 } // namespace sentry
-} // namespace audacity
+} // namespace audacium

@@ -1,6 +1,6 @@
 /*!*********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   @file PluginRegistrationDialog.cpp
 
@@ -9,11 +9,11 @@
 **********************************************************************/
 #include "PluginRegistrationDialog.h"
 
-#include "audacity/EffectInterface.h"
+#include "audacium/EffectInterface.h"
 #include "ModuleManager.h"
 #include "PluginManager.h"
 #include "ShuttleGui.h"
-#include "widgets/AudacityMessageBox.h"
+#include "widgets/AudaciumMessageBox.h"
 #include "widgets/ProgressDialog.h"
 
 #include <wx/setup.h> // for wxUSE_* macros
@@ -942,7 +942,7 @@ void PluginRegistrationDialog::OnOK(wxCommandEvent & WXUNUSED(evt))
                }
             }
             if (!errMsgs.empty())
-               AudacityMessageBox(
+               AudaciumMessageBox(
                   XO("Effect or Command at %s failed to register:\n%s")
                      .Format( path, errMsgs ) );
          }

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   GUIPrefs.cpp
 
@@ -33,10 +33,10 @@
 
 #include "ThemePrefs.h"
 #include "../AColor.h"
-#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/AudaciumMessageBox.h"
 
 GUIPrefs::GUIPrefs(wxWindow * parent, wxWindowID winid)
-/* i18n-hint: refers to Audacity's user interface settings */
+/* i18n-hint: refers to Audacium's user interface settings */
 :  PrefsPanel(parent, winid, XC("Interface", "GUI"))
 {
    Populate();
@@ -102,7 +102,7 @@ void GUIPrefs::Populate()
 {
    // First any pre-processing for constructing the GUI.
    Languages::GetLanguages(
-      FileNames::AudacityPathList(), mLangCodes, mLangNames);
+      FileNames::AudaciumPathList(), mLangCodes, mLangNames);
 
    GetRangeChoices(&mRangeChoices, &mRangeCodes, &mDefaultRangeIndex);
 
@@ -200,7 +200,7 @@ void GUIPrefs::PopulateOrExchange(ShuttleGui & S)
       S.TieCheckBox(XXO("Re&tain labels if selection snaps to a label"),
                     {wxT("/GUI/RetainLabels"),
                      false});
-      S.TieCheckBox(XXO("B&lend system and Audacity theme"),
+      S.TieCheckBox(XXO("B&lend system and Audacium theme"),
                     {wxT("/GUI/BlendThemes"),
                      true});
 #ifndef __WXMAC__
@@ -255,9 +255,9 @@ bool GUIPrefs::Commit()
 
 wxString GUIPrefs::SetLang( const wxString & lang )
 {
-   auto result = Languages::SetLang(FileNames::AudacityPathList(), lang);
+   auto result = Languages::SetLang(FileNames::AudaciumPathList(), lang);
    if (!(lang.empty() || lang == L"System") && result != lang)
-      ::AudacityMessageBox(
+      ::AudaciumMessageBox(
          XO("Language \"%s\" is unknown").Format( lang ) );
 
 #ifdef EXPERIMENTAL_CEE_NUMBERS_OPTION
@@ -288,7 +288,7 @@ int ShowTrackNameInWaveformPrefsID()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "GUI",
-   [](wxWindow *parent, wxWindowID winid, AudacityProject *)
+   [](wxWindow *parent, wxWindowID winid, AudaciumProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew GUIPrefs(parent, winid);

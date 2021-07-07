@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
 
   EditToolbar.h
@@ -72,7 +72,7 @@ class EditToolBar final : public ToolBar {
 
  public:
 
-   EditToolBar( AudacityProject &project );
+   EditToolBar( AudaciumProject &project );
    virtual ~EditToolBar();
 
    void Create(wxWindow *parent) override;
