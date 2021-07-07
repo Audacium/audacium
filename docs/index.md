@@ -28,7 +28,7 @@ Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe
 ## Getting Started
 
 For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
-Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/jQrv5rmzsK) (the two are bridged together).
+Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/ZH5234Abhb) (the two are bridged together).
 
 Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/blob/master/BUILDING.md).
 
