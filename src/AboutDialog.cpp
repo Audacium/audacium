@@ -123,6 +123,7 @@ void AboutDialog::CreateCreditsList()
       XO("%s, graphics");
 
    // The Audacium Team: developers and support
+   /*
    AddCredit(wxT("Anton Gerasimov"), developerFormat, roleTeamMember);
    AddCredit(wxT("Paul Licameli"), developerFormat, roleTeamMember);
    AddCredit(wxT("Vitaly Sverchinsky"), developerFormat, roleTeamMember);
@@ -211,7 +212,7 @@ void AboutDialog::CreateCreditsList()
 
    // Website and Graphics
    AddCredit(wxT("Shinta Carolinasari"), webDeveloperFormat, roleGraphics);
-   AddCredit(wxT("Bayu Rizaldhan Rayes"), graphicsFormat, roleGraphics);
+   AddCredit(wxT("Bayu Rizaldhan Rayes"), graphicsFormat, roleGraphics);*/
 
    // Libraries
 
@@ -245,6 +246,7 @@ void AboutDialog::CreateCreditsList()
 
    // Thanks
 
+   /*
    AddCredit(wxT("Dave Beydler"), roleThanks);
    AddCredit(wxT("Brian Cameron"), roleThanks);
    AddCredit(wxT("Jason Cohen"), roleThanks);
@@ -265,7 +267,7 @@ void AboutDialog::CreateCreditsList()
    AddCredit(wxT("Rudy Trubitt"), roleThanks);
    AddCredit(wxT("StreetIQ.com"), roleThanks);
    AddCredit(wxT("UmixIt Technologies, LLC"), roleThanks);
-   AddCredit(wxT("Verilogix, Inc."), roleThanks);
+   AddCredit(wxT("Verilogix, Inc."), roleThanks);*/
 }
 
 // ----------------------------------------------------------------------------
@@ -403,10 +405,12 @@ visit our %s.")
       << wxT("</b><br>")
       << GetCreditsByRole(roleTeamMember)
 
+      
       << wxT("<p><b> ")
       << XO("Emeritus:")
       << wxT("</b><br>")
       /* i18n-hint: The program's name substitutes for %s */
+      
       << XO("Distinguished %s Team members, not currently active")
          .Format( ProgramName )
       << wxT("<br><br>")
@@ -421,6 +425,7 @@ visit our %s.")
       << XO("Website and Graphics")
       << wxT("</b><br>")
       << GetCreditsByRole(roleGraphics)
+      
    ;
 
    if(!translatorCredits.empty()) informationStr
@@ -428,6 +433,7 @@ visit our %s.")
       << XO("Translators")
       << wxT("</b><br>")
       << translatorCredits
+      
    ;
 
    informationStr
