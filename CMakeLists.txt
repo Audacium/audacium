@@ -131,7 +131,7 @@ endif()
 set( _OPT "audacity_" )
 
 # Our very own project
-project( Audacity )
+project( Audacium )
 
 # Load our functions/macros
 include( AudacityFunctions )
