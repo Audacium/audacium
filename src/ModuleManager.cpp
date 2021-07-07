@@ -31,6 +31,7 @@ i.e. an alternative to the usual interface, for Audacium.
 
 #include "FileNames.h"
 #include "MemoryX.h"
+#include "PluginManager.h"
 
 #include "audacium/PluginInterface.h"
 
@@ -456,6 +457,8 @@ bool ModuleManager::DiscoverProviders()
 
 void ModuleManager::InitializeBuiltins()
 {
+   PluginManager& pm = PluginManager::Get();
+
    for (auto moduleMain : builtinModuleList())
    {
       ModuleInterfaceHandle module {
@@ -466,10 +469,15 @@ void ModuleManager::InitializeBuiltins()
       {
          // Register the provider
          ModuleInterface *pInterface = module.get();
-         auto id = GetID(pInterface);
 
-         // Need to remember it 
+         // Register the module
+         const PluginID& id = pm.RegisterPlugin(pInterface);
+
+         // Need to remember it
          mDynModules[id] = std::move(module);
+
+         // Allow the module to auto-register children
+         pInterface->AutoRegisterPlugins(pm);
       }
       else
       {

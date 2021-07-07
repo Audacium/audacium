@@ -478,29 +478,13 @@ visit our %s.")
       //v For now, change to AudaciumLogoWithName via old-fashioned way, not Theme.
       wxBitmap logo(AudaciumLogoWithName_xpm); //v
 
-      // JKC: Resize to 50% of size.  Later we may use a smaller xpm as
-      // our source, but this allows us to tweak the size - if we want to.
-      // It also makes it easier to revert to full size if we decide to.
-      const float fScale = 0.5f;// smaller size.
-      wxImage RescaledImage(logo.ConvertToImage());
-      // Fixes background color of image being black when using transparent images.
-      /*wxColour MainColour(
-         RescaledImage.GetRed(1,1), 
-         RescaledImage.GetGreen(1,1), 
-         RescaledImage.GetBlue(1,1));
-      pPage->SetBackgroundColour(MainColour);*/
-      // wxIMAGE_QUALITY_HIGH not supported by wxWidgets 2.6.1, or we would use it here.
-      RescaledImage.Rescale((int)(LOGOWITHNAME_WIDTH * fScale), (int)(LOGOWITHNAME_HEIGHT *fScale));
-      wxBitmap RescaledBitmap(RescaledImage);
-
       icon =
-         safenew wxStaticBitmap(S.GetParent(), -1,
-         //*logo, //v
-         //v theTheme.Bitmap(bmpAudaciumLogo), wxPoint(93, 10), wxSize(215, 190));
-         //v theTheme.Bitmap(bmpAudaciumLogoWithName),
-         RescaledBitmap,
-         wxDefaultPosition,
-         wxSize((int)(LOGOWITHNAME_WIDTH*fScale), (int)(LOGOWITHNAME_HEIGHT*fScale)));
+          safenew wxStaticBitmap(S.GetParent(), -1,
+              //*logo, //v
+              //v theTheme.Bitmap(bmpAudacityLogo), wxPoint(93, 10), wxSize(215, 190));
+              //v theTheme.Bitmap(bmpAudacityLogoWithName),
+              logo,
+              wxDefaultPosition);
    }
    S.Prop(0).AddWindow( icon );
 

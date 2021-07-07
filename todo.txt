@@ -1,13 +1,5 @@
 todo.txt
 
-See also the Audacium Bugzilla for some logged enhancement issues:
-http://tinyurl.com/32udrem
-
-and ideas on Feature Requests:
-http://wiki.audaciumteam.org/wiki/Feature_Requests
-
-Some other useful ideas may still be be found on:
-http://wiki.audaciumteam.org/wiki/Release_checklist_not_aiming_for_1.4
 
 Residual things from the past still undone as at end-2012:
 
@@ -93,7 +85,6 @@ components which sum to the original.
 
 [JKC] Audio Diff: Ability to compare waveforms and have this 
 displayed graphically. 
-See http://wiki.audaciumteam.org/wiki/Proposal_Audio_Diff .
 [JS] Can a plug-in operate on two tracks and generate preview to
 third track? Or replace the second track with the result.
 It would be essential that the subtraction between two tracks
@@ -185,7 +176,6 @@ Effects::
 Future:
 -----------------------------------------------------------
 
-- Speed issues especially with longer projects: http://tinyurl.com/c6qcehm 
 - Edit markers on waveform (as distinct from cut and split lines)
 - discontiguous selection
 - visualization window: VU meters, equalizer, continuous waveform, oscilloscope

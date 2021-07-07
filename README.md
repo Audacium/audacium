@@ -14,7 +14,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 
 ----------------
 
-[**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
+[**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
 - **Recording** from any real, or virtual audio device that is available to the host system.
 - **Export / Import** a wide range of audio formats, extendible with FFmpeg.
@@ -35,6 +35,9 @@ Help with using Audacium is available from the [Matrix room](https://matrix.to/#
 Build instructions are available [here](BUILDING.md).
 
 More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
+
+## How to contribute
+Submit a pull request and we'll merge it!
 
 ## Donations
 You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :

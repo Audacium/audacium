@@ -6,7 +6,7 @@
       name="Audacium.Audacium.Audacium"
       type="win32"
   />
-  <description>Audacium® Cross-Platform Sound Editor</description>
+  <description>Audacium Cross-Platform Sound Editor</description>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
     <security>
       <requestedPrivileges>

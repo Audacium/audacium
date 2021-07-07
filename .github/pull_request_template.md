@@ -4,7 +4,8 @@ Resolves: *(direct link to the issue)*
 
 <!-- Use "x" to fill the checkboxes below like [x] -->
 
-- [ ] I made sure the code compiles on my machine
-- [ ] I made sure there are no unnecessary changes in the code
-- [ ] I made sure the title of the PR reflects the core meaning of the issue you are solving
-- [ ] I made sure the commit message(s) contain a description and answer the question "Why do those changes fix that particular issue?" or "Why are those changes really necessary as improvements?"
+- [ ] I made sure the code compiles on my machine.
+- [ ] I made sure there are no unnecessary changes in the code.
+- [ ] I made sure the title of the PR reflects the core meaning of the issue you are solving.
+- [ ] I made sure the commit message(s) contain a description and answer the question "Why do those changes fix that particular issue?" or "Why are those changes really necessary as improvements?".
+- [ ] I hereby reaffirm that I am licensing my contribution under the GNU General Public License v2.0 or later (`GPL-2.0-or-later`).

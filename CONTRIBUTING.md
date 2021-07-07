@@ -1,26 +1,4 @@
-# Contributing
+# Contribution guidelines
+This project requires contributors to license their contributions under the GNU General Public License v2.0 or later (`GPL-2.0-or-later`). This allows it to use upstream code from Audacity when [they switch to GNU General Public License version 3](https://github.com/audacity/audacity/discussions/932).
 
-Information about contributing to Audacium is available at https://wiki.audaciumteam.org/wiki/Contribute
-
-Visit that page to find up to date links.
-
-## Feedback
-
-* The Audacium forum is the best place to get help with using Audacium.
-* Suggestions for improvements to Audacium are best sent to the Audacium forum.
-* Bug reports to our feedback email address.
-
-## Developing
-
-* To discuss code for a proposed change, best to subscribe to audacium devel email list.
-* Code must be GPL v2 compatible.  
-
-## Translation
-
-* Best to subscribe to the translation email address
-
-## Supporting Users
-
-* Best done on the Audacium forum.
-
-
+More information for contributing is available on the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
