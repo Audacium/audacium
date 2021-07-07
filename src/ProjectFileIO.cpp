@@ -654,7 +654,7 @@ bool ProjectFileIO::CheckVersion()
    // It's a database that SQLite recognizes, but it's not one of ours
    if (wxStrtoul<char **>(result, nullptr, 10) != ProjectFileID)
    {
-      SetError(XO("This is not an Audacity project file"));
+      SetError(XO("This is not an Audacium project file"));
       return false;
    }
 
@@ -671,7 +671,7 @@ bool ProjectFileIO::CheckVersion()
    if (version > ProjectFileVersion)
    {
       SetError(
-         XO("This project was created with a newer version of Audacity.\n\nYou will need to upgrade to open it.")
+         XO("This project was created with a newer version of Audacium.\n\nYou will need to upgrade to open it.")
       );
       return false;
    }
@@ -1193,7 +1193,7 @@ bool ProjectFileIO::RenameOrWarn(const FilePath &src, const FilePath &dst)
       ShowError(
          &window,
          XO("Error Writing to File"),
-         XO("Audacity failed to write file %s.\n"
+         XO("Audacium failed to write file %s.\n"
             "Perhaps disk is full or not writable.\n"
             "For tips on freeing up space, click the help button.")
             .Format(dst),
@@ -1460,7 +1460,7 @@ void ProjectFileIO::SetProjectTitle(int number)
    {
       name =
       /* i18n-hint: The %02i is the project number, the %s is the project name.*/
-      XO("[Project %02i] Audacity \"%s\"")
+      XO("[Project %02i] Audacium \"%s\"")
          .Format( number + 1,
                  name.empty() ? XO("<untitled>") : Verbatim((const char *)name))
          .Translation();
@@ -1633,7 +1633,7 @@ bool ProjectFileIO::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
    if (codeVer<fileVer)
    {
       /* i18n-hint: %s will be replaced by the version number.*/
-      auto msg = XO("This file was saved using Audacity %s.\nYou are using Audacity %s. You may need to upgrade to a newer version to open this file.")
+      auto msg = XO("This file was saved using Audacium %s.\nYou are using Audacium %s. You may need to upgrade to a newer version to open this file.")
          .Format(audacityVersion, AUDACITY_VERSION_STRING);
 
       ShowError(
