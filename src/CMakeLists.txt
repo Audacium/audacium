@@ -1,5 +1,5 @@
 
-set( TARGET Audacity )
+set( TARGET Audacium )
 set( TARGET_ROOT ${topdir}/src )
 
 message( STATUS "========== Configuring ${TARGET} ==========" )
@@ -1091,7 +1091,6 @@ list( APPEND LIBRARIES
       libsoxr
       portaudio-v19
       sqlite
-      $<$<BOOL:${${_OPT}has_crashreports}>:crashreports>
       $<$<BOOL:${USE_FFMPEG}>:ffmpeg>
       $<$<BOOL:${USE_LIBID3TAG}>:libid3tag::libid3tag>
       $<$<BOOL:${USE_LIBFLAC}>:libflac>
@@ -1152,7 +1151,7 @@ if( CMAKE_SYSTEM_NAME MATCHES "Windows" )
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Audacity.exe"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Audacium.exe"
                           -D DST="${_EXEDIR}"
                           -D WXWIN="${_SHARED_PROXY_BASE_PATH}/$<CONFIG>/"
                           -P ${AUDACITY_MODULE_PATH}/CopyLibs.cmake
@@ -1237,7 +1236,7 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Audacity"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Audacium"
                           -D DST="${_PKGLIB}"
                           -D WXWIN="${_SHARED_PROXY_BASE_PATH}/$<CONFIG>"
                           -P ${AUDACITY_MODULE_PATH}/CopyLibs.cmake
@@ -1306,7 +1305,7 @@ else()
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/audacity"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/audacium"
                           -D DST="${_DEST}/${_PKGLIB}"
                           -D WXWIN="${_SHARED_PROXY_BASE_PATH}/$<CONFIG>"
                           -P ${AUDACITY_MODULE_PATH}/CopyLibs.cmake

@@ -8,7 +8,7 @@ cmake_minimum_required( VERSION 3.15 )
 # If building with GNU compiler, then must be 4.9 or later.
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND
     CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.9")
-   message(FATAL_ERROR "Audacity requires at least GCC 4.9")
+   message(FATAL_ERROR "Audacium requires at least GCC 4.9")
 endif ()
 
 # We only do alpha builds, beta builds, and release versions.
@@ -21,7 +21,7 @@ endif ()
 # Set this value to 0 for alpha, 1 for beta, 2 for release builds
 set( AUDACITY_BUILD_LEVEL 0 )
 
-# The Audacity version
+# The Audacium version
 # Increment as appropriate after release of a new version, and set back
 # AUDACITY_BUILD_LEVEL to 0
 set( AUDACITY_VERSION 3 )
@@ -152,7 +152,7 @@ cmd_option( ${_OPT}obey_system_dependencies
 )
 
 cmd_option( ${_OPT}has_networking 
-   "Build networking features into Audacity"
+   "Build networking features into Audacium"
    Off)
 
 include( AudacityDependencies )
@@ -185,7 +185,7 @@ cmake_dependent_option(
 
 cmake_dependent_option(
    ${_OPT}has_crashreports
-   "Enables crash reporting for Audacity"
+   "Enables crash reporting for Audacium"
    On
    "${_OPT}has_networking;DEFINED CRASH_REPORT_URL"
    Off
@@ -193,7 +193,7 @@ cmake_dependent_option(
 
 cmake_dependent_option(
    ${_OPT}has_updates_check
-   "Build updates checking features into Audacity"
+   "Build updates checking features into Audacium"
    On
    "${_OPT}has_networking"
    Off
@@ -273,7 +273,7 @@ message( STATUS )
 set_property( GLOBAL PROPERTY USE_FOLDERS ON )
 
 if( CMAKE_GENERATOR MATCHES "Visual Studio" )
-   # Make sure Audacity is the startup project
+   # Make sure Audacium is the startup project
    set_directory_properties(
       PROPERTIES
          VS_STARTUP_PROJECT "${CMAKE_PROJECT_NAME}"
@@ -314,7 +314,7 @@ set( _PREFIX "${CMAKE_INSTALL_PREFIX}" )
 set( _LIBDIR "${CMAKE_INSTALL_LIBDIR}" )
 set( _DATADIR "${CMAKE_INSTALL_DATADIR}" )
 set( _PKGLIB "${_LIBDIR}/audacity" )
-set( _PKGDATA "${_DATADIR}/audacity/" )
+set( _PKGDATA "${_DATADIR}/audacium/" )
 set( _MANDIR "${CMAKE_INSTALL_MANDIR}" )
 set( _MODDIR "${_DEST}/modules" )
 set( _EXEDIR "${_DEST}" )
@@ -477,11 +477,11 @@ if( NOT CMAKE_INSTALL_LIBDIR STREQUAL "lib" AND NOT EXISTS "${CMAKE_BINARY_DIR}/
    file( CREATE_LINK "${CMAKE_BINARY_DIR}/lib" "${CMAKE_BINARY_DIR}/lib64" SYMBOLIC )
 endif()
 
-# Define Audacity's name
+# Define Audacium's name
 if( CMAKE_SYSTEM_NAME MATCHES "Darwin|Windows" )
-   set( AUDACITY_NAME "Audacity" )
+   set( AUDACITY_NAME "Audacium" )
 else()
-   set( AUDACITY_NAME "audacity" )
+   set( AUDACITY_NAME "audacium" )
 endif()
 
 # Create short and full version strings
@@ -509,9 +509,6 @@ add_subdirectory( "cmake-proxies" )
 resolve_conan_dependencies()
 
 add_subdirectory( "help" )
-if(${_OPT}has_crashreports)
-add_subdirectory( "crashreports" )
-endif()
 add_subdirectory( "images" )
 add_subdirectory( "libraries" )
 add_subdirectory( "locale" )
