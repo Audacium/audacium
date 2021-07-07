@@ -477,11 +477,12 @@ visit our %s.")
       // It also makes it easier to revert to full size if we decide to.
       const float fScale = 0.5f;// smaller size.
       wxImage RescaledImage(logo.ConvertToImage());
-      wxColour MainColour( 
+      // Fixes background color of image being black when using transparent images.
+      /*wxColour MainColour(
          RescaledImage.GetRed(1,1), 
          RescaledImage.GetGreen(1,1), 
          RescaledImage.GetBlue(1,1));
-      pPage->SetBackgroundColour(MainColour);
+      pPage->SetBackgroundColour(MainColour);*/
       // wxIMAGE_QUALITY_HIGH not supported by wxWidgets 2.6.1, or we would use it here.
       RescaledImage.Rescale((int)(LOGOWITHNAME_WIDTH * fScale), (int)(LOGOWITHNAME_HEIGHT *fScale));
       wxBitmap RescaledBitmap(RescaledImage);
