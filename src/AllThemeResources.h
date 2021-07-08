@@ -234,8 +234,6 @@ from there.  Audacity will look for a file called "Pause.png".
 
 // DA: The logo with name xpm has a different width.
 #define LOGOWITHNAME_WIDTH 506
-#endif
-
 #define LOGOWITHNAME_HEIGHT 200
 
    SET_THEME_FLAGS( resFlagNewLine );
