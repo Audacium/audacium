@@ -96,8 +96,8 @@ jobs:
           host-Ubuntu_18.04-
 
     - run: |
-      exec bash "scripts/ci/configure.sh"
-      exec bash "scripts/ci/build.sh"
+        exec bash "scripts/ci/configure.sh"
+        exec bash "scripts/ci/build.sh"
 
 
     - name: Perform CodeQL Analysis
