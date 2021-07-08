@@ -124,7 +124,7 @@ void AboutDialog::CreateCreditsList()
 
    // The Audacium Team: developers and support
    AddCredit(wxT("@AnErrupTion"), developerAndSupprtFormat, roleTeamMember);
-   AddCredit(wxT("@Semisol"), documentationAndSupportFormat, roleTeamMember);
+   AddCredit(wxT("@Semisol"), testerFormat, roleTeamMember);
    AddCredit(wxT("@4-04"), developerFormat, roleTeamMember);
 
    // Contributors
