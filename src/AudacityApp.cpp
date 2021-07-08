@@ -1423,7 +1423,7 @@ bool AudacityApp::InitPart2()
 
       wxSplashScreen temporarywindow(
          logoimage,
-         wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_NO_TIMEOUT,
+         wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
          0,
          NULL,
          wxID_ANY,
