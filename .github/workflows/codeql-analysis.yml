@@ -14,11 +14,11 @@ name: "CodeQL"
 on:
   schedule:
     - cron: '19 22 * * 1'
-    paths-ignore:
-      - "docs/**"
-      - "**.md"
-      - "**.dox"
-      - "**.dox.in"
+      paths-ignore:
+        - "docs/**"
+        - "**.md"
+        - "**.dox"
+        - "**.dox.in"
   
   workflow_dispatch:
     paths-ignore:
