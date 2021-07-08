@@ -48,7 +48,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'cpp', 'python' ]
+        language: [ 'cpp' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
         # Learn more:
         # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
@@ -79,12 +79,15 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    - name: Dependencies and environment (C++)
+    - name: Dependencies
       run: |
         exec bash "scripts/ci/dependencies.sh"
+
+    - name: Environment
+      run: |
         source "scripts/ci/environment.sh"
 
-    - name: Cache for .conan (C++)
+    - name: Cache for .conan
       id: cache-conan
       uses: actions/cache@v2
       env:
@@ -95,8 +98,12 @@ jobs:
         restore-keys: |
           host-Ubuntu_18.04-
 
-    - run: |
+    - name: Configure
+      run: |
         exec bash "scripts/ci/configure.sh"
+
+    - name: Build
+      run: |
         exec bash "scripts/ci/build.sh"
 
 
