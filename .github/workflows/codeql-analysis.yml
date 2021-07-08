@@ -24,6 +24,16 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    env:
+      AUDACITY_CMAKE_GENERATOR: ${{ matrix.config.generator }}
+      AUDACITY_ARCH_LABEL: ${{ matrix.config.arch }}
+      # Windows codesigning
+      # This variables will be used by all the steps
+      WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
+      WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+      # Conan home location to be used for cache action
+      CONAN_USER_HOME: "${{ github.workspace }}/conan-home/"
+      CONAN_USER_HOME_SHORT: "${{ github.workspace }}/conan-home/short"
     permissions:
       actions: read
       contents: read
@@ -53,8 +63,8 @@ jobs:
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    # - name: Autobuild
+    #    uses: github/codeql-action/autobuild@v1
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
@@ -63,9 +73,43 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    #- run: |
-    #   make bootstrap
-    #   make release
+    - name: Dependencies
+      run: |
+        exec bash "scripts/ci/dependencies.sh"
+
+    - name: Environment
+      run: |
+        source "scripts/ci/environment.sh"
+
+    - name: Cache for .conan
+      id: cache-conan
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-conan-modules
+      with:
+        path: ${{ env.CONAN_USER_HOME }}
+        key: host-${{ matrix.config.name }}-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
+        restore-keys: |
+          host-${{ matrix.config.name }}-
+
+    - name: Configure
+      env:
+        # Error reporting
+        SENTRY_DSN_KEY: ${{ secrets.SENTRY_DSN_KEY }}
+        SENTRY_HOST: ${{ secrets.SENTRY_HOST }}
+        SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        CRASH_REPORT_URL: ${{ secrets.CRASH_REPORT_URL }}
+        # Apple code signing
+        APPLE_CODESIGN_IDENTITY: ${{ secrets.APPLE_CODESIGN_IDENTITY }}
+        APPLE_NOTARIZATION_USER_NAME: ${{ secrets.APPLE_NOTARIZATION_USER_NAME }}
+        APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
+      run: |
+        exec bash "scripts/ci/configure.sh"
+
+    - name: Build
+      run: |
+        exec bash "scripts/ci/build.sh"
+
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
