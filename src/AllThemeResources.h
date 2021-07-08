@@ -228,11 +228,11 @@ from there.  Audacity will look for a file called "Pause.png".
    DEFINE_IMAGE( bmpBottomFrequencyCursor, wxImage( 32, 32 ), wxT("BottomFrequencyCursor"));
    DEFINE_IMAGE( bmpTopFrequencyCursor, wxImage( 32, 32 ), wxT("TopFrequencyCursor"));
    DEFINE_IMAGE( bmpBandWidthCursor, wxImage(32, 32), wxT("BandWidthCursor"));
+   DEFINE_IMAGE( bmpSubViewsCursor, wxImage(32, 32), wxT("SubViewsCursor"));
 
    //SET_THEME_FLAGS(  resFlagNewLine  );
 
 // DA: The logo with name xpm has a different width.
-#ifdef EXPERIMENTAL_DA
 #define LOGOWITHNAME_WIDTH 629
 #else
 #define LOGOWITHNAME_WIDTH 506
