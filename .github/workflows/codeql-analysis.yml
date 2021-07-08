@@ -13,8 +13,18 @@ name: "CodeQL"
 
 on:
   push:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
     branches: [ master ]
   pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
     # The branches below must be a subset of the branches above
     branches: [ master ]
   schedule:
@@ -27,10 +37,6 @@ jobs:
     env:
       AUDACITY_CMAKE_GENERATOR: Unix Makefiles
       AUDACITY_ARCH_LABEL: x86_64
-      # Windows codesigning
-      # This variables will be used by all the steps
-      WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
-      WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
       # Conan home location to be used for cache action
       CONAN_USER_HOME: "${{ github.workspace }}/conan-home/"
       CONAN_USER_HOME_SHORT: "${{ github.workspace }}/conan-home/short"
@@ -73,42 +79,25 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    - name: Dependencies
+    - name: Dependencies and environment (C++)
       run: |
         exec bash "scripts/ci/dependencies.sh"
-
-    - name: Environment
-      run: |
         source "scripts/ci/environment.sh"
 
-    - name: Cache for .conan
+    - name: Cache for .conan (C++)
       id: cache-conan
       uses: actions/cache@v2
       env:
         cache-name: cache-conan-modules
       with:
         path: ${{ env.CONAN_USER_HOME }}
-        key: host-${{ matrix.config.name }}-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
+        key: host-Ubuntu_18.04-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
         restore-keys: |
-          host-${{ matrix.config.name }}-
+          host-Ubuntu_18.04-
 
-    - name: Configure
-      env:
-        # Error reporting
-        SENTRY_DSN_KEY: ${{ secrets.SENTRY_DSN_KEY }}
-        SENTRY_HOST: ${{ secrets.SENTRY_HOST }}
-        SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-        CRASH_REPORT_URL: ${{ secrets.CRASH_REPORT_URL }}
-        # Apple code signing
-        APPLE_CODESIGN_IDENTITY: ${{ secrets.APPLE_CODESIGN_IDENTITY }}
-        APPLE_NOTARIZATION_USER_NAME: ${{ secrets.APPLE_NOTARIZATION_USER_NAME }}
-        APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
-      run: |
-        exec bash "scripts/ci/configure.sh"
-
-    - name: Build
-      run: |
-        exec bash "scripts/ci/build.sh"
+    - run: |
+      exec bash "scripts/ci/configure.sh"
+      exec bash "scripts/ci/build.sh"
 
 
     - name: Perform CodeQL Analysis

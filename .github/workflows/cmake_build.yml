@@ -2,7 +2,17 @@ name: CMake Build
 
 on:
   push:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
   pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
 
 defaults:
   run:
