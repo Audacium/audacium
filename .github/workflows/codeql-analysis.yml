@@ -99,6 +99,16 @@ jobs:
           host-Ubuntu_18.04-
 
     - name: Configure
+      env:
+        # Error reporting
+        SENTRY_DSN_KEY: ${{ secrets.SENTRY_DSN_KEY }}
+        SENTRY_HOST: ${{ secrets.SENTRY_HOST }}
+        SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        CRASH_REPORT_URL: ${{ secrets.CRASH_REPORT_URL }}
+        # Apple code signing
+        APPLE_CODESIGN_IDENTITY: ${{ secrets.APPLE_CODESIGN_IDENTITY }}
+        APPLE_NOTARIZATION_USER_NAME: ${{ secrets.APPLE_NOTARIZATION_USER_NAME }}
+        APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
       run: |
         exec bash "scripts/ci/configure.sh"
 
