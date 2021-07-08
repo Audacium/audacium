@@ -221,9 +221,8 @@ static wxString HelpTextBuiltIn( const wxString & Key )
       s
 #if defined(IS_ALPHA) || defined(IS_BETA)
          << wxT("<hr><center><h3>")
-         << XO("Get the Official Released Version of Audacium")
+         << XO("Get the latest released version of Audacium")
          << wxT("</h3></center>")
-         << VerCheckHtml()
 #ifdef IS_ALPHA
          << alphamsg
 #else
@@ -233,7 +232,7 @@ static wxString HelpTextBuiltIn( const wxString & Key )
          << XO(
 "We strongly recommend that you use our latest stable released version, which has full documentation and support.<br><br>")
          << XO(
-"You can help us get Audacium ready for release by joining our [[https://www.audacityteam.org/community/|community]].<hr><br><br>")
+"You can help us get Audacium ready for release by joining our [[https://matrix.to/#/#audacium:envs.net|Matrix]] or [[https://discord.gg/pKZpekusNk|Discord]].<hr><br><br>")
 #endif
 
           << wxT("<center><h3>Audacium ")
@@ -254,7 +253,7 @@ static wxString HelpTextBuiltIn( const wxString & Key )
               " [[https://forum.audacityteam.org/|Forum]] - ask your question directly, online.")
           << wxT("</li></ul></p><p>")
           << wxT("<b>")
-          << XO("More:</b> Visit our [[https://wiki.audacityteam.org/index.php|Wiki]] for tips, tricks, extra tutorials and effects plug-ins.")
+          << XO("More:</b> Visit our [[https://github.com/SartoxOnlyGNU/audacium/wiki|Wiki]] for tips, tricks, extra tutorials and effects plug-ins.")
           << wxT("</p>")
    ;
 
@@ -340,44 +339,4 @@ wxString FormatHtmlText( const wxString & Text ){
       wxT("\"></head>") +
       WrapText( LinkExpand( Text ))+
       wxT("</html>");
-}
-
-// Function to give the extra arguments to put on the version check string.
-const wxString VerCheckArgs(){
-   wxString result = wxString("from_ver=") + AUDACITY_VERSION_STRING;
-#ifdef REV_LONG
-   result += wxString("&CommitId=")+wxString(REV_LONG).Left(6);
-#endif
-   result += wxString("&Time=") + wxString( __DATE__ ) + wxString( __TIME__ );
-   result.Replace(" ","");
-   return result;
-}
-
-// Text of hyperlink to check versions.
-const wxString VerCheckHtml()
-{
-   wxStringOutputStream o;
-   wxTextOutputStream s(o);
-   s
-      << "<center>[["
-      << VerCheckUrl().GET()
-      << "|"
-      << XO("Check Online")
-      << "]]</center>\n";
-   return o.GetString();
-}
-
-// Url with Version check args attached.
-const URLString VerCheckUrl()
-{
-   //The version we intend to use for live Audacity.
-//#define VER_CHECK_URL "https://www.audacityteam.org/download/?"
-// Disable update checking in Audacium for now
-#define VER_CHECK_URL "http://localhost/?"
-//For testing of our scriptlet.
-//#define VER_CHECK_URL "http://www.audacityteam.org/slug/?"
-//For testing locally
-//#define VER_CHECK_URL "http://localhost:63342/WorkingDocs/demos/download.html?"
-
-   return wxString( wxT(VER_CHECK_URL)) +VerCheckArgs();
 }

@@ -37,18 +37,9 @@ wxChar Internat::mDecimalSeparator = wxT('.'); // default
 // exclude is used by SanitiseFilename.
 wxArrayString Internat::exclude;
 
-// TODO : Remove useless function
-STRINGS_API const wxString& GetCustomSubstitution(const wxString& str1)
-{
-    return str1;
-}
-
-// In any translated string, we can replace the name 'Audacity' by 'DarkAudacity'
-// without requiring translators to see extra strings for the two versions.
 STRINGS_API const wxString& GetCustomTranslation(const wxString& str1)
 {
-   const wxString& str2 = wxGetTranslation( str1 );
-   return GetCustomSubstitution( str2 );
+   return wxGetTranslation( str1 );
 }
 
 

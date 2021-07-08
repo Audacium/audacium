@@ -409,10 +409,9 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
    /* this builds up the list of information to go in the window in the string
     * informationStr */
    informationStr
-      << wxT("<h2><center>")
-      << XO("Build Information")
-      << wxT("</center></h2>\n")
-      << VerCheckHtml();
+       << wxT("<h2><center>")
+       << XO("Build Information")
+       << wxT("</center></h2>\n");
  
    informationStr
       << wxT("<h3>")
@@ -568,12 +567,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
       << XO("Features")
       << wxT("</h3>\n<table>");  // start table of features
 
-// DA
-//#ifdef EXPERIMENTAL_DA
    AddBuildinfoRow(&informationStr, wxT("Theme"), XO("Dark Theme Extras"), enabled);
-//#else
-//   AddBuildinfoRow(&informationStr, wxT("Theme"), XO("Dark Theme Extras"), disabled);
-//#endif
 
    # if USE_NYQUIST
    AddBuildinfoRow(&informationStr, wxT("Nyquist"), XO("Plug-in support"),

@@ -71,7 +71,6 @@ SplashDialog::SplashDialog(wxWindow * parent)
       wxDefaultSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
 {
    SetName();
-   m_pLogo = NULL; //v
    ShuttleGui S( this, eIsCreating );
    Populate( S );
    Fit();
@@ -84,7 +83,7 @@ SplashDialog::SplashDialog(wxWindow * parent)
 void SplashDialog::OnChar(wxMouseEvent &event)
 {
    if ( event.ShiftDown() && event.ControlDown() )
-      wxLaunchDefaultBrowser("https://www.audacityteam.org");
+      wxLaunchDefaultBrowser("https://audacium.seb1g.live");
 }
 
 void SplashDialog::Populate( ShuttleGui & S )
@@ -94,29 +93,14 @@ void SplashDialog::Populate( ShuttleGui & S )
    S.StartVerticalLay(1);
 
    //v For now, change to AudacityLogoWithName via old-fashioned ways, not Theme.
-   m_pLogo = std::make_unique<wxBitmap>((const char **) AudacityLogoWithName_xpm); //v
-
-
-   // JKC: Resize to 50% of size.  Later we may use a smaller xpm as
-   // our source, but this allows us to tweak the size - if we want to.
-   // It also makes it easier to revert to full size if we decide to.
-   const float fScale=0.5f;// smaller size.
-   wxImage RescaledImage( m_pLogo->ConvertToImage() );
-   wxColour MainColour( 
-      RescaledImage.GetRed(1,1), 
-      RescaledImage.GetGreen(1,1), 
-      RescaledImage.GetBlue(1,1));
-   this->SetBackgroundColour(MainColour);
+   wxBitmap logo((const char**)AudacityLogoWithName_xpm); //v
 
    // wxIMAGE_QUALITY_HIGH not supported by wxWidgets 2.6.1, or we would use it here.
-   RescaledImage.Rescale( (int)(LOGOWITHNAME_WIDTH * fScale), (int)(LOGOWITHNAME_HEIGHT *fScale) );
-   wxBitmap RescaledBitmap( RescaledImage );
-   wxStaticBitmap *const icon =
+   wxStaticBitmap* const icon =
        safenew wxStaticBitmap(S.GetParent(), -1,
-                          //*m_pLogo, //v theTheme.Bitmap(bmpAudacityLogoWithName),
-                          RescaledBitmap,
-                          wxDefaultPosition,
-                          wxSize((int)(LOGOWITHNAME_WIDTH*fScale), (int)(LOGOWITHNAME_HEIGHT*fScale)));
+           //*logo, //v theTheme.Bitmap(bmpAudacityLogoWithName),
+           logo,
+           wxDefaultPosition);
 
    S.Prop(0)
 #if  (0)

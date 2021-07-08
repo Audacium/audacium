@@ -583,11 +583,7 @@ int SourceOutputStream::OpenFile(const FilePath & Filename)
    if( bOk )
    {
 // DA: Naming of output sourcery
-#ifdef EXPERIMENTAL_DA
-      File.Write( wxT("///   @file DarkThemeAsCeeCode.h\r\n") );
-#else
-      File.Write( wxT("///   @file ThemeAsCeeCode.h\r\n") );
-#endif
+      File.Write(wxT("///   @file DarkThemeAsCeeCode.h\r\n"));
       File.Write( wxT("///   @brief This file was Auto-Generated.\r\n") );
       File.Write( wxT("///\r\n") );
       File.Write( wxT("///   It is included by Theme.cpp.\r\n") );
@@ -890,11 +886,7 @@ void ThemeBase::WriteImageDefs( )
 teThemeType ThemeBase::GetFallbackThemeType(){
 // Fallback must be an internally supported type,
 // to guarantee it is found.
-#ifdef EXPERIMENTAL_DA
    return themeDark;
-#else
-   return themeLight;
-#endif
 }
 
 teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
@@ -941,7 +933,7 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
          if( bOkIfNotFound )
             return false; // did not load the images, so return false.
          AudacityMessageBox(
-            XO("Audacity could not find file:\n  %s.\nTheme not loaded.")
+            XO("Audacium could not find file:\n  %s.\nTheme not loaded.")
                .Format( FileName ));
          return false;
       }
@@ -949,7 +941,7 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
       {
          AudacityMessageBox(
             /* i18n-hint: Do not translate png.  It is the name of a file format.*/
-            XO("Audacity could not load file:\n  %s.\nBad png format perhaps?")
+            XO("Audacium could not load file:\n  %s.\nBad png format perhaps?")
                .Format( FileName ));
          return false;
       }
@@ -989,7 +981,7 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
          // Or some experiment is being tried with NEW formats for it.
          AudacityMessageBox(
             XO(
-"Audacity could not read its default theme.\nPlease report the problem."));
+"Audacium could not read its default theme.\nPlease report the problem."));
          return false;
       }
       //wxLogDebug("Read %i by %i", ImageCache.GetWidth(), ImageCache.GetHeight() );
@@ -1074,7 +1066,7 @@ void ThemeBase::LoadComponents( bool bOkIfNotFound )
                AudacityMessageBox(
                   XO(
                /* i18n-hint: Do not translate png.  It is the name of a file format.*/
-"Audacity could not load file:\n  %s.\nBad png format perhaps?")
+"Audacium could not load file:\n  %s.\nBad png format perhaps?")
                      .Format( FileName ));
                return;
             }
@@ -1165,7 +1157,7 @@ void ThemeBase::SaveComponents()
          if( !mImages[i].SaveFile( FileName, wxBITMAP_TYPE_PNG ))
          {
             AudacityMessageBox(
-               XO("Audacity could not save file:\n  %s")
+               XO("Audacium could not save file:\n  %s")
                   .Format( FileName ));
             return;
          }
@@ -1300,11 +1292,7 @@ void auStaticText::OnPaint(wxPaintEvent & WXUNUSED(evt))
 }
 
 constexpr int defaultTheme =
-#ifdef EXPERIMENTAL_DA
    2 // "dark"
-#else
-   1 // "light"
-#endif
 ;
 
 ChoiceSetting GUITheme{
@@ -1312,16 +1300,13 @@ ChoiceSetting GUITheme{
    {
       ByColumns,
       {
-         /* i18n-hint: describing the "classic" or traditional
-            appearance of older versions of Audacity */
+         //i18n-hint: describing the "classic" or traditional appearance of older versions of Audacium
          XO("Classic")  ,
-         /* i18n-hint: Light meaning opposite of dark */
          XO("Light")  ,
          XO("Dark")  ,
-         /* i18n-hint: greater difference between foreground and
-            background colors */
+         //i18n-hint: greater difference between foreground and background colors
          XO("High Contrast")  ,
-         /* i18n-hint: user defined */
+         //i18n-hint: user defined
          XO("Custom")  ,
       },
       {

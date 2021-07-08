@@ -21,10 +21,6 @@ class wxArrayString;
 class wxArrayStringEx;
 
 extern STRINGS_API const wxString& GetCustomTranslation(const wxString& str1 );
-extern STRINGS_API const wxString& GetCustomSubstitution(const wxString& str1 );
-
-// Marks string for substitution only.
-#define _TS( s ) GetCustomSubstitution( s )
 
 // Marks strings for extraction only... use .Translate() to translate.
 // '&', preceding menu accelerators, should NOT occur in the argument.

@@ -1426,7 +1426,7 @@ void ProjectFileIO::SetProjectTitle(int number)
    // If we are not showing numbers, then <untitled> shows as 'Audacity'.
    else if (name.empty())
    {
-      name = _TS("Audacium");
+      name = "Audacium";
    }
 
    if (mRecovered)
