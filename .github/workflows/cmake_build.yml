@@ -2,7 +2,17 @@ name: CMake Build
 
 on:
   release:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
   workflow_dispatch:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
 
 defaults:
   run:

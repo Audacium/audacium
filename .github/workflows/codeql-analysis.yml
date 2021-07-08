@@ -14,8 +14,18 @@ name: "CodeQL"
 on:
   schedule:
     - cron: '19 22 * * 1'
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
   
   workflow_dispatch:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
 
 jobs:
   analyze:
@@ -39,7 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'cpp', 'python' ]
+        language: [ 'cpp' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
         # Learn more:
         # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
@@ -85,9 +95,9 @@ jobs:
         cache-name: cache-conan-modules
       with:
         path: ${{ env.CONAN_USER_HOME }}
-        key: host-${{ matrix.config.name }}-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
+        key: host-Ubuntu_18.04-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
         restore-keys: |
-          host-${{ matrix.config.name }}-
+          host-Ubuntu_18.04-
 
     - name: Configure
       env:
