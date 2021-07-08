@@ -23,10 +23,10 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     env:
-      AUDACITY_CMAKE_GENERATOR: ${{ matrix.config.generator }}
-      AUDACITY_ARCH_LABEL: ${{ matrix.config.arch }}
+      AUDACITY_CMAKE_GENERATOR: Unix Makefiles
+      AUDACITY_ARCH_LABEL: x86_64
       # Windows codesigning
       # This variables will be used by all the steps
       WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
