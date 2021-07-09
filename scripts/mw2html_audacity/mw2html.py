@@ -972,7 +972,10 @@ def run(out=sys.stdout):
     """
     global conn, domain, counter, redir_cache, config, headers
 
-    if urllib.parse.urlparse(config.rooturl)[1].lower().endswith('wikipedia.org'):
+    sanitized_url = urllib.parse.urlparse(config.rooturl).netloc
+    url_array = ["wikipedia.org", "www.wikipedia.org"]
+
+    if sanitized_url in url_array:
         out.write('Please do not use robots with the Wikipedia site.\n')
         out.write('Instead, install the Wikipedia database locally and use mw2html on\n')
         out.write('your local installation.  See the Mediawiki site for more information.\n')

@@ -15,7 +15,7 @@ Paul Licameli split from ProjectWindow.cpp
 ProjectWindowBase::ProjectWindowBase(wxWindow * parent, wxWindowID id,
                                  const wxPoint & pos,
                                  const wxSize & size, AudacityProject &project)
-   : wxFrame(parent, id, _TS("Audacium"), pos, size)
+   : wxFrame(parent, id, "Audacium", pos, size)
    , mProject{ project }
 {
    project.SetFrame( this );

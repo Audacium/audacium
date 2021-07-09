@@ -122,7 +122,7 @@ void AutoRecoveryDialog::PopulateOrExchange(ShuttleGui &S)
 
       S.StartHorizontalLay(wxALIGN_CENTRE, 0);
       {
-         S.Id(ID_QUIT_AUDACITY).AddButton(XXO("&Quit Audacity"));
+         S.Id(ID_QUIT_AUDACITY).AddButton(XXO("&Quit Audacium"));
          S.Id(ID_DISCARD_SELECTED).AddButton(XXO("&Discard Selected"));
          S.Id(ID_RECOVER_SELECTED).AddButton(XXO("&Recover Selected"), wxALIGN_CENTRE, true);
          S.Id(ID_SKIP).AddButton(XXO("&Skip"));

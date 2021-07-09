@@ -4,7 +4,7 @@
 
 set -euxo pipefail
 
-readonly appdir="$1" # input path (Audacity install directory)
+readonly appdir="$1" # input path (Audacium install directory)
 readonly appimage="$2" # output path to use for created AppImage
 
 #============================================================================

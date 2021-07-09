@@ -1,0 +1,125 @@
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+#
+name: "CodeQL"
+
+on:
+  push:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
+    branches: [ master ]
+  pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+  schedule:
+    - cron: '19 22 * * 1'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-18.04
+    env:
+      AUDACITY_CMAKE_GENERATOR: Unix Makefiles
+      AUDACITY_ARCH_LABEL: x86_64
+      # Windows codesigning
+      # This variables will be used by all the steps
+      WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
+      WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+      # Conan home location to be used for cache action
+      CONAN_USER_HOME: "${{ github.workspace }}/conan-home/"
+      CONAN_USER_HOME_SHORT: "${{ github.workspace }}/conan-home/short"
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'cpp' ]
+        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
+        # Learn more:
+        # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+        # If you wish to specify custom queries, you can do so here or in a config file.
+        # By default, queries listed here will override any specified in a config file.
+        # Prefix the list here with "+" to use these queries and those in the config file.
+        # queries: ./path/to/local/query, your-org/your-repo/queries@main
+
+    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+    # If this step fails, then you should remove it and run the build manually (see below)
+    # - name: Autobuild
+    #    uses: github/codeql-action/autobuild@v1
+
+    # ℹ️ Command-line programs to run using the OS shell.
+    # 📚 https://git.io/JvXDl
+
+    # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
+    #    and modify them (or add more) to build your code if your project
+    #    uses a compiled language
+
+    - name: Dependencies
+      run: |
+        exec bash "scripts/ci/dependencies.sh"
+
+    - name: Environment
+      run: |
+        source "scripts/ci/environment.sh"
+
+    - name: Cache for .conan
+      id: cache-conan
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-conan-modules
+      with:
+        path: ${{ env.CONAN_USER_HOME }}
+        key: host-Ubuntu_18.04-${{ hashFiles('cmake-proxies/CMakeLists.txt') }}
+        restore-keys: |
+          host-Ubuntu_18.04-
+
+    - name: Configure
+      env:
+        # Error reporting
+        SENTRY_DSN_KEY: ${{ secrets.SENTRY_DSN_KEY }}
+        SENTRY_HOST: ${{ secrets.SENTRY_HOST }}
+        SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        CRASH_REPORT_URL: ${{ secrets.CRASH_REPORT_URL }}
+        # Apple code signing
+        APPLE_CODESIGN_IDENTITY: ${{ secrets.APPLE_CODESIGN_IDENTITY }}
+        APPLE_NOTARIZATION_USER_NAME: ${{ secrets.APPLE_NOTARIZATION_USER_NAME }}
+        APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
+      run: |
+        exec bash "scripts/ci/configure.sh"
+
+    - name: Build
+      run: |
+        exec bash "scripts/ci/build.sh"
+
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
