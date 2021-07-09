@@ -80,8 +80,8 @@ linuxdeploy --list-plugins
 
 ln -sf --no-dereference . "${appdir}/usr"
 ln -sf share/applications/audacium.desktop "${appdir}/audacium.desktop"
-ln -sf share/icons/hicolor/scalable/apps/audacity.svg "${appdir}/audacity.svg"
-ln -sf share/icons/hicolor/scalable/apps/audacity.svg "${appdir}/.DirIcon"
+ln -sf share/icons/hicolor/scalable/apps/audacium.svg "${appdir}/audacium.svg"
+ln -sf share/icons/hicolor/scalable/apps/audacium.svg "${appdir}/.DirIcon"
 
 #============================================================================
 # Bundle dependencies
