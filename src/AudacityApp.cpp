@@ -373,6 +373,14 @@ void PopulatePreferences()
       gPrefs->Write(wxT("/GUI/Toolbars/Time/Show"),1);
    }
 
+   // You can write a condition like this which will effectively change the value only when the config file is created
+   // We also have yet to find where the actual default values are getting applied   
+   if (!gPrefs->Exists(wxT("/GUI/Theme")))
+       gPrefs->Write(wxT("/GUI/Theme"), wxString(wxT("dark")));
+
+   if (!gPrefs->Exists(wxT("/SamplingRate/DefaultProjectSampleRate")))
+       gPrefs->Write(wxT("/SamplingRate/DefaultProjectSampleRate"), 48000);
+
    // write out the version numbers to the prefs file for future checking
    gPrefs->Write(wxT("/Version/Major"), AUDACITY_VERSION);
    gPrefs->Write(wxT("/Version/Minor"), AUDACITY_RELEASE);
@@ -1235,7 +1243,7 @@ bool AudacityApp::OnInit()
          appName, wxEmptyString,
          configFileName.GetFullPath(),
          wxEmptyString, wxCONFIG_USE_LOCAL_FILE) );
-      PopulatePreferences();
+      PopulatePreferences(); // You can use this method to change default values
    }
 
 #if defined(__WXMSW__) && !defined(__WXUNIVERSAL__) && !defined(__CYGWIN__)
