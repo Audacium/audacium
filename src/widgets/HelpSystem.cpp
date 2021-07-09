@@ -47,15 +47,8 @@
 #include "../wxFileNameWrapper.h"
 #include "../prefs/GUIPrefs.h"
 
-#ifdef USE_ALPHA_MANUAL
-const wxString HelpSystem::HelpHostname = wxT("alphamanual.audacityteam.org");
-const wxString HelpSystem::HelpServerHomeDir = wxT("/man/");
-const wxString HelpSystem::HelpServerManDir = wxT("/man/");
-#else
-const wxString HelpSystem::HelpHostname = wxT("manual.audacityteam.org");
+const wxString HelpSystem::HelpHostname = wxT("github.com/SartoxOnlyGNU/audacium/wiki");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/");
-const wxString HelpSystem::HelpServerManDir = wxT("/man/");
-#endif
 const wxString HelpSystem::LocalHelpManDir = wxT("/man/");
 
 namespace {
@@ -386,7 +379,7 @@ void HelpSystem::ShowHelp(wxWindow *parent,
       // Other than index and quick_help, all local pages are in subdirectory 'LocalHelpManDir'.
       localHelpPage = wxFileName(FileNames::HtmlHelpDir() + LocalHelpManDir, releasePageName).GetFullPath();
       // Other than index and quick_help, all on-line pages are in subdirectory 'HelpServerManDir'.
-      webHelpPath = L"https://" + HelpSystem::HelpHostname + HelpSystem::HelpServerManDir;
+      webHelpPath = L"https://" + HelpSystem::HelpHostname + HelpSystem::HelpServerHomeDir;
    }
 
 #ifdef USE_ALPHA_MANUAL

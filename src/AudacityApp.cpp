@@ -381,29 +381,6 @@ void PopulatePreferences()
    gPrefs->Flush();
 }
 
-#if defined(USE_BREAKPAD)
-void InitBreakpad()
-{
-    wxFileName databasePath;
-    databasePath.SetPath(wxStandardPaths::Get().GetUserLocalDataDir());
-    databasePath.AppendDir("crashreports");
-    databasePath.Mkdir(wxS_DIR_DEFAULT, wxPATH_MKDIR_FULL);
-    
-    if(databasePath.DirExists())
-    {   
-        BreakpadConfigurer configurer;
-        configurer.SetDatabasePathUTF8(databasePath.GetPath().ToUTF8().data())
-            .SetSenderPathUTF8(wxFileName(wxStandardPaths::Get().GetExecutablePath()).GetPath().ToUTF8().data())
-    #if defined(CRASH_REPORT_URL)
-            .SetReportURL(CRASH_REPORT_URL)
-    #endif
-            .SetParameters({
-                { "version", wxString(AUDACITY_VERSION_STRING).ToUTF8().data() }
-            })
-            .Start();
-    }
-}
-#endif
 }
 
 static bool gInited = false;

@@ -100,11 +100,6 @@ public:
    /// Must both start and end with '/' characters.
    static const wxString HelpServerHomeDir;
 
-   /// Path to sub-directory where the manual pages are located.
-   /// index and quick_help are here only in the alpha manual.
-   /// Must both start and end with '/' characters.
-   static const wxString HelpServerManDir;
-
    /// Sub-directory for local help pages (but not index.html
    /// or quick_help.html)
    /// Must both start and end with '/' characters.
