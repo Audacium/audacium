@@ -12,23 +12,20 @@
 name: "CodeQL"
 
 on:
-  push:
-    paths-ignore:
-      - "docs/**"
-      - "**.md"
-      - "**.dox"
-      - "**.dox.in"
-    branches: [ master ]
-  pull_request:
-    paths-ignore:
-      - "docs/**"
-      - "**.md"
-      - "**.dox"
-      - "**.dox.in"
-    # The branches below must be a subset of the branches above
-    branches: [ master ]
   schedule:
     - cron: '19 22 * * 1'
+      paths-ignore:
+        - "docs/**"
+        - "**.md"
+        - "**.dox"
+        - "**.dox.in"
+  
+  workflow_dispatch:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
 
 jobs:
   analyze:

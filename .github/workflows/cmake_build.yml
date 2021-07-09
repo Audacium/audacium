@@ -1,12 +1,24 @@
 name: CMake Build
 
 on:
-  push:
+  release:
     paths-ignore:
       - "docs/**"
       - "**.md"
       - "**.dox"
       - "**.dox.in"
+  workflow_dispatch:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"
+  push:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - "**.dox"
+      - "**.dox.in"      
   pull_request:
     paths-ignore:
       - "docs/**"
@@ -37,8 +49,8 @@ jobs:
       matrix:
         config:
 
-        - name: Ubuntu_18.04
-          os: ubuntu-18.04
+        - name: Linux
+          os: ubuntu-latest
           arch: x86_64 # as reported by `arch` or `uname -m`
           generator: Unix Makefiles
 
