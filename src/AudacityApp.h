@@ -39,6 +39,7 @@ class AudacityApp final : public wxApp {
    AudacityApp();
    ~AudacityApp();
    bool OnInit(void) override;
+   wxImage alphaToBlackAndWhiteMask(wxImage img);
    bool InitPart2();
    int OnExit(void) override;
    void OnFatalException() override;

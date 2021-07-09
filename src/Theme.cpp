@@ -889,8 +889,17 @@ teThemeType ThemeBase::GetFallbackThemeType(){
    return themeDark;
 }
 
+int _on_flookup = 1;
+
 teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
 {
+   // Workaround for now to make dark theme the default at startup only
+   if (_on_flookup)
+   {
+       _on_flookup = 0;
+       return themeDark;
+   }
+
    static const wxArrayStringEx aThemes{
       "classic" ,
       "dark" ,
