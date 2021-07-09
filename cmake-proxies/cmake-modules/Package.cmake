@@ -1,8 +1,8 @@
 set(CPACK_PACKAGE_VERSION_MAJOR "${AUDACITY_VERSION}") # X
 set(CPACK_PACKAGE_VERSION_MINOR "${AUDACITY_RELEASE}") # Y
 set(CPACK_PACKAGE_VERSION_PATCH "${AUDACITY_REVISION}") # Z
-set(CPACK_PACKAGE_VENDOR "Audacity")
-set(CPACK_PACKAGE_HOMEPAGE_URL "https://audacityteam.org")
+set(CPACK_PACKAGE_VENDOR "SartoxOnlyGNU")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://audacium.seb1g.live/")
 
 # X.Y.Z-alpha-20210615
 set(CPACK_PACKAGE_VERSION "${AUDACITY_VERSION}.${AUDACITY_RELEASE}.${AUDACITY_REVISION}${AUDACITY_SUFFIX}")
@@ -25,8 +25,8 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
 endif()
 
 # audacity-linux-X.Y.Z-alpha-20210615
-set(CPACK_PACKAGE_FILE_NAME "audacity-${os}-${CPACK_PACKAGE_VERSION}")
-set(zsync_name "audacity-${os}-*") # '*' is wildcard (here it means any version)
+set(CPACK_PACKAGE_FILE_NAME "audacium-${os}-${CPACK_PACKAGE_VERSION}")
+set(zsync_name "audacium-${os}-*") # '*' is wildcard (here it means any version)
 
 if(DEFINED AUDACITY_ARCH_LABEL)
    # audacity-linux-X.Y.Z-alpha-20210615-x86_64
