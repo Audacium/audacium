@@ -15,12 +15,12 @@ export AUDACITY_MODULES_PATH="${AUDACITY_MODULES_PATH}:${APPDIR}/lib/modules"
 function help()
 {
     # Normal audacity help
-    "${APPDIR}/bin/audacity" --help
+    "${APPDIR}/bin/audacium" --help
     # Special options handled by this script
     cat >&2 <<EOF
   --readme              display README
   --license             display LICENSE
-  --man[ual|page]       display audacity(1) manual page
+  --man[ual|page]       display audacium(1) manual page
   --check-dependencies  check library dependency fulfillment (developer tool)
 
 EOF
