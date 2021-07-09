@@ -14,14 +14,12 @@ on:
       - "**.dox"
       - "**.dox.in"
   push:
-    branches: [main]
     paths-ignore:
       - "docs/**"
       - "**.md"
       - "**.dox"
       - "**.dox.in"      
   pull_request:
-    branches: [main]
     paths-ignore:
       - "docs/**"
       - "**.md"
