@@ -200,7 +200,7 @@ void GUIPrefs::PopulateOrExchange(ShuttleGui & S)
       S.TieCheckBox(XXO("Re&tain labels if selection snaps to a label"),
                     {wxT("/GUI/RetainLabels"),
                      false});
-      S.TieCheckBox(XXO("B&lend system and Audacity theme"),
+      S.TieCheckBox(XXO("B&lend system and Audacium theme"),
                     {wxT("/GUI/BlendThemes"),
                      true});
 #ifndef __WXMAC__

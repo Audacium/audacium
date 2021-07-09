@@ -1301,6 +1301,47 @@ bool AudacityApp::OnInit()
 #endif
 }
 
+// Doesn't work well for alpha compositing
+wxImage AudacityApp::alphaToBlackAndWhiteMask(wxImage img)
+{
+    // Some image types (e.g. gif) have a mask for the transparent pixels
+    // instead of an alpha channel.
+    if (!img.HasAlpha() && img.HasMask())
+    {
+        img.InitAlpha();
+    }
+
+    if (img.HasAlpha())
+    {
+        unsigned char* rgb = img.GetData();
+        unsigned char* alpha = img.GetAlpha();
+
+        for (int x = 0, y = 0; x < img.GetWidth() * img.GetHeight() * 3; x += 3, y++)
+        {
+            // If alpha pixel, make white. Else make black.
+            // An alpha value of 0 corresponds to a transparent pixel (null opacity)
+            // while a value of 255 means that the pixel is 100% opaque. 
+            if (alpha[y] < 20) // Using some threshold for almost transparent pixels.
+            {
+                rgb[x] = 0xff;// red
+                rgb[x + 1] = 0xff;// green
+                rgb[x + 2] = 0xff;// blue
+            }
+            else
+            {
+                rgb[x] = 0x00;// red
+                rgb[x + 1] = 0x00;// green
+                rgb[x + 2] = 0x00;// blue
+            }
+        }
+
+        // Remove alpha channel so that the pixels turned white will show
+        img.ClearAlpha();
+    }
+
+    return img;
+}
+
 bool AudacityApp::InitPart2()
 {
 #if defined(__WXMAC__)
@@ -1362,10 +1403,14 @@ bool AudacityApp::InitPart2()
 
    // BG: Create a temporary window to set as the top window
    wxImage logoimage((const char **)AudacityLogoWithName_xpm);
-   logoimage.Rescale(logoimage.GetWidth() / 2, logoimage.GetHeight() / 2);
-   if( GetLayoutDirection() == wxLayout_RightToLeft)
-      logoimage = logoimage.Mirror();
-   wxBitmap logo(logoimage);
+
+   bool hasAlpha = logoimage.HasAlpha() || logoimage.HasMask();
+
+   wxRegion splashRgn;
+   if (hasAlpha)
+   { 
+       splashRgn = wxRegion(alphaToBlackAndWhiteMask(logoimage), *wxWHITE);
+   }
 
    AudacityProject *project;
    {
@@ -1377,14 +1422,19 @@ bool AudacityApp::InitPart2()
       GetNextWindowPlacement(&wndRect, &bMaximized, &bIconized);
 
       wxSplashScreen temporarywindow(
-         logo,
-         wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_NO_TIMEOUT,
+         logoimage,
+         wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
          0,
          NULL,
          wxID_ANY,
          wndRect.GetTopLeft(),
          wxDefaultSize,
-         wxSTAY_ON_TOP);
+         wxBORDER_NONE | wxSTAY_ON_TOP | (hasAlpha ? wxFRAME_SHAPED : 0x00));
+      
+      if (hasAlpha)
+      {
+          temporarywindow.SetShape(splashRgn);
+      }
 
       // Unfortunately with the Windows 10 Creators update, the splash screen 
       // now appears before setting its position.
