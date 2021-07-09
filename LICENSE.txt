@@ -3,7 +3,7 @@ This includes everything in the source code distribution
 except code in the lib-src directory.  Code in the lib-src
 directory may be released under a different license
 (which is GPL-compatible).  For a summary, see the
-README.txt file, and for specific details, see the license
+README.md file, and for specific details, see the license
 information inside each subdirectory of lib-src.
 
 Documentation is distributed under the Creative Commons license (CC BY 3.0)
