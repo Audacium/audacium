@@ -17,11 +17,7 @@ libflac
 http://flac.sourceforge.net/
 Free Lossless Audio Codec encoding and decoding library
 Version in Audacity SVN: 1.3.1
-Patches: mac-asm-fixes.patch. Fixes build on OS X Intel 10.4 by creating and
-            object format for Mach-O. Needs to go upstream
-         add-maintainer-mode.patch. Disable autotools rebuilds
-         bypass-constraint-problem.patch. Gets around problem with older
-            gcc (4.0)...not need after we upgrade past Xcode 3.2.6.
+Patches: add-maintainer-mode.patch. Disable autotools rebuilds
 Upstream version: 1.3.1
 
 libid3tag
@@ -171,8 +167,8 @@ sqlite
 ----------
 https://sqlite.org
 SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.
-Version in Audacity GIT: 3.32.3
-Upstream Version: 3.32.3
+Version in Audacity GIT: 3.36.0
+Upstream Version: 3.36.0
 
 twolame
 -------
