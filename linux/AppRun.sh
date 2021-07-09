@@ -34,7 +34,7 @@ case "$1" in
     help
     ;;
 --readme )
-    exec less "${APPDIR}/share/doc/audacity/README.txt"
+    exec less "${APPDIR}/share/doc/audacity/README.md"
     ;;
 --license )
     exec less "${APPDIR}/share/doc/audacity/LICENSE.txt"
