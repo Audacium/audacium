@@ -47,6 +47,6 @@ case "$1" in
     ;;
 * )
     # Other arguments go to Audacity
-    exec "${APPDIR}/bin/audacity" "$@"
+    exec "${APPDIR}/bin/audacium" "$@"
     ;;
 esac
