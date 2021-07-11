@@ -200,7 +200,7 @@ static const unsigned char HiContrastImageCacheAsData[] = {
 
 
 static const unsigned char protools_template_iconImageCacheAsData[] = {
-#include "ProToolsThemeAsCeeCode.h"
+#include "ProToolsImageCacheAsData.h"
 };
 
 // theTheme is a global variable.
