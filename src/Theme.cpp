@@ -198,6 +198,11 @@ static const unsigned char HiContrastImageCacheAsData[] = {
 #include "HiContrastThemeAsCeeCode.h"
 };
 
+
+static const unsigned char ProToolsImageCacheAsData[] = {
+#include "ProToolsThemeAsCeeCode.h"
+};
+
 // theTheme is a global variable.
 AUDACITY_DLL_API Theme theTheme;
 
@@ -896,6 +901,7 @@ teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
       "dark" ,
       "light" ,
       "high-contrast" ,
+      "protools" ,
       "custom" ,
    };
    int themeIx = make_iterator_range( aThemes ).index( Name );
@@ -969,6 +975,12 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
             ImageSize = sizeof(HiContrastImageCacheAsData);
             pImage = HiContrastImageCacheAsData;
             break;
+            
+         case themeProTools :
+            ImageSize = sizeof(ProToolsImageCacheAsData);
+            pImage = ProToolsImageCacheAsData;
+            break;
+
       }
       //wxLogDebug("Reading ImageCache %p size %i", pImage, ImageSize );
       wxMemoryInputStream InternalStream( pImage, ImageSize );
@@ -1281,10 +1293,10 @@ auStaticText::auStaticText(wxWindow* parent, wxString textIn) :
    SetForegroundColour( theTheme.Colour( clrTrackPanelText));
    SetName(textIn);
    SetLabel(textIn);
-}
- 
-void auStaticText::OnPaint(wxPaintEvent & WXUNUSED(evt))
-{
+    }
+
+    void auStaticText::OnPaint(wxPaintEvent & WXUNUSED(evt))
+    {
    wxPaintDC dc(this);
    //dc.SetTextForeground( theTheme.Colour( clrTrackPanelText));
    dc.Clear();
@@ -1306,6 +1318,8 @@ ChoiceSetting GUITheme{
          XO("Dark")  ,
          //i18n-hint: greater difference between foreground and background colors
          XO("High Contrast")  ,
+         //A Pro Tools lookalike theme
+         XO("Pro Tools")  ,
          //i18n-hint: user defined
          XO("Custom")  ,
       },
@@ -1314,6 +1328,7 @@ ChoiceSetting GUITheme{
          wxT("light")  ,
          wxT("dark")  ,
          wxT("high-contrast")  ,
+         wxT("protools")  ,
          wxT("custom")  ,
       }
    },
