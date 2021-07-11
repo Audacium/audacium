@@ -901,6 +901,7 @@ teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
       "dark" ,
       "light" ,
       "high-contrast" ,
+      "protools" ,
       "custom" ,
    };
    int themeIx = make_iterator_range( aThemes ).index( Name );
@@ -1293,13 +1294,8 @@ auStaticText::auStaticText(wxWindow* parent, wxString textIn) :
    SetName(textIn);
    SetLabel(textIn);
     }
-    <<<<<<< HEAD
-    
+
     void auStaticText::OnPaint(wxPaintEvent & WXUNUSED(evt))
-    =======
-    
-    void auStaticText::OnPaint(wxPaintEvent & evt)
-    >>>>>>> 5d38ecf9a... Added Pro Tools theme
     {
    wxPaintDC dc(this);
    //dc.SetTextForeground( theTheme.Colour( clrTrackPanelText));
