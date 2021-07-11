@@ -1,3 +1,5 @@
+# This guide is outdated, go to the wiki instead
+
 # Building Audacium
 
 ## Prerequisites
