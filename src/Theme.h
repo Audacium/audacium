@@ -57,6 +57,7 @@ enum teThemeType
    themeDark,
    themeLight,
    themeHiContrast,
+   themeProTools,
    themeFromFile,
 };
 
