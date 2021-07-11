@@ -458,6 +458,9 @@ private:
    // to the newly created clip.
    WaveClip* CreateClip();
 
+   // Same as ::CreateClip() but also sets the offset of the new clip
+   WaveClip* CreateClip(double offset);
+
    /** @brief Get access to the most recently added clip, or create a clip,
    *  if there is not already one.  THIS IS NOT NECESSARILY RIGHTMOST.
    *

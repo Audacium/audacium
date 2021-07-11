@@ -2145,17 +2145,22 @@ Sequence* WaveTrack::GetSequenceAtTime(double time)
 
 WaveClip* WaveTrack::CreateClip()
 {
-   mClips.push_back(std::make_unique<WaveClip>(mpFactory, mFormat, mRate, GetWaveColorIndex()));
+   mClips.emplace_back(std::make_shared<WaveClip>(mpFactory, mFormat, mRate, GetWaveColorIndex()));
    return mClips.back().get();
+}
+
+WaveClip* WaveTrack::CreateClip(double offset)
+{
+    mClips.emplace_back(std::make_shared<WaveClip>(mpFactory, mFormat, mRate, GetWaveColorIndex()));
+    auto clip = mClips.back().get();
+    clip->SetOffset(offset);
+    return clip;
 }
 
 WaveClip* WaveTrack::NewestOrNewClip()
 {
-   if (mClips.empty()) {
-      WaveClip *clip = CreateClip();
-      clip->SetOffset(mOffset);
-      return clip;
-   }
+   if (mClips.empty())
+      return CreateClip(mOffset);
    else
       return mClips.back().get();
 }
@@ -2163,25 +2168,22 @@ WaveClip* WaveTrack::NewestOrNewClip()
 /*! @excsafety{No-fail} */
 WaveClip* WaveTrack::RightmostOrNewClip()
 {
-   if (mClips.empty()) {
-      WaveClip *clip = CreateClip();
-      clip->SetOffset(mOffset);
-      return clip;
-   }
-   else
+   if (!mClips.empty())
    {
       auto it = mClips.begin();
-      WaveClip *rightmost = (*it++).get();
+      WaveClip* rightmost = (*it++).get();
       double maxOffset = rightmost->GetOffset();
       for (auto end = mClips.end(); it != end; ++it)
       {
-         WaveClip *clip = it->get();
-         double offset = clip->GetOffset();
-         if (maxOffset < offset)
-            maxOffset = offset, rightmost = clip;
+          WaveClip* clip = it->get();
+          double offset = clip->GetOffset();
+          if (maxOffset < offset)
+              maxOffset = offset, rightmost = clip;
       }
       return rightmost;
    }
+   else
+      return CreateClip(mOffset);
 }
 
 int WaveTrack::GetClipIndex(const WaveClip* clip) const

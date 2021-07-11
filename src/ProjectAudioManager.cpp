@@ -520,9 +520,10 @@ void ProjectAudioManager::OnRecord(bool altAppearance)
             }
 
             existingTracks = ChooseExistingRecordingTracks(*p, false, options.rate);
-            t0 = std::max( t0, trackRange.max( &Track::GetEndTime ) );
+            if (!existingTracks.empty())
+                t0 = std::max( t0, trackRange.max( &Track::GetEndTime ) );
             // If suitable tracks still not found, will record into NEW ones,
-            // but the choice of t0 does not depend on that.
+            // starting with t0.
          }
          
          // Whether we decided on NEW tracks or not:
@@ -618,34 +619,18 @@ bool ProjectAudioManager::DoRecord(AudacityProject &project,
             if (prerollTrack)
                   transportTracks.prerollTracks.push_back(wt);
 
-            // A function that copies all the non-sample data between
-            // wave tracks; in case the track recorded to changes scale
-            // type (for instance), during the recording.
-            auto updater = [](Track &d, const Track &s){
-               auto &dst = static_cast<WaveTrack&>(d);
-               auto &src = static_cast<const WaveTrack&>(s);
-               dst.Reinit(src);
-            };
-
             // Get a copy of the track to be appended, to be pushed into
             // undo history only later.
             auto pending = std::static_pointer_cast<WaveTrack>(
                TrackList::Get( *p ).RegisterPendingChangedTrack(
-                  updater, wt.get() ) );
+                  nullptr, wt.get() ) );
 
             // End of current track is before or at recording start time.
             // Less than or equal, not just less than, to ensure a clip boundary.
             // when append recording.
-            if (endTime <= t0) {
+            if (endTime <= t0)
+                pending->CreateClip(t0);
 
-               // Pad the recording track with silence, up to the
-               // maximum time.
-               auto newTrack = pending->EmptyCopy();
-               newTrack->InsertSilence(0.0, t0 - endTime);
-               newTrack->Flush();
-               pending->Clear(endTime, t0);
-               pending->Paste(endTime, newTrack.get());
-            }
             transportTracks.captureTracks.push_back(pending);
          }
          TrackList::Get( *p ).UpdatePendingTracks();
