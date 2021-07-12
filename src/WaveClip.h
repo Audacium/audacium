@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   WaveClip.h
 
@@ -9,7 +9,7 @@
 
 *******************************************************************/
 
-#ifndef __AUDACITY_WAVECLIP__
+#ifndef __CITY_WAVECLIP__
 #define __AUDACITY_WAVECLIP__
 
 
