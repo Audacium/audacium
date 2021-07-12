@@ -108,20 +108,10 @@ Versions in Audacity SVN:
 portaudio-v19
 -------------
 http://portaudio.com/
-cross-platform audio I/O library version 19, used for 1.3.2 onwards releases
+cross-platform audio I/O library from master branch (16884fc), used for 1.3.2 onwards releases
 Version in Audacity Git:  Fri Apr 26 16:48:28 2019 snapshot (commit 3ebfacc)
 Patches applied:
 * portmixer/portaudio.patch      Add features needed to make portmixer work
-* portaudio-srcdir.patch         Adds srcdir handling
-* wasapi-fix.patch               Fix for WASAPI hostapi that corrects incorrect
-                                 reporting of stream open/running/closed state.
-* wasapi-loopback.patch          Add loopback devices to the WASAPI hostapi.
-* jack.patch                     Add JACK support to Windows.
-* linkage.patch                  Allows compilation as C++ with correct "C" linkage of one function
-* mmefix.patch                   Bug 1969 - Windows: no monitored sound for 15 secs with software playthrough with default MME hos
-* vs2015.patch                   Update for VS2015+
-* 16bit.patch                    Bug 193 - Audacity can't record at > 16-bit under MME or Windows DirectSound
-* ringbuf.patch                  pa_ringbuffer.c wasn't compiled by Travis, that broke the build
 
 portmidi
 -------
@@ -174,11 +164,11 @@ twolame
 -------
 http://www.twolame.org/
 MPEG I layer 2 audio encoding library used for MP2 exports
-Version in Audacity SVN: 0.3.13
+Version in Audacity SVN: master (8c47401)
 Patches: fix-tests.patch: Terminate AM_TESTS_ENVIRONMENT by a semicolon.
 AM_MAINTAINER_MODE has been added to configure.ac to disable autotools rebuilds
 by default
-Upstream Version: 0.3.13
+Upstream Version: master (8c47401)
 
 Crib notes on upgrading lib-src trees
 =====================================

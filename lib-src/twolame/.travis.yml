@@ -1,0 +1,39 @@
+language: c
+
+os:
+  - linux
+  - osx
+
+compiler:
+  - gcc
+  - clang
+
+addons:
+  apt:
+    packages:
+      - build-essential
+      - pkg-config
+      - automake
+      - autoconf
+      - libtool
+      - libsndfile1-dev
+      - doxygen
+      - asciidoc
+      - xmlto
+    update: true
+  homebrew:
+    packages:
+      - pkg-config
+      - automake
+      - autoconf
+      - libtool
+      - libsndfile
+      - doxygen
+      - asciidoc
+      - xmlto
+    update: true
+
+script:
+  - ./autogen.sh
+  - make
+  - make check
