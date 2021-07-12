@@ -1,4 +1,4 @@
-# translation of audacity.po to
+# translation of audacity.po to Arabian
 # Audacium Strings for Translation.
 # Copyright (C) 2008 Audacium Development Team
 # This file is distributed under the same license as Audacium.
