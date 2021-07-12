@@ -1,5 +1,5 @@
 /*
-** Copyright (C) 1999-2016 Erik de Castro Lopo <erikd@mega-nerd.com>
+** Copyright (C) 1999-2020 Erik de Castro Lopo <erikd@mega-nerd.com>
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU Lesser General Public License as published by
@@ -325,7 +325,7 @@ aiff_ima_encode_block (SF_PRIVATE *psf, IMA_ADPCM_PRIVATE *pima)
 {	int		chan, k, step, diff, vpdiff, blockindx, indx ;
 	short	bytecode, mask ;
 
-	k = 0;
+	k = 0 ;
 	for (chan = 0 ; chan < pima->channels ; chan ++)
 	{	blockindx = chan * pima->blocksize ;
 		/* Encode the block header. */
@@ -366,7 +366,7 @@ aiff_ima_encode_block (SF_PRIVATE *psf, IMA_ADPCM_PRIVATE *pima)
 			pima->stepindx [chan] += ima_indx_adjust [bytecode] ;
 
 			pima->stepindx [chan] = clamp_ima_step_index (pima->stepindx [chan]) ;
-			pima->block [blockindx] = (bytecode << (4 * k)) | pima->block [blockindx];
+			pima->block [blockindx] = (bytecode << (4 * k)) | pima->block [blockindx] ;
 			blockindx += k ;
 			k = 1 - k ;
 			} ;
@@ -764,6 +764,9 @@ wavlike_ima_seek (SF_PRIVATE *psf, int mode, sf_count_t offset)
 	if (offset == 0)
 	{	psf_fseek (psf, psf->dataoffset, SEEK_SET) ;
 		pima->blockcount = 0 ;
+		if (!pima->decode_block)
+			return PSF_SEEK_ERROR ;
+
 		pima->decode_block (psf, pima) ;
 		pima->samplecount = 0 ;
 		return 0 ;

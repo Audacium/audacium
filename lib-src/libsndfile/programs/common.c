@@ -46,7 +46,7 @@
 
 #define	MIN(x, y)	((x) < (y) ? (x) : (y))
 
-void
+int
 sfe_copy_data_fp (SNDFILE *outfile, SNDFILE *infile, int channels, int normalize)
 {	static double	data [BUFFER_LEN], max ;
 	sf_count_t		frames, readcount, k ;
@@ -55,6 +55,8 @@ sfe_copy_data_fp (SNDFILE *outfile, SNDFILE *infile, int channels, int normalize
 	readcount = frames ;
 
 	sf_command (infile, SFC_CALC_SIGNAL_MAX, &max, sizeof (max)) ;
+	if (!isnormal (max)) /* neither zero, subnormal, infinite, nor NaN */
+		return 1 ;
 
 	if (!normalize && max < 1.0)
 	{	while (readcount > 0)
@@ -68,12 +70,16 @@ sfe_copy_data_fp (SNDFILE *outfile, SNDFILE *infile, int channels, int normalize
 		while (readcount > 0)
 		{	readcount = sf_readf_double (infile, data, frames) ;
 			for (k = 0 ; k < readcount * channels ; k++)
-				data [k] /= max ;
+			{	data [k] /= max ;
+
+				if (!isfinite (data [k])) /* infinite or NaN */
+					return 1;
+				}
 			sf_writef_double (outfile, data, readcount) ;
 			} ;
 		} ;
 
-	return ;
+	return 0 ;
 } /* sfe_copy_data_fp */
 
 void
@@ -265,7 +271,12 @@ sfe_apply_metadata_changes (const char * filenames [2], const METADATA_INFO * in
 
 		/* If the input file is not the same as the output file, copy the data. */
 		if ((infileminor == SF_FORMAT_DOUBLE) || (infileminor == SF_FORMAT_FLOAT))
-			sfe_copy_data_fp (outfile, infile, sfinfo.channels, SF_FALSE) ;
+		{	if (sfe_copy_data_fp (outfile, infile, sfinfo.channels, SF_FALSE) != 0)
+			{	printf ("Error : Not able to decode input file '%s'\n", filenames [0]) ;
+				error_code = 1 ;
+				goto cleanup_exit ;
+				} ;
+			}
 		else
 			sfe_copy_data_int (outfile, infile, sfinfo.channels) ;
 		} ;
@@ -303,8 +314,8 @@ static OUTPUT_FORMAT_MAP format_map [] =
 	{	"au",		0,	SF_FORMAT_AU	},
 	{	"snd",		0,	SF_FORMAT_AU	},
 	{	"raw",		0,	SF_FORMAT_RAW	},
-	{	"gsm",		0,	SF_FORMAT_RAW	},
-	{	"vox",		0, 	SF_FORMAT_RAW 	},
+	{	"gsm",		0,	SF_FORMAT_RAW | SF_FORMAT_GSM610 },
+	{	"vox",		0, 	SF_FORMAT_RAW | SF_FORMAT_VOX_ADPCM },
 	{	"paf",		0,	SF_FORMAT_PAF | SF_ENDIAN_BIG },
 	{	"fap",		0,	SF_FORMAT_PAF | SF_ENDIAN_LITTLE },
 	{	"svx",		0,	SF_FORMAT_SVX	},
@@ -330,7 +341,7 @@ static OUTPUT_FORMAT_MAP format_map [] =
 	{	"prc",		0,	SF_FORMAT_WVE	},
 	{	"ogg",		0,	SF_FORMAT_OGG	},
 	{	"oga",		0,	SF_FORMAT_OGG	},
-	{	"opus",		0,	SF_FORMAT_OGG	}, /*  Opus data in an Ogg container. */
+	{	"opus",		0,	SF_FORMAT_OGG | SF_FORMAT_OPUS },
 	{	"mpc",		0,	SF_FORMAT_MPC2K	},
 	{	"rf64",		0,	SF_FORMAT_RF64	},
 } ; /* format_map */
@@ -351,17 +362,14 @@ sfe_file_type_of_ext (const char *str, int format)
 	for (k = 0 ; buffer [k] ; k++)
 		buffer [k] = tolower ((buffer [k])) ;
 
-	if (strcmp (buffer, "gsm") == 0)
-		return SF_FORMAT_RAW | SF_FORMAT_GSM610 ;
-
-	if (strcmp (buffer, "vox") == 0)
-		return SF_FORMAT_RAW | SF_FORMAT_VOX_ADPCM ;
-
 	for (k = 0 ; k < (int) (sizeof (format_map) / sizeof (format_map [0])) ; k++)
-	{	if (format_map [k].len > 0 && strncmp (buffer, format_map [k].ext, format_map [k].len) == 0)
-			return format_map [k].format | format ;
-		else if (strcmp (buffer, format_map [k].ext) == 0)
-			return format_map [k].format | format ;
+	{	if ((format_map [k].len > 0 && strncmp (buffer, format_map [k].ext, format_map [k].len) == 0) ||
+			(strcmp (buffer, format_map [k].ext) == 0))
+		{	if (format_map [k].format & SF_FORMAT_SUBMASK)
+				return format_map [k].format ;
+			else
+				return format_map [k].format | format ;
+			} ;
 		} ;
 
 	/* Default if all the above fails. */
@@ -376,7 +384,14 @@ sfe_dump_format_map (void)
 	for (k = 0 ; k < ARRAY_LEN (format_map) ; k++)
 	{	info.format = format_map [k].format ;
 		sf_command (NULL, SFC_GET_FORMAT_INFO, &info, sizeof (info)) ;
-		printf ("        %-10s : %s\n", format_map [k].ext, info.name == NULL ? "????" : info.name) ;
+		printf ("        %-10s : %s", format_map [k].ext, info.name == NULL ? "????" : info.name) ;
+		if (format_map [k].format & SF_FORMAT_SUBMASK)
+		{	info.format = format_map [k].format & SF_FORMAT_SUBMASK ;
+			sf_command (NULL, SFC_GET_FORMAT_INFO, &info, sizeof (info)) ;
+			printf (" %s", info.name == NULL ? "????" : info.name) ;
+			} ;
+		putchar ('\n') ;
+
 		} ;
 
 } /* sfe_dump_format_map */

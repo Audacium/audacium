@@ -1,8 +1,4 @@
-cmake_minimum_required (VERSION 3.1.3)
-
-if (POLICY CMP0091)
-	cmake_policy(SET CMP0091 NEW)
-endif ()
+cmake_minimum_required (VERSION 3.1..3.18)
 
 project(sndfile VERSION 1.0.29)
 
@@ -18,7 +14,7 @@ set (PACKAGE_NAME lib${PROJECT_NAME})
 set (CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
 set (CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
 set (CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
-set (CPACK_PACKAGE_VERSION_STAGE "pre1")
+set (CPACK_PACKAGE_VERSION_STAGE "")
 set (CPACK_PACKAGE_VERSION_FULL "${PROJECT_VERSION}${CPACK_PACKAGE_VERSION_STAGE}")
 
 #
@@ -49,7 +45,7 @@ option (BUILD_EXAMPLES "Build examples" ON)
 option (ENABLE_CPACK "Enable CPack support" ON)
 option (ENABLE_EXPERIMENTAL "Enable experimental code" OFF)
 option (ENABLE_BOW_DOCS "Enable black-on-white html docs" OFF)
-if (MSVC OR MINGW)
+if (MSVC)
 	option (ENABLE_STATIC_RUNTIME "Enable static runtime" OFF)
 endif ()
 option (ENABLE_PACKAGE_CONFIG "Generate and install package config file" ON)
@@ -64,7 +60,7 @@ include(SndFileChecks)
 
 
 cmake_dependent_option (BUILD_REGTEST "Build regtest" ON "SQLITE3_FOUND" OFF)
-cmake_dependent_option (ENABLE_EXTERNAL_LIBS "Enable FLAC, Vorbis, and Opus codecs" ON "VORBISENC_FOUND;FLAC_FOUND;OPUS_FOUND" OFF)
+cmake_dependent_option (ENABLE_EXTERNAL_LIBS "Enable FLAC, Vorbis, and Opus codecs" ON "Vorbis_FOUND;FLAC_FOUND;OPUS_FOUND" OFF)
 cmake_dependent_option (ENABLE_CPU_CLIP "Enable tricky cpu specific clipper" ON "CPU_CLIPS_POSITIVE;CPU_CLIPS_NEGATIVE" OFF)
 if (NOT ENABLE_CPU_CLIP)
 	set (CPU_CLIPS_POSITIVE FALSE)
@@ -94,7 +90,7 @@ if (WIN32 AND (NOT MINGW) AND BUILD_SHARED_LIBS)
 	add_feature_info (ENABLE_COMPATIBLE_LIBSNDFILE_NAME ENABLE_COMPATIBLE_LIBSNDFILE_NAME "Set DLL name to libsndfile-1.dll (canonical name), sndfile.dll otherwise")
 endif ()
 
-if (MSVC OR MINGW)
+if (MSVC)
 	add_feature_info (ENABLE_STATIC_RUNTIME ENABLE_STATIC_RUNTIME "Enable static runtime")
 endif ()
 
@@ -104,7 +100,7 @@ set_package_properties (Ogg PROPERTIES
 	DESCRIPTION "library for manipulating ogg bitstreams"
 	PURPOSE "Required to enable Vorbis, Speex, and Opus support"
 	)
-set_package_properties (VorbisEnc PROPERTIES
+set_package_properties (Vorbis PROPERTIES
 	TYPE RECOMMENDED
 	URL "www.vorbis.com/"
 	DESCRIPTION "open source lossy audio codec"
@@ -213,7 +209,7 @@ add_library (sndfile
 	src/chanmap.c
 	src/id3.c
 	$<$<BOOL:${WIN32}>:src/windows.c>
-	$<$<AND:$<BOOL:${WIN32}>,$<BOOL:${WIN32}>>:src/version-metadata.rc>
+	$<$<AND:$<BOOL:${WIN32}>,$<BOOL:${BUILD_SHARED_LIBS}>>:src/version-metadata.rc>
 	src/sndfile.c
 	src/aiff.c
 	src/au.c
@@ -296,6 +292,8 @@ add_library (sndfile
 	${CMAKE_CURRENT_BINARY_DIR}/src/config.h
 	)
 
+add_library (SndFile::sndfile ALIAS sndfile)
+
 target_include_directories(sndfile
 	PUBLIC
 		$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/src>
@@ -305,7 +303,7 @@ target_include_directories(sndfile
 target_link_libraries (sndfile
 	PRIVATE
 		$<$<BOOL:${LIBM_REQUIRED}>:m>
-		$<$<BOOL:${HAVE_EXTERNAL_XIPH_LIBS}>:Vorbis::VorbisEnc>
+		$<$<BOOL:${HAVE_EXTERNAL_XIPH_LIBS}>:Vorbis::vorbisenc>
 		$<$<BOOL:${HAVE_EXTERNAL_XIPH_LIBS}>:FLAC::FLAC>
 		$<$<AND:$<BOOL:${ENABLE_EXPERIMENTAL}>,$<BOOL:${HAVE_EXTERNAL_XIPH_LIBS}>,$<BOOL:${HAVE_SPEEX}>>:Speex::Speex>
 		$<$<BOOL:${HAVE_EXTERNAL_XIPH_LIBS}>:Opus::opus>
@@ -610,8 +608,11 @@ if (ENABLE_PACKAGE_CONFIG)
 	 	set (CMAKE_INSTALL_PACKAGEDIR ${CMAKE_INSTALL_LIBDIR}/cmake/SndFile)
 	 endif()
 
+	 install (TARGETS ${SNDFILE_PROGRAM_TARGETS}
+		RUNTIME DESTINATION			${CMAKE_INSTALL_BINDIR}
+ 	)
 
-	install (TARGETS sndfile ${SNDFILE_PROGRAM_TARGETS}
+	install (TARGETS sndfile
 		EXPORT SndFileTargets
 		RUNTIME DESTINATION			${CMAKE_INSTALL_BINDIR}
 		ARCHIVE DESTINATION			${CMAKE_INSTALL_LIBDIR}

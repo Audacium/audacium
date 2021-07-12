@@ -1,9 +1,9 @@
-dnl Copyright (C) 1999-2019  Erik de Castro Lopo <erikd@mega-nerd.com>.
+dnl Copyright (C) 1999-2020  Erik de Castro Lopo <erikd@mega-nerd.com>.
 
 dnl Require autoconf version >= 2.69
 AC_PREREQ([2.69])
 
-AC_INIT([libsndfile],[1.0.29pre2],[sndfile@mega-nerd.com],
+AC_INIT([libsndfile],[1.0.29],[sndfile@mega-nerd.com],
 		[libsndfile],[http://www.mega-nerd.com/libsndfile/])
 
 dnl Check whether we want to set defaults for CFLAGS, CXXFLAGS, CPPFLAGS and LDFLAGS
@@ -32,10 +32,6 @@ AC_CONFIG_HEADERS([src/config.h])
 
 AM_INIT_AUTOMAKE([1.14 foreign dist-bzip2 no-dist-gzip serial-tests subdir-objects])
 AM_SILENT_RULES([yes])
-
-dnl Audacity policy: don't enable automatic rebuild of configure et al if 
-dnl sources change
-AM_MAINTAINER_MODE([disable])
 
 dnl ====================================================================================
 
@@ -527,10 +523,10 @@ AS_IF([test "x$ac_cv_sizeof_double" != "x8"], [
 		AC_MSG_WARN([[******************************************************************]])
 	])
 
-#AS_IF([test "x$ac_cv_prog_HAVE_AUTOGEN" = "xno"], [
-#		AC_MSG_WARN([[Touching files in directory tests/.]])
-#		touch tests/*.c tests/*.h
-#	])
+AS_IF([test "x$ac_cv_prog_HAVE_AUTOGEN" = "xno"], [
+		AC_MSG_WARN([[Touching files in directory tests/.]])
+		touch tests/*.c tests/*.h
+	])
 
 dnl ====================================================================================
 dnl  Settings for the HTML documentation.

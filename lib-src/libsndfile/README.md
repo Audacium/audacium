@@ -31,7 +31,7 @@ although the package install tools and package names may be slightly different.
 
 Similarly on Mac OS X, assuming [brew] is already installed:
 
-    brew install autoconf autogen automake flac libogg libtool libvorbis libopus pkg-config
+    brew install autoconf autogen automake flac libogg libtool libvorbis opus pkg-config
 
 Once the build environment has been set up, building and testing libsndfile is
 as simple as:
@@ -162,9 +162,9 @@ Deprecated options:
 
 ### Linking from CMake projects
 
-First you need to add `FindOgg.cmake`, `FindVorbis.cmake`, `FindVorbisEnc.cmake`,
- `FindFLAC.cmake` and `FindOpus.cmake` files to some directory inside your CMake
- project (usually `cmake`) and add it to `CMAKE_MODULE_PATH`:
+First you need to add `FindOgg.cmake`, `FindVorbis.cmake`, `FindFLAC.cmake` and
+`FindOpus.cmake` files to some directory inside your CMake project (usually
+`cmake`) and add it to `CMAKE_MODULE_PATH`:
 
     project(SomeApplication)
     

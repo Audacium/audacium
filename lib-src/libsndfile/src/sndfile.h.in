@@ -214,6 +214,8 @@ enum
 
 	SFC_SET_VBR_ENCODING_QUALITY	= 0x1300,
 	SFC_SET_COMPRESSION_LEVEL		= 0x1301,
+    SFC_SET_OGG_PAGE_LATENCY_MS     = 0x1302,
+    SFC_SET_OGG_PAGE_LATENCY        = 0x1303,
 
 	/* Cart Chunk support */
 	SFC_SET_CART_INFO				= 0x1400,
@@ -625,7 +627,9 @@ int		sf_perror		(SNDFILE *sndfile) ;
 int		sf_error_str	(SNDFILE *sndfile, char* str, size_t len) ;
 
 
-/* Return TRUE if fields of the SF_INFO struct are a valid combination of values. */
+/* Allow the caller to retrieve information from or change aspects of the
+** library behaviour.
+*/
 
 int		sf_command	(SNDFILE *sndfile, int command, void *data, int datasize) ;
 
