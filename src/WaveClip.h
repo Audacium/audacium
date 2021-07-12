@@ -9,7 +9,7 @@
 
 *******************************************************************/
 
-#ifndef __CITY_WAVECLIP__
+#ifndef __AUDACITY_WAVECLIP__
 #define __AUDACITY_WAVECLIP__
 
 
