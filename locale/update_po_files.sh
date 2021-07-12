@@ -13,7 +13,7 @@ xargs xgettext \
 --keyword=_ --keyword=XO --keyword=XC:1,2c --keyword=XXO --keyword=XXC:1,2c --keyword=XP:1,2 --keyword=XPC:1,2,4c \
 --add-comments=" i18n" \
 --add-location=file  \
---copyright-holder='Audacity Team' \
+--copyright-holder='Audacium Team' \
 --package-name="audacity" \
 --package-version='3.0.3' \
 --msgid-bugs-address="audacity-translation@lists.sourceforge.net" \
@@ -28,7 +28,7 @@ xargs xgettext \
 --keyword=_ --keyword=_C:1,2c --keyword=ngettext:1,2 --keyword=ngettextc:1,2,4c \
 --add-comments=" i18n" \
 --add-location=file  \
---copyright-holder='Audacity Team' \
+--copyright-holder='Audacium Team' \
 --package-name="audacity" \
 --package-version='3.0.3' \
 --msgid-bugs-address="audacity-translation@lists.sourceforge.net" \
