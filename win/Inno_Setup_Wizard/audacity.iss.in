@@ -1,5 +1,5 @@
-﻿;   Audacity: A Digital Audio Editor
-;   Audacity(R) is copyright (c) 1999-2021 Audacity Team.
+﻿;   Audacium: A Digital Audio Editor
+;   Audacium is copyleft.
 ;   License: GPL v2.  See License.txt.
 ;
 ;   audacity.iss
@@ -8,7 +8,7 @@
 
 ; This requires that the ISS Preprocessor be installed
 
-#define AppExe "Package\audacity.exe" 
+#define AppExe "Package\audacium.exe" 
 #define AppMajor ""
 #define AppMinor ""
 #define AppRev ""
@@ -23,7 +23,7 @@ Filename: "{app}\unins*.*";
 
 [Setup]
 ; compiler-related directives
-OutputBaseFilename=audacity-win-{#AppVersion}-@INSTALLER_SUFFIX@
+OutputBaseFilename=audacium-win-{#AppVersion}-@INSTALLER_SUFFIX@
 
 WizardImageFile=".\audacity_InnoWizardImage.bmp"
 WizardSmallImageFile=".\audacity_InnoWizardSmallImage.bmp"
@@ -36,17 +36,17 @@ SolidCompression=yes
 DisableWelcomePage=no
 
 AppName={#AppName}
-AppVerName=Audacity {#AppVersion}
+AppVerName=Audacium {#AppVersion}
 ; Specify AppVersion as well, so it appears in the Add/Remove Programs entry. 
 AppVersion={#AppVersion}
-AppPublisher="Audacity Team"
-AppPublisherURL=http://audacityteam.org
-AppSupportURL=http://audacityteam.org
-AppUpdatesURL=http://audacityteam.org
+AppPublisher="SartoxOnlyGNU"
+AppPublisherURL=https://audacium.seb1g.live
+AppSupportURL=https://audacium.seb1g.live
+AppUpdatesURL=https://audacium.seb1g.live
 ChangesAssociations=yes
 @INSTALLER_X64_MODE@
 
-DefaultDirName={commonpf}\Audacity
+DefaultDirName={commonpf}\Audacium
 
 VersionInfoProductName={#AppName}
 VersionInfoProductTextVersion={#GetFileProductVersion(AppExe)}
@@ -55,17 +55,17 @@ VersionInfoVersion={#GetFileVersion(AppExe)}
 VersionInfoCopyright={#GetFileCopyright(AppExe)}
 
 ; Don't disable the "Select Destination Location" wizard, even if 
-; Audacity is already installed.
+; Audacium is already installed.
 DisableDirPage=no
 
-; Always warn if dir exists, because we'll overwrite previous Audacity.
+; Always warn if dir exists, because we'll overwrite previous Audacium.
 DirExistsWarning=yes
 DisableProgramGroupPage=yes
-UninstallDisplayIcon="{app}\audacity.exe"
+UninstallDisplayIcon="{app}\audacium.exe"
 
 ; No longer force them to accept the license, just display it.   LicenseFile=..\LICENSE.txt
 InfoBeforeFile=".\audacity_InnoWizard_InfoBefore.rtf"
-InfoAfterFile=Additional\README.txt
+InfoAfterFile=Additional\README.md
 
 ; We no longer produce new ANSI builds. 
 ; As we use Inno Setup (u), the Unicode version, to build this script, 
@@ -85,8 +85,8 @@ Filename: "{app}\FirstTime.ini"; Section: "FromInno"; Key: "Language"; String: "
 [Tasks]
 Name: desktopicon; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 Name: resetPrefs; Description:  "{cm:ResetPrefs}"; Flags: unchecked
-; No longer allow user to choose whether to associate AUP file type with Audacity.
-; Name: associate_aup; Description: "&Associate Audacity project files"; GroupDescription: "Other tasks:"; Flags: checkedonce
+; No longer allow user to choose whether to associate AUP file type with Audacium.
+; Name: associate_aup; Description: "&Associate Audacium project files"; GroupDescription: "Other tasks:"; Flags: checkedonce
 
 [Files]
 ; Prime the first time .ini file so the permissions can be set
@@ -112,14 +112,14 @@ Source: "Package\languages\*"; DestDir: "{app}\Languages\"; Flags: ignoreversion
 ; Source: "Package\modules\*"; DestDir: "{app}\Modules\"; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: "Package\nyquist\*"; DestDir: "{app}\Nyquist\"; Flags: ignoreversion recursesubdirs
 Source: "Package\plug-ins\*"; DestDir: "{app}\Plug-Ins\"; Flags: ignoreversion
-Source: "Package\modules\*"; DestDir: "{app}\modules\"; Flags: ignoreversion recursesubdirs
+//Source: "Package\modules\*"; DestDir: "{app}\modules\"; Flags: ignoreversion recursesubdirs
 
 [Icons]
-Name: "{commonprograms}\Audacity"; Filename: "{app}\audacity.exe"
-Name: "{commondesktop}\Audacity"; Filename: "{app}\audacity.exe"; Tasks: desktopicon
+Name: "{commonprograms}\Audacium"; Filename: "{app}\audacium.exe"
+Name: "{commondesktop}\Audacium"; Filename: "{app}\audacium.exe"; Tasks: desktopicon
 
 [InstallDelete]
-; Get rid of Audacity 1.0.0 stuff that's no longer used.
+; Get rid of Audacium 1.0.0 stuff that's no longer used.
 Type: files; Name: "{app}\audacity-help.htb"
 Type: files; Name: "{app}\audacity-1.2-help.htb"
 
@@ -139,11 +139,11 @@ Type: filesandordirs; Name: "{app}\help"
 ; Don't want to do this because user may have stored their own.
 ;   Type: filesandordirs; Name: "{app}\vst"
 
-; We've switched from a folder in the start menu to just the Audacity.exe at the top level.
+; We've switched from a folder in the start menu to just the Audacium.exe at the top level.
 ; Get rid of 1.0.0 folder and its icons.
-Type: files; Name: "{commonprograms}\Audacity\audacity.exe"
-Type: files; Name: "{commonprograms}\Audacity\unins000.exe"
-Type: dirifempty; Name: "{commonprograms}\Audacity"
+Type: files; Name: "{commonprograms}\Audacium\audacium.exe"
+Type: files; Name: "{commonprograms}\Audacium\unins000.exe"
+Type: dirifempty; Name: "{commonprograms}\Audacium"
 
 ;Get rid of previous uninstall item
 Type: files; Name: "{app}\unins*.*"
@@ -175,25 +175,25 @@ Type: files; Name: "{app}\Plug-Ins\crossfadeout.ny"
 Type: files; Name: "{app}\Plug-Ins\clicktrack.ny"
                                             
 [Registry]
-; No longer allow user to choose whether to associate AUP file type with Audacity.
+; No longer allow user to choose whether to associate AUP file type with Audacium.
 ; Leaving this one commented out example of the old way.
-; Root: HKCR; Subkey: ".AUP"; ValueType: string; ValueData: "Audacity.Project"; Flags: createvalueifdoesntexist uninsdeletekey; Tasks: associate_aup
-Root: HKCR; Subkey: ".AUP"; ValueType: string; ValueData: "Audacity.Project"; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: ".AUP3"; ValueType: string; ValueData: "Audacity.Project"; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: "Audacity.Project\OpenWithList\audacity.exe"; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: "Audacity.Project"; ValueType: string; ValueData: "Audacity Project File"; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: "Audacity.Project\shell"; ValueType: string; ValueData: ""; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: "Audacity.Project\shell\open"; Flags: createvalueifdoesntexist uninsdeletekey;
-Root: HKCR; Subkey: "Audacity.Project\shell\open\command"; ValueType: string; ValueData: """{app}\audacity.exe"" ""%1"""; Flags: uninsdeletekey;
+; Root: HKCR; Subkey: ".AUP"; ValueType: string; ValueData: "Audacium.Project"; Flags: createvalueifdoesntexist uninsdeletekey; Tasks: associate_aup
+Root: HKCR; Subkey: ".AUP"; ValueType: string; ValueData: "Audacium.Project"; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: ".AUP3"; ValueType: string; ValueData: "Audacium.Project"; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: "Audacium.Project\OpenWithList\audacium.exe"; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: "Audacium.Project"; ValueType: string; ValueData: "Audacium Project File"; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: "Audacium.Project\shell"; ValueType: string; ValueData: ""; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: "Audacium.Project\shell\open"; Flags: createvalueifdoesntexist uninsdeletekey;
+Root: HKCR; Subkey: "Audacium.Project\shell\open\command"; ValueType: string; ValueData: """{app}\audacium.exe"" ""%1"""; Flags: uninsdeletekey;
 
 ;The following would allow a following 'help' installer to know where to put the 'help' files.
-;Root: HKCR; Subkey: "Audacity.Project\Path";  ValueType: string; ValueData: {app}; Flags: createvalueifdoesntexist uninsdeletekey;
+;Root: HKCR; Subkey: "Audacium.Project\Path";  ValueType: string; ValueData: {app}; Flags: createvalueifdoesntexist uninsdeletekey;
 
 [Run]
-Filename: "{app}\audacity.exe"; Description: "{cm:LaunchProgram,Audacity}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\audacium.exe"; Description: "{cm:LaunchProgram,Audacium}"; Flags: nowait postinstall skipifsilent
 
 [Languages]
-; NOTE: "0" in locale name will be translated to "@" when read by Audacity.
+; NOTE: "0" in locale name will be translated to "@" when read by Audacium.
 
 ; Create subdirectories where we'll store the unofficial and dummy translation files
 {#expr Exec("cmd", "/c mkdir """ + "Languages\dummy""", '.\', , SW_HIDE), \
@@ -231,57 +231,57 @@ Filename: "{app}\audacity.exe"; Description: "{cm:LaunchProgram,Audacity}"; Flag
 Name: "af"; MessagesFile: "{#Get('Afrikaans.isl')}"
 Name: "ar"; MessagesFile: "{#Get('Arabic.isl')}"
 Name: "be"; MessagesFile: "{#Get('Belarusian.isl')}"
-Name: "bg"; MessagesFile: "compiler:Languages\Bulgarian.isl"
+//Name: "bg"; MessagesFile: "compiler:Languages\unofficial\Bulgarian.isl"
 Name: "bn"; MessagesFile: "{#Get('Bengali.islu')}"
 Name: "bs"; MessagesFile: "{#Get('Bosnian.isl')}"
-Name: "ca"; MessagesFile: "compiler:Languages\Catalan.isl"
+//Name: "ca"; MessagesFile: "compiler:Languages\unofficial\Catalan.isl"
 Name: "ca_ES0valencia"; MessagesFile: "{#Get('Valencian.isl')}"
-Name: "co"; MessagesFile: "compiler:Languages\Corsican.isl"
-Name: "cs"; MessagesFile: "compiler:Languages\Czech.isl"
+//Name: "co"; MessagesFile: "compiler:Languages\unofficial\Corsican.isl"
+//Name: "cs"; MessagesFile: "compiler:Languages\unofficial\Czech.isl"
 Name: "cy"; MessagesFile: "{#Dummy('Welsh', '0452')}"
-Name: "da"; MessagesFile: "compiler:Languages\Danish.isl"
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+//Name: "da"; MessagesFile: "compiler:Languages\unofficial\Danish.isl"
+//Name: "de"; MessagesFile: "compiler:Languages\unofficial\German.isl"
 Name: "el"; MessagesFile: "{#Get('Greek.isl')}"
 Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
+//Name: "es"; MessagesFile: "compiler:Languages\unofficial\Spanish.isl"
 Name: "eu"; MessagesFile: "{#Get('Basque.isl')}"
 Name: "fa"; MessagesFile: "{#Get('Farsi.isl')}"
-Name: "fi"; MessagesFile: "compiler:Languages\Finnish.isl"
-Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
+//Name: "fi"; MessagesFile: "compiler:Languages\unofficial\Finnish.isl"
+//Name: "fr"; MessagesFile: "compiler:Languages\unofficial\French.isl"
 Name: "ga"; MessagesFile: "{#Dummy('Gaeilge', '083C')}"
 Name: "gl"; MessagesFile: "{#Get('Galician.isl')}"
-Name: "he"; MessagesFile: "compiler:Languages\Hebrew.isl"
+//Name: "he"; MessagesFile: "compiler:Languages\unofficial\Hebrew.isl"
 Name: "hi"; MessagesFile: "{#Get('Hindi.islu')}"
 Name: "hr"; MessagesFile: "{#Get('Croatian.isl')}"
 Name: "hu"; MessagesFile: "{#Get('Hungarian.isl')}"
-Name: "hy"; MessagesFile: "compiler:Languages\Armenian.isl"
+//Name: "hy"; MessagesFile: "compiler:Languages\unofficial\Armenian.isl"
 Name: "id"; MessagesFile: "{#Get('Indonesian.isl')}"
-Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
-Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
+//Name: "it"; MessagesFile: "compiler:Languages\unofficial\Italian.isl"
+//Name: "ja"; MessagesFile: "compiler:Languages\unofficial\Japanese.isl"
 Name: "ka"; MessagesFile: "{#Get('Georgian.isl')}"
 Name: "km"; MessagesFile: "{#Dummy('Khmer', '0409')}"
 Name: "ko"; MessagesFile: "{#Dummy('Korean', '0412')}"
 Name: "lt"; MessagesFile: "{#Get('Lithuanian.isl')}"
 Name: "mk"; MessagesFile: "{#Get('Macedonian.isl')}"
 Name: "my"; MessagesFile: "{#Dummy('Burmese', '0409')}"
-Name: "nb"; MessagesFile: "compiler:Languages\Norwegian.isl"
+//Name: "nb"; MessagesFile: "compiler:Languages\unofficial\Norwegian.isl"
 Name: "ne"; MessagesFile: "{#Get('Nepali.islu')}"
-Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
+//Name: "nl"; MessagesFile: "compiler:Languages\unofficial\Dutch.isl"
 Name: "oc"; MessagesFile: "{#Get('Occitan.isl')}"
-Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
-Name: "pt_PT"; MessagesFile: "compiler:Languages\Portuguese.isl"
-Name: "pt_BR"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+//Name: "pl"; MessagesFile: "compiler:Languages\unofficial\Polish.isl"
+//Name: "pt_PT"; MessagesFile: "compiler:Languages\unofficial\Portuguese.isl"
+//Name: "pt_BR"; MessagesFile: "compiler:Languages\unofficial\BrazilianPortuguese.isl"
 Name: "ro"; MessagesFile: "{#Get('Romanian.isl')}"
-Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "sk"; MessagesFile: "compiler:Languages\Slovak.isl"
-Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
+//Name: "ru"; MessagesFile: "compiler:Languages\unofficial\Russian.isl"
+//Name: "sk"; MessagesFile: "compiler:Languages\unofficial\Slovak.isl"
+//Name: "sl"; MessagesFile: "compiler:Languages\unofficial\Slovenian.isl"
 Name: "sr_RS"; MessagesFile: "{#Get('SerbianCyrillic.isl')}"
 Name: "sr_RS0latin"; MessagesFile: "{#Get('SerbianLatin.isl')}"
 Name: "sv"; MessagesFile: "{#Get('Swedish.isl')}"
 Name: "ta"; MessagesFile: "{#Dummy('Tamil', '0449')}"
 Name: "tg"; MessagesFile: "{#Dummy('Tajik', '0428')}"
-Name: "tr"; MessagesFile: "compiler:Languages\Turkish.isl"
-Name: "uk"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+//Name: "tr"; MessagesFile: "compiler:Languages\unofficial\Turkish.isl"
+//Name: "uk"; MessagesFile: "compiler:Languages\unofficial\Ukrainian.isl"
 Name: "vi"; MessagesFile: "{#Get('Vietnamese.isl')}"
 Name: "zh_CN"; MessagesFile: "{#Get('ChineseSimplified.isl')}"
 Name: "zh_TW"; MessagesFile: "{#Get('ChineseTraditional.isl')}"
@@ -310,57 +310,57 @@ Name: "zh_TW"; MessagesFile: "{#Get('ChineseTraditional.isl')}"
 af.ResetPrefs=Reset Preferences
 ar.ResetPrefs=Reset Preferences
 be.ResetPrefs=Reset Preferences
-bg.ResetPrefs=Да се нулират ли настройките?
+//bg.ResetPrefs=Да се нулират ли настройките?
 bn.ResetPrefs=Reset Preferences
 bs.ResetPrefs=Reset Preferences
-ca.ResetPrefs=Voleu restablir les preferències?
+//ca.ResetPrefs=Voleu restablir les preferències?
 ca_ES0valencia.ResetPrefs=Reset Preferences
-co.ResetPrefs=Reinizià e preferenze ?
-cs.ResetPrefs=Vynulovat nastavení?
+//co.ResetPrefs=Reinizià e preferenze ?
+//cs.ResetPrefs=Vynulovat nastavení?
 cy.ResetPrefs=Reset Preferences
-da.ResetPrefs=Gendan indstillinger?
-de.ResetPrefs=Einstellungen zurücksetzen?
+//da.ResetPrefs=Gendan indstillinger?
+//de.ResetPrefs=Einstellungen zurücksetzen?
 el.ResetPrefs=Επαναφορά προτιμήσεων;
 en.ResetPrefs=Reset Preferences
-es.ResetPrefs=¿Desea restablecer las preferencias?
+//es.ResetPrefs=¿Desea restablecer las preferencias?
 eu.ResetPrefs=Berrezarri Hobespenak?
 fa.ResetPrefs=Reset Preferences
-fi.ResetPrefs=Reset Preferences
-fr.ResetPrefs=Réinitialiser les préférences ?
+//fi.ResetPrefs=Reset Preferences
+//fr.ResetPrefs=Réinitialiser les préférences ?
 ga.ResetPrefs=Reset Preferences
 gl.ResetPrefs=Restabelecer as preferencias?
-he.ResetPrefs=?אתה רוצה לשחזר העדפות
+//he.ResetPrefs=?אתה רוצה לשחזר העדפות
 hi.ResetPrefs=वरीयताएँ रीसेट करें?
 hr.ResetPrefs=Resetirati Postavke?
 hu.ResetPrefs=Alapra állítja a beállításokat?
-hy.ResetPrefs=Վերափոխե՞լ կարգավորումները:
+//hy.ResetPrefs=Վերափոխե՞լ կարգավորումները:
 id.ResetPrefs=Reset Preferences
-it.ResetPrefs=Ripristino Preferenze?
-ja.ResetPrefs=環境設定をリセットする
+//it.ResetPrefs=Ripristino Preferenze?
+//ja.ResetPrefs=環境設定をリセットする
 ka.ResetPrefs=Reset Preferences
 km.ResetPrefs=Reset Preferences
 ko.ResetPrefs=기본 설정을 재설정하시겠습니까?
 lt.ResetPrefs=Reset Preferences
 mk.ResetPrefs=Reset Preferences
 my.ResetPrefs=Reset Preferences
-nb.ResetPrefs=Reset Preferences
+//nb.ResetPrefs=Reset Preferences
 ne.ResetPrefs=Reset Preferences
-nl.ResetPrefs=Voorkeuren herstellen?
+//nl.ResetPrefs=Voorkeuren herstellen?
 oc.ResetPrefs=Reset Preferences
-pl.ResetPrefs=Zresetować ustawienia?
-pt_PT.ResetPrefs=Reconfigurar as Preferências?
-pt_BR.ResetPrefs=Repor Preferências?
+//pl.ResetPrefs=Zresetować ustawienia?
+//pt_PT.ResetPrefs=Reconfigurar as Preferências?
+//pt_BR.ResetPrefs=Repor Preferências?
 ro.ResetPrefs=Reset Preferences
-ru.ResetPrefs=Сбросить Параметры?
-sk.ResetPrefs=Obnoviť nastavenia?
-sl.ResetPrefs=Želite ponastaviti možnosti?
+//ru.ResetPrefs=Сбросить Параметры?
+//sk.ResetPrefs=Obnoviť nastavenia?
+//sl.ResetPrefs=Želite ponastaviti možnosti?
 sr_RS.ResetPrefs=Да вратим на старе поставке?
 sr_RS0latin.ResetPrefs=Da vratim na stare postavke?
 sv.ResetPrefs=Återställ inställningar?
 ta.ResetPrefs="விருப்பங்களை மீட்டமைக்க?
 tg.ResetPrefs=Reset Preferences
-tr.ResetPrefs=Ayarlar Sıfırlansın mı?
-uk.ResetPrefs=Відновити початкові значення параметрів?
+//tr.ResetPrefs=Ayarlar Sıfırlansın mı?
+//uk.ResetPrefs=Відновити початкові значення параметрів?
 ;vi.ResetPrefs=Reset Preferences
 zh_CN.ResetPrefs=重置偏好设置
 zh_TW.ResetPrefs=重置偏好設定
