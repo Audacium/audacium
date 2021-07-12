@@ -924,16 +924,6 @@ void AudacityApp::OnTimer(wxTimerEvent& WXUNUSED(event))
 #define WL(lang,sublang)
 #endif
 
-#if wxCHECK_VERSION(3, 0, 1)
-wxLanguageInfo userLangs[] =
-{
-   // Bosnian is defined in wxWidgets already
-//   { wxLANGUAGE_USER_DEFINED, wxT("bs"), WL(0, SUBLANG_DEFAULT) wxT("Bosnian"), wxLayout_LeftToRight },
-
-   { wxLANGUAGE_USER_DEFINED, wxT("eu"), WL(0, SUBLANG_DEFAULT) wxT("Basque"), wxLayout_LeftToRight },
-};
-#endif
-
 void AudacityApp::OnFatalException()
 {
    exit(-1);
@@ -1026,7 +1016,7 @@ bool AudacityApp::OnInit()
    if ( !ProjectFileIO::InitializeSQL() )
       this->CallAfter([]{
          ::AudacityMessageBox(
-            XO("SQLite library failed to initialize.  Audacium cannot continue.") );
+            XO("SQLite library failed to initialize. Audacium cannot continue.") );
          QuitAudacity( true );
       });
 
@@ -1169,12 +1159,12 @@ bool AudacityApp::OnInit()
 #endif //__WXGTK__
 
 // JKC Bug 1220: Use path based on home directory on WXMAC
-#ifdef __WXMAC__
    wxFileName tmpFile;
+
+#ifdef __WXMAC__
    tmpFile.AssignHomeDir();
    wxString tmpDirLoc = tmpFile.GetPath(wxPATH_GET_VOLUME);
 #else
-   wxFileName tmpFile;
    tmpFile.AssignTempFileName(wxT("nn"));
    wxString tmpDirLoc = tmpFile.GetPath(wxPATH_GET_VOLUME);
    ::wxRemoveFile(tmpFile.GetFullPath());
@@ -1182,7 +1172,7 @@ bool AudacityApp::OnInit()
 
 
 
-   // On Mac and Windows systems, use the directory which contains Audacity.
+   // On Mac and Windows systems, use the directory which contains Audacium.
 #ifdef __WXMSW__
    // On Windows, the path to the Audacity program is in argv[0]
    wxString progPath = wxPathOnly(argv[0]);
@@ -1222,18 +1212,6 @@ bool AudacityApp::OnInit()
 #endif //__WXMAC__
 
    FileNames::SetAudacityPathList( std::move( audacityPathList ) );
-
-   // Define languages for which we have translations, but that are not yet
-   // supported by wxWidgets.
-   //
-   // TODO:  The whole Language initialization really need to be reworked.
-   //        It's all over the place.
-#if wxCHECK_VERSION(3, 0, 1)
-   for (size_t i = 0, cnt = WXSIZEOF(userLangs); i < cnt; i++)
-   {
-      wxLocale::AddLanguage(userLangs[i]);
-   }
-#endif
 
    // Initialize preferences and language
    {
