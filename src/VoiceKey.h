@@ -1,6 +1,6 @@
 /***************************************************************************
 
-   Audacity: A Digtial Audio Editor
+   Audacium: A Digtial Audio Editor
 
    VoiceKey.h: a class implementing a voice key
 
