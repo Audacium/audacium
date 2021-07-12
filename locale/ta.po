@@ -1,12 +1,11 @@
-# Audacity Strings for Translation.
+# Audacium Strings for Translation.
 # Copyright (C) YEAR Audacity Development Team
-# This file is distributed under the same license as the audacity package.
-# Audacity Team <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the audacium package.
 # அருண் குமார் - Arun Kumar <thangam.arunx@gmail.com>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: audacity 3.0.3\n"
-"Report-Msgid-Bugs-To: audacity-translation@lists.sourceforge.net\n"
+"Project-Id-Version: audacium - 78c701d \n"
+"Report-Msgid-Bugs-To: audacium-translation@riseup.net\n"
 "POT-Creation-Date: 2021-06-07 08:17-0400\n"
 "PO-Revision-Date: 2014-09-16 07:40-0000\n"
 "Last-Translator: Arun Kumar\n"
@@ -57,12 +56,12 @@ msgstr "ஆரம்ப திகதி"
 
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy
-msgid "Problem Report for Audacity"
+msgid "Problem Report for Audacium"
 msgstr "விருப்பங்கள்: "
 
 #: libraries/lib-strings/UnusedStrings.h
 msgid ""
-"Click \"Send\" to submit the report to Audacity. This information is "
+"Click \"Send\" to submit the report to Audacium. This information is "
 "collected anonymously."
 msgstr ""
 
@@ -146,8 +145,8 @@ msgstr "நேரியல்"
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy
 msgctxt "update dialog"
-msgid "Update Audacity"
-msgstr "Audacity வெளியேறவும்"
+msgid "Update Audacium"
+msgstr "Audacium வெளியேறவும்"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
@@ -178,7 +177,7 @@ msgstr "கோப்பை திறப்பதில் வழ"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Unable to connect to Audacity update server."
+msgid "Unable to connect to Audacium update server."
 msgstr ""
 
 #: libraries/lib-strings/UnusedStrings.h
@@ -194,15 +193,15 @@ msgstr "சுமையேற்றுவதில் வழு"
 
 #: libraries/lib-strings/UnusedStrings.h
 msgctxt "update dialog"
-msgid "Can't open the Audacity download link."
+msgid "Can't open the Audacium download link."
 msgstr ""
 
 #. i18n-hint Substitution of version number for %s.
 #: libraries/lib-strings/UnusedStrings.h
 #, fuzzy, c-format
 msgctxt "update dialog"
-msgid "Audacity %s is available!"
-msgstr "Audacity %s கருவித்தட்டு "
+msgid "Audacium %s is available!"
+msgstr "Audacium %s கருவித்தட்டு "
 
 #: modules/mod-null/ModNullCallback.cpp
 #, fuzzy
@@ -386,7 +385,7 @@ msgstr ""
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Audacity module which provides a simple IDE for writing effects."
+"External Audacium module which provides a simple IDE for writing effects."
 msgstr ""
 
 #: modules/mod-nyq-bench/NyqBench.cpp
@@ -597,91 +596,91 @@ msgstr ""
 msgid "No revision identifier was provided"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, system administration"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, co-founder and developer"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer"
 msgstr "மட்டம்"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer and support"
 msgstr "மட்டம்"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, QA tester, documentation and support"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support, French"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, quality assurance"
 msgstr "தர உறுதி"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, accessibility advisor"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphic artist"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, composer"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, tester"
 msgstr ""
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "Nyquist வெளியீடு"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, web developer"
 msgstr "மட்டம்"
 
-#. i18n-hint: For "About Audacity..." credits, substituting a person's proper name
+#. i18n-hint: For "About Audacium..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphics"
@@ -712,11 +711,11 @@ msgid ""
 "%s is a free program written by a worldwide team of %s. %s is %s for "
 "Windows, Mac, and GNU/Linux (and other Unix-like systems)."
 msgstr ""
-"Audacity ஆனது உலகளாவிய ஒரு <a href=\"http://audacity.sourceforge.net/"
+"Audacium ஆனது உலகளாவிய ஒரு <a href=\"http://audacity.sourceforge.net/"
 "community/developers\">அணியினால்</a> உருவாக்கப்பட்ட இலவச  மென்பொருள் ஆகும். நாங்கள் "
 "எமது செயத்திட்டதை செய்தற்காக <a href=\"http://code.google.com\">Google Code</a> "
 "மற்றும் <a href=\"http://sourceforge.net\">SourceForge</a> இற்கும் நன்றி "
-"செலுத்துகிறோம். Audacity ஆனது Windows, Mac, மற்றும் GNU/Linux (ஏனைய Unix சார்ந்த "
+"செலுத்துகிறோம். Audacium ஆனது Windows, Mac, மற்றும் GNU/Linux (ஏனைய Unix சார்ந்த "
 "கணினிகளுக்கும்) <a href=\"http://audacity.sourceforge.net/download/\">இங்கே  "
 "கிடைக்கும்</a>."
 
@@ -725,7 +724,7 @@ msgstr ""
 msgid "volunteers"
 msgstr ""
 
-#. i18n-hint: substitutes into "Audacity is %s"
+#. i18n-hint: substitutes into "Audacium is %s"
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "available"
@@ -762,7 +761,7 @@ msgid "forum"
 msgstr ""
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Audacity window.  Use this to add
+#. *  in the credits in the About Audacium window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -838,21 +837,21 @@ msgstr "விசேட நன்றிகள்"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s website: "
-msgstr "Audacity யின் முதலாவது பாவனை"
+msgstr "Audacium யின் முதலாவது பாவனை"
 
-#. i18n-hint Audacity's name substitutes for first and third %s,
+#. i18n-hint Audacium's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr ""
 
-#. i18n-hint Audacity's name substitutes for %s
+#. i18n-hint Audacium's name substitutes for %s
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "The name %s is a registered trademark."
 msgstr ""
-"<b>Audacity&reg;</b> எனும் பெயரானது Dominic Mazzoni இன் பதியப்பட்ட அடையாளமாகும்"
+"<b>Audacium&reg;</b> எனும் பெயரானது Dominic Mazzoni இன் பதியப்பட்ட அடையாளமாகும்"
 
 #: src/AboutDialog.cpp
 msgid "Build Information"
@@ -1158,8 +1157,8 @@ msgstr ""
 "இதனை மீள மாற்ற முடியாது, 'நிறுவிய' பின் எங்குசேமிப்பீர்கள்?"
 
 #: src/AudacityApp.cpp
-msgid "Reset Audacity Preferences"
-msgstr "Audacity விருப்பங்களை மீட்டமைக்க"
+msgid "Reset Audacium Preferences"
+msgstr "Audacium விருப்பங்களை மீட்டமைக்க"
 
 #: src/AudacityApp.cpp
 #, c-format
@@ -1173,7 +1172,7 @@ msgstr ""
 "இது அண்மைய கோப்புகளில் இருந்து நீக்கபட்டு விட்டது."
 
 #: src/AudacityApp.cpp
-msgid "SQLite library failed to initialize.  Audacity cannot continue."
+msgid "SQLite library failed to initialize.  Audacium cannot continue."
 msgstr ""
 
 #: src/AudacityApp.cpp
@@ -1181,8 +1180,8 @@ msgid "Block size must be within 256 to 100000000\n"
 msgstr ""
 
 #: src/AudacityApp.cpp
-msgid "Audacity is starting up..."
-msgstr "Audacity துவங்குகிறது..."
+msgid "Audacium is starting up..."
+msgstr "Audacium துவங்குகிறது..."
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
 #: src/AudacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
@@ -1199,8 +1198,8 @@ msgid "Open &Recent..."
 msgstr "&அண்மையில் திறந்த..."
 
 #: src/AudacityApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Audacity..."
-msgstr "Audacity &பற்றி..."
+msgid "&About Audacium..."
+msgstr "Audacium &பற்றி..."
 
 #: src/AudacityApp.cpp
 msgid "&Preferences..."
@@ -1213,8 +1212,8 @@ msgstr "&கோப்பு"
 #: src/AudacityApp.cpp
 #, fuzzy
 msgid ""
-"Audacity could not find a safe place to store temporary files.\n"
-"Audacity needs a place where automatic cleanup programs won't delete the "
+"Audacium could not find a safe place to store temporary files.\n"
+"Audacium needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
@@ -1223,7 +1222,7 @@ msgstr ""
 
 #: src/AudacityApp.cpp
 msgid ""
-"Audacity could not find a place to store temporary files.\n"
+"Audacium could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
 "தற்காலிக கோப்புகளை சேமிக்க ஒரு கோப்பகத்தை தெரிய முடியவில்லை.\n"
@@ -1231,53 +1230,53 @@ msgstr ""
 
 #: src/AudacityApp.cpp
 msgid ""
-"Audacity is now going to exit. Please launch Audacity again to use the new "
+"Audacium is now going to exit. Please launch Audacium again to use the new "
 "temporary directory."
 msgstr ""
-"Audacity ஆனது தற்போது மூடப்படவுள்ளது. தயவு செய்து மறுபடியும் தொடங்கவும் புதிய "
+"Audacium ஆனது தற்போது மூடப்படவுள்ளது. தயவு செய்து மறுபடியும் தொடங்கவும் புதிய "
 "திறக்க. தற்காலிக கோப்பகம்."
 
 #: src/AudacityApp.cpp
 msgid ""
-"Running two copies of Audacity simultaneously may cause\n"
+"Running two copies of Audacium simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"இரண்டு Audacity பிரதிகளை ஒரே நேரத்தில் இயக்குவதால்\n"
+"இரண்டு Audacium பிரதிகளை ஒரே நேரத்தில் இயக்குவதால்\n"
 "தகவல் இழப்பு அல்லது கட்டகத்தைக் நிலைகுழைய வைக்கலாம்.\n"
 "\n"
 
 #: src/AudacityApp.cpp
 msgid ""
-"Audacity was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Audacity.\n"
+"Audacium was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Audacium.\n"
 msgstr ""
-"தற்காலிக கோப்புகளின் கோப்பகத்தை Audacity இனாலபூட்ட இயலவில்லை.\n"
-"Audacity இன் இன்னொரு பிரதியால் பாவிக்கப்படலாம்.\n"
+"தற்காலிக கோப்புகளின் கோப்பகத்தை Audacium இனாலபூட்ட இயலவில்லை.\n"
+"Audacium இன் இன்னொரு பிரதியால் பாவிக்கப்படலாம்.\n"
 
 #: src/AudacityApp.cpp
-msgid "Do you still want to start Audacity?"
-msgstr "Audacity இனை ஆரம்பிக்க விரும்புகிறீர்களா?"
+msgid "Do you still want to start Audacium?"
+msgstr "Audacium இனை ஆரம்பிக்க விரும்புகிறீர்களா?"
 
 #: src/AudacityApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "தற்காலிக கோப்பகத்தை பூட்டுவதில் வழு"
 
 #: src/AudacityApp.cpp
-msgid "The system has detected that another copy of Audacity is running.\n"
-msgstr "Audacity இன் மற்றுமொரு பிரதியானது இயங்கிகொண்டு இருக்குறது.\n"
+msgid "The system has detected that another copy of Audacium is running.\n"
+msgstr "Audacium இன் மற்றுமொரு பிரதியானது இயங்கிகொண்டு இருக்குறது.\n"
 
 #: src/AudacityApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Audacity\n"
+"Use the New or Open commands in the currently running Audacium\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
-"தற்போது இயங்கும்  Audacity இல் புதிய அல்லது திறக்க கட்டளைகளை உபயோகிக்கவும்.\n"
+"தற்போது இயங்கும்  Audacium இல் புதிய அல்லது திறக்க கட்டளைகளை உபயோகிக்கவும்.\n"
 "ஒரே நேரத்தில் பல செயத்திட்டங்களை திறக்க முனைகிறது.\n"
 
 #: src/AudacityApp.cpp
-msgid "Audacity is already running"
-msgstr "Audacity முன்னரே பாவனையில் உள்ளது"
+msgid "Audacium is already running"
+msgstr "Audacium முன்னரே பாவனையில் உள்ளது"
 
 #: src/AudacityApp.cpp
 msgid ""
@@ -1289,8 +1288,8 @@ msgstr ""
 
 #: src/AudacityApp.cpp
 #, fuzzy
-msgid "Audacity Startup Failure"
-msgstr "Audacity செயற்திட்ட கோப்புகள்"
+msgid "Audacium Startup Failure"
+msgstr "Audacium செயற்திட்ட கோப்புகள்"
 
 #: src/AudacityApp.cpp
 msgid ""
@@ -1318,7 +1317,7 @@ msgstr ""
 
 #: src/AudacityApp.cpp
 msgid ""
-"The Audacity IPC server failed to initialize.\n"
+"The Audacium IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
@@ -1328,7 +1327,7 @@ msgstr ""
 msgid "An unrecoverable error has occurred during startup"
 msgstr ""
 
-#. i18n-hint: This controls the number of bytes that Audacity will
+#. i18n-hint: This controls the number of bytes that Audacium will
 #. *           use when writing files to the disk
 #: src/AudacityApp.cpp
 #, fuzzy
@@ -1341,19 +1340,19 @@ msgstr "\t-blocksize nnn (set max disk block size in bytes)"
 msgid "this help message"
 msgstr "\t-help (இச்செய்தி)"
 
-#. i18n-hint: This runs a set of automatic tests on Audacity itself
+#. i18n-hint: This runs a set of automatic tests on Audacium itself
 #: src/AudacityApp.cpp
 #, fuzzy
 msgid "run self diagnostics"
 msgstr "\t-test (சுய பரிசோதனைச் செய்)"
 
-#. i18n-hint: This displays the Audacity version
+#. i18n-hint: This displays the Audacium version
 #: src/AudacityApp.cpp
 #, fuzzy
-msgid "display Audacity version"
-msgstr "\t-version (Audacity பதிப்பை பாண்பி)"
+msgid "display Audacium version"
+msgstr "\t-version (Audacium பதிப்பை பாண்பி)"
 
-#. i18n-hint: This is a list of one or more files that Audacity
+#. i18n-hint: This is a list of one or more files that Audacium
 #. *           should open upon startup
 #: src/AudacityApp.cpp
 #, fuzzy
@@ -1363,19 +1362,19 @@ msgstr "திட்ட கோப்பினை திறக்க முடி
 #: src/AudacityApp.cpp
 #, fuzzy
 msgid ""
-"Audacity project (.aup3) files are not currently \n"
-"associated with Audacity. \n"
+"Audacium project (.aup3) files are not currently \n"
+"associated with Audacium. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"Audacity செயற்திட்டம் (.AUP) கோப்புகள் ஆனது தற்போது \n"
-"Audacity உடன் தொடர்புடையதாக இல்லை. \n"
+"Audacium செயற்திட்டம் (.AUP) கோப்புகள் ஆனது தற்போது \n"
+"Audacium உடன் தொடர்புடையதாக இல்லை. \n"
 "\n"
 "தொடர்புடையதாக்குவதன் மூலம் இரட்டை சொடுக்கில் திறக்கலாம்"
 
 #: src/AudacityApp.cpp
-msgid "Audacity Project Files"
-msgstr "Audacity செயற்திட்ட கோப்புகள்"
+msgid "Audacium Project Files"
+msgstr "Audacium செயற்திட்ட கோப்புகள்"
 
 #: src/AudacityException.h src/commands/MessageCommand.cpp
 #: src/widgets/AudacityMessageBox.cpp
@@ -1384,7 +1383,7 @@ msgstr ""
 
 #: src/AudacityFileConfig.cpp
 #, fuzzy
-msgid "Audacity Configuration Error"
+msgid "Audacium Configuration Error"
 msgstr "விதியை அழிப்பதை உறுதி செய்தல்"
 
 #: src/AudacityFileConfig.cpp
@@ -1400,7 +1399,7 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Audacity\", your project may be left in an unsaved "
+"If you choose to \"Quit Audacium\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 
@@ -1412,16 +1411,16 @@ msgstr "உதவி"
 
 #: src/AudacityFileConfig.cpp src/AutoRecoveryDialog.cpp
 #, fuzzy
-msgid "&Quit Audacity"
-msgstr "Audacity வெளியேறவும்"
+msgid "&Quit Audacium"
+msgstr "Audacium வெளியேறவும்"
 
 #: src/AudacityFileConfig.cpp
 msgid "&Retry"
 msgstr ""
 
 #: src/AudacityLogger.cpp
-msgid "Audacity Log"
-msgstr "Audacity பதிவுகள்"
+msgid "Audacium Log"
+msgstr "Audacium பதிவுகள்"
 
 #: src/AudacityLogger.cpp src/Tags.cpp
 #, fuzzy
@@ -1491,8 +1490,8 @@ msgstr "மிடியை தொடங்குவதில் வழு."
 
 #: src/AudioIO.cpp
 #, fuzzy
-msgid "Audacity Audio"
-msgstr "Audacity பதிவுகள்"
+msgid "Audacium Audio"
+msgstr "Audacium பதிவுகள்"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, fuzzy, c-format
@@ -1752,7 +1751,7 @@ msgstr "தானியங்கி பாதிப்பு மீட்பு.
 #: src/AutoRecoveryDialog.cpp
 #, fuzzy
 msgid ""
-"The following projects were not saved properly the last time Audacity was "
+"The following projects were not saved properly the last time Audacium was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
@@ -2378,8 +2377,8 @@ msgstr "இதை பயன்படுத்த கட்டாயம் மு
 
 #: src/CrashReport.cpp
 #, fuzzy
-msgid "Audacity Support Data"
-msgstr "Audacity இணை அணி"
+msgid "Audacium Support Data"
+msgstr "Audacium இணை அணி"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2517,20 +2516,20 @@ msgstr "எல்லா கோப்புகளையும் பிரதி 
 msgid "Whenever a project depends on other files:"
 msgstr "செயத்திட்டமானது ஏனைய கோப்புகளில் சார்ந்து இருக்கும் போது மட்டும்"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "என்னிடம் கேக்கவும்"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "எப்பொழுதும் எல்லா கோப்புகளையும் பிரதி செய் (மிகவும் பாதுகாப்பனது)"
 
-#. i18n-hint: One of the choices of what you want Audacity to do when
-#. * Audacity finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Audacium to do when
+#. * Audacium finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "கோப்புகளை எப்பொழுதும் பிரதி செய்ய வேண்டாம்"
@@ -2568,7 +2567,7 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Audacity projects may not be self-contained, and care \n"
+"Some older Audacium projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
@@ -2657,7 +2656,7 @@ msgstr "FFmpeg ஆதரவு தொகுக்கப்படவில்ல�
 #: src/FFmpeg.cpp
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Audacity failed to load it at startup. \n"
+"but this time Audacium failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
@@ -2676,7 +2675,7 @@ msgstr "FFmpeg யை இடங்குறி"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Audacity needs the file '%s' to import and export audio via FFmpeg."
+msgid "Audacium needs the file '%s' to import and export audio via FFmpeg."
 msgstr ""
 "Audacityக்கு ஒலிக் கோப்பை FFmpeg ஊடக ஏற்றுமதி மற்றும் இறக்குமதி செய்ய '%s' கோப்பு "
 "தேவை."
@@ -2720,13 +2719,13 @@ msgstr "FFmpeg இல்லை"
 #: src/FFmpeg.cpp
 #, fuzzy
 msgid ""
-"Audacity attempted to use FFmpeg to import an audio file,\n"
+"Audacium attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"Audacity FFmpeg ஊடாக ஒலிக்கோப்பை இறக்குமதி செய்ய முனைந்தது, \n"
+"Audacium FFmpeg ஊடாக ஒலிக்கோப்பை இறக்குமதி செய்ய முனைந்தது, \n"
 "ஆனால் நூலகத்தை காணவில்லை. \n"
 "\n"
 "FFmpeg இறக்குமதியை பயன்படுத்த, FFmpeg நூலகத்தை தரவிறக்கம் செய்ய அல்லது சுட்டிக்காட்ட \n"
@@ -2751,27 +2750,27 @@ msgstr ""
 
 #: src/FileException.cpp
 #, fuzzy, c-format
-msgid "Audacity failed to open a file in %s."
+msgid "Audacium failed to open a file in %s."
 msgstr ""
-"Audacity யால் கோப்பை எழுத முடியவில்லை:\n"
+"Audacium யால் கோப்பை எழுத முடியவில்லை:\n"
 " %s."
 
 #: src/FileException.cpp
 #, fuzzy, c-format
-msgid "Audacity failed to read from a file in %s."
+msgid "Audacium failed to read from a file in %s."
 msgstr ""
-"Audacity யால் கோப்பை எழுத முடியவில்லை:\n"
+"Audacium யால் கோப்பை எழுத முடியவில்லை:\n"
 " %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Audacity successfully wrote a file in %s but failed to rename it as %s."
+msgid "Audacium successfully wrote a file in %s but failed to rename it as %s."
 msgstr ""
 
 #: src/FileException.cpp
 #, fuzzy, c-format
 msgid ""
-"Audacity failed to write to a file.\n"
+"Audacium failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
@@ -2822,7 +2821,7 @@ msgstr "பாவனையாளரிடம் கேள்"
 msgid "All files"
 msgstr "எல்லா கோப்புகளும்  (*)|*"
 
-#. i18n-hint an Audacity project is the state of the program, stored as
+#. i18n-hint an Audacium project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 #, fuzzy
@@ -3101,8 +3100,8 @@ msgstr "ஒலிக்  கோப்பு ஏற்றுமதி செய�
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Audacity Project"
-msgstr "Audacity திட்டத்தை சேமிக்கிறது"
+msgid "Saving an Audacium Project"
+msgstr "Audacium திட்டத்தை சேமிக்கிறது"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -3120,17 +3119,17 @@ msgstr "உள்ளக உதவி இல்லை"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is an <b>Alpha test version</"
+"<br><br>The version of Audacium you are using is an <b>Alpha test version</"
 "b>."
 msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Audacity you are using is a <b>Beta test version</b>."
+"<br><br>The version of Audacium you are using is a <b>Beta test version</b>."
 msgstr ""
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Audacity"
+msgid "Get the Official Released Version of Audacium"
 msgstr ""
 
 #: src/HelpText.cpp
@@ -3141,7 +3140,7 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Audacity ready for release by joining our [[https://www."
+"You can help us get Audacium ready for release by joining our [[https://www."
 "audacityteam.org/community/|community]].<hr><br><br>"
 msgstr ""
 
@@ -3181,7 +3180,7 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"Audacity can import unprotected files in many other formats (such as M4A and "
+"Audacium can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
 "audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
@@ -3283,14 +3282,14 @@ msgstr "&வரலாறு. . . ."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audacityteam.org/."
 msgstr ""
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Audacity team at https://forum.audacityteam.org/."
+"Please inform the Audacium team at https://forum.audacityteam.org/."
 msgstr ""
 
 #: src/InconsistencyException.h
@@ -3383,14 +3382,14 @@ msgid "One or more saved labels could not be read."
 msgstr ""
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Audacity has been run.
+#. * time Audacium has been run.
 #: src/LangChoice.cpp
-msgid "Audacity First Run"
-msgstr "Audacity யின் முதலாவது பாவனை"
+msgid "Audacium First Run"
+msgstr "Audacium யின் முதலாவது பாவனை"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Audacity to use:"
-msgstr "Audacity க்கான மொழியினை தெரிவு செய்க: "
+msgid "Choose Language for Audacium to use:"
+msgstr "Audacium க்கான மொழியினை தெரிவு செய்க: "
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3419,13 +3418,13 @@ msgid ""
 msgstr ""
 
 #: src/Legacy.cpp
-msgid "Opening Audacity Project"
-msgstr "Audacity திட்டம் திறக்கிறது"
+msgid "Opening Audacium Project"
+msgstr "Audacium திட்டம் திறக்கிறது"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Audacity Karaoke%s"
-msgstr "Audacity வெற்றிசைப்பாடல் %s"
+msgid "Audacium Karaoke%s"
+msgstr "Audacium வெற்றிசைப்பாடல் %s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3476,8 +3475,8 @@ msgstr "கலந்து வழங்கப்பட்ட தடங்கள�
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Audacity Mixer Board%s"
-msgstr "Audacity கலக்கும் பலகை %s"
+msgid "Audacium Mixer Board%s"
+msgstr "Audacium கலக்கும் பலகை %s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
 #. i18n-hint: Title of the Gain slider, used to adjust the volume
@@ -3566,7 +3565,7 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, c-format
 msgid ""
-"The module \"%s\" is matched with Audacity version \"%s\".\n"
+"The module \"%s\" is matched with Audacium version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
@@ -3606,7 +3605,7 @@ msgstr "இல்லை"
 
 #: src/ModuleManager.cpp
 #, fuzzy
-msgid "Audacity Module Loader"
+msgid "Audacium Module Loader"
 msgstr "கூறு ஏற்றி"
 
 #: src/ModuleManager.cpp
@@ -3931,7 +3930,7 @@ msgstr ""
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Audacity requires two channels at the same sample rate for\n"
+"(Audacium requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 
@@ -3960,7 +3959,7 @@ msgstr ""
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Audacity for processor time\n"
+"Other applications are competing with Audacium for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
@@ -4005,7 +4004,7 @@ msgstr "செயற்திட்ட தரவு கோப்புகளை 
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Audacity \n"
+"('aliased files'). There is no way for Audacium \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4052,12 +4051,12 @@ msgstr "எச்சரிக்கை - பெயர் மாற்றபட�
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Audacity can fully regenerate these files \n"
+"Audacium can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "கோப்பகம் \"%s\" செயற்திட்ட பரிசீலனை\n"
 "பெயர் மாற்றப்பட்டு தவறவிடப்பட்ட %lld (.auf) தொகுதி கோப்பு(கள்) கண்டுபிடிக்கப்பட்டது. \n"
-"செயற்திட்டத்தில் உள்ள ஒளியில் இருந்து Audacity இனால் முழுமையாக இவற்றை மீள் உருவாக்க "
+"செயற்திட்டத்தில் உள்ள ஒளியில் இருந்து Audacium இனால் முழுமையாக இவற்றை மீள் உருவாக்க "
 "முடியும்"
 
 #: src/ProjectFSCK.cpp
@@ -4082,7 +4081,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Audacity to recover \n"
+"deletion. There is no way for Audacium to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -4095,7 +4094,7 @@ msgstr ""
 "திட்டம் \"%s\" கோப்பகத்தை ஆராய்ந்தது \n"
 "%lld தவறிய ஒலித்தரவுப்பகுதி கோப்பு (.au), கண்டுபிடிக்கப்பட்டது \n"
 "பெரும்பாலும் வழுவினால், அமைப்பு கோளாறால், அல்லது எதிர்பாராத  \n"
-"நீக்கத்தால். தானாக மீளமைக்க Audacity க்கு எந்த வழியும் இல்லை. \n"
+"நீக்கத்தால். தானாக மீளமைக்க Audacium க்கு எந்த வழியும் இல்லை. \n"
 "\n"
 "கீழே தரப்பட்ட முதலாவது அல்லது இரண்டாவது விருப்பத்தை தெரிவுசெய்தால், \n"
 "தவறிய கோப்புகளை அதன் பழைய இடத்திற்கு மீளமைக்க முடியும். \n"
@@ -4225,12 +4224,12 @@ msgstr ""
 
 #: src/ProjectFileIO.cpp
 #, fuzzy
-msgid "This is not an Audacity project file"
-msgstr "Audacity திட்டத்தை சேமிக்கிறது"
+msgid "This is not an Audacium project file"
+msgstr "Audacium திட்டத்தை சேமிக்கிறது"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Audacity.\n"
+"This project was created with a newer version of Audacium.\n"
 "\n"
 "You will need to upgrade to open it."
 msgstr ""
@@ -4348,7 +4347,7 @@ msgstr "கோப்பில் எழுதுவதில் பிழை"
 #: src/ProjectFileIO.cpp
 #, fuzzy, c-format
 msgid ""
-"Audacity failed to write file %s.\n"
+"Audacium failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
@@ -4363,7 +4362,7 @@ msgstr "திட்டங்கள் சேமிக்கப்படுக�
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Audacity \"%s\""
+msgid "[Project %02i] Audacium \"%s\""
 msgstr ""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
@@ -4375,12 +4374,12 @@ msgstr "மீள பெறபட்டது"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Audacity %s.\n"
-"You are using Audacity %s. You may need to upgrade to a newer version to "
+"This file was saved using Audacium %s.\n"
+"You are using Audacium %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"Audacity %s இனை பாவித்து உங்களது கோப்பானது சேமிக்கப்பட்டுள்ளது.\n"
-"நீங்கள் Audacity %s இனை பாவிக்குறீர்கள்.கோப்பை திறக்கும் பொருட்டு புதிய அமைபிற்கு "
+"Audacium %s இனை பாவித்து உங்களது கோப்பானது சேமிக்கப்பட்டுள்ளது.\n"
+"நீங்கள் Audacium %s இனை பாவிக்குறீர்கள்.கோப்பை திறக்கும் பொருட்டு புதிய அமைபிற்கு "
 "தரமுயர்த்த வேண்டும்."
 
 #: src/ProjectFileIO.cpp
@@ -4451,7 +4450,7 @@ msgstr "வெற்று திட்டம் சேமிக்கப்ப�
 #: src/ProjectFileManager.cpp
 #, fuzzy
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
@@ -4460,7 +4459,7 @@ msgstr ""
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Audacity ran.\n"
+"This project was not saved properly the last time Audacium ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
@@ -4537,7 +4536,7 @@ msgstr "செயற்திட்டத்தை \"%s\" ஆக சேமி...
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Audacity project, not an audio file.\n"
+"'Save Project' is for an Audacium project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
 
@@ -4617,12 +4616,12 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Audacity project file instead."
+"Please open the actual Audacium project file instead."
 msgstr ""
 "தானாக உருவாக்கப்பட்ட காப்பு கோப்பினை திறக்க முயல்கிறீர்.\n"
 "இதன் மூலம் பலத்த தரவு இழப்பு ஏற்படும்.\n"
 "\n"
-"ஆகவே தயவு செய்து Audacity திட்ட கோப்பை திறக்கவும்."
+"ஆகவே தயவு செய்து Audacium திட்ட கோப்பை திறக்கவும்."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4718,8 +4717,8 @@ msgstr "தானியங்கி பாதிப்பு மீட்பு.
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Audacity version %s"
-msgstr "Audacity Version %s இற்கு வரவேற்கிறோம்"
+msgid "Welcome to Audacium version %s"
+msgstr "Audacium Version %s இற்கு வரவேற்கிறோம்"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4780,12 +4779,12 @@ msgstr ""
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Audacity 2.3.0 or before.\n"
-"You need to run that version of Audacity to recover the project."
+"This recovery file was saved by Audacium 2.3.0 or before.\n"
+"You need to run that version of Audacium to recover the project."
 msgstr ""
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Audacity is put on a notebook tab, and this is the name on that tab.
+#. Audacium is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -5135,8 +5134,8 @@ msgid "Activation level (dB):"
 msgstr "செயல்படுத்தப்பட்ட அளவு (db) :"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Audacity!"
-msgstr "Audacity இற்கு வரவேற்கிறோம்"
+msgid "Welcome to Audacium!"
+msgstr "Audacium இற்கு வரவேற்கிறோம்"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5282,15 +5281,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write file:\n"
+"Audacium could not write file:\n"
 "  %s."
 msgstr ""
-"Audacity யால் கோப்பை எழுத முடியவில்லை:\n"
+"Audacium யால் கோப்பை எழுத முடியவில்லை:\n"
 " %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5302,20 +5301,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not open file:\n"
+"Audacium could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"Audacity யால் எழுத கோப்பை திறக்க முடியவில்லை:\n"
+"Audacium யால் எழுத கோப்பை திறக்க முடியவில்லை:\n"
 " %s."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not write images to file:\n"
+"Audacium could not write images to file:\n"
 "  %s."
 msgstr ""
-"Audacity யால் படிமத்தை  கோப்பில் எழுத முடியவில்லை:\n"
+"Audacium யால் படிமத்தை  கோப்பில் எழுத முடியவில்லை:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5329,7 +5328,7 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not find file:\n"
+"Audacium could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
@@ -5338,7 +5337,7 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not load file:\n"
+"Audacium could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
@@ -5348,7 +5347,7 @@ msgstr ""
 
 #: src/Theme.cpp
 msgid ""
-"Audacity could not read its default theme.\n"
+"Audacium could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
 
@@ -5382,14 +5381,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Audacity could not save file:\n"
+"Audacium could not save file:\n"
 "  %s"
 msgstr ""
-"Audacity யால் கோப்பை சேமிக்க முடியவில்லை:\n"
+"Audacium யால் கோப்பை சேமிக்க முடியவில்லை:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Audacity
+#. appearance of older versions of Audacium
 #: src/Theme.cpp
 msgid "Classic"
 msgstr ""
@@ -5437,8 +5436,8 @@ msgid "Time Track"
 msgstr "நேரத் தடம்"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record"
-msgstr "Audacity நேர பதியி"
+msgid "Audacium Timer Record"
+msgstr "Audacium நேர பதியி"
 
 #: src/TimerRecordDialog.cpp
 #, fuzzy
@@ -5532,11 +5531,11 @@ msgstr "தானியங்கி பாதிப்பு மீட்பு.
 #: src/TimerRecordDialog.cpp
 #, fuzzy
 msgid "Action after Timer Recording:"
-msgstr "Audacity நேர பதியி"
+msgstr "Audacium நேர பதியி"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record Progress"
-msgstr "Audacity நேர பதியி செயற்பாடு"
+msgid "Audacium Timer Record Progress"
+msgstr "Audacium நேர பதியி செயற்பாடு"
 
 #: src/TimerRecordDialog.cpp
 #, fuzzy
@@ -5685,8 +5684,8 @@ msgstr ""
 
 #: src/TimerRecordDialog.cpp
 #, fuzzy
-msgid "Exit Audacity"
-msgstr "Audacity வெளியேறவும்"
+msgid "Exit Audacium"
+msgstr "Audacium வெளியேறவும்"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5712,8 +5711,8 @@ msgid "Scheduled to stop at:"
 msgstr "ஆரம்பத்தை தேர்ந்தெடு"
 
 #: src/TimerRecordDialog.cpp
-msgid "Audacity Timer Record - Waiting for Start"
-msgstr "Audacity நேர பதியி - தொடங்க காத்திருக்கிறது"
+msgid "Audacium Timer Record - Waiting for Start"
+msgstr "Audacium நேர பதியி - தொடங்க காத்திருக்கிறது"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5722,7 +5721,7 @@ msgstr "Audacity நேர பதியி - தொடங்க காத்த�
 msgid "Recording will commence in:"
 msgstr "பதிதல் முடிவு"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Audacity", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Audacium", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5742,8 +5741,8 @@ msgstr "பதிதல் முடிவு"
 
 #: src/TimerRecordDialog.cpp
 #, fuzzy
-msgid "Audacity Timer Record - Waiting"
-msgstr "Audacity நேர பதியி - தொடங்க காத்திருக்கிறது"
+msgid "Audacium Timer Record - Waiting"
+msgstr "Audacium நேர பதியி - தொடங்க காத்திருக்கிறது"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5936,8 +5935,8 @@ msgstr ""
 #: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
 #, fuzzy
-msgid "Audacity"
-msgstr "Audacity பதிவுகள்"
+msgid "Audacium"
+msgstr "Audacium பதிவுகள்"
 
 #: src/commands/AudacityCommand.cpp src/effects/Effect.cpp
 #, c-format
@@ -6242,11 +6241,11 @@ msgstr "கட்டளையை தெரிவு செய்க."
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
 #, fuzzy
-msgid "The Audacity Team"
-msgstr "Audacity இணை அணி"
+msgid "The Audacium Team"
+msgstr "Audacium இணை அணி"
 
 #: src/commands/LoadCommands.cpp
-msgid "Provides builtin commands to Audacity"
+msgid "Provides builtin commands to Audacium"
 msgstr ""
 
 #: src/commands/LoadCommands.cpp
@@ -6295,7 +6294,7 @@ msgstr "&amp;தெளிவாக்கு"
 #: src/commands/OpenSaveCommands.h
 #, fuzzy
 msgid "Opens a project."
-msgstr "Audacity திட்டம் திறக்கிறது"
+msgstr "Audacium திட்டம் திறக்கிறது"
 
 #: src/commands/OpenSaveCommands.h
 #, fuzzy
@@ -8118,7 +8117,7 @@ msgid "Previewing"
 msgstr "முன்தோற்றம் காட்டுகிறது"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8892,7 +8891,7 @@ msgid "Builtin Effects"
 msgstr "ஒலி அலகு விளைவுகள்"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Audacity"
+msgid "Provides builtin effects to Audacium"
 msgstr ""
 
 #: src/effects/LoadEffects.cpp
@@ -9152,10 +9151,10 @@ msgstr "படி 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Audacity knows what to filter out,\n"
+"Select a few seconds of just noise so Audacium knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"இரைச்சலை கொண்ட பகுதியை தெரியவும்.இதனால் Audacity இற்கு எதனை வடிகட்ட வேண்டும் என்று "
+"இரைச்சலை கொண்ட பகுதியை தெரியவும்.இதனால் Audacium இற்கு எதனை வடிகட்ட வேண்டும் என்று "
 "அறிய முடியும்,\n"
 "பின் Get Noise Profile இனை அழுத்தவும்:"
 
@@ -10083,7 +10082,7 @@ msgid "VST Effects"
 msgstr "VST விளைவுகள்"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Audacity."
+msgid "Adds the ability to use VST effects in Audacium."
 msgstr ""
 
 #: src/effects/VST/VSTEffect.cpp
@@ -10132,7 +10131,7 @@ msgstr "அமைதி சுருக்கம்"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
@@ -10179,8 +10178,8 @@ msgstr "VST திட்டத்தை சுமையேற்று"
 
 #: src/effects/VST/VSTEffect.cpp
 #, fuzzy
-msgid "Audacity VST preset file"
-msgstr "Audacity செயற்திட்ட கோப்புகள்"
+msgid "Audacium VST preset file"
+msgstr "Audacium செயற்திட்ட கோப்புகள்"
 
 #: src/effects/VST/VSTEffect.cpp
 #, fuzzy
@@ -10276,7 +10275,7 @@ msgid "Audio Unit Effects"
 msgstr "ஒலி அலகு விளைவுகள்"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Audacity"
+msgid "Provides Audio Unit Effects support to Audacium"
 msgstr ""
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
@@ -10297,7 +10296,7 @@ msgstr "ஒலி அலகு விளைவுகள்"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Audacity. When not compensating for this delay, you will notice "
+"audio to Audacium. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
@@ -10468,7 +10467,7 @@ msgid "Provides LADSPA Effects"
 msgstr ""
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Audacity no longer uses vst-bridge"
+msgid "Audacium no longer uses vst-bridge"
 msgstr ""
 
 #: src/effects/ladspa/LadspaEffect.cpp
@@ -10479,7 +10478,7 @@ msgstr "மெருகூட்டல் தொகுப்புகள்"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Audacity. When not compensating for this delay, you will notice that "
+"to Audacium. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
@@ -10519,7 +10518,7 @@ msgstr ""
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Audacity. When not compensating for this delay, you will notice that small "
+"Audacium. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
@@ -10561,7 +10560,7 @@ msgid "LV2 Effects"
 msgstr "VST விளைவுகள்"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Audacity"
+msgid "Provides LV2 Effects support to Audacium"
 msgstr ""
 
 #: src/effects/nyquist/LoadNyquist.cpp
@@ -10570,7 +10569,7 @@ msgid "Nyquist Effects"
 msgstr "விளைவுகள்"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Audacity"
+msgid "Provides Nyquist Effects support to Audacium"
 msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
@@ -10699,7 +10698,7 @@ msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Audacity does not support Nyquist plug-in version %ld"
+msgid "This version of Audacium does not support Nyquist plug-in version %ld"
 msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
@@ -10808,7 +10807,7 @@ msgid "Vamp Effects"
 msgstr "VST விளைவுகள்"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Audacity"
+msgid "Provides Vamp Effects support to Audacium"
 msgstr ""
 
 #: src/effects/vamp/VampEffect.cpp
@@ -11942,7 +11941,7 @@ msgstr "லேமின் அமைவிடம்"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Audacity needs the file %s to create MP3s."
+msgid "Audacium needs the file %s to create MP3s."
 msgstr "MP3களை உருவாக்குவதற்கு audacity இற்கு %s கோப்புகள் தேவை"
 
 #: src/export/ExportMP3.cpp
@@ -11974,10 +11973,10 @@ msgstr "%s எங்குள்ளது"
 #, fuzzy, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Audacity %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Audacity'."
+"Audacium %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Audacium'."
 msgstr ""
-"நீங்கள் lame_enc.dll யுடன் இணைக்கிறீர்கள் v%d.%d. இப்பதிப்பு ஒவ்வாது Audacity %d.%d."
+"நீங்கள் lame_enc.dll யுடன் இணைக்கிறீர்கள் v%d.%d. இப்பதிப்பு ஒவ்வாது Audacium %d.%d."
 "%d.\n"
 "LAME MP3 நுலகத்தின் சமீபத்திய பதிப்பை பதிவிறக்கவும்"
 
@@ -12294,7 +12293,7 @@ msgstr ""
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Audacity cannot do this, the Export was abandoned."
+"Audacium cannot do this, the Export was abandoned."
 msgstr ""
 
 #: src/export/ExportPCM.cpp
@@ -12304,7 +12303,7 @@ msgstr "இறக்குவதில் வழு"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Audacity cannot export WAV\n"
+"Your exported WAV file has been truncated as Audacium cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
 
@@ -12345,7 +12344,7 @@ msgstr "எல்லா கோப்புகளும்|*|எல்லா ஒ�
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Audacity cannot open this type of file for playing, but you can\n"
+"Audacium cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 
@@ -12354,7 +12353,7 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Audacity cannot open this type of file."
+"Audacium cannot open this type of file."
 msgstr ""
 
 #: src/import/Import.cpp
@@ -12363,7 +12362,7 @@ msgstr ""
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Audacity was not compiled with %s support."
+msgid "This version of Audacium was not compiled with %s support."
 msgstr ""
 
 #. i18n-hint: %s will be the filename
@@ -12371,9 +12370,9 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Audacity cannot open audio CDs directly. \n"
+"Audacium cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Audacity can import, such as WAV or AIFF."
+"Audacium can import, such as WAV or AIFF."
 msgstr ""
 
 #. i18n-hint: %s will be the filename
@@ -12381,7 +12380,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Audacity cannot open this file because it only contains links to other "
+"Audacium cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
@@ -12392,7 +12391,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Audacity cannot open this type of file due to patent restrictions. \n"
+"Audacium cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 
@@ -12401,7 +12400,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Audacity cannot open this type of "
+"Without the optional FFmpeg library, Audacium cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
@@ -12413,8 +12412,8 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Audacity cannot open this type of file due to the encryption. \n"
-"Try recording the file into Audacity, or burn it to audio CD then \n"
+"Audacium cannot open this type of file due to the encryption. \n"
+"Try recording the file into Audacium, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 
@@ -12423,7 +12422,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Audacity cannot open this proprietary format. \n"
+"Audacium cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 
@@ -12432,9 +12431,9 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Audacity."
+"then import it, or record it into Audacium."
 msgstr ""
 
 #. i18n-hint: %s will be the filename
@@ -12442,7 +12441,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
@@ -12454,7 +12453,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Audacity cannot open this type of file. \n"
+"Audacium cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 
@@ -12463,7 +12462,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 
@@ -12472,7 +12471,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 
@@ -12481,7 +12480,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Audacity cannot currently open this type of file. \n"
+"Audacium cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 
@@ -12494,7 +12493,7 @@ msgstr "கூறு \"%s\" உள்ளது."
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Audacity did not recognize the type of the file '%s'.\n"
+"Audacium did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
@@ -12514,7 +12513,7 @@ msgstr ""
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Audacity recognized the type of the file '%s'.\n"
+"Audacium recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
@@ -12541,11 +12540,11 @@ msgstr "முன்னமைக்கப்பட்டவையை இறக�
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Audacity version 1.0 or earlier. The format has\n"
-"changed and this version of Audacity is unable to import the project.\n"
+"This project was saved by Audacium version 1.0 or earlier. The format has\n"
+"changed and this version of Audacium is unable to import the project.\n"
 "\n"
-"Use a version of Audacity prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Audacity."
+"Use a version of Audacium prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Audacium."
 msgstr ""
 
 #: src/import/ImportAUP.cpp
@@ -12593,7 +12592,7 @@ msgstr "திட்ட தரவு கோப்பகத்தை கண்ட
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Audacity does not "
+"MIDI tracks found in project file, but this build of Audacium does not "
 "include MIDI support, bypassing track."
 msgstr ""
 
@@ -13820,8 +13819,8 @@ msgstr "தேர்வு ஆரம்பம்:"
 
 #: src/menus/HelpMenus.cpp
 #, fuzzy
-msgid "Audacity &Manual"
-msgstr "Audacity பதிவுகள்"
+msgid "Audacium &Manual"
+msgstr "Audacium பதிவுகள்"
 
 #: src/menus/HelpMenus.cpp
 #, fuzzy
@@ -13872,7 +13871,7 @@ msgstr "சேர்க்கப்பட்ட சிட்டை"
 msgid "Paste Text to New Label"
 msgstr "உரையை புதிய சிட்டையில் ஒட்டு"
 
-#. i18n-hint: (verb) past tense.  Audacity has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Audacium has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13883,7 +13882,7 @@ msgstr "வெட்டி எடுக்கப்பட பாடல் பக
 msgid "Cut Labeled Audio"
 msgstr "பெயரிடப்பட்ட பாடலை வெட்டு"
 
-#. i18n-hint: (verb) Audacity has just deleted the labeled audio regions
+#. i18n-hint: (verb) Audacium has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "பெயரிடப்பட்ட பாடல் பகுதியை அழி"
@@ -13893,7 +13892,7 @@ msgstr "பெயரிடப்பட்ட பாடல் பகுதிய�
 msgid "Delete Labeled Audio"
 msgstr "பெயரிடப்பட்ட பாடலை அழி"
 
-#. i18n-hint: (verb) Audacity has just split cut the labeled audio
+#. i18n-hint: (verb) Audacium has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13904,7 +13903,7 @@ msgstr "வெட்டி எடுத்த பாடலை பிரித்
 msgid "Split Cut Labeled Audio"
 msgstr "வெட்டி எடுத்த பாடலை பிரி"
 
-#. i18n-hint: (verb) Audacity has just done a special kind of DELETE on
+#. i18n-hint: (verb) Audacium has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13935,7 +13934,7 @@ msgstr "பெயரிடப்பட்ட பாடல் பகுதிய�
 msgid "Copy Labeled Audio"
 msgstr "பெயரிடப்பட்ட பாடலை பிரதி செய்"
 
-#. i18n-hint: (verb) past tense.  Audacity has just split the labeled
+#. i18n-hint: (verb) past tense.  Audacium has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13946,7 +13945,7 @@ msgstr "பெயரிடப்பட்ட ஒலிபகுதியை ப�
 msgid "Split Labeled Audio"
 msgstr "பெயரிடப்பட்ட ஒலிபகுதியை பிரி"
 
-#. i18n-hint: (verb) Audacity has just joined the labeled audio (points or
+#. i18n-hint: (verb) Audacium has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13957,9 +13956,9 @@ msgstr "பெயரிடப்பட்ட ஒலியை சேர் (ச�
 msgid "Join Labeled Audio"
 msgstr "பெயரிடப்பட்ட ஒலியை சேர்"
 
-#. i18n-hint: (verb) Audacity has just detached the labeled audio regions.
+#. i18n-hint: (verb) Audacium has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Audacity has done.
+#. Audacium has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "பெயரிடப்பட்ட ஒலி அமைவு பகுதியை பிரி"
@@ -14884,8 +14883,8 @@ msgstr "புதிய சிட்டை தடம் உருவாக்க
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Audacity only allows one time track for each project window."
-msgstr "இந்த Audacity அமைப்பானது ஒரு நேரத்தில் ஒரு தட சாளரத்தையே அனுமதிக்கும்"
+"This version of Audacium only allows one time track for each project window."
+msgstr "இந்த Audacium அமைப்பானது ஒரு நேரத்தில் ஒரு தட சாளரத்தையே அனுமதிக்கும்"
 
 #: src/menus/TrackMenus.cpp
 msgid "Created new time track"
@@ -15185,14 +15184,14 @@ msgstr "ஒலித்துண்டை மேலே நகர்த்து"
 msgid "Move Focused Track to &Bottom"
 msgstr "ஒலித்துண்டை கீழே நகர்த்து"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 #, fuzzy
 msgid "Playing"
 msgstr "ஒலி"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15820,7 +15819,7 @@ msgstr ""
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Audacity is "
+"Changes to temporary directory will not take effect until Audacium is "
 "restarted"
 msgstr ""
 
@@ -15869,7 +15868,7 @@ msgid "LV&2"
 msgstr ""
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Audacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Audacium, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15912,13 +15911,13 @@ msgid "Plugin Options"
 msgstr "பொதுவான தெரிவுகள்"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Audacity starts"
+msgid "Check for updated plugins when Audacium starts"
 msgstr ""
 
 #: src/prefs/EffectsPrefs.cpp
 #, fuzzy
-msgid "Rescan plugins next time Audacity is started"
-msgstr "Audacity அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை பரிசீலிக்கவும்"
+msgid "Rescan plugins next time Audacium is started"
+msgstr "Audacium அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை பரிசீலிக்கவும்"
 
 #: src/prefs/EffectsPrefs.cpp
 #, fuzzy
@@ -15999,12 +15998,12 @@ msgstr "உபயோகிக்கப்படாத வடிகட்டி�
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Audacity "
+"what you are doing, it is recommended to trim spaces. Do you want Audacium "
 "to trim spaces for you?"
 msgstr ""
 "இடைவெளி எழுத்துக்கள் காணப்படுகின்றன (இடைவெளி, புதிய வரிசை,போன்றன) ஒரே மாதிரியாக "
 "காணப்படும் தன்மையை இவை கெடுகின்றது. நீங்கள் என்ன செய்கின்றீர்கள் என்பது தெரியாவிடின், "
-"இடைவெளிகளை நீக்குமாறு பரிந்துரை செய்யப்படுகிறது. Audacity ஆனது உங்களுக்காக "
+"இடைவெளிகளை நீக்குமாறு பரிந்துரை செய்யப்படுகிறது. Audacium ஆனது உங்களுக்காக "
 "இடைவெளிகளை நீக்க விரும்புகிறீர்களா?"
 
 #: src/prefs/ExtImportPrefs.cpp
@@ -16024,7 +16023,7 @@ msgstr "விதியை அழிப்பதை உறுதி செய்
 msgid "Ext Import"
 msgstr "விரிவாக்கப்பட்ட இறக்கம்"
 
-#. i18n-hint: refers to Audacity's user interface settings
+#. i18n-hint: refers to Audacium's user interface settings
 #: src/prefs/GUIPrefs.cpp
 #, fuzzy
 msgctxt "GUI"
@@ -16126,7 +16125,7 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr "சிட்டை விளிம்பில் தெரிவு இருக்குமாயின் சிட்டைகளை பெறுக"
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Audacity theme"
+msgid "B&lend system and Audacium theme"
 msgstr ""
 
 #. i18n-hint: RTL stands for 'Right to Left'
@@ -16316,8 +16315,8 @@ msgid ""
 msgstr ""
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Audacity keyboard shortcuts..."
-msgstr "Audacity விசைப்பலகை குறுக்குவழியை கொண்ட XML கோப்பை தெரியவும்"
+msgid "Select an XML file containing Audacium keyboard shortcuts..."
+msgstr "Audacium விசைப்பலகை குறுக்குவழியை கொண்ட XML கோப்பை தெரியவும்"
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -16448,10 +16447,10 @@ msgstr "தரவிறக்கம்"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Audacity has automatically detected valid FFmpeg libraries.\n"
+"Audacium has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"Audacity ஆனது தானாக செல்லுபடியான FFmpeg நூலகங்களை கண்டுபிடித்துள்ளது.\n"
+"Audacium ஆனது தானாக செல்லுபடியான FFmpeg நூலகங்களை கண்டுபிடித்துள்ளது.\n"
 "தங்கள் இன்னும் அதனை நீங்களாக காட்ட விரும்புகுறீர்களா?"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -16501,7 +16500,7 @@ msgstr "MIDI கூட்டிணைப்பு கண்ணுக்கு �
 msgid "Midi IO"
 msgstr ""
 
-#. i18n-hint: Modules are optional extensions to Audacity that add NEW features.
+#. i18n-hint: Modules are optional extensions to Audacium that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "தொகுதிகள்"
@@ -16514,7 +16513,7 @@ msgstr "விருப்பங்கள்: "
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
 msgid ""
-"These are experimental modules. Enable them only if you've read the Audacity "
+"These are experimental modules. Enable them only if you've read the Audacium "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
@@ -16524,13 +16523,13 @@ msgstr ""
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"  'Ask' means Audacity will ask if you want to load the module each time it "
+"  'Ask' means Audacium will ask if you want to load the module each time it "
 "starts."
 msgstr ""
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
-msgid "  'Failed' means Audacity thinks the module is broken and won't run it."
+msgid "  'Failed' means Audacium thinks the module is broken and won't run it."
 msgstr ""
 
 #. i18n-hint preserve the leading spaces
@@ -16539,7 +16538,7 @@ msgid "  'New' means no choice has been made yet."
 msgstr ""
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Audacity starts up."
+msgid "Changes to these settings only take effect when Audacium starts up."
 msgstr ""
 
 #: src/prefs/ModulePrefs.cpp
@@ -16837,8 +16836,8 @@ msgid "Always scrub un&pinned"
 msgstr ""
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Audacity Preferences"
-msgstr "Audacity விருப்பங்கள்"
+msgid "Audacium Preferences"
+msgstr "Audacium விருப்பங்கள்"
 
 #: src/prefs/PrefsDialog.cpp
 #, fuzzy
@@ -17275,7 +17274,7 @@ msgstr ""
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Audacity can load and save alternative
+#. such as those on button controls.  Audacium can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -17299,7 +17298,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Audacity.\n"
+"Audacium.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -17624,7 +17623,7 @@ msgstr "விருப்பங்கள்: "
 msgid "Waveform dB &range:"
 msgstr "அளவைக் கருவி/அலை வடிவம் db வீ&amp;ச்சு"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 #, fuzzy
@@ -17668,7 +17667,7 @@ msgstr "முடிவை தேர்ந்தெடு"
 msgid "Select to Start"
 msgstr "ஆரம்பத்தை தேர்ந்தெடு"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Audacity
+#. i18n-hint: These are strings for the status bar, and indicate whether Audacium
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, fuzzy, c-format
@@ -18072,8 +18071,8 @@ msgstr "&சாதன கருவி பட்டியில்"
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, fuzzy, c-format
-msgid "Audacity %s Toolbar"
-msgstr "Audacity %s கருவித்தட்டு "
+msgid "Audacium %s Toolbar"
+msgstr "Audacium %s கருவித்தட்டு "
 
 #: src/toolbars/ToolBar.cpp
 #, fuzzy
@@ -18790,7 +18789,7 @@ msgstr "ஒலித்தட்டை கால நேரத்திற்க�
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "வளமையை மாற்றுவதற்கு தேர்ந்தெடுத்து இழுக்கவும்"
 
-#. i18n-hint: (verb) Audacity has just adjusted the envelope .
+#. i18n-hint: (verb) Audacium has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr ""
@@ -21250,7 +21249,7 @@ msgstr "வலது, "
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Audacity</a> by Steve\n"
+"<a href=\"~a\">Audacium</a> by Steve\n"
 "Daulton"
 msgstr ""
 
@@ -21727,11 +21726,11 @@ msgstr ""
 #~ msgid "Export recording"
 #~ msgstr "Google Translate"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Audacity"
-#~ msgstr "Ogg வோர்பிஸ் உதவி ஆனது இந்த Audacity அமைப்பில் இணைக்கப்படவில்லை"
+#~ msgid "Ogg Vorbis support is not included in this build of Audacium"
+#~ msgstr "Ogg வோர்பிஸ் உதவி ஆனது இந்த Audacium அமைப்பில் இணைக்கப்படவில்லை"
 
-#~ msgid "FLAC support is not included in this build of Audacity"
-#~ msgstr "FLAC உதவி ஆனது இந்த Audacity அமைப்பில் இணைக்கப்படவில்லை"
+#~ msgid "FLAC support is not included in this build of Audacium"
+#~ msgstr "FLAC உதவி ஆனது இந்த Audacium அமைப்பில் இணைக்கப்படவில்லை"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "%s கட்டளை ஆனது இன்னும் உருவாக்கப்படவில்லை"
@@ -21785,31 +21784,31 @@ msgstr ""
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "பதியப்பட்ட ஒலி வன் தட்டில் சேமிக்கப்படுகிறது"
 
-#~ msgid "Audacity projects"
-#~ msgstr "Audacity திட்டங்கள்"
+#~ msgid "Audacium projects"
+#~ msgstr "Audacium திட்டங்கள்"
 
 #, fuzzy
 #~ msgid "Reclaimable Space"
 #~ msgstr "மாறி வேகம்"
 
 #~ msgid ""
-#~ "This file was saved by Audacity version %s. The format has changed. \n"
+#~ "This file was saved by Audacium version %s. The format has changed. \n"
 #~ "\n"
-#~ "Audacity can try to open and save this file, but saving it in this \n"
+#~ "Audacium can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Audacity might corrupt the file in opening it, so you should back it up "
+#~ "Audacium might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "இந்த கோப்பானது Audacity அமைப்பு %s இல் சேமிக்கப்பட்டுள்ளது. அமைப்பு "
+#~ "இந்த கோப்பானது Audacium அமைப்பு %s இல் சேமிக்கப்பட்டுள்ளது. அமைப்பு "
 #~ "மாற்றப்படுள்ளது. \n"
 #~ "\n"
-#~ "Audacity இந்த கோப்பை திறக்க முயற்சி செய்யும், ஆனால் இந்த அமைப்பில் சேமிக்கப்பட்டால் \n"
+#~ "Audacium இந்த கோப்பை திறக்க முயற்சி செய்யும், ஆனால் இந்த அமைப்பில் சேமிக்கப்பட்டால் \n"
 #~ "1.2 அல்லது முன்னைய அமைப்புகளால் திறக்க முடியாது \n"
 #~ "\n"
-#~ "இதனை திறக்கும் போது Audacity கோப்பை சேதமடைய செய்யலாம், முதலாவதாக காப்பு ஒன்றை "
+#~ "இதனை திறக்கும் போது Audacium கோப்பை சேதமடைய செய்யலாம், முதலாவதாக காப்பு ஒன்றை "
 #~ "செய்யவும். \n"
 #~ "\n"
 #~ "தற்போது திறக்க விரும்புகிறீர்களா?"
@@ -21852,9 +21851,9 @@ msgstr ""
 #~ msgstr "சுருக்கப்பட்ட திட்டத்தை சேமிக்க \"%s\" ஆக..."
 
 #~ msgid ""
-#~ "Audacity was unable to convert an Audacity 1.0 project to the new project "
+#~ "Audacium was unable to convert an Audacium 1.0 project to the new project "
 #~ "format."
-#~ msgstr "Audacity ஆனது பழைய திட்ட கோப்பை புதிய வடிவில் மாற்றமுடியாதுள்ளது"
+#~ msgstr "Audacium ஆனது பழைய திட்ட கோப்பை புதிய வடிவில் மாற்றமுடியாதுள்ளது"
 
 #~ msgid "Could not remove old auto save file"
 #~ msgstr "பழைய தானாக சேமிக்கும் கோப்பை நீக்க முடியாதுள்ளது"
@@ -21962,16 +21961,16 @@ msgstr ""
 #~ msgstr "Nyquist மெருகூட்டல் நிகழ்கிறது..."
 
 #, fuzzy
-#~ msgid "About Audacity"
-#~ msgstr "Audacity பற்றி"
+#~ msgid "About Audacium"
+#~ msgstr "Audacium பற்றி"
 
 #, fuzzy
-#~ msgid "<h3>Audacity "
-#~ msgstr "Audacity பதிவுகள்"
+#~ msgid "<h3>Audacium "
+#~ msgstr "Audacium பதிவுகள்"
 
 #, fuzzy
-#~ msgid "Audacity Team Members"
-#~ msgstr "Audacity உருவாக்குநர்கள்"
+#~ msgid "Audacium Team Members"
+#~ msgstr "Audacium உருவாக்குநர்கள்"
 
 #, fuzzy
 #~ msgid ""
@@ -21983,7 +21982,7 @@ msgstr ""
 #~ msgstr "mkdir in DirManager::MakeBlockFilePath தோல்வி."
 
 #~ msgid ""
-#~ "Audacity found an orphan block file: %s. \n"
+#~ "Audacium found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
@@ -22295,13 +22294,13 @@ msgstr ""
 #~ msgid ""
 #~ "Latency Correction setting has caused the recorded audio to be hidden "
 #~ "before zero.\n"
-#~ "Audacity has brought it back to start at zero.\n"
+#~ "Audacium has brought it back to start at zero.\n"
 #~ "You may have to use the Time Shift Tool (<---> or F5) to drag the track "
 #~ "to the right place."
 #~ msgstr ""
 #~ "கண்ணுக்கு புலப்படாமல் இருக்கும் நிலை  சரி செய்யும் அமைப்பானது பூச்சியதிட்கு முன்பாக "
 #~ "பதியப்பட்ட ஒலியை மறையவைத்தது.\n"
-#~ "Audacity ஆனது மறுபடியும் பூச்சியத்தில் இருந்து ஆரம்பிக்கும் வண்ணம் செய்துள்ளது.\n"
+#~ "Audacium ஆனது மறுபடியும் பூச்சியத்தில் இருந்து ஆரம்பிக்கும் வண்ணம் செய்துள்ளது.\n"
 #~ "சரியான இடத்திற்கு செல்வதற்கு நீங்கள் நேரத்தை நகர்த்தும் கருவியை  ( <---> or F5) "
 #~ "பாவிக்க வேண்டும்"
 
@@ -22429,9 +22428,9 @@ msgstr ""
 #~ msgstr "ஒலித்துண்டு பெயரை மாற்று:"
 
 #, fuzzy
-#~ msgid "Audacity failed to write to a file in %s."
+#~ msgid "Audacium failed to write to a file in %s."
 #~ msgstr ""
-#~ "Audacity யால் கோப்பை எழுத முடியவில்லை:\n"
+#~ "Audacium யால் கோப்பை எழுத முடியவில்லை:\n"
 #~ " %s."
 
 #~ msgid "Could not open file: "
@@ -22930,8 +22929,8 @@ msgstr ""
 #~ msgid "co-founder"
 #~ msgstr "இணை  நிறுவுனர்"
 
-#~ msgid "Audacity Support Team"
-#~ msgstr "Audacity இணை அணி"
+#~ msgid "Audacium Support Team"
+#~ msgstr "Audacium இணை அணி"
 
 #~ msgid "Emeritus Developers"
 #~ msgstr "Emeritus உருவாக்குனர்கள்"
@@ -22939,8 +22938,8 @@ msgstr ""
 #~ msgid "<center><h3>How to Get Help</h3></center>"
 #~ msgstr "<center><h3>எவ்வாறு உதவி பெறுவது</h3></center>"
 
-#~ msgid "Welcome to Audacity "
-#~ msgstr "Audacity க்கு வரவேற்கிறோம்"
+#~ msgid "Welcome to Audacium "
+#~ msgstr "Audacium க்கு வரவேற்கிறோம்"
 
 #~ msgid "Edit Metadata"
 #~ msgstr "Metadata திருத்த"
@@ -23125,9 +23124,9 @@ msgstr ""
 #~ msgstr "கட்டளை வரிசை விருப்புகள் ஆதரித்தவை:"
 
 #~ msgid ""
-#~ "In addition, specify the name of an audio file or Audacity project to "
+#~ "In addition, specify the name of an audio file or Audacium project to "
 #~ "open it."
-#~ msgstr "மேலதிகமாக ஒலி கோப்பு அல்லது Audacity செயற்திட்டத்தின் பெயரை குறிப்பிடவும்."
+#~ msgstr "மேலதிகமாக ஒலி கோப்பு அல்லது Audacium செயற்திட்டத்தின் பெயரை குறிப்பிடவும்."
 
 #~ msgid "Stereo to Mono Effect not found"
 #~ msgstr "பல வழி திசை  ஒலி  இருந்து ஒரு வழி திசை ஒலி  விளைவை காணவில்லை"
@@ -23465,8 +23464,8 @@ msgstr ""
 #~ msgid "Extracting features: %s"
 #~ msgstr "%s அம்சங்கள் பிரிக்கப்படுகிறது."
 
-#~ msgid "Restart Audacity to apply changes."
-#~ msgstr "மாற்றங்களை செயற்படுத்த Audacity இனை மீள ஆரம்பிக்கவும்"
+#~ msgid "Restart Audacium to apply changes."
+#~ msgstr "மாற்றங்களை செயற்படுத்த Audacium இனை மீள ஆரம்பிக்கவும்"
 
 #, fuzzy
 #~ msgid "Display effects in graphical mode when supported"
@@ -23522,8 +23521,8 @@ msgstr ""
 #~ msgstr "படம் மூலம் ஒலி அலகின் விளைவுகளை காட்டவும்"
 
 #, fuzzy
-#~ msgid "&Rescan VST effects next time Audacity is started"
-#~ msgstr "Audacity அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை பரிசீலிக்கவும்"
+#~ msgid "&Rescan VST effects next time Audacium is started"
+#~ msgstr "Audacium அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை பரிசீலிக்கவும்"
 
 #~ msgid "Input Meter"
 #~ msgstr "உள்ளீட்டு அலகு"
@@ -23691,8 +23690,8 @@ msgstr ""
 #~ msgid "&amp;Device"
 #~ msgstr "&amp;கருவி"
 
-#~ msgid "&amp;Rescan VST effects next time Audacity is started"
-#~ msgstr "Audacity அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை &amp;பரிசீலிக்கவும்"
+#~ msgid "&amp;Rescan VST effects next time Audacium is started"
+#~ msgstr "Audacium அடுத்த முறை ஆரம்பிக்கும் போது VST விளைவுகளை &amp;பரிசீலிக்கவும்"
 
 #~ msgid "&amp;Language:"
 #~ msgstr "மொ&amp;ழி"
@@ -23712,9 +23711,9 @@ msgstr ""
 #~ msgid "Dow&amp;nload"
 #~ msgstr "தரவிறக்&amp;கு"
 
-#~ msgid "Enable these Modules (if present), next time Audacity is started"
+#~ msgid "Enable these Modules (if present), next time Audacium is started"
 #~ msgstr ""
-#~ "இந்த தொகுதிகள் காணப்படின் அடுத்த முறை Audacity ஆரம்பிக்கும் போது செயற்படுத்துக"
+#~ "இந்த தொகுதிகள் காணப்படின் அடுத்த முறை Audacium ஆரம்பிக்கும் போது செயற்படுத்துக"
 
 #~ msgid "mod-&amp;script-pipe"
 #~ msgstr "mod-&amp;script-pipe"
