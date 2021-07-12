@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: audacium - 78c701d \n"
-#"Report-Msgid-Bugs-To: Audacium-translation@lists.sourceforge.net\n"
+"Report-Msgid-Bugs-To: audacium-translation@riseup.net\n"
 "POT-Creation-Date: 2021-06-12 20:33-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
