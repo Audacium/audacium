@@ -50,7 +50,6 @@
 
 /* Name of package */
 #define PACKAGE "libtwolame"
-#define PACKAGE_URL "http://www.twolame.org/"
 
 /* The size of a `float', as computed by sizeof. */
 #define SIZEOF_FLOAT 4

@@ -1,5 +1,5 @@
-#ifndef TWOLAME_WINUTIL_H
-#define TWOLAME_WINUTIL_H
+#ifndef __TWOLAME_WINUTIL_H
+#define __TWOLAME_WINUTIL_H
 
 /*
  * Don't define this as a function to avoid conflicts

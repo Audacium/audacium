@@ -1,21 +1,18 @@
-dnl Require autoconf version >= 2.68
-AC_PREREQ([2.68])
+dnl Require autoconf version >= 2.60
+AC_PREREQ(2.60)
 
 
 dnl ############# Initialization
 
-AC_INIT(
-  [TwoLAME],
-  [0.4.0],
-  [twolame-discuss@lists.sourceforge.net],
-  [twolame],
-  [http://www.twolame.org/])
+AC_INIT([twolame],[0.3.13],[twolame-discuss@lists.sourceforge.net])
 
 AC_CONFIG_SRCDIR(libtwolame/twolame.h)
 AC_CONFIG_AUX_DIR(build-scripts)
 AC_CONFIG_MACRO_DIR(build-scripts)
 AM_INIT_AUTOMAKE([1.10])
+
 LT_PREREQ([2.2])
+LT_INIT
 
 AM_MAINTAINER_MODE
 
@@ -36,7 +33,7 @@ dnl increment age.
 dnl
 dnl If any interfaces have been removed since the last public release, then set
 dnl age to 0.
-dnl
+dnl 
 
 TWOLAME_SO_VERSION=0:0:0
 AC_SUBST(TWOLAME_SO_VERSION)
@@ -45,12 +42,11 @@ AC_SUBST(TWOLAME_SO_VERSION)
 
 dnl ############# Compiler and tools Checks
 
-AM_PROG_AR
 AC_PROG_CC
 AC_PROG_CC_C99
 AC_PROG_INSTALL
 AC_PROG_LN_S
-LT_INIT([win32-dll])
+AC_PROG_LIBTOOL
 
 AC_C_BIGENDIAN
 AC_C_INLINE
@@ -58,25 +54,10 @@ AC_C_CONST
 
 if test "$USE_MAINTAINER_MODE" = yes; then
   AC_PATH_PROG([PATH_ASCIIDOC], [asciidoc])
-  if test -z "$PATH_ASCIIDOC"; then
-    AC_MSG_ERROR([asciidoc is not available and maintainer mode is enabled])
-  fi
-
   AC_PATH_PROG([PATH_DOXYGEN], [doxygen])
-  if test -z "$PATH_DOXYGEN"; then
-    AC_MSG_ERROR([doxygen is not available and maintainer mode is enabled])
-  fi
-
   AC_PATH_PROG([PATH_XMLTO], [xmlto])
-  if test -z "$PATH_XMLTO"; then
-    AC_MSG_ERROR([xmlto is not available and maintainer mode is enabled])
-  fi
 fi
 
-AC_PATH_PROG(PERL, perl)
-if test -z "$PERL"; then
-  AC_MSG_WARN([perl is needed to run the test suite])
-fi
 
 
 dnl ############## Check that types are the right size
@@ -100,23 +81,18 @@ AC_CHECK_LIB([m], [sqrt])
 AC_CHECK_LIB([m], [lrintf])
 AC_CHECK_LIB([mx], [powf])
 
-AC_ARG_ENABLE(sndfile,
-	[  --enable-sndfile            libsndfile support (default: enabled)])
-
-if test "${enable_sndfile}" != "no" ; then
-	PKG_CHECK_MODULES(SNDFILE, sndfile >= 1.0.0,
-		[ HAVE_SNDFILE="yes" ],
-		[ AC_CHECK_LIB( [sndfile], [sf_command],
-			[ AC_CHECK_HEADER( [sndfile.h],
-				[ HAVE_SNDFILE="yes"
-				  SNDFILE_CFLAGS=""
-				  SNDFILE_LIBS="-lsndfile" ],
-				[ AC_MSG_WARN([Can't find sndfile.h on your system]) ] ) ],
-			[ AC_MSG_WARN([Can't find libsndfile library on your system]) ]
-		) ]
-	)
-fi
-
+PKG_CHECK_MODULES(SNDFILE, sndfile >= 1.0.0,
+	[ HAVE_SNDFILE="yes" ],
+	[ AC_CHECK_LIB( [sndfile], [sf_command],
+		[ AC_CHECK_HEADER( [sndfile.h],
+			[ HAVE_SNDFILE="yes"
+			  SNDFILE_CFLAGS="" 
+			  SNDFILE_LIBS="-lsndfile" ],
+			[ AC_MSG_WARN([Can't find sndfile.h on your system]) ] ) ],
+		[ AC_MSG_WARN([Can't find libsndfile library on your system]) ]
+	) ]
+)
+			
 AC_SUBST(SNDFILE_CFLAGS)
 AC_SUBST(SNDFILE_LIBS)
 
@@ -126,7 +102,7 @@ dnl ############## Header Checks
 
 AC_HEADER_STDC
 AC_CHECK_HEADERS(malloc.h assert.h unistd.h inttypes.h)
-AC_CHECK_HEADER(getopt.h,
+AC_CHECK_HEADER(getopt.h, 
 	[ HAVE_GETOPT_H="yes" ],
 	[ HAVE_GETOPT_H="no"
 	  AC_MSG_WARN([getopt.h is unavailable on your system]) ]
@@ -143,7 +119,7 @@ if test "x$HAVE_SNDFILE" = "xyes"; then
 	else
 		AC_MSG_WARN([Not building twolame frontend because getopt.h is missing.])
 	fi
-else
+else 
 	AC_MSG_WARN([Not building twolame frontend because libsndfile is missing.])
 fi
 AC_SUBST(TWOLAME_BIN)
@@ -159,10 +135,7 @@ if test "$USE_MAINTAINER_MODE" = yes; then
 	AC_SUBST(WARNING_CFLAGS)
 fi
 
-dnl Required for linking binaries to static lib
-if test $enable_static = yes; then
-   CFLAGS+=" -DLIBTWOLAME_STATIC"
-fi
+
 
 dnl ############## Output files
 
@@ -171,7 +144,6 @@ AC_CONFIG_HEADERS([libtwolame/config.h])
 AC_CONFIG_FILES([
 	Makefile \
 	twolame.pc \
-	twolame.spec \
 	doc/Makefile \
 	doc/html/Makefile \
 	doc/html/Doxyfile \

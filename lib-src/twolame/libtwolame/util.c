@@ -1,22 +1,24 @@
 /*
- *  TwoLAME: an optimized MPEG Audio Layer Two encoder
+ *	TwoLAME: an optimized MPEG Audio Layer Two encoder
  *
- *  Copyright (C) 2001-2004 Michael Cheng
- *  Copyright (C) 2004-2018 The TwoLAME Project
+ *	Copyright (C) 2001-2004 Michael Cheng
+ *	Copyright (C) 2004-2006 The TwoLAME Project
  *
- *  This library is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation; either
- *  version 2.1 of the License, or (at your option) any later version.
+ *	This library is free software; you can redistribute it and/or
+ *	modify it under the terms of the GNU Lesser General Public
+ *	License as published by the Free Software Foundation; either
+ *	version 2.1 of the License, or (at your option) any later version.
  *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- *  Lesser General Public License for more details.
+ *	This library is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *	Lesser General Public License for more details.
  *
- *  You should have received a copy of the GNU Lesser General Public
- *  License along with this library; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *	You should have received a copy of the GNU Lesser General Public
+ *	License along with this library; if not, write to the Free Software
+ *	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ *  $Id$
  *
  */
 
@@ -35,7 +37,7 @@
 // of this library
 const char *get_twolame_version(void)
 {
-    static const char *str = PACKAGE_VERSION;
+    const char *str = PACKAGE_VERSION;
 
     return str;
 }
@@ -44,7 +46,7 @@ const char *get_twolame_version(void)
 // of this library
 const char *get_twolame_url(void)
 {
-    static const char *str = PACKAGE_URL;
+    const char *str = "http://www.twolame.org";
 
     return str;
 }
@@ -78,6 +80,7 @@ const char *twolame_mpeg_version_name(int version)
 int twolame_get_bitrate_index(int bitrate, TWOLAME_MPEG_version version)
 {
     int index = 0;
+    int found = 0;
 
     // MFC sanity check.
     if (version != 0 && version != 1) {
@@ -85,17 +88,21 @@ int twolame_get_bitrate_index(int bitrate, TWOLAME_MPEG_version version)
         return -1;
     }
 
-    while (++index < 15)
+    while (!found && index < 15) {
         if (bitrate_table[version][index] == bitrate)
-            break;
+            found = 1;
+        else
+            ++index;
+    }
 
-    if (index == 15) {
+    if (found)
+        return (index);
+    else {
         fprintf(stderr,
                 "twolame_get_bitrate_index: %d is not a legal bitrate for version '%s'\n",
                 bitrate, twolame_mpeg_version_name(version));
         return -1;
     }
-    return (index);
 }
 
 // convert samp frq in Hz to index
@@ -106,17 +113,20 @@ int twolame_get_samplerate_index(long sample_rate)
 
     switch (sample_rate) {
     case 44100L:
-    case 22050L:
         return 0;
     case 48000L:
-    case 24000L:
         return 1;
     case 32000L:
+        return 2;
+    case 22050L:
+        return 0;
+    case 24000L:
+        return 1;
     case 16000L:
         return 2;
     }
 
-    // Invalid choice of samplerate
+    // Invalid choice of samplerate 
     fprintf(stderr, "twolame_get_samplerate_index: %ld is not a legal sample rate\n", sample_rate);
     return -1;
 }
@@ -129,16 +139,20 @@ int twolame_get_version_for_samplerate(long sample_rate)
 
     switch (sample_rate) {
     case 48000L:
+        return TWOLAME_MPEG1;
     case 44100L:
+        return TWOLAME_MPEG1;
     case 32000L:
         return TWOLAME_MPEG1;
     case 24000L:
+        return TWOLAME_MPEG2;
     case 22050L:
+        return TWOLAME_MPEG2;
     case 16000L:
         return TWOLAME_MPEG2;
     }
 
-    // Invalid choice of samplerate
+    // Invalid choice of samplerate 
     fprintf(stderr, "twolame_get_version_for_samplerate: %ld is not a legal sample rate\n",
             sample_rate);
     return -1;
@@ -150,24 +164,15 @@ int twolame_get_framelength(twolame_options * glopts)
 {
     int bytes = 144 * (glopts->bitrate * 1000) / glopts->samplerate_out;
 
-    if ((glopts->header).padding)
+    if (glopts->padding)
         bytes++;
 
     return bytes;
 }
 
 
-// Get the bitrate corrensponding to a given index
-int twolame_index_bitrate(int mpeg_ver, int index)
-{
-    if (index>0 && index<15) {
-        return (bitrate_table[mpeg_ver][index]);
-    }
-    return 0;
-}
 
-
-// Print the library version and
+// Print the library version and 
 //  encoder parameter settings to STDERR
 void twolame_print_config(twolame_options * glopts)
 {
@@ -199,10 +204,11 @@ void twolame_print_config(twolame_options * glopts)
                 twolame_get_in_samplerate(glopts), twolame_get_num_channels(glopts));
         fprintf(fd, "Output: %d Hz, %s\n",
                 twolame_get_out_samplerate(glopts), twolame_get_mode_name(glopts));
+        fprintf(fd, "%d kbps ", twolame_get_bitrate(glopts));
         if (twolame_get_VBR(glopts))
             fprintf(fd, "VBR ");
         else
-            fprintf(fd, "%d kbps CBR ", twolame_get_bitrate(glopts));
+            fprintf(fd, "CBR ");
         fprintf(fd, "%s Layer II ", twolame_get_version_name(glopts));
         fprintf(fd, "psycho model=%d \n", twolame_get_psymodel(glopts));
 

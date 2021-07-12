@@ -2,7 +2,7 @@
  *  TwoLAME: an optimized MPEG Audio Layer Two encoder
  *
  *  Copyright (C) 2001-2004 Michael Cheng
- *  Copyright (C) 2004-2018 The TwoLAME Project
+ *  Copyright (C) 2004-2006 The TwoLAME Project
  *
  *  This library is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -17,6 +17,8 @@
  *  You should have received a copy of the GNU Lesser General Public
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ *  $Id$
  *
  */
 
@@ -55,7 +57,7 @@ TWOLAME_MPEG_mode twolame_get_mode(twolame_options * glopts)
 const char *twolame_get_mode_name(twolame_options * glopts)
 {
     static const char *mode_name[6] =
-    { "Auto", "Stereo", "J-Stereo", "Dual-Channel", "Mono", "Illegal Mode" };
+        { "Auto", "Stereo", "J-Stereo", "Dual-Channel", "Mono", "Illegal Mode" };
     int mode = glopts->mode;
     if (mode >= TWOLAME_AUTO_MODE && mode <= TWOLAME_MONO)
         return (mode_name[mode + 1]);
@@ -184,7 +186,7 @@ int twolame_get_bitrate(twolame_options * glopts)
 int twolame_set_emphasis(twolame_options * glopts, TWOLAME_Emphasis emphasis)
 {
     if (emphasis != TWOLAME_EMPHASIS_N &&
-            emphasis != TWOLAME_EMPHASIS_5 && emphasis != TWOLAME_EMPHASIS_C)
+        emphasis != TWOLAME_EMPHASIS_5 && emphasis != TWOLAME_EMPHASIS_C)
         return (-1);
     glopts->emphasis = emphasis;
     return (0);
@@ -200,7 +202,7 @@ int twolame_set_error_protection(twolame_options * glopts, int error_protection)
     if (error_protection)
         glopts->error_protection = TRUE;
     else
-        glopts->error_protection = FALSE;
+        error_protection = FALSE;
     return (0);
 }
 
@@ -235,20 +237,6 @@ int twolame_set_original(twolame_options * glopts, int original)
 int twolame_get_original(twolame_options * glopts)
 {
     return (glopts->original);
-}
-
-int twolame_set_extension(twolame_options * glopts, int extension)
-{
-    if (extension)
-        glopts->private_extension = TRUE;
-    else
-        glopts->private_extension = FALSE;
-    return (0);
-}
-
-int twolame_get_extension(twolame_options * glopts)
-{
-    return (glopts->private_extension);
 }
 
 int twolame_set_padding(twolame_options * glopts, TWOLAME_Padding padding)
@@ -291,6 +279,23 @@ int twolame_set_VBR_level(twolame_options * glopts, float level)
 }
 
 float twolame_get_VBR_level(twolame_options * glopts)
+{
+    return (glopts->vbrlevel);
+}
+
+// Deprecated:
+int twolame_set_VBR_q(twolame_options * glopts, float level)
+{
+    // Limit is -50 to 50, but useful range is -10 to 10
+    if (fabs(level) > 50.0)
+        return (-1);
+    else
+        glopts->vbrlevel = level;
+    return (0);
+}
+
+// Deprecated:
+float twolame_get_VBR_q(twolame_options * glopts)
 {
     return (glopts->vbrlevel);
 }
@@ -406,29 +411,18 @@ const char *twolame_get_version_name(twolame_options * glopts)
     return twolame_mpeg_version_name(glopts->version);
 }
 
-int twolame_set_freeformat(twolame_options * glopts, int freef)
-{
-    if (freef) {
-        glopts->freeformat = TRUE;
-    } else {
-        glopts->freeformat = FALSE;
-    }
-
-    return (0);
-}
 
 
 
 
 
-/* Jörgen Scott 09May 2014. Added some utility methods to make DAB support easier.
-- twolame_set_DAB_scf_crc_length
-- twolame_set_DAB_scf_crc
-Supporting DAB requires the front-end to buffer at least two mp2 frames.
-However given this handling, DAB seems to work just fine. So I removed the previous warning message.
-*/
+/* WARNING: DAB support is currently broken */
+
 int twolame_set_DAB(twolame_options * glopts, int dab)
 {
+
+    fprintf(stderr, "Warning: DAB support is currently broken in this version of TwoLAME.\n");
+
     if (dab)
         glopts->do_dab = TRUE;
     else
@@ -463,55 +457,10 @@ int twolame_set_DAB_crc_length(twolame_options * glopts, int length)
     return (0);
 }
 
-int twolame_set_DAB_scf_crc_length(twolame_options * glopts)
-{
-    if (glopts->version == TWOLAME_MPEG2) {
-        glopts->dab_crc_len = 4;
-    }
-    else if (glopts->mode == TWOLAME_MONO) {
-        if (glopts->bitrate >= 56)
-            glopts->dab_crc_len = 4;
-        else
-            glopts->dab_crc_len = 2;
-    }
-    else if (glopts->bitrate >= 112)
-        glopts->dab_crc_len = 4;
-    else
-        glopts->dab_crc_len = 2;
-    return (0);
-}
-
 int twolame_get_DAB_crc_length(twolame_options * glopts)
 {
     return (glopts->dab_crc_len);
 }
 
-int twolame_set_DAB_scf_crc(twolame_options * glopts,
-                            unsigned char *mp2buffer,
-                            int mp2buffer_size)
-{
-    /* ScF-CRC field precedes two bytes of F-PAD */
-    unsigned char *pTo = &mp2buffer[mp2buffer_size  - 3];
 
-    if (glopts->dab_crc_len == 4)
-    {
-        *pTo-- = glopts->dab_crc[0];
-        *pTo-- = glopts->dab_crc[1];
-        *pTo-- = glopts->dab_crc[2];;
-        *pTo-- = glopts->dab_crc[3];
-    }
-    else if (glopts->dab_crc_len == 2)
-    {
-        *pTo-- = glopts->dab_crc[0];
-        *pTo-- = glopts->dab_crc[1];
-    }
-    else
-    {
-        fprintf(stderr, "Invalid size of DAB scf-crc field\n");
-        return (-1);
-    }
-    return (0);
-}
-
-
-// vim:ts=4:sw=4:nowrap:
+// vim:ts=4:sw=4:nowrap: 
