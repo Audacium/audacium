@@ -1,4 +1,3 @@
-% $Id$
 \documentclass[12pt,paper=a4]{scrartcl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,6 +49,14 @@
 % To still be able to use captions, we use the capt-of package.
 \usepackage{capt-of}
 
+% strikeout support
+\usepackage[normalem]{ulem}
+
+% blockquote support
+\usepackage{csquotes}
+
+% allow 'special' characters in filenames, like undescore :-P
+\usepackage{grffile}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Custom commands
@@ -126,7 +133,7 @@
  
 \bibitem{Sporer/Brandenburg/Edler} T.~Sporer, K.~Brandenburg and B.~Edler, 
 The use of multirate filter banks for coding of high quality digital audio,
-\url{http://www.iocon.com/resource/docs/ps/eusipco_corrected.ps}.
+\url{https://media.taricorp.net/eusipco_corrected.pdf}.
 
 
 \end{thebibliography}

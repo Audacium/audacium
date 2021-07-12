@@ -1,9 +1,8 @@
 ## Process this file with automake to produce Makefile.in
 
-ACLOCAL_AMFLAGS = -I m4
-
-#AUTOMAKE_OPTIONS = 1.7 foreign dist-zip dist-bzip2
 AUTOMAKE_OPTIONS = foreign 1.11 dist-zip dist-xz
+
+ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = m4 include vq lib test doc
 
@@ -19,16 +18,15 @@ pkgconfig_DATA = vorbis.pc vorbisenc.pc vorbisfile.pc
 
 EXTRA_DIST = \
 	CHANGES COPYING \
-	todo.txt autogen.sh \
+	autogen.sh \
 	libvorbis.spec libvorbis.spec.in \
 	vorbis.m4 \
 	vorbis.pc.in vorbisenc.pc.in vorbisfile.pc.in \
 	vorbis-uninstalled.pc.in \
 	vorbisenc-uninstalled.pc.in \
 	vorbisfile-uninstalled.pc.in \
-	symbian \
-	macos macosx win32
-
+	symbian macosx win32 \
+	CMakeLists.txt cmake/FindOgg.cmake cmake/VorbisConfig.cmake.in
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-docs
 

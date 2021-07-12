@@ -6,19 +6,18 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2007             *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
  *                                                                  *
  ********************************************************************
 
  function: window functions
- last mod: $Id: window.h 13293 2007-07-24 00:09:47Z xiphmont $
 
  ********************************************************************/
 
 #ifndef _V_WINDOW_
 #define _V_WINDOW_
 
-extern float *_vorbis_window_get(int n);
+extern const float *_vorbis_window_get(int n);
 extern void _vorbis_apply_window(float *d,int *winno,long *blocksizes,
                           int lW,int W,int nW);
 

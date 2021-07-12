@@ -1,6 +1,5 @@
 % -*- mode: latex; TeX-master: "Vorbis_I_spec"; -*-
 %!TEX root = Vorbis_I_spec.tex
-% $Id$
 \section{Floor type 0 setup and decode} \label{vorbis:spec:floor0}
 
 \subsection{Overview}
@@ -139,7 +138,7 @@ synthesized:
     and
 
     \begin{displaymath}
-      \mathrm{bark}(x) = 13.1 \arctan (.00074x) + 2.24 \arctan (.0000000185x^2 + .0001x)
+      \mathrm{bark}(x) = 13.1 \arctan (.00074x) + 2.24 \arctan (.0000000185x^2) + .0001x
     \end{displaymath}
 
 The above is used to synthesize the LSP curve on a Bark-scale frequency
@@ -184,9 +183,19 @@ Similarly, the below calculation synthesizes the output LSP curve \varname{[outp
  \item done
 \end{enumerate}
 
+\paragraph{Errata 20150227: Bark scale computation}
 
+Due to a typo when typesetting this version of the specification from the original HTML document, the Bark scale computation previously erroneously read:
 
+    \begin{displaymath}
+      \hbox{\sout{$
+      \mathrm{bark}(x) = 13.1 \arctan (.00074x) + 2.24 \arctan (.0000000185x^2 + .0001x)
+      $}}
+    \end{displaymath}
 
+Note that the last parenthesis is misplaced.  This document now uses the correct equation as it appeared in the original HTML spec document:
 
-
+    \begin{displaymath}
+      \mathrm{bark}(x) = 13.1 \arctan (.00074x) + 2.24 \arctan (.0000000185x^2) + .0001x
+    \end{displaymath}
 

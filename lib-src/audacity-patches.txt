@@ -51,12 +51,10 @@ NOTE: Patch files no longer being created. Use git history instead.
 libogg
 ------
 library to handle Xiph.org's open multimedia container format
-Version in Audacity SVN: 1.3.1
-Patches: autotools.patch: Fix all autotools warnings. configure.in was renamed
-                          to configure.ac after applying the patch.
-AM_MAINTAINER_MODE has been called with "disable" in configure.ac to disable
+Version in Audacity SVN: master (3069cc2)
+Patches: None
 autotools rebuilds by default.
-Upstream Version: 1.3.1
+Upstream Version: master (3069cc2)
 
 libsndfile
 ----------
@@ -88,9 +86,9 @@ libvorbis
 ---------
 library for endcoding and decoding Xiph.org's high-quality compressed audio
 format.
-Version in Audacity SVN: 1.3.3
-Patches: autotools.patch: Fix all autotools warnings.
-Upstream Version: 1.3.3
+Version in Audacity SVN: master (84c0236)
+Patches: None
+Upstream Version: master (84c0236)
 
 
 lv2

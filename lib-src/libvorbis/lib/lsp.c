@@ -6,19 +6,19 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2009             *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
  *                                                                  *
  ********************************************************************
 
   function: LSP (also called LSF) conversion routines
-  last mod: $Id: lsp.c 17538 2010-10-15 02:52:29Z tterribe $
 
   The LSP generation code is taken (with minimal modification and a
   few bugfixes) from "On the Computation of the LSP Frequencies" by
   Joseph Rothweiler (see http://www.rothweiler.us for contact info).
+
   The paper is available at:
 
-  http://www.myown1.com/joe/lsf
+  https://web.archive.org/web/20110810174000/http://home.myfairpoint.net/vzenxj75/myown1/joe/lsf/index.html
 
  ********************************************************************/
 
@@ -309,7 +309,6 @@ static int comp(const void *a,const void *b){
 #define EPSILON 10e-7
 static int Laguerre_With_Deflation(float *a,int ord,float *r){
   int i,m;
-  double lastdelta=0.f;
   double *defl=alloca(sizeof(*defl)*(ord+1));
   for(i=0;i<=ord;i++)defl[i]=a[i];
 
@@ -346,7 +345,6 @@ static int Laguerre_With_Deflation(float *a,int ord,float *r){
       if(delta<0.f)delta*=-1;
 
       if(fabs(delta/new)<10e-12)break;
-      lastdelta=delta;
     }
 
     r[m-1]=new;

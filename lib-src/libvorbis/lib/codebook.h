@@ -5,13 +5,12 @@
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
- * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2009             *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2015             *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
  *                                                                  *
  ********************************************************************
 
  function: basic shared codebook operations
- last mod: $Id: codebook.h 17030 2010-03-25 06:52:55Z xiphmont $
 
  ********************************************************************/
 
@@ -34,14 +33,14 @@
 */
 
 typedef struct static_codebook{
-  long   dim;            /* codebook dimensions (elements per vector) */
-  long   entries;        /* codebook entries */
-  long  *lengthlist;     /* codeword lengths in bits */
+  long   dim;           /* codebook dimensions (elements per vector) */
+  long   entries;       /* codebook entries */
+  char  *lengthlist;    /* codeword lengths in bits */
 
   /* mapping ***************************************************************/
-  int    maptype;        /* 0=none
-                            1=implicitly populated values from map column
-                            2=listed arbitrary values */
+  int    maptype;       /* 0=none
+                           1=implicitly populated values from map column
+                           2=listed arbitrary values */
 
   /* The below does a linear, single monotonic sequence mapping. */
   long     q_min;       /* packed 32 bit float; quant value 0 maps to minval */
@@ -89,7 +88,6 @@ extern float *_book_logdist(const static_codebook *b,float *vals);
 extern float _float32_unpack(long val);
 extern long   _float32_pack(float val);
 extern int  _best(codebook *book, float *a, int step);
-extern int _ilog(unsigned int v);
 extern long _book_maptype1_quantvals(const static_codebook *b);
 
 extern int vorbis_book_besterror(codebook *book,float *a,int step,int addmul);

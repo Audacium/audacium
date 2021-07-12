@@ -1,33 +1,33 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([libogg],[1.3.1],[ogg-dev@xiph.org])
+AC_INIT([libogg],[1.3.5],[ogg-dev@xiph.org])
 
+LT_INIT
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR(src/framing.c)
 
 AM_INIT_AUTOMAKE
-AM_MAINTAINER_MODE([disable])
+AM_MAINTAINER_MODE([enable])
 
 dnl Library versioning
 
 LIB_CURRENT=8
-LIB_REVISION=1
+LIB_REVISION=5
 LIB_AGE=8
 AC_SUBST(LIB_CURRENT)
 AC_SUBST(LIB_REVISION)
 AC_SUBST(LIB_AGE)
 
 AC_PROG_CC
-AM_PROG_LIBTOOL
 AM_PROG_CC_C_O
 
 dnl Set some options based on environment
 
 cflags_save="$CFLAGS"
 if test -z "$GCC"; then
-        case $host in 
+        case $host in
         *-*-irix*)
-                DEBUG="-g -signed" 
+                DEBUG="-g -signed"
                 CFLAGS="-O2 -w -signed"
                 PROFILE="-p -g3 -O2 -signed"
 		;;
@@ -39,20 +39,20 @@ if test -z "$GCC"; then
         *)
                 DEBUG="-g"
                 CFLAGS="-O"
-                PROFILE="-g -p" 
+                PROFILE="-g -p"
 		;;
         esac
 else
-        case $host in 
+        case $host in
         *-*-linux*)
                 DEBUG="-g -Wall -fsigned-char"
-                CFLAGS="-O20 -Wall -ffast-math -fsigned-char"
-                PROFILE="-Wall -W -pg -g -O20 -ffast-math -fsigned-char"
+                CFLAGS="-O2 -Wall -ffast-math -fsigned-char"
+                PROFILE="-Wall -W -pg -g -O2 -ffast-math -fsigned-char"
 		;;
         sparc-sun-*)
                 DEBUG="-g -Wall -fsigned-char"
-                CFLAGS="-O20 -ffast-math -fsigned-char"
-                PROFILE="-pg -g -O20 -fsigned-char" 
+                CFLAGS="-O2 -ffast-math -fsigned-char"
+                PROFILE="-pg -g -O2 -fsigned-char"
 		;;
 	*-*-darwin*)
 		DEBUG="-fno-common -g -Wall -fsigned-char"
@@ -61,8 +61,8 @@ else
 		;;
         *)
                 DEBUG="-g -Wall -fsigned-char"
-                CFLAGS="-O20 -fsigned-char"
-                PROFILE="-O20 -g -pg -fsigned-char" 
+                CFLAGS="-O2 -fsigned-char"
+                PROFILE="-O2 -g -pg -fsigned-char"
 		;;
         esac
 fi
@@ -95,6 +95,7 @@ AC_CHECK_SIZEOF(int32_t)
 AC_CHECK_SIZEOF(uint32_t)
 AC_CHECK_SIZEOF(u_int32_t)
 AC_CHECK_SIZEOF(int64_t)
+AC_CHECK_SIZEOF(uint64_t)
 AC_CHECK_SIZEOF(short)
 AC_CHECK_SIZEOF(int)
 AC_CHECK_SIZEOF(long)
@@ -135,6 +136,13 @@ case 8 in
      $ac_cv_sizeof_long_long) SIZE64="long long";;
 esac
 
+case 8 in
+     $ac_cv_sizeof_uint64_t) USIZE64="uint64_t";;
+     $ac_cv_sizeof_unsigned_int) USIZE64="unsigned int";;
+     $ac_cv_sizeof_unsigned_long) USIZE64="unsigned long";;
+     $ac_cv_sizeof_unsigned_long_long) USIZE64="unsigned long long";;
+esac
+
 if test -z "$SIZE16"; then
         AC_MSG_ERROR(No 16 bit type found on this platform!)
 fi
@@ -150,6 +158,20 @@ fi
 if test -z "$SIZE64"; then
         AC_MSG_WARN(No 64 bit type found on this platform!)
 fi
+if test -z "$USIZE64"; then
+        AC_MSG_WARN(No unsigned 64 bit type found on this platform!)
+fi
+
+AC_ARG_ENABLE([crc],
+    [AS_HELP_STRING([--disable-crc],
+                    [Disable CRC in the demuxer])],,
+    [enable_crc=yes])
+
+AM_CONDITIONAL([DISABLE_CRC], [test "$enable_crc" = "no"])
+
+AS_IF([test "$enable_crc" = "no"],[
+  AC_DEFINE([DISABLE_CRC], [1], [Do not build with CRC])
+])
 
 dnl Checks for library functions.
 AC_FUNC_MEMCMP
@@ -165,6 +187,7 @@ AC_SUBST(USIZE16)
 AC_SUBST(SIZE32)
 AC_SUBST(USIZE32)
 AC_SUBST(SIZE64)
+AC_SUBST(USIZE64)
 AC_SUBST(OPT)
 AC_SUBST(LIBS)
 AC_SUBST(DEBUG)

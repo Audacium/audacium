@@ -1,6 +1,5 @@
 % -*- mode: latex; TeX-master: "Vorbis_I_spec"; -*-
 %!TEX root = Vorbis_I_spec.tex
-% $Id$
 \section{Probability Model and Codebooks} \label{vorbis:spec:codebook}
 
 \subsection{Overview}
@@ -266,17 +265,68 @@ eliminated, it's clear that the tree is unfinished:
 Similarly, in the original codebook, it's clear that the tree is fully
 populated and a ninth codeword is impossible.  Both underspecified and
 overspecified trees are an error condition rendering the stream
-undecodable. Take special care that a codebook with a single used
-entry is handled properly; it consists of a single codework of zero
-bits and 'reading' a value out of such a codebook always returns the
-single used value and sinks zero bits.  
+undecodable.
 
 Codebook entries marked 'unused' are simply skipped in the assigning
 process.  They have no codeword and do not appear in the decision
 tree, thus it's impossible for any bit pattern read from the stream to
 decode to that entry number.
 
+\paragraph{Errata 20150226: Single entry codebooks}
 
+A 'single-entry codebook' is a codebook with one active codeword
+entry. A single-entry codebook may be either a fully populated
+codebook with only one declared entry, or a sparse codebook with only
+one entry marked used. The Vorbis I spec provides no means to specify
+a codeword length of zero, and as a result, a single-entry codebook is
+inherently malformed because it is underpopulated.  The original
+specification did not address directly the matter of single-entry
+codebooks; they were implicitly illegal as it was not possible to
+write such a codebook with a valid tree structure.
+
+In r14811 of the libvorbis reference implementation, Xiph added an
+additional check to the codebook implementation to reject
+underpopulated Huffman trees. This change led to the discovery of
+single-entry books used 'in the wild' when the new, stricter checks
+rejected a number of apparently working streams.
+
+In order to minimize breakage of deployed (if technically erroneous)
+streams, r16073 of the reference implementation explicitly
+special-cased single-entry codebooks to tolerate the single-entry
+case.  Commit r16073 also added the following to the specification:
+
+\blockquote{\sout{Take special care that a codebook with a single used
+    entry is handled properly; it consists of a single codework of
+    zero bits and ’reading’ a value out of such a codebook always
+    returns the single used value and sinks zero bits.
+}} 
+
+The intent was to clarify the spec and codify current practice.
+However, this addition is erroneously at odds with the intent of preserving
+usability of existing streams using single-entry codebooks, disagrees
+with the code changes that reinstated decoding, and does not address how
+single-entry codebooks should be encoded.
+
+As such, the above addition made in r16037 is struck from the
+specification and replaced by the following:
+
+\blockquote{It is possible to declare a Vorbis codebook containing a
+  single codework entry.  A single-entry codebook may be either a
+  fully populated codebook with \varname{[codebook\_entries]} set to
+  1, or a sparse codebook marking only one entry used.  Note that it
+  is not possible to also encode a \varname{[codeword\_length]} of
+  zero for the single used codeword, as the unsigned value written to
+  the stream is \varname{[codeword\_length]-1}.  Instead, encoder
+  implementations should indicate a \varname{[codeword\_length]} of 1
+  and 'write' the codeword to a stream during audio encoding by
+  writing a single zero bit.
+
+  Decoder implementations shall reject a codebook if it contains only
+  one used entry and the encoded \varname{[codeword\_length]} of that
+  entry is not 1.  'Reading' a value from single-entry codebook always
+  returns the single used codeword value and sinks one bit.  Decoders
+  should tolerate that the bit read from the stream be '1' instead of
+  '0'; both values shall return the single used codeword.}
 
 \paragraph{VQ lookup table vector representation}
 

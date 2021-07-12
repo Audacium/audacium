@@ -1,3 +1,19 @@
+/********************************************************************
+ *                                                                  *
+ * THIS FILE IS PART OF THE OggVorbis SOFTWARE CODEC SOURCE CODE.   *
+ * USE, DISTRIBUTION AND REPRODUCTION OF THIS LIBRARY SOURCE IS     *
+ * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
+ * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
+ *                                                                  *
+ * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2010             *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
+ *                                                                  *
+ ********************************************************************
+ *
+ * function: static codebooks for 5.1 surround
+ *
+ ********************************************************************/
+
 static const long _vq_quantlist__44p0_l0_0[] = {
 	6,
 	5,
@@ -14,7 +30,7 @@ static const long _vq_quantlist__44p0_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p0_l0_0[] = {
+static const char _vq_lengthlist__44p0_l0_0[] = {
 	 1, 3, 4, 7, 7, 8, 8, 9, 9, 9,10,10,10, 5, 6, 5,
 	 8, 7, 9, 8, 9, 9,10, 9,11,10, 5, 5, 7, 7, 8, 8,
 	 9, 9, 9, 9,10,10,11, 8, 9, 8,10, 9,10, 9,10, 9,
@@ -30,7 +46,7 @@ static const long _vq_lengthlist__44p0_l0_0[] = {
 
 static const static_codebook _44p0_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p0_l0_0,
+	(char *)_vq_lengthlist__44p0_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p0_l0_0,
 	0
@@ -44,14 +60,14 @@ static const long _vq_quantlist__44p0_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p0_l0_1[] = {
+static const char _vq_lengthlist__44p0_l0_1[] = {
 	 1, 4, 4, 6, 6, 5, 5, 5, 7, 5, 5, 5, 5, 6, 7, 7,
 	 6, 7, 7, 7, 6, 7, 7, 7, 7,
 };
 
 static const static_codebook _44p0_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p0_l0_1,
+	(char *)_vq_lengthlist__44p0_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p0_l0_1,
 	0
@@ -63,31 +79,31 @@ static const long _vq_quantlist__44p0_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_l1_0[] = {
+static const char _vq_lengthlist__44p0_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p0_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p0_l1_0,
+	(char *)_vq_lengthlist__44p0_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p0_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p0_lfe[] = {
+static const char _huff_lengthlist__44p0_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p0_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p0_lfe,
+	(char *)_huff_lengthlist__44p0_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p0_long[] = {
+static const char _huff_lengthlist__44p0_long[] = {
 	 2, 3, 6, 7,10,14,16, 3, 2, 5, 7,11,14,17, 6, 5,
 	 5, 7,10,12,14, 7, 7, 6, 6, 7, 9,13,10,11, 9, 6,
 	 6, 9,11,15,15,13,10, 9,10,12,18,18,16,14,12,13,
@@ -96,7 +112,7 @@ static const long _huff_lengthlist__44p0_long[] = {
 
 static const static_codebook _huff_book__44p0_long = {
 	2, 49,
-	(long *)_huff_lengthlist__44p0_long,
+	(char *)_huff_lengthlist__44p0_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -108,7 +124,7 @@ static const long _vq_quantlist__44p0_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p1_0[] = {
+static const char _vq_lengthlist__44p0_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -129,7 +145,7 @@ static const long _vq_lengthlist__44p0_p1_0[] = {
 
 static const static_codebook _44p0_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p1_0,
+	(char *)_vq_lengthlist__44p0_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p0_p1_0,
 	0
@@ -141,7 +157,7 @@ static const long _vq_quantlist__44p0_p2_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p2_0[] = {
+static const char _vq_lengthlist__44p0_p2_0[] = {
 	 1, 5, 5, 0, 7, 7, 0, 8, 8, 0, 9, 9, 0,12,12, 0,
 	 8, 8, 0, 9, 9, 0,12,12, 0, 8, 8, 0, 6, 6, 0,11,
 	11, 0,12,12, 0,12,12, 0,15,15, 0,11,11, 0,12,12,
@@ -162,7 +178,7 @@ static const long _vq_lengthlist__44p0_p2_0[] = {
 
 static const static_codebook _44p0_p2_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p2_0,
+	(char *)_vq_lengthlist__44p0_p2_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p0_p2_0,
 	0
@@ -174,7 +190,7 @@ static const long _vq_quantlist__44p0_p2_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p2_1[] = {
+static const char _vq_lengthlist__44p0_p2_1[] = {
 	 1, 3, 3, 0, 9, 9, 0, 9, 9, 0,10,10, 0, 9, 9, 0,
 	10,10, 0,10,10, 0, 9, 9, 0,10,10, 0, 7, 7, 0, 7,
 	 7, 0, 6, 6, 0, 8, 8, 0, 7, 7, 0, 8, 8, 0, 8, 9,
@@ -195,7 +211,7 @@ static const long _vq_lengthlist__44p0_p2_1[] = {
 
 static const static_codebook _44p0_p2_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p2_1,
+	(char *)_vq_lengthlist__44p0_p2_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p0_p2_1,
 	0
@@ -207,7 +223,7 @@ static const long _vq_quantlist__44p0_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p3_0[] = {
+static const char _vq_lengthlist__44p0_p3_0[] = {
 	 1, 6, 6, 7, 8, 8, 7, 8, 8, 7, 9, 9,10,12,11, 9,
 	 8, 8, 7, 9, 9,11,12,12, 9, 9, 9, 6, 7, 7,10,11,
 	11,10,11,11,10,11,11,13,13,14,12,12,12,11,11,11,
@@ -228,7 +244,7 @@ static const long _vq_lengthlist__44p0_p3_0[] = {
 
 static const static_codebook _44p0_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p3_0,
+	(char *)_vq_lengthlist__44p0_p3_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p0_p3_0,
 	0
@@ -242,7 +258,7 @@ static const long _vq_quantlist__44p0_p3_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p0_p3_1[] = {
+static const char _vq_lengthlist__44p0_p3_1[] = {
 	 2, 4, 4, 8, 8,10,12,12,11,11, 9,11,11,12,13,11,
 	12,12,11,11,11,12,12,12,12,10,13,12,13,13,11,12,
 	12,13,13,11,12,12,13,13,11,12,13,13,13,11,13,13,
@@ -443,7 +459,7 @@ static const long _vq_lengthlist__44p0_p3_1[] = {
 
 static const static_codebook _44p0_p3_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p0_p3_1,
+	(char *)_vq_lengthlist__44p0_p3_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p0_p3_1,
 	0
@@ -457,7 +473,7 @@ static const long _vq_quantlist__44p0_p4_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p0_p4_0[] = {
+static const char _vq_lengthlist__44p0_p4_0[] = {
 	 2, 6, 6,14,14, 6, 8, 8,14,14, 7, 7, 7,14,14, 0,
 	13,13,15,16, 0,13,13,15,15, 7, 8, 8,15,15, 9,10,
 	10,16,16, 9, 8, 8,14,15, 0,13,13,17,17, 0,13,13,
@@ -658,7 +674,7 @@ static const long _vq_lengthlist__44p0_p4_0[] = {
 
 static const static_codebook _44p0_p4_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p0_p4_0,
+	(char *)_vq_lengthlist__44p0_p4_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p0_p4_0,
 	0
@@ -674,13 +690,13 @@ static const long _vq_quantlist__44p0_p4_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p0_p4_1[] = {
+static const char _vq_lengthlist__44p0_p4_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p0_p4_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p0_p4_1,
+	(char *)_vq_lengthlist__44p0_p4_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p0_p4_1,
 	0
@@ -692,7 +708,7 @@ static const long _vq_quantlist__44p0_p5_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p5_0[] = {
+static const char _vq_lengthlist__44p0_p5_0[] = {
 	 1, 6, 6, 6, 8, 8, 7, 8, 8, 7, 9, 8,10,11,11, 9,
 	 8, 8, 7, 8, 8,11,11,11, 9, 8, 8, 6, 7, 7,10,10,
 	10,10,10,10,10,10,10,14,13,13,12,11,11,10,10,10,
@@ -713,7 +729,7 @@ static const long _vq_lengthlist__44p0_p5_0[] = {
 
 static const static_codebook _44p0_p5_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p5_0,
+	(char *)_vq_lengthlist__44p0_p5_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p0_p5_0,
 	0
@@ -725,7 +741,7 @@ static const long _vq_quantlist__44p0_p5_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p5_1[] = {
+static const char _vq_lengthlist__44p0_p5_1[] = {
 	 2, 7, 7, 7, 8, 8, 7, 7, 7, 7, 8, 8, 8, 8, 9, 8,
 	 7, 7, 8, 8, 8, 9, 9, 9, 9, 7, 7, 6, 6, 6, 9, 7,
 	 7, 9, 7, 7, 9, 8, 8,10, 8, 8,10, 8, 8,10, 8, 8,
@@ -746,7 +762,7 @@ static const long _vq_lengthlist__44p0_p5_1[] = {
 
 static const static_codebook _44p0_p5_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p5_1,
+	(char *)_vq_lengthlist__44p0_p5_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p0_p5_1,
 	0
@@ -758,7 +774,7 @@ static const long _vq_quantlist__44p0_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p0_p6_0[] = {
+static const char _vq_lengthlist__44p0_p6_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -779,7 +795,7 @@ static const long _vq_lengthlist__44p0_p6_0[] = {
 
 static const static_codebook _44p0_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p0_p6_0,
+	(char *)_vq_lengthlist__44p0_p6_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p0_p6_0,
 	0
@@ -813,14 +829,14 @@ static const long _vq_quantlist__44p0_p6_1[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p0_p6_1[] = {
+static const char _vq_lengthlist__44p0_p6_1[] = {
 	 1, 3, 2, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9,10,10,11,
 	11,12,12,12,14,14,14,15,15,
 };
 
 static const static_codebook _44p0_p6_1 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p0_p6_1,
+	(char *)_vq_lengthlist__44p0_p6_1,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p0_p6_1,
 	0
@@ -854,20 +870,20 @@ static const long _vq_quantlist__44p0_p6_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p0_p6_2[] = {
+static const char _vq_lengthlist__44p0_p6_2[] = {
 	 3, 4, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p0_p6_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p0_p6_2,
+	(char *)_vq_lengthlist__44p0_p6_2,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p0_p6_2,
 	0
 };
 
-static const long _huff_lengthlist__44p0_short[] = {
+static const char _huff_lengthlist__44p0_short[] = {
 	 3, 3, 7, 8,10,13,16, 3, 2, 5, 7, 9,13,16, 6, 4,
 	 4, 6,10,14,15, 7, 5, 5, 7,10,13,14, 9, 8, 9, 9,
 	 9,11,13,12,11,12, 9, 7, 8,11,14,12,10, 6, 5, 7,
@@ -876,7 +892,7 @@ static const long _huff_lengthlist__44p0_short[] = {
 
 static const static_codebook _huff_book__44p0_short = {
 	2, 49,
-	(long *)_huff_lengthlist__44p0_short,
+	(char *)_huff_lengthlist__44p0_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -898,7 +914,7 @@ static const long _vq_quantlist__44p1_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p1_l0_0[] = {
+static const char _vq_lengthlist__44p1_l0_0[] = {
 	 1, 4, 4, 7, 7, 8, 8, 9, 9,10,10,11,11, 4, 6, 5,
 	 8, 6, 9, 8,10, 9,10,10,11,10, 5, 5, 6, 6, 8, 8,
 	 9, 9,10,10,10,10,11, 7, 8, 8, 9, 8,10, 9,10, 9,
@@ -914,7 +930,7 @@ static const long _vq_lengthlist__44p1_l0_0[] = {
 
 static const static_codebook _44p1_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p1_l0_0,
+	(char *)_vq_lengthlist__44p1_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p1_l0_0,
 	0
@@ -928,14 +944,14 @@ static const long _vq_quantlist__44p1_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p1_l0_1[] = {
+static const char _vq_lengthlist__44p1_l0_1[] = {
 	 1, 4, 4, 6, 6, 5, 5, 5, 6, 6, 5, 6, 5, 6, 6, 6,
 	 6, 7, 7, 7, 6, 7, 6, 7, 7,
 };
 
 static const static_codebook _44p1_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p1_l0_1,
+	(char *)_vq_lengthlist__44p1_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p1_l0_1,
 	0
@@ -947,31 +963,31 @@ static const long _vq_quantlist__44p1_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_l1_0[] = {
+static const char _vq_lengthlist__44p1_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p1_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p1_l1_0,
+	(char *)_vq_lengthlist__44p1_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p1_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p1_lfe[] = {
+static const char _huff_lengthlist__44p1_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p1_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p1_lfe,
+	(char *)_huff_lengthlist__44p1_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p1_long[] = {
+static const char _huff_lengthlist__44p1_long[] = {
 	 3, 3, 7, 7, 9,13,16, 3, 2, 4, 6,10,13,17, 7, 4,
 	 4, 6, 9,12,14, 7, 6, 6, 5, 7, 9,12,10,10, 9, 6,
 	 6, 9,12,14,14,13, 9, 8,10,11,18,18,15,13,11,10,
@@ -980,7 +996,7 @@ static const long _huff_lengthlist__44p1_long[] = {
 
 static const static_codebook _huff_book__44p1_long = {
 	2, 49,
-	(long *)_huff_lengthlist__44p1_long,
+	(char *)_huff_lengthlist__44p1_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -992,7 +1008,7 @@ static const long _vq_quantlist__44p1_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p1_0[] = {
+static const char _vq_lengthlist__44p1_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -1013,7 +1029,7 @@ static const long _vq_lengthlist__44p1_p1_0[] = {
 
 static const static_codebook _44p1_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p1_0,
+	(char *)_vq_lengthlist__44p1_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p1_p1_0,
 	0
@@ -1025,7 +1041,7 @@ static const long _vq_quantlist__44p1_p2_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p2_0[] = {
+static const char _vq_lengthlist__44p1_p2_0[] = {
 	 1, 4, 4, 0, 7, 7, 0, 8, 8, 0, 9, 9, 0,12,12, 0,
 	 8, 8, 0, 9, 9, 0,12,12, 0, 8, 8, 0, 6, 6, 0,11,
 	11, 0,11,11, 0,12,12, 0,14,14, 0,11,11, 0,12,12,
@@ -1046,7 +1062,7 @@ static const long _vq_lengthlist__44p1_p2_0[] = {
 
 static const static_codebook _44p1_p2_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p2_0,
+	(char *)_vq_lengthlist__44p1_p2_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p1_p2_0,
 	0
@@ -1058,7 +1074,7 @@ static const long _vq_quantlist__44p1_p2_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p2_1[] = {
+static const char _vq_lengthlist__44p1_p2_1[] = {
 	 1, 3, 3, 0, 8, 8, 0, 8, 8, 0,10,10, 0, 9, 9, 0,
 	10,10, 0,10,10, 0, 9, 9, 0,10,10, 0, 7, 7, 0, 7,
 	 7, 0, 7, 7, 0, 8, 8, 0, 8, 8, 0, 8, 8, 0, 9, 9,
@@ -1079,7 +1095,7 @@ static const long _vq_lengthlist__44p1_p2_1[] = {
 
 static const static_codebook _44p1_p2_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p2_1,
+	(char *)_vq_lengthlist__44p1_p2_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p1_p2_1,
 	0
@@ -1091,7 +1107,7 @@ static const long _vq_quantlist__44p1_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p3_0[] = {
+static const char _vq_lengthlist__44p1_p3_0[] = {
 	 1, 6, 6, 6, 7, 7, 7, 8, 8, 7, 8, 8,10,11,11, 9,
 	 8, 8, 7, 9, 9,11,12,12, 9, 8, 8, 6, 7, 7, 9,11,
 	11,10,11,11,10,11,11,13,13,13,11,12,12,10,11,11,
@@ -1112,7 +1128,7 @@ static const long _vq_lengthlist__44p1_p3_0[] = {
 
 static const static_codebook _44p1_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p3_0,
+	(char *)_vq_lengthlist__44p1_p3_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p1_p3_0,
 	0
@@ -1126,7 +1142,7 @@ static const long _vq_quantlist__44p1_p3_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p1_p3_1[] = {
+static const char _vq_lengthlist__44p1_p3_1[] = {
 	 2, 3, 4, 7, 7,10,12,12,12,12,10,11,11,13,13,11,
 	12,12,11,11,12,12,12,12,12,11,13,13,13,13,12,12,
 	12,13,14,12,13,13,13,13,12,13,13,13,13,12,13,13,
@@ -1327,7 +1343,7 @@ static const long _vq_lengthlist__44p1_p3_1[] = {
 
 static const static_codebook _44p1_p3_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p1_p3_1,
+	(char *)_vq_lengthlist__44p1_p3_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p1_p3_1,
 	0
@@ -1341,7 +1357,7 @@ static const long _vq_quantlist__44p1_p4_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p1_p4_0[] = {
+static const char _vq_lengthlist__44p1_p4_0[] = {
 	 2, 6, 6,14,14, 6, 7, 7,14,14, 7, 7, 7,14,14, 0,
 	13,13,16,16, 0,13,13,15,14, 7, 8, 8,15,15, 9,10,
 	10,16,16, 9, 8, 8,15,15, 0,13,13,17,16, 0,13,13,
@@ -1542,7 +1558,7 @@ static const long _vq_lengthlist__44p1_p4_0[] = {
 
 static const static_codebook _44p1_p4_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p1_p4_0,
+	(char *)_vq_lengthlist__44p1_p4_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p1_p4_0,
 	0
@@ -1558,13 +1574,13 @@ static const long _vq_quantlist__44p1_p4_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p1_p4_1[] = {
+static const char _vq_lengthlist__44p1_p4_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p1_p4_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p1_p4_1,
+	(char *)_vq_lengthlist__44p1_p4_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p1_p4_1,
 	0
@@ -1576,7 +1592,7 @@ static const long _vq_quantlist__44p1_p5_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p5_0[] = {
+static const char _vq_lengthlist__44p1_p5_0[] = {
 	 1, 6, 6, 7, 8, 8, 7, 8, 8, 7, 9, 8,10,11,11, 9,
 	 8, 8, 7, 8, 8,11,11,11, 9, 8, 8, 6, 7, 7,10,10,
 	10,10,10,10,10,10,10,14,13,13,12,11,11,10,10,10,
@@ -1597,7 +1613,7 @@ static const long _vq_lengthlist__44p1_p5_0[] = {
 
 static const static_codebook _44p1_p5_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p5_0,
+	(char *)_vq_lengthlist__44p1_p5_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p1_p5_0,
 	0
@@ -1609,7 +1625,7 @@ static const long _vq_quantlist__44p1_p5_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p5_1[] = {
+static const char _vq_lengthlist__44p1_p5_1[] = {
 	 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 9, 8, 8, 8,
 	 7, 7, 8, 8, 8, 9, 8, 8, 9, 7, 7, 6, 6, 6, 9, 8,
 	 7, 9, 7, 7, 9, 8, 8,10, 8, 8,10, 8, 8,10, 8, 8,
@@ -1630,7 +1646,7 @@ static const long _vq_lengthlist__44p1_p5_1[] = {
 
 static const static_codebook _44p1_p5_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p5_1,
+	(char *)_vq_lengthlist__44p1_p5_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p1_p5_1,
 	0
@@ -1642,7 +1658,7 @@ static const long _vq_quantlist__44p1_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p1_p6_0[] = {
+static const char _vq_lengthlist__44p1_p6_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -1663,7 +1679,7 @@ static const long _vq_lengthlist__44p1_p6_0[] = {
 
 static const static_codebook _44p1_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p1_p6_0,
+	(char *)_vq_lengthlist__44p1_p6_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p1_p6_0,
 	0
@@ -1697,14 +1713,14 @@ static const long _vq_quantlist__44p1_p6_1[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p1_p6_1[] = {
+static const char _vq_lengthlist__44p1_p6_1[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,13,14,16,16,16,16,
 };
 
 static const static_codebook _44p1_p6_1 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p1_p6_1,
+	(char *)_vq_lengthlist__44p1_p6_1,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p1_p6_1,
 	0
@@ -1738,20 +1754,20 @@ static const long _vq_quantlist__44p1_p6_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p1_p6_2[] = {
+static const char _vq_lengthlist__44p1_p6_2[] = {
 	 3, 4, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p1_p6_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p1_p6_2,
+	(char *)_vq_lengthlist__44p1_p6_2,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p1_p6_2,
 	0
 };
 
-static const long _huff_lengthlist__44p1_short[] = {
+static const char _huff_lengthlist__44p1_short[] = {
 	 4, 5, 7, 8,10,13,14, 4, 2, 4, 6, 8,11,12, 7, 4,
 	 3, 5, 8,12,14, 8, 5, 4, 4, 8,12,12, 9, 7, 7, 7,
 	 9,10,11,13,11,11, 9, 7, 8,10,13,11,10, 6, 5, 7,
@@ -1760,7 +1776,7 @@ static const long _huff_lengthlist__44p1_short[] = {
 
 static const static_codebook _huff_book__44p1_short = {
 	2, 49,
-	(long *)_huff_lengthlist__44p1_short,
+	(char *)_huff_lengthlist__44p1_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -1782,7 +1798,7 @@ static const long _vq_quantlist__44p2_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p2_l0_0[] = {
+static const char _vq_lengthlist__44p2_l0_0[] = {
 	 1, 4, 4, 7, 7, 8, 8, 9, 9,10,10,11,11, 4, 6, 5,
 	 8, 7, 9, 8,10, 9,11,10,11,11, 4, 5, 6, 7, 8, 8,
 	 9, 9,10,10,10,10,11, 8, 9, 8,10, 8,10, 9,11,10,
@@ -1798,7 +1814,7 @@ static const long _vq_lengthlist__44p2_l0_0[] = {
 
 static const static_codebook _44p2_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p2_l0_0,
+	(char *)_vq_lengthlist__44p2_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p2_l0_0,
 	0
@@ -1812,14 +1828,14 @@ static const long _vq_quantlist__44p2_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p2_l0_1[] = {
+static const char _vq_lengthlist__44p2_l0_1[] = {
 	 2, 4, 4, 5, 5, 4, 5, 5, 6, 5, 4, 5, 5, 5, 6, 5,
 	 5, 6, 6, 6, 5, 6, 5, 6, 6,
 };
 
 static const static_codebook _44p2_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p2_l0_1,
+	(char *)_vq_lengthlist__44p2_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p2_l0_1,
 	0
@@ -1831,31 +1847,31 @@ static const long _vq_quantlist__44p2_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_l1_0[] = {
+static const char _vq_lengthlist__44p2_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p2_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p2_l1_0,
+	(char *)_vq_lengthlist__44p2_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p2_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p2_lfe[] = {
+static const char _huff_lengthlist__44p2_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p2_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p2_lfe,
+	(char *)_huff_lengthlist__44p2_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p2_long[] = {
+static const char _huff_lengthlist__44p2_long[] = {
 	 3, 4, 9, 8, 8,10,13,16, 4, 2, 9, 5, 7,10,14,18,
 	 9, 7, 6, 5, 7, 9,12,16, 7, 5, 5, 3, 5, 8,11,13,
 	 8, 7, 7, 5, 5, 7, 9,11,10,10, 9, 8, 6, 6, 8,10,
@@ -1864,7 +1880,7 @@ static const long _huff_lengthlist__44p2_long[] = {
 
 static const static_codebook _huff_book__44p2_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p2_long,
+	(char *)_huff_lengthlist__44p2_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -1876,7 +1892,7 @@ static const long _vq_quantlist__44p2_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p1_0[] = {
+static const char _vq_lengthlist__44p2_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -1897,7 +1913,7 @@ static const long _vq_lengthlist__44p2_p1_0[] = {
 
 static const static_codebook _44p2_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p1_0,
+	(char *)_vq_lengthlist__44p2_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p2_p1_0,
 	0
@@ -1911,7 +1927,7 @@ static const long _vq_quantlist__44p2_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p2_p2_0[] = {
+static const char _vq_lengthlist__44p2_p2_0[] = {
 	 1, 4, 4, 0, 0, 0, 8, 8, 0, 0, 0, 9, 9, 0, 0, 0,
 	10,10, 0, 0, 0, 0, 0, 0, 0, 0,10,10, 0, 0, 0, 0,
 	 0, 0, 0, 0, 9, 9, 0, 0, 0,11,11, 0, 0, 0, 0, 0,
@@ -2112,7 +2128,7 @@ static const long _vq_lengthlist__44p2_p2_0[] = {
 
 static const static_codebook _44p2_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p2_p2_0,
+	(char *)_vq_lengthlist__44p2_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p2_p2_0,
 	0
@@ -2124,7 +2140,7 @@ static const long _vq_quantlist__44p2_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p3_0[] = {
+static const char _vq_lengthlist__44p2_p3_0[] = {
 	 1, 5, 5, 6, 7, 7, 0, 8, 8, 6, 9, 9, 8,11,11, 0,
 	 8, 8, 0, 9, 9, 0,12,12, 0, 8, 8, 5, 7, 7, 7,10,
 	10, 0,12,12, 8,11,11, 9,12,12, 0,11,12, 0,12,12,
@@ -2145,7 +2161,7 @@ static const long _vq_lengthlist__44p2_p3_0[] = {
 
 static const static_codebook _44p2_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p3_0,
+	(char *)_vq_lengthlist__44p2_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p2_p3_0,
 	0
@@ -2157,7 +2173,7 @@ static const long _vq_quantlist__44p2_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p3_1[] = {
+static const char _vq_lengthlist__44p2_p3_1[] = {
 	 2, 3, 3, 0, 8, 8, 0, 8, 8, 0, 9, 9, 0, 9, 9, 0,
 	 9, 9, 0, 9, 9, 0, 9, 9, 0, 8, 8, 0, 6, 6, 0, 7,
 	 7, 0, 7, 7, 0, 8, 8, 0, 8, 8, 0, 8, 8, 0, 8, 8,
@@ -2178,7 +2194,7 @@ static const long _vq_lengthlist__44p2_p3_1[] = {
 
 static const static_codebook _44p2_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p3_1,
+	(char *)_vq_lengthlist__44p2_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p2_p3_1,
 	0
@@ -2190,7 +2206,7 @@ static const long _vq_quantlist__44p2_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p4_0[] = {
+static const char _vq_lengthlist__44p2_p4_0[] = {
 	 1, 6, 6, 6, 7, 7, 7, 8, 8, 7, 8, 8,10,11,11, 9,
 	 8, 8, 7, 8, 8,11,11,11, 9, 8, 8, 6, 7, 7, 9,11,
 	11, 9,11,11,10,11,11,12,13,13,11,12,12,10,11,11,
@@ -2211,7 +2227,7 @@ static const long _vq_lengthlist__44p2_p4_0[] = {
 
 static const static_codebook _44p2_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p4_0,
+	(char *)_vq_lengthlist__44p2_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p2_p4_0,
 	0
@@ -2225,7 +2241,7 @@ static const long _vq_quantlist__44p2_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p2_p4_1[] = {
+static const char _vq_lengthlist__44p2_p4_1[] = {
 	 3, 4, 4, 8, 8,11, 9, 9,12,12,11,10,10,12,12,12,
 	10,10,11,11,12,12,12,12,12,12,11,11,13,13,12,12,
 	12,13,13,12,10,10,12,12,12,11,11,13,13,12,13,13,
@@ -2426,7 +2442,7 @@ static const long _vq_lengthlist__44p2_p4_1[] = {
 
 static const static_codebook _44p2_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p2_p4_1,
+	(char *)_vq_lengthlist__44p2_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p2_p4_1,
 	0
@@ -2440,7 +2456,7 @@ static const long _vq_quantlist__44p2_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p2_p5_0[] = {
+static const char _vq_lengthlist__44p2_p5_0[] = {
 	 2, 6, 6,14,14, 6, 7, 7,14,14, 7, 7, 7,15,15, 0,
 	13,13,16,16, 0,13,13,15,15, 7, 8, 8,15,15, 9,10,
 	10,17,16, 9, 8, 8,15,15, 0,13,13,18,17, 0,13,13,
@@ -2641,7 +2657,7 @@ static const long _vq_lengthlist__44p2_p5_0[] = {
 
 static const static_codebook _44p2_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p2_p5_0,
+	(char *)_vq_lengthlist__44p2_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p2_p5_0,
 	0
@@ -2657,13 +2673,13 @@ static const long _vq_quantlist__44p2_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p2_p5_1[] = {
+static const char _vq_lengthlist__44p2_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p2_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p2_p5_1,
+	(char *)_vq_lengthlist__44p2_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p2_p5_1,
 	0
@@ -2675,7 +2691,7 @@ static const long _vq_quantlist__44p2_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p6_0[] = {
+static const char _vq_lengthlist__44p2_p6_0[] = {
 	 1, 7, 7, 7, 8, 8, 7, 8, 8, 7, 9, 9,10,11,11, 9,
 	 8, 8, 7, 8, 9,11,11,11, 9, 8, 8, 6, 7, 7,10,10,
 	10,10,10,10,10,10,10,14,14,14,12,11,11,10,11,11,
@@ -2696,7 +2712,7 @@ static const long _vq_lengthlist__44p2_p6_0[] = {
 
 static const static_codebook _44p2_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p6_0,
+	(char *)_vq_lengthlist__44p2_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p2_p6_0,
 	0
@@ -2708,7 +2724,7 @@ static const long _vq_quantlist__44p2_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p6_1[] = {
+static const char _vq_lengthlist__44p2_p6_1[] = {
 	 2, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8, 9, 9, 9, 8,
 	 7, 7, 8, 8, 8, 9, 9, 9, 9, 8, 8, 6, 7, 7, 9, 8,
 	 8, 9, 7, 7, 9, 8, 8,10, 8, 8,10, 8, 8,10, 8, 8,
@@ -2729,7 +2745,7 @@ static const long _vq_lengthlist__44p2_p6_1[] = {
 
 static const static_codebook _44p2_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p6_1,
+	(char *)_vq_lengthlist__44p2_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p2_p6_1,
 	0
@@ -2741,7 +2757,7 @@ static const long _vq_quantlist__44p2_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p7_0[] = {
+static const char _vq_lengthlist__44p2_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -2762,7 +2778,7 @@ static const long _vq_lengthlist__44p2_p7_0[] = {
 
 static const static_codebook _44p2_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p7_0,
+	(char *)_vq_lengthlist__44p2_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p2_p7_0,
 	0
@@ -2774,7 +2790,7 @@ static const long _vq_quantlist__44p2_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p2_p7_1[] = {
+static const char _vq_lengthlist__44p2_p7_1[] = {
 	 1, 9, 9, 6, 9, 9, 5, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -2795,7 +2811,7 @@ static const long _vq_lengthlist__44p2_p7_1[] = {
 
 static const static_codebook _44p2_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p2_p7_1,
+	(char *)_vq_lengthlist__44p2_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p2_p7_1,
 	0
@@ -2829,14 +2845,14 @@ static const long _vq_quantlist__44p2_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p2_p7_2[] = {
+static const char _vq_lengthlist__44p2_p7_2[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p2_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p2_p7_2,
+	(char *)_vq_lengthlist__44p2_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p2_p7_2,
 	0
@@ -2870,20 +2886,20 @@ static const long _vq_quantlist__44p2_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p2_p7_3[] = {
+static const char _vq_lengthlist__44p2_p7_3[] = {
 	 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p2_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p2_p7_3,
+	(char *)_vq_lengthlist__44p2_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p2_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p2_short[] = {
+static const char _huff_lengthlist__44p2_short[] = {
 	 4, 4,12, 9, 8,12,15,17, 4, 2,11, 6, 5, 9,13,15,
 	11, 7, 8, 7, 7,10,14,13, 8, 5, 7, 5, 5, 8,12,12,
 	 8, 4, 7, 4, 3, 6,11,12,11, 8, 9, 7, 6, 8,11,12,
@@ -2892,7 +2908,7 @@ static const long _huff_lengthlist__44p2_short[] = {
 
 static const static_codebook _huff_book__44p2_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p2_short,
+	(char *)_huff_lengthlist__44p2_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -2914,7 +2930,7 @@ static const long _vq_quantlist__44p3_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p3_l0_0[] = {
+static const char _vq_lengthlist__44p3_l0_0[] = {
 	 1, 4, 4, 8, 8, 8, 8, 9, 9,10,10,10,10, 4, 6, 5,
 	 8, 7, 9, 9, 9, 9,10, 9,11, 9, 4, 5, 6, 7, 8, 9,
 	 9, 9, 9, 9,10, 9,10, 8, 9, 8, 9, 8,10, 9,11, 9,
@@ -2930,7 +2946,7 @@ static const long _vq_lengthlist__44p3_l0_0[] = {
 
 static const static_codebook _44p3_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p3_l0_0,
+	(char *)_vq_lengthlist__44p3_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p3_l0_0,
 	0
@@ -2944,14 +2960,14 @@ static const long _vq_quantlist__44p3_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p3_l0_1[] = {
+static const char _vq_lengthlist__44p3_l0_1[] = {
 	 3, 4, 4, 5, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5,
 	 5, 6, 5, 6, 5, 6, 5, 6, 5,
 };
 
 static const static_codebook _44p3_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p3_l0_1,
+	(char *)_vq_lengthlist__44p3_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p3_l0_1,
 	0
@@ -2963,31 +2979,31 @@ static const long _vq_quantlist__44p3_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_l1_0[] = {
+static const char _vq_lengthlist__44p3_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p3_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p3_l1_0,
+	(char *)_vq_lengthlist__44p3_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p3_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p3_lfe[] = {
+static const char _huff_lengthlist__44p3_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p3_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p3_lfe,
+	(char *)_huff_lengthlist__44p3_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p3_long[] = {
+static const char _huff_lengthlist__44p3_long[] = {
 	 3, 4,13, 9, 9,12,15,17, 4, 2,18, 5, 7,10,14,18,
 	11, 8, 6, 5, 6, 8,11,14, 8, 5, 5, 3, 5, 8,11,13,
 	 9, 6, 7, 5, 5, 7, 9,10,11,10, 9, 8, 6, 6, 8,10,
@@ -2996,7 +3012,7 @@ static const long _huff_lengthlist__44p3_long[] = {
 
 static const static_codebook _huff_book__44p3_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p3_long,
+	(char *)_huff_lengthlist__44p3_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -3008,7 +3024,7 @@ static const long _vq_quantlist__44p3_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p1_0[] = {
+static const char _vq_lengthlist__44p3_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -3029,7 +3045,7 @@ static const long _vq_lengthlist__44p3_p1_0[] = {
 
 static const static_codebook _44p3_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p1_0,
+	(char *)_vq_lengthlist__44p3_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p3_p1_0,
 	0
@@ -3043,7 +3059,7 @@ static const long _vq_quantlist__44p3_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p3_p2_0[] = {
+static const char _vq_lengthlist__44p3_p2_0[] = {
 	 3, 7, 7, 0, 0, 0, 8, 8, 0, 0, 0, 8, 8, 0, 0, 0,
 	11,11, 0, 0, 0, 0, 0, 0, 0, 0,10, 9, 0, 0, 0, 0,
 	 0, 0, 0, 0, 9, 9, 0, 0, 0,10,11, 0, 0, 0, 0, 0,
@@ -3244,7 +3260,7 @@ static const long _vq_lengthlist__44p3_p2_0[] = {
 
 static const static_codebook _44p3_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p3_p2_0,
+	(char *)_vq_lengthlist__44p3_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p3_p2_0,
 	0
@@ -3256,7 +3272,7 @@ static const long _vq_quantlist__44p3_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p3_0[] = {
+static const char _vq_lengthlist__44p3_p3_0[] = {
 	 1, 5, 5, 5, 8, 8, 0, 8, 8, 6, 9, 9, 8,10,10, 0,
 	 8, 8, 0, 9, 9, 0,12,12, 0, 8, 8, 4, 7, 7, 6,10,
 	10, 0,12,12, 7,11,11, 9,12,12, 0,12,12, 0,13,13,
@@ -3277,7 +3293,7 @@ static const long _vq_lengthlist__44p3_p3_0[] = {
 
 static const static_codebook _44p3_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p3_0,
+	(char *)_vq_lengthlist__44p3_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p3_p3_0,
 	0
@@ -3289,7 +3305,7 @@ static const long _vq_quantlist__44p3_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p3_1[] = {
+static const char _vq_lengthlist__44p3_p3_1[] = {
 	 3, 4, 4, 0, 8, 8, 0, 8, 8, 0, 9, 9, 0,10,10, 0,
 	 8, 8, 0, 9, 9, 0,10,10, 0, 8, 8, 0, 7, 7, 0, 8,
 	 8, 0, 8, 8, 0, 8, 8, 0, 8, 8, 0, 8, 8, 0, 8, 8,
@@ -3310,7 +3326,7 @@ static const long _vq_lengthlist__44p3_p3_1[] = {
 
 static const static_codebook _44p3_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p3_1,
+	(char *)_vq_lengthlist__44p3_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p3_p3_1,
 	0
@@ -3322,7 +3338,7 @@ static const long _vq_quantlist__44p3_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p4_0[] = {
+static const char _vq_lengthlist__44p3_p4_0[] = {
 	 1, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8,10,11,11, 9,
 	 8, 8, 8, 8, 8,11,11,11,10, 8, 8, 5, 7, 7, 9,11,
 	11,10,11,11,10,11,11,12,13,14,11,12,12,10,11,11,
@@ -3343,7 +3359,7 @@ static const long _vq_lengthlist__44p3_p4_0[] = {
 
 static const static_codebook _44p3_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p4_0,
+	(char *)_vq_lengthlist__44p3_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p3_p4_0,
 	0
@@ -3357,7 +3373,7 @@ static const long _vq_quantlist__44p3_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p3_p4_1[] = {
+static const char _vq_lengthlist__44p3_p4_1[] = {
 	 3, 4, 5, 8, 8,12,10,10,12,12,12,10,10,12,12,13,
 	11,11,12,12,13,12,12,12,12,13,10,10,13,13,13,13,
 	13,13,13,13,10,10,13,13,13,11,11,13,13,14,13,13,
@@ -3558,7 +3574,7 @@ static const long _vq_lengthlist__44p3_p4_1[] = {
 
 static const static_codebook _44p3_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p3_p4_1,
+	(char *)_vq_lengthlist__44p3_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p3_p4_1,
 	0
@@ -3572,7 +3588,7 @@ static const long _vq_quantlist__44p3_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p3_p5_0[] = {
+static const char _vq_lengthlist__44p3_p5_0[] = {
 	 2, 6, 6,14,14, 6, 7, 7,14,14, 7, 7, 7,15,15, 0,
 	12,12,15,15, 0,13,13,15,15, 7, 8, 8,15,15,10,10,
 	10,16,16, 9, 8, 8,15,15, 0,13,13,18,17, 0,13,13,
@@ -3773,7 +3789,7 @@ static const long _vq_lengthlist__44p3_p5_0[] = {
 
 static const static_codebook _44p3_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p3_p5_0,
+	(char *)_vq_lengthlist__44p3_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p3_p5_0,
 	0
@@ -3789,13 +3805,13 @@ static const long _vq_quantlist__44p3_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p3_p5_1[] = {
+static const char _vq_lengthlist__44p3_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p3_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p3_p5_1,
+	(char *)_vq_lengthlist__44p3_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p3_p5_1,
 	0
@@ -3807,7 +3823,7 @@ static const long _vq_quantlist__44p3_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p6_0[] = {
+static const char _vq_lengthlist__44p3_p6_0[] = {
 	 1, 6, 6, 7, 7, 7, 7, 8, 8, 7, 9, 9,11,11,11, 9,
 	 8, 8, 8, 9, 9,12,11,11, 9, 8, 8, 6, 7, 7,10,11,
 	10,10,10,10,11,11,10,14,13,14,12,11,11,11,11,11,
@@ -3828,7 +3844,7 @@ static const long _vq_lengthlist__44p3_p6_0[] = {
 
 static const static_codebook _44p3_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p6_0,
+	(char *)_vq_lengthlist__44p3_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p3_p6_0,
 	0
@@ -3840,7 +3856,7 @@ static const long _vq_quantlist__44p3_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p6_1[] = {
+static const char _vq_lengthlist__44p3_p6_1[] = {
 	 2, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8, 9, 9, 9, 9,
 	 7, 7, 8, 8, 8, 9, 9, 9, 9, 7, 8, 6, 7, 7, 8, 8,
 	 8, 8, 8, 8, 9, 8, 8,10, 9, 9,10, 8, 8,10, 8, 8,
@@ -3861,7 +3877,7 @@ static const long _vq_lengthlist__44p3_p6_1[] = {
 
 static const static_codebook _44p3_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p6_1,
+	(char *)_vq_lengthlist__44p3_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p3_p6_1,
 	0
@@ -3873,7 +3889,7 @@ static const long _vq_quantlist__44p3_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p7_0[] = {
+static const char _vq_lengthlist__44p3_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -3894,7 +3910,7 @@ static const long _vq_lengthlist__44p3_p7_0[] = {
 
 static const static_codebook _44p3_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p7_0,
+	(char *)_vq_lengthlist__44p3_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p3_p7_0,
 	0
@@ -3906,7 +3922,7 @@ static const long _vq_quantlist__44p3_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p3_p7_1[] = {
+static const char _vq_lengthlist__44p3_p7_1[] = {
 	 1, 9, 9, 6, 9, 9, 5, 9, 9, 8, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 8, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -3927,7 +3943,7 @@ static const long _vq_lengthlist__44p3_p7_1[] = {
 
 static const static_codebook _44p3_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p3_p7_1,
+	(char *)_vq_lengthlist__44p3_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p3_p7_1,
 	0
@@ -3961,14 +3977,14 @@ static const long _vq_quantlist__44p3_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p3_p7_2[] = {
+static const char _vq_lengthlist__44p3_p7_2[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p3_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p3_p7_2,
+	(char *)_vq_lengthlist__44p3_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p3_p7_2,
 	0
@@ -4002,20 +4018,20 @@ static const long _vq_quantlist__44p3_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p3_p7_3[] = {
+static const char _vq_lengthlist__44p3_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p3_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p3_p7_3,
+	(char *)_vq_lengthlist__44p3_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p3_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p3_short[] = {
+static const char _huff_lengthlist__44p3_short[] = {
 	 4, 5,16, 9, 9,12,17,18, 4, 2,18, 6, 5, 9,13,15,
 	10, 7, 7, 6, 7, 9,13,13, 8, 5, 6, 5, 5, 7,11,12,
 	 8, 4, 7, 4, 3, 6,10,12,11, 8, 9, 7, 6, 8,11,12,
@@ -4024,7 +4040,7 @@ static const long _huff_lengthlist__44p3_short[] = {
 
 static const static_codebook _huff_book__44p3_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p3_short,
+	(char *)_huff_lengthlist__44p3_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -4046,7 +4062,7 @@ static const long _vq_quantlist__44p4_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p4_l0_0[] = {
+static const char _vq_lengthlist__44p4_l0_0[] = {
 	 1, 4, 4, 8, 8, 9, 8, 9, 9,10,10,10,10, 4, 6, 5,
 	 8, 7, 9, 9, 9, 9,10, 9,10,10, 4, 5, 6, 7, 8, 9,
 	 9, 9, 9, 9,10, 9,10, 8, 9, 8, 9, 8,10, 9,11, 9,
@@ -4062,7 +4078,7 @@ static const long _vq_lengthlist__44p4_l0_0[] = {
 
 static const static_codebook _44p4_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p4_l0_0,
+	(char *)_vq_lengthlist__44p4_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p4_l0_0,
 	0
@@ -4076,14 +4092,14 @@ static const long _vq_quantlist__44p4_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p4_l0_1[] = {
+static const char _vq_lengthlist__44p4_l0_1[] = {
 	 3, 4, 4, 5, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5,
 	 5, 6, 5, 6, 5, 6, 5, 6, 5,
 };
 
 static const static_codebook _44p4_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p4_l0_1,
+	(char *)_vq_lengthlist__44p4_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p4_l0_1,
 	0
@@ -4095,31 +4111,31 @@ static const long _vq_quantlist__44p4_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_l1_0[] = {
+static const char _vq_lengthlist__44p4_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p4_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p4_l1_0,
+	(char *)_vq_lengthlist__44p4_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p4_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p4_lfe[] = {
+static const char _huff_lengthlist__44p4_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p4_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p4_lfe,
+	(char *)_huff_lengthlist__44p4_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p4_long[] = {
+static const char _huff_lengthlist__44p4_long[] = {
 	 3, 5,13, 9, 9,12,16,18, 4, 2,20, 6, 7,10,15,20,
 	10, 7, 5, 5, 6, 8,10,13, 8, 5, 5, 3, 5, 7,10,11,
 	 9, 7, 6, 5, 5, 7, 9, 9,11,10, 8, 7, 6, 6, 8, 8,
@@ -4128,7 +4144,7 @@ static const long _huff_lengthlist__44p4_long[] = {
 
 static const static_codebook _huff_book__44p4_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p4_long,
+	(char *)_huff_lengthlist__44p4_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -4140,7 +4156,7 @@ static const long _vq_quantlist__44p4_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p1_0[] = {
+static const char _vq_lengthlist__44p4_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -4161,7 +4177,7 @@ static const long _vq_lengthlist__44p4_p1_0[] = {
 
 static const static_codebook _44p4_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p1_0,
+	(char *)_vq_lengthlist__44p4_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p4_p1_0,
 	0
@@ -4175,7 +4191,7 @@ static const long _vq_quantlist__44p4_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p4_p2_0[] = {
+static const char _vq_lengthlist__44p4_p2_0[] = {
 	 3, 9, 9, 0, 0, 0, 8, 8, 0, 0, 0, 9, 9, 0, 0, 0,
 	12,12, 0, 0, 0, 0, 0, 0, 0, 0,10,10, 0, 0, 0, 0,
 	 0, 0, 0, 0, 9, 9, 0, 0, 0,11,11, 0, 0, 0, 0, 0,
@@ -4376,7 +4392,7 @@ static const long _vq_lengthlist__44p4_p2_0[] = {
 
 static const static_codebook _44p4_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p4_p2_0,
+	(char *)_vq_lengthlist__44p4_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p4_p2_0,
 	0
@@ -4388,7 +4404,7 @@ static const long _vq_quantlist__44p4_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p3_0[] = {
+static const char _vq_lengthlist__44p4_p3_0[] = {
 	 1, 6, 6, 5, 7, 8, 0, 8, 8, 6, 9, 9, 7,10,10, 0,
 	 8, 8, 0, 9, 9, 0,12,12, 0, 8, 8, 4, 7, 7, 6,10,
 	10, 0,12,12, 7,11,11, 8,12,12, 0,12,12, 0,13,12,
@@ -4409,7 +4425,7 @@ static const long _vq_lengthlist__44p4_p3_0[] = {
 
 static const static_codebook _44p4_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p3_0,
+	(char *)_vq_lengthlist__44p4_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p4_p3_0,
 	0
@@ -4421,7 +4437,7 @@ static const long _vq_quantlist__44p4_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p3_1[] = {
+static const char _vq_lengthlist__44p4_p3_1[] = {
 	 3, 5, 5, 0, 8, 8, 0, 8, 8, 0, 9, 9, 0,10,10, 0,
 	 8, 8, 0, 8, 8, 0,10,10, 0, 8, 8, 0, 7, 7, 0, 8,
 	 8, 0, 7, 7, 0, 8, 8, 0, 8, 8, 0, 8, 8, 0, 8, 8,
@@ -4442,7 +4458,7 @@ static const long _vq_lengthlist__44p4_p3_1[] = {
 
 static const static_codebook _44p4_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p3_1,
+	(char *)_vq_lengthlist__44p4_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p4_p3_1,
 	0
@@ -4454,7 +4470,7 @@ static const long _vq_quantlist__44p4_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p4_0[] = {
+static const char _vq_lengthlist__44p4_p4_0[] = {
 	 1, 6, 6, 6, 7, 7, 7, 8, 8, 7, 8, 8,10,11,11, 9,
 	 8, 8, 8, 8, 8,11,11,12, 9, 8, 8, 5, 7, 7, 9,11,
 	11,10,11,11,10,11,11,12,14,14,11,12,12,10,12,12,
@@ -4475,7 +4491,7 @@ static const long _vq_lengthlist__44p4_p4_0[] = {
 
 static const static_codebook _44p4_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p4_0,
+	(char *)_vq_lengthlist__44p4_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p4_p4_0,
 	0
@@ -4489,7 +4505,7 @@ static const long _vq_quantlist__44p4_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p4_p4_1[] = {
+static const char _vq_lengthlist__44p4_p4_1[] = {
 	 4, 5, 5, 9, 9,12, 9, 9,12,12,12,10,10,13,13,13,
 	11,11,12,12,13,13,13,12,12,13,10,10,13,13,13,13,
 	13,13,13,13,10,10,13,12,13,11,11,13,13,13,14,14,
@@ -4690,7 +4706,7 @@ static const long _vq_lengthlist__44p4_p4_1[] = {
 
 static const static_codebook _44p4_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p4_p4_1,
+	(char *)_vq_lengthlist__44p4_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p4_p4_1,
 	0
@@ -4704,7 +4720,7 @@ static const long _vq_quantlist__44p4_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p4_p5_0[] = {
+static const char _vq_lengthlist__44p4_p5_0[] = {
 	 1, 7, 6,15,15, 7, 8, 8,15,15, 8, 8, 8,15,15, 0,
 	13,13,16,16, 0,14,14,16,16, 7, 9, 9,16,16,10,11,
 	11,17,17,10, 8, 8,15,16, 0,14,14,18,18, 0,14,14,
@@ -4905,7 +4921,7 @@ static const long _vq_lengthlist__44p4_p5_0[] = {
 
 static const static_codebook _44p4_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p4_p5_0,
+	(char *)_vq_lengthlist__44p4_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p4_p5_0,
 	0
@@ -4921,13 +4937,13 @@ static const long _vq_quantlist__44p4_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p4_p5_1[] = {
+static const char _vq_lengthlist__44p4_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p4_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p4_p5_1,
+	(char *)_vq_lengthlist__44p4_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p4_p5_1,
 	0
@@ -4939,7 +4955,7 @@ static const long _vq_quantlist__44p4_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p6_0[] = {
+static const char _vq_lengthlist__44p4_p6_0[] = {
 	 1, 7, 7, 7, 8, 8, 7, 8, 8, 7, 9, 9,11,11,11, 9,
 	 8, 8, 8, 9, 9,12,11,12, 9, 8, 8, 6, 7, 7,10,11,
 	11,10,10,10,11,11,11,14,14,14,12,11,12,11,11,11,
@@ -4960,7 +4976,7 @@ static const long _vq_lengthlist__44p4_p6_0[] = {
 
 static const static_codebook _44p4_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p6_0,
+	(char *)_vq_lengthlist__44p4_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p4_p6_0,
 	0
@@ -4972,7 +4988,7 @@ static const long _vq_quantlist__44p4_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p6_1[] = {
+static const char _vq_lengthlist__44p4_p6_1[] = {
 	 2, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 9, 9, 9, 9,
 	 7, 7, 8, 8, 8, 9, 9, 9, 9, 8, 8, 6, 7, 7, 8, 8,
 	 8, 8, 8, 8, 9, 8, 8, 9, 8, 9, 9, 8, 8,10, 8, 8,
@@ -4993,7 +5009,7 @@ static const long _vq_lengthlist__44p4_p6_1[] = {
 
 static const static_codebook _44p4_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p6_1,
+	(char *)_vq_lengthlist__44p4_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p4_p6_1,
 	0
@@ -5005,7 +5021,7 @@ static const long _vq_quantlist__44p4_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p7_0[] = {
+static const char _vq_lengthlist__44p4_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -5026,7 +5042,7 @@ static const long _vq_lengthlist__44p4_p7_0[] = {
 
 static const static_codebook _44p4_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p7_0,
+	(char *)_vq_lengthlist__44p4_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p4_p7_0,
 	0
@@ -5038,7 +5054,7 @@ static const long _vq_quantlist__44p4_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p4_p7_1[] = {
+static const char _vq_lengthlist__44p4_p7_1[] = {
 	 1, 9, 9, 7, 9, 9, 8, 8, 9, 9, 9, 9, 9, 9, 9, 8,
 	 9, 9, 7, 9, 9, 9, 9, 9, 9, 9, 9, 7, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -5059,7 +5075,7 @@ static const long _vq_lengthlist__44p4_p7_1[] = {
 
 static const static_codebook _44p4_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p4_p7_1,
+	(char *)_vq_lengthlist__44p4_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p4_p7_1,
 	0
@@ -5093,14 +5109,14 @@ static const long _vq_quantlist__44p4_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p4_p7_2[] = {
+static const char _vq_lengthlist__44p4_p7_2[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p4_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p4_p7_2,
+	(char *)_vq_lengthlist__44p4_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p4_p7_2,
 	0
@@ -5134,20 +5150,20 @@ static const long _vq_quantlist__44p4_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p4_p7_3[] = {
+static const char _vq_lengthlist__44p4_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p4_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p4_p7_3,
+	(char *)_vq_lengthlist__44p4_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p4_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p4_short[] = {
+static const char _huff_lengthlist__44p4_short[] = {
 	 3, 5,16, 9, 9,13,18,21, 4, 2,21, 6, 6,10,15,21,
 	16,19, 6, 5, 7,10,13,16, 8, 6, 5, 4, 4, 8,13,16,
 	 8, 5, 6, 4, 4, 7,12,15,13,10, 9, 7, 7, 9,13,16,
@@ -5156,7 +5172,7 @@ static const long _huff_lengthlist__44p4_short[] = {
 
 static const static_codebook _huff_book__44p4_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p4_short,
+	(char *)_huff_lengthlist__44p4_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -5178,7 +5194,7 @@ static const long _vq_quantlist__44p5_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p5_l0_0[] = {
+static const char _vq_lengthlist__44p5_l0_0[] = {
 	 1, 4, 4, 8, 8,10,10,10,10, 9, 8,11,11, 4, 6, 5,
 	 8, 6,10,10,10,10,10, 9,10, 9, 4, 5, 6, 6, 9,10,
 	10,10,10, 9,10, 9,10, 8, 9, 8, 9, 8, 9, 9,10, 9,
@@ -5194,7 +5210,7 @@ static const long _vq_lengthlist__44p5_l0_0[] = {
 
 static const static_codebook _44p5_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p5_l0_0,
+	(char *)_vq_lengthlist__44p5_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p5_l0_0,
 	0
@@ -5208,14 +5224,14 @@ static const long _vq_quantlist__44p5_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p5_l0_1[] = {
+static const char _vq_lengthlist__44p5_l0_1[] = {
 	 4, 4, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 4, 4, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p5_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p5_l0_1,
+	(char *)_vq_lengthlist__44p5_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p5_l0_1,
 	0
@@ -5227,31 +5243,31 @@ static const long _vq_quantlist__44p5_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_l1_0[] = {
+static const char _vq_lengthlist__44p5_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44p5_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p5_l1_0,
+	(char *)_vq_lengthlist__44p5_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p5_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p5_lfe[] = {
+static const char _huff_lengthlist__44p5_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44p5_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p5_lfe,
+	(char *)_huff_lengthlist__44p5_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p5_long[] = {
+static const char _huff_lengthlist__44p5_long[] = {
 	 3, 7,12,14,14,16,18,19, 6, 2, 4, 6, 8, 9,12,14,
 	12, 3, 3, 5, 7, 8,11,13,13, 6, 4, 5, 7, 8,10,11,
 	14, 8, 7, 7, 7, 7, 9,10,15, 9, 8, 7, 7, 6, 8, 9,
@@ -5260,7 +5276,7 @@ static const long _huff_lengthlist__44p5_long[] = {
 
 static const static_codebook _huff_book__44p5_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p5_long,
+	(char *)_huff_lengthlist__44p5_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -5272,7 +5288,7 @@ static const long _vq_quantlist__44p5_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p1_0[] = {
+static const char _vq_lengthlist__44p5_p1_0[] = {
 	 2, 5, 5, 5, 7, 7, 5, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 5, 7, 8, 8, 9,
 	10, 8, 9,10, 8, 9,10, 9,10,12,10,11,11, 8,10,10,
@@ -5293,7 +5309,7 @@ static const long _vq_lengthlist__44p5_p1_0[] = {
 
 static const static_codebook _44p5_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p1_0,
+	(char *)_vq_lengthlist__44p5_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p5_p1_0,
 	0
@@ -5307,7 +5323,7 @@ static const long _vq_quantlist__44p5_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p5_p2_0[] = {
+static const char _vq_lengthlist__44p5_p2_0[] = {
 	 4, 6, 6, 9, 9, 6, 7, 8,10,10, 6, 8, 7,10,10, 8,
 	10,10,12,13, 8,10,10,13,12, 6, 7, 8,10,10, 7, 8,
 	 9,10,11, 8, 9, 9,11,11,10,10,11,12,14,10,11,11,
@@ -5508,7 +5524,7 @@ static const long _vq_lengthlist__44p5_p2_0[] = {
 
 static const static_codebook _44p5_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p5_p2_0,
+	(char *)_vq_lengthlist__44p5_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p5_p2_0,
 	0
@@ -5520,7 +5536,7 @@ static const long _vq_quantlist__44p5_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p3_0[] = {
+static const char _vq_lengthlist__44p5_p3_0[] = {
 	 1, 5, 6, 5, 7, 8, 5, 8, 7, 5, 7, 8, 7, 8,10, 8,
 	10,10, 5, 8, 7, 8,10,10, 7,10, 8, 6, 8, 9, 8,10,
 	11, 9,10,10, 9,10,11,10,11,12,11,12,12, 9,11,10,
@@ -5541,7 +5557,7 @@ static const long _vq_lengthlist__44p5_p3_0[] = {
 
 static const static_codebook _44p5_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p3_0,
+	(char *)_vq_lengthlist__44p5_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p5_p3_0,
 	0
@@ -5553,7 +5569,7 @@ static const long _vq_quantlist__44p5_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p3_1[] = {
+static const char _vq_lengthlist__44p5_p3_1[] = {
 	 5, 6, 6, 6, 7, 7, 6, 7, 7, 6, 7, 7, 7, 7, 8, 7,
 	 8, 8, 6, 7, 7, 7, 8, 8, 7, 8, 7, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 9, 9, 8, 8, 8,
@@ -5574,7 +5590,7 @@ static const long _vq_lengthlist__44p5_p3_1[] = {
 
 static const static_codebook _44p5_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p3_1,
+	(char *)_vq_lengthlist__44p5_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p5_p3_1,
 	0
@@ -5586,7 +5602,7 @@ static const long _vq_quantlist__44p5_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p4_0[] = {
+static const char _vq_lengthlist__44p5_p4_0[] = {
 	 1, 5, 5, 5, 7, 9, 5, 9, 7, 5, 7, 8, 7, 7,10, 9,
 	10,10, 5, 8, 7, 9,10,10, 7,10, 7, 6, 8, 9, 9,10,
 	12, 9,11,11, 9,10,11,11,11,13,12,13,13, 9,11,11,
@@ -5607,7 +5623,7 @@ static const long _vq_lengthlist__44p5_p4_0[] = {
 
 static const static_codebook _44p5_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p4_0,
+	(char *)_vq_lengthlist__44p5_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p5_p4_0,
 	0
@@ -5621,7 +5637,7 @@ static const long _vq_quantlist__44p5_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p5_p4_1[] = {
+static const char _vq_lengthlist__44p5_p4_1[] = {
 	 5, 7, 7,10,10, 7, 8, 9,10,11, 7, 9, 8,11,10, 9,
 	10,10,11,11, 9,10,10,11,11, 7, 9, 9,10,10, 8, 9,
 	10,10,11, 9,10,10,11,11,10,10,11,11,11,10,11,11,
@@ -5822,7 +5838,7 @@ static const long _vq_lengthlist__44p5_p4_1[] = {
 
 static const static_codebook _44p5_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p5_p4_1,
+	(char *)_vq_lengthlist__44p5_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p5_p4_1,
 	0
@@ -5836,7 +5852,7 @@ static const long _vq_quantlist__44p5_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p5_p5_0[] = {
+static const char _vq_lengthlist__44p5_p5_0[] = {
 	 1, 6, 6,10,10, 6, 7, 9,11,13, 5, 9, 7,13,11, 8,
 	11,12,13,15, 8,12,11,15,13, 6, 7, 8,11,11, 7, 8,
 	10,11,13, 9,10,10,13,13,11,11,13,12,16,12,13,13,
@@ -6037,7 +6053,7 @@ static const long _vq_lengthlist__44p5_p5_0[] = {
 
 static const static_codebook _44p5_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p5_p5_0,
+	(char *)_vq_lengthlist__44p5_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p5_p5_0,
 	0
@@ -6053,13 +6069,13 @@ static const long _vq_quantlist__44p5_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p5_p5_1[] = {
+static const char _vq_lengthlist__44p5_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p5_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p5_p5_1,
+	(char *)_vq_lengthlist__44p5_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p5_p5_1,
 	0
@@ -6071,7 +6087,7 @@ static const long _vq_quantlist__44p5_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p6_0[] = {
+static const char _vq_lengthlist__44p5_p6_0[] = {
 	 1, 5, 5, 5, 7, 9, 5, 9, 7, 5, 7, 8, 7, 7,10, 9,
 	 9,10, 5, 8, 7, 9,10, 9, 7,10, 7, 6, 9, 9, 9,10,
 	12,10,12,11, 9,10,11,11,10,13,12,12,13,10,11,11,
@@ -6092,7 +6108,7 @@ static const long _vq_lengthlist__44p5_p6_0[] = {
 
 static const static_codebook _44p5_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p6_0,
+	(char *)_vq_lengthlist__44p5_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p5_p6_0,
 	0
@@ -6104,7 +6120,7 @@ static const long _vq_quantlist__44p5_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p6_1[] = {
+static const char _vq_lengthlist__44p5_p6_1[] = {
 	 2, 6, 6, 5, 7, 8, 5, 8, 7, 6, 7, 7, 7, 7, 8, 8,
 	 8, 8, 6, 7, 7, 7, 8, 8, 7, 8, 7, 6, 8, 8, 8, 9,
 	10, 8, 9, 9, 8, 9, 9, 9, 9,10,10,10,10, 8, 9, 9,
@@ -6125,7 +6141,7 @@ static const long _vq_lengthlist__44p5_p6_1[] = {
 
 static const static_codebook _44p5_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p6_1,
+	(char *)_vq_lengthlist__44p5_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p5_p6_1,
 	0
@@ -6137,7 +6153,7 @@ static const long _vq_quantlist__44p5_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p7_0[] = {
+static const char _vq_lengthlist__44p5_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -6158,7 +6174,7 @@ static const long _vq_lengthlist__44p5_p7_0[] = {
 
 static const static_codebook _44p5_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p7_0,
+	(char *)_vq_lengthlist__44p5_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p5_p7_0,
 	0
@@ -6170,7 +6186,7 @@ static const long _vq_quantlist__44p5_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p5_p7_1[] = {
+static const char _vq_lengthlist__44p5_p7_1[] = {
 	 1, 7, 7, 6, 9, 9, 7, 9, 9, 6, 9, 9, 9, 9, 9, 9,
 	 9, 9, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -6191,7 +6207,7 @@ static const long _vq_lengthlist__44p5_p7_1[] = {
 
 static const static_codebook _44p5_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p5_p7_1,
+	(char *)_vq_lengthlist__44p5_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p5_p7_1,
 	0
@@ -6225,14 +6241,14 @@ static const long _vq_quantlist__44p5_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p5_p7_2[] = {
+static const char _vq_lengthlist__44p5_p7_2[] = {
 	 1, 2, 3, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9,10,10,11,
 	11,12,12,13,13,14,14,14,14,
 };
 
 static const static_codebook _44p5_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p5_p7_2,
+	(char *)_vq_lengthlist__44p5_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p5_p7_2,
 	0
@@ -6266,20 +6282,20 @@ static const long _vq_quantlist__44p5_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p5_p7_3[] = {
+static const char _vq_lengthlist__44p5_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p5_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p5_p7_3,
+	(char *)_vq_lengthlist__44p5_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p5_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p5_short[] = {
+static const char _huff_lengthlist__44p5_short[] = {
 	 4, 7,12,14,15,18,20,20, 5, 3, 4, 6, 9,11,15,19,
 	 9, 4, 3, 4, 7, 9,13,18,11, 6, 3, 3, 5, 8,13,19,
 	14, 9, 6, 5, 7,10,16,20,16,11, 9, 8,10,10,14,16,
@@ -6288,7 +6304,7 @@ static const long _huff_lengthlist__44p5_short[] = {
 
 static const static_codebook _huff_book__44p5_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p5_short,
+	(char *)_huff_lengthlist__44p5_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -6310,7 +6326,7 @@ static const long _vq_quantlist__44p6_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p6_l0_0[] = {
+static const char _vq_lengthlist__44p6_l0_0[] = {
 	 1, 4, 4, 7, 7,10,10,12,12,12,12,13,12, 5, 5, 5,
 	 8, 6,11, 9,12,12,13,12,12,12, 4, 5, 5, 6, 8, 9,
 	11,12,12,13,12,12,12, 7, 7, 8, 9, 9,11, 8,12, 9,
@@ -6326,7 +6342,7 @@ static const long _vq_lengthlist__44p6_l0_0[] = {
 
 static const static_codebook _44p6_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p6_l0_0,
+	(char *)_vq_lengthlist__44p6_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p6_l0_0,
 	0
@@ -6340,14 +6356,14 @@ static const long _vq_quantlist__44p6_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p6_l0_1[] = {
+static const char _vq_lengthlist__44p6_l0_1[] = {
 	 4, 4, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5,
 	 5, 5, 4, 5, 5, 5, 5, 5, 4,
 };
 
 static const static_codebook _44p6_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p6_l0_1,
+	(char *)_vq_lengthlist__44p6_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p6_l0_1,
 	0
@@ -6359,31 +6375,31 @@ static const long _vq_quantlist__44p6_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_l1_0[] = {
+static const char _vq_lengthlist__44p6_l1_0[] = {
 	 1, 3, 2, 5, 5, 6, 6, 6, 6,
 };
 
 static const static_codebook _44p6_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44p6_l1_0,
+	(char *)_vq_lengthlist__44p6_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p6_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p6_lfe[] = {
+static const char _huff_lengthlist__44p6_lfe[] = {
 	 2, 3, 1, 3,
 };
 
 static const static_codebook _huff_book__44p6_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p6_lfe,
+	(char *)_huff_lengthlist__44p6_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p6_long[] = {
+static const char _huff_lengthlist__44p6_long[] = {
 	 2, 7,13,15,16,17,19,20, 6, 3, 4, 7, 9,10,12,15,
 	13, 4, 3, 4, 7, 8,11,13,14, 7, 4, 4, 6, 7,10,11,
 	16, 9, 7, 6, 7, 8, 9,10,16, 9, 8, 7, 7, 6, 8, 8,
@@ -6392,7 +6408,7 @@ static const long _huff_lengthlist__44p6_long[] = {
 
 static const static_codebook _huff_book__44p6_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p6_long,
+	(char *)_huff_lengthlist__44p6_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -6404,7 +6420,7 @@ static const long _vq_quantlist__44p6_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p1_0[] = {
+static const char _vq_lengthlist__44p6_p1_0[] = {
 	 2, 5, 5, 5, 7, 7, 5, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 5, 7, 8, 8, 9,
 	10, 8, 9, 9, 8, 9,10, 9,10,12,10,11,11, 8, 9,10,
@@ -6425,7 +6441,7 @@ static const long _vq_lengthlist__44p6_p1_0[] = {
 
 static const static_codebook _44p6_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p1_0,
+	(char *)_vq_lengthlist__44p6_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p6_p1_0,
 	0
@@ -6439,7 +6455,7 @@ static const long _vq_quantlist__44p6_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p6_p2_0[] = {
+static const char _vq_lengthlist__44p6_p2_0[] = {
 	 4, 6, 6, 9, 9, 6, 7, 8,10,10, 6, 8, 7,10,10, 8,
 	10,10,12,13, 8,10,10,13,12, 6, 8, 8,10,10, 7, 8,
 	 9,10,11, 8, 9, 9,11,11,10,10,11,12,13,10,11,11,
@@ -6640,7 +6656,7 @@ static const long _vq_lengthlist__44p6_p2_0[] = {
 
 static const static_codebook _44p6_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p6_p2_0,
+	(char *)_vq_lengthlist__44p6_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p6_p2_0,
 	0
@@ -6652,7 +6668,7 @@ static const long _vq_quantlist__44p6_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p3_0[] = {
+static const char _vq_lengthlist__44p6_p3_0[] = {
 	 1, 5, 5, 5, 7, 8, 5, 8, 7, 5, 7, 8, 8, 8,10, 8,
 	10,10, 5, 8, 7, 8,10,10, 8,10, 8, 6, 8, 9, 8,10,
 	12, 9,11,11, 9,10,11,11,11,13,12,13,13, 9,11,11,
@@ -6673,7 +6689,7 @@ static const long _vq_lengthlist__44p6_p3_0[] = {
 
 static const static_codebook _44p6_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p3_0,
+	(char *)_vq_lengthlist__44p6_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p6_p3_0,
 	0
@@ -6685,7 +6701,7 @@ static const long _vq_quantlist__44p6_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p3_1[] = {
+static const char _vq_lengthlist__44p6_p3_1[] = {
 	 5, 7, 7, 6, 7, 7, 6, 7, 7, 6, 7, 7, 7, 8, 8, 7,
 	 8, 8, 6, 7, 7, 7, 8, 8, 7, 8, 8, 7, 7, 8, 7, 8,
 	 8, 7, 8, 8, 8, 8, 8, 8, 8, 9, 8, 9, 9, 8, 8, 8,
@@ -6706,7 +6722,7 @@ static const long _vq_lengthlist__44p6_p3_1[] = {
 
 static const static_codebook _44p6_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p3_1,
+	(char *)_vq_lengthlist__44p6_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p6_p3_1,
 	0
@@ -6718,7 +6734,7 @@ static const long _vq_quantlist__44p6_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p4_0[] = {
+static const char _vq_lengthlist__44p6_p4_0[] = {
 	 2, 5, 5, 5, 7, 8, 5, 8, 7, 5, 7, 7, 7, 7, 9, 7,
 	 9, 9, 5, 7, 7, 8, 9, 9, 7, 9, 7, 6, 8, 8, 8, 9,
 	10, 8, 9, 9, 8, 9,10, 9, 9,11,10,11,11, 8, 9, 9,
@@ -6739,7 +6755,7 @@ static const long _vq_lengthlist__44p6_p4_0[] = {
 
 static const static_codebook _44p6_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p4_0,
+	(char *)_vq_lengthlist__44p6_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p6_p4_0,
 	0
@@ -6753,7 +6769,7 @@ static const long _vq_quantlist__44p6_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p6_p4_1[] = {
+static const char _vq_lengthlist__44p6_p4_1[] = {
 	 6, 8, 8,10,10, 8, 9, 9,10,11, 8,10, 9,11,10, 9,
 	10,10,11,11, 9,10,10,11,11, 8, 9, 9,10,10, 9, 9,
 	10,11,11,10,10,10,11,11,10,11,11,11,11,10,11,11,
@@ -6954,7 +6970,7 @@ static const long _vq_lengthlist__44p6_p4_1[] = {
 
 static const static_codebook _44p6_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p6_p4_1,
+	(char *)_vq_lengthlist__44p6_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p6_p4_1,
 	0
@@ -6968,7 +6984,7 @@ static const long _vq_quantlist__44p6_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p6_p5_0[] = {
+static const char _vq_lengthlist__44p6_p5_0[] = {
 	 2, 6, 6,10,10, 5, 7, 8,11,12, 5, 8, 7,12,11, 9,
 	11,11,13,15, 9,11,11,15,13, 6, 7, 8,11,11, 7, 7,
 	 9,11,13, 8, 9, 9,13,12,11,11,12,12,15,11,12,12,
@@ -7169,7 +7185,7 @@ static const long _vq_lengthlist__44p6_p5_0[] = {
 
 static const static_codebook _44p6_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p6_p5_0,
+	(char *)_vq_lengthlist__44p6_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p6_p5_0,
 	0
@@ -7185,13 +7201,13 @@ static const long _vq_quantlist__44p6_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p6_p5_1[] = {
+static const char _vq_lengthlist__44p6_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p6_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p6_p5_1,
+	(char *)_vq_lengthlist__44p6_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p6_p5_1,
 	0
@@ -7203,7 +7219,7 @@ static const long _vq_quantlist__44p6_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p6_0[] = {
+static const char _vq_lengthlist__44p6_p6_0[] = {
 	 1, 5, 5, 5, 7, 9, 5, 9, 7, 5, 7, 8, 7, 7,10, 9,
 	10,10, 5, 8, 7, 9,10,10, 7,10, 7, 6, 9, 9, 9,10,
 	12, 9,11,11, 9,10,11,11,11,13,12,13,13, 9,11,11,
@@ -7224,7 +7240,7 @@ static const long _vq_lengthlist__44p6_p6_0[] = {
 
 static const static_codebook _44p6_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p6_0,
+	(char *)_vq_lengthlist__44p6_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p6_p6_0,
 	0
@@ -7236,7 +7252,7 @@ static const long _vq_quantlist__44p6_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p6_1[] = {
+static const char _vq_lengthlist__44p6_p6_1[] = {
 	 2, 6, 6, 6, 7, 8, 6, 8, 7, 6, 7, 7, 7, 7, 8, 7,
 	 8, 8, 6, 7, 7, 7, 8, 8, 7, 8, 7, 6, 8, 8, 8, 9,
 	 9, 8, 9, 9, 8, 9, 9, 9, 9,10, 9,10,10, 8, 9, 9,
@@ -7257,7 +7273,7 @@ static const long _vq_lengthlist__44p6_p6_1[] = {
 
 static const static_codebook _44p6_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p6_1,
+	(char *)_vq_lengthlist__44p6_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p6_p6_1,
 	0
@@ -7269,7 +7285,7 @@ static const long _vq_quantlist__44p6_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p7_0[] = {
+static const char _vq_lengthlist__44p6_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -7290,7 +7306,7 @@ static const long _vq_lengthlist__44p6_p7_0[] = {
 
 static const static_codebook _44p6_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p7_0,
+	(char *)_vq_lengthlist__44p6_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p6_p7_0,
 	0
@@ -7302,7 +7318,7 @@ static const long _vq_quantlist__44p6_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p6_p7_1[] = {
+static const char _vq_lengthlist__44p6_p7_1[] = {
 	 1, 4, 5, 5,10,10, 5,10,10, 5,10,10,10,10,10,10,
 	10,10, 5,10,10,10,10,10,10,10,10, 7,10,10,10,10,
 	10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
@@ -7323,7 +7339,7 @@ static const long _vq_lengthlist__44p6_p7_1[] = {
 
 static const static_codebook _44p6_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p6_p7_1,
+	(char *)_vq_lengthlist__44p6_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p6_p7_1,
 	0
@@ -7357,14 +7373,14 @@ static const long _vq_quantlist__44p6_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p6_p7_2[] = {
+static const char _vq_lengthlist__44p6_p7_2[] = {
 	 1, 2, 3, 4, 5, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p6_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p6_p7_2,
+	(char *)_vq_lengthlist__44p6_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p6_p7_2,
 	0
@@ -7398,20 +7414,20 @@ static const long _vq_quantlist__44p6_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p6_p7_3[] = {
+static const char _vq_lengthlist__44p6_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p6_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p6_p7_3,
+	(char *)_vq_lengthlist__44p6_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p6_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p6_short[] = {
+static const char _huff_lengthlist__44p6_short[] = {
 	 2, 8,13,15,16,18,21,22, 5, 4, 6, 8,10,12,17,21,
 	 9, 5, 5, 6, 8,11,15,19,11, 6, 5, 5, 6, 7,12,14,
 	14, 8, 7, 5, 4, 4, 9,11,16,11, 9, 7, 4, 3, 7,10,
@@ -7420,7 +7436,7 @@ static const long _huff_lengthlist__44p6_short[] = {
 
 static const static_codebook _huff_book__44p6_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p6_short,
+	(char *)_huff_lengthlist__44p6_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -7442,7 +7458,7 @@ static const long _vq_quantlist__44p7_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p7_l0_0[] = {
+static const char _vq_lengthlist__44p7_l0_0[] = {
 	 2, 4, 4, 7, 7, 8, 8,10,10,11,11,12,12, 4, 5, 5,
 	 7, 7, 9, 9,11, 9,12,11,12,12, 4, 5, 5, 7, 7, 9,
 	 9, 9,10,10,11,12,12, 7, 7, 7, 7, 8, 9, 8,11, 5,
@@ -7458,7 +7474,7 @@ static const long _vq_lengthlist__44p7_l0_0[] = {
 
 static const static_codebook _44p7_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p7_l0_0,
+	(char *)_vq_lengthlist__44p7_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p7_l0_0,
 	0
@@ -7472,14 +7488,14 @@ static const long _vq_quantlist__44p7_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p7_l0_1[] = {
+static const char _vq_lengthlist__44p7_l0_1[] = {
 	 4, 4, 4, 5, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p7_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p7_l0_1,
+	(char *)_vq_lengthlist__44p7_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p7_l0_1,
 	0
@@ -7493,32 +7509,32 @@ static const long _vq_quantlist__44p7_l1_0[] = {
 	108,
 };
 
-static const long _vq_lengthlist__44p7_l1_0[] = {
+static const char _vq_lengthlist__44p7_l1_0[] = {
 	 1, 2, 3, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8,
 };
 
 static const static_codebook _44p7_l1_0 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p7_l1_0,
+	(char *)_vq_lengthlist__44p7_l1_0,
 	1, -514516992, 1620639744, 7, 0,
 	(long *)_vq_quantlist__44p7_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p7_lfe[] = {
+static const char _huff_lengthlist__44p7_lfe[] = {
 	 2, 3, 1, 3,
 };
 
 static const static_codebook _huff_book__44p7_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p7_lfe,
+	(char *)_huff_lengthlist__44p7_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p7_long[] = {
+static const char _huff_lengthlist__44p7_long[] = {
 	 2, 7,14,16,17,17,18,20, 6, 3, 5, 8,10,11,13,15,
 	13, 5, 3, 5, 8, 9,11,12,15, 7, 4, 3, 5, 7, 9,11,
 	16,10, 7, 5, 6, 7, 9,10,17,11, 8, 7, 7, 6, 8, 8,
@@ -7527,7 +7543,7 @@ static const long _huff_lengthlist__44p7_long[] = {
 
 static const static_codebook _huff_book__44p7_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p7_long,
+	(char *)_huff_lengthlist__44p7_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -7539,7 +7555,7 @@ static const long _vq_quantlist__44p7_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p1_0[] = {
+static const char _vq_lengthlist__44p7_p1_0[] = {
 	 2, 5, 5, 4, 7, 7, 4, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 6, 7, 8, 8, 9,
 	10, 8, 9,10, 8, 9,10,10,10,12,10,11,11, 8,10,10,
@@ -7560,7 +7576,7 @@ static const long _vq_lengthlist__44p7_p1_0[] = {
 
 static const static_codebook _44p7_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p1_0,
+	(char *)_vq_lengthlist__44p7_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p7_p1_0,
 	0
@@ -7574,7 +7590,7 @@ static const long _vq_quantlist__44p7_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p7_p2_0[] = {
+static const char _vq_lengthlist__44p7_p2_0[] = {
 	 4, 6, 6, 9, 9, 6, 8, 8,10,10, 6, 8, 8,10,10, 8,
 	10,10,12,13, 8,10,10,13,12, 6, 8, 8,10,10, 8, 8,
 	 9,10,11, 8, 9, 9,11,11,10,10,11,12,13,10,11,11,
@@ -7775,7 +7791,7 @@ static const long _vq_lengthlist__44p7_p2_0[] = {
 
 static const static_codebook _44p7_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p7_p2_0,
+	(char *)_vq_lengthlist__44p7_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p7_p2_0,
 	0
@@ -7787,7 +7803,7 @@ static const long _vq_quantlist__44p7_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p3_0[] = {
+static const char _vq_lengthlist__44p7_p3_0[] = {
 	 2, 5, 5, 4, 7, 7, 4, 7, 7, 5, 7, 8, 7, 8,10, 8,
 	 9, 9, 5, 7, 7, 8, 9, 9, 7,10, 8, 5, 7, 8, 8, 9,
 	10, 8,10,10, 8, 9,10,10,10,12,10,12,12, 8,10,10,
@@ -7808,7 +7824,7 @@ static const long _vq_lengthlist__44p7_p3_0[] = {
 
 static const static_codebook _44p7_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p3_0,
+	(char *)_vq_lengthlist__44p7_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p7_p3_0,
 	0
@@ -7820,7 +7836,7 @@ static const long _vq_quantlist__44p7_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p3_1[] = {
+static const char _vq_lengthlist__44p7_p3_1[] = {
 	 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 7, 8, 8, 7,
 	 8, 8, 7, 8, 7, 7, 8, 8, 7, 8, 8, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 8, 9, 8, 8, 8,
@@ -7841,7 +7857,7 @@ static const long _vq_lengthlist__44p7_p3_1[] = {
 
 static const static_codebook _44p7_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p3_1,
+	(char *)_vq_lengthlist__44p7_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p7_p3_1,
 	0
@@ -7853,7 +7869,7 @@ static const long _vq_quantlist__44p7_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p4_0[] = {
+static const char _vq_lengthlist__44p7_p4_0[] = {
 	 1, 5, 5, 5, 7, 8, 5, 8, 7, 5, 7, 8, 7, 8,10, 8,
 	10,10, 5, 8, 7, 8,10,10, 7,10, 8, 6, 8, 9, 9,10,
 	12, 9,11,11, 9,10,11,11,11,13,11,13,13, 9,11,11,
@@ -7874,7 +7890,7 @@ static const long _vq_lengthlist__44p7_p4_0[] = {
 
 static const static_codebook _44p7_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p4_0,
+	(char *)_vq_lengthlist__44p7_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p7_p4_0,
 	0
@@ -7888,7 +7904,7 @@ static const long _vq_quantlist__44p7_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p7_p4_1[] = {
+static const char _vq_lengthlist__44p7_p4_1[] = {
 	 7, 8, 8,10,10, 8, 9, 9,10,11, 8, 9, 9,10,10, 9,
 	10,10,11,11, 9,10,10,11,11, 8, 9, 9,10,10, 9, 9,
 	10,11,11, 9,10,10,11,11,10,10,11,11,11,10,11,11,
@@ -8089,7 +8105,7 @@ static const long _vq_lengthlist__44p7_p4_1[] = {
 
 static const static_codebook _44p7_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p7_p4_1,
+	(char *)_vq_lengthlist__44p7_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p7_p4_1,
 	0
@@ -8103,7 +8119,7 @@ static const long _vq_quantlist__44p7_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p7_p5_0[] = {
+static const char _vq_lengthlist__44p7_p5_0[] = {
 	 2, 6, 6, 9, 9, 5, 7, 8,10,11, 5, 8, 7,11,10, 8,
 	10,11,12,13, 8,11,10,13,12, 6, 7, 8,10,11, 7, 8,
 	10,10,12, 8, 9, 9,12,11,10,10,12,11,14,10,11,12,
@@ -8304,7 +8320,7 @@ static const long _vq_lengthlist__44p7_p5_0[] = {
 
 static const static_codebook _44p7_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p7_p5_0,
+	(char *)_vq_lengthlist__44p7_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p7_p5_0,
 	0
@@ -8320,13 +8336,13 @@ static const long _vq_quantlist__44p7_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p7_p5_1[] = {
+static const char _vq_lengthlist__44p7_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p7_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p7_p5_1,
+	(char *)_vq_lengthlist__44p7_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p7_p5_1,
 	0
@@ -8338,7 +8354,7 @@ static const long _vq_quantlist__44p7_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p6_0[] = {
+static const char _vq_lengthlist__44p7_p6_0[] = {
 	 2, 5, 6, 5, 7, 8, 5, 8, 7, 5, 7, 7, 7, 7, 9, 8,
 	 9, 9, 5, 7, 7, 8, 9, 9, 7, 9, 7, 6, 8, 8, 8, 9,
 	10, 8, 9, 9, 8, 9,10, 9, 9,11,10,10,11, 8,10, 9,
@@ -8359,7 +8375,7 @@ static const long _vq_lengthlist__44p7_p6_0[] = {
 
 static const static_codebook _44p7_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p6_0,
+	(char *)_vq_lengthlist__44p7_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p7_p6_0,
 	0
@@ -8371,7 +8387,7 @@ static const long _vq_quantlist__44p7_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p6_1[] = {
+static const char _vq_lengthlist__44p7_p6_1[] = {
 	 4, 7, 7, 6, 7, 8, 6, 8, 7, 7, 7, 8, 7, 7, 8, 8,
 	 8, 8, 7, 7, 7, 8, 8, 8, 7, 8, 8, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 9, 9, 8, 8, 8,
@@ -8392,7 +8408,7 @@ static const long _vq_lengthlist__44p7_p6_1[] = {
 
 static const static_codebook _44p7_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p6_1,
+	(char *)_vq_lengthlist__44p7_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p7_p6_1,
 	0
@@ -8404,7 +8420,7 @@ static const long _vq_quantlist__44p7_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p7_0[] = {
+static const char _vq_lengthlist__44p7_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -8425,7 +8441,7 @@ static const long _vq_lengthlist__44p7_p7_0[] = {
 
 static const static_codebook _44p7_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p7_0,
+	(char *)_vq_lengthlist__44p7_p7_0,
 	1, -513979392, 1633504256, 2, 0,
 	(long *)_vq_quantlist__44p7_p7_0,
 	0
@@ -8437,7 +8453,7 @@ static const long _vq_quantlist__44p7_p7_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p7_p7_1[] = {
+static const char _vq_lengthlist__44p7_p7_1[] = {
 	 1, 5, 5, 4,10,10, 5,10,10, 5,10,10,10,10,10,10,
 	10,10, 5,10,10,10,10,10, 9,10,10, 6,10,10,10,10,
 	10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
@@ -8458,7 +8474,7 @@ static const long _vq_lengthlist__44p7_p7_1[] = {
 
 static const static_codebook _44p7_p7_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p7_p7_1,
+	(char *)_vq_lengthlist__44p7_p7_1,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44p7_p7_1,
 	0
@@ -8492,14 +8508,14 @@ static const long _vq_quantlist__44p7_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p7_p7_2[] = {
+static const char _vq_lengthlist__44p7_p7_2[] = {
 	 1, 3, 2, 4, 5, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p7_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p7_p7_2,
+	(char *)_vq_lengthlist__44p7_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p7_p7_2,
 	0
@@ -8533,20 +8549,20 @@ static const long _vq_quantlist__44p7_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p7_p7_3[] = {
+static const char _vq_lengthlist__44p7_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p7_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p7_p7_3,
+	(char *)_vq_lengthlist__44p7_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p7_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p7_short[] = {
+static const char _huff_lengthlist__44p7_short[] = {
 	 3, 9,14,16,17,19,22,22, 5, 4, 6, 9,11,13,17,20,
 	 9, 5, 5, 6, 9,11,15,19,11, 7, 5, 5, 7, 9,13,17,
 	14, 9, 7, 6, 6, 7,11,14,16,11, 9, 7, 6, 4, 4, 8,
@@ -8555,7 +8571,7 @@ static const long _huff_lengthlist__44p7_short[] = {
 
 static const static_codebook _huff_book__44p7_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p7_short,
+	(char *)_huff_lengthlist__44p7_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -8577,7 +8593,7 @@ static const long _vq_quantlist__44p8_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p8_l0_0[] = {
+static const char _vq_lengthlist__44p8_l0_0[] = {
 	 2, 4, 4, 7, 7, 8, 8,10,10,11,11,12,12, 4, 5, 5,
 	 7, 7, 9, 9,10, 9,12,10,12,12, 4, 5, 5, 7, 7, 9,
 	 9, 9,10,10,12,12,12, 7, 7, 7, 7, 8, 9, 8,11, 5,
@@ -8593,7 +8609,7 @@ static const long _vq_lengthlist__44p8_l0_0[] = {
 
 static const static_codebook _44p8_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p8_l0_0,
+	(char *)_vq_lengthlist__44p8_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p8_l0_0,
 	0
@@ -8607,14 +8623,14 @@ static const long _vq_quantlist__44p8_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p8_l0_1[] = {
+static const char _vq_lengthlist__44p8_l0_1[] = {
 	 4, 4, 4, 5, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p8_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p8_l0_1,
+	(char *)_vq_lengthlist__44p8_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p8_l0_1,
 	0
@@ -8628,32 +8644,32 @@ static const long _vq_quantlist__44p8_l1_0[] = {
 	108,
 };
 
-static const long _vq_lengthlist__44p8_l1_0[] = {
+static const char _vq_lengthlist__44p8_l1_0[] = {
 	 1, 2, 3, 6, 7, 7, 6, 7, 7, 8, 8, 8, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8,
 };
 
 static const static_codebook _44p8_l1_0 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p8_l1_0,
+	(char *)_vq_lengthlist__44p8_l1_0,
 	1, -514516992, 1620639744, 7, 0,
 	(long *)_vq_quantlist__44p8_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p8_lfe[] = {
+static const char _huff_lengthlist__44p8_lfe[] = {
 	 2, 3, 1, 3,
 };
 
 static const static_codebook _huff_book__44p8_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44p8_lfe,
+	(char *)_huff_lengthlist__44p8_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p8_long[] = {
+static const char _huff_lengthlist__44p8_long[] = {
 	 2, 7,14,16,17,18,20,21, 7, 4, 6, 8,11,12,14,16,
 	13, 5, 4, 4, 8, 9,11,13,15, 8, 4, 3, 5, 7, 9,10,
 	17,11, 8, 4, 4, 6, 9, 9,17,11, 9, 7, 6, 5, 7, 8,
@@ -8662,7 +8678,7 @@ static const long _huff_lengthlist__44p8_long[] = {
 
 static const static_codebook _huff_book__44p8_long = {
 	2, 64,
-	(long *)_huff_lengthlist__44p8_long,
+	(char *)_huff_lengthlist__44p8_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -8674,7 +8690,7 @@ static const long _vq_quantlist__44p8_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p1_0[] = {
+static const char _vq_lengthlist__44p8_p1_0[] = {
 	 2, 5, 5, 4, 7, 7, 4, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 6, 7, 8, 8, 9,
 	10, 8, 9,10, 8, 9,10,10,10,12,10,11,12, 8,10,10,
@@ -8695,7 +8711,7 @@ static const long _vq_lengthlist__44p8_p1_0[] = {
 
 static const static_codebook _44p8_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p1_0,
+	(char *)_vq_lengthlist__44p8_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p8_p1_0,
 	0
@@ -8709,7 +8725,7 @@ static const long _vq_quantlist__44p8_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p8_p2_0[] = {
+static const char _vq_lengthlist__44p8_p2_0[] = {
 	 4, 6, 6, 9, 9, 6, 8, 8,10,10, 6, 8, 8,10,10, 8,
 	 9,10,12,12, 8,10, 9,12,12, 6, 8, 8,10,10, 8, 8,
 	 9,10,11, 8, 9, 9,11,11, 9,10,11,12,13,10,11,11,
@@ -8910,7 +8926,7 @@ static const long _vq_lengthlist__44p8_p2_0[] = {
 
 static const static_codebook _44p8_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p8_p2_0,
+	(char *)_vq_lengthlist__44p8_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p8_p2_0,
 	0
@@ -8922,7 +8938,7 @@ static const long _vq_quantlist__44p8_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p3_0[] = {
+static const char _vq_lengthlist__44p8_p3_0[] = {
 	 2, 5, 5, 5, 7, 7, 5, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 5, 7, 8, 7, 9,
 	10, 8, 9, 9, 8, 9,10, 9,10,12,10,11,11, 8,10, 9,
@@ -8943,7 +8959,7 @@ static const long _vq_lengthlist__44p8_p3_0[] = {
 
 static const static_codebook _44p8_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p3_0,
+	(char *)_vq_lengthlist__44p8_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p8_p3_0,
 	0
@@ -8955,7 +8971,7 @@ static const long _vq_quantlist__44p8_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p3_1[] = {
+static const char _vq_lengthlist__44p8_p3_1[] = {
 	 6, 7, 7, 7, 7, 8, 7, 8, 7, 7, 7, 8, 7, 8, 8, 8,
 	 8, 8, 7, 8, 7, 7, 8, 8, 7, 8, 8, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
@@ -8976,7 +8992,7 @@ static const long _vq_lengthlist__44p8_p3_1[] = {
 
 static const static_codebook _44p8_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p3_1,
+	(char *)_vq_lengthlist__44p8_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p8_p3_1,
 	0
@@ -8988,7 +9004,7 @@ static const long _vq_quantlist__44p8_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p4_0[] = {
+static const char _vq_lengthlist__44p8_p4_0[] = {
 	 2, 5, 5, 4, 7, 8, 4, 8, 7, 5, 7, 8, 7, 7,10, 8,
 	 9, 9, 5, 7, 7, 8, 9, 9, 7,10, 7, 5, 7, 8, 8, 9,
 	11, 8,10,10, 8, 9,10,10,10,12,11,12,12, 8,10,10,
@@ -9009,7 +9025,7 @@ static const long _vq_lengthlist__44p8_p4_0[] = {
 
 static const static_codebook _44p8_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p4_0,
+	(char *)_vq_lengthlist__44p8_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p8_p4_0,
 	0
@@ -9023,7 +9039,7 @@ static const long _vq_quantlist__44p8_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p8_p4_1[] = {
+static const char _vq_lengthlist__44p8_p4_1[] = {
 	 7, 9, 9,10,10, 9,10,10,10,11, 9,10,10,11,10, 9,
 	10,10,11,11, 9,10,10,11,11, 9,10,10,11,11,10,10,
 	10,11,11,10,10,10,11,11,10,11,11,11,11,10,11,11,
@@ -9224,7 +9240,7 @@ static const long _vq_lengthlist__44p8_p4_1[] = {
 
 static const static_codebook _44p8_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p8_p4_1,
+	(char *)_vq_lengthlist__44p8_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p8_p4_1,
 	0
@@ -9238,7 +9254,7 @@ static const long _vq_quantlist__44p8_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p8_p5_0[] = {
+static const char _vq_lengthlist__44p8_p5_0[] = {
 	 2, 6, 6, 9, 9, 5, 7, 8,10,11, 5, 8, 7,11,10, 8,
 	10,11,12,13, 8,11,10,13,12, 6, 7, 8,10,11, 7, 8,
 	10,10,12, 8, 9, 9,12,12,10,10,12,12,14,10,12,12,
@@ -9439,7 +9455,7 @@ static const long _vq_lengthlist__44p8_p5_0[] = {
 
 static const static_codebook _44p8_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p8_p5_0,
+	(char *)_vq_lengthlist__44p8_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p8_p5_0,
 	0
@@ -9455,13 +9471,13 @@ static const long _vq_quantlist__44p8_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p8_p5_1[] = {
+static const char _vq_lengthlist__44p8_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p8_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p8_p5_1,
+	(char *)_vq_lengthlist__44p8_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p8_p5_1,
 	0
@@ -9473,7 +9489,7 @@ static const long _vq_quantlist__44p8_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p6_0[] = {
+static const char _vq_lengthlist__44p8_p6_0[] = {
 	 2, 6, 6, 5, 7, 7, 5, 7, 7, 5, 7, 7, 7, 7, 9, 7,
 	 9, 9, 6, 7, 7, 8, 9, 9, 7, 9, 7, 6, 8, 8, 8, 9,
 	10, 8, 9, 9, 8, 9,10, 9, 9,10,10,10,10, 8, 9, 9,
@@ -9494,7 +9510,7 @@ static const long _vq_lengthlist__44p8_p6_0[] = {
 
 static const static_codebook _44p8_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p6_0,
+	(char *)_vq_lengthlist__44p8_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p8_p6_0,
 	0
@@ -9506,7 +9522,7 @@ static const long _vq_quantlist__44p8_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p6_1[] = {
+static const char _vq_lengthlist__44p8_p6_1[] = {
 	 4, 7, 7, 7, 7, 8, 7, 8, 7, 7, 7, 8, 7, 8, 8, 8,
 	 8, 8, 7, 8, 7, 8, 8, 8, 7, 8, 8, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 8, 9, 8, 8, 8,
@@ -9527,7 +9543,7 @@ static const long _vq_lengthlist__44p8_p6_1[] = {
 
 static const static_codebook _44p8_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p6_1,
+	(char *)_vq_lengthlist__44p8_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p8_p6_1,
 	0
@@ -9539,7 +9555,7 @@ static const long _vq_quantlist__44p8_p7_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p8_p7_0[] = {
+static const char _vq_lengthlist__44p8_p7_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -9560,7 +9576,7 @@ static const long _vq_lengthlist__44p8_p7_0[] = {
 
 static const static_codebook _44p8_p7_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p8_p7_0,
+	(char *)_vq_lengthlist__44p8_p7_0,
 	1, -512202240, 1635281408, 2, 0,
 	(long *)_vq_quantlist__44p8_p7_0,
 	0
@@ -9574,7 +9590,7 @@ static const long _vq_quantlist__44p8_p7_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p8_p7_1[] = {
+static const char _vq_lengthlist__44p8_p7_1[] = {
 	 1, 7, 7,12,12, 5,11,12,12,12, 5,12,11,12,12,12,
 	12,12,12,12,12,13,13,13,13, 7,11,11,13,13,13,12,
 	13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
@@ -9775,7 +9791,7 @@ static const long _vq_lengthlist__44p8_p7_1[] = {
 
 static const static_codebook _44p8_p7_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p8_p7_1,
+	(char *)_vq_lengthlist__44p8_p7_1,
 	1, -514619392, 1630767104, 3, 0,
 	(long *)_vq_quantlist__44p8_p7_1,
 	0
@@ -9809,14 +9825,14 @@ static const long _vq_quantlist__44p8_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p8_p7_2[] = {
+static const char _vq_lengthlist__44p8_p7_2[] = {
 	 1, 3, 2, 4, 5, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44p8_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p8_p7_2,
+	(char *)_vq_lengthlist__44p8_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p8_p7_2,
 	0
@@ -9850,20 +9866,20 @@ static const long _vq_quantlist__44p8_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p8_p7_3[] = {
+static const char _vq_lengthlist__44p8_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p8_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p8_p7_3,
+	(char *)_vq_lengthlist__44p8_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p8_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p8_short[] = {
+static const char _huff_lengthlist__44p8_short[] = {
 	 3, 9,15,17,20,21,22,23, 5, 5, 7, 9,11,13,17,20,
 	 9, 5, 5, 6, 8,10,15,18,11, 7, 5, 4, 6, 9,13,17,
 	14, 9, 7, 5, 6, 7,10,14,17,10, 8, 6, 6, 4, 5, 8,
@@ -9872,7 +9888,7 @@ static const long _huff_lengthlist__44p8_short[] = {
 
 static const static_codebook _huff_book__44p8_short = {
 	2, 64,
-	(long *)_huff_lengthlist__44p8_short,
+	(char *)_huff_lengthlist__44p8_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -9894,7 +9910,7 @@ static const long _vq_quantlist__44p9_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44p9_l0_0[] = {
+static const char _vq_lengthlist__44p9_l0_0[] = {
 	 2, 5, 5, 7, 6, 8, 8, 9, 9,10,10,11,11, 4, 5, 5,
 	 6, 7, 8, 8, 9, 9,10,10,11,10, 4, 5, 5, 7, 6, 8,
 	 8, 9, 9,10,10,10,10, 6, 6, 7, 6, 7, 8, 8, 9, 9,
@@ -9910,7 +9926,7 @@ static const long _vq_lengthlist__44p9_l0_0[] = {
 
 static const static_codebook _44p9_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44p9_l0_0,
+	(char *)_vq_lengthlist__44p9_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44p9_l0_0,
 	0
@@ -9924,14 +9940,14 @@ static const long _vq_quantlist__44p9_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_l0_1[] = {
+static const char _vq_lengthlist__44p9_l0_1[] = {
 	 4, 4, 4, 5, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p9_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p9_l0_1,
+	(char *)_vq_lengthlist__44p9_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p9_l0_1,
 	0
@@ -9945,38 +9961,38 @@ static const long _vq_quantlist__44p9_l1_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_l1_0[] = {
+static const char _vq_lengthlist__44p9_l1_0[] = {
 	 1, 2, 3, 5, 9, 9, 4, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9,10,10,10,10,10,10,10,10,
 };
 
 static const static_codebook _44p9_l1_0 = {
 	2, 25,
-	(long *)_vq_lengthlist__44p9_l1_0,
+	(char *)_vq_lengthlist__44p9_l1_0,
 	1, -514619392, 1630767104, 3, 0,
 	(long *)_vq_quantlist__44p9_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44p9_lfe[] = {
+static const char _huff_lengthlist__44p9_lfe[] = {
 	 1, 1,
 };
 
 static const static_codebook _huff_book__44p9_lfe = {
 	1, 2,
-	(long *)_huff_lengthlist__44p9_lfe,
+	(char *)_huff_lengthlist__44p9_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44p9_long[] = {
+static const char _huff_lengthlist__44p9_long[] = {
 	 3, 3, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _huff_book__44p9_long = {
 	1, 8,
-	(long *)_huff_lengthlist__44p9_long,
+	(char *)_huff_lengthlist__44p9_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -9988,7 +10004,7 @@ static const long _vq_quantlist__44p9_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p1_0[] = {
+static const char _vq_lengthlist__44p9_p1_0[] = {
 	 1, 5, 5, 4, 8, 8, 4, 8, 8, 5, 7, 8, 8, 9,10, 8,
 	10,10, 5, 8, 7, 8,10,10, 8,10, 9, 7, 9, 9, 9,11,
 	11, 9,11,11, 9,11,11,11,12,13,11,13,13, 9,11,11,
@@ -10009,7 +10025,7 @@ static const long _vq_lengthlist__44p9_p1_0[] = {
 
 static const static_codebook _44p9_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p1_0,
+	(char *)_vq_lengthlist__44p9_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p9_p1_0,
 	0
@@ -10023,7 +10039,7 @@ static const long _vq_quantlist__44p9_p2_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_p2_0[] = {
+static const char _vq_lengthlist__44p9_p2_0[] = {
 	 4, 6, 6, 8, 8, 5, 7, 7, 9, 9, 5, 7, 7, 9, 9, 6,
 	 8, 8,11,11, 6, 8, 8,11,11, 6, 7, 7, 9, 9, 7, 8,
 	 9,10,11, 7, 9, 9,11,10, 8, 9,10,12,12, 8,10,10,
@@ -10224,7 +10240,7 @@ static const long _vq_lengthlist__44p9_p2_0[] = {
 
 static const static_codebook _44p9_p2_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p9_p2_0,
+	(char *)_vq_lengthlist__44p9_p2_0,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p9_p2_0,
 	0
@@ -10236,7 +10252,7 @@ static const long _vq_quantlist__44p9_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p3_0[] = {
+static const char _vq_lengthlist__44p9_p3_0[] = {
 	 2, 5, 4, 4, 7, 7, 4, 7, 6, 5, 6, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 6, 7, 9, 9, 7, 9, 8, 6, 8, 8, 8,10,
 	10, 8,10,10, 8, 9,10,10,11,12,10,12,12, 8,10,10,
@@ -10257,7 +10273,7 @@ static const long _vq_lengthlist__44p9_p3_0[] = {
 
 static const static_codebook _44p9_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p3_0,
+	(char *)_vq_lengthlist__44p9_p3_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44p9_p3_0,
 	0
@@ -10269,7 +10285,7 @@ static const long _vq_quantlist__44p9_p3_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p3_1[] = {
+static const char _vq_lengthlist__44p9_p3_1[] = {
 	 4, 6, 6, 6, 7, 7, 6, 7, 7, 6, 7, 7, 7, 7, 8, 7,
 	 7, 8, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 8, 9, 9, 8, 8, 8,
@@ -10290,7 +10306,7 @@ static const long _vq_lengthlist__44p9_p3_1[] = {
 
 static const static_codebook _44p9_p3_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p3_1,
+	(char *)_vq_lengthlist__44p9_p3_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44p9_p3_1,
 	0
@@ -10302,7 +10318,7 @@ static const long _vq_quantlist__44p9_p4_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p4_0[] = {
+static const char _vq_lengthlist__44p9_p4_0[] = {
 	 2, 5, 5, 4, 7, 7, 4, 7, 6, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 6, 7, 8, 8, 9,
 	10, 8,10,10, 8, 9,10,10,11,12,10,11,12, 8,10,10,
@@ -10323,7 +10339,7 @@ static const long _vq_lengthlist__44p9_p4_0[] = {
 
 static const static_codebook _44p9_p4_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p4_0,
+	(char *)_vq_lengthlist__44p9_p4_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44p9_p4_0,
 	0
@@ -10337,7 +10353,7 @@ static const long _vq_quantlist__44p9_p4_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_p4_1[] = {
+static const char _vq_lengthlist__44p9_p4_1[] = {
 	 6, 8, 8,10, 9, 8, 9, 9,10,10, 8, 9, 9,10,10, 8,
 	10,10,10,10, 8,10,10,10,10, 9, 9, 9,10,10, 9,10,
 	10,10,11, 9,10,10,11,11,10,10,10,11,11,10,10,10,
@@ -10538,7 +10554,7 @@ static const long _vq_lengthlist__44p9_p4_1[] = {
 
 static const static_codebook _44p9_p4_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p9_p4_1,
+	(char *)_vq_lengthlist__44p9_p4_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p9_p4_1,
 	0
@@ -10552,7 +10568,7 @@ static const long _vq_quantlist__44p9_p5_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_p5_0[] = {
+static const char _vq_lengthlist__44p9_p5_0[] = {
 	 4, 6, 6, 9, 9, 6, 7, 8,10,11, 6, 8, 7,10,10, 8,
 	10,10,12,12, 8,10,10,12,12, 6, 7, 8,10,10, 7, 8,
 	 9,10,11, 8, 9, 9,11,11,10,10,11,12,13,10,11,11,
@@ -10753,7 +10769,7 @@ static const long _vq_lengthlist__44p9_p5_0[] = {
 
 static const static_codebook _44p9_p5_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p9_p5_0,
+	(char *)_vq_lengthlist__44p9_p5_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44p9_p5_0,
 	0
@@ -10769,13 +10785,13 @@ static const long _vq_quantlist__44p9_p5_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44p9_p5_1[] = {
+static const char _vq_lengthlist__44p9_p5_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44p9_p5_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44p9_p5_1,
+	(char *)_vq_lengthlist__44p9_p5_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44p9_p5_1,
 	0
@@ -10787,7 +10803,7 @@ static const long _vq_quantlist__44p9_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p6_0[] = {
+static const char _vq_lengthlist__44p9_p6_0[] = {
 	 2, 5, 5, 5, 7, 7, 5, 7, 7, 5, 7, 7, 7, 8, 9, 7,
 	 9, 9, 5, 7, 7, 7, 9, 9, 7, 9, 8, 5, 7, 8, 8, 9,
 	10, 8, 9,10, 8, 9,10,10,10,12,10,11,11, 8,10,10,
@@ -10808,7 +10824,7 @@ static const long _vq_lengthlist__44p9_p6_0[] = {
 
 static const static_codebook _44p9_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p6_0,
+	(char *)_vq_lengthlist__44p9_p6_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44p9_p6_0,
 	0
@@ -10820,7 +10836,7 @@ static const long _vq_quantlist__44p9_p6_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44p9_p6_1[] = {
+static const char _vq_lengthlist__44p9_p6_1[] = {
 	 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 7, 8, 8, 7,
 	 8, 8, 7, 8, 7, 7, 8, 8, 7, 8, 8, 7, 8, 8, 8, 8,
 	 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 8, 9, 8, 8, 8,
@@ -10841,7 +10857,7 @@ static const long _vq_lengthlist__44p9_p6_1[] = {
 
 static const static_codebook _44p9_p6_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44p9_p6_1,
+	(char *)_vq_lengthlist__44p9_p6_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44p9_p6_1,
 	0
@@ -10855,7 +10871,7 @@ static const long _vq_quantlist__44p9_p7_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_p7_0[] = {
+static const char _vq_lengthlist__44p9_p7_0[] = {
 	 1,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
 	12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
 	12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
@@ -11056,7 +11072,7 @@ static const long _vq_lengthlist__44p9_p7_0[] = {
 
 static const static_codebook _44p9_p7_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p9_p7_0,
+	(char *)_vq_lengthlist__44p9_p7_0,
 	1, -510105088, 1635281408, 3, 0,
 	(long *)_vq_quantlist__44p9_p7_0,
 	0
@@ -11070,7 +11086,7 @@ static const long _vq_quantlist__44p9_p7_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44p9_p7_1[] = {
+static const char _vq_lengthlist__44p9_p7_1[] = {
 	 1, 4, 4,16,16, 4, 9,11,15,16, 4,12, 8,16,16,12,
 	16,16,16,16,13,16,16,16,16, 5, 8,10,16,16, 9, 9,
 	14,15,16,12,14,14,16,16,16,16,16,16,16,16,16,16,
@@ -11271,7 +11287,7 @@ static const long _vq_lengthlist__44p9_p7_1[] = {
 
 static const static_codebook _44p9_p7_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44p9_p7_1,
+	(char *)_vq_lengthlist__44p9_p7_1,
 	1, -514619392, 1630767104, 3, 0,
 	(long *)_vq_quantlist__44p9_p7_1,
 	0
@@ -11305,14 +11321,14 @@ static const long _vq_quantlist__44p9_p7_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p9_p7_2[] = {
+static const char _vq_lengthlist__44p9_p7_2[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9,10,10,10,11,11,11,
 	12,12,12,13,13,13,13,13,13,
 };
 
 static const static_codebook _44p9_p7_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p9_p7_2,
+	(char *)_vq_lengthlist__44p9_p7_2,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44p9_p7_2,
 	0
@@ -11346,26 +11362,26 @@ static const long _vq_quantlist__44p9_p7_3[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44p9_p7_3[] = {
+static const char _vq_lengthlist__44p9_p7_3[] = {
 	 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44p9_p7_3 = {
 	1, 25,
-	(long *)_vq_lengthlist__44p9_p7_3,
+	(char *)_vq_lengthlist__44p9_p7_3,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44p9_p7_3,
 	0
 };
 
-static const long _huff_lengthlist__44p9_short[] = {
+static const char _huff_lengthlist__44p9_short[] = {
 	 3, 3, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _huff_book__44p9_short = {
 	1, 8,
-	(long *)_huff_lengthlist__44p9_short,
+	(char *)_huff_lengthlist__44p9_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -11387,7 +11403,7 @@ static const long _vq_quantlist__44pn1_l0_0[] = {
 	12,
 };
 
-static const long _vq_lengthlist__44pn1_l0_0[] = {
+static const char _vq_lengthlist__44pn1_l0_0[] = {
 	 1, 3, 3, 8, 8,10,10,10,10,10,10,10,10, 5, 7, 5,
 	 9, 8,10,10,10,10,11,10,11,10, 5, 5, 7, 8, 9,10,
 	10,11,10,10,11,10,11,10,10,10,11,11,11,11,11,11,
@@ -11403,7 +11419,7 @@ static const long _vq_lengthlist__44pn1_l0_0[] = {
 
 static const static_codebook _44pn1_l0_0 = {
 	2, 169,
-	(long *)_vq_lengthlist__44pn1_l0_0,
+	(char *)_vq_lengthlist__44pn1_l0_0,
 	1, -526516224, 1616117760, 4, 0,
 	(long *)_vq_quantlist__44pn1_l0_0,
 	0
@@ -11417,14 +11433,14 @@ static const long _vq_quantlist__44pn1_l0_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44pn1_l0_1[] = {
+static const char _vq_lengthlist__44pn1_l0_1[] = {
 	 1, 4, 4, 7, 7, 4, 5, 6, 7, 7, 4, 6, 5, 7, 7, 7,
 	 6, 7, 6, 7, 7, 7, 6, 7, 6,
 };
 
 static const static_codebook _44pn1_l0_1 = {
 	2, 25,
-	(long *)_vq_lengthlist__44pn1_l0_1,
+	(char *)_vq_lengthlist__44pn1_l0_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44pn1_l0_1,
 	0
@@ -11436,31 +11452,31 @@ static const long _vq_quantlist__44pn1_l1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_l1_0[] = {
+static const char _vq_lengthlist__44pn1_l1_0[] = {
 	 1, 4, 4, 4, 4, 4, 4, 4, 4,
 };
 
 static const static_codebook _44pn1_l1_0 = {
 	2, 9,
-	(long *)_vq_lengthlist__44pn1_l1_0,
+	(char *)_vq_lengthlist__44pn1_l1_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44pn1_l1_0,
 	0
 };
 
-static const long _huff_lengthlist__44pn1_lfe[] = {
+static const char _huff_lengthlist__44pn1_lfe[] = {
 	 1, 3, 2, 3,
 };
 
 static const static_codebook _huff_book__44pn1_lfe = {
 	2, 4,
-	(long *)_huff_lengthlist__44pn1_lfe,
+	(char *)_huff_lengthlist__44pn1_lfe,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
 };
 
-static const long _huff_lengthlist__44pn1_long[] = {
+static const char _huff_lengthlist__44pn1_long[] = {
 	 2, 3, 6, 7, 9,13,17, 3, 2, 5, 7, 9,13,17, 6, 5,
 	 5, 6, 9,12,16, 7, 7, 6, 6, 7,10,13,10,10, 9, 7,
 	 6,10,13,13,13,12,10,10,11,15,17,17,17,14,14,15,
@@ -11469,7 +11485,7 @@ static const long _huff_lengthlist__44pn1_long[] = {
 
 static const static_codebook _huff_book__44pn1_long = {
 	2, 49,
-	(long *)_huff_lengthlist__44pn1_long,
+	(char *)_huff_lengthlist__44pn1_long,
 	0, 0, 0, 0, 0,
 	NULL,
 	0
@@ -11481,7 +11497,7 @@ static const long _vq_quantlist__44pn1_p1_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p1_0[] = {
+static const char _vq_lengthlist__44pn1_p1_0[] = {
 	 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -11502,7 +11518,7 @@ static const long _vq_lengthlist__44pn1_p1_0[] = {
 
 static const static_codebook _44pn1_p1_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p1_0,
+	(char *)_vq_lengthlist__44pn1_p1_0,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44pn1_p1_0,
 	0
@@ -11514,7 +11530,7 @@ static const long _vq_quantlist__44pn1_p2_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p2_0[] = {
+static const char _vq_lengthlist__44pn1_p2_0[] = {
 	 1, 5, 5, 0, 7, 7, 0, 8, 8, 0, 9, 9, 0,12,12, 0,
 	 8, 8, 0, 9, 9, 0,13,13, 0, 8, 8, 0, 6, 6, 0,11,
 	11, 0,12,12, 0,12,12, 0,14,14, 0,11,12, 0,12,12,
@@ -11535,7 +11551,7 @@ static const long _vq_lengthlist__44pn1_p2_0[] = {
 
 static const static_codebook _44pn1_p2_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p2_0,
+	(char *)_vq_lengthlist__44pn1_p2_0,
 	1, -533200896, 1614282752, 2, 0,
 	(long *)_vq_quantlist__44pn1_p2_0,
 	0
@@ -11547,7 +11563,7 @@ static const long _vq_quantlist__44pn1_p2_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p2_1[] = {
+static const char _vq_lengthlist__44pn1_p2_1[] = {
 	 1, 3, 3, 0, 9, 9, 0, 9, 9, 0,10,10, 0, 9, 9, 0,
 	10,10, 0,10,10, 0,10,10, 0,10,10, 0, 7, 7, 0, 7,
 	 7, 0, 6, 6, 0, 8, 8, 0, 7, 7, 0, 8, 8, 0, 8, 8,
@@ -11568,7 +11584,7 @@ static const long _vq_lengthlist__44pn1_p2_1[] = {
 
 static const static_codebook _44pn1_p2_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p2_1,
+	(char *)_vq_lengthlist__44pn1_p2_1,
 	1, -535822336, 1611661312, 2, 0,
 	(long *)_vq_quantlist__44pn1_p2_1,
 	0
@@ -11580,7 +11596,7 @@ static const long _vq_quantlist__44pn1_p3_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p3_0[] = {
+static const char _vq_lengthlist__44pn1_p3_0[] = {
 	 1, 6, 6, 6, 8, 8, 6, 8, 8, 7, 9, 9,10,11,11, 8,
 	 8, 8, 7, 9, 9,11,12,12, 9, 9, 9, 6, 7, 7,10,11,
 	11,10,11,11,10,11,11,13,13,13,12,12,12,10,12,11,
@@ -11601,7 +11617,7 @@ static const long _vq_lengthlist__44pn1_p3_0[] = {
 
 static const static_codebook _44pn1_p3_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p3_0,
+	(char *)_vq_lengthlist__44pn1_p3_0,
 	1, -531365888, 1616117760, 2, 0,
 	(long *)_vq_quantlist__44pn1_p3_0,
 	0
@@ -11615,7 +11631,7 @@ static const long _vq_quantlist__44pn1_p3_1[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44pn1_p3_1[] = {
+static const char _vq_lengthlist__44pn1_p3_1[] = {
 	 2, 3, 4, 9, 9,10,12,12,12,11,10,12,12,13,12,11,
 	13,12,11,11,11,12,12,12,11,11,13,13,13,13,11,12,
 	12,14,14,12,13,13,13,13,11,13,13,13,13,11,13,13,
@@ -11816,7 +11832,7 @@ static const long _vq_lengthlist__44pn1_p3_1[] = {
 
 static const static_codebook _44pn1_p3_1 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44pn1_p3_1,
+	(char *)_vq_lengthlist__44pn1_p3_1,
 	1, -533725184, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44pn1_p3_1,
 	0
@@ -11830,7 +11846,7 @@ static const long _vq_quantlist__44pn1_p4_0[] = {
 	4,
 };
 
-static const long _vq_lengthlist__44pn1_p4_0[] = {
+static const char _vq_lengthlist__44pn1_p4_0[] = {
 	 1, 7, 7,14,14, 6, 8, 8,15,16, 7, 8, 8,16,15, 0,
 	14,14,17,17, 0,14,14,16,16, 7, 9, 9,16,16,10,11,
 	11,17,18, 9, 8, 8,16,16, 0,14,14,19,19, 0,14,14,
@@ -12031,7 +12047,7 @@ static const long _vq_lengthlist__44pn1_p4_0[] = {
 
 static const static_codebook _44pn1_p4_0 = {
 	5, 3125,
-	(long *)_vq_lengthlist__44pn1_p4_0,
+	(char *)_vq_lengthlist__44pn1_p4_0,
 	1, -528744448, 1616642048, 3, 0,
 	(long *)_vq_quantlist__44pn1_p4_0,
 	0
@@ -12047,13 +12063,13 @@ static const long _vq_quantlist__44pn1_p4_1[] = {
 	6,
 };
 
-static const long _vq_lengthlist__44pn1_p4_1[] = {
+static const char _vq_lengthlist__44pn1_p4_1[] = {
 	 2, 3, 3, 3, 3, 3, 3,
 };
 
 static const static_codebook _44pn1_p4_1 = {
 	1, 7,
-	(long *)_vq_lengthlist__44pn1_p4_1,
+	(char *)_vq_lengthlist__44pn1_p4_1,
 	1, -533200896, 1611661312, 3, 0,
 	(long *)_vq_quantlist__44pn1_p4_1,
 	0
@@ -12065,7 +12081,7 @@ static const long _vq_quantlist__44pn1_p5_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p5_0[] = {
+static const char _vq_lengthlist__44pn1_p5_0[] = {
 	 1, 7, 7, 6, 8, 8, 7, 8, 8, 7, 9, 9,11,11,11, 9,
 	 8, 8, 7, 9, 9,11,12,11, 9, 9, 9, 6, 7, 7,10,11,
 	11,10,10,10,10,11,11,15,14,14,12,12,12,11,11,11,
@@ -12086,7 +12102,7 @@ static const long _vq_lengthlist__44pn1_p5_0[] = {
 
 static const static_codebook _44pn1_p5_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p5_0,
+	(char *)_vq_lengthlist__44pn1_p5_0,
 	1, -527106048, 1620377600, 2, 0,
 	(long *)_vq_quantlist__44pn1_p5_0,
 	0
@@ -12098,7 +12114,7 @@ static const long _vq_quantlist__44pn1_p5_1[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p5_1[] = {
+static const char _vq_lengthlist__44pn1_p5_1[] = {
 	 2, 6, 7, 6, 8, 8, 7, 7, 8, 7, 8, 8, 9, 9, 9, 8,
 	 7, 7, 8, 8, 8, 9, 9, 9, 9, 8, 8, 6, 6, 6, 9, 7,
 	 7, 9, 7, 7, 9, 8, 8,10, 8, 8,10, 8, 8,10, 8, 8,
@@ -12119,7 +12135,7 @@ static const long _vq_lengthlist__44pn1_p5_1[] = {
 
 static const static_codebook _44pn1_p5_1 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p5_1,
+	(char *)_vq_lengthlist__44pn1_p5_1,
 	1, -530841600, 1616642048, 2, 0,
 	(long *)_vq_quantlist__44pn1_p5_1,
 	0
@@ -12131,7 +12147,7 @@ static const long _vq_quantlist__44pn1_p6_0[] = {
 	2,
 };
 
-static const long _vq_lengthlist__44pn1_p6_0[] = {
+static const char _vq_lengthlist__44pn1_p6_0[] = {
 	 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
 	 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -12152,7 +12168,7 @@ static const long _vq_lengthlist__44pn1_p6_0[] = {
 
 static const static_codebook _44pn1_p6_0 = {
 	5, 243,
-	(long *)_vq_lengthlist__44pn1_p6_0,
+	(char *)_vq_lengthlist__44pn1_p6_0,
 	1, -516716544, 1630767104, 2, 0,
 	(long *)_vq_quantlist__44pn1_p6_0,
 	0
@@ -12186,14 +12202,14 @@ static const long _vq_quantlist__44pn1_p6_1[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44pn1_p6_1[] = {
+static const char _vq_lengthlist__44pn1_p6_1[] = {
 	 1, 3, 2, 5, 4, 7, 7, 8, 8, 9, 9,10,10,11,11,12,
 	12,13,13,14,14,15,15,15,15,
 };
 
 static const static_codebook _44pn1_p6_1 = {
 	1, 25,
-	(long *)_vq_lengthlist__44pn1_p6_1,
+	(char *)_vq_lengthlist__44pn1_p6_1,
 	1, -518864896, 1620639744, 5, 0,
 	(long *)_vq_quantlist__44pn1_p6_1,
 	0
@@ -12227,20 +12243,20 @@ static const long _vq_quantlist__44pn1_p6_2[] = {
 	24,
 };
 
-static const long _vq_lengthlist__44pn1_p6_2[] = {
+static const char _vq_lengthlist__44pn1_p6_2[] = {
 	 3, 5, 4, 5, 4, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5,
 	 5, 5, 5, 5, 5, 5, 5, 5, 5,
 };
 
 static const static_codebook _44pn1_p6_2 = {
 	1, 25,
-	(long *)_vq_lengthlist__44pn1_p6_2,
+	(char *)_vq_lengthlist__44pn1_p6_2,
 	1, -529006592, 1611661312, 5, 0,
 	(long *)_vq_quantlist__44pn1_p6_2,
 	0
 };
 
-static const long _huff_lengthlist__44pn1_short[] = {
+static const char _huff_lengthlist__44pn1_short[] = {
 	 4, 3, 7, 9,12,16,16, 3, 2, 5, 7,11,14,15, 7, 4,
 	 5, 6, 9,12,15, 8, 5, 5, 5, 8,10,14, 9, 7, 6, 6,
 	 8,10,12,12,10,10, 7, 6, 8,10,15,12,10, 6, 4, 7,
@@ -12249,7 +12265,7 @@ static const long _huff_lengthlist__44pn1_short[] = {
 
 static const static_codebook _huff_book__44pn1_short = {
 	2, 49,
-	(long *)_huff_lengthlist__44pn1_short,
+	(char *)_huff_lengthlist__44pn1_short,
 	0, 0, 0, 0, 0,
 	NULL,
 	0

@@ -5,13 +5,12 @@
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
- * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2009             *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2015             *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
  *                                                                  *
  ********************************************************************
 
  function: simple programmatic interface for encoder mode setup
- last mod: $Id: vorbisenc.c 17028 2010-03-25 05:22:15Z xiphmont $
 
  ********************************************************************/
 
@@ -685,6 +684,7 @@ int vorbis_encode_setup_init(vorbis_info *vi){
   highlevel_encode_setup *hi=&ci->hi;
 
   if(ci==NULL)return(OV_EINVAL);
+  if(vi->channels<1||vi->channels>255)return(OV_EINVAL);
   if(!hi->impulse_block_p)i0=1;
 
   /* too low/high an ATH floater is nonsensical, but doesn't break anything */
@@ -903,8 +903,12 @@ int vorbis_encode_setup_vbr(vorbis_info *vi,
                             long  channels,
                             long  rate,
                             float quality){
-  codec_setup_info *ci=vi->codec_setup;
-  highlevel_encode_setup *hi=&ci->hi;
+  codec_setup_info *ci;
+  highlevel_encode_setup *hi;
+  if(rate<=0) return OV_EINVAL;
+
+  ci=vi->codec_setup;
+  hi=&ci->hi;
 
   quality+=.0000001;
   if(quality>=1.)quality=.9999;
@@ -948,9 +952,14 @@ int vorbis_encode_setup_managed(vorbis_info *vi,
                                 long nominal_bitrate,
                                 long min_bitrate){
 
-  codec_setup_info *ci=vi->codec_setup;
-  highlevel_encode_setup *hi=&ci->hi;
-  double tnominal=nominal_bitrate;
+  codec_setup_info *ci;
+  highlevel_encode_setup *hi;
+  double tnominal;
+  if(rate<=0) return OV_EINVAL;
+
+  ci=vi->codec_setup;
+  hi=&ci->hi;
+  tnominal=nominal_bitrate;
 
   if(nominal_bitrate<=0.){
     if(max_bitrate>0.){
@@ -1202,7 +1211,7 @@ int vorbis_encode_ctl(vorbis_info *vi,int number,void *arg){
                                           hi->req,
                                           hi->managed,
                                           &new_base);
-        if(!hi->setup)return OV_EIMPL;
+        if(!new_template)return OV_EIMPL;
         hi->setup=new_template;
         hi->base_setting=new_base;
         vorbis_encode_setup_setting(vi,vi->channels,vi->rate);

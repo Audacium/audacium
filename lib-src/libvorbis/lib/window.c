@@ -6,12 +6,11 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-2009             *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * by the Xiph.Org Foundation https://xiph.org/                     *
  *                                                                  *
  ********************************************************************
 
  function: window functions
- last mod: $Id: window.c 16227 2009-07-08 06:58:46Z xiphmont $
 
  ********************************************************************/
 
@@ -19,6 +18,7 @@
 #include <math.h>
 #include "os.h"
 #include "misc.h"
+#include "window.h"
 
 static const float vwin64[32] = {
   0.0009460463F, 0.0085006468F, 0.0235352254F, 0.0458950567F,
