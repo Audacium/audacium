@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   @file AColorResources.h
   @brief RGB data of 'Color (New)' spectrogram color scheme
