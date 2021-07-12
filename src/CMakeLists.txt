@@ -502,8 +502,6 @@ list( APPEND SOURCES
       effects/Silence.h
       effects/SimpleMono.cpp
       effects/SimpleMono.h
-      effects/SoundTouchEffect.cpp
-      effects/SoundTouchEffect.h
       effects/StereoToMono.cpp
       effects/StereoToMono.h
       effects/TimeScale.cpp

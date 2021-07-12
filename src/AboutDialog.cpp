@@ -160,7 +160,6 @@ void AboutDialog::CreateCreditsList()
    AddCredit(wxT("[[http://www.portmedia.sourceforge.net/portmidi/|PortMidi]]"), roleLibrary);
    AddCredit(wxT("[[https://sourceforge.net/p/portmedia/wiki/portsmf/|portsmf]]"), roleLibrary);
    AddCredit(wxT("[[http://sbsms.sourceforge.net/|sbsms]]"), roleLibrary);
-   AddCredit(wxT("[[https://www.surina.net/soundtouch/|SoundTouch]]"), roleLibrary);
    AddCredit(wxT("[[http://www.twolame.org/|TwoLAME]]"), roleLibrary);
    AddCredit(wxT("[[http://www.vamp-plugins.org/|Vamp]]"), roleLibrary);
    AddCredit(wxT("[[https://wxwidgets.org/|wxWidgets]]"), roleLibrary);
@@ -625,19 +624,11 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
          disabled);
    # endif
 
-   # if USE_SOUNDTOUCH
-   AddBuildinfoRow(&informationStr, wxT("SoundTouch"), XO("Pitch and Tempo Change support"),
-         enabled);
-   # else
-   AddBuildinfoRow(&informationStr, wxT("SoundTouch"), XO("Pitch and Tempo Change support"),
-         disabled);
-   # endif
-
    # if USE_SBSMS
-   AddBuildinfoRow(&informationStr, wxT("SBSMS"), XO("Extreme Pitch and Tempo Change support"),
+   AddBuildinfoRow(&informationStr, wxT("SBSMS"), XO("Pitch and Tempo Change support"),
          enabled);
    # else
-   AddBuildinfoRow(&informationStr, wxT("SBSMS"), XO("Extreme Pitch and Tempo Change support"),
+   AddBuildinfoRow(&informationStr, wxT("SBSMS"), XO("Pitch and Tempo Change support"),
          disabled);
    # endif
 

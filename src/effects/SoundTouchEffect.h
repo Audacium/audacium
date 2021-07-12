@@ -14,8 +14,6 @@
 
 
 
-#if USE_SOUNDTOUCH
-
 #ifndef __AUDACITY_EFFECT_SOUNDTOUCH__
 #define __AUDACITY_EFFECT_SOUNDTOUCH__
 
@@ -79,7 +77,5 @@ private:
 
    double m_maxNewLength;
 };
-
-#endif
 
 #endif

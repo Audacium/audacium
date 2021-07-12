@@ -14,7 +14,6 @@ effect that uses SoundTouch to do its processing (ChangeTempo
 
 
 
-#if USE_SOUNDTOUCH
 #include "SoundTouchEffect.h"
 
 #include <math.h>
@@ -37,7 +36,6 @@ effect that uses SoundTouch to do its processing (ChangeTempo
 #undef PACKAGE_BUGREPORT
 #undef PACKAGE
 #undef VERSION
-#include "SoundTouch.h"
 
 #ifdef USE_MIDI
 EffectSoundTouch::EffectSoundTouch()
@@ -439,5 +437,3 @@ void EffectSoundTouch::Finalize(WaveTrack* orig, WaveTrack* out, const TimeWarpe
       }
    }
 }
-
-#endif // USE_SOUNDTOUCH

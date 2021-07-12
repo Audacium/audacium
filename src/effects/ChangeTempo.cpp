@@ -15,14 +15,11 @@
 
 *//*******************************************************************/
 
+#if USE_SBSMS
 
-
-#if USE_SOUNDTOUCH
 #include "ChangeTempo.h"
 
-#if USE_SBSMS
 #include <wx/valgen.h>
-#endif
 
 #include <math.h>
 
@@ -49,7 +46,6 @@
 #undef PACKAGE_BUGREPORT
 #undef PACKAGE
 #undef VERSION
-#include "SoundTouch.h"
 
 enum
 {
@@ -66,7 +62,6 @@ enum
 //
 //     Name          Type     Key               Def   Min      Max      Scale
 Param( Percentage,   double,  wxT("Percentage"), 0.0,  -95.0,   3000.0,  1  );
-Param( UseSBSMS,     bool,    wxT("SBSMS"),     false, false,   true,    1  );
 
 // We warp the slider to go up to 400%, but user can enter higher values.
 static const double kSliderMax = 100.0;         // warped above zero to actually go up to 400%
@@ -98,12 +93,6 @@ EffectChangeTempo::EffectChangeTempo()
    m_ToLength = 0.0;
 
    m_bLoopDetect = false;
-
-#if USE_SBSMS
-   mUseSBSMS = DEF_UseSBSMS;
-#else
-   mUseSBSMS = false;
-#endif
 
    SetLinearEffectFlag(true);
 }
@@ -144,15 +133,12 @@ bool EffectChangeTempo::SupportsAutomation()
 // EffectClientInterface implementation
 bool EffectChangeTempo::DefineParams( ShuttleParams & S ){
    S.SHUTTLE_PARAM( m_PercentChange, Percentage );
-   S.SHUTTLE_PARAM( mUseSBSMS, UseSBSMS );
    return true;
 }
 
 bool EffectChangeTempo::GetAutomationParameters(CommandParameters & parms)
 {
    parms.Write(KEY_Percentage, m_PercentChange);
-   parms.Write(KEY_UseSBSMS, mUseSBSMS);
-
    return true;
 }
 
@@ -160,13 +146,6 @@ bool EffectChangeTempo::SetAutomationParameters(CommandParameters & parms)
 {
    ReadAndVerifyDouble(Percentage);
    m_PercentChange = Percentage;
-
-#if USE_SBSMS
-   ReadAndVerifyBool(UseSBSMS);
-   mUseSBSMS = UseSBSMS;
-#else
-   mUseSBSMS = false;
-#endif
 
    return true;
 }
@@ -197,27 +176,11 @@ bool EffectChangeTempo::Process()
 {
    bool success = false;
 
-#if USE_SBSMS
-   if (mUseSBSMS)
-   {
-      double tempoRatio = 1.0 + m_PercentChange / 100.0;
-      EffectSBSMS proxy;
-      proxy.mProxyEffectName = XO("High Quality Tempo Change");
-      proxy.setParameters(tempoRatio, 1.0);
-      success = Delegate(proxy, *mUIParent, nullptr);
-   }
-   else
-#endif
-   {
-      auto initer = [&](soundtouch::SoundTouch *soundtouch)
-      {
-         soundtouch->setTempoChange(m_PercentChange);
-      };
-      double mT1Dashed = mT0 + (mT1 - mT0)/(m_PercentChange/100.0 + 1.0);
-      RegionTimeWarper warper{ mT0, mT1,
-         std::make_unique<LinearTimeWarper>(mT0, mT0, mT1, mT1Dashed )  };
-      success = EffectSoundTouch::ProcessWithTimeWarper(initer, warper, false);
-   }
+   double tempoRatio = 1.0 + m_PercentChange / 100.0;
+   EffectSBSMS proxy;
+   proxy.mProxyEffectName = XO("High Quality Tempo Change");
+   proxy.setParameters(tempoRatio, 1.0);
+   success = Delegate(proxy, *mUIParent, nullptr);
 
    if(success)
       mT1 = mT0 + (mT1 - mT0)/(m_PercentChange/100 + 1.);
@@ -313,16 +276,6 @@ void EffectChangeTempo::PopulateOrExchange(ShuttleGui & S)
          S.EndHorizontalLay();
       }
       S.EndStatic();
-
-#if USE_SBSMS
-      S.StartMultiColumn(2);
-      {
-         mUseSBSMSCheckBox = S.Validator<wxGenericValidator>(&mUseSBSMS)
-            .AddCheckBox(XXO("&Use high quality stretching (slow)"),
-                                             mUseSBSMS);
-      }
-      S.EndMultiColumn();
-#endif
 
    }
    S.EndVerticalLay();
@@ -491,4 +444,4 @@ void EffectChangeTempo::Update_Text_ToLength()
    m_pTextCtrl_ToLength->GetValidator()->TransferToWindow();
 }
 
-#endif // USE_SOUNDTOUCH
+#endif
