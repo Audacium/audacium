@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Audacium package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
@@ -15028,8 +15028,8 @@ msgstr ""
 #~ msgid "Audacium Team Members"
 #~ msgstr "Audacium チームメンバー"
 
-#~ msgid "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is copyright &copy; 1999-2018 Audacium Team.<br>"
-#~ msgstr "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ msgid "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ msgstr "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is copyright &copy; 1999-2018 Audacity Team.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "DirManager::MakeBlockFilePath にて mkdir が失敗しました。"

@@ -1,6 +1,6 @@
 # translation of AUDACITY.PO.po to
 # Audacium Strings for Translation.
-# Copyright (C) YEAR Audacium Development Team
+# Copyright (C) YEAR Audacity Development Team
 # This file is distributed under the same license as Audacium.
 # Audacium Team <audacity-translation@lists.sourceforge.net>, YEAR.
 #

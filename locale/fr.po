@@ -1,6 +1,6 @@
 # French translation file for Audacium.
 # Traduction française pour Audacium.
-# Copyright (C) 2013-2021 Audacium Team
+# Copyright (C) 2013-2021 Audacity Team
 # This file is distributed under the same license as the Audacium package.
 #
 # Translators:

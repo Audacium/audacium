@@ -1,4 +1,4 @@
-# Copyright (C) YEAR Audacium Team
+# Copyright (C) YEAR Audacity Team
 # This file is distributed under the same license as the audacium package.
 #
 # Translators:

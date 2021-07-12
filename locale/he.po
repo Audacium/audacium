@@ -21739,9 +21739,9 @@ msgstr ""
 
 #, fuzzy
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
-#~ msgstr "יוצרים זכויות מוגנת התוכנה <b>Audacium&reg;</b>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ msgstr "יוצרים זכויות מוגנת התוכנה <b>Audacity&reg;</b>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "DirManager::MakeBlockFilePath -נכשל ב mkdir"

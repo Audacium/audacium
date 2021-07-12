@@ -1,7 +1,7 @@
 # Audacium Strings for Burmese (Myanmar) Translation.
-# Copyright (C) 2009, 2010 Audacium Development Team
+# Copyright (C) 2009, 2010 Audacity Development Team
 # This file is distributed under the same license as Audacium.
-# Audacium Team <audacity-translation@lists.sourceforge.net>, 2009, 2010.
+# Audacity Team <audacity-translation@lists.sourceforge.net>, 2009, 2010.
 # Russell Kyaw <rkyaw@yahoo.com>, 2009, 2010.
 # BurmaIT team <info@burmait.net>, 2009, 2010.
 #

@@ -1,4 +1,4 @@
-# Copyright (C) YEAR Audacium Development Team
+# Copyright (C) YEAR Audacity Development Team
 # This file is distributed under the same license as Audacium.
 msgid ""
 msgstr ""
@@ -21375,11 +21375,11 @@ msgstr "Chyba.~%Požadovaná stereo stopa."
 #~ msgstr "Členovia Audacium tímu"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> softvér má autorské "
-#~ "práva &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> softvér má autorské "
+#~ "práva &copy; 1999-2018 Audacity Team.<br>"
 
 #~ msgid "Click to unpin"
 #~ msgstr "Kliknite pre odopnutie"

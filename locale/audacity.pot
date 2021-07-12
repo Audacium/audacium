@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the Audacium package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# NOTE: Only the refernces to files have not been updated from Audacity to Audacium.
+# NOTE: Only the references to files have not been updated from Audacity to Audacium.
 #
 #, fuzzy
 msgid ""

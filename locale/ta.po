@@ -1,6 +1,6 @@
 # Audacium Strings for Translation.
 # Copyright (C) YEAR Audacity Development Team
-# This file is distributed under the same license as the audacity package.
+# This file is distributed under the same license as the audacium package.
 # அருண் குமார் - Arun Kumar <thangam.arunx@gmail.com>, 2014.
 msgid ""
 msgstr ""
@@ -21974,9 +21974,9 @@ msgstr ""
 
 #, fuzzy
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
-#~ msgstr "<b>Audacium&reg;</b>மென்பொருள்  பதிப்புரிமை உள்ளது"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ msgstr "<b>Audacity&reg;</b>மென்பொருள்  பதிப்புரிமை உள்ளது"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir in DirManager::MakeBlockFilePath தோல்வி."

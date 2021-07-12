@@ -1,7 +1,7 @@
 # Audacium Strings for Translation.
-# Copyright (C) YEAR Audacium Development Team
+# Copyright (C) YEAR Audacity Development Team
 # This file is distributed under the same license as Audacium.
-# Audacium Team <audacity-translation@lists.sourceforge.net>, YEAR.
+# Audacity Team <audacity-translation@lists.sourceforge.net>, YEAR.
 #
 msgid ""
 msgstr ""
@@ -22333,9 +22333,9 @@ msgstr ""
 
 #, fuzzy
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
-#~ msgstr "Perangkat lunak <b>Audacium&reg;</b> sudah terdaftar"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
+#~ msgstr "Perangkat lunak <b>Audacity&reg;</b> sudah terdaftar"
 
 #, fuzzy
 #~ msgid ""

@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Audacium Team
-# This file is distributed under the same license as the audacity package.
+# This file is distributed under the same license as the audacium package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: audacium - 78c701d \n"
-"Report-Msgid-Bugs-To: audacity-translation@lists.sourceforge.net\n"
+#  "Report-Msgid-Bugs-To: audacity-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-06-07 08:17-0400\n"
 "PO-Revision-Date: 2021-06-11 23:23+0200\n"
 "Last-Translator: Osoitz Elkorobarrutia <oelkoro@gmail.com>, 2017\n"
@@ -21444,11 +21444,11 @@ msgstr "Errorea.~%Pista estereoa behar da."
 
 #, fuzzy
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> softwareak "
-#~ "copyrighta du &copy; 1999-2017 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> softwareak "
+#~ "copyrighta du &copy; 1999-2017 Audacity Team.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "DirManager::MakeBlockFilePath-eko mkdir-ak huts egin du."

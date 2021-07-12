@@ -1,5 +1,5 @@
 # Corsican translation file for Audacium.
-# Copyright (C) 2021 Audacium Team
+# Copyright (C) 2021 Audacity Team
 # This file is distributed under the same license as the Audacium package.
 #
 # Translators:

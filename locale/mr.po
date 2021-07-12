@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Audacium Team
-# This file is distributed under the same license as the audacity package.
+# Copyright (C) YEAR Audacity Team
+# This file is distributed under the same license as the Audacium package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
@@ -21147,8 +21147,8 @@ msgstr "त्रुटी.% स्टीरिओ गीतपट्टा आ�
 #~ msgstr "<h3>ऑड्यासिटी "
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
 #~ "<p><br>&nbsp;&nbsp;<b>ऑड्यासिटी <sup>&reg; </sup> </b>संगणकाची आज्ञावली आहे. "
 #~ "सर्वाधिकार &copy; १९९९-२०१८ ऑड्यासिटी संघ.<br>"

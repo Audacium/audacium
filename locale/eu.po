@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Audacium Team
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the audacium package.
 #
 # Translators:
 # Xabier Aramendi <azpidatziak@gmail.com> 2011-2020
@@ -21395,11 +21395,11 @@ msgstr "Akatsa.~%Estereo bidea beharrezkoa."
 #~ msgstr "<h3>Audacium "
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> softwarea copyright "
-#~ "&copy; 1999-2018 Audacium Taldea.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> softwarea copyright "
+#~ "&copy; 1999-2018 Audacity Taldea.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir ZuzKudeatzailea::Egin-Bloke-Agiri-Helburua hutsegitea."

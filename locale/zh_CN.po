@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Audacium Team
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Audacity Team
+# This file is distributed under the same license as the Audacium package.
 #
 # Translators:
 # Audacity Team <audacity-translation@lists.sourceforge.net>, 2012
@@ -21224,11 +21224,11 @@ msgstr "错误。~%需要立体声轨。"
 #~ msgstr "Audacium 团队成员"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> 软件，&copy; "
-#~ "1999-2017 Audacium 团队，版权所有。<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> 软件，&copy; "
+#~ "1999-2017 Audacity 团队，版权所有。<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "在 DirManager::MakeBlockFilePath 中执行 mkdir (创建目录) 命令失败。"

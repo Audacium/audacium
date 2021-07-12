@@ -1,6 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Audacium Team
-# This file is distributed under the same license as the audacity package.
+# Translations of Audacium Strings into Deutsch
+# Copyright (C) YEAR Audacity Team
+# This file is distributed under the same license as the audacium package.
 #
 # Translators:
 # 39185eb5873c356f8ca1bdf1533d87ba, 2016

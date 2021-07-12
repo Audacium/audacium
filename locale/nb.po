@@ -1,7 +1,7 @@
 # Audacium Strings for Translation.
-# Copyright (C) 1999 and beyond Audacium Development Team
+# Copyright (C) 1999 and beyond Audacity Development Team
 # This file is distributed under the same license as Audacium.
-# Audacium Team <audacity-translation@lists.sourceforge.net>, 1999 and beyond.
+# Audacity Team <audacity-translation@lists.sourceforge.net>, 1999 and beyond.
 #
 msgid ""
 msgstr ""
@@ -21672,11 +21672,11 @@ msgstr "Feil.~%Stereospor er påkrevd."
 #~ msgstr "Audacium Teams medlemmer"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b>-programvaren er "
-#~ "opphavsrett &copy; 1999-2018 Audacium Team<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b>-programvaren er "
+#~ "opphavsrett &copy; 1999-2018 Audacity Team<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir i DirManager::MakeBlockFilePath mislyktes."

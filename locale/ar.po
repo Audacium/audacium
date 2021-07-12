@@ -1,9 +1,9 @@
 # translation of audacity.po to Arabian
 # Audacium Strings for Translation.
-# Copyright (C) 2008 Audacium Development Team
+# Copyright (C) 2008 Audacity Development Team
 # This file is distributed under the same license as Audacium.
 #
-# Audacium Team <audacity-translation@lists.sourceforge.net>, YEAR.
+# Audacity Team <audacity-translation@lists.sourceforge.net>, YEAR.
 # Djalel Chefrour <cdjalel@gmail.com>, 2008.
 msgid ""
 msgstr ""
@@ -20897,11 +20897,11 @@ msgstr ""
 #~ msgstr "أعضاء فريق Audacium"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Audacium<sup>&reg;</sup></b> software is copyright "
-#~ "&copy; 1999-2018 Audacium Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is copyright "
+#~ "&copy; 1999-2018 Audacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; برمجيات <b>Audacium<sup>&reg;</sup></b> محمية بموجب "
-#~ "حقوق النشر &copy; 1999-2018 فريق Audacium.<br>"
+#~ "<p><br>&nbsp; &nbsp; برمجيات <b>Audacity<sup>&reg;</sup></b> محمية بموجب "
+#~ "حقوق النشر &copy; 1999-2018 فريق Audacity.<br>"
 
 #~ msgid ""
 #~ "One or more external audio files could not be found.\n"
