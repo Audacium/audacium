@@ -48,7 +48,7 @@ int ogg_page_eos(const ogg_page *og){
 
 ogg_int64_t ogg_page_granulepos(const ogg_page *og){
   unsigned char *page=og->header;
-  ogg_uint64_t granulepos=page[13]&(0xff);
+  ogg_int64_t granulepos=page[13]&(0xff);
   granulepos= (granulepos<<8)|(page[12]&0xff);
   granulepos= (granulepos<<8)|(page[11]&0xff);
   granulepos= (granulepos<<8)|(page[10]&0xff);
@@ -56,7 +56,7 @@ ogg_int64_t ogg_page_granulepos(const ogg_page *og){
   granulepos= (granulepos<<8)|(page[8]&0xff);
   granulepos= (granulepos<<8)|(page[7]&0xff);
   granulepos= (granulepos<<8)|(page[6]&0xff);
-  return((ogg_int64_t)granulepos);
+  return(granulepos);
 }
 
 int ogg_page_serialno(const ogg_page *og){
