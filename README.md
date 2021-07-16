@@ -43,5 +43,4 @@ Submit a pull request and we'll merge it!
 ## Donations
 You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
 
-Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0 <br/>
-Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
+Bitcoin and Monero : I lost my wallets :/
