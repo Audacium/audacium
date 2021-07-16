@@ -7,9 +7,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 ## Donations
 You can donate to me via **PayPal** using the **Sponsor** button on GitHub and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
 
-Bitcoin : bc1qz6f2gu8f2vr8knyt8y76jxc8h7an93695kyyj0 <br/>
-Monero : 4834cgrEKBgbYVugTxHzZPJqyDXBBhreNF4CxauZCbLAQfrzeFuRifE4Pwy6uAH3t61rLwe89XF3v775qfuRzr8mRHzuZfk
-
+Bitcoin and Monero : I lost my wallets :/
 ----------------
 
 **Audacium** is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
