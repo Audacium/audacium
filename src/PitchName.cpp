@@ -1,6 +1,6 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
+   Audacium: A Digital Audio Editor
    Audacity(R) is copyright (c) 1999-2012 Audacity Team.
    License: GPL v2.  See License.txt.
 
