@@ -1,6 +1,6 @@
 /**********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 @file AudacityFileConfig.h
 @brief Extend FileConfig with application-specific behavior

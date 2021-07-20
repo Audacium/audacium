@@ -3,7 +3,7 @@
 
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file AudacityException.h
  @brief Declare abstract class AudacityException, some often-used subclasses, and @ref GuardedCall

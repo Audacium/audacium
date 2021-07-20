@@ -1,6 +1,6 @@
 /*!********************************************************************
 
-Audacity: A Digital Audio Editor
+Audacium: A Digital Audio Editor
 
 @file DBConnection.cpp
 @brief Implements DBConnection
