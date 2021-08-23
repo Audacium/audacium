@@ -58,6 +58,16 @@ enum teThemeType
    themeLight,
    themeHiContrast,
    themeProTools,
+   themeLightBlue,
+   themeLightOrange,
+   themeLightPink,
+   themeLightGreen,
+   themeLightPurple,
+   themeDarkBlue,
+   themeDarkOrange,
+   themeDarkPink,
+   themeDarkGreen,
+   themeDarkPurple,
    themeFromFile,
 };
 

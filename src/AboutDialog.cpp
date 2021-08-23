@@ -134,7 +134,7 @@ void AboutDialog::CreateCreditsList()
 
    // Website and Graphics
    AddCredit(wxT("@realseb1g"), webDeveloperFormat, roleGraphics);
-   AddCredit(wxT("@mish1git"), graphicsFormat, roleGraphics);
+   AddCredit(wxT("@bascurtiz"), graphicsFormat, roleGraphics);
 
    // Libraries
    AddCredit(wxT("[[https://libexpat.github.io/|expat]]"), roleLibrary);
