@@ -1398,7 +1398,7 @@ auStaticText::auStaticText(wxWindow* parent, wxString textIn) :
 }
 
 constexpr int defaultTheme =
-   14 // "Dark Purple"
+   10 // "Dark Blue"
 ;
 
 ChoiceSetting GUITheme{
