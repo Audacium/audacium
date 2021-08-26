@@ -203,6 +203,39 @@ static const unsigned char ProToolsImageCacheAsData[] = {
 #include "ProToolsThemeAsCeeCode.h"
 };
 
+static const unsigned char LightBlueImageCacheAsData[] = {
+#include "LightBlueThemeAsCeeCode.h"
+};
+static const unsigned char LightOrangeImageCacheAsData[] = {
+#include "LightOrangeThemeAsCeeCode.h"
+};
+static const unsigned char LightPinkImageCacheAsData[] = {
+#include "LightPinkThemeAsCeeCode.h"
+};
+static const unsigned char LightGreenImageCacheAsData[] = {
+#include "LightGreenThemeAsCeeCode.h"
+};
+static const unsigned char LightPurpleImageCacheAsData[] = {
+#include "LightPurpleThemeAsCeeCode.h"
+};
+
+
+static const unsigned char DarkBlueImageCacheAsData[] = {
+#include "DarkBlueThemeAsCeeCode.h"
+};
+static const unsigned char DarkOrangeImageCacheAsData[] = {
+#include "DarkOrangeThemeAsCeeCode.h"
+};
+static const unsigned char DarkPinkImageCacheAsData[] = {
+#include "DarkPinkThemeAsCeeCode.h"
+};
+static const unsigned char DarkGreenImageCacheAsData[] = {
+#include "DarkGreenThemeAsCeeCode.h"
+};
+static const unsigned char DarkPurpleImageCacheAsData[] = {
+#include "DarkPurpleThemeAsCeeCode.h"
+};
+
 // theTheme is a global variable.
 AUDACITY_DLL_API Theme theTheme;
 
@@ -891,7 +924,7 @@ void ThemeBase::WriteImageDefs( )
 teThemeType ThemeBase::GetFallbackThemeType(){
 // Fallback must be an internally supported type,
 // to guarantee it is found.
-   return themeDark;
+   return themeDarkOrange;
 }
 
 teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
@@ -902,6 +935,16 @@ teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )
       "light" ,
       "high-contrast" ,
       "protools" ,
+      "light-blue" ,
+      "light-orange" ,
+      "light-pink" ,
+      "light-green" ,
+      "light-purple" ,
+      "dark-blue" ,
+      "dark-orange" ,
+      "dark-pink" ,
+      "dark-green" ,
+      "dark-purple" ,
       "custom" ,
    };
    int themeIx = make_iterator_range( aThemes ).index( Name );
@@ -980,6 +1023,57 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
             ImageSize = sizeof(ProToolsImageCacheAsData);
             pImage = ProToolsImageCacheAsData;
             break;
+
+         case themeLightBlue:
+             ImageSize = sizeof(LightBlueImageCacheAsData);
+             pImage = LightBlueImageCacheAsData;
+             break;
+
+         case themeLightOrange:
+             ImageSize = sizeof(LightOrangeImageCacheAsData);
+             pImage = LightOrangeImageCacheAsData;
+             break;
+
+         case themeLightPink:
+             ImageSize = sizeof(LightPinkImageCacheAsData);
+             pImage = LightPinkImageCacheAsData;
+             break;
+
+         case themeLightGreen:
+             ImageSize = sizeof(LightGreenImageCacheAsData);
+             pImage = LightGreenImageCacheAsData;
+             break;
+
+         case themeLightPurple:
+             ImageSize = sizeof(LightPurpleImageCacheAsData);
+             pImage = LightPurpleImageCacheAsData;
+             break;
+
+         case themeDarkBlue:
+             ImageSize = sizeof(DarkBlueImageCacheAsData);
+             pImage = DarkBlueImageCacheAsData;
+             break;
+
+         case themeDarkOrange:
+             ImageSize = sizeof(DarkOrangeImageCacheAsData);
+             pImage = DarkOrangeImageCacheAsData;
+             break;
+
+         case themeDarkPink:
+             ImageSize = sizeof(DarkPinkImageCacheAsData);
+             pImage = DarkPinkImageCacheAsData;
+             break;
+
+         case themeDarkGreen:
+             ImageSize = sizeof(DarkGreenImageCacheAsData);
+             pImage = DarkGreenImageCacheAsData;
+             break;
+
+         case themeDarkPurple:
+             ImageSize = sizeof(DarkGreenImageCacheAsData);
+             pImage = DarkPurpleImageCacheAsData;
+             break;
+
 
       }
       //wxLogDebug("Reading ImageCache %p size %i", pImage, ImageSize );
@@ -1304,7 +1398,7 @@ auStaticText::auStaticText(wxWindow* parent, wxString textIn) :
 }
 
 constexpr int defaultTheme =
-   2 // "dark"
+   10 // "Dark Blue"
 ;
 
 ChoiceSetting GUITheme{
@@ -1320,6 +1414,26 @@ ChoiceSetting GUITheme{
          XO("High Contrast")  ,
          //A Pro Tools lookalike theme
          XO("Pro Tools")  ,
+         //A light theme with blue audio waveforms
+         XO("Audacium Light Blue")  ,
+         //A light theme with orange audio waveforms
+         XO("Audacium Light Orange")  ,
+         //A light theme with pink audio waveforms
+         XO("Audacium Light Pink")  ,
+         //A light theme with green audio waveforms
+         XO("Audacium Light Green")  ,
+         //A light theme with purple audio waveforms
+         XO("Audacium Light Purple")  ,
+         //A light theme with blue audio waveforms
+         XO("Audacium Dark Blue")  ,
+         //A dark theme with orange audio waveforms
+         XO("Audacium Dark Orange")  ,
+         //A dark theme with pink audio waveforms
+         XO("Audacium Dark Pink")  ,
+         //A dark theme with green audio waveforms
+         XO("Audacium Dark Green")  ,
+         //A dark theme with purple audio waveforms
+         XO("Audacium Dark Purple")  ,
          //i18n-hint: user defined
          XO("Custom")  ,
       },
@@ -1329,6 +1443,16 @@ ChoiceSetting GUITheme{
          wxT("dark")  ,
          wxT("high-contrast")  ,
          wxT("protools")  ,
+         wxT("light-blue")  ,
+         wxT("light-orange")  ,
+         wxT("light-pink")  ,
+         wxT("light-green")  ,
+         wxT("light-purple")  ,
+         wxT("dark-blue")  ,
+         wxT("dark-orange")  ,
+         wxT("dark-pink")  ,
+         wxT("dark-green")  ,
+         wxT("dark-purple")  ,
          wxT("custom")  ,
       }
    },
