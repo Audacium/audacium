@@ -3,8 +3,6 @@
 <p align="center">Made by mish1</p>
 <p align="center">=========================</p>
 
-# This project is on hold.
-
 ## Searching for contributors!
 I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
 
