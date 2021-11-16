@@ -38,9 +38,7 @@ Build instructions are available [here](BUILDING.md).
 More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
 
 ## How to contribute
-Submit a pull request and we'll merge it!
+Submit a pull request, then we'll carefully review it and merge it if possible.
 
 ## Donations
-You can donate to me via **PayPal** using the **Sponsor** button and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
-
-Bitcoin and Monero : I lost my wallets :/
+You can donate to me via **Litecoin** using this wallet: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
