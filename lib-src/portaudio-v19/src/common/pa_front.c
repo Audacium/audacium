@@ -74,7 +74,7 @@
 #include "pa_types.h"
 #include "pa_hostapi.h"
 #include "pa_stream.h"
-#include "pa_trace.h" /* still useful?*/
+#include "pa_trace.h" /* still usefull?*/
 #include "pa_debugprint.h"
 
 #ifndef PA_GIT_REVISION
@@ -91,7 +91,7 @@
  * This is incremented when we add functionality in a backwards-compatible manner.
  * Or it is set to zero when paVersionMajor is incremented.
  */
-#define paVersionMinor      7
+#define paVersionMinor      6
 
 /**
  * This is incremented when we make backwards-compatible bug fixes.
@@ -106,8 +106,11 @@
  */
 #define paVersion  paMakeVersionNumber(paVersionMajor, paVersionMinor, paVersionSubMinor)
 
-#define PA_VERSION_STRING_ PA_STRINGIZE(paVersionMajor) "." PA_STRINGIZE(paVersionMinor) "." PA_STRINGIZE(paVersionSubMinor)
-#define PA_VERSION_TEXT_   "PortAudio V" PA_VERSION_STRING_ "-devel, revision " PA_STRINGIZE(PA_GIT_REVISION)
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+
+#define PA_VERSION_STRING_ TOSTRING(paVersionMajor) "." TOSTRING(paVersionMinor) "." TOSTRING(paVersionSubMinor)
+#define PA_VERSION_TEXT_   "PortAudio V" PA_VERSION_STRING_ "-devel, revision " TOSTRING(PA_GIT_REVISION)
 
 int Pa_GetVersion( void )
 {
@@ -123,7 +126,7 @@ static PaVersionInfo versionInfo_ = {
     /*.versionMajor =*/ paVersionMajor,
     /*.versionMinor =*/ paVersionMinor,
     /*.versionSubMinor =*/ paVersionSubMinor,
-    /*.versionControlRevision =*/ PA_STRINGIZE(PA_GIT_REVISION),
+    /*.versionControlRevision =*/ TOSTRING(PA_GIT_REVISION),
     /*.versionText =*/ PA_VERSION_TEXT_
 };
 
@@ -454,10 +457,10 @@ const char *Pa_GetErrorText( PaError errorCode )
     case paIncompatibleStreamHostApi: result = "Incompatible stream host API"; break;
     case paBadBufferPtr:             result = "Bad buffer pointer"; break;
     default:
-        if( errorCode > 0 )
-            result = "Invalid error code (value greater than zero)";
+		if( errorCode > 0 )
+			result = "Invalid error code (value greater than zero)";
         else
-            result = "Invalid error code";
+			result = "Invalid error code";
         break;
     }
     return result;
@@ -634,7 +637,7 @@ const PaHostApiInfo* Pa_GetHostApiInfo( PaHostApiIndex hostApi )
 
     }
 
-    return info;
+     return info;
 }
 
 
@@ -802,7 +805,7 @@ static int SampleFormatIsValid( PaSampleFormat format )
 }
 
 /*
-    NOTE: make sure this validation list is kept synchronised with the one in
+    NOTE: make sure this validation list is kept syncronised with the one in
             pa_hostapi.h
 
     ValidateOpenStreamParameters() checks that parameters to Pa_OpenStream()
@@ -881,9 +884,9 @@ static PaError ValidateOpenStreamParameters(
     PaDeviceIndex *hostApiInputDevice,
     PaDeviceIndex *hostApiOutputDevice )
 {
-    int inputHostApiIndex  = -1;    /* Suppress uninitialised var warnings: compiler does */
-    int outputHostApiIndex = -1;    /* not see that if inputParameters and outputParameters  */
-                                    /* are both nonzero, these indices are set. */
+    int inputHostApiIndex  = -1, /* Surpress uninitialised var warnings: compiler does */
+        outputHostApiIndex = -1; /* not see that if inputParameters and outputParame-  */
+                                 /* ters are both nonzero, these indices are set.      */
 
     if( (inputParameters == NULL) && (outputParameters == NULL) )
     {
@@ -1013,7 +1016,7 @@ static PaError ValidateOpenStreamParameters(
     {
         /* must be a callback stream */
         if( !streamCallback )
-            return paInvalidFlag;
+             return paInvalidFlag;
 
         /* must be a full duplex stream */
         if( (inputParameters == NULL) || (outputParameters == NULL) )
@@ -1192,7 +1195,7 @@ PaError Pa_OpenStream( PaStream** stream,
     }
 
     /* Check for parameter errors.
-        NOTE: make sure this validation list is kept synchronised with the one
+        NOTE: make sure this validation list is kept syncronised with the one
         in pa_hostapi.h
     */
 
@@ -1254,8 +1257,8 @@ PaError Pa_OpenStream( PaStream** stream,
                                   hostApiInputParametersPtr, hostApiOutputParametersPtr,
                                   sampleRate, framesPerBuffer, streamFlags, streamCallback, userData );
 
-    if (result == paNoError) {
-        AddOpenStream(*stream);
+    if( result == paNoError ) {
+        AddOpenStream( *stream );
         PA_STREAM_REP(*stream)->hostApiType = hostApi->info.type;
     }
 
@@ -1263,33 +1266,6 @@ PaError Pa_OpenStream( PaStream** stream,
     PA_LOGAPI(("Pa_OpenStream returned:\n" ));
     PA_LOGAPI(("\t*(PaStream** stream): 0x%p\n", *stream ));
     PA_LOGAPI(("\tPaError: %d ( %s )\n", result, Pa_GetErrorText( result ) ));
-
-    return result;
-}
-
-PaHostApiTypeId Pa_GetStreamHostApiType(PaStream* stream)
-{
-    PaError error = PaUtil_ValidateStreamPointer(stream);
-    PaHostApiTypeId result;
-
-#ifdef PA_LOG_API_CALLS
-    PaUtil_DebugPrint("Pa_GetStreamHostApiType called:\n");
-    PaUtil_DebugPrint("\tPaStream* stream: 0x%p\n", stream);
-#endif
-
-    if (error == paNoError)
-    {
-        result = PA_STREAM_REP(stream)->hostApiType;
-    }
-    else
-    {
-        result = (PaHostApiTypeId)error;
-    }
-
-#ifdef PA_LOG_API_CALLS
-    PaUtil_DebugPrint("Pa_GetStreamHostApiType returned:\n");
-    PaUtil_DebugPrint("\tPaError: %d ( %s )\n\n", result, Pa_GetErrorText(result));
-#endif
 
     return result;
 }
@@ -1322,8 +1298,8 @@ PaError Pa_OpenDefaultStream( PaStream** stream,
     if( inputChannelCount > 0 )
     {
         hostApiInputParameters.device = Pa_GetDefaultInputDevice();
-        if( hostApiInputParameters.device == paNoDevice )
-            return paDeviceUnavailable;
+		if( hostApiInputParameters.device == paNoDevice )
+			return paDeviceUnavailable;
 
         hostApiInputParameters.channelCount = inputChannelCount;
         hostApiInputParameters.sampleFormat = sampleFormat;
@@ -1345,8 +1321,8 @@ PaError Pa_OpenDefaultStream( PaStream** stream,
     if( outputChannelCount > 0 )
     {
         hostApiOutputParameters.device = Pa_GetDefaultOutputDevice();
-        if( hostApiOutputParameters.device == paNoDevice )
-            return paDeviceUnavailable;
+		if( hostApiOutputParameters.device == paNoDevice )
+			return paDeviceUnavailable;
 
         hostApiOutputParameters.channelCount = outputChannelCount;
         hostApiOutputParameters.sampleFormat = sampleFormat;
@@ -1796,6 +1772,32 @@ signed long Pa_GetStreamWriteAvailable( PaStream* stream )
     return result;
 }
 
+PaHostApiTypeId Pa_GetStreamHostApiType( PaStream* stream )
+{
+    PaError error = PaUtil_ValidateStreamPointer( stream );
+    PaHostApiTypeId result;
+
+#ifdef PA_LOG_API_CALLS
+    PaUtil_DebugPrint("Pa_GetStreamHostApiType called:\n" );
+    PaUtil_DebugPrint("\tPaStream* stream: 0x%p\n", stream );
+#endif
+
+    if( error == paNoError )
+    {
+        result = PA_STREAM_REP(stream)->hostApiType;
+    }
+    else
+    {
+        result = (PaHostApiTypeId) error;
+    }
+
+#ifdef PA_LOG_API_CALLS
+    PaUtil_DebugPrint("Pa_GetStreamHostApiType returned:\n" );
+    PaUtil_DebugPrint("\tPaError: %d ( %s )\n\n", result, Pa_GetErrorText( result ) );
+#endif
+
+    return result;
+}
 
 PaError Pa_GetSampleSize( PaSampleFormat format )
 {
@@ -1834,3 +1836,4 @@ PaError Pa_GetSampleSize( PaSampleFormat format )
 
     return (PaError) result;
 }
+

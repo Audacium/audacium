@@ -35,7 +35,6 @@ Pa_GetStreamReadAvailable           @31
 Pa_GetStreamWriteAvailable          @32
 Pa_GetSampleSize                    @33
 Pa_Sleep                            @34
-Pa_GetVersionInfo                   @35
 PaAsio_GetAvailableBufferSizes      @50
 PaAsio_ShowControlPanel             @51
 PaUtil_InitializeX86PlainConverters @52
@@ -53,7 +52,5 @@ PaWasapi_ThreadPriorityRevert       @63
 PaWasapi_GetFramesPerHostBuffer     @64
 PaWasapi_GetJackCount               @65
 PaWasapi_GetJackDescription         @66
+PaWasapi_SetDefaultInterfaceId      @67
 PaWasapi_SetStreamStateHandler      @68
-PaWasapiWinrt_SetDefaultDeviceId    @67
-PaWasapiWinrt_PopulateDeviceList    @69
-PaWasapi_GetIMMDevice               @70
