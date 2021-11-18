@@ -17,6 +17,8 @@ Paul Licameli split from AudacityProject.h
 #include "ClientData.h" // to inherit
 #include "Identifier.h"
 
+#include "ProjectWindow.h"
+
 class wxTimer;
 class wxTimerEvent;
 
@@ -31,6 +33,9 @@ class AUDACITY_DLL_API ProjectManager final
    , public ClientData::Base
 {
 public:
+   static std::shared_ptr<AudacityProject> sharedPtr;
+   static AudacityProject* tmpProject;
+
    static ProjectManager &Get( AudacityProject &project );
    static const ProjectManager &Get( const AudacityProject &project );
 
@@ -40,6 +45,8 @@ public:
    ~ProjectManager() override;
 
    // This is the factory for projects:
+   static ProjectWindow &CreateWindow();
+   static AudacityProject *FromTempProject();
    static AudacityProject *New();
 
    // The function that imports files can act as a factory too, and for that

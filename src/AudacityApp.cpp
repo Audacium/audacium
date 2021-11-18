@@ -1464,7 +1464,8 @@ bool AudacityApp::InitPart2()
    // Root cause is problem with wxSplashScreen and other dialogs co-existing, that
    // seemed to arrive with wx3.
    {
-      project = ProjectManager::New();
+      auto &window = ProjectManager::CreateWindow();
+      project = ProjectManager::FromTempProject();
    }
 
    // Disable welcome splash screen
