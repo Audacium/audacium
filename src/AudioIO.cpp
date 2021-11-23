@@ -1060,13 +1060,11 @@ bool AudioIO::ValidateDeviceNames(const wxString &play, const wxString &rec)
 
 AudioIO::AudioIO()
 {
-   if (!std::atomic<double>{}.is_lock_free()) {
-      // If this check fails, then the atomic<double> members in AudioIO.h
-      // might be changed to atomic<float> to be more efficient with some
-      // loss of precision.  That could be conditionally compiled depending
-      // on the platform.
-      wxASSERT(false);
-   }
+   // If this check fails, then the atomic<double> members in AudioIO.h
+   // might be changed to atomic<float> to be more efficient with some
+   // loss of precision.  That could be conditionally compiled depending
+   // on the platform.
+   wxASSERT(std::atomic<double>{}.is_lock_free());
 
    // This ASSERT because of casting in the callback 
    // functions where we cast a tempFloats buffer to a (short*) buffer.

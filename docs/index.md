@@ -5,9 +5,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 - Make the code base easier to work with, less confusing for a newbie
 
 ## Donations
-You can donate to me via **PayPal** using the **Sponsor** button on GitHub and going to my **Liberapay** page, or support me via **Bitcoin** or **Monero** :
-
-Bitcoin and Monero : I lost my wallets :/
+Litecoin: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
 ----------------
 
 **Audacium** is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
@@ -25,9 +23,9 @@ Bitcoin and Monero : I lost my wallets :/
 
 ## Getting Started
 
-For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
+For end users, the latest release of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
 Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/ZH5234Abhb) (the two are bridged together).
 
-Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/blob/master/BUILDING.md).
+Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/wiki/Building).
 
-More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
+More information is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).

@@ -428,12 +428,6 @@ void OnMenuTree(const CommandContext &context)
       Verbatim("Menu Tree"), wxT("menutree.txt"), true );
 }
 
-void OnCheckForUpdates(const CommandContext &WXUNUSED(context))
-{
-   // Disable update checking in Audacium for now
-   //::OpenInDefaultBrowser( VerCheckUrl());
-}
-
 void OnAbout(const CommandContext &context)
 {
 #ifdef __WXMAC__
@@ -527,9 +521,6 @@ BaseItemSharedPtr HelpMenu()
       ,
 #endif
 
-         Command( wxT("Updates"), XXO("&Check for Updates..."),
-            FN(OnCheckForUpdates),
-            AlwaysEnabledFlag ),
          Command( wxT("About"), XXO("&About Audacium..."), FN(OnAbout),
             AlwaysEnabledFlag )
       )
