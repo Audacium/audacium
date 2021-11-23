@@ -280,8 +280,6 @@ list( APPEND SOURCES
       Spectrum.h
       SpectrumAnalyst.cpp
       SpectrumAnalyst.h
-      SplashDialog.cpp
-      SplashDialog.h
       SqliteSampleBlock.cpp
       SseMathFuncs.cpp
       SseMathFuncs.h
@@ -957,10 +955,6 @@ list( APPEND SOURCES
       widgets/ReadOnlyText.h
       widgets/Ruler.cpp
       widgets/Ruler.h
-      $<$<BOOL:${${_OPT}has_sentry_reporting}>:
-         widgets/ErrorReportDialog.cpp
-         widgets/ErrorReportDialog.h
-      >
       widgets/Warning.cpp
       widgets/Warning.h
       widgets/WindowAccessible.cpp
@@ -981,21 +975,6 @@ list( APPEND SOURCES
       xml/XMLWriter.cpp
       xml/XMLWriter.h
       xml/audacityproject.dtd
-
-      # Update version
-      $<$<BOOL:${${_OPT}has_updates_check}>:
-          update/VersionId.h
-          update/VersionId.cpp
-          update/VersionPatch.h
-          update/UpdateDataParser.h
-          update/UpdateDataParser.cpp
-          update/UpdateManager.h
-          update/UpdateManager.cpp
-          update/UpdatePopupDialog.h
-          update/UpdatePopupDialog.cpp
-          prefs/ApplicationPrefs.h
-          prefs/ApplicationPrefs.cpp
-      >
 
       Experimental.cmake
 )

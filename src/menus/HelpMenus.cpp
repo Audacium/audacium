@@ -16,7 +16,6 @@
 #include "../Project.h"
 #include "../ProjectSelectionManager.h"
 #include "../ShuttleGui.h"
-#include "../SplashDialog.h"
 #include "../Theme.h"
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
@@ -308,7 +307,7 @@ void OnQuickHelp(const CommandContext &context)
    auto &project = context.project;
    HelpSystem::ShowHelp(
       &GetProjectFrame( project ),
-      L"Quick_Help");
+      L"Getting-Started");
 }
 
 void OnManual(const CommandContext &context)
@@ -316,7 +315,7 @@ void OnManual(const CommandContext &context)
    auto &project = context.project;
    HelpSystem::ShowHelp(
       &GetProjectFrame( project ),
-      L"Main_Page");
+      L"");
 }
 
 void OnAudioDeviceInfo(const CommandContext &context)
@@ -451,25 +450,6 @@ void OnAbout(const CommandContext &context)
    dlog.ShowModal();
 #endif
 }
-
-#if 0
-// Legacy handlers, not used as of version 2.3.0
-
-// Only does the update checks if it's an ALPHA build and not disabled by
-// preferences.
-void MayCheckForUpdates(AudacityProject &project)
-{
-#ifdef IS_ALPHA
-   OnCheckForUpdates(project);
-#endif
-}
-
-void OnHelpWelcome(const CommandContext &context)
-{
-   SplashDialog::DoHelpWelcome( context.project );
-}
-
-#endif
 
 }; // struct Handler
 

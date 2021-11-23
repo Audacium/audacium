@@ -13,23 +13,48 @@ implicitly interconvert with wxString.
 This library depends only on the wxBase subset of wxWidgets.
 ]]#
 
+set(TARGET lib-strings)
+set(TARGET_ROOT ${CMAKE_CURRENT_SOURCE_DIR} )
+
+def_vars()
+
 set( SOURCES
    FutureStrings.h
+
    Identifier.cpp
    Identifier.h
+
    Internat.cpp
    Internat.h
+
    Languages.cpp
    Languages.h
+
    TranslatableString.cpp
    TranslatableString.h
+
    wxArrayStringEx.h
    wxArrayStringEx.cpp
+
+   HexHelpers.h
+    
+   UrlEncode.h
+   UrlEncode.cpp
+
+   UrlDecode.h
+   UrlDecode.cpp
+
+   CodeConversions.h
+   CodeConversions.cpp
+
+   DateTimeConversions.h
+   DateTimeConversions.cpp
 )
+
 set( LIBRARIES
    PRIVATE
    wxBase
+   wxwidgets::base
 )
-audacity_library( lib-strings "${SOURCES}" "${LIBRARIES}"
-   "" ""
-)
+
+audacity_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "" "" )

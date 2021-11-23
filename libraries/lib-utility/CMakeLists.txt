@@ -15,11 +15,32 @@ used utilities that don't correspond to things in the standard.
 
 ]]#
 
+set( TARGET lib-utility )
+set( TARGET_ROOT ${CMAKE_CURRENT_SOURCE_DIR} )
+
+def_vars()
+
 set( SOURCES
    MemoryX.cpp
    MemoryX.h
    ModuleConstants.h
+   Uuid.h
+   Uuid.cpp
 )
-audacity_library( lib-utility "${SOURCES}" ""
-   "" ""
-)
+
+if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+    set( DEFINES PRIVATE USE_UUID_CREATE )
+    set( LIBRARIES PRIVATE Rpcrt4 )
+elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    find_library(CORE_FOUNDATION CoreFoundation)
+
+    set( DEFINES PRIVATE USE_CFUUID )
+    set( LIBRARIES PRIVATE ${CORE_FOUNDATION})
+else()
+    set( DEFINES PRIVATE USE_LIBUUID)
+    set( LIBRARIES PRIVATE libuuid::libuuid)
+endif()
+
+list( APPEND LIBRARIES PRIVATE lib-strings)
+
+audacity_library( ${TARGET} "${SOURCES}" "${LIBRARIES}" "${DEFINES}" "" )

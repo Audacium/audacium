@@ -102,7 +102,6 @@ It handles initialization and termination by subclassing wxApp.
 #include "Theme.h"
 #include "PlatformCompatibility.h"
 #include "AutoRecoveryDialog.h"
-#include "SplashDialog.h"
 #include "FFT.h"
 #include "widgets/AudacityMessageBox.h"
 #include "prefs/DirectoriesPrefs.h"
@@ -110,11 +109,6 @@ It handles initialization and termination by subclassing wxApp.
 #include "tracks/ui/Scrubbing.h"
 #include "widgets/FileConfig.h"
 #include "widgets/FileHistory.h"
-#include "update/UpdateManager.h"
-
-#ifdef HAS_NETWORKING
-#include "NetworkManager.h"
-#endif
 
 #ifdef EXPERIMENTAL_EASY_CHANGE_KEY_BINDINGS
 #include "prefs/KeyConfigPrefs.h"
@@ -126,10 +120,6 @@ It handles initialization and termination by subclassing wxApp.
 #include "ModuleManager.h"
 
 #include "import/Import.h"
-
-#if defined(USE_BREAKPAD)
-#include "BreakpadConfigurer.h"
-#endif
 
 #ifdef EXPERIMENTAL_SCOREALIGN
 #include "effects/ScoreAlignDialog.h"
@@ -153,25 +143,6 @@ It handles initialization and termination by subclassing wxApp.
 ////////////////////////////////////////////////////////////
 /// Custom events
 ////////////////////////////////////////////////////////////
-
-#if 0
-#ifdef __WXGTK__
-static void wxOnAssert(const wxChar *fileName, int lineNumber, const wxChar *msg)
-{
-   if (msg)
-      wxPrintf("ASSERTION FAILED: %s\n%s: %d\n", (const char *)wxString(msg).mb_str(), (const char *)wxString(fileName).mb_str(), lineNumber);
-   else
-      wxPrintf("ASSERTION FAILED!\n%s: %d\n", (const char *)wxString(fileName).mb_str(), lineNumber);
-
-   // Force core dump
-   int *i = 0;
-   if (*i)
-      exit(1);
-
-   exit(0);
-}
-#endif
-#endif
 
 namespace {
 
@@ -1420,8 +1391,6 @@ bool AudacityApp::InitPart2()
 
       //JKC: Would like to put module loading here.
 
-      // More initialization
-
       InitDitherers();
       AudioIO::Init();
 
@@ -1467,7 +1436,6 @@ bool AudacityApp::InitPart2()
       project = ProjectManager::New();
    }
 
-   // Disable welcome splash screen
    /*if (ProjectSettings::Get(*project).GetShowSplashScreen()) {
       // This may do a check-for-updates at every start up.
       // Mainly this is to tell users of ALPHAS who don't know that they have an ALPHA.
@@ -1475,11 +1443,6 @@ bool AudacityApp::InitPart2()
       // project->MayCheckForUpdates();
       SplashDialog::DoHelpWelcome(*project);
    }*/
-
-// Disable update checking in Audacium for now
-/*#if defined(HAVE_UPDATES_CHECK)
-   UpdateManager::Start();
-#endif*/
 
    #ifdef USE_FFMPEG
    FFmpegStartup();
@@ -2227,10 +2190,6 @@ int AudacityApp::OnExit()
 
    // Terminate the PluginManager (must be done before deleting the locale)
    PluginManager::Get().Terminate();
-
-#ifdef HAS_NETWORKING
-   audacity::network_manager::NetworkManager::GetInstance().Terminate();
-#endif
 
    return 0;
 }

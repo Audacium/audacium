@@ -2,7 +2,7 @@
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
   <mime-type type="application/x-audacity-project">
     <sub-class-of type="text/xml"/>
-    <comment>Audacity project</comment>
+    <comment>Audacium project</comment>
     <glob pattern="*.aup"/>
   </mime-type>
 </mime-info>

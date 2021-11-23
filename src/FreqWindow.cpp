@@ -593,17 +593,13 @@ void FrequencyPlotDialog::GetAudio()
          auto start = track->TimeToLongSamples(selectedRegion.t0());
          auto end = track->TimeToLongSamples(selectedRegion.t1());
          auto dataLen = end - start;
-         if (dataLen > 10485760) {
-            warning = true;
-            mDataLen = 10485760;
-         }
-         else
-            // dataLen is not more than 10 * 2 ^ 20
-            mDataLen = dataLen.as_size_t();
+
+         // dataLen is not more than 10 * 2 ^ 20
+         mDataLen = dataLen.as_size_t();
          mData = Floats{ mDataLen };
+
          // Don't allow throw for bad reads
-         track->GetFloats(mData.get(), start, mDataLen,
-                    fillZero, false);
+         track->GetFloats(mData.get(), start, mDataLen, fillZero, false);
       }
       else {
          if (track->GetRate() != mRate) {
@@ -627,13 +623,6 @@ void FrequencyPlotDialog::GetAudio()
 
    if (selcount == 0)
       return;
-
-   if (warning) {
-      auto msg = XO(
-"Too much audio was selected. Only the first %.1f seconds of audio will be analyzed.")
-         .Format(mDataLen / mRate);
-      AudacityMessageBox( msg );
-   }
 }
 
 void FrequencyPlotDialog::OnSize(wxSizeEvent & WXUNUSED(event))

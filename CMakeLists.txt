@@ -1,9 +1,6 @@
-# If you want built-in precompiled header support
-# then make sure you have cmake 3.16 or higher.
-#
-# Minimum required is 3.15 due to use of multiple values in
-# generator expressions.
-cmake_minimum_required( VERSION 3.15 )
+# Minimum required is 3.16 due to use of multiple values in
+# generator expressions and use of built-in precompiled headers.
+cmake_minimum_required( VERSION 3.16 )
 
 # If building with GNU compiler, then must be 4.9 or later.
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND
@@ -19,14 +16,14 @@ endif ()
 # still link to the alpha manual online.
 
 # Set this value to 0 for alpha, 1 for beta, 2 for release builds
-set( AUDACITY_BUILD_LEVEL 0 )
+set( AUDACITY_BUILD_LEVEL 1 )
 
 # The Audacium version
 # Increment as appropriate after release of a new version, and set back
 # AUDACITY_BUILD_LEVEL to 0
-set( AUDACITY_VERSION 3 )
+set( AUDACITY_VERSION 1 )
 set( AUDACITY_RELEASE 0 )
-set( AUDACITY_REVISION 4 )
+set( AUDACITY_REVISION 0 )
 set( AUDACITY_MODLEVEL 0 )
 
 string( TIMESTAMP __TDATE__ "%Y%m%d" )
@@ -128,6 +125,7 @@ if( CCACHE_PROGRAM )
 endif()
 
 # Define option() prefix
+# TODO: Rename
 set( _OPT "audacity_" )
 
 # Our very own project
@@ -151,10 +149,6 @@ cmd_option( ${_OPT}obey_system_dependencies
             Off
 )
 
-cmd_option( ${_OPT}has_networking 
-   "Build networking features into Audacium"
-   Off)
-
 include( AudacityDependencies )
 
 # Pull all the modules we'll need
@@ -174,30 +168,6 @@ set_from_env(SENTRY_DSN_KEY)
 set_from_env(SENTRY_HOST)
 set_from_env(SENTRY_PROJECT)
 set_from_env(CRASH_REPORT_URL)
-
-cmake_dependent_option(
-   ${_OPT}has_sentry_reporting
-   "Build support for sending errors to Sentry"
-   On
-   "${_OPT}has_networking;DEFINED SENTRY_DSN_KEY;DEFINED SENTRY_HOST;DEFINED SENTRY_PROJECT"
-   Off
-)
-
-cmake_dependent_option(
-   ${_OPT}has_crashreports
-   "Enables crash reporting for Audacium"
-   On
-   "${_OPT}has_networking;DEFINED CRASH_REPORT_URL"
-   Off
-)
-
-cmake_dependent_option(
-   ${_OPT}has_updates_check
-   "Build updates checking features into Audacium"
-   On
-   "${_OPT}has_networking"
-   Off
-)
 
 # Determine 32-bit or 64-bit target
 if( CMAKE_C_COMPILER_ID MATCHES "MSVC" AND CMAKE_VS_PLATFORM_NAME MATCHES "Win64|x64" )
@@ -236,10 +206,6 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
    endif()
    message( STATUS "  MacOS SDK: ${CMAKE_OSX_SYSROOT}" )
    message( STATUS )
-
-   if(${_OPT}has_crashreports)
-      set(CMAKE_XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT "dwarf-with-dsym")
-   endif()
 
 endif()
 
