@@ -58,9 +58,6 @@ Paul Licameli split from AudacityProject.cpp
 
 const int AudacityProjectTimerID = 5200;
 
-std::shared_ptr<AudacityProject> ProjectManager::sharedPtr;
-AudacityProject* ProjectManager::tmpProject;
-
 static AudacityProject::AttachedObjects::RegisteredFactory sProjectManagerKey {
    []( AudacityProject &project ) {
       return std::make_shared< ProjectManager >( project );
@@ -526,63 +523,56 @@ void InitProjectWindow( ProjectWindow &window )
 #endif
 }
 
-ProjectWindow &ProjectManager::CreateWindow()
+AudacityProject *ProjectManager::New()
 {
    wxRect wndRect;
    bool bMaximized = false;
    bool bIconized = false;
    GetNextWindowPlacement(&wndRect, &bMaximized, &bIconized);
-
+   
    // Create and show a NEW project
    // Use a non-default deleter in the smart pointer!
-   sharedPtr = std::make_shared<AudacityProject>();
-   tmpProject = sharedPtr.get();
-
-   auto &window = ProjectWindow::Get(*tmpProject);
-   InitProjectWindow(window);
+   auto sp = std::make_shared< AudacityProject >();
+   AllProjects{}.Add( sp );
+   auto p = sp.get();
+   auto &project = *p;
+   auto &projectHistory = ProjectHistory::Get( project );
+   auto &projectManager = Get( project );
+   auto &window = ProjectWindow::Get( *p );
+   InitProjectWindow( window );
 
    // wxGTK3 seems to need to require creating the window using default position
    // and then manually positioning it.
    window.SetPosition(wndRect.GetPosition());
 
-   if (bIconized)
-   {
-      // If the user close down and iconized state we could start back up and iconized state
-      // window.Iconize(TRUE);
-   } else if (bMaximized) window.Maximize(true);
-
-   window.Show(true);
-
-   return window;
-}
-
-AudacityProject *ProjectManager::FromTempProject()
-{
-   AllProjects{}.Add(sharedPtr);
-
-   auto &project = *tmpProject;
-   auto &projectHistory = ProjectHistory::Get(project);
-   auto &projectManager = Get(project);
-
-   auto &projectFileManager = ProjectFileManager::Get(*tmpProject);
+   auto &projectFileManager = ProjectFileManager::Get( *p );
 
    // This may report an error.
    projectFileManager.OpenNewProject();
 
-   MenuManager::Get(project).CreateMenusAndCommands(project);
+   MenuManager::Get( project ).CreateMenusAndCommands( project );
    
    projectHistory.InitialState();
    projectManager.RestartTimer();
-
+   
+   if(bMaximized) {
+      window.Maximize(true);
+   }
+   else if (bIconized) {
+      // if the user close down and iconized state we could start back up and iconized state
+      // window.Iconize(TRUE);
+   }
+   
    //Initialise the Listeners
    auto gAudioIO = AudioIO::Get();
-   gAudioIO->SetListener(ProjectAudioManager::Get(project).shared_from_this());
-   auto &projectSelectionManager = ProjectSelectionManager::Get(project);
-   SelectionBar::Get(project).SetListener(&projectSelectionManager);
+   gAudioIO->SetListener(
+      ProjectAudioManager::Get( project ).shared_from_this() );
+   auto &projectSelectionManager = ProjectSelectionManager::Get( project );
+   SelectionBar::Get( project ).SetListener( &projectSelectionManager );
 #ifdef EXPERIMENTAL_SPECTRAL_EDITING
-   SpectralSelectionBar::Get(project).SetListener(&projectSelectionManager);
+   SpectralSelectionBar::Get( project ).SetListener( &projectSelectionManager );
 #endif
-   TimeToolBar::Get(project).SetListener(&projectSelectionManager);
+   TimeToolBar::Get( project ).SetListener( &projectSelectionManager );
    
 #if wxUSE_DRAG_AND_DROP
    // We can import now, so become a drag target
@@ -590,25 +580,21 @@ AudacityProject *ProjectManager::FromTempProject()
    //   mTrackPanel->SetDropTarget(safenew AudacityDropTarget(this));
    
    // SetDropTarget takes ownership
-   TrackPanel::Get(project).SetDropTarget(safenew DropTarget(&project));
+   TrackPanel::Get( project ).SetDropTarget( safenew DropTarget( &project ) );
 #endif
    
    //Set the NEW project as active:
-   SetActiveProject(tmpProject);
+   SetActiveProject(p);
    
    // Okay, GetActiveProject() is ready. Now we can get its CommandManager,
    // and add the shortcut keys to the tooltips.
-   ToolManager::Get(*tmpProject).RegenerateTooltips();
+   ToolManager::Get( *p ).RegenerateTooltips();
    
    ModuleManager::Get().Dispatch(ProjectInitialized);
-
-   return tmpProject;
-}
-
-AudacityProject *ProjectManager::New()
-{
-   (void) CreateWindow();
-   return FromTempProject();
+   
+   window.Show(true);
+   
+   return p;
 }
 
 void ProjectManager::OnReconnectionFailure(wxCommandEvent & event)

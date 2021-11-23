@@ -207,5 +207,4 @@ win/xaudacity.ico
 */not-for-git/*
 *.dll
 /builds
-/bin
 .vscode
