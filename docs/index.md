@@ -1,3 +1,5 @@
+# Audacium
+
 ## Goals of this project
 The goals **Audacium** is trying to achieve are pretty simple :
 - Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically)
@@ -6,7 +8,6 @@ The goals **Audacium** is trying to achieve are pretty simple :
 
 ## Donations
 Litecoin: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
-----------------
 
 **Audacium** is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
