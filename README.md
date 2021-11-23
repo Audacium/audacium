@@ -1,7 +1,5 @@
-[![Audacium](https://user-images.githubusercontent.com/49339966/124761631-468df780-df32-11eb-84a6-5d17a9717fc2.png)](https://audacium.seb1g.live)
+[![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live)
 <br/>
-<p align="center">Made by mish1</p>
-<p align="center">=========================</p>
 
 ## Searching for contributors!
 I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
@@ -29,13 +27,13 @@ The goals **Audacium** is trying to achieve are pretty simple :
 
 ## Getting Started
 
-For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxOnlyGNU/audacium/releases/latest).
+For end users, the latest Windows and macOS release version of Audacium is available [here](https://github.com/SartoxSoftware/audacium/releases/latest).
 There is also an [AUR package](https://aur.archlinux.org/packages/audacium-git/) for Arch Linux users.
 Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/ZH5234Abhb) (the two are bridged together).
 
-Build instructions are available [here](BUILDING.md).
+Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/wiki/Building).
 
-More information for developers is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
+More information is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
 
 ## How to contribute
 Submit a pull request, then we'll carefully review it and merge it if possible.
