@@ -924,7 +924,7 @@ void ThemeBase::WriteImageDefs( )
 teThemeType ThemeBase::GetFallbackThemeType(){
 // Fallback must be an internally supported type,
 // to guarantee it is found.
-   return themeDarkOrange;
+   return themeDark;
 }
 
 teThemeType ThemeBase::ThemeTypeOfTypeName( const wxString & Name )

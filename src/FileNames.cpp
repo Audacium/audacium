@@ -254,9 +254,9 @@ FilePath FileNames::DataDir()
       } else
       {
          // Use OS-provided user data dir folder
-         wxString dataDir( LowerCaseAppNameInPath( wxStandardPaths::Get().GetUserDataDir() ));
+         wxString dataDir( wxStandardPaths::Get().GetUserDataDir() );
 #if defined( __WXGTK__ )
-         dataDir = dataDir + wxT("-data");
+         dataDir.Replace(".Audacium", ".config/audacium");
 #endif
          gDataDir = FileNames::MkDir(dataDir);
       }

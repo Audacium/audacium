@@ -125,18 +125,6 @@ It handles initialization and termination by subclassing wxApp.
 #include "effects/ScoreAlignDialog.h"
 #endif
 
-#if 0
-#ifdef _DEBUG
-    #ifdef _MSC_VER
-        #undef THIS_FILE
-        static char*THIS_FILE= __FILE__;
-        #define new new(_NORMAL_BLOCK, THIS_FILE, __LINE__)
-    #endif
-#endif
-#endif
-
-#include "../images/AudacityLogoWithName.xpm"
-
 #include <thread>
 
 
@@ -344,10 +332,8 @@ void PopulatePreferences()
       gPrefs->Write(wxT("/GUI/Toolbars/Time/Show"),1);
    }
 
-   // You can write a condition like this which will effectively change the value only when the config file is created
-   // We also have yet to find where the actual default values are getting applied   
    if (!gPrefs->Exists(wxT("/GUI/Theme")))
-       gPrefs->Write(wxT("/GUI/Theme"), wxString(wxT("dark")));
+       gPrefs->Write(wxT("/GUI/Theme"), wxString(wxT("dark-blue")));
 
    if (!gPrefs->Exists(wxT("/SamplingRate/DefaultProjectSampleRate")))
        gPrefs->Write(wxT("/SamplingRate/DefaultProjectSampleRate"), 48000);
@@ -1186,6 +1172,15 @@ bool AudacityApp::OnInit()
 
    // Initialize preferences and language
    {
+      // Migrate config location on *nix
+      wxString dataDir(wxStandardPaths::Get().GetUserDataDir() + wxT("-data"));
+      if (::wxDirExists(dataDir))
+      {
+         wxString oldPath(dataDir);
+         dataDir.Replace(".Audacium-data", ".config/audacium");
+         ::wxRenameFile(oldPath, dataDir);
+      }
+
       wxFileName configFileName(FileNames::DataDir(), wxT("audacity.cfg"));
       auto appName = wxTheApp->GetAppName();
       InitPreferences( AudacityFileConfig::Create(
@@ -1335,56 +1330,8 @@ bool AudacityApp::InitPart2()
       Sequence::SetMaxDiskBlockSize(lval);
    }
 
-   // BG: Create a temporary window to set as the top window
-   wxImage logoimage((const char **)AudacityLogoWithName_xpm);
-
-   bool hasAlpha = logoimage.HasAlpha() || logoimage.HasMask();
-
-   wxRegion splashRgn;
-   if (hasAlpha)
-   { 
-       splashRgn = wxRegion(alphaToBlackAndWhiteMask(logoimage), *wxWHITE);
-   }
-
    AudacityProject *project;
    {
-      // Bug 718: Position splash screen on same screen 
-      // as where Audacity project will appear.
-      wxRect wndRect;
-      bool bMaximized = false;
-      bool bIconized = false;
-      GetNextWindowPlacement(&wndRect, &bMaximized, &bIconized);
-
-      wxSplashScreen temporarywindow(
-         logoimage,
-         wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
-         0,
-         NULL,
-         wxID_ANY,
-         wndRect.GetTopLeft(),
-         wxDefaultSize,
-         wxBORDER_NONE | wxSTAY_ON_TOP | (hasAlpha ? wxFRAME_SHAPED : 0x00));
-      
-      if (hasAlpha)
-      {
-          temporarywindow.SetShape(splashRgn);
-      }
-
-      // Unfortunately with the Windows 10 Creators update, the splash screen 
-      // now appears before setting its position.
-      // On a dual monitor screen it will appear on one screen and then 
-      // possibly jump to the second.
-      // We could fix this by writing our own splash screen and using Hide() 
-      // until the splash scren was correctly positioned, then Show()
-
-      // Possibly move it on to the second screen...
-      temporarywindow.SetPosition( wndRect.GetTopLeft() );
-      // Centered on whichever screen it is on.
-      temporarywindow.Center();
-      temporarywindow.SetTitle(_("Audacium is starting up..."));
-      SetTopWindow(&temporarywindow);
-      temporarywindow.Raise();
-
       // ANSWER-ME: Why is YieldFor needed at all?
       //wxEventLoopBase::GetActive()->YieldFor(wxEVT_CATEGORY_UI|wxEVT_CATEGORY_USER_INPUT|wxEVT_CATEGORY_UNKNOWN);
       wxEventLoopBase::GetActive()->YieldFor(wxEVT_CATEGORY_UI);
@@ -1421,7 +1368,6 @@ bool AudacityApp::InitPart2()
       recentFiles.UseMenu(recentMenu);
 
 #endif //__WXMAC__
-      temporarywindow.Show(false);
    }
 
    // Workaround Bug 1377 - Crash after Audacity starts and low disk space warning appears
