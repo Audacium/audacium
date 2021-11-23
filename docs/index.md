@@ -1,5 +1,3 @@
-# Audacium
-
 ## Goals of this project
 The goals **Audacium** is trying to achieve are pretty simple :
 - Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically)
