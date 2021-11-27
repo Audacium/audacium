@@ -1,4 +1,4 @@
-[![Audacium](.github/audacium_logo.png)](https://audacium.xyz)
+[![Audacium](.github/audacium_logo.png)](http://audacium.xyz)
 <br/>
 
 ## Searching for contributors!
@@ -12,7 +12,7 @@ The goals **Audacium** is trying to achieve are pretty simple :
 
 ----------------
 
-[**Audacium**](https://audacium.seb1g.live) is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
+[**Audacium**](http://audacium.xyz) is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
 - **Recording** from any real, or virtual audio device that is available to the host system.
 - **Export / Import** a wide range of audio formats, extendible with FFmpeg.
