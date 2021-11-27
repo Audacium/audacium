@@ -1,4 +1,4 @@
-[![Audacium](.github/audacium_logo.png)](https://audacium.seb1g.live)
+[![Audacium](.github/audacium_logo.png)](https://audacium.xyz)
 <br/>
 
 ## Searching for contributors!
