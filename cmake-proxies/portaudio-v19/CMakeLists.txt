@@ -101,7 +101,6 @@ list( APPEND SOURCES
       ${TARGET_ROOT}/src/common/pa_cpuload.c
       ${TARGET_ROOT}/src/common/pa_debugprint.c
       ${TARGET_ROOT}/src/common/pa_dither.c
-      ${TARGET_ROOT}/src/common/pa_dynload.c
       ${TARGET_ROOT}/src/common/pa_front.c
       ${TARGET_ROOT}/src/common/pa_process.c
       ${TARGET_ROOT}/src/common/pa_ringbuffer.c
@@ -158,7 +157,6 @@ list( APPEND SOURCES
 
       $<$<NOT:$<STREQUAL:${${_OPT}use_pa_jack},off>>:
          ${TARGET_ROOT}/src/hostapi/jack/pa_jack.c
-         ${TARGET_ROOT}/src/hostapi/jack/pa_jack_dynload.c
       >
 )
 
