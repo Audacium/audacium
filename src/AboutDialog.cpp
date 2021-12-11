@@ -248,7 +248,7 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
       << wxT("<p><br>")
       /* i18n-hint: The program's name substitutes for %s */
       << XO("%s website: ").Format( ProgramName )
-      << wxT("[[https://audacium.seb1g.live/|https://audacium.seb1g.live/]]")
+      << wxT("[[https://audacium.xyz/|https://audacium.xyz/]]")
 
       << wxT("<p><br>&nbsp; &nbsp; ")
       /* i18n-hint Audacium's name substitutes for first and third %s,

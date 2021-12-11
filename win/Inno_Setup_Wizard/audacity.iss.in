@@ -39,10 +39,10 @@ AppName={#AppName}
 AppVerName=Audacium {#AppVersion}
 ; Specify AppVersion as well, so it appears in the Add/Remove Programs entry. 
 AppVersion={#AppVersion}
-AppPublisher="SartoxOnlyGNU"
-AppPublisherURL=https://audacium.seb1g.live
-AppSupportURL=https://audacium.seb1g.live
-AppUpdatesURL=https://audacium.seb1g.live
+AppPublisher="SartoxSoftware"
+AppPublisherURL=https://audacium.xyz
+AppSupportURL=https://audacium.xyz
+AppUpdatesURL=https://audacium.xyz
 ChangesAssociations=yes
 @INSTALLER_X64_MODE@
 
@@ -65,7 +65,6 @@ UninstallDisplayIcon="{app}\audacium.exe"
 
 ; No longer force them to accept the license, just display it.   LicenseFile=..\LICENSE.txt
 InfoBeforeFile=".\audacity_InnoWizard_InfoBefore.rtf"
-InfoAfterFile=Additional\README.md
 
 ; We no longer produce new ANSI builds. 
 ; As we use Inno Setup (u), the Unicode version, to build this script, 
@@ -91,9 +90,6 @@ Name: resetPrefs; Description:  "{cm:ResetPrefs}"; Flags: unchecked
 [Files]
 ; Prime the first time .ini file so the permissions can be set
 Source: ".\FirstTimeModel.ini"; DestDir: "{app}"; DestName: "FirstTime.ini"; Permissions: users-modify
-
-; Don't display in separate window, rather as InfoAfterFile.   Source: "..\README.md"; DestDir: "{app}"; Flags: ignoreversion isreadme
-Source: "Additional\README.md"; DestDir: "{app}"; Flags: ignoreversion
 
 Source: "Additional\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#AppExe}"; DestDir: "{app}"; Flags: ignoreversion

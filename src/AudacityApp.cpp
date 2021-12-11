@@ -338,6 +338,11 @@ void PopulatePreferences()
    if (!gPrefs->Exists(wxT("/SamplingRate/DefaultProjectSampleRate")))
        gPrefs->Write(wxT("/SamplingRate/DefaultProjectSampleRate"), 48000);
 
+#ifdef __WXMSW__
+   if (!gPrefs->Exists(wxT("/AudioIO/Host")))
+       gPrefs->Write(wxT("/AudioIO/Host"), wxString(wxT("Windows WASAPI")));
+#endif
+
    // write out the version numbers to the prefs file for future checking
    gPrefs->Write(wxT("/Version/Major"), AUDACITY_VERSION);
    gPrefs->Write(wxT("/Version/Minor"), AUDACITY_RELEASE);
