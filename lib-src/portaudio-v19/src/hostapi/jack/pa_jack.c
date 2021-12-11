@@ -53,10 +53,10 @@
 #include <stdio.h>
 #include <assert.h>
 #include <sys/types.h>
-#include <unistd.h>
 #include <errno.h>  /* EBUSY */
 #include <signal.h> /* sig_atomic_t */
 #include <math.h>
+#include <pthread.h>
 #include <semaphore.h>
 
 #include <jack/types.h>
@@ -78,22 +78,19 @@ static char *jackErr_ = NULL;
 static const char* clientName_ = "PortAudio";
 static const char* port_regex_suffix = ":.*";
 
-#define STRINGIZE_HELPER(expr) #expr
-#define STRINGIZE(expr) STRINGIZE_HELPER(expr)
-
 /* Check PaError */
 #define ENSURE_PA(expr) \
     do { \
         PaError paErr; \
         if( (paErr = (expr)) < paNoError ) \
         { \
-            if( (paErr) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
+            if( (paErr) == paUnanticipatedHostError && pthread_equal( pthread_self(), mainThread_ ) ) \
             { \
                 const char *err = jackErr_; \
                 if (! err ) err = "unknown error"; \
                 PaUtil_SetLastHostErrorInfo( paJACK, -1, err ); \
             } \
-            PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " STRINGIZE( __LINE__ ) "\n" )); \
+            PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " PA_STRINGIZE( __LINE__ ) "\n" )); \
             result = paErr; \
             goto error; \
         } \
@@ -103,13 +100,13 @@ static const char* port_regex_suffix = ":.*";
     do { \
         if( (expr) == 0 ) \
         { \
-            if( (code) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
+            if( (code) == paUnanticipatedHostError && pthread_equal( pthread_self(), mainThread_ ) ) \
             { \
                 const char *err = jackErr_; \
                 if (!err) err = "unknown error"; \
                 PaUtil_SetLastHostErrorInfo( paJACK, -1, err ); \
             } \
-            PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " STRINGIZE( __LINE__ ) "\n" )); \
+            PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " PA_STRINGIZE( __LINE__ ) "\n" )); \
             result = (code); \
             goto error; \
         } \
@@ -698,7 +695,7 @@ static void UpdateSampleRate( PaJackStream *stream, double sampleRate )
 
 static void JackErrorCallback( const char *msg )
 {
-    if( pthread_self() == mainThread_ )
+    if( pthread_equal( pthread_self(), mainThread_ ) )
     {
         assert( msg );
         jackErr_ = realloc( jackErr_, strlen( msg ) + 1 );

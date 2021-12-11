@@ -567,6 +567,23 @@ PaError PaWasapi_SetStreamStateHandler( PaStream *pStream, PaWasapiStreamStateCa
 PaError PaWasapiWinrt_SetDefaultDeviceId( const unsigned short *pId, int bOutput );
 
 
+/** Returns Windows device ID for input stream
+
+ @param  pStream Pointer to PaStream to query.
+
+ @return non-null value pointing to static device ID
+*/
+const wchar_t *PaWasapi_GetInputDeviceID( PaStream *s );
+
+/** Returns Windows device ID for output stream
+
+ @param  pStream Pointer to PaStream to query.
+
+ @return non-null value pointing to static device ID
+*/
+const wchar_t *PaWasapi_GetOutputDeviceID( PaStream *s );
+
+
 /** Populate the device list.
 
     By default the implementation will rely on DEVINTERFACE_AUDIO_RENDER and DEVINTERFACE_AUDIO_CAPTURE as

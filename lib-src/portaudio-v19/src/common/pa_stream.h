@@ -152,7 +152,7 @@ typedef struct PaUtilStreamRepresentation {
     PaStreamFinishedCallback *streamFinishedCallback;
     void *userData;
     PaStreamInfo streamInfo;
-    PaHostApiTypeId hostApiType; // Manually added for Audacium
+    PaHostApiTypeId hostApiType;
 } PaUtilStreamRepresentation;
 
 

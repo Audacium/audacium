@@ -47,11 +47,15 @@
 */
 //#define PA_WIN_DS_USE_WMME_TIMER
 
+#if !defined(_WIN32_WINNT) || (_WIN32_WINNT < 0x0400)
+    #undef _WIN32_WINNT
+    #define _WIN32_WINNT 0x0400 /* required to get waitable timer APIs */
+#endif
+
 #include <assert.h>
 #include <stdio.h>
 #include <string.h> /* strlen() */
 
-#define _WIN32_WINNT 0x0400 /* required to get waitable timer APIs */
 #include <initguid.h> /* make sure ds guids get defined */
 #include <windows.h>
 #include <objbase.h>
@@ -83,6 +87,7 @@
 #include "pa_process.h"
 #include "pa_debugprint.h"
 
+#include "pa_win_util.h"
 #include "pa_win_ds.h"
 #include "pa_win_ds_dynlink.h"
 #include "pa_win_waveformat.h"
@@ -203,9 +208,14 @@ static signed long GetStreamReadAvailable( PaStream* stream );
 static signed long GetStreamWriteAvailable( PaStream* stream );
 
 
-/* FIXME: should convert hr to a string */
+#if _WIN32_WINNT >= 0x0602 // Windows 8 and above
+#define PA_DS_SET_LAST_DIRECTSOUND_ERROR( hr ) \
+    PaWinUtil_SetLastSystemErrorInfo( paDirectSound, hr )
+#else
+/* FIXME: should use DXGetErrorString/DXGetErrorDescription for Windows 7 and below */
 #define PA_DS_SET_LAST_DIRECTSOUND_ERROR( hr ) \
     PaUtil_SetLastHostErrorInfo( paDirectSound, hr, "DirectSound error" )
+#endif
 
 /************************************************* DX Prototypes **********/
 static BOOL CALLBACK CollectGUIDsProcW(LPGUID lpGUID,
@@ -1876,8 +1886,8 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
     PaWinDsDeviceInfo *inputWinDsDeviceInfo, *outputWinDsDeviceInfo;
     PaDeviceInfo *inputDeviceInfo, *outputDeviceInfo;
     int inputChannelCount, outputChannelCount;
-    PaSampleFormat inputSampleFormat, outputSampleFormat;
-    PaSampleFormat hostInputSampleFormat, hostOutputSampleFormat;
+    PaSampleFormat inputSampleFormat = 0, outputSampleFormat = 0;
+    PaSampleFormat hostInputSampleFormat = 0, hostOutputSampleFormat = 0;
     int userRequestedHostInputBufferSizeFrames = 0;
     int userRequestedHostOutputBufferSizeFrames = 0;
     unsigned long suggestedInputLatencyFrames, suggestedOutputLatencyFrames;
@@ -2168,6 +2178,13 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
                 goto error;
             }
 
+            /* Portmixer support - fill in the GUID of the output stream */
+            stream->pOutputGuid = outputWinDsDeviceInfo->lpGUID;
+            if( stream->pOutputGuid == NULL )
+            {
+               stream->pOutputGuid = (GUID *) &DSDEVID_DefaultPlayback;
+            }
+
             /* Calculate value used in latency calculation to avoid real-time divides. */
             stream->secondsPerHostByte = 1.0 /
                 (stream->bufferProcessor.bytesPerHostOutputSample *
@@ -2208,6 +2225,13 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
             {
                 result = paBufferTooBig;
                 goto error;
+            }
+
+            /* Portmixer support - store the GUID of the input stream */
+            stream->pInputGuid = inputWinDsDeviceInfo->lpGUID;
+            if( stream->pInputGuid == NULL )
+            {
+               stream->pInputGuid = (GUID *)&DSDEVID_DefaultCapture;
             }
         }
 
@@ -2252,6 +2276,12 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
 
         if( outputParameters && !stream->pDirectSoundOutputBuffer )
         {
+            stream->pOutputGuid = outputWinDsDeviceInfo->lpGUID;
+            if( stream->pOutputGuid == NULL )
+            {
+               stream->pOutputGuid = (GUID *) &DSDEVID_DefaultPlayback;
+            }
+
             hr = InitOutputBuffer( stream,
                                        (PaWinDsDeviceInfo*)hostApi->deviceInfos[outputParameters->device],
                                        hostOutputSampleFormat,
@@ -3260,7 +3290,7 @@ static signed long GetStreamWriteAvailable( PaStream* s )
     return 0;
 }
 
-// Manually added for Audacium
+
 /***********************************************************************************/
 LPGUID PaWinDS_GetStreamInputGUID(PaStream* s)
 {
