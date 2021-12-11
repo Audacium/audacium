@@ -44,7 +44,7 @@ PALIB = libportaudio.la
 PAINC = include/portaudio.h
 
 PA_LDFLAGS = $(LDFLAGS) $(SHARED_FLAGS) -rpath $(libdir) -no-undefined \
-	     -export-symbols-regex "(Pa|PaMacCore|PaJack|PaAlsa|PaAsio|PaOSS)_.*" \
+	     -export-symbols-regex "(Pa|PaMacCore|PaJack|PaAlsa|PaAsio|PaOSS|PaWasapi|PaWasapiWinrt)_.*" \
 	     -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 
 COMMON_OBJS = \
@@ -53,10 +53,8 @@ COMMON_OBJS = \
 	src/common/pa_cpuload.o \
 	src/common/pa_dither.o \
 	src/common/pa_debugprint.o \
-	src/common/pa_dynload.o \
 	src/common/pa_front.o \
 	src/common/pa_process.o \
-	src/common/pa_ringbuffer.o \
 	src/common/pa_stream.o \
 	src/common/pa_trace.o \
 	src/hostapi/skeleton/pa_hostapi_skeleton.o
@@ -148,6 +146,7 @@ SRC_DIRS = \
 	src/hostapi/dsound \
 	src/hostapi/jack \
 	src/hostapi/oss \
+	src/hostapi/skeleton \
 	src/hostapi/wasapi \
 	src/hostapi/wdmks \
 	src/hostapi/wmme \
@@ -157,10 +156,7 @@ SRC_DIRS = \
 SUBDIRS =
 @ENABLE_CXX_TRUE@SUBDIRS += bindings/cpp
 
-prep:
-	mkdir -p qa/loopback/src/ src/hostapi/skeleton/ $(SRC_DIRS)
-
-all: prep lib/$(PALIB) all-recursive tests examples selftests
+all: lib/$(PALIB) all-recursive tests examples selftests
 
 tests: bin-stamp $(TESTS)
 
@@ -225,16 +221,16 @@ clean:
 distclean: clean
 	$(RM) config.log config.status Makefile libtool portaudio-2.0.pc
 
-%.o: %.c $(MAKEFILE) $(PAINC)
+%.o: %.c $(MAKEFILE) $(PAINC) lib-stamp
 	$(CC) -c $(CFLAGS) $< -o $@
 
-%.lo: %.c $(MAKEFILE) $(PAINC)
+%.lo: %.c $(MAKEFILE) $(PAINC) lib-stamp
 	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $< -o $@
 
-%.lo: %.cpp $(MAKEFILE) $(PAINC)
+%.lo: %.cpp $(MAKEFILE) $(PAINC) lib-stamp
 	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o: %.cpp $(MAKEFILE) $(PAINC)
+%.o: %.cpp $(MAKEFILE) $(PAINC) lib-stamp
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 %.o: %.asm

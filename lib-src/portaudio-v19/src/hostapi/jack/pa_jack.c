@@ -48,22 +48,16 @@
 */
 
 #include <string.h>
+#include <regex.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
 #include <sys/types.h>
-#if !defined(_WIN32)
 #include <unistd.h>
-#endif
 #include <errno.h>  /* EBUSY */
 #include <signal.h> /* sig_atomic_t */
 #include <math.h>
-#if defined(_WIN32)
-#include <windows.h>
-#else
 #include <semaphore.h>
-#include <pthread.h>
-#endif
 
 #include <jack/types.h>
 #include <jack/jack.h>
@@ -77,15 +71,12 @@
 #include "pa_ringbuffer.h"
 #include "pa_debugprint.h"
 
-#include "pa_jack_dynload.h"
+#include "pa_jack.h"
 
-#if defined(WIN32)
-static DWORD mainThread_;
-#else
 static pthread_t mainThread_;
-#endif
 static char *jackErr_ = NULL;
 static const char* clientName_ = "PortAudio";
+static const char* port_regex_suffix = ":.*";
 
 #define STRINGIZE_HELPER(expr) #expr
 #define STRINGIZE(expr) STRINGIZE_HELPER(expr)
@@ -96,7 +87,7 @@ static const char* clientName_ = "PortAudio";
         PaError paErr; \
         if( (paErr = (expr)) < paNoError ) \
         { \
-            if( (paErr) == paUnanticipatedHostError && PaJack_IsOnMainThread() ) \
+            if( (paErr) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
             { \
                 const char *err = jackErr_; \
                 if (! err ) err = "unknown error"; \
@@ -112,7 +103,7 @@ static const char* clientName_ = "PortAudio";
     do { \
         if( (expr) == 0 ) \
         { \
-            if( (code) == paUnanticipatedHostError && PaJack_IsOnMainThread() ) \
+            if( (code) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
             { \
                 const char *err = jackErr_; \
                 if (!err) err = "unknown error"; \
@@ -178,13 +169,8 @@ typedef struct
     int jack_buffer_size;
     PaHostApiIndex hostApiIndex;
 
-#if defined(WIN32)
-    HANDLE mtx;
-    HANDLE cond;
-#else
     pthread_mutex_t mtx;
     pthread_cond_t cond;
-#endif
     unsigned long inputBase, outputBase;
 
     /* For dealing with the process thread */
@@ -241,11 +227,7 @@ typedef struct PaJackStream
     PaUtilRingBuffer        inFIFO;
     PaUtilRingBuffer        outFIFO;
     volatile sig_atomic_t   data_available;
-#if defined(WIN32)
-    HANDLE                  data_event;
-#else
     sem_t                   data_semaphore;
-#endif
     int                     bytesPerFrame;
     int                     samplesPerFrame;
 
@@ -273,178 +255,6 @@ static int JackCallback( jack_nframes_t frames, void *userData );
  *
  */
 
-static void PaJack_InitMainThread( void )
-{
-#if defined(WIN32)
-    mainThread_ = GetCurrentThreadId();
-#else
-    mainThread_ = pthread_self();
-#endif
-}
-
-static int PaJack_IsOnMainThread( void )
-{
-#if defined(WIN32)
-    return GetCurrentThreadId() == mainThread_;
-#else
-    return pthread_self() == mainThread_;
-#endif
-}
-
-static void PaJack_InitHostApiMutex( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    ASSERT_CALL( (hostApi->mtx = CreateMutex( NULL, FALSE, NULL )) == NULL, 0 );
-#else
-    ASSERT_CALL( pthread_mutex_init( &hostApi->mtx, NULL ), 0 );
-#endif
-}
-
-static void PaJack_TerminateHostApiMutex( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    CloseHandle( hostApi->mtx );
-    hostApi->mtx = NULL;
-#else
-    ASSERT_CALL( pthread_mutex_destroy( &hostApi->mtx ), 0 );
-#endif
-}
-
-static void PaJack_LockHostAPI( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    ASSERT_CALL( WaitForSingleObject( hostApi->mtx, INFINITE ), 0 );
-#else
-    ASSERT_CALL( pthread_mutex_lock( &hostApi->mtx ), 0 );
-#endif
-}
-
-/* returns 0 on success, -1 on failure ??? or similar. document make sure it's correct etc */
-static int PaJack_TryLockHostAPI( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    return WaitForSingleObject( hostApi->mtx, 0 ) == WAIT_OBJECT_0 ? 0 : -1;
-#else
-    return ( pthread_mutex_trylock( &hostApi->mtx ) == 0 ? 0 : -1 );
-#endif
-}
-
-static void PaJack_UnlockHostAPI( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    ReleaseMutex( hostApi->mtx );
-#else    
-    ASSERT_CALL( pthread_mutex_unlock( &hostApi->mtx ), 0 );
-#endif
-}
-
-static void PaJack_InitCommandSync( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    hostApi->cond = CreateEvent( NULL, FALSE, FALSE, NULL );
-    assert( hostApi->cond );
-#else
-    ASSERT_CALL( pthread_cond_init( &hostApi->cond, NULL ), 0 );
-#endif
-}
-
-static void PaJack_TerminateCommandSync( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    CloseHandle( hostApi->cond );
-    hostApi->cond = NULL;
-#else
-    ASSERT_CALL( pthread_cond_init( &hostApi->cond, NULL ), 0 );
-#endif
-}
-
-static void PaJack_SignalCommandCompleted( PaJackHostApiRepresentation *hostApi )
-{
-#if defined(WIN32)
-    ASSERT_CALL( !SetEvent( hostApi->cond ), 0 );
-#else
-    ASSERT_CALL( pthread_cond_signal( &hostApi->cond ), 0 );
-#endif
-}
-
-static PaError WaitForCommandToComplete( PaJackHostApiRepresentation *hostApi )
-{
-    PaError result = paNoError;
-
-#if defined(WIN32)
-    switch( SignalObjectAndWait( hostApi->mtx, hostApi->cond, 10 * 60 * 1000, FALSE ) )
-    {
-        case WAIT_OBJECT_0:
-             result = paNoError;
-        break;
-        case WAIT_TIMEOUT:
-             result = paTimedOut;
-        break;
-        default:
-             result = paInternalError;
-        break;
-    }
-    PaJack_LockHostAPI( hostApi );
-#else
-    int err = 0;
-    PaTime pt = PaUtil_GetTime();
-    struct timespec ts;
-
-    ts.tv_sec = (time_t) floor( pt + 10 * 60 /* 10 minutes */ );
-    ts.tv_nsec = (long) ((pt - floor( pt )) * 1000000000);
-    /* XXX: Best enclose in loop, in case of spurious wakeups? */
-    err = pthread_cond_timedwait( &hostApi->cond, &hostApi->mtx, &ts );
-
-    /* Make sure we didn't time out */
-    UNLESS( err != ETIMEDOUT, paTimedOut );
-    UNLESS( !err, paInternalError );
-error:
-#endif
-
-    return result;
-}
-
-static void PaJack_InitStreamDataSync( PaJackStream *stream )
-{
-#if defined(WIN32)
-    stream->data_event = CreateEvent( NULL, FALSE, FALSE, NULL );
-    assert( stream->data_event );
-#else
-    ASSERT_CALL( sem_init( &stream->data_semaphore, 0, 0 ) == -1, 0);
-#endif
-}
-
-static void PaJack_TerminateStreamDataSync( PaJackStream *stream )
-{
-#if defined(WIN32)
-    CloseHandle( stream->data_event );
-#else
-    sem_destroy( &stream->data_semaphore );
-#endif
-}
-
-static void PaJack_SignalStreamDataAvailable( PaJackStream *stream )
-{
-#if defined(WIN32)
-    SetEvent( stream->data_event );
-#else
-    sem_post( &stream->data_semaphore );
-#endif
-}
-
-static void PaJack_WaitForStreamDataToBecomeAvailable( PaJackStream *stream )
-{
-#if defined(WIN32)
-    WaitForSingleObject( stream->data_event, INFINITE );
-#else
-    sem_wait( &stream->data_semaphore );
-#endif
-}
-
-#if defined(WIN32) && _MSC_VER < 1900
-#define snprintf _snprintf
-#endif
-
 /* ---- blocking emulation layer ---- */
 
 /* Allocate buffer. */
@@ -468,10 +278,10 @@ static PaError BlockingTermFIFO( PaUtilRingBuffer *rbuf )
 static int
 BlockingCallback( const void                      *inputBuffer,
                   void                            *outputBuffer,
-		  unsigned long                    framesPerBuffer,
-		  const PaStreamCallbackTimeInfo*  timeInfo,
-		  PaStreamCallbackFlags            statusFlags,
-		  void                             *userData )
+                  unsigned long                    framesPerBuffer,
+                  const PaStreamCallbackTimeInfo*  timeInfo,
+                  PaStreamCallbackFlags            statusFlags,
+                  void                             *userData )
 {
     struct PaJackStream *stream = (PaJackStream *)userData;
     long numBytes = stream->bytesPerFrame * framesPerBuffer;
@@ -491,7 +301,7 @@ BlockingCallback( const void                      *inputBuffer,
     if( !stream->data_available )
     {
         stream->data_available = 1;
-        PaJack_SignalStreamDataAvailable( stream );
+        sem_post( &stream->data_semaphore );
     }
     return paContinue;
 }
@@ -530,7 +340,7 @@ BlockingBegin( PaJackStream *stream, int minimum_buffer_size )
     }
 
     stream->data_available = 0;
-    PaJack_InitStreamDataSync( stream );
+    sem_init( &stream->data_semaphore, 0, 0 );
 
 error:
     return result;
@@ -542,7 +352,7 @@ BlockingEnd( PaJackStream *stream )
     BlockingTermFIFO( &stream->inFIFO );
     BlockingTermFIFO( &stream->outFIFO );
 
-    PaJack_TerminateStreamDataSync( stream );
+    sem_destroy( &stream->data_semaphore );
 }
 
 static PaError BlockingReadStream( PaStream* s, void *data, unsigned long numFrames )
@@ -564,7 +374,7 @@ static PaError BlockingReadStream( PaStream* s, void *data, unsigned long numFra
             if( stream->data_available )
                 stream->data_available = 0;
             else
-                PaJack_WaitForStreamDataToBecomeAvailable( stream );
+                sem_wait( &stream->data_semaphore );
         }
     }
 
@@ -602,7 +412,7 @@ static PaError BlockingWriteStream( PaStream* s, const void *data, unsigned long
             if( stream->data_available )
                 stream->data_available = 0;
             else
-                PaJack_WaitForStreamDataToBecomeAvailable( stream );
+                sem_wait( &stream->data_semaphore );
         }
     }
 
@@ -635,12 +445,44 @@ BlockingWaitEmpty( PaStream *s )
     while( PaUtil_GetRingBufferReadAvailable( &stream->outFIFO ) > 0 )
     {
         stream->data_available = 0;
-        PaJack_WaitForStreamDataToBecomeAvailable( stream );
+        sem_wait( &stream->data_semaphore );
     }
     return 0;
 }
 
 /* ---- jack driver ---- */
+
+/* copy null terminated string source to destination, escaping regex characters with '\\' in the process */
+static void copy_string_and_escape_regex_chars( char *destination, const char *source, size_t destbuffersize )
+{
+    assert( destination != source );
+    assert( destbuffersize > 0 );
+
+    char *dest = destination;
+    /* dest_stop is the last location that we can null-terminate the string */
+    char *dest_stop = destination + (destbuffersize - 1);
+
+    const char *src = source;
+
+    while ( *src != '\0' && dest != dest_stop )
+    {
+        const char c = *src;
+        if ( strchr( "\\()[]{}*+?|$^.", c ) != NULL )
+        {
+            if( (dest + 1) == dest_stop )
+                break; /* only proceed if we can write both c and the escape */
+
+            *dest = '\\';
+            dest++;
+        }
+        *dest = c;
+        dest++;
+
+        src++;
+    }
+
+    *dest = '\0';
+}
 
 /* BuildDeviceList():
  *
@@ -663,9 +505,14 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
 
     const char **jack_ports = NULL;
     char **client_names = NULL;
-    char *regex_pattern = NULL;
+    char *port_regex_string = NULL;
+    // In the worst case scenario, every character would be escaped, doubling the string size.
+    // Add 1 for null terminator.
+    size_t device_name_regex_escaped_size = jack_client_name_size() * 2 + 1;
+    size_t port_regex_size = device_name_regex_escaped_size + strlen(port_regex_suffix);
     int port_index, client_index, i;
     double globalSampleRate;
+    regex_t port_regex;
     unsigned long numClients = 0, numPorts = 0;
     char *tmp_client_name = NULL;
 
@@ -673,11 +520,14 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
     commonApi->info.defaultOutputDevice = paNoDevice;
     commonApi->info.deviceCount = 0;
 
+    /* Parse the list of ports, using a regex to grab the client names */
+    ASSERT_CALL( regcomp( &port_regex, "^[^:]*", REG_EXTENDED ), 0 );
+
     /* since we are rebuilding the list of devices, free all memory
      * associated with the previous list */
     PaUtil_FreeAllAllocations( jackApi->deviceInfoMemory );
 
-    regex_pattern = PaUtil_GroupAllocateMemory( jackApi->deviceInfoMemory, jack_client_name_size() + 3 );
+    port_regex_string = PaUtil_GroupAllocateMemory( jackApi->deviceInfoMemory, port_regex_size );
     tmp_client_name = PaUtil_GroupAllocateMemory( jackApi->deviceInfoMemory, jack_client_name_size() );
 
     /* We can only retrieve the list of clients indirectly, by first
@@ -685,7 +535,7 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
      * according to the client_name:port_name convention (which is
      * enforced by jackd)
      * A: If jack_get_ports returns NULL, there's nothing for us to do */
-    UNLESS( (jack_ports = jack_get_ports( jackApi->jack_client, "^[^:]*", JACK_PORT_TYPE_FILTER, 0 )) && jack_ports[0], paNoError );
+    UNLESS( (jack_ports = jack_get_ports( jackApi->jack_client, "", JACK_PORT_TYPE_FILTER, 0 )) && jack_ports[0], paNoError );
     /* Find number of ports */
     while( jack_ports[numPorts] )
         ++numPorts;
@@ -697,15 +547,17 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
     for( numClients = 0, port_index = 0; jack_ports[port_index] != NULL; port_index++ )
     {
         int client_seen = FALSE;
+        regmatch_t match_info;
         const char *port = jack_ports[port_index];
-        const char *colon;
+        PA_DEBUG(( "JACK port found: %s\n", port ));
 
         /* extract the client name from the port name, using a regex
          * that parses the clientname:portname syntax */
-        UNLESS( colon = strchr(port, ':'), paInternalError );
-        assert(colon - port < jack_client_name_size());
-        memcpy( tmp_client_name, port, colon - port );
-        tmp_client_name[colon - port] = '\0';
+        UNLESS( !regexec( &port_regex, port, 1, &match_info, 0 ), paInternalError );
+        assert(match_info.rm_eo - match_info.rm_so < jack_client_name_size());
+        memcpy( tmp_client_name, port + match_info.rm_so,
+                match_info.rm_eo - match_info.rm_so );
+        tmp_client_name[match_info.rm_eo - match_info.rm_so] = '\0';
 
         /* do we know about this port's client yet? */
         for( i = 0; i < numClients; i++ )
@@ -770,11 +622,13 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
 
         /* To determine how many input and output channels are available,
          * we re-query jackd with more specific parameters. */
-
-        sprintf( regex_pattern, "%s:.*", client_names[client_index] );
+        copy_string_and_escape_regex_chars( port_regex_string,
+                            client_names[client_index],
+                            device_name_regex_escaped_size );
+        strncat( port_regex_string, port_regex_suffix, port_regex_size );
 
         /* ... what are your output ports (that we could input from)? */
-        clientPorts = jack_get_ports( jackApi->jack_client, regex_pattern,
+        clientPorts = jack_get_ports( jackApi->jack_client, port_regex_string,
                                      JACK_PORT_TYPE_FILTER, JackPortIsOutput);
         curDevInfo->maxInputChannels = 0;
         curDevInfo->defaultLowInputLatency = 0.;
@@ -791,11 +645,11 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
                  * We don't care what they are, we just care how many */
                 curDevInfo->maxInputChannels++;
             }
-            jack_free(clientPorts);
+            free(clientPorts);
         }
 
         /* ... what are your input ports (that we could output to)? */
-        clientPorts = jack_get_ports( jackApi->jack_client, regex_pattern,
+        clientPorts = jack_get_ports( jackApi->jack_client, port_regex_string,
                                      JACK_PORT_TYPE_FILTER, JackPortIsInput);
         curDevInfo->maxOutputChannels = 0;
         curDevInfo->defaultLowOutputLatency = 0.;
@@ -812,8 +666,13 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
                  * We don't care what they are, we just care how many */
                 curDevInfo->maxOutputChannels++;
             }
-            jack_free(clientPorts);
+            free(clientPorts);
         }
+
+        PA_DEBUG(( "Adding JACK device %s with %d input channels and %d output channels\n",
+                   client_names[client_index],
+                   curDevInfo->maxInputChannels,
+                   curDevInfo->maxOutputChannels ));
 
         /* Add this client to the list of devices */
         commonApi->deviceInfos[client_index] = curDevInfo;
@@ -825,7 +684,8 @@ static PaError BuildDeviceList( PaJackHostApiRepresentation *jackApi )
     }
 
 error:
-    jack_free( jack_ports );
+    regfree( &port_regex );
+    free( jack_ports );
     return result;
 }
 
@@ -838,7 +698,7 @@ static void UpdateSampleRate( PaJackStream *stream, double sampleRate )
 
 static void JackErrorCallback( const char *msg )
 {
-    if( PaJack_IsOnMainThread() )
+    if( pthread_self() == mainThread_ )
     {
         assert( msg );
         jackErr_ = realloc( jackErr_, strlen( msg ) + 1 );
@@ -858,10 +718,11 @@ static void JackOnShutdown( void *arg )
     }
 
     /* Make sure that the main thread doesn't get stuck waiting on the condition */
-    PaJack_LockHostAPI( jackApi );
+    ASSERT_CALL( pthread_mutex_lock( &jackApi->mtx ), 0 );
     jackApi->jackIsDown = 1;
-    PaJack_SignalCommandCompleted( jackApi );
-    PaJack_UnlockHostAPI( jackApi );
+    ASSERT_CALL( pthread_cond_signal( &jackApi->cond ), 0 );
+    ASSERT_CALL( pthread_mutex_unlock( &jackApi->mtx ), 0 );
+
 }
 
 static int JackSrCb( jack_nframes_t nframes, void *arg )
@@ -896,20 +757,18 @@ PaError PaJack_Initialize( PaUtilHostApiRepresentation **hostApi,
                            PaHostApiIndex hostApiIndex )
 {
     PaError result = paNoError;
-    PaJackHostApiRepresentation *jackHostApi = NULL;
+    PaJackHostApiRepresentation *jackHostApi;
     int activated = 0;
     jack_status_t jackStatus = 0;
     *hostApi = NULL;    /* Initialize to NULL */
-
-    UNLESS( PaJack_Load(), paNoError );
 
     UNLESS( jackHostApi = (PaJackHostApiRepresentation*)
         PaUtil_AllocateMemory( sizeof(PaJackHostApiRepresentation) ), paInsufficientMemory );
     UNLESS( jackHostApi->deviceInfoMemory = PaUtil_CreateAllocationGroup(), paInsufficientMemory );
 
-    PaJack_InitMainThread();
-    PaJack_InitHostApiMutex( jackHostApi );
-    PaJack_InitCommandSync( jackHostApi );
+    mainThread_ = pthread_self();
+    ASSERT_CALL( pthread_mutex_init( &jackHostApi->mtx, NULL ), 0 );
+    ASSERT_CALL( pthread_cond_init( &jackHostApi->cond, NULL ), 0 );
 
     /* Try to become a client of the JACK server.  If we cannot do
      * this, then this API cannot be used.
@@ -995,9 +854,6 @@ error:
 
         PaUtil_FreeMemory( jackHostApi );
     }
-
-    PaJack_Unload();
-
     return result;
 }
 
@@ -1008,18 +864,12 @@ static void Terminate( struct PaUtilHostApiRepresentation *hostApi )
 
     /* note: this automatically disconnects all ports, since a deactivated
      * client is not allowed to have any ports connected */
-    if( !jackHostApi->jackIsDown )
-    { 
-        ASSERT_CALL( jack_deactivate( jackHostApi->jack_client ), 0 );
-    }
+    ASSERT_CALL( jack_deactivate( jackHostApi->jack_client ), 0 );
 
-    PaJack_TerminateHostApiMutex( jackHostApi );
-    PaJack_TerminateCommandSync( jackHostApi );
+    ASSERT_CALL( pthread_mutex_destroy( &jackHostApi->mtx ), 0 );
+    ASSERT_CALL( pthread_cond_destroy( &jackHostApi->cond ), 0 );
 
-    if( !jackHostApi->jackIsDown )
-    { 
-        ASSERT_CALL( jack_client_close( jackHostApi->jack_client ), 0 );
-    }
+    ASSERT_CALL( jack_client_close( jackHostApi->jack_client ), 0 );
 
     if( jackHostApi->deviceInfoMemory )
     {
@@ -1031,8 +881,6 @@ static void Terminate( struct PaUtilHostApiRepresentation *hostApi )
 
     free( jackErr_ );
     jackErr_ = NULL;
-
-    PaJack_Unload();
 }
 
 static PaError IsFormatSupported( struct PaUtilHostApiRepresentation *hostApi,
@@ -1115,7 +963,7 @@ static PaError IsFormatSupported( struct PaUtilHostApiRepresentation *hostApi,
 
 #define ABS(x) ( (x) > 0 ? (x) : -(x) )
     if( ABS(sampleRate - jack_get_sample_rate(((PaJackHostApiRepresentation *) hostApi)->jack_client )) > 1 )
-       return paInvalidSampleRate;
+        return paInvalidSampleRate;
 #undef ABS
 
     return paFormatIsSupported;
@@ -1200,19 +1048,39 @@ static void CleanUpStream( PaJackStream *stream, int terminateStreamRepresentati
     PaUtil_FreeMemory( stream );
 }
 
+static PaError WaitCondition( PaJackHostApiRepresentation *hostApi )
+{
+    PaError result = paNoError;
+    int err = 0;
+    PaTime pt = PaUtil_GetTime();
+    struct timespec ts;
+
+    ts.tv_sec = (time_t) floor( pt + 10 * 60 /* 10 minutes */ );
+    ts.tv_nsec = (long) ((pt - floor( pt )) * 1000000000);
+    /* XXX: Best enclose in loop, in case of spurious wakeups? */
+    err = pthread_cond_timedwait( &hostApi->cond, &hostApi->mtx, &ts );
+
+    /* Make sure we didn't time out */
+    UNLESS( err != ETIMEDOUT, paTimedOut );
+    UNLESS( !err, paInternalError );
+
+error:
+    return result;
+}
+
 static PaError AddStream( PaJackStream *stream )
 {
     PaError result = paNoError;
     PaJackHostApiRepresentation *hostApi = stream->hostApi;
     /* Add to queue of streams that should be processed */
-    PaJack_LockHostAPI( hostApi );
+    ASSERT_CALL( pthread_mutex_lock( &hostApi->mtx ), 0 );
     if( !hostApi->jackIsDown )
     {
         hostApi->toAdd = stream;
         /* Unlock mutex and await signal from processing thread */
-        result = WaitForCommandToComplete( stream->hostApi );
+        result = WaitCondition( stream->hostApi );
     }
-    PaJack_UnlockHostAPI( hostApi );
+    ASSERT_CALL( pthread_mutex_unlock( &hostApi->mtx ), 0 );
     ENSURE_PA( result );
 
     UNLESS( !hostApi->jackIsDown, paDeviceUnavailable );
@@ -1228,14 +1096,14 @@ static PaError RemoveStream( PaJackStream *stream )
     PaJackHostApiRepresentation *hostApi = stream->hostApi;
 
     /* Add to queue over streams that should be processed */
-    PaJack_LockHostAPI( hostApi );
+    ASSERT_CALL( pthread_mutex_lock( &hostApi->mtx ), 0 );
     if( !hostApi->jackIsDown )
     {
         hostApi->toRemove = stream;
         /* Unlock mutex and await signal from processing thread */
-        result = WaitForCommandToComplete( stream->hostApi );
+        result = WaitCondition( stream->hostApi );
     }
-    PaJack_UnlockHostAPI( hostApi );
+    ASSERT_CALL( pthread_mutex_unlock( &hostApi->mtx ), 0 );
     ENSURE_PA( result );
 
 error:
@@ -1257,8 +1125,11 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
     PaJackHostApiRepresentation *jackHostApi = (PaJackHostApiRepresentation*)hostApi;
     PaJackStream *stream = NULL;
     char *port_string = PaUtil_GroupAllocateMemory( jackHostApi->deviceInfoMemory, jack_port_name_size() );
-    unsigned long regexSz = jack_client_name_size() + 3;
-    char *regex_pattern = PaUtil_GroupAllocateMemory( jackHostApi->deviceInfoMemory, regexSz );
+    // In the worst case every character would be escaped which would double the string length.
+    // Add 1 for null terminator
+    size_t regex_escaped_client_name_size = jack_client_name_size() * 2 + 1;
+    unsigned long regex_size = regex_escaped_client_name_size + strlen(port_regex_suffix);
+    char *regex_pattern = PaUtil_GroupAllocateMemory( jackHostApi->deviceInfoMemory, regex_size );
     const char **jack_ports = NULL;
     /* int jack_max_buffer_size = jack_get_buffer_size( jackHostApi->jack_client ); */
     int i;
@@ -1338,7 +1209,7 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
 
 #define ABS(x) ( (x) > 0 ? (x) : -(x) )
     if( ABS(sampleRate - jackSr) > 1 )
-       return paInvalidSampleRate;
+        return paInvalidSampleRate;
 #undef ABS
 
     UNLESS( stream = (PaJackStream*)PaUtil_AllocateMemory( sizeof(PaJackStream) ), paInsufficientMemory );
@@ -1348,7 +1219,7 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
     stream->isBlockingStream = !streamCallback;
     if( stream->isBlockingStream )
     {
-        PaTime latency = 0.001f; /* 1ms is the absolute minimum we support */
+        float latency = 0.001; /* 1ms is the absolute minimum we support */
         int   minimum_buffer_frames = 0;
 
         if( inputParameters && inputParameters->suggestedLatency > latency )
@@ -1416,7 +1287,10 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
         int err = 0;
 
         /* Get output ports of our capture device */
-        snprintf( regex_pattern, regexSz, "%s:.*", hostApi->deviceInfos[ inputParameters->device ]->name );
+        copy_string_and_escape_regex_chars( regex_pattern,
+                 hostApi->deviceInfos[ inputParameters->device ]->name,
+                 regex_escaped_client_name_size );
+        strncat( regex_pattern, port_regex_suffix, regex_size );
         UNLESS( jack_ports = jack_get_ports( jackHostApi->jack_client, regex_pattern,
                                      JACK_PORT_TYPE_FILTER, JackPortIsOutput ), paUnanticipatedHostError );
         for( i = 0; i < inputChannelCount && jack_ports[i]; i++ )
@@ -1428,7 +1302,7 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
                 break;
             }
         }
-        jack_free( jack_ports );
+        free( jack_ports );
         UNLESS( !err, paInsufficientMemory );
 
         /* Fewer ports than expected? */
@@ -1440,7 +1314,10 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
         int err = 0;
 
         /* Get input ports of our playback device */
-        snprintf( regex_pattern, regexSz, "%s:.*", hostApi->deviceInfos[ outputParameters->device ]->name );
+        copy_string_and_escape_regex_chars( regex_pattern,
+                 hostApi->deviceInfos[ outputParameters->device ]->name,
+                 regex_escaped_client_name_size );
+        strncat( regex_pattern, port_regex_suffix, regex_size );
         UNLESS( jack_ports = jack_get_ports( jackHostApi->jack_client, regex_pattern,
                                      JACK_PORT_TYPE_FILTER, JackPortIsInput ), paUnanticipatedHostError );
         for( i = 0; i < outputChannelCount && jack_ports[i]; i++ )
@@ -1452,7 +1329,7 @@ static PaError OpenStream( struct PaUtilHostApiRepresentation *hostApi,
                 break;
             }
         }
-        jack_free( jack_ports );
+        free( jack_ports );
         UNLESS( !err , paInsufficientMemory );
 
         /* Fewer ports than expected? */
@@ -1606,9 +1483,9 @@ static PaError UpdateQueue( PaJackHostApiRepresentation *hostApi )
     const double jackSr = jack_get_sample_rate( hostApi->jack_client );
     int err;
 
-    if( (err = PaJack_TryLockHostAPI( hostApi )) != 0 )
+    if( (err = pthread_mutex_trylock( &hostApi->mtx )) != 0 )
     {
-        assert( err );
+        assert( err == EBUSY );
         return paNoError;
     }
 
@@ -1667,11 +1544,11 @@ static PaError UpdateQueue( PaJackHostApiRepresentation *hostApi )
     if( queueModified )
     {
         /* Signal that we've done what was asked of us */
-        PaJack_SignalCommandCompleted( hostApi );
+        ASSERT_CALL( pthread_cond_signal( &hostApi->cond ), 0 );
     }
 
 error:
-    PaJack_UnlockHostAPI( hostApi );
+    ASSERT_CALL( pthread_mutex_unlock( &hostApi->mtx ), 0 );
 
     return result;
 }
@@ -1700,7 +1577,7 @@ static int JackCallback( jack_nframes_t frames, void *userData )
         if( stream->doStart )
         {
             /* If we can't obtain a lock, we'll try next time */
-            int err = PaJack_TryLockHostAPI( stream->hostApi );
+            int err = pthread_mutex_trylock( &stream->hostApi->mtx );
             if( !err )
             {
                 if( stream->doStart )   /* Could potentially change before obtaining the lock */
@@ -1708,12 +1585,12 @@ static int JackCallback( jack_nframes_t frames, void *userData )
                     stream->is_active = 1;
                     stream->doStart = 0;
                     PA_DEBUG(( "%s: Starting stream\n", __FUNCTION__ ));
-                    PaJack_SignalCommandCompleted( hostApi );
+                    ASSERT_CALL( pthread_cond_signal( &stream->hostApi->cond ), 0 );
                     stream->callbackResult = paContinue;
                     stream->isSilenced = 0;
                 }
 
-                PaJack_UnlockHostAPI( stream->hostApi );
+                ASSERT_CALL( pthread_mutex_unlock( &stream->hostApi->mtx ), 0 );
             }
             else
                 assert( err == EBUSY );
@@ -1751,15 +1628,15 @@ static int JackCallback( jack_nframes_t frames, void *userData )
             if( !stream->is_active )   /* Ok, signal to the main thread that we've carried out the operation */
             {
                 /* If we can't obtain a lock, we'll try next time */
-                int err = PaJack_TryLockHostAPI( stream->hostApi );
+                int err = pthread_mutex_trylock( &stream->hostApi->mtx );
                 if( !err )
                 {
                     stream->doStop = stream->doAbort = 0;
-                    PaJack_SignalCommandCompleted( stream->hostApi );
-                    PaJack_UnlockHostAPI( stream->hostApi );
+                    ASSERT_CALL( pthread_cond_signal( &stream->hostApi->cond ), 0 );
+                    ASSERT_CALL( pthread_mutex_unlock( &stream->hostApi->mtx ), 0 );
                 }
                 else
-                    assert( err );
+                    assert( err == EBUSY );
             }
         }
     }
@@ -1787,7 +1664,7 @@ static PaError StartStream( PaStream *s )
         {
             int r = jack_connect( stream->jack_client, jack_port_name( stream->remote_output_ports[i] ),
                     jack_port_name( stream->local_input_ports[i] ) );
-           UNLESS( 0 == r || EEXIST == r, paUnanticipatedHostError );
+            UNLESS( 0 == r || EEXIST == r, paUnanticipatedHostError );
         }
     }
 
@@ -1797,7 +1674,7 @@ static PaError StartStream( PaStream *s )
         {
             int r = jack_connect( stream->jack_client, jack_port_name( stream->local_output_ports[i] ),
                     jack_port_name( stream->remote_input_ports[i] ) );
-           UNLESS( 0 == r || EEXIST == r, paUnanticipatedHostError );
+            UNLESS( 0 == r || EEXIST == r, paUnanticipatedHostError );
         }
     }
 
@@ -1805,11 +1682,11 @@ static PaError StartStream( PaStream *s )
 
     /* Enable processing */
 
-    PaJack_LockHostAPI( stream->hostApi );
+    ASSERT_CALL( pthread_mutex_lock( &stream->hostApi->mtx ), 0 );
     stream->doStart = 1;
 
     /* Wait for stream to be started */
-    result = WaitForCommandToComplete( stream->hostApi );
+    result = WaitCondition( stream->hostApi );
     /*
     do
     {
@@ -1821,7 +1698,7 @@ static PaError StartStream( PaStream *s )
         stream->doStart = 0;
         stream->is_active = 0;  /* Cancel any processing */
     }
-    PaJack_UnlockHostAPI( stream->hostApi );
+    ASSERT_CALL( pthread_mutex_unlock( &stream->hostApi->mtx ), 0 );
 
     ENSURE_PA( result );
 
@@ -1840,15 +1717,15 @@ static PaError RealStop( PaJackStream *stream, int abort )
     if( stream->isBlockingStream )
         BlockingWaitEmpty ( stream );
 
-    PaJack_LockHostAPI( stream->hostApi );
+    ASSERT_CALL( pthread_mutex_lock( &stream->hostApi->mtx ), 0 );
     if( abort )
         stream->doAbort = 1;
     else
         stream->doStop = 1;
 
     /* Wait for stream to be stopped */
-    result = WaitForCommandToComplete( stream->hostApi );
-    PaJack_UnlockHostAPI( stream->hostApi );
+    result = WaitCondition( stream->hostApi );
+    ASSERT_CALL( pthread_mutex_unlock( &stream->hostApi->mtx ), 0 );
     ENSURE_PA( result );
 
     UNLESS( !stream->is_active, paInternalError );
@@ -1946,3 +1823,4 @@ PaError PaJack_GetClientName(const char** clientName)
 error:
     return result;
 }
+
