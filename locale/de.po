@@ -18502,7 +18502,7 @@ msgstr "Strg+Klick"
 msgid "%s to select or deselect track. Drag up or down to change track order."
 msgstr ""
 "%s um Spur auszuwählen oder abzuwählen. Hoch oder runter ziehen, um "
-"Reihenfolgeder Spuren zu ändern."
+"Reihenfolge der Spuren zu ändern."
 
 #. i18n-hint: %s is replaced by (translation of) 'Ctrl+Click' on windows, 'Command+Click' on Mac
 #: src/tracks/ui/TrackSelectHandle.cpp
