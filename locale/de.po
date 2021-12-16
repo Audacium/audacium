@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: audacium - 78c701d \n"
 "Report-Msgid-Bugs-To: audacium-translation@riseup.net\n"
 "POT-Creation-Date: 2021-06-07 08:17-0400\n"
-"PO-Revision-Date: 2021-06-10 20:28+0200\n"
+"PO-Revision-Date: 2021-12-15 00:00+0000\n"
 "Last-Translator: jhuffer <joachim.huffer@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/klyok/audacity/language/"
 "de/)\n"
@@ -1178,7 +1178,7 @@ msgstr ""
 "finden.\n"
 "Audacium benötigt einen Ort an dem automatische Aufräum-Programme die "
 "temporären Dateien nicht löschen.\n"
-"Bitte geben sie ein geeignetes Verzeichnis im Einstellungsdialog ein."
+"Bitte geben Sie ein geeignetes Verzeichnis im Einstellungsdialog ein."
 
 #: src/AudacityApp.cpp
 msgid ""
@@ -1186,7 +1186,7 @@ msgid ""
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
 "Audacium konnte keinen Platz zum Speichern der temporären Dateien finden.\n"
-"Bitte geben sie ein geeignetes Verzeichnis im Einstellungsdialog ein."
+"Bitte geben Sie ein geeignetes Verzeichnis im Einstellungsdialog ein."
 
 #: src/AudacityApp.cpp
 msgid ""
@@ -4601,7 +4601,7 @@ msgid ""
 msgstr ""
 "Das Projekt wurde nicht gespeichert, weil der angegebene Name ein anderes "
 "Projekt überschreiben würde.\n"
-"Bitte wählen sie einen anderen Namen."
+"Bitte wählen Sie einen anderen Namen."
 
 #: src/ProjectFileManager.cpp
 #, c-format
@@ -5556,7 +5556,7 @@ msgstr ""
 "Der ausgewählte Dateiname kann nicht\n"
 "für zeitgesteuerte Aufnahmen verwendet werden,\n"
 "weil er ein anderes Projekt überschreiben würde.\n"
-"Bitte verwenden sie einen anderen Namen."
+"Bitte verwenden Sie einen anderen Namen."
 
 #: src/TimerRecordDialog.cpp
 msgid "Error Saving Timer Recording Project"
@@ -9054,7 +9054,7 @@ msgid ""
 msgstr ""
 "Wählen Sie sämtliches zu filterndes Audio aus. Wählen Sie dann, wieviel "
 "Rauschen heraus\n"
-"gefiltert werden soll und klicken sie auf „OK“, um die Rausch-Verminderung "
+"gefiltert werden soll und klicken Sie auf „OK“, um die Rausch-Verminderung "
 "zu starten.\n"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
@@ -9169,7 +9169,7 @@ msgid ""
 msgstr ""
 "Wählen Sie sämtliches zu filterndes Audio aus. Wählen Sie dann, wieviel "
 "Rauschen heraus\n"
-"gefiltert werden soll und klicken sie auf „OK“, um die Rausch-Entfernung zu "
+"gefiltert werden soll und klicken Sie auf „OK“, um die Rausch-Entfernung zu "
 "starten.\n"
 
 #: src/effects/NoiseRemoval.cpp
@@ -12344,7 +12344,7 @@ msgstr ""
 "Audacium kann diese Datei nicht öffnen, weil sie nur Verweise auf andere "
 "Dateien enthält.\n"
 "\n"
-"Diese Dateien können sie eventuell ausfindig machen,\n"
+"Diese Dateien können Sie eventuell ausfindig machen,\n"
 "indem Sie die Wiedergabeliste mit einem Texteditor öffnen."
 
 #. i18n-hint: %s will be the filename
