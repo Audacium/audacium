@@ -48,7 +48,6 @@ apt_packages_full_deps=(
     libsoundtouch-dev
     libtwolame-dev
     libssl-dev
-    libcurl4-openssl-dev
     libpng-dev
     libjpeg-turbo8-dev
 )

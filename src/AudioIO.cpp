@@ -1023,25 +1023,32 @@ void AudioIO::Init()
 #endif
 
    // Make sure device prefs are initialized
-   if (gPrefs->Read(wxT("AudioIO/RecordingDevice"), wxT("")).empty()) {
-      int i = getRecordDevIndex();
-      const PaDeviceInfo *info = Pa_GetDeviceInfo(i);
-      if (info) {
-         AudioIORecordingDevice.Write(DeviceName(info));
-         AudioIOHost.Write(HostName(info));
-      }
-   }
+   InitializeDevices();
+}
 
-   if (gPrefs->Read(wxT("AudioIO/PlaybackDevice"), wxT("")).empty()) {
-      int i = getPlayDevIndex();
-      const PaDeviceInfo *info = Pa_GetDeviceInfo(i);
-      if (info) {
-         AudioIOPlaybackDevice.Write(DeviceName(info));
-         AudioIOHost.Write(HostName(info));
-      }
-   }
+void AudioIO::InitializeDevices()
+{
+    AudioIORecordingDevice.Reset();
+    AudioIOPlaybackDevice.Reset();
+    AudioIOHost.Reset();
 
-   gPrefs->Flush();
+    if (gPrefs->Read(wxT("AudioIO/RecordingDevice"), wxT("")).empty()) {
+        int i = getRecordDevIndex();
+        const PaDeviceInfo* info = Pa_GetDeviceInfo(i);
+        if (info) {
+            AudioIORecordingDevice.Write(DeviceName(info));
+            AudioIOHost.Write(HostName(info));
+        }
+    }
+
+    if (gPrefs->Read(wxT("AudioIO/PlaybackDevice"), wxT("")).empty()) {
+        int i = getPlayDevIndex();
+        const PaDeviceInfo* info = Pa_GetDeviceInfo(i);
+        if (info) {
+            AudioIOPlaybackDevice.Write(DeviceName(info));
+            AudioIOHost.Write(HostName(info));
+        }
+    }
 }
 
 void AudioIO::Deinit()

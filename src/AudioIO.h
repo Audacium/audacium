@@ -725,6 +725,8 @@ public:
     */
    double GetStreamTime();
 
+   static void InitializeDevices();
+
    friend class AudioThread;
 #ifdef EXPERIMENTAL_MIDI_OUT
    friend class MidiThread;

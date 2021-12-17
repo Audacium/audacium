@@ -35,6 +35,8 @@ other settings.
 #include <wx/log.h>
 #include <wx/textctrl.h>
 
+#include <string>
+
 #include "portaudio.h"
 
 #include "../Prefs.h"
@@ -45,12 +47,14 @@ enum {
    HostID = 10000,
    PlayID,
    RecordID,
-   ChannelsID
+   ChannelsID,
+   RefreshID
 };
 
 BEGIN_EVENT_TABLE(DevicePrefs, PrefsPanel)
    EVT_CHOICE(HostID, DevicePrefs::OnHost)
    EVT_CHOICE(RecordID, DevicePrefs::OnDevice)
+   EVT_CHOICE(RefreshID, DevicePrefs::OnRefresh)
 END_EVENT_TABLE()
 
 DevicePrefs::DevicePrefs(wxWindow * parent, wxWindowID winid)
@@ -98,6 +102,8 @@ void DevicePrefs::Populate()
    PopulateOrExchange(S);
    // ----------------------- End of main section --------------
 
+   mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
+
    wxCommandEvent e;
    OnHost(e);
 }
@@ -127,6 +133,15 @@ void DevicePrefs::GetNamesAndLabels()
 
 void DevicePrefs::PopulateOrExchange(ShuttleGui & S)
 {
+   const PaVersionInfo* info = Pa_GetVersionInfo();
+
+   std::string str = "PortAudio v"
+       + std::to_string(info->versionMajor)
+       + "."
+       + std::to_string(info->versionMinor)
+       + "."
+       + std::to_string(info->versionSubMinor);
+
    S.SetBorder(2);
    S.StartScroller();
 
@@ -144,7 +159,7 @@ void DevicePrefs::PopulateOrExchange(ShuttleGui & S)
          );
 
          S.AddPrompt(XXO("Using:"));
-         S.AddFixedText( Verbatim(wxSafeConvertMB2WX(Pa_GetVersionText() ) ) );
+         S.AddFixedText( Verbatim(wxSafeConvertMB2WX(str.c_str())));
       }
       S.EndMultiColumn();
    }
@@ -176,6 +191,17 @@ void DevicePrefs::PopulateOrExchange(ShuttleGui & S)
                                  {} );
       }
       S.EndMultiColumn();
+   }
+   S.EndStatic();
+
+   S.StartStatic(XO("Interaction"));
+   {
+       S.StartMultiColumn(1);
+       {
+           S.Id(RefreshID);
+           mRefreshDevices = S.AddButton(XXO("Re&fresh de&vices"));
+       }
+       S.EndMultiColumn();
    }
    S.EndStatic();
 
@@ -319,6 +345,12 @@ void DevicePrefs::OnHost(wxCommandEvent & e)
    ShuttleGui::SetMinSize(mPlay, mPlay->GetStrings());
    ShuttleGui::SetMinSize(mRecord, mRecord->GetStrings());
    OnDevice(e);
+}
+
+void DevicePrefs::OnRefresh(wxCommandEvent & e)
+{
+    AudioIO::InitializeDevices();
+    OnHost(e);
 }
 
 void DevicePrefs::OnDevice(wxCommandEvent & WXUNUSED(event))

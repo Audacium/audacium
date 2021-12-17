@@ -38,6 +38,7 @@ class DevicePrefs final : public PrefsPanel
    void GetNamesAndLabels();
 
    void OnHost(wxCommandEvent & e);
+   void OnRefresh(wxCommandEvent & e);
    void OnDevice(wxCommandEvent & e);
 
    TranslatableStrings mHostNames;
@@ -52,6 +53,8 @@ class DevicePrefs final : public PrefsPanel
    wxChoice *mPlay;
    wxChoice *mRecord;
    wxChoice *mChannels;
+
+   wxButton *mRefreshDevices;
 
    DECLARE_EVENT_TABLE()
 };

@@ -115,7 +115,7 @@ PrefsPanel::Factories
       PathStart,
       {
          {wxT(""),
-       wxT("Device,Playback,Recording,Quality,GUI,Tracks,ImportExport,Directories,Warnings,Effects,KeyConfig,Mouse")
+       wxT("Device,Playback,Recording,Devices,Quality,GUI,Tracks,ImportExport,Directories,Warnings,Effects,KeyConfig,Mouse")
          },
          {wxT("/Tracks"), wxT("TracksBehaviors,Spectrum")},
       }
