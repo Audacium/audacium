@@ -102,8 +102,6 @@ void DevicePrefs::Populate()
    PopulateOrExchange(S);
    // ----------------------- End of main section --------------
 
-   mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
-
    wxCommandEvent e;
    OnHost(e);
 }
@@ -200,6 +198,7 @@ void DevicePrefs::PopulateOrExchange(ShuttleGui & S)
        {
            S.Id(RefreshID);
            mRefreshDevices = S.AddButton(XXO("Re&fresh de&vices"));
+           mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
        }
        S.EndMultiColumn();
    }

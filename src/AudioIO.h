@@ -591,6 +591,8 @@ public:
    // This might return null during application startup or shutdown
    static AudioIO *Get();
 
+   static void InitializeDevices();
+
    /** \brief Start up Portaudio for capture and recording as needed for
     * input monitoring and software playthrough only
     *
@@ -724,8 +726,6 @@ public:
     * t0 and t1
     */
    double GetStreamTime();
-
-   static void InitializeDevices();
 
    friend class AudioThread;
 #ifdef EXPERIMENTAL_MIDI_OUT
