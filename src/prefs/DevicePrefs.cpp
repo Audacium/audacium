@@ -88,8 +88,6 @@ void DevicePrefs::Populate()
    // First any pre-processing for constructing the GUI.
    GetNamesAndLabels();
 
-   mRefreshDevices = NULL;
-
    // Get current setting for devices
    mPlayDevice = AudioIOPlaybackDevice.Read();
    mRecordDevice = AudioIORecordingDevice.Read();
@@ -104,7 +102,10 @@ void DevicePrefs::Populate()
    PopulateOrExchange(S);
    // ----------------------- End of main section --------------
 
-   mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
+   // This is just some testing code don't yell at me please 
+   wxButton* btn = mRefreshDevices;
+   btn->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
+   mRefreshDevices = btn;
 
    wxCommandEvent e;
    OnHost(e);
