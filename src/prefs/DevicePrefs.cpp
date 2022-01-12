@@ -27,6 +27,8 @@ other settings.
 
 #include "RecordingPrefs.h"
 
+#include <wx/wx.h>
+
 #include <wx/defs.h>
 
 #include <wx/choice.h>
@@ -102,10 +104,7 @@ void DevicePrefs::Populate()
    PopulateOrExchange(S);
    // ----------------------- End of main section --------------
 
-   // This is just some testing code don't yell at me please 
-   wxButton* btn = mRefreshDevices;
-   btn->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
-   mRefreshDevices = btn;
+   mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
 
    wxCommandEvent e;
    OnHost(e);
