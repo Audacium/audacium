@@ -24,7 +24,6 @@ other settings.
 
 
 #include "DevicePrefs.h"
-#include "AudioIOBase.h"
 
 #include "RecordingPrefs.h"
 
@@ -42,6 +41,7 @@ other settings.
 #include "../Prefs.h"
 #include "../ShuttleGui.h"
 #include "../DeviceManager.h"
+#include "../AudioIO.h"
 
 enum {
    HostID = 10000,
@@ -88,6 +88,8 @@ void DevicePrefs::Populate()
    // First any pre-processing for constructing the GUI.
    GetNamesAndLabels();
 
+   mRefreshDevices = NULL;
+
    // Get current setting for devices
    mPlayDevice = AudioIOPlaybackDevice.Read();
    mRecordDevice = AudioIORecordingDevice.Read();
@@ -101,6 +103,8 @@ void DevicePrefs::Populate()
    ShuttleGui S(this, eIsCreatingFromPrefs);
    PopulateOrExchange(S);
    // ----------------------- End of main section --------------
+
+   mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
 
    wxCommandEvent e;
    OnHost(e);
@@ -192,13 +196,12 @@ void DevicePrefs::PopulateOrExchange(ShuttleGui & S)
    }
    S.EndStatic();
 
-   S.StartStatic(XO("Interaction"));
+   S.StartStatic(XO("Devices status"));
    {
        S.StartMultiColumn(1);
        {
            S.Id(RefreshID);
            mRefreshDevices = S.AddButton(XXO("Re&fresh de&vices"));
-           mRefreshDevices->Bind(wxEVT_BUTTON, &DevicePrefs::OnRefresh, this);
        }
        S.EndMultiColumn();
    }
