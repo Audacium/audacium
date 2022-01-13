@@ -351,7 +351,7 @@ void DevicePrefs::OnHost(wxCommandEvent & e)
 
 void DevicePrefs::OnRefresh(wxCommandEvent & e)
 {
-    AudioIO::InitializeDevices();
+    DeviceManager::Instance()->Rescan();
     OnHost(e);
 }
 

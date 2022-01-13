@@ -591,8 +591,6 @@ public:
    // This might return null during application startup or shutdown
    static AudioIO *Get();
 
-   static void InitializeDevices();
-
    /** \brief Start up Portaudio for capture and recording as needed for
     * input monitoring and software playthrough only
     *
