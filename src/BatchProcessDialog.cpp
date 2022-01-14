@@ -55,7 +55,6 @@
 
 #include "AllThemeResources.h"
 
-#include "widgets/FileDialog/FileDialog.h"
 #include "FileNames.h"
 #include "import/Import.h"
 #include "widgets/ErrorDialog.h"
@@ -350,19 +349,18 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
    ProjectFileManager::Get(*project).CloseProject();
    ProjectFileManager::Get(*project).OpenProject();
 
-   auto prompt =  XO("Select file(s) for batch processing...");
+   auto prompt = XO("Select file(s) for batch processing...");
 
    const auto fileTypes = Importer::Get().GetFileTypes();
 
    auto path = FileNames::FindDefaultPath(FileNames::Operation::Open);
-   FileDialogWrapper dlog(this,
-      prompt,
-      path,
-      wxT(""),
-      fileTypes,
-      wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   wxFileDialog dlog(this);
 
+   dlog.SetTitle(prompt.Translation());
+   dlog.SetDirectory(path);
+   dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
    dlog.SetFilterIndex( Importer::SelectDefaultOpenType( fileTypes ) );
+
    if (dlog.ShowModal() != wxID_OK) {
       Raise();
       return;

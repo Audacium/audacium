@@ -78,8 +78,6 @@ effects from this one class.
 #include "../../widgets/NumericTextCtrl.h"
 #include "../../widgets/ProgressDialog.h"
 
-#include "../../widgets/FileDialog/FileDialog.h"
-
 #ifndef nyx_returns_start_and_end_time
 #error You need to update lib-src/libnyquist
 #endif
@@ -89,6 +87,7 @@ effects from this one class.
 #include <ostream>
 #include <sstream>
 #include <float.h>
+#include <import/Import.h>
 
 int NyquistEffect::mReentryCount = 0;
 
@@ -3000,18 +2999,17 @@ void NyquistEffect::OnLoad(wxCommandEvent & WXUNUSED(evt))
       }
    }
 
-   FileDialogWrapper dlog(
-      mUIParent,
-      XO("Load Nyquist script"),
-      mFileName.GetPath(),
-      wxEmptyString,
-      {
+   wxFileDialog dlog(mUIParent);
+
+   dlog.SetTitle(XO("Load Nyquist script").Translation());
+   dlog.SetDirectory(mFileName.GetPath());
+   dlog.SetWindowStyle(wxFD_OPEN | wxRESIZE_BORDER);
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType({
          NyquistScripts,
          LispScripts,
          FileNames::TextFiles,
          FileNames::AllFiles
-      },
-      wxFD_OPEN | wxRESIZE_BORDER);
+       }));
 
    if (dlog.ShowModal() != wxID_OK)
    {
@@ -3028,17 +3026,17 @@ void NyquistEffect::OnLoad(wxCommandEvent & WXUNUSED(evt))
 
 void NyquistEffect::OnSave(wxCommandEvent & WXUNUSED(evt))
 {
-   FileDialogWrapper dlog(
-      mUIParent,
-      XO("Save Nyquist script"),
-      mFileName.GetPath(),
-      mFileName.GetFullName(),
-      {
+   wxFileDialog dlog(mUIParent);
+
+   dlog.SetTitle(XO("Save Nyquist script").Translation());
+   dlog.SetDirectory(mFileName.GetPath());
+   dlog.SetFilename(mFileName.GetFullName());
+   dlog.SetWindowStyle(wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER);
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType({
          NyquistScripts,
          LispScripts,
          FileNames::AllFiles
-      },
-      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER);
+       }));
 
    if (dlog.ShowModal() != wxID_OK)
    {
@@ -3175,12 +3173,13 @@ void NyquistEffect::OnFileButton(wxCommandEvent& evt)
    else if (flags & wxFD_SAVE)
       message = XO("Save file as");
 
-   FileDialogWrapper openFileDialog(mUIParent->FindWindow(ID_FILE + i),
-                               message,
-                               defaultDir,
-                               defaultFile,
-                               ctrl.fileTypes,
-                               flags);       // styles
+   wxFileDialog openFileDialog(mUIParent->FindWindow(ID_FILE + i));
+
+   openFileDialog.SetTitle(message.Translation());
+   openFileDialog.SetDirectory(defaultDir);
+   openFileDialog.SetFilename(defaultFile);
+   openFileDialog.SetWindowStyle(flags);
+   openFileDialog.SetFilterIndex(Importer::SelectDefaultOpenType(ctrl.fileTypes));
 
    if (openFileDialog.ShowModal() == wxID_CANCEL)
    {

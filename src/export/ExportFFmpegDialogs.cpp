@@ -58,14 +58,13 @@
 #include <wx/combobox.h>
 #include <wx/stattext.h>
 
-#include "../widgets/FileDialog/FileDialog.h"
-
 #include "../Mix.h"
 #include "../Tags.h"
 #include "../widgets/AudacityMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 #include "Export.h"
+#include <import/Import.h>
 
 #if defined(USE_FFMPEG)
 
@@ -2285,12 +2284,13 @@ static const FileNames::FileTypes &FileTypes()
 void ExportFFmpegOptions::OnImportPresets(wxCommandEvent& WXUNUSED(event))
 {
    wxString path;
-   FileDialogWrapper dlg(this,
-      XO("Select xml file with presets to import"),
-      gPrefs->Read(wxT("/FileFormats/FFmpegPresetDir")),
-      wxEmptyString,
-      FileTypes(),
-      wxFD_OPEN);
+   wxFileDialog dlg(this);
+
+   dlg.SetTitle(XO("Select xml file with presets to import").Translation());
+   dlg.SetDirectory(gPrefs->Read(wxT("/FileFormats/FFmpegPresetDir")));
+   dlg.SetWindowStyle(wxFD_OPEN);
+   dlg.SetFilterIndex(Importer::SelectDefaultOpenType(FileTypes()));
+
    if (dlg.ShowModal() == wxID_CANCEL) return;
    path = dlg.GetPath();
    mPresets->ImportPresets(path);
@@ -2318,12 +2318,13 @@ void ExportFFmpegOptions::OnExportPresets(wxCommandEvent& WXUNUSED(event))
    }
 
    wxString path;
-   FileDialogWrapper dlg(this,
-      XO("Select xml file to export presets into"),
-      gPrefs->Read(wxT("/FileFormats/FFmpegPresetDir")),
-      wxEmptyString,
-      FileTypes(),
-      wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
+   wxFileDialog dlg(this);
+
+   dlg.SetTitle(XO("Select xml file to export presets into").Translation());
+   dlg.SetDirectory(gPrefs->Read(wxT("/FileFormats/FFmpegPresetDir")));
+   dlg.SetWindowStyle(wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+   dlg.SetFilterIndex(Importer::SelectDefaultOpenType(FileTypes()));
+
    if (dlg.ShowModal() == wxID_CANCEL) return;
    path = dlg.GetPath();
    mPresets->ExportPresets(path);

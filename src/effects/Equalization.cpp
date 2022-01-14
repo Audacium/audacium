@@ -107,11 +107,11 @@
 #include "../AllThemeResources.h"
 #include "../float_cast.h"
 
+#include "../import/Import.h"
+
 #if wxUSE_ACCESSIBILITY
 #include "../widgets/WindowAccessible.h"
 #endif
-
-#include "../widgets/FileDialog/FileDialog.h"
 
 #ifdef EXPERIMENTAL_EQ_SSE_THREADED
 #include "Equalization48x.h"
@@ -3757,10 +3757,13 @@ static const FileNames::FileTypes &XMLtypes()
 
 void EditCurvesDialog::OnImport( wxCommandEvent & WXUNUSED(event))
 {
-   FileDialogWrapper filePicker(
-      this,
-      XO("Choose an EQ curve file"), FileNames::DataDir(), wxT(""),
-      XMLtypes() );
+   wxFileDialog filePicker(this);
+
+   filePicker.SetTitle(XO("Choose an EQ curve file").Translation());
+   filePicker.SetDirectory(FileNames::DataDir());
+   filePicker.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   filePicker.SetFilterIndex(Importer::SelectDefaultOpenType(XMLtypes()));
+
    wxString fileName;
    if( filePicker.ShowModal() == wxID_CANCEL)
       return;
@@ -3780,10 +3783,13 @@ void EditCurvesDialog::OnImport( wxCommandEvent & WXUNUSED(event))
 
 void EditCurvesDialog::OnExport( wxCommandEvent & WXUNUSED(event))
 {
-   FileDialogWrapper filePicker(this, XO("Export EQ curves as..."),
-      FileNames::DataDir(), wxT(""),
-      XMLtypes(),
-      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER); // wxFD_CHANGE_DIR?
+   wxFileDialog filePicker(this);
+
+   filePicker.SetTitle(XO("Export EQ curves as...").Translation());
+   filePicker.SetDirectory(FileNames::DataDir());
+   filePicker.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   filePicker.SetFilterIndex(Importer::SelectDefaultOpenType(XMLtypes()));
+
    wxString fileName;
    if( filePicker.ShowModal() == wxID_CANCEL)
       return;

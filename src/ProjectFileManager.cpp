@@ -811,13 +811,11 @@ wxArrayString ProjectFileManager::ShowOpenDialog(FileNames::Operation op,
    // Construct and display the file dialog
    wxArrayString selected;
 
-   FileDialogWrapper dlog(nullptr,
-      XO("Select one or more files"),
-      path,
-      wxT(""),
-      fileTypes,
-      wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   wxFileDialog dlog(nullptr);
 
+   dlog.SetTitle(XO("Select one or more files").Translation());
+   dlog.SetDirectory(path);
+   dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
    dlog.SetFilterIndex( Importer::SelectDefaultOpenType( fileTypes ) );
 
    int dialogResult = dlog.ShowModal();
