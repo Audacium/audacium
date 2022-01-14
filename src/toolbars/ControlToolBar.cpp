@@ -63,7 +63,6 @@
 #include "../ProjectAudioIO.h"
 #include "../ProjectAudioManager.h"
 #include "../ProjectSettings.h"
-#include "../ProjectStatus.h"
 #include "../ProjectWindow.h"
 #include "../Track.h"
 #include "../widgets/AButton.h"
@@ -656,8 +655,7 @@ void ControlToolBar::OnIdle(wxIdleEvent & event)
    else
       // push-downs of the stop button are only momentary and always pop up now
       mStop->PopUp();
-   
-   UpdateStatusBar();
+
    EnableDisableButtons();
 }
 
@@ -684,59 +682,6 @@ void ControlToolBar::OnFF(wxCommandEvent & WXUNUSED(evt))
       ProjectAudioManager::Get( *p ).StopIfPaused();
       ProjectWindow::Get( *p ).SkipEnd(mFF->WasShiftDown());
    }
-}
-
-// works out the width of the field in the status bar needed for the state (eg play, record pause)
-static ProjectStatus::RegisteredStatusWidthFunction
-registeredStatusWidthFunction{
-   []( const AudacityProject &, StatusBarField field )
-      -> ProjectStatus::StatusWidthResult
-   {
-      if ( field == stateStatusBarField ) {
-         TranslatableStrings strings;
-         for ( auto pString :
-            { &sStatePlay, &sStateStop, &sStateRecord } )
-         {
-            strings.push_back(
-   /* i18n-hint: These are strings for the status bar, and indicate whether Audacity
-   is playing or recording or stopped, and whether it is paused. */
-               XO("%s Paused.").Format(*pString) );
-         }
-
-         // added constant needed because xMax isn't large enough for some reason, plus some space.
-         return { std::move( strings ), 30 };
-      }
-      return {};
-   }
-};
-
-TranslatableString ControlToolBar::StateForStatusBar()
-{
-   TranslatableString state;
-   auto &projectAudioManager = ProjectAudioManager::Get( mProject );
-
-   auto pProject = &mProject;
-   auto scrubState = pProject
-      ? Scrubber::Get( *pProject ).GetUntranslatedStateString()
-      : TranslatableString{};
-   if (!scrubState.empty())
-      state = scrubState;
-   else if (mPlay->IsDown())
-      state = sStatePlay;
-   else if (projectAudioManager.Recording())
-      state = sStateRecord;
-   else
-      state = sStateStop;
-
-   return ((mPause->IsDown()) ? XO("%s Paused.") : XO("%s."))
-      .Format( state );
-}
-
-void ControlToolBar::UpdateStatusBar()
-{
-   ProjectStatus::Get( mProject ).Set(
-      StateForStatusBar(), stateStatusBarField
-   );
 }
 
 void ControlToolBar::StartScrollingIfPreferred()

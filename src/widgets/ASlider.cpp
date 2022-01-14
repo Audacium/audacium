@@ -57,7 +57,6 @@ or ASlider.
 #include "../AColor.h"
 #include "../ImageManipulation.h"
 #include "../Project.h"
-#include "../ProjectStatus.h"
 #include "../ProjectWindowBase.h"
 #include "../ShuttleGui.h"
 #include "../Theme.h"
@@ -142,9 +141,7 @@ const int sliderFontSize = 10;
 const int sliderFontSize = 12;
 #endif
 
-#ifndef EXPERIMENTAL_DA
 #define OPTIONAL_SLIDER_TICKS
-#endif
 
 //
 // TipWindow
@@ -1115,23 +1112,12 @@ bool LWSlider::DoShowDialog(wxPoint pos)
 void LWSlider::OnMouseEvent(wxMouseEvent & event)
 {
    if (event.Entering())
-   {
-      // Display the tooltip in the status bar
-      auto tip = GetTip(mCurrentValue);
-      auto pProject = FindProjectFromWindow( mParent );
-      if (pProject)
-         ProjectStatus::Get( *pProject ).Set( tip );
       Refresh();
-   }
    else if (event.Leaving())
    {
       if (!mIsDragging)
-      {
          ShowTip(false);
-      }
-      auto pProject = FindProjectFromWindow( mParent );
-      if (pProject)
-         ProjectStatus::Get( *pProject ).Set({});
+
       Refresh();
    }
 
@@ -1346,14 +1332,6 @@ void LWSlider::SendUpdate( float newValue )
    FormatPopWin();
 
    Refresh();
-
-   // Update the project's status bar as well
-   if (mTipPanel) {
-      auto tip = GetTip(mCurrentValue);
-      auto pProject = FindProjectFromWindow( mParent );
-      if (pProject)
-         ProjectStatus::Get( *pProject ).Set( tip );
-   }
 
    wxCommandEvent e( wxEVT_COMMAND_SLIDER_UPDATED, mID );
    int intValue = (int)( ( mCurrentValue - mMinValue ) * 1000.0f /

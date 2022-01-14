@@ -204,9 +204,6 @@ void AudacityLogger::Show(bool show)
    }
    S.EndPanel();
 
-   // Give a place for the menu help text to go
-   // frame->CreateStatusBar();
-
    frame->Layout();
 
    // Hook into the frame events

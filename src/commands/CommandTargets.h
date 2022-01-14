@@ -60,8 +60,6 @@ and sends it to that message target.
 #include <wx/string.h>
 #include <wx/thread.h>
 
-class wxStatusBar;
-
 /// Interface for objects that can receive command progress information
 class CommandProgressTarget /* not final */
 {
@@ -154,28 +152,6 @@ public:
    void Update(double WXUNUSED(completed)) override {}
 };
 
-#if 0
-
-//#include "../widgets/ProgressDialog.h" // Member variable
-
-/// Sends command progress information to a ProgressDialog
-class GUIProgressTarget final : public CommandProgressTarget
-{
-private:
-   ProgressDialog &mProgress;
-public:
-   GUIProgressTarget(ProgressDialog &pd)
-      : mProgress(pd)
-   {}
-   virtual ~GUIProgressTarget() {}
-   void Update(double completed) override
-   {
-      mProgress.Update(completed);
-   }
-};
-#endif
-
-
 ///
 class ProgressToMessageTarget final : public CommandProgressTarget
 {
@@ -207,18 +183,6 @@ class AUDACITY_DLL_API MessageBoxTarget final : public CommandMessageTarget
 {
 public:
    virtual ~MessageBoxTarget() {}
-   void Update(const wxString &message) override;
-};
-
-/// Displays messages from a command in a wxStatusBar
-class AUDACITY_DLL_API StatusBarTarget final : public CommandMessageTarget
-{
-private:
-   wxStatusBar &mStatus;
-public:
-   StatusBarTarget(wxStatusBar &sb)
-      : mStatus(sb)
-   {}
    void Update(const wxString &message) override;
 };
 

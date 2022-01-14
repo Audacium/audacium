@@ -11,7 +11,6 @@
 #include "../ProjectHistory.h"
 #include "../ProjectSettings.h"
 #include "../PluginManager.h"
-#include "../ProjectStatus.h"
 #include "../ProjectWindow.h"
 #include "../SelectUtilities.h"
 #include "../ShuttleGui.h"
@@ -1203,13 +1202,10 @@ void OnTrackClose(const CommandContext &context)
    if (!t)
       return;
 
-   auto isAudioActive = ProjectAudioIO::Get( project ).IsAudioActive();
-
-   if (isAudioActive)
+   if (ProjectAudioIO::Get(project).IsAudioActive())
    {
-      ProjectStatus::Get( project ).Set(
-         XO("Can't delete track with active audio"));
       wxBell();
+      AudacityMessageBox(XO("Can't delete track with active audio"));
       return;
    }
 

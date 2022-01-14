@@ -36,8 +36,6 @@ enum class PlayMode : int {
 
 struct TransportTracks;
 
-enum StatusBarField : int;
-
 class AUDACITY_DLL_API ProjectAudioManager final
    : public ClientData::Base
    , public AudioIOListener
@@ -158,9 +156,6 @@ private:
    bool mStopping{ false };
 
    int mDisplayedRate{ 0 };
-   static std::pair< TranslatableStrings, unsigned >
-      StatusWidthFunction(
-         const AudacityProject &project, StatusBarField field);
 };
 
 AUDACITY_DLL_API

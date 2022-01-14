@@ -20,7 +20,6 @@ Paul Licameli split from TrackPanel.cpp
 #include "../../ProjectAudioManager.h"
 #include "../../ProjectHistory.h"
 #include "../../ProjectSettings.h"
-#include "../../ProjectStatus.h"
 #include "../../Track.h"
 #include "../../ViewInfo.h"
 #include "../../WaveTrack.h"
@@ -1098,28 +1097,6 @@ wxString Scrubber::StatusMessageForWave() const
       result = _("Move mouse pointer to Scrub");
    return result;
 }
-
-
-
-static ProjectStatus::RegisteredStatusWidthFunction
-registeredStatusWidthFunction{
-   []( const AudacityProject &, StatusBarField field )
-      -> ProjectStatus::StatusWidthResult
-   {
-      if ( field == stateStatusBarField ) {
-         TranslatableStrings strings;
-         // Note that Scrubbing + Paused is not allowed.
-         for (const auto &item : menuItems())
-            strings.push_back( item.GetStatus() );
-         strings.push_back(
-            XO("%s Paused.").Format( sPlayAtSpeedStatus )
-         );
-         // added constant needed because xMax isn't large enough for some reason, plus some space.
-         return { std::move( strings ), 30 };
-      }
-      return {};
-   }
-};
 
 bool Scrubber::CanScrub() const
 {

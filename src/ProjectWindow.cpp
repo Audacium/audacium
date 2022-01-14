@@ -17,7 +17,6 @@ Paul Licameli split from AudacityProject.cpp
 #include "Menus.h"
 #include "Project.h"
 #include "ProjectAudioIO.h"
-#include "ProjectStatus.h"
 #include "RefreshCode.h"
 #include "TrackPanelMouseEvent.h"
 #include "TrackPanelAx.h"
@@ -598,11 +597,8 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    mTopPanel->SetLabel( "Top Panel" );// Not localised
    mTopPanel->SetLayoutDirection(wxLayout_LeftToRight);
    mTopPanel->SetAutoLayout(true);
-#ifdef EXPERIMENTAL_DA2
-   mTopPanel->SetBackgroundColour(theTheme.Colour( clrMedium ));
-#endif
 
-   wxWindow    * pPage;
+   wxWindow* pPage;
 
 #ifdef EXPERIMENTAL_NOTEBOOK
    // We are using a notebook (tabbed panel), so we create the notebook and add pages.
@@ -627,17 +623,10 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    mMainPanel->SetLabel("Main Panel");// Not localised.
    pPage = mMainPanel;
    // Set the colour here to the track panel background to avoid
-   // flicker when Audacity starts up.
-   // However, that leads to areas next to the horizontal scroller
-   // being painted in background colour and not scroller background
-   // colour, so suppress this for now.
-   //pPage->SetBackgroundColour( theTheme.Colour( clrDark ));
+   // flicker when Audacium starts up.
+   pPage->SetBackgroundColour(theTheme.Colour(clrDark));
 #endif
    pPage->SetLayoutDirection(wxLayout_LeftToRight);
-
-#ifdef EXPERIMENTAL_DA2
-   pPage->SetBackgroundColour(theTheme.Colour( clrMedium ));
-#endif
 
    mMainPage = pPage;
 
@@ -743,11 +732,7 @@ void ProjectWindow::OnThemeChange(wxCommandEvent& evt)
    }
 }
 
-void ProjectWindow::UpdatePrefs()
-{
-   // Update status bar widths in case of language change
-   UpdateStatusWidths();
-}
+void ProjectWindow::UpdatePrefs() {}
 
 void ProjectWindow::FinishAutoScroll()
 {
@@ -1223,33 +1208,6 @@ void ProjectWindow::HandleResize()
 bool ProjectWindow::IsIconized() const
 {
    return mIconized;
-}
-
-void ProjectWindow::UpdateStatusWidths()
-{
-   enum { nWidths = nStatusBarFields + 1 };
-   int widths[ nWidths ]{ 0 };
-   widths[ rateStatusBarField ] = 150;
-   const auto statusBar = GetStatusBar();
-   const auto &functions = ProjectStatus::GetStatusWidthFunctions();
-   // Start from 1 not 0
-   // Specifying a first column always of width 0 was needed for reasons
-   // I forget now
-   for ( int ii = 1; ii <= nStatusBarFields; ++ii ) {
-      int &width = widths[ ii ];
-      for ( const auto &function : functions ) {
-         auto results =
-            function( mProject, static_cast< StatusBarField >( ii ) );
-         for ( const auto &string : results.first ) {
-            int w;
-            statusBar->GetTextExtent(string.Translation(), &w, nullptr);
-            width = std::max<int>( width, w + results.second );
-         }
-      }
-   }
-   // The main status field is not fixed width
-   widths[ mainStatusBarField ] = -1;
-   statusBar->SetStatusWidths( nWidths, widths );
 }
 
 void ProjectWindow::MacShowUndockedToolbars(bool show)

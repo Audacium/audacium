@@ -97,10 +97,6 @@ class AUDACITY_DLL_API AButton final : public wxWindow {
    void OnSize(wxSizeEvent & event);
    void OnMouseEvent(wxMouseEvent & event);
 
-   // Update the status bar message if the pointer is in the button.
-   // Else do nothing.
-   void UpdateStatus();
-
    void OnCaptureLost(wxMouseCaptureLostEvent & event);
    void OnKeyDown(wxKeyEvent & event);
    void OnSetFocus(wxFocusEvent & event);

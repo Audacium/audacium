@@ -57,7 +57,6 @@ is time to refresh some aspect of the screen.
 #include "ProjectAudioManager.h"
 #include "ProjectHistory.h"
 #include "ProjectSettings.h"
-#include "ProjectStatus.h"
 #include "ProjectWindow.h"
 #include "Theme.h"
 #include "TrackPanelMouseEvent.h"
@@ -612,15 +611,6 @@ bool TrackPanel::IsAudioActive()
    return ProjectAudioIO::Get( *p ).IsAudioActive();
 }
 
-void TrackPanel::UpdateStatusMessage( const TranslatableString &st )
-{
-   auto status = st;
-   if (HasEscape())
-      /* i18n-hint Esc is a key on the keyboard */
-      status.Join( XO("(Esc to cancel)"), " " );
-   ProjectStatus::Get( *GetProject() ).Set( status );
-}
-
 void TrackPanel::UpdateSelectionDisplay()
 {
    // Full refresh since the label area may need to indicate
@@ -654,8 +644,6 @@ void TrackPanel::UpdateViewIfNoTracks()
       mViewInfo->h = 0;
 
       mListener->TP_HandleResize();
-      //STM: Clear message if all tracks are removed
-      ProjectStatus::Get( *GetProject() ).Set({});
    }
 }
 

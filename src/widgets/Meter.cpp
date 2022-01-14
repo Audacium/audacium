@@ -66,7 +66,6 @@
 #include "../prefs/GUISettings.h"
 #include "../Project.h"
 #include "../ProjectAudioManager.h"
-#include "../ProjectStatus.h"
 #include "../Prefs.h"
 #include "../ShuttleGui.h"
 #include "../Theme.h"
@@ -640,9 +639,7 @@ void MeterPanel::OnPaint(wxPaintEvent & WXUNUSED(event))
       mRuler.SetTickColour( clrText );
       dc.SetTextForeground( clrText );
       // Draw the ruler
-#ifndef EXPERIMENTAL_DA
       mRuler.Draw(dc);
-#endif
 
       // Bitmap created...unselect
       dc.SelectObject(wxNullBitmap);
@@ -659,22 +656,20 @@ void MeterPanel::OnPaint(wxPaintEvent & WXUNUSED(event))
 
    destDC.SetTextForeground( clrText );
 
-#ifndef EXPERIMENTAL_DA
    // We can have numbers over the bars, in which case we have to draw them each time.
    if (mStyle == HorizontalStereoCompact || mStyle == VerticalStereoCompact)
    {
-      mRuler.SetTickColour( clrText );
-      // If the text colour is too similar to the meter colour, then we need a background
-      // for the text.  We require a total of at least one full-scale RGB difference.
-      int d = theTheme.ColourDistance( clrText, theTheme.Colour( clrMeterOutputRMSBrush ) );
-      if( d < 256 )
-      {
-         destDC.SetBackgroundMode( wxSOLID );
-         destDC.SetTextBackground( clrBoxFill );
-      }
-      mRuler.Draw(destDC);
+       mRuler.SetTickColour(clrText);
+       // If the text colour is too similar to the meter colour, then we need a background
+       // for the text.  We require a total of at least one full-scale RGB difference.
+       int d = theTheme.ColourDistance(clrText, theTheme.Colour(clrMeterOutputRMSBrush));
+       if (d < 256)
+       {
+           destDC.SetBackgroundMode(wxSOLID);
+           destDC.SetTextBackground(clrBoxFill);
+       }
+       mRuler.Draw(destDC);
    }
-#endif
 
    // Let the user know they can click to start monitoring
    if( mIsInput && !mActive )
@@ -770,20 +765,6 @@ void MeterPanel::OnMouse(wxMouseEvent &evt)
 
    if (mStyle == MixerTrackCluster) // MixerTrackCluster style has no menu.
       return;
-
-  #if wxUSE_TOOLTIPS // Not available in wxX11
-   if (evt.Leaving()){
-      ProjectStatus::Get( *mProject ).Set({});
-   }
-   else if (evt.Entering()) {
-      // Display the tooltip in the status bar
-      wxToolTip * pTip = this->GetToolTip();
-      if( pTip ) {
-         auto tipText = Verbatim( pTip->GetTip() );
-         ProjectStatus::Get( *mProject ).Set(tipText);
-      }
-   }
-  #endif
 
    if (evt.RightDown() ||
        (evt.ButtonDown() && InIcon(&evt)))

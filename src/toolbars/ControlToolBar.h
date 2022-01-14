@@ -23,7 +23,6 @@ class wxKeyEvent;
 class wxTimer;
 class wxTimerEvent;
 class wxWindow;
-class wxStatusBar;
 
 class AButton;
 class AudacityProject;
@@ -81,8 +80,6 @@ class AUDACITY_DLL_API ControlToolBar final : public ToolBar {
    void StopScrolling();
 
  private:
-   void UpdateStatusBar();
-
    static AButton *MakeButton(
       ControlToolBar *pBar,
       teBmps eEnabledUp, teBmps eEnabledDown, teBmps eDisabled,
@@ -97,7 +94,6 @@ class AUDACITY_DLL_API ControlToolBar final : public ToolBar {
                             teBmps eDisabled);
 
    void ArrangeButtons();
-   TranslatableString StateForStatusBar();
 
    enum
    {

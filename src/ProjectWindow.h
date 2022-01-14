@@ -55,8 +55,6 @@ public:
    wxPanel *GetMainPanel() { return mMainPanel; }
    wxPanel *GetTopPanel() { return mTopPanel; }
 
-   void UpdateStatusWidths();
-
    class PlaybackScroller final : public wxEvtHandler
    {
    public:

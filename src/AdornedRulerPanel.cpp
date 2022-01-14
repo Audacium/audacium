@@ -36,7 +36,6 @@
 #include "Project.h"
 #include "ProjectAudioIO.h"
 #include "ProjectAudioManager.h"
-#include "ProjectStatus.h"
 #include "ProjectWindow.h"
 #include "RefreshCode.h"
 #include "Snap.h"
@@ -1783,8 +1782,6 @@ void AdornedRulerPanel::UpdateButtonStates()
       ComponentInterfaceSymbol command{ commandName, label };
       ToolBar::SetButtonToolTip( *mProject, button, &command, 1u );
       button.SetLabel( Verbatim( button.GetToolTipText() ) );
-
-      button.UpdateStatus();
    };
 
    {
@@ -2327,11 +2324,6 @@ void AdornedRulerPanel::ProcessUIHandleResult
    (void)pClickedTrack;// Compiler food
    if (refreshResult & RefreshCode::DrawOverlays)
       DrawBothOverlays();
-}
-
-void AdornedRulerPanel::UpdateStatusMessage( const TranslatableString &message )
-{
-   ProjectStatus::Get( *GetProject() ).Set(message);
 }
 
 void AdornedRulerPanel::CreateOverlays()

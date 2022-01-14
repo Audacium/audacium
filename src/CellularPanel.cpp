@@ -375,7 +375,6 @@ void CellularPanel::HandleMotion
    // Update status, tooltip, and cursor only if we're dragging, or the mouse
    // was in one of our cells and nobody else is dragging
    if (handle || (newCell && !wxWindow::GetCapture())) {
-      UpdateStatusMessage(status);
 
 #if wxUSE_TOOLTIPS
       if (tooltip.Translation() != GetToolTipText()) {
@@ -389,9 +388,6 @@ void CellularPanel::HandleMotion
       if (pCursor)
          SetCursor( *pCursor );
    }
-   else if ( oldCell || oldHandle )
-      // Leaving a cell or hit test target with no replacement
-      UpdateStatusMessage( {} );
 
    if (newCell)
       ProcessUIHandleResult(newCell.get(), newCell.get(), refreshCode);

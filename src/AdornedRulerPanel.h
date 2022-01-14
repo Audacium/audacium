@@ -201,8 +201,6 @@ private:
       (TrackPanelCell *pClickedTrack, TrackPanelCell *pLatestCell,
        unsigned refreshResult) override;
 
-   void UpdateStatusMessage( const TranslatableString & ) override;
-
    void CreateOverlays();
 
    // Cooperating objects

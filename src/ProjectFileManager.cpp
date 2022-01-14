@@ -26,7 +26,6 @@ Paul Licameli split from AudacityProject.cpp
 #include "ProjectHistory.h"
 #include "ProjectSelectionManager.h"
 #include "ProjectSettings.h"
-#include "ProjectStatus.h"
 #include "ProjectWindow.h"
 #include "SelectUtilities.h"
 #include "SelectionState.h"
@@ -355,7 +354,6 @@ bool ProjectFileManager::DoSave(const FilePath & fileName, const bool fromSaveAs
    projectFileIO.SetProjectTitle();
 
    UndoManager::Get(proj).StateSaved();
-   ProjectStatus::Get(proj).Set(XO("Saved %s").Format(fileName));
 
    if (mLastSavedTracks)
    {

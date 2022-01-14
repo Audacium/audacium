@@ -232,8 +232,6 @@ list( APPEND SOURCES
       ProjectSerializer.h
       ProjectSettings.cpp
       ProjectSettings.h
-      ProjectStatus.cpp
-      ProjectStatus.h
       ProjectWindow.cpp
       ProjectWindow.h
       ProjectWindowBase.cpp

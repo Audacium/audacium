@@ -208,8 +208,6 @@ protected:
    void ProcessUIHandleResult
       (TrackPanelCell *pClickedTrack, TrackPanelCell *pLatestCell,
        unsigned refreshResult) override;
-
-   void UpdateStatusMessage( const TranslatableString &status ) override;
 };
 
 // A predicate class

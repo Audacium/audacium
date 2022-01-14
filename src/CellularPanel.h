@@ -56,8 +56,6 @@ public:
    (TrackPanelCell *pClickedCell, TrackPanelCell *pLatestCell,
     unsigned refreshResult) = 0;
    
-   virtual void UpdateStatusMessage( const TranslatableString & )  = 0;
-   
 public:
    // Structure and functions for generalized visitation of the subdivision
    struct Visitor {

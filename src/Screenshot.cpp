@@ -40,7 +40,6 @@ It forwards the actual work of doing the commands to the ScreenshotCommand.
 
 #include "prefs/GUISettings.h" // for RTL_WORKAROUND
 #include "Project.h"
-#include "ProjectStatus.h"
 #include "ProjectWindow.h"
 #include "Prefs.h"
 #include "tracks/ui/TrackView.h"
@@ -48,6 +47,7 @@ It forwards the actual work of doing the commands to the ScreenshotCommand.
 
 #include "ViewInfo.h"
 #include "WaveTrack.h"
+#include <widgets/AudacityMessageBox.h>
 
 class OldStyleCommandType;
 class ScreenFrameTimer;
@@ -111,7 +111,6 @@ class ScreenshotBigDialog final : public wxFrame,
    wxTextCtrl *mDirectoryTextBox;
    wxToggleButton *mBlue;
    wxToggleButton *mWhite;
-   wxStatusBar *mStatus;
 
    std::unique_ptr<ScreenFrameTimer> mTimer;
 
@@ -272,13 +271,10 @@ BEGIN_EVENT_TABLE(ScreenshotBigDialog, wxFrame)
    EVT_BUTTON(IdDirChoose,              ScreenshotBigDialog::OnDirChoose)
 END_EVENT_TABLE();
 
-// Must not be called before CreateStatusBar!
 std::unique_ptr<ScreenshotCommand> ScreenshotBigDialog::CreateCommand()
 {
-   wxASSERT(mStatus != NULL);
    auto output =
       std::make_unique<CommandOutputTargets>(std::make_unique<NullProgressTarget>(),
-                              std::make_shared<StatusBarTarget>(*mStatus),
                               std::make_shared<MessageBoxTarget>());
    return std::make_unique<ScreenshotCommand>();//*type, std::move(output), this);
 }
@@ -307,7 +303,6 @@ ScreenshotBigDialog::ScreenshotBigDialog(
    mDelayCheckBox = NULL;
    mDirectoryTextBox = NULL;
 
-   mStatus = CreateStatusBar(3);
    mCommand = CreateCommand();
 
    Populate();
@@ -653,7 +648,7 @@ void ScreenshotBigDialog::DoCapture(int captureMode)
    mCommand->mPath = mDirectoryTextBox->GetValue();
    mCommand->mWhat = captureMode;
    if (!mCommand->Apply(mContext))
-      mStatus->SetStatusText(_("Capture failed!"), mainStatusBarField);
+       AudacityMessageBox(XO("Capture failed!"));
 
    // Bug 2323: (100% hackage alert) Since the command target dialog is not
    // accessible from outside the command, this seems to be the only way we

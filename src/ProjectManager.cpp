@@ -354,10 +354,6 @@ private:
 void InitProjectWindow( ProjectWindow &window )
 {
    auto &project = window.GetProject();
-
-#ifdef EXPERIMENTAL_DA2
-   SetBackgroundColour(theTheme.Colour( clrMedium ));
-#endif
    auto &viewInfo = ViewInfo::Get( project );
 
    // LLL:  Read this!!!
@@ -494,10 +490,6 @@ void InitProjectWindow( ProjectWindow &window )
 #endif
       window.SetIcon(ic);
    }
-#endif
-
-#ifdef EXPERIMENTAL_DA2
-   ClearBackground();// For wxGTK.
 #endif
 }
 

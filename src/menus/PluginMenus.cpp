@@ -321,13 +321,11 @@ MenuTable::BaseItemPtrs PopulateEffectsMenu(
          ;// don't add to menus!
       }
       else if (plug->IsEffectDefault()
-#ifdef EXPERIMENTAL_DA
-         // Move Nyquist prompt into nyquist group.
-         && (plug->GetSymbol() !=
-               ComponentInterfaceSymbol("Nyquist Effects Prompt"))
-         && (plug->GetSymbol() != ComponentInterfaceSymbol("Nyquist Tools Prompt"))
-         && (plug->GetSymbol() != ComponentInterfaceSymbol(NYQUIST_PROMPT_ID))
-#endif
+          // Move Nyquist prompt into nyquist group.
+          && (plug->GetSymbol() !=
+              ComponentInterfaceSymbol("Nyquist Effects Prompt"))
+          && (plug->GetSymbol() != ComponentInterfaceSymbol("Nyquist Tools Prompt"))
+          && (plug->GetSymbol() != ComponentInterfaceSymbol(NYQUIST_PROMPT_ID))
          )
          defplugs.push_back(plug);
       else

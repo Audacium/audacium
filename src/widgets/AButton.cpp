@@ -36,7 +36,6 @@
 
 //This is needed for tooltips
 #include "../Project.h"
-#include "../ProjectStatus.h"
 #include "../ProjectWindowBase.h"
 #include <wx/tooltip.h>
 
@@ -475,39 +474,10 @@ void AButton::OnMouseEvent(wxMouseEvent & event)
    }
 
    // Only redraw and change tooltips if the state has changed.
-   AButtonState newState = GetState();
-
-   if (newState != prevState) {
+   if (GetState() != prevState)
       Refresh(false);
-
-      if (mCursorIsInWindow)
-         UpdateStatus();
-      else {
-         auto pProject = FindProjectFromWindow( this );
-         if (pProject)
-            ProjectStatus::Get( *pProject ).Set({});
-      }
-   }
    else
       event.Skip();
-}
-
-void AButton::UpdateStatus()
-{
-   if (mCursorIsInWindow) {
-#if wxUSE_TOOLTIPS // Not available in wxX11
-      // Display the tooltip in the status bar
-      wxToolTip * pTip = this->GetToolTip();
-      if( pTip ) {
-         auto tipText = Verbatim( pTip->GetTip() );
-         if (!mEnabled)
-            tipText.Join( XO("(disabled)"), " " );
-         auto pProject = FindProjectFromWindow( this );
-         if (pProject)
-            ProjectStatus::Get( *pProject ).Set( tipText );
-      }
-#endif
-   }
 }
 
 void AButton::OnCaptureLost(wxMouseCaptureLostEvent & WXUNUSED(event))

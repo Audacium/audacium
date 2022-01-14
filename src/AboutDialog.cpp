@@ -28,8 +28,6 @@ hold information about one contributor to Audacium.
 
 #include "AboutDialog.h"
 
-
-
 #include <wx/dialog.h>
 #include <wx/html/htmlwin.h>
 #include <wx/button.h>
@@ -50,9 +48,7 @@ hold information about one contributor to Audacium.
 #include "../images/AudacityLogoWithName.xpm"
 
 // To substitute into many other translatable strings
-static const auto ProgramName =
-   //XO("Audacium");
-   Verbatim("Audacium");
+static const auto ProgramName = Verbatim("Audacium");
 
 void AboutDialog::CreateCreditsList()
 {
@@ -147,8 +143,7 @@ AboutDialog::AboutDialog(wxWindow * parent)
    sActiveInstance = this;
 
    SetName();
-   this->SetBackgroundColour(theTheme.Colour( clrAboutBoxBackground ));
-   //this->SetBackgroundColour(theTheme.Colour( clrMedium ));
+   SetBackgroundColour(theTheme.Colour( clrAboutBoxBackground ));
    icon = NULL;
    ShuttleGui S( this, eIsCreating );
    S.StartNotebook();
@@ -157,12 +152,8 @@ AboutDialog::AboutDialog(wxWindow * parent)
    }
    S.EndNotebook();
 
-   S.Id(wxID_OK)
-      .Prop(0)
-      .AddButton(XXO("OK"), wxALIGN_CENTER, true);
-
    Fit();
-   this->Centre();
+   Centre();
 }
 
 #define ABOUT_DIALOG_WIDTH 506

@@ -25,7 +25,6 @@ Paul Licameli split from ProjectManager.cpp
 #include "ProjectFileIO.h"
 #include "ProjectHistory.h"
 #include "ProjectSettings.h"
-#include "ProjectStatus.h"
 #include "TimeTrack.h"
 #include "TrackPanelAx.h"
 #include "UndoManager.h"
@@ -63,38 +62,11 @@ const ProjectAudioManager &ProjectAudioManager::Get(
 ProjectAudioManager::ProjectAudioManager( AudacityProject &project )
    : mProject{ project }
 {
-   static ProjectStatus::RegisteredStatusWidthFunction
-      registerStatusWidthFunction{ StatusWidthFunction };
    project.Bind( EVT_CHECKPOINT_FAILURE,
       &ProjectAudioManager::OnCheckpointFailure, this );
 }
 
 ProjectAudioManager::~ProjectAudioManager() = default;
-
-static TranslatableString FormatRate( int rate )
-{
-   if (rate > 0) {
-      return XO("Actual Rate: %d").Format( rate );
-   }
-   else
-      // clear the status field
-      return {};
-}
-
-auto ProjectAudioManager::StatusWidthFunction(
-   const AudacityProject &project, StatusBarField field )
-   -> ProjectStatus::StatusWidthResult
-{
-   if ( field == rateStatusBarField ) {
-      auto &audioManager = ProjectAudioManager::Get( project );
-      int rate = audioManager.mDisplayedRate;
-      return {
-         { { FormatRate( rate ) } },
-         50
-      };
-   }
-   return {};
-}
 
 /*! @excsafety{Strong} -- For state of mCutPreviewTracks */
 int ProjectAudioManager::PlayPlayRegion(const SelectedRegion &selectedRegion,
@@ -826,13 +798,7 @@ void ProjectAudioManager::CancelRecording()
 
 void ProjectAudioManager::OnAudioIORate(int rate)
 {
-   auto &project = mProject;
-
    mDisplayedRate = rate;
-
-   auto display = FormatRate( rate );
-
-   ProjectStatus::Get( project ).Set( display, rateStatusBarField );
 }
 
 void ProjectAudioManager::OnAudioIOStartRecording()
