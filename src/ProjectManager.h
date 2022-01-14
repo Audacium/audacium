@@ -106,7 +106,6 @@ public:
    // Converts number of minutes to human readable format
    TranslatableString GetHoursMinsString(int iMinutes);
 
-   void SetStatusText( const TranslatableString &text, int number );
    void SetSkipSavePrompt(bool bSkip) { sbSkipPromptingForSave = bSkip; };
 
 private:
@@ -114,7 +113,6 @@ private:
    void OnCloseWindow(wxCloseEvent & event);
    void OnTimer(wxTimerEvent & event);
    void OnOpenAudioFile(wxCommandEvent & event);
-   void OnStatusChange( wxCommandEvent& );
 
    void RestartTimer();
 

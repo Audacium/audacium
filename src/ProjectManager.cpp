@@ -26,7 +26,6 @@ Paul Licameli split from AudacityProject.cpp
 #include "ProjectHistory.h"
 #include "ProjectSelectionManager.h"
 #include "ProjectSettings.h"
-#include "ProjectStatus.h"
 #include "ProjectWindow.h"
 #include "SelectUtilities.h"
 #include "TrackPanel.h"
@@ -80,8 +79,6 @@ ProjectManager::ProjectManager( AudacityProject &project )
 {
    auto &window = ProjectWindow::Get( mProject );
    window.Bind( wxEVT_CLOSE_WINDOW, &ProjectManager::OnCloseWindow, this );
-   mProject.Bind(EVT_PROJECT_STATUS_UPDATE,
-      &ProjectManager::OnStatusChange, this);
    project.Bind( EVT_RECONNECTION_FAILURE,
       &ProjectManager::OnReconnectionFailure, this );
 }
@@ -361,20 +358,6 @@ void InitProjectWindow( ProjectWindow &window )
 #ifdef EXPERIMENTAL_DA2
    SetBackgroundColour(theTheme.Colour( clrMedium ));
 #endif
-   // Note that the first field of the status bar is a dummy, and its width is set
-   // to zero latter in the code. This field is needed for wxWidgets 2.8.12 because
-   // if you move to the menu bar, the first field of the menu bar is cleared, which
-   // is undesirable behaviour.
-   // In addition, the help strings of menu items are by default sent to the first
-   // field. Currently there are no such help strings, but it they were introduced, then
-   // there would need to be an event handler to send them to the appropriate field.
-   auto statusBar = window.CreateStatusBar(4);
-#if wxUSE_ACCESSIBILITY
-   // so that name can be set on a standard control
-   statusBar->SetAccessible(safenew WindowAccessible(statusBar));
-#endif
-   statusBar->SetName(wxT("status_line"));     // not localized
-
    auto &viewInfo = ViewInfo::Get( project );
 
    // LLL:  Read this!!!
@@ -512,11 +495,6 @@ void InitProjectWindow( ProjectWindow &window )
       window.SetIcon(ic);
    }
 #endif
-
-   window.UpdateStatusWidths();
-   auto msg = XO("Welcome to Audacium version %s")
-      .Format( AUDACITY_VERSION_STRING );
-   ProjectManager::Get( project ).SetStatusText( msg, mainStatusBarField );
 
 #ifdef EXPERIMENTAL_DA2
    ClearBackground();// For wxGTK.
@@ -994,7 +972,8 @@ void ProjectManager::OnTimer(wxTimerEvent& WXUNUSED(event))
    auto mixerToolBar = &MixerToolBar::Get( project );
    mixerToolBar->UpdateControls();
    
-   auto gAudioIO = AudioIO::Get();
+   // TODO: Find another way to show this message perhaps?
+   /*auto gAudioIO = AudioIO::Get();
    // gAudioIO->GetNumCaptureChannels() should only be positive
    // when we are recording.
    if (projectAudioIO.GetAudioIOToken() > 0 && gAudioIO->GetNumCaptureChannels() > 0) {
@@ -1008,48 +987,11 @@ void ProjectManager::OnTimer(wxTimerEvent& WXUNUSED(event))
          // Do not change mLastMainStatusMessage
          SetStatusText(sMessage, mainStatusBarField);
       }
-   }
+   }*/
 
    // As also with the TrackPanel timer:  wxTimer may be unreliable without
    // some restarts
    RestartTimer();
-}
-
-void ProjectManager::OnStatusChange( wxCommandEvent &evt )
-{
-   evt.Skip();
-
-   auto &project = mProject;
-
-   // Be careful to null-check the window.  We might get to this function
-   // during shut-down, but a timer hasn't been told to stop sending its
-   // messages yet.
-   auto pWindow = ProjectWindow::Find( &project );
-   if ( !pWindow )
-      return;
-   auto &window = *pWindow;
-
-   window.UpdateStatusWidths();
-
-   auto field = static_cast<StatusBarField>( evt.GetInt() );
-   const auto &msg = ProjectStatus::Get( project ).Get( field );
-   SetStatusText( msg, field );
-   
-   if ( field == mainStatusBarField )
-      // When recording, let the NEW status message stay at least as long as
-      // the timer interval (if it is not replaced again by this function),
-      // before replacing it with the message about remaining disk capacity.
-      RestartTimer();
-}
-
-void ProjectManager::SetStatusText( const TranslatableString &text, int number )
-{
-   auto &project = mProject;
-   auto pWindow = ProjectWindow::Find( &project );
-   if ( !pWindow )
-      return;
-   auto &window = *pWindow;
-   window.GetStatusBar()->SetStatusText(text.Translation(), number);
 }
 
 TranslatableString ProjectManager::GetHoursMinsString(int iMinutes)
