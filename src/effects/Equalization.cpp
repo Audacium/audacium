@@ -3762,6 +3762,7 @@ void EditCurvesDialog::OnImport( wxCommandEvent & WXUNUSED(event))
    filePicker.SetTitle(XO("Choose an EQ curve file").Translation());
    filePicker.SetDirectory(FileNames::DataDir());
    filePicker.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   filePicker.SetWildcard(Importer::ConstructFilterFromTypes(XMLtypes()));
    filePicker.SetFilterIndex(Importer::SelectDefaultOpenType(XMLtypes()));
 
    wxString fileName;
@@ -3788,6 +3789,7 @@ void EditCurvesDialog::OnExport( wxCommandEvent & WXUNUSED(event))
    filePicker.SetTitle(XO("Export EQ curves as...").Translation());
    filePicker.SetDirectory(FileNames::DataDir());
    filePicker.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   filePicker.SetWildcard(Importer::ConstructFilterFromTypes(XMLtypes()));
    filePicker.SetFilterIndex(Importer::SelectDefaultOpenType(XMLtypes()));
 
    wxString fileName;

@@ -3001,15 +3001,19 @@ void NyquistEffect::OnLoad(wxCommandEvent & WXUNUSED(evt))
 
    wxFileDialog dlog(mUIParent);
 
-   dlog.SetTitle(XO("Load Nyquist script").Translation());
-   dlog.SetDirectory(mFileName.GetPath());
-   dlog.SetWindowStyle(wxFD_OPEN | wxRESIZE_BORDER);
-   dlog.SetFilterIndex(Importer::SelectDefaultOpenType({
+   auto types =
+   {
          NyquistScripts,
          LispScripts,
          FileNames::TextFiles,
          FileNames::AllFiles
-       }));
+   };
+
+   dlog.SetTitle(XO("Load Nyquist script").Translation());
+   dlog.SetDirectory(mFileName.GetPath());
+   dlog.SetWindowStyle(wxFD_OPEN | wxRESIZE_BORDER);
+   dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 
    if (dlog.ShowModal() != wxID_OK)
    {
@@ -3028,15 +3032,19 @@ void NyquistEffect::OnSave(wxCommandEvent & WXUNUSED(evt))
 {
    wxFileDialog dlog(mUIParent);
 
+   auto types =
+   {
+         NyquistScripts,
+         LispScripts,
+         FileNames::AllFiles
+   };
+
    dlog.SetTitle(XO("Save Nyquist script").Translation());
    dlog.SetDirectory(mFileName.GetPath());
    dlog.SetFilename(mFileName.GetFullName());
    dlog.SetWindowStyle(wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER);
-   dlog.SetFilterIndex(Importer::SelectDefaultOpenType({
-         NyquistScripts,
-         LispScripts,
-         FileNames::AllFiles
-       }));
+   dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 
    if (dlog.ShowModal() != wxID_OK)
    {
@@ -3179,6 +3187,7 @@ void NyquistEffect::OnFileButton(wxCommandEvent& evt)
    openFileDialog.SetDirectory(defaultDir);
    openFileDialog.SetFilename(defaultFile);
    openFileDialog.SetWindowStyle(flags);
+   openFileDialog.SetWildcard(Importer::ConstructFilterFromTypes(ctrl.fileTypes));
    openFileDialog.SetFilterIndex(Importer::SelectDefaultOpenType(ctrl.fileTypes));
 
    if (openFileDialog.ShowModal() == wxID_CANCEL)

@@ -816,7 +816,8 @@ wxArrayString ProjectFileManager::ShowOpenDialog(FileNames::Operation op,
    dlog.SetTitle(XO("Select one or more files").Translation());
    dlog.SetDirectory(path);
    dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
-   dlog.SetFilterIndex( Importer::SelectDefaultOpenType( fileTypes ) );
+   dlog.SetWildcard(Importer::ConstructFilterFromTypes(fileTypes));
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType(fileTypes));
 
    int dialogResult = dlog.ShowModal();
 

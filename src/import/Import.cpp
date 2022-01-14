@@ -175,6 +175,35 @@ bool Importer::Terminate()
    return true;
 }
 
+wxString Importer::ConstructFilterFromTypes(const FileNames::FileTypes& fileTypes)
+{
+    wxString str;
+
+    for (auto ptr = fileTypes.begin(); ptr < fileTypes.end(); ptr++)
+    {
+        auto &item = *ptr;
+        
+        wxString extensions;
+        for (auto ptr2 = item.extensions.begin(); ptr2 < item.extensions.end(); ptr2++)
+        {
+            auto &ext = *ptr2;
+            if (ext == wxEmptyString)
+                extensions += "*.*;";
+            else
+                extensions += "*." + ext + ";";
+        }
+
+        str += item.description.Translation();
+
+        if (item.appendExtensions)
+            str += " (" + extensions + ")";
+
+        str += "|" + extensions + "|";
+    }
+
+    return str.Truncate(str.length() - 1);
+}
+
 FileNames::FileTypes
 Importer::GetFileTypes( const FileNames::FileType &extraType )
 {

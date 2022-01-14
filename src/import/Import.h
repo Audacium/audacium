@@ -137,6 +137,8 @@ public:
    static size_t
    SelectDefaultOpenType( const FileNames::FileTypes &fileTypes );
 
+   static wxString ConstructFilterFromTypes(const FileNames::FileTypes &fileTypes);
+
    /**
     * Reads extended import filters from gPrefs into internal
     * list mExtImportItems

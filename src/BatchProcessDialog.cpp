@@ -359,7 +359,8 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
    dlog.SetTitle(prompt.Translation());
    dlog.SetDirectory(path);
    dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
-   dlog.SetFilterIndex( Importer::SelectDefaultOpenType( fileTypes ) );
+   dlog.SetWildcard(Importer::ConstructFilterFromTypes(fileTypes));
+   dlog.SetFilterIndex(Importer::SelectDefaultOpenType(fileTypes));
 
    if (dlog.ShowModal() != wxID_OK) {
       Raise();
