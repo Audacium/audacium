@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file DateTimeConversions.h
  @brief Declare functions to work with date and time string representations.

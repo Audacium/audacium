@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   ExportMultiple.cpp
 
@@ -70,7 +70,7 @@ namespace {
    };  // end of ExportKit declaration
    /* we are going to want an set of these kits, and don't know how many until
     * runtime. I would dearly like to use a std::vector, but it seems that
-    * this isn't done anywhere else in Audacity, presumably for a reason?, so
+    * this isn't done anywhere else in Audacium, presumably for a reason?, so
     * I'm stuck with wxArrays, which are much harder, as well as non-standard.
     */
 }

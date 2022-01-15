@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file UrlDecode.h
  @brief Declare a function to decode an URL encode string.

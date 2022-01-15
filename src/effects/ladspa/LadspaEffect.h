@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   LadspaEffect.h
 

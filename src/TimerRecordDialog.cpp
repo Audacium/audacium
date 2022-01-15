@@ -346,7 +346,6 @@ void TimerRecordDialog::OnAutoExportPathButton_Click(wxCommandEvent& WXUNUSED(ev
       m_fnAutoExportFile = eExporter.GetAutoExportFileName();
       m_iAutoExportFormat = eExporter.GetAutoExportFormat();
       m_iAutoExportSubFormat = eExporter.GetAutoExportSubFormat();
-      m_iAutoExportFilterIndex = eExporter.GetAutoExportFilterIndex();
 
       // Update the text controls
       this->UpdateTextBoxControls();
@@ -582,7 +581,7 @@ int TimerRecordDialog::ExecutePostRecordActions(bool bWasStopped) {
       bExportOK = e.ProcessFromTimerRecording(
          false, 0.0, TrackList::Get( mProject ).GetEndTime(),
             m_fnAutoExportFile, m_iAutoExportFormat,
-            m_iAutoExportSubFormat, m_iAutoExportFilterIndex);
+            m_iAutoExportSubFormat);
    }
 
    // Check if we need to override the post recording action

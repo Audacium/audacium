@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file DateTimeConversions.cpp
  @brief Define functions to work with date and time string representations.

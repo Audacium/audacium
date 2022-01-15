@@ -43,7 +43,7 @@ if( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
    set( USE_AUDIO_UNITS ${${_OPT}use_audio_units} CACHE INTERNAL "" )
 endif()
 
-# Detect, which version of FileDialog to use for
+# Detect, which version of wxFileDialog to use for
 # We always assume that GTK is used on platforms other than Windows and macOS,
 # as there is no other implementation avalaible now
 if( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
@@ -591,6 +591,9 @@ list( APPEND SOURCES
       export/Export.cpp
       export/Export.h
 
+      export/ExportDialog.cpp
+      export/ExportDialog.h
+
       # Standard exporters
       export/ExportCL.cpp
       export/ExportMP3.cpp
@@ -906,20 +909,6 @@ list( APPEND SOURCES
       widgets/ExpandingToolBar.h
       widgets/FileConfig.cpp
       widgets/FileConfig.h
-      widgets/FileDialog/FileDialog.cpp
-      widgets/FileDialog/FileDialog.h
-      $<$<BOOL:${wxIS_WIN}>:
-         widgets/FileDialog/win/FileDialogPrivate.cpp
-         widgets/FileDialog/win/FileDialogPrivate.h
-      >
-      $<$<BOOL:${wxIS_MAC}>:
-         widgets/FileDialog/mac/FileDialogPrivate.mm
-         widgets/FileDialog/mac/FileDialogPrivate.h
-      >
-      $<$<BOOL:${wxIS_GTK}>:
-         widgets/FileDialog/gtk/FileDialogPrivate.cpp
-         widgets/FileDialog/gtk/FileDialogPrivate.h
-      >
       widgets/FileHistory.cpp
       widgets/FileHistory.h
       widgets/Grabber.cpp
@@ -1191,7 +1180,6 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
       effects/VST/VSTControlOSX.mm
       effects/audiounits/AUControl.mm
       menus/WindowMenus.cpp
-      widgets/FileDialog/mac/FileDialogPrivate.mm
       PROPERTIES
          COMPILE_FLAGS "-x objective-c++"
          SKIP_PRECOMPILE_HEADERS YES

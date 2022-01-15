@@ -1,6 +1,6 @@
 /*!********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   @file ImportAUP.cpp
   @brief Upgrading project file formats from before version 3

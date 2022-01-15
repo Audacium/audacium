@@ -1,6 +1,6 @@
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file CodeConversions.h
  @brief Declare functions to preform UTF-8 to std::wstring conversions.

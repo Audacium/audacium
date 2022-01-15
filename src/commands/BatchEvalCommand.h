@@ -1,6 +1,6 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
+   Audacium: A Digital Audio Editor
    Audacity(R) is copyright (c) 1999-2009 Audacity Team.
    File License: wxwidgets
 

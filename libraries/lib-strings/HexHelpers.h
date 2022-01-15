@@ -2,7 +2,7 @@
 
 /*!********************************************************************
 
- Audacity: A Digital Audio Editor
+ Audacium: A Digital Audio Editor
 
  @file HexHelpers.h
  @brief Define helper functions for hex-to-num conversion.

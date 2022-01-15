@@ -38,11 +38,7 @@ class AUDACITY_DLL_API AboutDialog final : public wxDialogWrapper {
 
    static AboutDialog *ActiveIntance();
 
-   void OnOK(wxCommandEvent & event);
-
    wxStaticBitmap *icon;
-
-   DECLARE_EVENT_TABLE()
 
  private:
    enum Role {

@@ -1,6 +1,6 @@
 /**********************************************************************
 
-   Audacity: A Digital Audio Editor
+   Audacium: A Digital Audio Editor
 
    ExportFFmpegDialogs.cpp
 
@@ -202,7 +202,7 @@ ExportFFmpegAC3Options::ExportFFmpegAC3Options(wxWindow *parent, int WXUNUSED(fo
 
 ExportFFmpegAC3Options::~ExportFFmpegAC3Options()
 {
-   TransferDataFromWindow();
+    TransferDataFromWindow();
 }
 
 ///

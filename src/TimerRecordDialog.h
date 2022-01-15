@@ -141,7 +141,6 @@ private:
    wxFileName m_fnAutoExportFile;
    int m_iAutoExportFormat;
    int m_iAutoExportSubFormat;
-   int m_iAutoExportFilterIndex;
    bool m_bProjectAlreadySaved;
 
    DECLARE_EVENT_TABLE()

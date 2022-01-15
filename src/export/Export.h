@@ -1,6 +1,6 @@
 /**********************************************************************
 
-  Audacity: A Digital Audio Editor
+  Audacium: A Digital Audio Editor
 
   Export.h
 
@@ -22,7 +22,7 @@
 #include "../Registry.h"
 
 class wxArrayString;
-class FileDialogWrapper;
+class wxFileDialog;
 class wxFileCtrlEvent;
 class wxMemoryDC;
 class wxSimplebook;
@@ -187,11 +187,15 @@ public:
    Exporter( AudacityProject &project );
    virtual ~Exporter();
 
-   void SetFileDialogTitle( const TranslatableString & DialogTitle );
-   void SetDefaultFormat( const FileExtension & Format ){ mFormatName = Format;};
+   void SetFileDialogTitle(const TranslatableString &DialogTitle);
+   void SetDefaultFormat(const FileExtension& format, const int index) { mFormatName = format; mFormat = index; };
+   void SetFileTypes(const FileNames::FileTypes fileTypes) { mFileTypes = fileTypes; };
 
-   bool Process(bool selectedOnly,
-                double t0, double t1);
+   FileNames::FileTypes GetAllFileTypes() { return mAllFileTypes; };
+
+   bool Ask(bool selectedOnly, double t0, double t1);
+   bool Export();
+
    bool Process(unsigned numChannels,
                 const FileExtension &type, const wxString & filename,
                 bool selectedOnly, double t0, double t1);
@@ -207,15 +211,11 @@ public:
                                   double t1,
                                   wxFileName fnFile,
                                   int iFormat,
-                                  int iSubFormat,
-                                  int iFilterIndex);
+                                  int iSubFormat);
    bool SetAutoExportOptions();
    int GetAutoExportFormat();
    int GetAutoExportSubFormat();
-   int GetAutoExportFilterIndex();
    wxFileName GetAutoExportFileName();
-   void OnExtensionChanged(wxCommandEvent &evt);
-   void OnHelp(wxCommandEvent &evt);
 
 private:
    bool ExamineTracks();
@@ -224,25 +224,23 @@ private:
    bool CheckMix(bool prompt = true);
    bool ExportTracks();
 
-   static void CreateUserPaneCallback(wxWindow *parent, wxUIntPtr userdata);
-   void CreateUserPane(wxWindow *parent);
-   void OnFilterChanged(wxFileCtrlEvent & evt);
-
 private:
    FileExtension mFormatName;
-   FileDialogWrapper *mDialog;
    TranslatableString mFileDialogTitle;
    AudacityProject *mProject;
    std::unique_ptr<MixerSpec> mMixerSpec;
 
+   FileNames::FileTypes mFileTypes;
+   FileNames::FileTypes mAllFileTypes;
+
    ExportPluginArray mPlugins;
 
+   wxFileDialog* mDialog;
    wxFileName mFilename;
    wxFileName mActualName;
 
    double mT0;
    double mT1;
-   int mFilterIndex;
    int mFormat;
    int mSubFormat;
    int mNumSelected;
@@ -253,8 +251,6 @@ private:
    bool mSelectedOnly;
 
    wxSimplebook *mBook;
-
-   DECLARE_EVENT_TABLE()
 };
 
 //----------------------------------------------------------------------------

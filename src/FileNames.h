@@ -205,6 +205,15 @@ namespace FileNames
       int flags,
       wxWindow *parent);
 
+   AUDACITY_DLL_API wxString FileSelector(const wxString& title,
+       const wxString& defaultDir,
+       const wxString& defaultFileName,
+       const wxString& defaultExtension,
+       const wxString& filter,
+       int flags,
+       wxWindow* parent,
+       int x, int y);
+
    // Useful functions for working with search paths
    AUDACITY_DLL_API void AddUniquePathToPathList(const FilePath &path,
                                        FilePaths &pathList);

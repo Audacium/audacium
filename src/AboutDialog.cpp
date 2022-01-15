@@ -118,10 +118,6 @@ void AboutDialog::CreateCreditsList()
 
 // ----------------------------------------------------------------------------
 
-BEGIN_EVENT_TABLE(AboutDialog, wxDialogWrapper)
-   EVT_BUTTON(wxID_OK, AboutDialog::OnOK)
-END_EVENT_TABLE()
-
 IMPLEMENT_CLASS(AboutDialog, wxDialogWrapper)
 
 namespace {
@@ -133,11 +129,7 @@ AboutDialog *AboutDialog::ActiveIntance()
    return sActiveInstance;
 }
 
-AboutDialog::AboutDialog(wxWindow * parent)
-   /* i18n-hint: information about the program */
-   :  wxDialogWrapper(parent, -1, XO("About %s").Format( ProgramName ),
-               wxDefaultPosition, wxDefaultSize,
-               wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
+AboutDialog::AboutDialog(wxWindow * parent) : wxDialogWrapper(parent, wxID_ANY, XO("About %s").Format(ProgramName))
 {
    wxASSERT(!sActiveInstance);
    sActiveInstance = this;
@@ -146,19 +138,16 @@ AboutDialog::AboutDialog(wxWindow * parent)
    SetBackgroundColour(theTheme.Colour( clrAboutBoxBackground ));
    icon = NULL;
    ShuttleGui S( this, eIsCreating );
-   S.StartNotebook();
-   {
-      PopulateAudacityPage( S );
-   }
-   S.EndNotebook();
+   PopulateAudacityPage(S);
 
+   Layout();
    Fit();
-   Centre();
+   SetMaxSize(GetSize());
+   SetMinSize(GetSize());
+   Center();
 }
 
-#define ABOUT_DIALOG_WIDTH 506
-
-void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
+void AboutDialog::PopulateAudacityPage(ShuttleGui &S)
 {
    CreateCreditsList();
 
@@ -257,7 +246,6 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
       << wxT("</center>")
    ;
 
-   auto pPage = S.StartNotebookPage( ProgramName );
    S.StartVerticalLay(1);
    {
       //v For now, change to AudacityLogoWithName via old-fashioned way, not Theme.
@@ -275,7 +263,7 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
 
    HtmlWindow *html = safenew LinkingHtmlWindow(S.GetParent(), -1,
                                          wxDefaultPosition,
-                                         wxSize(ABOUT_DIALOG_WIDTH, 359),
+                                         wxSize(506, 359),
                                          wxHW_SCROLLBAR_AUTO | wxSUNKEN_BORDER);
    html->SetPage( FormatHtmlText( o.GetString() ) );
 
@@ -284,7 +272,6 @@ void AboutDialog::PopulateAudacityPage( ShuttleGui & S )
       .AddWindow( html );
 
    S.EndVerticalLay();
-   S.EndNotebookPage();
 }
 
 void AboutDialog::AddCredit( const wxString &name, Role role )
@@ -358,13 +345,4 @@ void AboutDialog::AddBuildinfoRow(
 AboutDialog::~AboutDialog()
 {
    sActiveInstance = {};
-}
-
-void AboutDialog::OnOK(wxCommandEvent & WXUNUSED(event))
-{
-#ifdef __WXMAC__
-   Destroy();
-#else
-   EndModal(wxID_OK);
-#endif
 }
