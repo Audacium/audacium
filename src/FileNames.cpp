@@ -764,7 +764,7 @@ char *FileNames::VerifyFilename(const wxString &s, bool input)
                ? FileNames::AllFiles
                : FileType{ {}, { ext } }
             },
-            wxFD_SAVE | wxRESIZE_BORDER,
+            0x0002 | wxRESIZE_BORDER,
             wxGetTopLevelParent(NULL));
       }
    }

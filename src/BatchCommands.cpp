@@ -135,7 +135,7 @@ wxString MacroCommands::ReadMacro(const wxString & macro, wxWindow *parent)
          name.GetName(),
          wxT("txt"),
          { FileNames::TextFiles },
-         wxFD_OPEN | wxRESIZE_BORDER,
+         0x0001 | wxRESIZE_BORDER,
          parent);
 
       // User canceled...
@@ -214,7 +214,7 @@ wxString MacroCommands::WriteMacro(const wxString & macro, wxWindow *parent)
          name.GetName(),
          wxT("txt"),
          { FileNames::TextFiles },
-         wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
+         0x0002 | 0x0004 | wxRESIZE_BORDER,
          parent);
 
       // User canceled...

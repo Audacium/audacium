@@ -686,7 +686,7 @@ void Effect::ExportPresets()
                                      wxEmptyString,
                                      wxEmptyString,
                                      PresetTypes(),
-                                     wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
+                                     0x0002 | 0x0004 | wxRESIZE_BORDER,
                                      nullptr);
    if (path.empty()) {
       return;
@@ -731,7 +731,7 @@ void Effect::ImportPresets()
                                      wxEmptyString,
                                      wxEmptyString,
                                      PresetTypes(),
-                                     wxFD_OPEN | wxRESIZE_BORDER,
+                                     0x0001 | wxRESIZE_BORDER,
                                      nullptr);
    if (path.empty()) {
       return;

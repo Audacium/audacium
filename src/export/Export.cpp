@@ -632,7 +632,7 @@ bool Exporter::GetFilename()
          fd.SetTitle(mFileDialogTitle.Translation());
          fd.SetDirectory(mFilename.GetPath());
          fd.SetFilename(mFilename.GetFullName());
-         fd.SetWindowStyle(wxFD_SAVE | wxRESIZE_BORDER);
+         fd.SetWindowStyle(0x0002 | wxRESIZE_BORDER);
          fd.SetWildcard(Importer::ConstructFilterFromTypes(mFileTypes));
 
          mDialog = &fd;

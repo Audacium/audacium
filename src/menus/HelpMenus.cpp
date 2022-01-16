@@ -67,7 +67,7 @@ void ShowDiagnostics(
          defaultPath,
          wxT("txt"),
          { FileNames::TextFiles },
-         wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
+         0x0002 | 0x0004 | wxRESIZE_BORDER,
          &window);
       if (!fName.empty())
       {

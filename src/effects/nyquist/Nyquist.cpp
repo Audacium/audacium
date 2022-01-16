@@ -3011,7 +3011,7 @@ void NyquistEffect::OnLoad(wxCommandEvent & WXUNUSED(evt))
 
    dlog.SetTitle(XO("Load Nyquist script").Translation());
    dlog.SetDirectory(mFileName.GetPath());
-   dlog.SetWindowStyle(wxFD_OPEN | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(0x0001 | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 
@@ -3042,7 +3042,7 @@ void NyquistEffect::OnSave(wxCommandEvent & WXUNUSED(evt))
    dlog.SetTitle(XO("Save Nyquist script").Translation());
    dlog.SetDirectory(mFileName.GetPath());
    dlog.SetFilename(mFileName.GetFullName());
-   dlog.SetWindowStyle(wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(0x0002 | 0x0004 | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 
@@ -3143,28 +3143,28 @@ void NyquistEffect::OnFileButton(wxCommandEvent& evt)
          wxString token = tokenizer.GetNextToken().Trim(true).Trim(false);
          if (token.IsSameAs("open", false))
          {
-            flags |= wxFD_OPEN;
-            flags &= ~wxFD_SAVE;
-            flags &= ~wxFD_OVERWRITE_PROMPT;
+            flags |= 0x0001;
+            flags &= ~0x0002;
+            flags &= ~0x0004;
          }
          else if (token.IsSameAs("save", false))
          {
-            flags |= wxFD_SAVE;
-            flags &= ~wxFD_OPEN;
-            flags &= ~wxFD_MULTIPLE;
-            flags &= ~wxFD_FILE_MUST_EXIST;
+            flags |= 0x0002;
+            flags &= ~0x0001;
+            flags &= ~0x0200;
+            flags &= ~0x0010;
          }
-         else if (token.IsSameAs("overwrite", false) && !(flags & wxFD_OPEN))
+         else if (token.IsSameAs("overwrite", false) && !(flags & 0x0001))
          {
-            flags |= wxFD_OVERWRITE_PROMPT;
+            flags |= 0x0004;
          }
-         else if (token.IsSameAs("exists", false) && !(flags & wxFD_SAVE))
+         else if (token.IsSameAs("exists", false) && !(flags & 0x0002))
          {
-            flags |= wxFD_FILE_MUST_EXIST;
+            flags |= 0x0010;
          }
-         else if (token.IsSameAs("multiple", false) && !(flags & wxFD_SAVE))
+         else if (token.IsSameAs("multiple", false) && !(flags & 0x0002))
          {
-            flags |= wxFD_MULTIPLE;
+            flags |= 0x0200;
          }
       }
    }
@@ -3176,9 +3176,9 @@ void NyquistEffect::OnFileButton(wxCommandEvent& evt)
    wxString defaultFile = fname.GetName();
    auto message = XO("Select a file");
 
-   if (flags & wxFD_MULTIPLE)
+   if (flags & 0x0200)
       message = XO("Select one or more files");
-   else if (flags & wxFD_SAVE)
+   else if (flags & 0x0002)
       message = XO("Save file as");
 
    wxFileDialog openFileDialog(mUIParent->FindWindow(ID_FILE + i));
@@ -3197,7 +3197,7 @@ void NyquistEffect::OnFileButton(wxCommandEvent& evt)
 
    wxString path;
    // When multiple files selected, return file paths as a list of quoted strings.
-   if (flags & wxFD_MULTIPLE)
+   if (flags & 0x0200)
    {
       wxArrayString selectedFiles;
       openFileDialog.GetPaths(selectedFiles);

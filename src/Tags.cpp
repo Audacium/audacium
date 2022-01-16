@@ -1244,7 +1244,7 @@ void TagsEditorDialog::OnLoad(wxCommandEvent & WXUNUSED(event))
       wxT("Tags.xml"),
       wxT("xml"),
       { FileNames::XMLFiles },
-      wxFD_OPEN | wxRESIZE_BORDER,
+      0x0001 | wxRESIZE_BORDER,
       this);
 
    // User canceled...
@@ -1302,7 +1302,7 @@ void TagsEditorDialog::OnSave(wxCommandEvent & WXUNUSED(event))
       wxT("Tags.xml"),
       wxT("xml"),
       { FileNames::XMLFiles },
-      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
+      0x0002 | 0x0004 | wxRESIZE_BORDER,
       this);
 
    // User canceled...

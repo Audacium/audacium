@@ -444,7 +444,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
 
    do {
       if (bPrompt) {
-         // JKC: I removed 'wxFD_OVERWRITE_PROMPT' because we are checking
+         // JKC: I removed '0x0004' because we are checking
          // for overwrite ourselves later, and we disallow it.
          fName = FileNames::SelectFile(FileNames::Operation::Save,
             title,
@@ -452,7 +452,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
             filename.GetFullName(),
             wxT("aup3"),
             { FileNames::AudacityProjects },
-            wxFD_SAVE | wxRESIZE_BORDER,
+            0x0002 | wxRESIZE_BORDER,
             &window);
 
          if (fName.empty())
@@ -581,7 +581,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
    {
       if (bPrompt)
       {
-         // JKC: I removed 'wxFD_OVERWRITE_PROMPT' because we are checking
+         // JKC: I removed '0x0004' because we are checking
          // for overwrite ourselves later, and we disallow it.
          // Previously we disallowed overwrite because we would have had 
          // to DELETE the many smaller files too, or prompt to move them.
@@ -592,7 +592,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
                                        filename.GetFullName(),
                                        wxT("aup3"),
                                        { FileNames::AudacityProjects },
-                                       wxFD_SAVE | wxRESIZE_BORDER,
+                                       0x0002 | wxRESIZE_BORDER,
                                        &window);
 
          if (fName.empty())
@@ -813,7 +813,7 @@ wxArrayString ProjectFileManager::ShowOpenDialog(FileNames::Operation op,
 
    dlog.SetTitle(XO("Select one or more files").Translation());
    dlog.SetDirectory(path);
-   dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(0x0001 | 0x0200 | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(fileTypes));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(fileTypes));
 

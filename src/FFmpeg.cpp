@@ -528,7 +528,7 @@ public:
          mLibPath.GetFullName(),
          wxT(""),
          mTypes,
-         wxFD_OPEN | wxRESIZE_BORDER,
+         0x0001 | wxRESIZE_BORDER,
          this);
       if (!path.empty()) {
          mLibPath = path;
