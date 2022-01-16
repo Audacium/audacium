@@ -25,6 +25,7 @@ processing.  See also MacrosWindow and ApplyMacroDialog.
 #include <wx/dir.h>
 #include <wx/textfile.h>
 #include <wx/time.h>
+#include <wx/filedlg.h>
 
 #include "Project.h"
 #include "ProjectAudioManager.h"

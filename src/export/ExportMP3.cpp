@@ -78,6 +78,7 @@
 #include <wx/timer.h>
 #include <wx/utils.h>
 #include <wx/window.h>
+#include <wx/filedlg.h>
 
 #include "../FileNames.h"
 #include "../float_cast.h"

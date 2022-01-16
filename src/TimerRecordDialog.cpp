@@ -38,6 +38,7 @@
 #include <wx/sizer.h>
 #include <wx/string.h>
 #include <wx/timer.h>
+#include <wx/filedlg.h>
 #include <wx/dynlib.h> //<! For windows.h
 
 #include "ShuttleGui.h"

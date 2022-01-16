@@ -55,6 +55,7 @@ the mouse around.
 #include <wx/statbmp.h>
 #include <wx/stattext.h>
 #include <wx/statusbr.h>
+#include <wx/filedlg.h>
 
 #include <wx/textctrl.h>
 #include <wx/textfile.h>

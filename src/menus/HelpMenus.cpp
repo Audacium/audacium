@@ -1,8 +1,7 @@
-
-
 #include <wx/bmpbuttn.h>
 #include <wx/textctrl.h>
 #include <wx/frame.h>
+#include <wx/filedlg.h>
 
 #include "../AboutDialog.h"
 #include "../AllThemeResources.h"

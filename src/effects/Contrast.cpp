@@ -40,6 +40,7 @@
 #include <wx/log.h>
 #include <wx/wfstream.h>
 #include <wx/txtstrm.h>
+#include <wx/filedlg.h>
 
 #include "../PlatformCompatibility.h"
 

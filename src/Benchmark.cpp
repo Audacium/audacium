@@ -32,6 +32,7 @@ of sample block storage.
 #include <wx/valgen.h>
 #include <wx/valtext.h>
 #include <wx/intl.h>
+#include <wx/filedlg.h>
 
 #include "SampleBlock.h"
 #include "ShuttleGui.h"

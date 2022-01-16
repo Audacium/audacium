@@ -28,6 +28,7 @@
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textdlg.h>
+#include <wx/filedlg.h>
 
 #include "ShuttleGui.h"
 #include "LabelTrack.h"

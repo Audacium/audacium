@@ -23,6 +23,7 @@
 #include <wx/process.h>
 #include <wx/sizer.h>
 #include <wx/textctrl.h>
+#include <wx/filedlg.h>
 #if defined(__WXMSW__)
 #include <wx/msw/registry.h> // for wxRegKey
 #endif

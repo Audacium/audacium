@@ -55,6 +55,7 @@
 #include <wx/combobox.h>
 #include <wx/file.h>
 #include <wx/filename.h>
+#include <wx/filedlg.h>
 #include <wx/imaglist.h>
 #include <wx/listctrl.h>
 #include <wx/log.h>

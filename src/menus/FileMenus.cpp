@@ -1,5 +1,3 @@
-
-
 #include "../CommonCommandFlags.h"
 #include "../FileNames.h"
 #include "../LabelTrack.h"
@@ -33,6 +31,8 @@
 #endif // USE_MIDI
 
 #include <wx/menu.h>
+#include <wx/filedlg.h>
+
 #include <export/ExportDialog.h>
 
 // private helper classes and functions

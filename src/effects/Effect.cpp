@@ -24,6 +24,7 @@
 #include <wx/defs.h>
 #include <wx/sizer.h>
 #include <wx/tokenzr.h>
+#include <wx/filedlg.h>
 
 #include "../AudioIO.h"
 #include "../DBConnection.h"
