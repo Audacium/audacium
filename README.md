@@ -4,6 +4,8 @@
 # FFmpeg 5.0 experimental branch
 To be able to run Audacium, you'll need to link the .lib files (for Windows at least) with Visual Studio (project properties -> Linker -> Input -> Additional Dependencies), then copy all .dll files into the directory where Audacium.exe will be located when building.
 
+All of the .lib and .dll files are located inside the new `ffmpeg_files` folder
+
 ## Searching for contributors!
 I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
 
