@@ -32,6 +32,7 @@
 #include <wx/evtloop.h>
 #endif
 
+#include <wx/filedlg.h>
 #include <wx/filename.h>
 #include <wx/frame.h>
 #include <wx/listctrl.h>
