@@ -12,7 +12,7 @@ BEGIN_EVENT_TABLE(ExportDialog, wxEvtHandler)
 END_EVENT_TABLE()
 
 ExportDialog::ExportDialog(AudacityProject* parent) :
-    wxDialogWrapper(&GetProjectFrame(*parent), wxID_ANY, XO("Export Audio")), mExporter{*parent}
+    wxDialogWrapper((wxWindow*)(&GetProjectFrame(*parent)), wxID_ANY, XO("Export Audio")), mExporter{*parent}
 {
 	SetName();
 
@@ -30,7 +30,7 @@ ExportDialog::ExportDialog(AudacityProject* parent) :
 }
 
 ExportDialog::ExportDialog(AudacityProject* parent, NotifyingSelectedRegion &region) :
-    wxDialogWrapper(&GetProjectFrame(*parent), wxID_ANY, XO("Export Selected Audio")), mExporter{ *parent }
+    wxDialogWrapper((wxWindow*)(&GetProjectFrame(*parent)), wxID_ANY, XO("Export Selected Audio")), mExporter{ *parent }
 {
     SetName();
 
@@ -51,7 +51,7 @@ ExportDialog::ExportDialog(AudacityProject* parent, NotifyingSelectedRegion &reg
 }
 
 ExportDialog::ExportDialog(AudacityProject* parent, wxString extension) :
-    wxDialogWrapper(&GetProjectFrame(*parent), wxID_ANY, XO("Export Audio")), mExporter{ *parent }
+    wxDialogWrapper((wxWindow*)(&GetProjectFrame(*parent)), wxID_ANY, XO("Export Audio")), mExporter{ *parent }
 {
     SetName();
 
