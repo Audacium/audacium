@@ -308,7 +308,7 @@ void TimerRecordDialog::OnAutoSavePathButton_Click(wxCommandEvent& WXUNUSED(even
       m_fnAutoSaveFile.GetFullName(),
       wxT("aup3"),
       { FileNames::AudacityProjects },
-      0x0002 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxRESIZE_BORDER,
       this);
 
    if (fName.empty())

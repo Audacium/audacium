@@ -538,7 +538,7 @@ void ContrastDialog::OnExport(wxCommandEvent & WXUNUSED(event))
       fName,
       wxT("txt"),
       { FileNames::TextFiles, FileNames::AllFiles },
-      0x0002 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxRESIZE_BORDER,
       this);
 
    if (fName.empty())

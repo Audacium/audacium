@@ -17,6 +17,8 @@ Paul Licameli split from AudacityProject.cpp
 #endif
 
 #include <wx/frame.h>
+#include <wx/filedlg.h>
+
 #include "CodeConversions.h"
 #include "Legacy.h"
 #include "PlatformCompatibility.h"
@@ -452,7 +454,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
             filename.GetFullName(),
             wxT("aup3"),
             { FileNames::AudacityProjects },
-            0x0002 | wxRESIZE_BORDER,
+            wxFD_SAVE | wxRESIZE_BORDER,
             &window);
 
          if (fName.empty())
@@ -592,7 +594,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
                                        filename.GetFullName(),
                                        wxT("aup3"),
                                        { FileNames::AudacityProjects },
-                                       0x0002 | wxRESIZE_BORDER,
+                                       wxFD_SAVE | wxRESIZE_BORDER,
                                        &window);
 
          if (fName.empty())
@@ -813,7 +815,7 @@ wxArrayString ProjectFileManager::ShowOpenDialog(FileNames::Operation op,
 
    dlog.SetTitle(XO("Select one or more files").Translation());
    dlog.SetDirectory(path);
-   dlog.SetWindowStyle(0x0001 | 0x0200 | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(fileTypes));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(fileTypes));
 

@@ -193,7 +193,7 @@ void ExportCLOptions::OnBrowse(wxCommandEvent& WXUNUSED(event))
       wxEmptyString,
       ext,
       { type },
-      0x0001 | wxRESIZE_BORDER,
+      wxFD_OPEN | wxRESIZE_BORDER,
       this);
    if (path.empty()) {
       return;

@@ -211,7 +211,7 @@ void OnExportLabels(const CommandContext &context)
       fName,
       wxT("txt"),
       { FileNames::TextFiles },
-      0x0002 | 0x0004 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
       &window);
 
    if (fName.empty())
@@ -299,7 +299,7 @@ void OnExportMIDI(const CommandContext &context)
             { XO("MIDI file"),    { wxT("mid") }, true },
             { XO("Allegro file"), { wxT("gro") }, true },
          },
-         0x0002 | 0x0004 | wxRESIZE_BORDER,
+         wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
          &window);
 
       if (fName.empty())

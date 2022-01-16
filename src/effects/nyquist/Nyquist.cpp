@@ -51,6 +51,7 @@ effects from this one class.
 #include <wx/wfstream.h>
 #include <wx/numformatter.h>
 #include <wx/stdpaths.h>
+#include <wx/filedlg.h>
 
 #include "../EffectManager.h"
 #include "../../FileNames.h"
@@ -3011,7 +3012,7 @@ void NyquistEffect::OnLoad(wxCommandEvent & WXUNUSED(evt))
 
    dlog.SetTitle(XO("Load Nyquist script").Translation());
    dlog.SetDirectory(mFileName.GetPath());
-   dlog.SetWindowStyle(0x0001 | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(wxFD_OPEN | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 
@@ -3042,7 +3043,7 @@ void NyquistEffect::OnSave(wxCommandEvent & WXUNUSED(evt))
    dlog.SetTitle(XO("Save Nyquist script").Translation());
    dlog.SetDirectory(mFileName.GetPath());
    dlog.SetFilename(mFileName.GetFullName());
-   dlog.SetWindowStyle(0x0002 | 0x0004 | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(types));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(types));
 

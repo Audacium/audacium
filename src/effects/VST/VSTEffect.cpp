@@ -1862,7 +1862,7 @@ void VSTEffect::ExportPresets()
         { XO("Standard VST program file"), { wxT("fxp") }, true },
         { XO("Audacity VST preset file"), { wxT("xml") }, true },
       },
-      0x0002 | 0x0004 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
       NULL);
 
    // User canceled...
@@ -1919,7 +1919,7 @@ void VSTEffect::ImportPresets()
          { wxT("fxb"), wxT("fxp"), wxT("xml") },
          true
       } },
-      0x0001 | wxRESIZE_BORDER,
+      wxFD_OPEN | wxRESIZE_BORDER,
       mParent);
 
    // User canceled...

@@ -36,6 +36,7 @@
 #include <wx/button.h>
 #include <wx/imaglist.h>
 #include <wx/settings.h>
+#include <wx/filedlg.h>
 
 #include "Clipboard.h"
 #include "ShuttleGui.h"
@@ -358,7 +359,7 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
 
    dlog.SetTitle(prompt.Translation());
    dlog.SetDirectory(path);
-   dlog.SetWindowStyle(0x0001 | 0x0200 | wxRESIZE_BORDER);
+   dlog.SetWindowStyle(wxFD_OPEN | wxFD_MULTIPLE | wxRESIZE_BORDER);
    dlog.SetWildcard(Importer::ConstructFilterFromTypes(fileTypes));
    dlog.SetFilterIndex(Importer::SelectDefaultOpenType(fileTypes));
 

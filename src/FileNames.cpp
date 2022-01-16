@@ -32,6 +32,8 @@ used throughout Audacity into this one place.
 #include <wx/filename.h>
 #include <wx/intl.h>
 #include <wx/stdpaths.h>
+#include <wx/filedlg.h>
+
 #include "Prefs.h"
 #include "Internat.h"
 #include "PlatformCompatibility.h"
@@ -764,7 +766,7 @@ char *FileNames::VerifyFilename(const wxString &s, bool input)
                ? FileNames::AllFiles
                : FileType{ {}, { ext } }
             },
-            0x0002 | wxRESIZE_BORDER,
+            wxFD_SAVE | wxRESIZE_BORDER,
             wxGetTopLevelParent(NULL));
       }
    }

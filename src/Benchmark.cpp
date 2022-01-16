@@ -278,7 +278,7 @@ void BenchmarkDialog::OnSave( wxCommandEvent & WXUNUSED(event))
       fName,
       wxT("txt"),
       { FileNames::TextFiles },
-      0x0002 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxRESIZE_BORDER,
       this);
 
    if (fName.empty())

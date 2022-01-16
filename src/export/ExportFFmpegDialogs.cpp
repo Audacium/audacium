@@ -57,6 +57,7 @@
 #include <wx/spinctrl.h>
 #include <wx/combobox.h>
 #include <wx/stattext.h>
+#include <wx/filedlg.h>
 
 #include "../Mix.h"
 #include "../Tags.h"
@@ -2323,7 +2324,7 @@ void ExportFFmpegOptions::OnExportPresets(wxCommandEvent& WXUNUSED(event))
 
    dlg.SetTitle(XO("Select xml file to export presets into").Translation());
    dlg.SetDirectory(gPrefs->Read(wxT("/FileFormats/FFmpegPresetDir")));
-   dlg.SetWindowStyle(0x0002 | 0x0004);
+   dlg.SetWindowStyle(wxFD_SAVE | 0x0004);
    dlg.SetWildcard(Importer::ConstructFilterFromTypes(FileTypes()));
    dlg.SetFilterIndex(Importer::SelectDefaultOpenType(FileTypes()));
 

@@ -570,7 +570,7 @@ void KeyConfigPrefs::OnExport(wxCommandEvent & WXUNUSED(event))
       file,
       wxT("xml"),
       { FileNames::XMLFiles, FileNames::AllFiles },
-      0x0002 | 0x0004 | wxRESIZE_BORDER,
+      wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
       this);
 
    if (!file) {
