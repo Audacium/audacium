@@ -1,5 +1,15 @@
-#include "ShuttleGui.h"
-#include "export/Export.h"
+#include "Export.h"
+
+#include "../ShuttleGui.h"
+#include "../ViewInfo.h"
+#include "../Project.h"
+#include "../Track.h"
+
+#include "../widgets/AudacityMessageBox.h"
+#include "../widgets/FileHistory.h"
+
+#include <wx/simplebook.h>
+#include <wx/combobox.h>
 
 class AUDACITY_DLL_API ExportDialog final : public wxDialogWrapper
 {

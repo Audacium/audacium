@@ -1,12 +1,5 @@
 #include "ExportDialog.h"
 
-#include "../ViewInfo.h"
-
-#include "../widgets/AudacityMessageBox.h"
-#include "../widgets/FileHistory.h"
-
-#include <wx/simplebook.h>
-
 enum
 {
     ComboID = 20001
