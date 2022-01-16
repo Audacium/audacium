@@ -835,19 +835,6 @@ bool ExportFFmpegCustomOptions::TransferDataFromWindow()
 ///
 void ExportFFmpegCustomOptions::OnOpen(wxCommandEvent & WXUNUSED(evt))
 {
-   // Show "Locate FFmpeg" dialog
-   PickFFmpegLibs();
-   if (!FFmpegLibsInst()->ValidLibsLoaded())
-   {
-      FFmpegLibsInst()->FindLibs(NULL);
-      FFmpegLibsInst()->FreeLibs();
-      if (!LoadFFmpeg(true))
-      {
-         return;
-      }
-   }
-   DropFFmpegLibs();
-
 #ifdef __WXMAC__
    // Bug 2077 Must be a parent window on OSX or we will appear behind.
    auto pWin = wxGetTopLevelParent( this );
@@ -1727,10 +1714,7 @@ const TranslatableStrings PredictionOrderMethodNames {
 
 
 
-ExportFFmpegOptions::~ExportFFmpegOptions()
-{
-   DropFFmpegLibs();
-}
+ExportFFmpegOptions::~ExportFFmpegOptions() {}
 
 ExportFFmpegOptions::ExportFFmpegOptions(wxWindow *parent)
 :  wxDialogWrapper(parent, wxID_ANY,
@@ -1738,28 +1722,23 @@ ExportFFmpegOptions::ExportFFmpegOptions(wxWindow *parent)
 {
    SetName();
    ShuttleGui S(this, eIsCreatingFromPrefs);
-   PickFFmpegLibs();
-   //FFmpegLibsInst()->LoadLibs(NULL,true); //Loaded at startup or from Prefs now
 
    mPresets = std::make_unique<FFmpegPresets>();
    mPresets->GetPresetList(mPresetNames);
 
-   if (FFmpegLibsInst()->ValidLibsLoaded())
-   {
-      FetchFormatList();
-      FetchCodecList();
+   FetchFormatList();
+   FetchCodecList();
 
-      PopulateOrExchange(S);
+   PopulateOrExchange(S);
 
-      //Select the format that was selected last time this dialog was closed
-      mFormatList->Select(mFormatList->FindString(gPrefs->Read(wxT("/FileFormats/FFmpegFormat"))));
-      DoOnFormatList();
+   //Select the format that was selected last time this dialog was closed
+   mFormatList->Select(mFormatList->FindString(gPrefs->Read(wxT("/FileFormats/FFmpegFormat"))));
+   DoOnFormatList();
 
-      //Select the codec that was selected last time this dialog was closed
-      AVCodec *codec = avcodec_find_encoder_by_name(gPrefs->Read(wxT("/FileFormats/FFmpegCodec")).ToUTF8());
-      if (codec != NULL) mCodecList->Select(mCodecList->FindString(wxString::FromUTF8(codec->name)));
-      DoOnCodecList();
-   }
+   //Select the codec that was selected last time this dialog was closed
+   const AVCodec* codec = avcodec_find_encoder_by_name(gPrefs->Read(wxT("/FileFormats/FFmpegCodec")).ToUTF8());
+   if (codec != NULL) mCodecList->Select(mCodecList->FindString(wxString::FromUTF8(codec->name)));
+   DoOnCodecList();
 
 }
 
@@ -1768,8 +1747,9 @@ ExportFFmpegOptions::ExportFFmpegOptions(wxWindow *parent)
 void ExportFFmpegOptions::FetchFormatList()
 {
    // Enumerate all output formats
-   AVOutputFormat *ofmt = NULL;
-   while ((ofmt = av_oformat_next(ofmt))!=NULL)
+   const AVOutputFormat *ofmt = NULL;
+   void* i = 0;
+   while ((ofmt = av_muxer_iterate(&i))!=NULL)
    {
       // Any audio-capable format has default audio codec.
       // If it doesn't, then it doesn't supports any audio codecs
@@ -1789,8 +1769,9 @@ void ExportFFmpegOptions::FetchFormatList()
 void ExportFFmpegOptions::FetchCodecList()
 {
    // Enumerate all codecs
-   AVCodec *codec = NULL;
-   while ((codec = av_codec_next(codec))!=NULL)
+   const AVCodec *codec = NULL;
+   void* i = 0;
+   while ((codec = av_codec_iterate(&i))!=NULL)
    {
       // We're only interested in audio and only in encoders
       if (codec->type == AVMEDIA_TYPE_AUDIO && av_codec_is_encoder(codec))
@@ -2066,7 +2047,7 @@ int ExportFFmpegOptions::FetchCompatibleCodecList(const wxChar *fmt, AVCodecID i
             break;
          }
          // Find the codec, that is claimed to be compatible
-         AVCodec *codec = avcodec_find_encoder(CompatibilityList[i].codec);
+         const AVCodec *codec = avcodec_find_encoder(CompatibilityList[i].codec);
          // If it exists, is audio and has encoder
          if (codec != NULL && (codec->type == AVMEDIA_TYPE_AUDIO) && av_codec_is_encoder(codec))
          {
@@ -2080,8 +2061,9 @@ int ExportFFmpegOptions::FetchCompatibleCodecList(const wxChar *fmt, AVCodecID i
    // All codecs are compatible with this format
    if (found == 2)
    {
-      AVCodec *codec = NULL;
-      while ((codec = av_codec_next(codec))!=NULL)
+      const AVCodec *codec = NULL;
+      void* i = 0;
+      while ((codec = av_codec_iterate(&i))!=NULL)
       {
          if (codec->type == AVMEDIA_TYPE_AUDIO && av_codec_is_encoder(codec))
          {
@@ -2103,10 +2085,10 @@ int ExportFFmpegOptions::FetchCompatibleCodecList(const wxChar *fmt, AVCodecID i
    else if (found == 0)
    {
       wxCharBuffer buf = str.ToUTF8();
-      AVOutputFormat *format = av_guess_format(buf,NULL,NULL);
+      const AVOutputFormat *format = av_guess_format(buf,NULL,NULL);
       if (format != NULL)
       {
-         AVCodec *codec = avcodec_find_encoder(format->audio_codec);
+         const AVCodec *codec = avcodec_find_encoder(format->audio_codec);
          if (codec != NULL && (codec->type == AVMEDIA_TYPE_AUDIO) && av_codec_is_encoder(codec))
          {
             if ((id >= 0) && codec->id == id) index = mShownCodecNames.size();
@@ -2129,7 +2111,7 @@ int ExportFFmpegOptions::FetchCompatibleFormatList(AVCodecID id, wxString *selfm
    mShownFormatNames.clear();
    mShownFormatLongNames.clear();
    mFormatList->Clear();
-   AVOutputFormat *ofmt = NULL;
+   const AVOutputFormat *ofmt = NULL;
    ofmt = NULL;
    wxArrayString FromList;
    // Find all formats compatible to this codec in compatibility list
@@ -2140,7 +2122,7 @@ int ExportFFmpegOptions::FetchCompatibleFormatList(AVCodecID id, wxString *selfm
          if ((selfmt != NULL) && (*selfmt == CompatibilityList[i].fmt)) index = mShownFormatNames.size();
          FromList.push_back(CompatibilityList[i].fmt);
          mShownFormatNames.push_back(CompatibilityList[i].fmt);
-         AVOutputFormat *tofmt = av_guess_format(wxString(CompatibilityList[i].fmt).ToUTF8(),NULL,NULL);
+         const AVOutputFormat *tofmt = av_guess_format(wxString(CompatibilityList[i].fmt).ToUTF8(),NULL,NULL);
          if (tofmt != NULL) mShownFormatLongNames.push_back(wxString::Format(wxT("%s - %s"),CompatibilityList[i].fmt,wxString::FromUTF8(tofmt->long_name)));
       }
    }
@@ -2160,7 +2142,8 @@ int ExportFFmpegOptions::FetchCompatibleFormatList(AVCodecID id, wxString *selfm
    if (found)
    {
       // Find all formats which have this codec as default and which are not in the list yet and add them too
-      while ((ofmt = av_oformat_next(ofmt))!=NULL)
+      void* i = 0;
+      while ((ofmt = av_muxer_iterate(&i))!=NULL)
       {
          if (ofmt->audio_codec == id)
          {
@@ -2366,7 +2349,7 @@ bool ExportFFmpegOptions::ReportIfBadCombination()
    FindSelectedCodec(&selcdc, &selcdclong);
    if (selcdc == NULL)
       return false; // unrecognised codec. Treated as OK
-   AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
+   const AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
    if (cdc == NULL)
       return false; // unrecognised codec. Treated as OK
 
@@ -2414,7 +2397,7 @@ bool ExportFFmpegOptions::ReportIfBadCombination()
 
 
 
-void ExportFFmpegOptions::EnableDisableControls(AVCodec *cdc, wxString *selfmt)
+void ExportFFmpegOptions::EnableDisableControls(const AVCodec *cdc, wxString *selfmt)
 {
    int handled = -1;
    for (int i = 0; apptable[i].control != 0; i++)
@@ -2452,7 +2435,7 @@ void ExportFFmpegOptions::DoOnFormatList()
    wxString *selcdclong = NULL;
    FindSelectedCodec(&selcdc, &selcdclong);
 
-   AVOutputFormat *fmt = av_guess_format(selfmt->ToUTF8(),NULL,NULL);
+   const AVOutputFormat *fmt = av_guess_format(selfmt->ToUTF8(),NULL,NULL);
    if (fmt == NULL)
    {
       //This shouldn't really happen
@@ -2464,7 +2447,7 @@ void ExportFFmpegOptions::DoOnFormatList()
 
    if (selcdc != NULL)
    {
-      AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
+       const AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
       if (cdc != NULL)
       {
          selcdcid = cdc->id;
@@ -2473,7 +2456,7 @@ void ExportFFmpegOptions::DoOnFormatList()
    int newselcdc = FetchCompatibleCodecList(*selfmt, (AVCodecID)selcdcid);
    if (newselcdc >= 0) mCodecList->Select(newselcdc);
 
-   AVCodec *cdc = NULL;
+   const AVCodec *cdc = NULL;
    if (selcdc != NULL)
       cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
    EnableDisableControls(cdc, selfmt);
@@ -2496,7 +2479,7 @@ void ExportFFmpegOptions::DoOnCodecList()
    wxString *selfmtlong = NULL;
    FindSelectedFormat(&selfmt, &selfmtlong);
 
-   AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
+   const AVCodec *cdc = avcodec_find_encoder_by_name(selcdc->ToUTF8());
    if (cdc == NULL)
    {
       //This shouldn't really happen
@@ -2508,7 +2491,7 @@ void ExportFFmpegOptions::DoOnCodecList()
 
    if (selfmt != NULL)
    {
-      AVOutputFormat *fmt = av_guess_format(selfmt->ToUTF8(),NULL,NULL);
+      const AVOutputFormat *fmt = av_guess_format(selfmt->ToUTF8(),NULL,NULL);
       if (fmt == NULL)
       {
          selfmt = NULL;

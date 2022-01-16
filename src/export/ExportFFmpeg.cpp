@@ -55,23 +55,6 @@ function.
 // Define this to automatically resample audio to the nearest supported sample rate
 #define FFMPEG_AUTO_RESAMPLE 1
 
-static bool CheckFFmpegPresence(bool quiet = false)
-{
-   bool result = true;
-   PickFFmpegLibs();
-   if (!FFmpegLibsInst()->ValidLibsLoaded())
-   {
-      if (!quiet)
-      {
-         AudacityMessageBox(XO(
-"Properly configured FFmpeg is required to proceed.\nYou can configure it at Preferences > Libraries."));
-      }
-      result = false;
-   }
-   DropFFmpegLibs();
-   return result;
-}
-
 static int AdjustFormatIndex(int format)
 {
    int subFormat = -1;
@@ -97,9 +80,6 @@ public:
 
    ExportFFmpeg();
    ~ExportFFmpeg() override;
-
-   /// Callback, called from GetFilename
-   bool CheckFileName(wxFileName &filename, int format = 0) override;
 
    /// Format initialization
    bool Init(const char *shortname, AudacityProject *project, const Tags *metadata, int subformat);
@@ -154,7 +134,7 @@ public:
 
 private:
 
-   AVOutputFormat  *   mEncFormatDesc{};       // describes our output file to libavformat
+   const AVOutputFormat  *   mEncFormatDesc{};       // describes our output file to libavformat
    int               default_frame_size{};
    AVStream        *   mEncAudioStream{};      // the output audio stream (may remain NULL)
    int               mEncAudioFifoOutBufSiz{};
@@ -186,19 +166,18 @@ ExportFFmpeg::ExportFFmpeg()
    mSampleRate = 0;
    mSupportsUTF8 = true;
 
-   PickFFmpegLibs(); // DropFFmpegLibs() call is in ExportFFmpeg destructor
-   int avfver = FFmpegLibsInst()->ValidLibsLoaded() ? avformat_version() : 0;
+   int avfver = avformat_version();
    int newfmt;
    // Adds export types from the export type list
    for (newfmt = 0; newfmt < FMT_LAST; newfmt++)
    {
       wxString shortname(ExportFFmpegOptions::fmts[newfmt].shortname);
       //Don't hide export types when there's no av-libs, and don't hide FMT_OTHER
-      if (newfmt < FMT_OTHER && FFmpegLibsInst()->ValidLibsLoaded())
+      if (newfmt < FMT_OTHER)
       {
          // Format/Codec support is compiled in?
-         AVOutputFormat *avoformat = av_guess_format(shortname.mb_str(), NULL, NULL);
-         AVCodec *avcodec = avcodec_find_encoder(ExportFFmpegOptions::fmts[newfmt].codecid);
+         const AVOutputFormat *avoformat = av_guess_format(shortname.mb_str(), NULL, NULL);
+         const AVCodec *avcodec = avcodec_find_encoder(ExportFFmpegOptions::fmts[newfmt].codecid);
          if (avoformat == NULL || avcodec == NULL)
          {
             ExportFFmpegOptions::fmts[newfmt].compiledIn = false;
@@ -239,25 +218,7 @@ ExportFFmpeg::ExportFFmpeg()
    }
 }
 
-ExportFFmpeg::~ExportFFmpeg()
-{
-   DropFFmpegLibs();
-}
-
-bool ExportFFmpeg::CheckFileName(wxFileName & WXUNUSED(filename), int WXUNUSED(format))
-{
-   bool result = true;
-
-   // Show "Locate FFmpeg" dialog
-   if (!CheckFFmpegPresence(true))
-   {
-      FFmpegLibsInst()->FindLibs(NULL);
-      FFmpegLibsInst()->FreeLibs();
-      return LoadFFmpeg(true);
-   }
-
-   return result;
-}
+ExportFFmpeg::~ExportFFmpeg() {}
 
 bool ExportFFmpeg::Init(const char *shortname, AudacityProject *project, const Tags *metadata, int subformat)
 {
@@ -270,9 +231,6 @@ bool ExportFFmpeg::Init(const char *shortname, AudacityProject *project, const T
 
    int err;
    //FFmpegLibsInst()->LoadLibs(NULL,true); //Loaded at startup or from Prefs now
-
-   if (!FFmpegLibsInst()->ValidLibsLoaded())
-      return false;
 
    av_log_set_callback(av_log_wx_callback);
 
@@ -305,8 +263,6 @@ bool ExportFFmpeg::Init(const char *shortname, AudacityProject *project, const T
    // Initialise the output format context.
    mEncFormatCtx->oformat = mEncFormatDesc;
 
-   memcpy(mEncFormatCtx->filename, OSINPUT(path), strlen(OSINPUT(path))+1);
-
    // At the moment Audacity can export only one audio stream
    if ((mEncAudioStream = avformat_new_stream(mEncFormatCtx.get(), NULL)) == NULL)
    {
@@ -329,8 +285,23 @@ bool ExportFFmpeg::Init(const char *shortname, AudacityProject *project, const T
    // mEncFormatCtx takes care of avformat_free_context(), so
    // mEncAudioStream can be a plain pointer.
 
+   // This seems to fail
    // mEncAudioCodecCtx now becomes responsible for closing the codec:
-   mEncAudioCodecCtx.reset(mEncAudioStream->codec);
+   AVCodecContext* ctx = avcodec_alloc_context3(NULL);
+   if (ctx == NULL)
+   {
+       wxLogError(wxT("FFmpeg: avcodec_alloc_context3() failed."));
+       return false;
+   }
+
+   int code = avcodec_parameters_to_context(ctx, mEncAudioStream->codecpar);
+   if (!(code >= 0))
+   {
+       wxLogError(wxT("FFmpeg: avcodec_parameters_to_context() failed."));
+       return false;
+   }
+
+   mEncAudioCodecCtx.reset(ctx);
    mEncAudioStream->id = 0;
 
    // Open the output file.
@@ -416,7 +387,7 @@ static int set_dict_int(AVDictionary **dict, const char *key, int val)
 bool ExportFFmpeg::InitCodecs(AudacityProject *project)
 {
    const auto &settings = ProjectSettings::Get( *project );
-   AVCodec *codec = NULL;
+   const AVCodec *codec = NULL;
    AVDictionary *options = NULL;
    AVDictionaryCleanup cleanup{ &options };
 
@@ -669,7 +640,7 @@ static int encode_audio(AVCodecContext *avctx, AVPacket *pkt, int16_t *audio_sam
 {
    // Assume *pkt is already initialized.
 
-   int i, ch, buffer_size, ret, got_output = 0;
+   int i, ch, buffer_size, ret;
    AVMallocHolder<uint8_t> samples;
    AVFrameHolder frame;
 
@@ -685,7 +656,7 @@ static int encode_audio(AVCodecContext *avctx, AVPacket *pkt, int16_t *audio_sam
 #endif
 
       buffer_size = av_samples_get_buffer_size(NULL, avctx->channels, frame->nb_samples,
-                                              avctx->sample_fmt, 0);
+          (AVSampleFormat)avctx->sample_fmt, 0);
       if (buffer_size < 0) {
          AudacityMessageBox(
             XO("FFmpeg : ERROR - Could not get sample buffer size"),
@@ -704,7 +675,7 @@ static int encode_audio(AVCodecContext *avctx, AVPacket *pkt, int16_t *audio_sam
          return AVERROR(ENOMEM);
       }
       /* setup the data pointers in the AVFrame */
-      ret = avcodec_fill_audio_frame(frame.get(), avctx->channels, avctx->sample_fmt,
+      ret = avcodec_fill_audio_frame(frame.get(), avctx->channels, (AVSampleFormat)avctx->sample_fmt,
                                   samples.get(), buffer_size, 0);
       if (ret < 0) {
          AudacityMessageBox(
@@ -756,19 +727,39 @@ static int encode_audio(AVCodecContext *avctx, AVPacket *pkt, int16_t *audio_sam
    pkt->data = NULL; // packet data will be allocated by the encoder
    pkt->size = 0;
 
-   ret = avcodec_encode_audio2(avctx, pkt, frame.get(), &got_output);
-   if (ret < 0) {
-      AudacityMessageBox(
-         XO("FFmpeg : ERROR - encoding frame failed"),
-         XO("FFmpeg Error"),
-         wxOK|wxCENTER|wxICON_EXCLAMATION
-      );
-      return ret;
+   ret = avcodec_send_frame(avctx, frame.get());
+   if (ret < 0)
+   {
+       AudacityMessageBox(
+           XO("FFmpeg : ERROR - sending frame for encoding failed"),
+           XO("FFmpeg Error"),
+           wxOK | wxCENTER | wxICON_EXCLAMATION
+       );
+       return ret;
+   }
+
+   while (ret >= 0)
+   {
+       ret = avcodec_receive_packet(avctx, pkt);
+
+       if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF)
+           return (ret == AVERROR(EAGAIN)) ? 0 : 1;
+       else if (ret < 0)
+       {
+           AudacityMessageBox(
+               XO("FFmpeg : ERROR - encoding failed"),
+               XO("FFmpeg Error"),
+               wxOK | wxCENTER | wxICON_EXCLAMATION
+           );
+           return ret;
+       }
+
+       av_packet_unref(pkt);
    }
 
    pkt->dts = pkt->pts = AV_NOPTS_VALUE; // we dont set frame.pts thus dont trust the AVPacket ts
 
-   return got_output;
+   return frame ? 0 : 1;
 }
 
 
@@ -972,8 +963,6 @@ ProgressResult ExportFFmpeg::Export(AudacityProject *project,
    bool selectionOnly, double t0, double t1,
    MixerSpec *mixerSpec, const Tags *metadata, int subformat)
 {
-   if (!CheckFFmpegPresence())
-      return ProgressResult::Cancelled;
    mChannels = channels;
    // subformat index may not correspond directly to fmts[] index, convert it
    mSubFormat = AdjustFormatIndex(subformat);

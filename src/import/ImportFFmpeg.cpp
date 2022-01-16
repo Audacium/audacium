@@ -291,21 +291,6 @@ std::unique_ptr<ImportFileHandle> FFmpegImportPlugin::Open(
       //insdead of usual AudacityMessageBox()
       bool newsession = false;
       gPrefs->Read(wxT("/NewImportingSession"), &newsession);
-      if (!FFmpegLibsInst()->ValidLibsLoaded())
-      {
-         int dontShowDlg;
-         gPrefs->Read(wxT("/FFmpeg/NotFoundDontShow"),&dontShowDlg,0);
-         if (dontShowDlg == 0 && newsession)
-         {
-            gPrefs->Write(wxT("/NewImportingSession"), false);
-            gPrefs->Flush();
-            FFmpegNotFoundDialog{ nullptr }.ShowModal();
-         }
-      }
-   }
-   if (!FFmpegLibsInst()->ValidLibsLoaded())
-   {
-      return nullptr;
    }
 
    // Open the file for import
@@ -326,8 +311,6 @@ static Importer::RegisteredImportPlugin registered{ "FFmpeg",
 FFmpegImportFileHandle::FFmpegImportFileHandle(const FilePath & name)
 :  ImportFileHandle(name)
 {
-   PickFFmpegLibs();
-
    mFormatContext = NULL;
    mNumStreams = 0;
    mCancelled = false;
@@ -339,11 +322,6 @@ FFmpegImportFileHandle::FFmpegImportFileHandle(const FilePath & name)
 
 bool FFmpegImportFileHandle::Init()
 {
-   //FFmpegLibsInst()->LoadLibs(NULL,false); //Loaded at startup or from Prefs now
-
-   if (!FFmpegLibsInst()->ValidLibsLoaded())
-      return false;
-
    av_log_set_callback(av_log_wx_callback);
 
    int err;
@@ -382,13 +360,29 @@ bool FFmpegImportFileHandle::InitCodecs()
    // Fill the stream contexts
    for (unsigned int i = 0; i < mFormatContext->nb_streams; i++)
    {
-      if (mFormatContext->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO)
+      if (mFormatContext->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO)
       {
          //Create a context
          auto sc = std::make_unique<streamContext>();
 
          sc->m_stream = mFormatContext->streams[i];
-         sc->m_codecCtx = sc->m_stream->codec;
+
+         // This seems to fail
+         AVCodecContext* ctx = avcodec_alloc_context3(NULL);
+         if (ctx == NULL)
+         {
+             wxLogError(wxT("FFmpeg: avcodec_alloc_context3() failed."));
+             return false;
+         }
+
+         int code = avcodec_parameters_to_context(ctx, sc->m_stream->codecpar);
+         if (!(code >= 0))
+         {
+             wxLogError(wxT("FFmpeg: avcodec_parameters_to_context() failed."));
+             continue;
+         }
+
+         sc->m_codecCtx = ctx;
 
          const AVCodecID id   = sc->m_codecCtx->codec_id;
          const char*     name = avcodec_get_name(id);
@@ -441,7 +435,7 @@ bool FFmpegImportFileHandle::InitCodecs()
                codec->name,
                lang,
                bitrate,
-               (int)sc->m_stream->codec->channels,
+               (int)sc->m_stream->codecpar->channels,
                (int)duration);
          mStreamInfo.push_back(strinfo);
          mScs->get()[mNumStreams++] = std::move(sc);
@@ -495,7 +489,7 @@ ProgressResult FFmpegImportFileHandle::Import(WaveTrackFactory *trackFactory,
       ++s;
 
       auto sc = scs[s].get();
-      switch (sc->m_stream->codec->sample_fmt)
+      switch (sc->m_stream->codecpar->format)
       {
          case AV_SAMPLE_FMT_U8:
          case AV_SAMPLE_FMT_S16:
@@ -511,10 +505,10 @@ ProgressResult FFmpegImportFileHandle::Import(WaveTrackFactory *trackFactory,
       }
 
       // There is a possibility that number of channels will change over time, but we do not have WaveTracks for NEW channels. Remember the number of channels and stick to it.
-      sc->m_initialchannels = sc->m_stream->codec->channels;
-      stream.resize(sc->m_stream->codec->channels);
+      sc->m_initialchannels = sc->m_stream->codecpar->channels;
+      stream.resize(sc->m_stream->codecpar->channels);
       for (auto &channel : stream)
-         channel = NewWaveTrack(*trackFactory, sc->m_osamplefmt, sc->m_stream->codec->sample_rate);
+         channel = NewWaveTrack(*trackFactory, sc->m_osamplefmt, sc->m_stream->codecpar->sample_rate);
    }
 
    // Handles the start_time by creating silence. This may or may not be correct.
@@ -640,7 +634,7 @@ ProgressResult FFmpegImportFileHandle::WriteData(streamContext *sc)
 
    // Allocate the buffer to store audio.
    auto insamples = sc->m_decodedAudioSamplesValidSiz / sc->m_samplesize;
-   size_t nChannels = std::min(sc->m_stream->codec->channels, sc->m_initialchannels);
+   size_t nChannels = std::min(sc->m_stream->codecpar->channels, sc->m_initialchannels);
 
    ArraysOf<uint8_t> tmp{ nChannels, sc->m_osamplesize * (insamples / nChannels) };
 
@@ -650,7 +644,7 @@ ProgressResult FFmpegImportFileHandle::WriteData(streamContext *sc)
    unsigned int pos = 0;
    while (pos < insamples)
    {
-      for (size_t chn = 0; (int)chn < sc->m_stream->codec->channels; chn++)
+      for (size_t chn = 0; (int)chn < sc->m_stream->codecpar->channels; chn++)
       {
          if (chn < nChannels)
          {
@@ -712,8 +706,8 @@ ProgressResult FFmpegImportFileHandle::WriteData(streamContext *sc)
    // When PTS is not set, use number of frames and number of current frame
    else if (sc->m_stream->nb_frames > 0 && sc->m_codecCtx->frame_number > 0 && sc->m_codecCtx->frame_number <= sc->m_stream->nb_frames)
    {
-      mProgressPos = sc->m_codecCtx->frame_number;
-      mProgressLen = sc->m_stream->nb_frames;
+       mProgressPos = sc->m_codecCtx->frame_number;
+       mProgressLen = sc->m_stream->nb_frames;
    }
    // When number of frames is unknown, use position in file
    else if (filesize > 0 && sc->m_pkt->pos > 0 && sc->m_pkt->pos <= filesize)
@@ -772,13 +766,10 @@ void FFmpegImportFileHandle::GetMetadata(Tags &tags, const wxChar *tag, const ch
 
 FFmpegImportFileHandle::~FFmpegImportFileHandle()
 {
-   if (FFmpegLibsInst()->ValidLibsLoaded())
-      av_log_set_callback(av_log_default_callback);
+   av_log_set_callback(av_log_default_callback);
 
    // Do this before unloading the libraries
    mContext.reset();
-
-   DropFFmpegLibs();
 }
 
 #endif //USE_FFMPEG

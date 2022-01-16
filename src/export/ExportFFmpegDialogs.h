@@ -293,7 +293,7 @@ private:
    // leaving only relevant controls enabled.
    // Hiding the controls may have been a better idea,
    // but it's hard to hide their text labels too
-   void EnableDisableControls(AVCodec *cdc, wxString *selfmt);
+   void EnableDisableControls(const AVCodec *cdc, wxString *selfmt);
    DECLARE_EVENT_TABLE()
 };
 
