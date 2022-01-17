@@ -1,12 +1,3 @@
-## Goals of this project
-The goals **Audacium** is trying to achieve are pretty simple:
-- Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically).
-- Adding new features people want, listening closely to the community.
-- Make the code base easier to work with, less confusing for a newbie.
-
-## Donations
-Litecoin: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
-
 **Audacium** is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
 
 - **Recording** from any real, or virtual audio device that is available to the host system.
@@ -28,3 +19,7 @@ Help with using Audacium is available from the [Matrix room](https://matrix.to/#
 Build instructions are available [here](https://github.com/SartoxSoftware/audacium/wiki/Building).
 
 More information is available from the [wiki](https://github.com/SartoxSoftware/audacium/wiki).
+
+## Donations
+
+Litecoin: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
