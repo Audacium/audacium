@@ -4,12 +4,6 @@
 ## Searching for contributors!
 I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
 
-## Goals of this project
-The goals **Audacium** is trying to achieve are pretty simple:
-- Restoring Audacity to what it was before, with no crash reporting (GH Issues exist for that), or very simple update checking (only at startup, not periodically).
-- Adding new features people want, listening closely to the community.
-- Make the code base easier to work with, less confusing for a newbie.
-
 ----------------
 
 [**Audacium**](http://audacium.xyz) is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.
