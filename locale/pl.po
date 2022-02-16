@@ -7,7 +7,7 @@
 # Aron <aron.plotnikowski@cryptolab.net>, 2013
 # Aron <aron.plotnikowski@cryptolab.net>, 2013
 # Grzegorz Pruchniakowski <gootector@o2.pl>, 2013
-# Grzegorz Pruchniakowski <gootector@o2.pl>, 2013-2021
+# Grzegorz Pruchniakowski <gootector@o2.pl>, 2013-2022
 # jacbob77 <jacbob77@tlen.pl>, 2012
 # jacbob77 <jacbob77@tlen.pl>, 2012
 # Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2012
