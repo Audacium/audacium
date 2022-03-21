@@ -193,7 +193,7 @@ ExportFFmpeg::ExportFFmpeg()
    for (newfmt = 0; newfmt < FMT_LAST; newfmt++)
    {
       wxString shortname(ExportFFmpegOptions::fmts[newfmt].shortname);
-      //Don't hide export types when there's no av-libs, and don't hide FMT_OTHER
+      // Don't hide export types when there's no av-libs, and don't hide FMT_OTHER
       if (newfmt < FMT_OTHER && FFmpegLibsInst()->ValidLibsLoaded())
       {
          // Format/Codec support is compiled in?
@@ -766,7 +766,7 @@ static int encode_audio(AVCodecContext *avctx, AVPacket *pkt, int16_t *audio_sam
       return ret;
    }
 
-   pkt->dts = pkt->pts = AV_NOPTS_VALUE; // we dont set frame.pts thus dont trust the AVPacket ts
+   pkt->dts = pkt->pts = AV_NOPTS_VALUE; // We don't set frame.pts thus don't trust the AVPacket ts
 
    return got_output;
 }
