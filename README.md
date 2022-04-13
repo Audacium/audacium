@@ -1,6 +1,9 @@
 [![Audacium](.github/audacium_logo.png)](http://audacium.xyz)
 <br/>
 
+## Maintenance
+For the time being, Audacium won't be updated. I've simply lost interest in the project.
+
 ## Searching for contributors!
 I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
 
@@ -31,6 +34,3 @@ More information is available from the [wiki](https://github.com/SartoxOnlyGNU/a
 
 ## How to contribute
 Submit a pull request, then we'll carefully review it and merge it if possible.
-
-## Donations
-You can donate to me via **Litecoin** using this wallet: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
