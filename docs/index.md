@@ -19,7 +19,3 @@ Help with using Audacium is available from the [Matrix room](https://matrix.to/#
 Build instructions are available [here](https://github.com/SartoxSoftware/audacium/wiki/Building).
 
 More information is available from the [wiki](https://github.com/SartoxSoftware/audacium/wiki).
-
-## Donations
-
-Litecoin: LfA7A3wVdGysc4QXpsUvYaVUYvhcZnVE7j
