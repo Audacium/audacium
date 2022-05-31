@@ -1,11 +1,8 @@
 [![Audacium](.github/audacium_logo.png)](http://audacium.xyz)
 <br/>
 
-## Maintenance
-For the time being, Audacium won't be updated. I've simply lost interest in the project.
-
-## Searching for contributors!
-I'm currently searching for contributors as I can't keep up the project alone. If you're interested to become one, make an issue!
+## Searching for a maintainer!
+I'm currently searching for a maintainer to transfer the ownership too. In other words, I'm "retiring" from Audacium.
 
 ----------------
 
@@ -28,9 +25,9 @@ For end users, the latest Windows and macOS release version of Audacium is avail
 There is also an [AUR package](https://aur.archlinux.org/packages/audacium/) for Arch Linux users.
 Help with using Audacium is available from the [Matrix room](https://matrix.to/#/#audacium:envs.net) or via the [Discord server](https://discord.gg/ZH5234Abhb) (the two are bridged together).
 
-Build instructions are available [here](https://github.com/SartoxOnlyGNU/audacium/wiki/Building).
+Build instructions are available [here](https://github.com/SartoxSoftware/audacium/wiki/Building).
 
-More information is available from the [wiki](https://github.com/SartoxOnlyGNU/audacium/wiki).
+More information is available from the [wiki](https://github.com/SartoxSoftware/audacium/wiki).
 
 ## How to contribute
 Submit a pull request, then we'll carefully review it and merge it if possible.
