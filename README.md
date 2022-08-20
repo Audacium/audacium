@@ -2,7 +2,11 @@
 <br/>
 
 ## Searching for a maintainer!
-I'm currently searching for a maintainer to transfer the ownership too. In other words, I'm "retiring" from Audacium.
+I'm currently searching for a maintainer to transfer the ownership to. In other words, I'm "retiring" from Audacium. - AnErruption
+
+## Reorganisation needed
+The code rn is a mess. Before working on anything new, we should be fixing the codebase but it needs lots of effort and very hard for a sleeping project like ours.
+It would be cool if someone helps to clean up the codebase. - Ross Maxx
 
 ----------------
 
