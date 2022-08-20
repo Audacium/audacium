@@ -43,8 +43,8 @@
 #define __AUDACITY_IMPORTERINTERFACE_H__
 
 #include "Identifier.h"
-#include "audacity/ConfigInterface.h"
-#include "audacity/ComponentInterface.h"
+#include "interfaces/ConfigInterface.h"
+#include "interfaces/ComponentInterface.h"
 
 // ============================================================================
 //

@@ -49,7 +49,7 @@
 #include <wx/fileconf.h> // to inherit
 #include <algorithm>
 
-#include "ComponentInterface.h"
+#include "interfaces/ComponentInterface.h"
 
 
 /**

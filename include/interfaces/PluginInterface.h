@@ -42,10 +42,10 @@
 #ifndef __AUDACITY_PLUGININTERFACE_H__
 #define __AUDACITY_PLUGININTERFACE_H__
 
-#include "audacity/ConfigInterface.h"
-#include "audacity/EffectInterface.h"
-#include "audacity/ComponentInterface.h"
-#include "audacity/ImporterInterface.h"
+#include "interfaces/ConfigInterface.h"
+#include "interfaces/EffectInterface.h"
+#include "interfaces/ComponentInterface.h"
+#include "interfaces/ImporterInterface.h"
 
 
 class ModuleInterface;

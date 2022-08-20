@@ -45,9 +45,9 @@
 #include <functional>
 
 #include "Identifier.h"
-#include "audacity/ComponentInterface.h"
-#include "audacity/ConfigInterface.h"
-#include "audacity/EffectAutomationParameters.h" // for command automation
+#include "interfaces/ComponentInterface.h"
+#include "interfaces/ConfigInterface.h"
+#include "interfaces/EffectAutomationParameters.h" // for command automation
 
 class ShuttleGui;
 
