@@ -26,9 +26,6 @@
 #define __AUDACITY_SELECTEDREGION__
 
 
-
-
-
 #include <wx/defs.h>
 #include <wx/chartype.h> // for wxChar, a typedef
 #include <math.h>

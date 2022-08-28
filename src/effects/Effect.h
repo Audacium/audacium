@@ -25,8 +25,8 @@ class wxChoice;
 class wxListBox;
 class wxWindow;
 
-#include "audacity/ConfigInterface.h"
-#include "audacity/EffectInterface.h"
+#include "interfaces/ConfigInterface.h"
+#include "interfaces/EffectInterface.h"
 
 #include "../SelectedRegion.h"
 

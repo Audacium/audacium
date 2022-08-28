@@ -10,8 +10,6 @@ Paul Licameli split from AudacityProject.cpp
 
 #include "ProjectWindow.h"
 
-
-
 #include "AllThemeResources.h"
 #include "AudioIO.h"
 #include "Menus.h"
@@ -24,11 +22,15 @@ Paul Licameli split from AudacityProject.cpp
 #include "ViewInfo.h"
 #include "WaveClip.h"
 #include "WaveTrack.h"
+
 #include "prefs/ThemePrefs.h"
 #include "prefs/TracksPrefs.h"
+
 #include "toolbars/ToolManager.h"
+
 #include "tracks/ui/Scrubbing.h"
 #include "tracks/ui/TrackView.h"
+
 #include "widgets/wxPanelWrapper.h"
 #include "widgets/WindowAccessible.h"
 
