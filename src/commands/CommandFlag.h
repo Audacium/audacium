@@ -16,7 +16,7 @@
 #include <utility>
 #include <wx/string.h>
 
-#include "audacity/Types.h"
+#include "Types.h"
 
 class AudacityProject;
 
