@@ -47,7 +47,7 @@
 #include "../wxFileNameWrapper.h"
 #include "../prefs/GUIPrefs.h"
 
-const wxString HelpSystem::HelpHostname = wxT("github.com/SartoxOnlyGNU/audacium/wiki");
+const wxString HelpSystem::HelpHostname = wxT("github.com/audacium/audacium/wiki");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/");
 const wxString HelpSystem::LocalHelpManDir = wxT("/man/");
 
