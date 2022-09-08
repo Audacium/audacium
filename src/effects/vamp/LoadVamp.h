@@ -14,9 +14,9 @@
 
 #include <memory>
 
-#include "audacity/ModuleInterface.h"
-#include "audacity/EffectInterface.h"
-#include "audacity/PluginInterface.h"
+#include "interfaces/ModuleInterface.h"
+#include "interfaces/EffectInterface.h"
+#include "interfaces/PluginInterface.h"
 
 #include <vamp-hostsdk/PluginLoader.h>
 

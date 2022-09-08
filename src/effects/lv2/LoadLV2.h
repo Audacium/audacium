@@ -31,9 +31,9 @@
 #include "lv2/uri-map/uri-map.h"
 #include "lv2/units/units.h"
 
-#include "audacity/ModuleInterface.h"
-#include "audacity/EffectInterface.h"
-#include "audacity/PluginInterface.h"
+#include "interfaces/ModuleInterface.h"
+#include "interfaces/EffectInterface.h"
+#include "interfaces/PluginInterface.h"
 
 #include "lv2_external_ui.h"
 
