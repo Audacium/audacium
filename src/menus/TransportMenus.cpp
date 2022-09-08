@@ -1,5 +1,4 @@
 
-
 #include "../AdornedRulerPanel.h"
 #include "../AudioIO.h"
 #include "../CommonCommandFlags.h"
@@ -21,14 +20,18 @@
 #include "../TrackPanel.h"
 #include "../UndoManager.h"
 #include "../WaveClip.h"
-#include "../prefs/RecordingPrefs.h"
-#include "../prefs/TracksPrefs.h"
 #include "../WaveTrack.h"
 #include "../ViewInfo.h"
+
+#include "../prefs/RecordingPrefs.h"
+#include "../prefs/TracksPrefs.h"
+
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
+
 #include "../toolbars/ControlToolBar.h"
 #include "../toolbars/TranscriptionToolBar.h"
+
 #include "../widgets/AudacityMessageBox.h"
 #include "../widgets/ErrorDialog.h"
 #include "../widgets/ProgressDialog.h"

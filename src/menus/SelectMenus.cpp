@@ -16,9 +16,12 @@
 #include "../TimeDialog.h"
 #include "../TrackPanel.h"
 #include "../WaveTrack.h"
+
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
+
 #include "../toolbars/ControlToolBar.h"
+
 #include "../tracks/ui/SelectHandle.h"
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackView.h"
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h"

@@ -1,10 +1,8 @@
 
-
 #include "../CommonCommandFlags.h"
 #include "../LabelTrack.h"
 #include "../Menus.h"
 #include "../Mix.h"
-
 #include "../Prefs.h"
 #include "../Project.h"
 #include "../ProjectAudioIO.h"
@@ -22,12 +20,17 @@
 #include "../WaveClip.h"
 #include "../ViewInfo.h"
 #include "../WaveTrack.h"
+
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
+
 #include "../effects/EffectManager.h"
 #include "../effects/EffectUI.h"
+
 #include "../prefs/QualitySettings.h"
+
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackControls.h"
+
 #include "../widgets/ASlider.h"
 #include "../widgets/AudacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
