@@ -35,20 +35,6 @@ else()
    set( AUDACITY_SUFFIX "" )
 endif()
 
-# Don't allow in-source builds...no real reason, just
-# keeping those source trees nice and tidy.  :-)
-# (This can be removed if it becomes an issue.)
-if( "${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}" )
-   message( FATAL_ERROR
-      "In-source builds not allowed.\n"
-      "Create a new directory and run cmake from there, i.e.:\n"
-      "  mkdir build\n"
-      "  cd build\n"
-      "  cmake ..\n"
-      "You will need to delete CMakeCache.txt and CMakeFiles from this directory to clean up."
-   )
-endif()
-
 # Just a couple of convenience variables
 set( topdir "${CMAKE_SOURCE_DIR}" )
 set( libsrc "${topdir}/lib-src" )
