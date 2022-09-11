@@ -10,7 +10,7 @@
 #define __AUDACITY_WIDGETS_KEYVIEW__
 
 
-#include "audacity/Types.h"
+#include "Types.h"
 
 #include <vector>
 #include <wx/setup.h> // for wxUSE_* macros
