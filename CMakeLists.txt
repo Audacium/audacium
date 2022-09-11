@@ -457,6 +457,7 @@ resolve_conan_dependencies()
 
 add_subdirectory( "help" )
 add_subdirectory( "images" )
+add_subdirectory( "include" )
 add_subdirectory( "libraries" )
 add_subdirectory( "locale" )
 add_subdirectory( "src" )
