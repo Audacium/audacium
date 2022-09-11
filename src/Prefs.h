@@ -38,7 +38,7 @@
 
 #include <functional>
 
-#include "../include/audacity/ComponentInterface.h"
+#include "interfaces/ComponentInterface.h"
 #include "wxArrayStringEx.h"
 #include "widgets/FileConfig.h"
 

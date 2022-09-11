@@ -43,7 +43,7 @@
 #define __AUDACITY_COMPONENT_INTERFACE_H__
 
 #include "Identifier.h"
-#include "audacity/Types.h"
+#include "Types.h"
 #include <wx/string.h> // member variables
 
 STRINGS_API const wxString& GetCustomTranslation(const wxString& str1 );

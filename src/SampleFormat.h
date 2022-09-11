@@ -16,7 +16,7 @@
 #include "MemoryX.h"
 #include <wx/defs.h>
 
-#include "audacity/Types.h"
+#include "Types.h"
 #include "Dither.h"
 
 //

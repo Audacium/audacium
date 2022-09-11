@@ -279,7 +279,6 @@ list( APPEND SOURCES
       SpectrumAnalyst.cpp
       SpectrumAnalyst.h
       SqliteSampleBlock.cpp
-      SseMathFuncs.cpp
       SseMathFuncs.h
       Tags.cpp
       Tags.h
@@ -970,14 +969,14 @@ list( APPEND SOURCES
 #
 #
 list( APPEND HEADERS
-   ../include/audacity/EffectInterface.h
-   ../include/audacity/Types.h
-   ../include/audacity/ConfigInterface.h
-   ../include/audacity/ModuleInterface.h
-   ../include/audacity/PluginInterface.h
-   ../include/audacity/ComponentInterface.h
-   ../include/audacity/EffectAutomationParameters.h
-   ../include/audacity/ImporterInterface.h
+   ../include/interfaces/EffectInterface.h
+   ../include/Types.h
+   ../include/interfaces/ConfigInterface.h
+   ../include/interfaces/ModuleInterface.h
+   ../include/interfaces/PluginInterface.h
+   ../include/interfaces/ComponentInterface.h
+   ../include/interfaces/EffectAutomationParameters.h
+   ../include/interfaces/ImporterInterface.h
 )
 
 #

@@ -13,7 +13,7 @@
 
 
 
-#include "audacity/Types.h"
+#include "Types.h"
 #include "Identifier.h"
 
 //#include <mutex>

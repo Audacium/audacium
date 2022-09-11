@@ -1,5 +1,4 @@
 
-
 #include "../AudioIO.h"
 #include "../BatchProcessDialog.h"
 #include "../Benchmark.h"
@@ -12,16 +11,20 @@
 #include "../ProjectSettings.h"
 #include "../ProjectWindow.h"
 #include "../ProjectSelectionManager.h"
-#include "../toolbars/ToolManager.h"
-#include "../Screenshot.h"
 #include "../TempDirectory.h"
 #include "../UndoManager.h"
+
+#include "../toolbars/ToolManager.h"
+#include "../Screenshot.h"
+
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
 #include "../commands/ScreenshotCommand.h"
+
 #include "../effects/EffectManager.h"
 #include "../effects/EffectUI.h"
 #include "../effects/RealtimeEffectManager.h"
+
 #include "../prefs/EffectsPrefs.h"
 #include "../prefs/PrefsDialog.h"
 

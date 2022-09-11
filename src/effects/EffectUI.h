@@ -102,7 +102,7 @@ private:
 
 #endif
 
-#include "audacity/EffectInterface.h"
+#include "interfaces/EffectInterface.h"
 #include "../widgets/wxPanelWrapper.h" // to inherit
 
 #include "../SelectedRegion.h"

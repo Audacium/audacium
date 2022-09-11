@@ -45,8 +45,8 @@
 #include <functional>
 #include <memory>
 #include "Identifier.h"
-#include "audacity/ComponentInterface.h"
-#include "audacity/PluginInterface.h"
+#include "interfaces/ComponentInterface.h"
+#include "interfaces/PluginInterface.h"
 
 // ============================================================================
 //
